@@ -6,7 +6,7 @@ import {CallToAction} from "./components/home/CallToAction";
 import {Testimonials} from "./components/home/Testimonials";
 import {Clients} from "./components/home/Clients";
 
-export default function Home() {
+export default () => {
     return (
         <>
             <Header title="Test title"/>
