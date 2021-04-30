@@ -1,4 +1,4 @@
-import {Header} from "../components/Header";
+import {HeadElement} from "../components/HeadElement";
 import {Hero} from "../components/home/Hero"
 import {RecentPosts} from "../components/home/RecentPosts"
 import {Footer} from "../components/Footer";
@@ -6,10 +6,10 @@ import {CallToAction} from "../components/home/CallToAction";
 import {Testimonials} from "../components/home/Testimonials";
 import {Clients} from "../components/home/Clients";
 
-export default () => {
+const Home = () => {
     return (
         <>
-            <Header title="Test title"/>
+            <HeadElement title="Test title"/>
             <Hero />
             <RecentPosts />
             <Clients />
@@ -19,3 +19,5 @@ export default () => {
         </>
     )
 }
+
+export default Home
