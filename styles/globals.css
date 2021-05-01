@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    p {
+        @apply py-2 text-gray-dark;
+    }
+
+    a {
+        @apply text-blue;
+    }
+
+    h1 {
+        @apply text-red text-4xl md:text-5xl mt-8 mb-4;
+    }
+
+    h2 {
+        @apply text-red text-3xl md:text-4xl mt-4;
+    }
+
+    h3 {
+        @apply text-red text-2xl md:text-3xl mt-8;
+    }
+    
+    blockquote p {
+        @apply text-green-dark italic border-l-8 px-8 my-8;
+    }
+}
