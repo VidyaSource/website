@@ -80,7 +80,7 @@ export const Page: FC<PageProps> = (p) => {
 
 const Header = () => {
     return (
-        <Popover className="relative bg-white">
+        <Popover className="relative bg-red">
             {({open}) => (
                 <>
                     <div
@@ -97,7 +97,7 @@ const Header = () => {
                         </div>
                         <div className="-mr-2 -my-2 md:hidden">
                             <Popover.Button
-                                className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                                 <span className="sr-only">Open menu</span>
                                 <MenuIcon className="h-6 w-6" aria-hidden="true"/>
                             </Popover.Button>
@@ -109,7 +109,7 @@ const Header = () => {
                                         <>
                                             <Popover.Button
                                                 className={classNames(
-                                                    open ? 'text-gray-900' : 'text-gray-500',
+                                                    open ? 'text-gray-900' : 'text-white',
                                                     'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                                                 )}
                                             >
@@ -117,7 +117,7 @@ const Header = () => {
                                                 <ChevronDownIcon
                                                     className={classNames(
                                                         open ? 'text-gray-600' : 'text-gray-400',
-                                                        'ml-2 h-5 w-5 group-hover:text-gray-500'
+                                                        'ml-2 h-5 w-5 group-hover:text-white'
                                                     )}
                                                     aria-hidden="true"
                                                 />
@@ -154,7 +154,7 @@ const Header = () => {
                                                                     </div>
                                                                     <div className="ml-4">
                                                                         <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                                                        <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+                                                                        <p className="mt-1 text-sm text-white">{item.description}</p>
                                                                     </div>
                                                                 </a>
                                                             ))}
@@ -171,7 +171,7 @@ const Header = () => {
                                     New
                                   </span>
                                                                 </div>
-                                                                <p className="mt-1 text-sm text-gray-500">
+                                                                <p className="mt-1 text-sm text-white">
                                                                     Empower your entire team with even more advanced
                                                                     tools.
                                                                 </p>
@@ -183,10 +183,10 @@ const Header = () => {
                                         </>
                                     )}
                                 </Popover>
-                                <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                                <a href="#" className="text-base font-medium text-white hover:text-gray-900">
                                     Pricing
                                 </a>
-                                <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                                <a href="#" className="text-base font-medium text-white hover:text-gray-900">
                                     Docs
                                 </a>
 
@@ -195,7 +195,7 @@ const Header = () => {
                                         <>
                                             <Popover.Button
                                                 className={classNames(
-                                                    open ? 'text-gray-900' : 'text-gray-500',
+                                                    open ? 'text-gray-900' : 'text-white',
                                                     'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                                                 )}
                                             >
@@ -203,7 +203,7 @@ const Header = () => {
                                                 <ChevronDownIcon
                                                     className={classNames(
                                                         open ? 'text-gray-600' : 'text-gray-400',
-                                                        'ml-2 h-5 w-5 group-hover:text-gray-500'
+                                                        'ml-2 h-5 w-5 group-hover:text-white'
                                                     )}
                                                     aria-hidden="true"
                                                 />
@@ -234,7 +234,7 @@ const Header = () => {
                                                                     className="-m-3 p-3 block rounded-md hover:bg-gray-50"
                                                                 >
                                                                     <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                                                    <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+                                                                    <p className="mt-1 text-sm text-white">{item.description}</p>
                                                                 </a>
                                                             ))}
                                                         </div>
@@ -246,7 +246,7 @@ const Header = () => {
                                 </Popover>
                             </Popover.Group>
                             <div className="flex items-center md:ml-12">
-                                <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                                <a href="#" className="text-base font-medium text-white hover:text-gray-900">
                                     Sign in
                                 </a>
                                 <a
@@ -287,7 +287,7 @@ const Header = () => {
                                         </div>
                                         <div className="-mr-2">
                                             <Popover.Button
-                                                className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                                className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                                                 <span className="sr-only">Close menu</span>
                                                 <XIcon className="h-6 w-6" aria-hidden="true"/>
                                             </Popover.Button>
@@ -345,7 +345,7 @@ const Header = () => {
                                         >
                                             Sign up
                                         </a>
-                                        <p className="mt-6 text-center text-base font-medium text-gray-500">
+                                        <p className="mt-6 text-center text-base font-medium text-white">
                                             Existing customer?{' '}
                                             <a href="#" className="text-indigo-600 hover:text-indigo-500">
                                                 Sign in
