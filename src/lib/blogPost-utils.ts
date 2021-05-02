@@ -45,7 +45,6 @@ export const getBlogPostBySlug: (slug: string) => BlogPost = (slug) => {
         description: data.description
     }
 
-
     return {
         slug: realSlug,
         frontMatter: frontMatter,
