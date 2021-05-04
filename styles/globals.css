@@ -26,4 +26,12 @@
     blockquote p {
         @apply text-green-dark italic border-l-8 px-8 my-8;
     }
+
+    .youtube {
+        @apply relative h-0 overflow-hidden pb-youtube
+    }
+
+    .youtube iframe {
+        @apply absolute top-0 left-0 w-full h-full border-0
+    }
 }
