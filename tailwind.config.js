@@ -11,6 +11,7 @@ module.exports = {
         fontFamily: {
             sans: ['PT Sans', 'sans-serif'],
             serif: ['Inter var', 'serif'],
+            code: ['Source Code Pro', 'font-mono', 'serif']
         },
         colors: {
             transparent: 'transparent',
@@ -33,7 +34,12 @@ module.exports = {
                 dark: '#494B4F',
             },
             indigo: colors.indigo
-        }
+        },
+        extend: {
+            spacing: {
+                youtube: "56.25%"
+            }
+        },
     },
     variants: {
         extend: {},
