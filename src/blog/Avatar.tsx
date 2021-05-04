@@ -10,7 +10,7 @@ interface AvatarProps {
 
 export const Avatar = (p: AvatarProps) => {
     const author = p.author ?? constants.people.president.name
-    const profileUrl = p.profileUrl ?? constants.people.president.linkedIn
+    const profileUrl = p.profileUrl ?? constants.people.president.twitter
     return (
         <a href={profileUrl} className="flex-shrink-0 group block">
             <div className="flex items-center justify-center">
