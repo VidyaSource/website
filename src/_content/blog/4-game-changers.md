@@ -33,7 +33,7 @@ Just to give you an idea, here is the unedited introduction.
 There are four technologies that in my view have done the most to revolutionize software development in the last decade. The technologies themselves are less important than the indelible impact they continue to have on the industry. Understanding this impact will help you consider new ways to attack your own problem space and build better software faster.
 
 
-Without further ado, [here is my list]((http://gcn.com/articles/2014/06/05/top-software-development-technologies.aspx)) in no particular order. Though I warn you now Hadoop didn’t make the list.
+Without further ado, [here is my list](http://gcn.com/articles/2014/06/05/top-software-development-technologies.aspx) in no particular order. Though I warn you now Hadoop didn’t make the list.
 
 
 You can read the rest of the column [here](http://gcn.com/articles/2014/06/05/top-software-development-technologies.aspx) 

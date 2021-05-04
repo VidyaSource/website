@@ -42,7 +42,7 @@ quite as hilarious though potentially just as offensive to some, here are a few.
 <br>
 ### JAVA and SCRUM
 
-Stop yelling at me! [Java](/tags/java) is the most popular programming language in the world. [Scrum]((/tags/scrum)
+Stop yelling at me! [Java](/tags/java) is the most popular programming language in the world. [Scrum](/tags/scrum)
 is the most popular agile framework
 in the world. So why do so many people, including software engineers who should know better, still fail to understand that neither is an acronym? If I ran
 [Stack Overflow](http://stackoverflow.com/), I would impose a lifetime ban on anyone who uses all caps for Java and Scrum.
