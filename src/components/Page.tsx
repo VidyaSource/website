@@ -69,12 +69,14 @@ interface PageProps {
 
 export const Page: FC<PageProps> = (p) => {
     return (
-        <>
+        <div className="font-sans">
             {p.headElement}
-            <Header />
-            {p.children}
-            <Footer/>
-        </>
+            <main>
+                <Header/>
+                {p.children}
+                <Footer/>
+            </main>
+        </div>
     )
 }
 
