@@ -3,8 +3,6 @@
 import fs from 'fs'
 import {join} from 'path'
 import matter from 'gray-matter'
-import remark from 'remark'
-import html from 'remark-html'
 
 export interface FrontMatter {
     author: "Neil Chaudhuri" | string
@@ -81,9 +79,4 @@ export const getBlogPostsByTags: () => BlogPostCategories = () => {
         categories[category].sort((post1, post2) => (post1.frontMatter.date > post2.frontMatter.date ? -1 : 1))
     }
     return categories
-}
-
-export const markdownToHtml: (markdown) => Promise<string | Uint8Array> = async (markdown) => {
-    const result = await remark().use(html).process(markdown)
-    return result.contents
 }
