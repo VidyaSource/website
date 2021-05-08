@@ -1,26 +1,34 @@
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 import ErrorPage from 'next/error'
 import {Page} from "../../components/Page";
 import {BlogPostHeadElement} from "../../blog/BlogPostHeadElement";
 import {BlogPost, getAllBlogPosts, getBlogPostBySlug} from "../../lib/blogPost-utils";
 import {BlogPostContent} from "../../blog/BlogPostContent";
+import {useQuery} from "react-query";
 
-const Blog = (blogPost: BlogPost) => {
+interface PostProps {
+    blogPost: BlogPost
+}
+
+const Post = (p: PostProps) => {
     const router = useRouter()
-    if (!router.isFallback && !blogPost.slug) {
-        return <ErrorPage statusCode={404} />
+    const {data} = useQuery(['post', p.blogPost.slug], () => getBlogPostBySlug(p.blogPost.slug))
+    if (!router.isFallback && !data.slug) {
+        return <ErrorPage statusCode={404}/>
     }
+
     return (
-        <Page headElement={<BlogPostHeadElement title={blogPost.frontMatter.title}/>}>
-            <BlogPostContent blogPost={blogPost} />
+        <Page headElement={<BlogPostHeadElement title={data.frontMatter.title}/>}>
+            <BlogPostContent blogPost={data}/>
         </Page>
+
     )
 }
 
-export default Blog
+export default Post
 
-export async function getStaticProps({ params }) {
-    const post = getBlogPostBySlug(params.slug)
+export async function getStaticProps({params}) {
+    const post = await getBlogPostBySlug(params.slug)
 
     return {
         props: {
@@ -31,7 +39,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const posts = getAllBlogPosts()
+    const posts = await getAllBlogPosts()
 
     return {
         paths: posts.map((post) => {
