@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Welcoming TRSS"
 description: "We are lucky to be working with TRSS, a leading provider of threat detection solutions."
-banner: "img/partners/trss.png"
+image: "/img/partners/trss.png"
 date: 2015-06-28
 tags:
 - Scala

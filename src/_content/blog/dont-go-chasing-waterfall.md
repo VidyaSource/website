@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Don't Go Chasing Waterfall"
 description: "Michael Daconta happily blames agile software development for the problems on the health care website. He's wrong. And yes, the title is a TLC reference."
-banner: "img/banners/waterfall.jpg"
+image: "/img/waterfall.jpg"
 aliases: 
  - /blog/Projects/Agile/Scrum/Architecture/2013/11/11/dont-go-chasing-waterfall
 date: 2013-11-11

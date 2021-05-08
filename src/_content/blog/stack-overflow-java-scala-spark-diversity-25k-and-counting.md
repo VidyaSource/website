@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "25K and Counting on Stack Overflow"
 description: "It's an honor and a privilege to have helped 2.6M developers and earned 25K points on Stack Overflow."
-banner: "img/banners/stackoverflow.png"
+image: "/img/stackoverflow.png"
 date: 2019-05-29
 tags:
 - Spring

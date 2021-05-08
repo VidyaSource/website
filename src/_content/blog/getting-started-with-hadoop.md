@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Getting Started With Hadoop"
 description: "Ease into Hadoop and learn about cool technologies that build on it."
-banner: "img/banners/hadoop.png"
+image: "/img/hadoop.png"
 date: 2014-05-04
 tags:
 - Hadoop

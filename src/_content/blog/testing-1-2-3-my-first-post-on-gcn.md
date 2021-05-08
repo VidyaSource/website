@@ -4,7 +4,7 @@ author: "Neil Chaudhuri"
 title: "Testing-1-2-3: My First Post on GCN"
 subtitle: "Open-source tools to ensure quality applications"
 description: "Federal IT can leverage open-source tools, automation, and discipline to build quality into software from the start."
-banner: "img/partners/gcn.png"
+image: "/img/partners/gcn.png"
 aliases:
  - /blog/Testing/Architecture/Java/Ruby/Agile/2013/12/10/testing-1-2-3-my-first-post-on-gcn
 date: 2013-12-10

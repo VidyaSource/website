@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "When You Do Want None"
 description: "A quick tip for Scala developers for handling empty and whitespace strings in their code."
-banner: "img/banners/mixalot.jpg"
+image: "/img/mixalot.jpg"
 date: 2015-02-25
 gist: true
 tags:

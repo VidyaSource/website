@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Analytics With Apache Spark Is Coming"
 description: "Learn the hottest technology in data analytics with our Apache Spark course coming in Summer 2015."
-banner: "img/banners/spark.png"
+image: "/img/spark.png"
 date: 2015-04-22
 tags:
 - Hadoop

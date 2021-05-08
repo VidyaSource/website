@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Welcoming USPAACC"
 description: "We are proud to be certified by USPAACC as an Asian and minority-owned small business."
-banner: "img/banners/uspaacc-cert.jpg"
+image: "/img/uspaacc-cert.jpg"
 date: 2019-01-07
 categories: 
 - Partners

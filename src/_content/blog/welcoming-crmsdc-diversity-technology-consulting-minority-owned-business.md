@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Welcoming CRMSDC"
 description: "We are proud to be certified by CRMSDC as a Minority Business Enterprise."
-banner: "img/banners/crmsdc-cert.png"
+image: "/img/crmsdc-cert.png"
 date: 2019-08-10
 categories: 
 - Partners

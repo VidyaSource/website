@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Oracle v. Google Just Got Real"
 description: "The biggest names in technology are imploring the Supreme Court to keep APIs open after Oracle's victory."
-banner: "img/partners/gcn.png"
+image: "/img/partners/gcn.png"
 date: 2015-01-07
 tags:
 - Java

@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "First Contact"
 date: 2013-10-26
-banner: "img/logo.png"
+image: "/img/logo.png"
 aliases:
 - /blog/2013/10/26/first-contact
 ---

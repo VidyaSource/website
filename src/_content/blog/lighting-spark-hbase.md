@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Lighting a Spark with HBase"
 description: "Apache Spark is great for Hadoop analytics, and it works just fine with HBase."
-banner: "img/banners/spark.png"
+image: "/img/spark.png"
 date: 2014-01-25
 gist: true
 tags:

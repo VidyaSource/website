@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Mo Incentives Mo Problems"
 description: "As government IT becomes more agile, it's time to rethink incentives in contracts."
-banner: "img/banners/biggie.jpeg"
+image: "/img/biggie.jpeg"
 date: 2016-01-10
 tags:
 - Scrum

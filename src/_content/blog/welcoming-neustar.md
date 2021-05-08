@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Welcoming Neustar"
 description: "We are lucky to be working with Neustar, a leading telecommunications and cloud platform company."
-banner: "img/partners/neustar.png"
+image: "/img/partners/neustar.png"
 date: 2014-05-10
 tags:
 - Java

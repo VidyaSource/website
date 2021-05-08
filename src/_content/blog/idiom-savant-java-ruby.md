@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Idiom Savant"
 description: "Idioms are just as important in programming languages as they are in spoken languages."
-banner: "img/banners/programming.jpg"
+image: "/img/programming.jpg"
 date: 2014-01-21
 gist: true
 tags:

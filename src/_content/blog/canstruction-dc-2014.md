@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Canstruction DC 2014"
 description: "We are thrilled to have partnered with Dewberry to fight hunger at Canstruction DC 2014."  
-banner: "img/banners/cans.jpg"
+image: "/img/cans.jpg"
 date: 2014-08-25
 categories: 
 - Community

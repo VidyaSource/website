@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Learning the Playbook"
 description: "Watch the first video in our series on the U.S. Digital Service Playbook."
-banner: "img/banners/football.jpeg"
+image: "/img/football.jpeg"
 date: 2015-10-04
 youtube: uXC_0wqIS8g
 tags:

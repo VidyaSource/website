@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Code Coverage Is Killing You"
 description: "Code coverage is intuitive but dangerous. There are quality metrics that are so much better."
-banner: "img/banners/michael-scott.jpg"
+image: "/img/michael-scott.jpg"
 date: 2019-02-10
 tags:
 - Scrum

@@ -1,9 +1,10 @@
 ---
 title: "The Signal and the Noise"
+author: "Neil Chaudhuri"
 date: 2017-11-05T11:31:39-05:00
 description: "One senator made a great effort to hold social media accountable for 2016. We need more."
 youtube: LCIGT4FWQ9Y
-banner: "img/banners/frankenstretch.jpg"
+image: "/img/frankenstretch.jpg"
 draft: false
 tags:
 - Facebook

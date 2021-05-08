@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Yes We Kanban"
 description: "Scrum is great, but Scrum is hard. Maybe you should lighten things up with Kanban instead."
-banner: "img/partners/gcn.png"
+image: "/img/partners/gcn.png"
 date: 2015-03-11
 tags: 
 - Kanban

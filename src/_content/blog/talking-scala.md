@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Talking Scala"
 description: 
-banner: "img/banners/scala.png"
+image: "/img/scala.png"
 date: 2015-05-27
 tags:
 - Scala

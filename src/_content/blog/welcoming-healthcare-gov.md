@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Welcoming HealthCare.gov"
 description: "We are proud to have helped HealthCare.gov make affordable insurance available to more Americans."
-banner: "img/banners/health-care-gov.jpg"
+image: "/img/health-care-gov.jpg"
 date: 2019-03-02
 tags:
 - ScalaCheck

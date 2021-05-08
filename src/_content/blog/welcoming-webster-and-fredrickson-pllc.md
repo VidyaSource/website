@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Welcoming Webster & Fredrickson, PLLC"
 description: "We are lucky to work with Webster & Fredrickson, PLLC, a premier DC law firm."
-banner: "img/banners/court.jpeg" 
+image: "/img/court.jpeg" 
 date: 2016-08-07
 tags:
 - HTML

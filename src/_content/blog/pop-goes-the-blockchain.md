@@ -3,7 +3,7 @@ author: "Neil Chaudhuri"
 title: "POP Goes the Blockchain"
 date: 2018-03-11T13:31:40-04:00
 description: "Blockchain has great potential, but there are significant obstacles in its path to world domination."
-banner: "img/banners/blockchain.jpeg"
+image: "/img/blockchain.jpeg"
 tags: 
 - Cryptography
 - Go
