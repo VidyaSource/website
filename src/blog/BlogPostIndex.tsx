@@ -1,6 +1,5 @@
-import {BlogPost, getAllBlogPosts} from "../lib/blogPost-utils";
-import {BlogPostCard} from "./PostCard";
-import {useQuery} from "react-query";
+import {BlogPost} from "../lib/blogPost-utils";
+import {BlogPostCard} from "./BlogPostCard";
 
 interface BlogPostIndexProps {
     blogPosts: BlogPost[]
