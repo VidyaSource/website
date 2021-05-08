@@ -21,14 +21,14 @@ export interface BlogPost {
 
 const postsDirectory = join(process.cwd(), 'src/_content/blog')
 
-export const getBlogPostSlugs: () => string[] = () => {
-    return fs.readdirSync(postsDirectory)
+export const getBlogPostSlugs: () => Promise<string[]> = () => {
+    return fs.promises.readdir(postsDirectory)
 }
 
-export const getBlogPostBySlug: (slug: string) => BlogPost = (slug) => {
+export const getBlogPostBySlug: (slug: string) => Promise<BlogPost> = async (slug) => {
     const realSlug = slug.replace(/\.md$/, '')
     const fullPath = join(postsDirectory, `${realSlug}.md`)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const fileContents = await fs.promises.readFile(fullPath, 'utf8')
     // @ts-ignore
     const {data, content} = matter(fileContents)
     const tags = data.tags ?? []
@@ -50,23 +50,23 @@ export const getBlogPostBySlug: (slug: string) => BlogPost = (slug) => {
     }
 }
 
-export const getAllBlogPosts: () => BlogPost[] = () => {
-    const slugs = getBlogPostSlugs()
-    return slugs
-        .map((slug) => getBlogPostBySlug(slug))
-        .sort((post1, post2) => (post1.frontMatter.date > post2.frontMatter.date ? -1 : 1))
+export const getAllBlogPosts: () => Promise<BlogPost[]> = async () => {
+    const slugs = await getBlogPostSlugs()
+    const posts = await Promise.all(slugs
+        .map((slug) => getBlogPostBySlug(slug)))
+
+    return posts.sort((post1, post2) => (post1.frontMatter.date > post2.frontMatter.date ? -1 : 1))
 }
 
 interface BlogPostCategories {
     [category: string]: undefined | BlogPost[]
 }
 
-export const getBlogPostsByTags: () => BlogPostCategories = () => {
-    const slugs = getBlogPostSlugs()
+export const getBlogPostsByTags: () => Promise<BlogPostCategories> = async () => {
+    const slugs = await getBlogPostSlugs()
     const categories: BlogPostCategories = {}
-    slugs
-        .map((slug) => getBlogPostBySlug(slug))
-        .forEach((blogPost) => {
+    const posts = await Promise.all(slugs.map((slug) => getBlogPostBySlug(slug)))
+    posts.forEach((blogPost) => {
             blogPost.frontMatter.tags.forEach(tag => {
                 if (categories[tag]) {
                     categories[tag].push(blogPost)
@@ -78,5 +78,6 @@ export const getBlogPostsByTags: () => BlogPostCategories = () => {
     for (const category in categories) {
         categories[category].sort((post1, post2) => (post1.frontMatter.date > post2.frontMatter.date ? -1 : 1))
     }
+
     return categories
 }
