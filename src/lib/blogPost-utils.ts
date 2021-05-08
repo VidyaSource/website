@@ -9,7 +9,7 @@ export interface FrontMatter {
     title: string
     description: string
     image: string
-    date: Date
+    date: number
     tags: string[]
 }
 
@@ -37,7 +37,7 @@ export const getBlogPostBySlug: (slug: string) => Promise<BlogPost> = async (slu
     const frontMatter = {
         tags: tags.concat(categories).sort(),
         image: image,
-        date: data.date,
+        date: new Date(data.date).getUTCDate(),
         author: data.author,
         title: data.title,
         description: data.description
