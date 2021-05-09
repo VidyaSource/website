@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Welcoming Madena Solutions"
 description: "We are lucky to be working with Madena, a premier provider of consulting services in the Medicare space."
-image: "/img/blog/partners/madena.png"
+image: "/img/partners/madena.png"
 date: 2014-04-21
 tags:
 - Java

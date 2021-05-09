@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: " All We Do Is Win Win Win"
 description: "The President issued a challenge to make technology work for government. We won it." 
-image: "/img/blog/partners/eop.png"
+image: "/img/partners/eop.png"
 date: 2015-10-24
 tags:
 - DevOps

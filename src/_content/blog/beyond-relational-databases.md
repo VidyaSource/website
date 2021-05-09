@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Beyond Relational Databases"
 description: "Relational databases are old reliable, but maybe your applications could use something different."
-image: "/img/blog/partners/gcn.png"
+image: "/img/partners/gcn.png"
 date: 2014-04-06
 tags:
 - Java

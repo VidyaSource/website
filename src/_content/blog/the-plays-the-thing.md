@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "The Play's the Thing"
 description: "The White House's new U.S. Digital Services Playbook for government applications is a great start. Let me help you apply it." 
-image: "/img/blog/partners/gcn.png"
+image: "/img/partners/gcn.png"
 date: 2014-09-15
 tags: 
 - Java
