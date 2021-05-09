@@ -1,7 +1,7 @@
 import {BlogPost, getBlogPostsByTags} from "../lib/blogPost-utils";
 import {BlogPostCard} from "./BlogPostCard";
 import {useQuery} from "react-query";
-import {ChangeEvent, useEffect, useState} from "react";
+import {ChangeEvent, MouseEventHandler, useEffect, useState} from "react";
 
 interface BlogPostIndexProps {
     blogPosts: BlogPost[]
@@ -29,6 +29,10 @@ export const BlogPostIndex = (p: BlogPostIndexProps) => {
         }
     }
 
+    const onTagClick = (tag: string) => () => {
+        selectTag(tag)
+    }
+
     return (
         <div className="relative bg-gray-50 pt-8 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-28 lg:px-8">
             <div className="flex flex-col">
@@ -36,7 +40,11 @@ export const BlogPostIndex = (p: BlogPostIndexProps) => {
                     Filter by tag
                 </label>
                 <div className="mt-1">
-                    <select id="tag" name="tag" placeholder="Search..." onChange={onChange}
+                    <select id="tag"
+                            name="tag"
+                            placeholder="Search..."
+                            onChange={onChange}
+                            value={selectedTag}
                             className="mx-auto block text-red sm:text-xl lg:text-2xl focus:border-green-dark md:w-full lg:w-full shadow-sm sm:max-w-xs sm:text-sm border-red rounded-md">
                         <option value=""/>
                         {
@@ -49,7 +57,7 @@ export const BlogPostIndex = (p: BlogPostIndexProps) => {
                 <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
                     {
                         currentPosts.map((blogPost) => (
-                            <BlogPostCard key={blogPost.slug} blogPost={blogPost}/>
+                            <BlogPostCard key={blogPost.slug} blogPost={blogPost} onTagClick={onTagClick}/>
                         ))
                     }
                 </div>
