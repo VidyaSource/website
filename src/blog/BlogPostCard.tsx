@@ -34,7 +34,7 @@ export const BlogPostCard = (p: BlogPostProps) => {
                         {
                             selectedTags.map(t => {
                                 return (
-                                    <a href={link} className="hover:underline pr-8">
+                                    <a href={link} key={link} className="hover:underline pr-8">
                                         {t}
                                     </a>
                                 )
