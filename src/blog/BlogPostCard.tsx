@@ -8,10 +8,10 @@ interface BlogPostProps {
 }
 
 export const BlogPostCard = (p: BlogPostProps) => {
-    const {title, author, description, image: postImage, tags} = p.blogPost.frontMatter
+    const {title, author, description, image: postImage, tags, date} = p.blogPost.frontMatter
     const link = `/blog/${p.blogPost.slug}`
     const {profileUrl, image: authorImage,} = constants[author]
-    const formattedDate = format(p.blogPost.frontMatter.date, "LLLL d, y")
+    const formattedDate = format(new Date(date), "LLLL d, y")
     return (
         <div key={title} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
             <div className="flex-shrink-0">
