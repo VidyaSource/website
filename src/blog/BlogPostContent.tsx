@@ -36,7 +36,7 @@ interface BlogPostContentProps {
 
 export const BlogPostContent = (p: BlogPostContentProps) => {
     return (
-        <article className="relative py-4 bg-blue-light overflow-hidden">
+        <article className="relative py-4 overflow-hidden">
             <div className="relative px-4 sm:px-6 lg:px-8">
                 <div className="text-lg max-w-prose mx-auto">
                     <h1>
