@@ -2,7 +2,7 @@
 author: "Neil Chaudhuri"
 title: "The Business Case for Functional Programming"
 description: "Learn how functional programming can make your teams more productive than you ever imagined."
-image: "/img/functions.jpg"
+image: "/img/blog/functions.jpg"
 date: 2018-09-18
 tags:
 - Agile

@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "No Experience? No Problem!"
 description: "You really don't need professional experience with a technology to get a job in it. Just passion." 
-image: "/img/confused.jpg"
+image: "/img/blog/confused.jpg"
 date: 2014-09-09
 tags:
 - Java

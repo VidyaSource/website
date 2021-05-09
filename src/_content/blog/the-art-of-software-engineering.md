@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "The Art of Software Engineering"
 description: "I am really nerdy, but I am not a programmer. I am a software engineer."
-image: "/img/screech-urkel.jpg"
+image: "/img/blog/screech-urkel.jpg"
 date: 2016-04-02
 tags:
 - DevOps

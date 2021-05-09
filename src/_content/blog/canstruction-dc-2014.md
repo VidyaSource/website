@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Canstruction DC 2014"
 description: "We are thrilled to have partnered with Dewberry to fight hunger at Canstruction DC 2014."  
-image: "/img/cans.jpg"
+image: "/img/blog/cans.jpg"
 date: 2014-08-25
 categories: 
 - Community
@@ -24,7 +24,7 @@ from hunger in the Washington, DC, metropolitan area.
 We are proud to have sponsored architecture and engineering industry leader Dewberry at [Canstruction](http://www.canstruction.org/) DC 2014. 
 This year's theme is “Play With Your Food,” so Team Dewberry used its collective expertise to build "Can-D-Land." 
   
-{{< figure src="/img/misc/canstruction.jpg" title="Team Dewberry in front of Can-D-Land at Canstruction DC 2014" class="max-width" >}}
+{{< figure src="/img/blog/misc/canstruction.jpg" title="Team Dewberry in front of Can-D-Land at Canstruction DC 2014" class="max-width" >}}
 
 <br>
 You can see a lot more photos from Canstruction DC 2014 on our [Facebook](https://www.facebook.com/media/set/?set=a.711839755561664.1073741830.514602035285438&type=1) page. 

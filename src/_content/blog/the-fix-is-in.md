@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "The Fix Is In"
 description: "Government software project management has suffered for a long time, but that's changing. We are happy to help."
-image: "/img/court.jpeg"
+image: "/img/blog/court.jpeg"
 date: 2015-07-19
 tags:
 categories: 

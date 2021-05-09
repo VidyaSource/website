@@ -4,7 +4,7 @@ author: "Neil Chaudhuri"
 date: 2017-11-05T11:31:39-05:00
 description: "One senator made a great effort to hold social media accountable for 2016. We need more."
 youtube: LCIGT4FWQ9Y
-image: "/img/frankenstretch.jpg"
+image: "/img/blog/frankenstretch.jpg"
 draft: false
 tags:
 - Facebook

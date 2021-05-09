@@ -2,7 +2,7 @@
 title: "Talking Trends at Tech Talk DC"
 author: "Neil Chaudhuri"
 description: "Hope to see you at our talk 'Here's What's Trending in Software Engineering.'"
-image: "/img/class.jpg"
+image: "/img/blog/class.jpg"
 date: 2017-10-11T14:11:51-04:00
 tags:
 - Java

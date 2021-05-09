@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "A New Strategy for Scala"
 description: "The report of the death of the Strategy Pattern has been greatly exaggerated."
-image: "/img/scala.png"
+image: "/img/blog/scala.png"
 date: 2016-12-24
 gist: true
 tags:

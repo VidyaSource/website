@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Speaking at Code Writers Workshop 2017"
 description: "Hope to see you at our talk 'Here's What's Trending in Software Engineering.'"
-image: "/img/class.jpg"
+image: "/img/blog/class.jpg"
 date: 2017-06-05
 tags:
 - Java

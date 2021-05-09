@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "You Know What Really Grinds My Gears?"
 description: "When it comes to software projects and technology, I have a list of pet peeves. Here are a few."
-image: "/img/grindsgears.jpg"
+image: "/img/blog/grindsgears.jpg"
 date: 2014-02-08
 tags:
 - Scrum

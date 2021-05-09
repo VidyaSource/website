@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Going Retro With Style"
 description: "It isn't just engineers who have a lot to learn from agile retrospectives."
-image: "/img/record.jpeg"
+image: "/img/blog/record.jpeg"
 date: 2016-11-05
 tags:
 - Scrum

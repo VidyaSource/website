@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Know Your Options"
 description: "Null is a real pain, but functional languages like Scala can make it a lot easier." 
-image: "/img/options.jpeg" 
+image: "/img/blog/options.jpeg" 
 date: 2014-08-04
 gist: true
 tags:

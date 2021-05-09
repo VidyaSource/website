@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Black Lives Matter"
 description: "It's time to act. It was always time to act."  
-image: "/img/black-lives-matter.png" 
+image: "/img/blog/black-lives-matter.png" 
 date: 2020-06-20
 categories:
 - Black Lives Matter 

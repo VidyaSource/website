@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Welcoming Nina Day"
 description: "We are lucky to be working with Nina Day, a casting and creative agency serving Fortune 500 clients worldwide."
-image: "/img/partners/ninaday-social.jpg"
+image: "/img/blog/partners/ninaday-social.jpg"
 date: 2018-08-10
 tags:
 - Scala

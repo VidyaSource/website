@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Clowns to the Left of Me, Jokers to the Right"
 description: "The caricature of the TSA Randomizer was ripe for mockery, but the reality is complicated."
-image: "/img/stuck.jpg"
+image: "/img/blog/stuck.jpg"
 date: 2016-04-25
 tags:
 - Scrum

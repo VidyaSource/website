@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "ScrumMaster++"
 description: "A ScrumMaster with technical skills can use them without compromising the Scrum process."
-image: "/img/settings.jpeg"
+image: "/img/blog/settings.jpeg"
 date: 2017-02-18
 tags:
 - Scrum

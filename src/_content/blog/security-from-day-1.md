@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Security From Day 1"
 description: "Learn software engineering skills to build security into your applications from the start."  
-image: "/img/partners/gcn.png" 
+image: "/img/blog/partners/gcn.png" 
 date: 2014-07-13
 tags:
 - Java

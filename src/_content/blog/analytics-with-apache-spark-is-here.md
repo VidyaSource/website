@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Analytics With Apache Spark Is Here"
 description: "Learn the hottest technology in data analytics with our Apache Spark course."
-image: "/img/spark.png"
+image: "/img/blog/spark.png"
 date: 2015-08-17
 tags:
 - Scala

@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "This Week In #Scala"
 description: "Our latest tutorial made it to This Week in #Scala!"
-image: "/img/scala.png"
+image: "/img/blog/scala.png"
 date: 2015-04-29
 tags:
 - Scala

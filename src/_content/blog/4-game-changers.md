@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "4 Game Changers"
 description: "The four technologies that changed software development the most in the last decade. Sorry, no Hadoop." 
-image: "/img/four.jpeg" 
+image: "/img/blog/four.jpeg" 
 date: 2014-06-09
 tags:
 - Java

@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "DevOps Hooray"
 description: "DevOps is is the next generation of lean and agile in the enterprise. We need it in government IT too."
-image: "/img/partners/gcn.png"
+image: "/img/blog/partners/gcn.png"
 date: 2015-02-17
 tags:
 - Java

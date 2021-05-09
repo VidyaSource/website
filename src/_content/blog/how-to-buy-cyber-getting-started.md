@@ -2,7 +2,7 @@
 author: "Neil Chaudhuri"
 title: "How to Buy Cyber—Getting Started"
 description: "We need to empower procurement officials to take initiative when buying cybersecurity solutions. This is how."
-image: "/img/partners/psf.png"
+image: "/img/blog/partners/psf.png"
 youtube: "Ypv73bkIERQ"
 date: 2018-10-30
 tags:
