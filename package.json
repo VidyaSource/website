@@ -15,6 +15,7 @@
     "@tailwindcss/typography": "^0.4.0",
     "babel-plugin-superjson-next": "^0.2.3",
     "date-fns": "^2.21.1",
+    "date-fns-tz": "^1.1.4",
     "gray-matter": "^4.0.3",
     "html-react-parser": "^1.2.6",
     "next": "^10.2.0",
