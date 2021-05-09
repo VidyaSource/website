@@ -12,7 +12,7 @@ categories:
 - Project Management
 - Software Engineering
 - Agile
-- Open-source
+- Open Source
 aliases:
 - /blog/Projects/Agile/2016/01/10/mo-incentives-mo-problems
 ---

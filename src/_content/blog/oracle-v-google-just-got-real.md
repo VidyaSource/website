@@ -13,7 +13,7 @@ categories:
 - Government 
 - Programming
 - Mobile
-- Open-source
+- Open Source
 aliases:
 - /blog/Programming/Java/Mobile/Android/2015/01/07/oracle-v-google-just-got-real
 

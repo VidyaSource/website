@@ -7,7 +7,7 @@ image: "/img/blog/matrix.jpg"
 categories:
 - Mobile
 - Accessibility
-- Open-Source
+- Open Source
 - Security
 - Testing
 tags:

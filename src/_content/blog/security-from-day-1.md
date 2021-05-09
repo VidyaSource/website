@@ -15,7 +15,7 @@ categories:
 - Testing
 - Architecture
 - Project Management
-- Continuous integration
+- Continuous Integration
 aliases:
 - /blog/Programming/Java/Scala/Testing/Architecture/Projects/2014/07/13/security-from-day-1
 ---

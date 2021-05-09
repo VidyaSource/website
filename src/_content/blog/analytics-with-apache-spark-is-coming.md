@@ -19,7 +19,7 @@ categories:
 - Programming
 - Functional Programming
 - Architecture
-- Open-source
+- Open Source
 aliases:
 - /blog/Data/Hadoop/Analytics/Programming/Scala/Java/Python/Architecture/2015/04/22/analytics-with-apache-spark-is-coming
 ---

@@ -7,7 +7,7 @@ image: "/img/blog/benjamins.jpeg"
 categories:
 - Programming
 - Functional Programming
-- Open-Source
+- Open Source
 - Analytics
 - Software Engineering
 - Machine Learning

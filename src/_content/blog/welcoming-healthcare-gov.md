@@ -19,7 +19,7 @@ categories:
 - Java
 - Testing
 - Architecture
-- Functional programming
+- Functional Programming
 - Microservices
 - REST
 

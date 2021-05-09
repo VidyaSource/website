@@ -23,8 +23,8 @@ categories:
 - Software Engineering
 - Agile
 - Security
-- Continuous delivery
-- Continuous integration
+- Continuous Delivery
+- Continuous Integration
 aliases:
 - /blog/Programming/Java/Groovy/Web/REST/Projects/Agile/Scrum/2014/05/10/welcoming-neustar
 

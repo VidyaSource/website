@@ -15,7 +15,7 @@ categories:
 - Programming
 - Testing
 - Continuous Delivery
-- Open-source
+- Open Source
 - Accessibility
 aliases:
 - /blog/Projects/Agile/Scrum/Programming/Testing/2015/10/24/all-we-do-is-win-win-win

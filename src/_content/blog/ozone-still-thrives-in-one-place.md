@@ -15,7 +15,7 @@ categories:
 - Architecture
 - Big Data
 - Security
-- Open-source
+- Open Source
 aliases:
 - /blog/Programming/Java/Groovy/Architecture/Web/Data/Hadoop/Analytics/2014/02/28/ozone-still-thrives-in-one-place
 ---

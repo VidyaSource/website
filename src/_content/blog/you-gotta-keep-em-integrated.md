@@ -15,10 +15,10 @@ categories:
 - Government
 - Architecture
 - Programming
-- Cloud computing
-- Software engineering
+- Cloud Computing
+- Software Engineering
 - Agile
-- Open-source
+- Open Source
 aliases: 
 - /blog/Architecture/Programming/Projects/Data/2014/02/03/you-gotta-keep-em-integrated
 ---

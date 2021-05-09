@@ -7,7 +7,7 @@ image: "/img/blog/screech-urkel.jpg"
 date: 2016-04-02
 tags:
 - DevOps
-- Technical debt
+- Technical Debt
 - REST
 categories: 
 - Software Engineering

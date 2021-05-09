@@ -17,7 +17,7 @@ categories:
 - Programming
 - Testing
 - Architecture
-- Open-source
+- Open Source
 aliases: 
 - /blog/Projects/Agile/Scrum/Programming/Testing/Architecture/2015/10/04/learning-the-playbook
 ---

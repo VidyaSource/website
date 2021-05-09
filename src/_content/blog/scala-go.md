@@ -17,7 +17,7 @@ categories:
 - Go
 - Software Engineering
 - DevOps
-- Functional programming
+- Functional Programming
 - Microservices
 - REST
 - Agile

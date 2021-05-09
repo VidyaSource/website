@@ -10,7 +10,7 @@ tags:
 - Ruby 
 - JavaScript
 - NoSQL
-- Technical debt
+- Technical Debt
 - Active Record
 - Hibernate
 - MongoDB

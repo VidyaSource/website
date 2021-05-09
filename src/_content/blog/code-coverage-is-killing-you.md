@@ -15,8 +15,8 @@ categories:
 - Architecture
 - Software Engineering
 - Agile
-- Continuous delivery
-- Continuous integration
+- Continuous Delivery
+- Continuous Integration
 ---
 
 If you are a software engineer or run software projects, [code coverage](https://stackoverflow.com/questions/195008/what-is-code-coverage-and-how-do-you-measure-it) 

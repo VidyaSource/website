@@ -10,12 +10,12 @@ tags:
 - Scrum
 - NoSQL
 categories: 
-- Software engineering
+- Software Engineering
 - Programming
 - Testing
 - Project Management
 - Agile
-- Continuous integration
+- Continuous Integration
 aliases:
 - /blog/Programming/Java/Testing/Projects/Agile/Scrum/2014/09/09/no-experience-no-problem
 

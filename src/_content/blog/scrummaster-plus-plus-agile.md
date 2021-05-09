@@ -12,7 +12,7 @@ tags:
 - Ruby
 - Go
 - DevOps
-- Technical debt
+- Technical Debt
 - Gradle
 - SBT
 - ScalaCheck

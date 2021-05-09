@@ -10,7 +10,7 @@ tags:
 - Java
 - Scala
 - Go
-- Technical debt
+- Technical Debt
 - ScalaCheck
 - REST
 categories: 

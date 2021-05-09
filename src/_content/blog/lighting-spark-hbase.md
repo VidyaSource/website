@@ -16,10 +16,10 @@ tags:
 - Hive
 - HDFS
 categories: 
-- Big data
+- Big Data
 - Programming
 - Functional Programming
-- Open-source
+- Open Source
 aliases:
 - /blog/Programming/Scala/Java/Data/Hadoop/Analytics/2014/01/25/lighting-a-spark-with-hbase
 - /blog/2014/01/25/lighting-a-spark-with-hbase

@@ -19,7 +19,7 @@ categories:
 - Testing
 - Architecture
 - Agile
-- Open-source
+- Open Source
 aliases:
 - /blog/Scala/Java/Python/Programming/Data/Hadoop/Analytics/Testing/Architecture/Projects/Agile/2015/08/17/analytics-with-apache-spark-is-here
 ---

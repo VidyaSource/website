@@ -22,7 +22,7 @@ categories:
 - Analytics
 - Agile
 - Continuous Delivery
-- Open-source
+- Open Source
 aliases:
 - /blog/Programming/Java/Ruby/JavaScript/Python/Groovy/Scala/Testing/Data/Analytics/Projects/Agile/Scrum/2014/09/15/the-plays-the-thing
 ---
