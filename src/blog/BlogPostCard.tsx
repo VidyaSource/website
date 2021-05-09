@@ -15,14 +15,15 @@ export const BlogPostCard = (p: BlogPostProps) => {
     return (
         <div key={title} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
             <div className="flex-shrink-0">
-                <Image
-                    layout="fill"
+                <img className="h-48 w-full object-cover" src={postImage} alt={title} />
+                {/*<Image
+                    height={192}
+                    width="100%"
                     quality={100}
-                    className="h-48 w-full"
                     objectFit="cover"
                     src={postImage}
                     alt={title}
-                />
+                />*/}
             </div>
             <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                 <div className="flex-1">
