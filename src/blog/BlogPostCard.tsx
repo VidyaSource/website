@@ -39,7 +39,7 @@ export const BlogPostCard = (p: BlogPostProps) => {
                 </div>
                 <div className="mt-6 flex items-center">
                     <div className="flex-shrink-0">
-                        <a href={author}>
+                        <a href={profileUrl}>
                             <span className="sr-only">{author}</span>
                             <Image
                                 height="60"
