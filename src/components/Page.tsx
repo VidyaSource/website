@@ -71,11 +71,11 @@ export const Page: FC<PageProps> = (p) => {
     return (
         <div className="font-sans">
             {p.headElement}
-            <main>
-                <Header/>
+            <Header/>
+            <main className="bg-blue-light">
                 {p.children}
-                <Footer/>
             </main>
+            <Footer/>
         </div>
     )
 }
