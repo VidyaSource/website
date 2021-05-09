@@ -14,7 +14,7 @@ export const BlogPostCard = (p: BlogPostProps) => {
     const formattedDate = format(new Date(date), "LLLL d, y")
     return (
         <div key={title} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 bg-gray-light">
                 <img className="h-48 w-full object-cover" src={postImage} alt={title} />
                 {/*<Image
                     height={192}
@@ -33,8 +33,8 @@ export const BlogPostCard = (p: BlogPostProps) => {
                         </a>
                     </p>
                     <a href={link} className="block mt-2">
-                        <p className="text-xl font-semibold text-gray-900">{title}</p>
-                        <p className="mt-3 text-base text-gray-500">{description}</p>
+                        <p className="text-xl font-semibold text-red">{title}</p>
+                        <p className="mt-3 text-base text-gray-dark">{description}</p>
                     </a>
                 </div>
                 <div className="mt-6 flex items-center">
