@@ -12,6 +12,7 @@ export const BlogPostCard = (p: BlogPostProps) => {
     const link = `/blog/${p.blogPost.slug}`
     const {profileUrl, image: authorImage,} = constants[author]
     const formattedDate = format(new Date(date), "LLLL d, y")
+    const selectedTags = selectTags(tags)
     return (
         <div key={title} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
             <div className="flex-shrink-0 bg-gray-light hover:bg-red-light">
@@ -30,9 +31,15 @@ export const BlogPostCard = (p: BlogPostProps) => {
             <div className="flex-1 bg-white hover:bg-red-light p-6 flex flex-col justify-between">
                 <div className="flex-1">
                     <p className="text-sm font-medium text-indigo-600">
-                        <a href={link} className="hover:underline">
-                            {tags[0]}
-                        </a>
+                        {
+                            selectedTags.map(t => {
+                                return (
+                                    <a href={link} className="hover:underline pr-8">
+                                        {t}
+                                    </a>
+                                )
+                            })
+                        }
                     </p>
                     <a href={link} className="block mt-2">
                         <p className="text-xl font-semibold text-red">{title}</p>
@@ -67,4 +74,13 @@ export const BlogPostCard = (p: BlogPostProps) => {
             </div>
         </div>
     )
+}
+
+const selectTags: (tags: string[]) => string[] = (tags) => {
+    const selectedTags = new Set()
+    for (let i = 0; i < 3; i++) {
+        selectedTags.add(tags[Math.floor(Math.random() * (tags.length))])
+    }
+    // @ts-ignore
+    return [...selectedTags]
 }
