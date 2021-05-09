@@ -1,4 +1,4 @@
-import {getAllBlogPosts} from "../../lib/blogPost-utils";
+import {getAllBlogPosts, getBlogPostsByTags} from "../../lib/blogPost-utils";
 import {QueryClient, useQuery} from "react-query";
 import {Page} from "../../components/Page";
 import {BlogPostHeadElement} from "../../blog/BlogPostHeadElement";
@@ -20,6 +20,7 @@ export default BlogPosts
 export async function getStaticProps({ params }) {
     const queryClient = new QueryClient()
     await queryClient.prefetchQuery('posts', getAllBlogPosts)
+    await queryClient.prefetchQuery('postsByTags', getBlogPostsByTags)
 
     return {
         props: {
