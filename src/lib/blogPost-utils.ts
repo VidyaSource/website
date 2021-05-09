@@ -3,13 +3,14 @@
 import fs from 'fs'
 import {join} from 'path'
 import matter from 'gray-matter'
+import { zonedTimeToUtc } from 'date-fns-tz'
 
 export interface FrontMatter {
     author: "Neil Chaudhuri" | string
     title: string
     description: string
     image: string
-    date: number
+    date: Date
     tags: string[]
 }
 
@@ -37,7 +38,7 @@ export const getBlogPostBySlug: (slug: string) => Promise<BlogPost> = async (slu
     const frontMatter = {
         tags: tags.concat(categories).sort(),
         image: image,
-        date: new Date(data.date).getUTCDate(),
+        date:  zonedTimeToUtc(data.date as Date, "America/New_York"),
         author: data.author,
         title: data.title,
         description: data.description
@@ -52,10 +53,9 @@ export const getBlogPostBySlug: (slug: string) => Promise<BlogPost> = async (slu
 
 export const getAllBlogPosts: () => Promise<BlogPost[]> = async () => {
     const slugs = await getBlogPostSlugs()
-    const posts = await Promise.all(slugs
-        .map((slug) => getBlogPostBySlug(slug)))
+    const posts = await Promise.all(slugs.map((slug) => getBlogPostBySlug(slug)))
 
-    return posts.sort((post1, post2) => (post1.frontMatter.date > post2.frontMatter.date ? -1 : 1))
+    return sort(posts)
 }
 
 interface BlogPostCategories {
@@ -76,8 +76,10 @@ export const getBlogPostsByTags: () => Promise<BlogPostCategories> = async () =>
             })
         })
     for (const category in categories) {
-        categories[category].sort((post1, post2) => (post1.frontMatter.date > post2.frontMatter.date ? -1 : 1))
+        sort(categories[category])
     }
 
     return categories
 }
+
+const sort: (posts: BlogPost[]) => BlogPost[] = (posts) => posts.sort((post1, post2) => (post1.frontMatter.date > post2.frontMatter.date ? -1 : 1))
