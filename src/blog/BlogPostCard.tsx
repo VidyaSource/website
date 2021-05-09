@@ -2,17 +2,20 @@ import {BlogPost} from "../lib/blogPost-utils";
 import {constants} from "../lib/constants";
 import format from "date-fns/format";
 import Image from "next/image";
+import {ChangeEvent, MouseEventHandler, useMemo} from "react";
 
-interface BlogPostProps {
+interface BlogPostCardProps {
     blogPost: BlogPost
+    onTagClick: (tag: string) => MouseEventHandler<HTMLElement>
 }
 
-export const BlogPostCard = (p: BlogPostProps) => {
+export const BlogPostCard = (p: BlogPostCardProps) => {
     const {title, author, description, image: postImage, tags, date} = p.blogPost.frontMatter
     const link = `/blog/${p.blogPost.slug}`
     const {profileUrl, image: authorImage,} = constants[author]
     const formattedDate = format(new Date(date), "LLLL d, y")
-    const selectedTags = selectTags(tags)
+    const selectedTags = useMemo(() => selectTags(tags), tags)
+
     return (
         <div key={title} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
             <div className="flex-shrink-0 bg-gray-light hover:bg-red-light">
@@ -34,9 +37,9 @@ export const BlogPostCard = (p: BlogPostProps) => {
                         {
                             selectedTags.map(t => {
                                 return (
-                                    <a href={link} key={link} className="hover:underline pr-8">
+                                    <span key={`${link}-${t}`} className="a hover:underline pr-8" aria-label={`Filter all posts by the tag ${t}`} onClick={p.onTagClick(t)}>
                                         {t}
-                                    </a>
+                                    </span>
                                 )
                             })
                         }
