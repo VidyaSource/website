@@ -11,7 +11,7 @@ tags:
 - Hadoop
 - REST
 - Apache Kafka
-- AngularJS
+- Angular
 - Apache Spark
 - MongoDB
 - Play Framework
@@ -32,7 +32,7 @@ threat detection solutions. Their software analyzes billions of public and propr
 with innovative technology to deliver realtime, actionable intelligence to support sound decision making.
 
 We have joined a team of senior engineers with a wide variety of expertise. Currently, we are using
-[Play Framework](https://www.playframework.com/) in [Scala](/tags/scala) as the web application framework with an [AngularJS](https://angularjs.org/) interface
+[Play Framework](https://www.playframework.com/) in [Scala](/tags/scala) as the web application framework with an [Angular](https://angularjs.org/) interface
 to a backend [MongoDB](https://www.mongodb.org/) database. Performance
 is critical, so aside from aggressive indexing, we are utilizing [Akka](/tags/akka) to build a highly concurrent, resilient
 architecture. Aside from the current challenges, we look forward to helping evolve this application by re-architecting it
