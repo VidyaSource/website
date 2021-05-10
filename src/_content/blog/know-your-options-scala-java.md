@@ -21,12 +21,14 @@ aliases:
 
 Imagine a method in [Java](/tags/java) that retrieves an `Employee` entity from the database by the employee id. Something like this:
 
-{{< gist neilchaudhuri 0492bb53d537566a39a5 >}}
+~~~java
+public Employee findById(String id) {
+// Try to find an Employee
+}
+~~~
 
 That's pretty straightforward. You've probably written hundreds of methods like this one. The problem is what to do if 
 there is *no* employee with that id. Java developers usually consider two options for this scenario:
-
-
 
 * Throw a [checked exception](http://en.wikibooks.org/wiki/Java_Programming/Checked_Exceptions)
 * Return `null` 
@@ -56,7 +58,11 @@ concept. Since then, Scala's `Option` type has become one of my favorite feature
 
 Let's go back to our original example. In Scala, it would probably look like this.
 
-{{< gist neilchaudhuri 263b8d2a7817452cc1b2 >}}
+~~~scala
+def findById(id: String): Option[Employee] = {
+// Return an Employee effect
+}
+~~~
 
 Check out that `Option[Employee]` return type. The `Option` type has a [rigorous definition](http://www.scala-lang.org/api/current/index.html#scala.Option), but as a practical matter, think of it as a one-item 
 collection. If we find an employee with the given id, the collection contains the corresponding `Employee` instance. If 
@@ -74,7 +80,12 @@ is accomplished with type safety rather than a problematic exception.
 
 Second, and even better, the caller's code is really clean. You could call our method like this:
 
-{{< gist neilchaudhuri 12ada41ce66430cdd3c7 >}}
+~~~scala
+val employeeName = findById("123")
+  .map(employee => employee.getName)
+  .filter(name => name.length != 0)
+  .getOrElse("Unknown")
+~~~  
 
 If you have worked with Scala collections before, you'll notice how similar it is to use `Option`. In this case, 
 if `findById` returns `Some`, the `map` call extracts the `Employee` instance “inside” the `Some`, and you can do whatever you want 
