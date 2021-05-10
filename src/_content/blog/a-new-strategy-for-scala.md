@@ -52,13 +52,27 @@ There is a much more important reason why Scala doesn't really kill the Strategy
 a lot more of the classic Strategy going on than it appears because Scala's syntactic sugar hides it. Here
 is Alvin's example de-sugared.
 
-{{< gist neilchaudhuri 988cbe4b54a74532a4415ed3094cb96d >}}
+~~~scala
+package com.vidyasource.strategy.scala
+
+object StrategyExample extends App {
+  val addStrategy: Function2[Int, Int, Int] = (a: Int, b: Int) => a + b
+  val subtractStrategy: Function2[Int, Int, Int] = (a: Int, b: Int) => a - b
+  val multiplyStrategy: Function2[Int, Int, Int] = (a: Int, b: Int) => a * b
+
+  def execute(callback: Function2[Int, Int, Int])(x: Int)(y: Int): Int = callback.apply(x, y)
+
+  println(s"Add:      ${execute(addStrategy)(3)(4)}")
+  println(s"Subtract: ${execute(subtractStrategy)(3)(4)}")
+  println(s"Multiply: ${execute(multiplyStrategy)(3)(4)}")
+}
+~~~
 
 The de-sugared code reminds us that in Scala all functions are still objects. In this case, the functions are all instances of
 `Function2[Int, Int, Int]`, which has an `apply` method. This abstraction is in fact the Strategy; and `addStrategy`, `subtractStrategy`,
 and `multiplyStrategy` are just instances of the abstraction.
 
-So you have a "Context" class, `StrategyExample`, that maintains a reference to a
+So you have a `Context` class, `StrategyExample`, that maintains a reference to a
 `Function2[Int, Int, Int]` object with an `apply` method, and that abstraction can be implemented by any instance that satisfies
 the API contract--with the Context having no idea about which implementation it's getting since it's provided at runtime.
 
