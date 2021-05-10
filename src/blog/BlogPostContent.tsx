@@ -6,6 +6,8 @@ import {Prism} from 'react-syntax-highlighter'
 import {a11yDark} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import gfm from 'remark-gfm'
 import {YouTubeVideo} from "../components/YouTubeVideo";
+import {selectTags} from "../lib/selectTags";
+import {useMemo} from "react";
 
 const components = {
     /*img: ({node, ...props}) => (
@@ -35,6 +37,7 @@ interface BlogPostContentProps {
 }
 
 export const BlogPostContent = (p: BlogPostContentProps) => {
+    const selectedTags = useMemo(() => selectTags(p.blogPost.frontMatter.tags, 6), p.blogPost.frontMatter.tags)
     return (
         <article className="relative py-4 overflow-hidden">
             <div className="relative px-4 sm:px-6 lg:px-8">
@@ -42,7 +45,9 @@ export const BlogPostContent = (p: BlogPostContentProps) => {
                     <h1>
                         <span
                             className="block text-base text-center text-green-dark font-semibold tracking-wide uppercase">
-                          {p.blogPost.frontMatter.tags[0]}
+                          {
+                              selectedTags.join("  |  ")
+                          }
                         </span>
                         <span
                             className="mt-2 block text-4xl text-center leading-8 font-extrabold tracking-tight text-red md:text-5xl lg:text-6xl">
