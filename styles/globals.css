@@ -38,4 +38,8 @@
     span.a {
         @apply text-blue cursor-pointer;
     }
+
+    li {
+        @apply pl-4 italic my-4;
+    }
 }
