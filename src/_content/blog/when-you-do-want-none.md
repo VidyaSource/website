@@ -30,7 +30,15 @@ so we can deal with it as if it were an organic `None` value.
 
 It’s really pretty easy.
 
-{{< gist neilchaudhuri 3fa788a903b62ea1243a >}}
+~~~scala
+val option: Option[String] = Some("") 
+//or Some("Vidya"), Some("   "), None, or whichever Option[String] you want
+val result: String = option
+  .filter(_.trim.nonEmpty)
+  .map(string => s"You found a meaningful string $string")
+  .getOrElse("You found None or an empty or whitespace-only string.")
+println(result)
+~~~
 
 If you know Scala, you can see exactly what happens here. Check out that call to `filter`. We typically associate it
 with collections where `filter` removes all elements from the collection that don’t pass the condition. Option offers an
