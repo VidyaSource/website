@@ -18,10 +18,12 @@ const components = {
     code: ({node, inline, className, children, ...props}) => {
         const match = /language-(\w+)/.exec(className || '')
         return !inline && match ? (
-            <Prism style={a11yDark} language={match[1]} PreTag="div" children={String(children).replace(/\n$/, '')}
+            <Prism style={a11yDark} language={match[1]} PreTag="div"
+                   className="text-sm"
+                   children={String(children).replace(/\n$/, '')}
                    showLineNumbers={true} {...props} />
         ) : (
-            <code className="font-red font-code" {...props} />
+            <code children={String(children).replace(/\n$/, '')} className="text-red text-code text-lg" {...props} />
         )
     },
     del: ({node, inline, className, children, ...props}) => {
