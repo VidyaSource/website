@@ -74,7 +74,30 @@ is great for reading data stored in later versions of Hadoop, which is exactly w
 
 Check out this code.
 
-{{< gist neilchaudhuri 8623270 >}}
+~~~scala
+val sparkContext = new SparkContext("local", "Simple App")
+val hbaseConfiguration = (hbaseConfigFileName: String, tableName: String) => {
+  val hbaseConfiguration = HBaseConfiguration.create()
+  hbaseConfiguration.addResource(hbaseConfigFileName)
+  hbaseConfiguration.set(TableInputFormat.INPUT_TABLE, tableName)
+  hbaseConfiguration
+  }
+val rdd = sparkContext.newAPIHadoopRDD(
+  hbaseConfiguration("/path/to/hbase-site.xml", "table-with-data"),
+  classOf[TableInputFormat],
+  classOf[ImmutableBytesWritable],
+  classOf[Result]
+)
+import scala.collection.JavaConverters._
+rdd
+  .map(tuple => tuple._2)
+  .map(result => result.getColumn("columnFamily".getBytes(), "columnQualifier".getBytes()))
+  .map(keyValues => {
+  keyValues.asScala.reduceLeft {
+    (a, b) => if (a.getTimestamp > b.getTimestamp) a else b
+  }.getValue
+})
+~~~
 
 Once we instantiate the `[SparkContext](http://spark.incubator.apache.org/docs/latest/api/core/index.html#org.apache.spark.SparkContext)`
 for the local machine, we write an anonymous function to create an
