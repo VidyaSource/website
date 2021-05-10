@@ -2,7 +2,8 @@ import {BlogPost} from "../lib/blogPost-utils";
 import {constants} from "../lib/constants";
 import format from "date-fns/format";
 import Image from "next/image";
-import {ChangeEvent, MouseEventHandler, useMemo} from "react";
+import {MouseEventHandler, useMemo} from "react";
+import {selectTags} from "../lib/selectTags";
 
 interface BlogPostCardProps {
     blogPost: BlogPost
@@ -37,7 +38,7 @@ export const BlogPostCard = (p: BlogPostCardProps) => {
                         {
                             selectedTags.map(t => {
                                 return (
-                                    <span key={`${link}-${t}`} className="a hover:underline pr-8" aria-label={`Filter all posts by the tag ${t}`} onClick={p.onTagClick(t)}>
+                                    <span key={`${link}-${t}`} className="a hover:underline pr-2" aria-label={`Filter all posts by the tag ${t}`} onClick={p.onTagClick(t)}>
                                         {t}
                                     </span>
                                 )
@@ -77,13 +78,4 @@ export const BlogPostCard = (p: BlogPostCardProps) => {
             </div>
         </div>
     )
-}
-
-const selectTags: (tags: string[]) => string[] = (tags) => {
-    const selectedTags = new Set()
-    for (let i = 0; i < 3; i++) {
-        selectedTags.add(tags[Math.floor(Math.random() * (tags.length))])
-    }
-    // @ts-ignore
-    return [...selectedTags]
 }
