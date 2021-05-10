@@ -36,7 +36,15 @@ features Ruby has that Java doesn’t.
 
 Here is a Ruby function written in a non-idiomatic way.
 
-{{< gist neilchaudhuri 8535394 >}}
+~~~ruby
+def process(name)
+  if name.include?(' ')
+    return name.gsub(' ', '').downcase
+  else
+    return name.upcase
+  end
+end
+~~~
 
 Except for the *def*, which is more reminiscent of Groovy, this function looks very Java. It takes a string parameter
 (or so we assume since Ruby is dynamic) and checks if it contains a space. If it does, return the string in lowercase
@@ -44,7 +52,12 @@ with the space removed. If not, return the string in uppercase. Contrived but st
 
 Compare that to the idiomatic Ruby equivalent
 
-{{< gist neilchaudhuri 8535382 >}}
+~~~ruby
+def process(name)
+  return name.upcase unless name.include? ' '
+  name.gsub(' ', '').downcase
+end
+~~~
 
 Notice a few differences:
 
@@ -58,13 +71,21 @@ Java.
 
 Now check out a very Java-looking loop
 
-{{< gist neilchaudhuri 8535421 >}}
+~~~ruby
+for i in 1..100
+  puts i
+end
+~~~
 
 This loops 100 times and prints out the current number. It looks very familiar to a Java developer.
 
 Compare that to the idiomatic Ruby equivalent
 
-{{< gist neilchaudhuri 8535410 >}}
+~~~ruby
+100.times.each do |i|
+  puts i
+end
+~~~
 
 Notice the differences:
 
