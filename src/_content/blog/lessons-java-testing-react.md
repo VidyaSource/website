@@ -90,7 +90,59 @@ mocks of its internal components.
 I completely agree with KCD that shallow rendering is useless but for a completely different reason. We can look to Java
 for insight. Here is an analogous implementation of `HiddenMessage` in Java.
 
-{{< gist neilchaudhuri 768f05ba58acd187a4f9f1480a6cc129 >}}
+~~~java 
+public class HiddenMessage extends Component {
+  private boolean show = false;
+  private Fade fade;
+  
+  public HiddenMessage(Children children, Props props) {
+    fade = new Fade(children, props);
+  }
+  
+  public void toggle() {
+    this.show = !this.show;
+  }
+  
+  public String render() {
+    return
+      "<div>
+        <button onClick={" + this.toggle() + ">Toggle</button>" + 
+        fade.render() +
+      "</div>";
+  }
+  
+  public static class Fade extends Component {
+    private CSSTransition cssTransition;
+    
+    public Fade(Children children, Props props) {
+      cssTransition = new CssTransition(children, props, 1000, "fade");
+    }
+    
+    public String render() {
+      return cssTransition.render();
+    } 
+  }
+  
+  public static class CSSTransition extends Component {
+    private Children children;
+    private Props props;
+    private int timeout;
+    private String className;
+    
+    public CSSTransition(Children children, Props props, int timeout, String className) {
+      this.children = children;
+      this.props = props;
+      this.timeout = timeout;
+      this.className = className;
+    }
+    
+    public String render() {
+      return 
+        "<CSSTransition" + " " +  props + " " + timeout + " " + className + ">" + children + "</CSSTransition>"
+    }
+  }
+}
+~~~
 
 I would say this faithfully represents the relationship among the three components albeit with Java idioms. `Fade` and 
 `CSSTransition` only exist within the context of `HiddenMessage`. Clients have no direct access to those internal components.
