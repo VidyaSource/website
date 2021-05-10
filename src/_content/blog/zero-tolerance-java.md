@@ -32,7 +32,11 @@ My first instinct was to do what you are always supposed to do with equality of 
 [equals](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-) method. So I used 
 BigDecimal’s [ZERO](http://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#ZERO) constant and did this.
 
-{{< gist neilchaudhuri dbb7435aeb9a15a716fd >}}
+~~~java
+if (price.equals(BigDecimal.ZERO) {
+   //Do stuff
+}
+~~~
 
 We do this kind of thing all the time without a second thought. The problem was that my unit test failed, and it turns 
 out it was because the condition always evaluated to `false`--even when `price` was definitely 0.
@@ -53,13 +57,21 @@ What’s the right way to check if your BigDecimal instance is 0? It turns out t
 One of them makes perfect sense if you know [Comparable](http://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html). 
 (If you don’t, check out our [tutorial](/tutorial/2013/10/27/comparison-shopping) on the topic.)
 
-{{< gist neilchaudhuri e0f0e8cbec3cc2007e44 >}}
+~~~java 
+if (price.compareTo(BigDecimal.ZERO) == 0) {
+   //Do stuff
+}
+~~~
 
 This approach is intuitive and readable.
 
 If you want to sacrifice readability to gain a few milliseconds of performance and earn some cuteness points, you can do this.
 
-{{< gist neilchaudhuri d4a7d94fbfc6a30692f2 >}}
+~~~java 
+if (price.signum() == 0) {
+   //Do stuff
+}
+~~~
 
 BigDecimal, like all values in Java, represents a signed number, and the [signum](http://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#signum--) 
 method returns the [sign](http://en.wikipedia.org/wiki/Sign_function) of the underlying number. Technically, `signum` doesn’t 
