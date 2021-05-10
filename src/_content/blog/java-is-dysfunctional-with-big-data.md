@@ -54,7 +54,48 @@ Pretty simple. For example [1,2,3,4,5] --> [2,4] -> [6, 12] -> 18
 
 Here is a reasonable implementation of this algorithm in Java.
 
-{{< gist neilchaudhuri 7051471 >}}
+~~~java 
+public class CollectionsDemo {
+    public CollectionsDemo() {
+        List<Integer> data = BigDataGenerator.data();
+        int finalResult = sum(map(filter(data)));
+    }
+
+    public List<Integer> filter(List<Integer> data) {
+        List<Integer> evens = new ArrayList<Integer>();
+        for (Integer number : data) {
+            if (number % 2 == 0) {
+                evens.add(number);
+            }
+        }
+
+        return evens;
+    }
+
+    public List<Integer> map(List<Integer> data) {
+        List<Integer> mappedData = new ArrayList<Integer>();
+        for (Integer number : data) {
+            mappedData.add(3 * number);
+        }
+
+        return mappedData;
+    }
+
+    public int sum(List<Integer> data) {
+        int sum = 0;
+        for (Integer number : data) {
+            sum += number;
+        }
+
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        new CollectionsDemo();
+
+    }
+}
+~~~
 
 That’s a lot of code to perform three trivial operations, and it’s because of all the boilerplate. Sometimes we forget
 how much boilerplate there is in Java because our IDE’s generate it for us.
@@ -69,14 +110,20 @@ to learn functional languages, which are much more difficult to understand than 
 To prove my point, here is the same algorithm in Scala, another language for the JVM that combines object-oriented and
 functional paradigms:
 
-{{< gist neilchaudhuri 7061344 >}}
+~~~scala
+val finalResult = data.filter(_ % 2 == 0).map(3 * _).sum
+~~~
 
 I know what you’re thinking. [Really?](http://www.thedailybeast.com/videos/2013/05/19/really-amy-poehler-returns-to-snl.html)
 Yup. That’s it. And it’s readable too.
 
 And here is the same algorithm in Clojure, a Lisp (so a functional language) for the JVM and other environments:
 
-{{< gist neilchaudhuri 7061350 >}}
+~~~clojure
+(reduce +
+  (map #(* 3 %)
+  (filter even? (data))))
+~~~  
 
 This might be slightly less readable but still worth it to learn.
 
@@ -96,12 +143,22 @@ at the difference with these alternatives.
 
 Word Count in Spark:
 
-{{< gist neilchaudhuri 7057319 >}}
+~~~scala
+file.flatMap(line => line.split(" "))
+    .map(word => (word, 1))
+    .reduceByKey(_ + _)
+~~~    
 
 
 Word Count in Cascalog:
 
-{{< gist neilchaudhuri 7057329 >}}
+~~~clojure
+(?<- (stdout)
+     [?word ?count]
+     (sentence ?line)
+     (tokenise ?line :> ?word)
+     (c/count ?count))
+~~~     
 
 Is there any doubt that Java is in over its head with Big Data? A developer has to be pretty [lazy](http://www.youtube.com/watch?v=Px5TWbc4xQo)
 not to make the effort to learn at least one functional language.
