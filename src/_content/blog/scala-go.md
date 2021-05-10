@@ -143,7 +143,21 @@ We describe `Option` in more detail in [our tutorial](https://www.youtube.com/wa
 but essentially it compels you to account for the potential absence of a value at *compile* time. This avoids the costly
 `NullPointerException` at runtime that has sent thousands of [Java](/categories/java) developers to therapy.
 
-{{< gist neilchaudhuri 0faef521f6bb22d32ef75b1c041b6b62 >}}
+~~~scala 
+case class Student(name: String, house: String)
+
+def findStudent(key: Int): Option[Student] = {
+  val students = Map(
+    1 -> Student("Harry Potter", "Hogwarts"),
+    3 -> Student("Draco Malfoy", "Slytherin")
+  )
+  students.get(key)
+}
+
+findStudent(3)
+  .map(s => s"The student's name is ${s.name}")
+  .getOrElse("Back to Hogwarts")
+~~~  
 
 In this example, the `findStudent` function returns an `Option[Student]`. If the `Option` contains a value, the client 
 can transform it into a `String` (*i.e.* `Option[Student] => Option[String]`) with the `map` function on `Option`; 
@@ -163,7 +177,33 @@ When a value is present, it's idiomatic to return the value and a `bool` value (
 the ["zero value" of the return type](https://tour.golang.org/basics/12) and `false`. The client uses an imperative 
 `if` statement to distinguish.
 
-{{< gist neilchaudhuri 5f4c9844dbfe1d92fb200c8089c00229 >}}
+~~~go 
+package main
+
+import "fmt"
+
+type Student struct {
+	name string
+	house string
+}
+
+func findStudent(key int) (Student, bool) {
+	students := map[int]Student{
+	   1: Student{name: "Harry Potter", house: "Hogwarts"}, 
+	   3: Student{name: "Draco Malfoy", house: "Slytherin"}
+	}
+	student, ok := students[key]
+	return student, ok
+}
+
+func main() {
+	if student, ok := findStudent(3); ok {
+		fmt.Printf("The student's name is %v\n", student.name)
+	} else {
+		fmt.Println("Back to Hogwarts")
+	}
+}
+~~~
 
 In this example, the `findStudent` function returns a `Student` *and* a `bool`. Go allows you to initialize and test 
 conditions in one line, and that's what we see here. If `ok` is `true`, we know we got something and act 
@@ -188,7 +228,25 @@ As you might imagine from a language that prizes on immutability and composabili
 you to account for a possible error at compile time rather than the absence of a value. A `Try[Double]`, for example,
 represents either a `Double` if all is well or an error (or more precisely an instance of `Throwable`) otherwise.  
 
-{{< gist neilchaudhuri 5c4cc893d46e107aac4ee163f22e9d0d >}}
+~~~scala
+import scala.util.{Failure, Success, Try}
+
+def squareRoot(value: Int): Try[Double] = {
+  if (value >= 0) {
+    Success(Math.sqrt(value))
+  } else {
+    Failure(new IllegalArgumentException("Value cannot be negative"))
+  }
+}
+val sum = for {
+  a <- squareRoot(4)
+  b <- squareRoot(16)
+} yield a + b
+sum.map(s => s"The result is $s") match {
+  case Success(result) => result
+  case Failure(t) => t.getMessage
+}
+~~~
 
 In this example, the `squareRoot` function returns `Try[Double]`, and the client does something a bit more complicated 
 than the prior example. It calls `squareRoot` twice and uses a [for comprehension](https://docs.scala-lang.org/tour/for-comprehensions.html),
@@ -207,7 +265,42 @@ takes advantage of multiple return values, but rather than a value accompanied b
 an `Error` (named `err` by convention). If `err` has the value of `nil`, then you can work with the value because it's all good; 
 otherwise, you handle the error and (probably) ignore the zero-value. 
 
-{{< gist neilchaudhuri 711fb4328e611dae4616de45ea3d4228 >}}
+~~~go
+package main
+
+import "fmt"
+import "math"
+
+func squareRoot(value int) (float64, error) {
+	if value >= 0 {
+		return math.Sqrt(float64(value)), nil
+	} else {
+		return 0, fmt.Errorf("invalid input: %v", value)
+	}
+}
+
+func sumRoots(v1, v2 int) (float64, error) {
+	a, err := squareRoot(v1)
+	if err != nil {
+		return 0, err
+	}
+	b, err := squareRoot(v2)
+	if err != nil {
+		return 0, err
+	}
+
+	return a + b, nil
+}
+
+func main() {
+	if sum, err := sumRoots(4, 16); err == nil {
+		fmt.Printf("The sum is %v\n", sum)
+		return
+	} else {
+		fmt.Println("Value cannot be negative")
+	}
+}
+~~~
 
 In this example, the `sumRoots` function, which is the client of `squareRoot`, returns a value and an error. 
 Those are saved from the first call to `squareRoot`. If there is an error, the function returns immediately; otherwise, it does the same 
@@ -249,7 +342,13 @@ transformation and aggregation of collections of data make your life a lot easie
 Scala has a vast library of collections--both immutable and mutable though immutable is preferred--each of which offers in turn
 a vast collection of higher-order functions that let you manipulate the collection in numerous ways. 
 
-{{< gist neilchaudhuri fb288ef2b338930408fe300989ad3c0c >}}
+~~~scala
+val words = List("Fear", "of", "a", "name", "only", "increases", "fear", "of", "the", "thing", "itself")
+
+words
+  .groupBy(_.toLowerCase)
+  .mapValues(_.size)
+~~~  
 
 In this example, given a `List` of words, the code uses `groupBy` to convert it into a `Map` of each word (lowercased to normalize them) 
 to a list of occurrences of each word. Finally, those lists are transformed into their sizes, and the result is a `Map` 
@@ -265,7 +364,27 @@ Go naturally takes a far more lightweight approach to collections. You will esse
 [slices](https://blog.golang.org/go-slices-usage-and-internals), which are array views that enable memory-efficient
 operations on the backing arrays. 
 
-{{< gist neilchaudhuri 357962559b337e02be3b21d2a6a9ceb9 >}}
+~~~go
+package main
+
+import "fmt"
+import "strings"
+
+func main() {
+	dictionary := make(map[string]int)
+	words := []string{"Fear", "of", "a", "name", "only", "increases", "fear", "of", "the", "thing", "itself"}
+	for _, word := range words {
+		word = strings.ToLower(word)
+		if count, ok := dictionary[word]; ok {
+			dictionary[word] = count + 1
+		} else {
+			dictionary[word] = 1
+		}
+	}
+
+	fmt.Printf("The counts are %v\n", dictionary)
+}
+~~~
 
 In this example, the code uses `make` both to create an empty map (with values defaulting to the zero value, in this case literally 0) 
 to hold the word counts and to create a slice containing
@@ -314,7 +433,47 @@ Bottom line? Reactive programming doesn't necessarily make your applications fas
 can do expensive work in parallel), but it usually allows them to be more resilient. Reactive applications
 scale under load with limited threads and memory especially when you have latency from inconsistent network IO like database and REST calls.
 
-{{< gist neilchaudhuri dad25808fb17f28d28d452d2d7b8d477 >}}
+~~~scala
+import akka.actor.ActorSystem
+import akka.stream.ActorMaterializer
+import play.api.libs.ws._
+import play.api.libs.ws.ahc._
+
+import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits._
+import play.api.libs.json._
+
+implicit val system = ActorSystem()
+system.registerOnTermination {
+  System.exit(0)
+}
+implicit val materializer = ActorMaterializer()
+val ws = StandaloneAhcWSClient()
+
+def getUuid: Future[String] = {
+  ws.url("https://httpbin.org/uuid")
+    .withHttpHeaders("Accept" -> "application/json")
+    .get
+    .map { response =>
+      (response.body[JsValue] \ "uuid").as[String]
+    }
+}
+val uuid1: Future[String] = getUuid
+val uuid2: Future[String] = getUuid
+val uuids = for {
+  u1 <- uuid1
+  u2 <- uuid2
+} yield (u1, u2)
+uuids
+  .map {
+    case (u1, u2) => println(s"UUIDs: $u1, $u2")
+  }
+  .andThen { case _ => ws.close() }
+  .andThen { case _ => system.terminate() }
+  .recover {
+    case t: Throwable => println(s"There was a problem: $t")
+  }
+~~~  
 
 In this example, the code uses [Play WS Standalone](https://github.com/playframework/play-ws) as a REST client to fetch 
 JSON containing a [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier). 
@@ -369,7 +528,55 @@ synchronize data, which slows things down. If you are familiar with messaging pa
 [Gregor Hohpe's Enterprise Integration Patterns](https://www.enterpriseintegrationpatterns.com/), then you understand the power
 of this approach to manipulate message data as needed to produce the results you want--and at scale thanks to Go.    
   
-{{< gist neilchaudhuri 3230c8388581c3d85977154f18090f47 >}}
+~~~go
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"net/http"
+	"strings"
+)
+
+type Result struct {
+	uuid string
+	err error
+}
+
+func getUuid(rc chan<- Result) {
+	r, err := http.Get("https://httpbin.org/uuid")
+	if err != nil {
+		rc <- Result{"", err}
+		return
+	}
+	response := make(map[string]interface{})
+	err = json.NewDecoder(r.Body).Decode(&response)
+	if err != nil {
+		rc <- Result{"", err}
+		return
+	}
+	rc <- Result{response["uuid"].(string), nil}
+}
+
+func main() {
+	n := 2
+	rc := make(chan Result, n)
+	uuids := make([]string, 0, n)
+	for i := 0; i < n; i++ {
+		go getUuid(rc)
+	}
+	for i := 0; i < n; i++ {
+		r := <-rc
+		if r.err != nil {
+			fmt.Printf("There was a problem: %v\n", r.err)
+			return
+		} else {
+			uuids = append(uuids, r.uuid)
+		}
+	}
+	fmt.Printf("UUIDs: %v\n", strings.Join(uuids, ", "))
+}
+~~~
 
 In this example, the code defines a type called `Result` containing a UUID and an error to hold the result of a concurrent 
 computation. Only one of those should be populated with a meaningful value, but there is no simple way to enforce that. 
@@ -415,7 +622,56 @@ in comparison to Go, Scala offers parametric polymorphism--what the kids call "g
 When [Java 5 introduced generics](https://docs.oracle.com/javase/tutorial/extra/generics/index.html),
 it was revolutionary, and Scala benefits as well.
 
-{{< gist neilchaudhuri 6102b1fd9539d18fc918d7a872b90a03 >}}
+~~~scala
+// Runtime polymorphism
+
+trait Closeable {
+  def name: String
+
+  def close: String
+}
+
+case class Connection(override val name: String, database: String) extends Closeable {
+  override def close: String = s"Closing connection $name"
+}
+
+case class File(override val name: String, opener: String) extends Closeable {
+  override def close: String = s"Closing file $name"
+}
+
+def showClosing(c: Closeable): String = c.close
+
+val w = Connection("MyConnection", "PostgreSQL")
+val f = File("file.txt", "TextEdit")
+showClosing(w)
+showClosing(f)
+
+
+// Parameteric polymorphism (generics) with List[T]
+
+val numbers = List(1, 2, 3)
+val firstNumber: Int = numbers.head
+
+val strings = List("1", "2", "3")
+val firstString: String = strings.head
+
+def use[T <: File](t: T) = s"Using ${t.name}"
+
+use(f)
+
+
+// Typeclass polymorphism
+
+case class Complex(real: Double, imaginary: Double)
+
+object Complex {
+  implicit object ComplexOrdering extends Ordering[Complex] {
+    def compare(a: Complex, b: Complex): Int = a.real.compare(b.real)
+  }
+}
+
+List(Complex(3, 5), Complex(10, 2), Complex(1, 6)).sorted
+~~~
 
 In this example, we really see three examples of polymorphism in Scala. The first is the kind of straightforward 
 [runtime polymorphism](https://stackoverflow.com/questions/28961957/example-of-runtime-polymorphism-in-java) familiar to Java developers--except with 
@@ -463,7 +719,50 @@ can then pass the type to any function expecting an instance of that interface, 
 makes you more productive in stark contrast to the runtime resolution of 
 [duck typing](https://en.wikipedia.org/wiki/Duck_typing) in dynamic languages like [Python](/categories/python).
 
-{{< gist neilchaudhuri 1b5c2024980149bf58ebed603b6f578d >}}    
+~~~go
+package main
+
+import (
+	"fmt"
+)
+
+type Named struct {
+	name string
+}
+
+type Connection struct {
+	Named
+	database string
+}
+
+type Closeable interface {
+	close() string
+}
+
+func (c Connection) close() string {
+	return fmt.Sprintf("Closing connection %v", c.name)
+}
+
+type File struct {
+	Named
+	opener string
+}
+
+func (f File) close() string {
+	return fmt.Sprintf("Closing %v", f.name)
+}
+
+func showClosing(c Closeable) string {
+	return c.close()
+}
+
+func main() {
+	connection := Connection{Named{name: "MyConnection"}, "PostgreSQL"}
+	file := File{Named{name: "file.txt"}, "TextEdit"}
+	fmt.Println(showClosing(connection))
+	fmt.Println(showClosing(file))
+}
+~~~  
  
 In this example, interface `Named` is embedded in `Connection` and `File`. Note that this does not denote any relationship
 among them, but there is a tight coupling similar to inheritance in that any changes to `Named` are reflected wherever it 
