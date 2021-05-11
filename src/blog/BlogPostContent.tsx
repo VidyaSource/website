@@ -46,18 +46,18 @@ export const BlogPostContent = (p: BlogPostContentProps) => {
                 <div className="text-lg max-w-prose mx-auto">
                     <h1>
                         <span
-                            className="block text-base text-center text-green-dark font-semibold tracking-wide uppercase">
+                            className="block text-sm text-center text-green-dark font-semibold tracking-wide uppercase">
                           {
                               selectedTags.join("  |  ")
                           }
                         </span>
                         <span
-                            className="mt-2 block text-4xl text-center leading-8 font-extrabold tracking-tight text-red md:text-5xl lg:text-6xl">
+                            className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-red md:text-3xl lg:text-4xl">
                           {p.blogPost.frontMatter.title}
                         </span>
                         <div className="mx-auto">
                             <span
-                                className="mt-2 block text-xl text-center leading-8 tracking-tight text-red lg:text-2xl">
+                                className="mt-2 block text-lg text-center leading-8 tracking-tight text-red lg:text-xl">
                               {format(p.blogPost.frontMatter.date, "LLLL d, y")}
                             </span>
                             <Avatar author={p.blogPost.frontMatter.author}/>
