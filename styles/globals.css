@@ -42,4 +42,10 @@
     li {
         @apply pl-4 italic my-4;
     }
+
+    .logo {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 10px;
+    }
 }
