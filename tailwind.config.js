@@ -29,7 +29,7 @@ module.exports = {
             blue: {
                 light: '#F4F9FE',
                 DEFAULT: '#5a82b4',
-                dark: '#7B8D66',
+                dark: '#436997',
             },
             gray: {
                 light: '#E0E0E0',
