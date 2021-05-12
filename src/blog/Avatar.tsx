@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import {constants} from "../lib/constants";
+import Link from 'next/link'
 
 interface AvatarProps {
     author: string
@@ -8,7 +9,8 @@ interface AvatarProps {
 export const Avatar = (p: AvatarProps) => {
     const {profileUrl, image } = constants[p.author]
     return (
-        <a href={profileUrl} className="flex-shrink-0 group block">
+        <Link href={profileUrl}>
+        <a className="flex-shrink-0 group block">
             <div className="flex items-center justify-center">
                 <Image
                     height="60"
@@ -24,5 +26,6 @@ export const Avatar = (p: AvatarProps) => {
                 </span>
             </div>
         </a>
+        </Link>
     )
 }
