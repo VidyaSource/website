@@ -36,7 +36,12 @@ export const Header = () => {
                     <div className="flex items-center rounded-lg">
                         <a href="#" className="logo">
                             <span className="sr-only">Vidya</span>
-                            <Image src="/img/vidya.png" alt="Vidya" height={40} width={86} />
+                            <Image src="/img/vidya.png"
+                                   alt="Vidya"
+                                   height={40}
+                                   width={86}
+                                   quality={100}
+                                   priority={true}/>
                         </a>
                         <div className="hidden ml-10 space-x-8 lg:block">
                             {navigation.map((link) => (
