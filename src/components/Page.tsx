@@ -38,7 +38,7 @@ export const Header = () => {
                         <Link href="/">
                             <a className="logo">
                                 <span className="sr-only">Vidya</span>
-                                <Image src="/img/vidya.png"
+                                <Image src="/img/vidya-white.png"
                                        alt="Vidya"
                                        height={40}
                                        width={86}
