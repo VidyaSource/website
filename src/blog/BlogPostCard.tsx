@@ -21,16 +21,16 @@ export const BlogPostCard = (p: BlogPostCardProps) => {
         <div key={title} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
             <div className="flex-shrink-0 bg-gray-light hover:bg-red-light">
                 <a href={link}>
-                    <img className="h-48 w-full object-cover" src={postImage} alt={title} />
+                    <div className="h-48 w-full relative">
+                        <Image
+                            objectFit="cover"
+                            layout="fill"
+                            quality={100}
+                            src={postImage}
+                            alt={title}
+                        />
+                    </div>
                 </a>
-                {/*<Image
-                    height={192}
-                    width="100%"
-                    quality={100}
-                    objectFit="cover"
-                    src={postImage}
-                    alt={title}
-                />*/}
             </div>
             <div className="flex-1 bg-white hover:bg-red-light p-6 flex flex-col justify-between">
                 <div className="flex-1">
