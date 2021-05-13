@@ -5,6 +5,9 @@ import {Footer} from "../components/Footer";
 import {CallToAction} from "../components/home/CallToAction";
 import {Testimonials} from "../components/home/Testimonials";
 import {Clients} from "../components/home/Clients";
+import {QueryClient} from "react-query";
+import {getAllBlogPosts, getBlogPostsByTags} from "../lib/blogPost-utils";
+import {dehydrate} from "react-query/hydration";
 
 const Home = () => {
     return (
@@ -21,3 +24,14 @@ const Home = () => {
 }
 
 export default Home
+
+export async function getStaticProps({ params }) {
+    const queryClient = new QueryClient()
+    await queryClient.prefetchQuery('posts', getAllBlogPosts)
+
+    return {
+        props: {
+            dehydratedState: dehydrate(queryClient)
+        },
+    }
+}
