@@ -1,4 +1,5 @@
-/* This example requires Tailwind CSS v2.0+ */
+import Link from 'next/link'
+
 export const Clients = () => {
     return (
         <div className="bg-green-light">
@@ -14,12 +15,11 @@ export const Clients = () => {
                         </p>
                         <div className="mt-8 sm:flex">
                             <div className="rounded-md shadow">
-                                <a
-                                    href="#"
-                                    className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red hover:bg-indigo-700"
-                                >
-                                    Contact Us
-                                </a>
+                                <Link href="/contact">
+                                    <a className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red hover:bg-indigo-700">
+                                        Contact Us
+                                    </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
