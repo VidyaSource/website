@@ -17,7 +17,7 @@ export const Clients = () => {
                         <div className="mt-8 sm:flex">
                             <div className="rounded-md shadow">
                                 <Link href="/contact">
-                                    <a className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red hover:bg-indigo-700">
+                                    <a className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red hover:bg-blue-dark">
                                         Contact Us
                                     </a>
                                 </Link>
