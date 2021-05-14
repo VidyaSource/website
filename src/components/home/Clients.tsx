@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from "next/image";
 
 export const Clients = () => {
     return (
@@ -25,37 +26,51 @@ export const Clients = () => {
                     </div>
                     <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
                         <div className="col-span-1 flex justify-center py-8 px-8 bg-blue-light">
-                            <img
-                                className="max-h-36"
-                                src="img/partners/dos.svg"
-                                alt="Workcation"
+                            <Image
+                                width={231}
+                                height={144}
+                                src="/img/partners/dos.svg"
+                                alt="United States Department of State"
                             />
                         </div>
                         <div className="col-span-1 flex justify-center py-8 px-8 bg-blue-light">
-                            <img
-                                className="max-h-36"
-                                src="img/partners/trss.png"
-                                alt="StaticKit"
+                            <Image
+                                width={231}
+                                height={144}
+                                src="/img/partners/trss.png"
+                                alt="Thomson Reuters Special Services"
                             />
                         </div>
                         <div className="col-span-1 flex justify-center py-8 px-8 bg-blue-light">
-                            <img className="max-h-36" src="img/partners/healthcaregov.png" alt="Tuple" />
-                        </div>
-                        <div className="col-span-1 flex justify-center py-8 px-8 bg-blue-light">
-                            <img
-                                className="max-h-36"
-                                src="img/partners/ninaday.svg"
-                                alt="Laravel"
+                            <Image
+                                width={231}
+                                height={33}
+                                src="/img/partners/healthcaregov.png"
+                                alt="Healthcare.gov"
                             />
                         </div>
                         <div className="col-span-1 flex justify-center py-8 px-8 bg-blue-light">
-                            <img className="max-h-36" src="img/partners/eop.png" alt="Mirage" />
+                            <Image
+                                width={231}
+                                height={33}
+                                src="/img/partners/ninaday.svg"
+                                alt="Ninaday"
+                            />
                         </div>
                         <div className="col-span-1 flex justify-center py-8 px-8 bg-blue-light">
-                            <img
-                                className="max-h-36"
-                                src="img/partners/gcn.png"
-                                alt="Statamic"
+                            <Image
+                                width={144}
+                                height={144}
+                                src="/img/partners/eop.png"
+                                alt="Executive Office of the President of the United States"
+                            />
+                        </div>
+                        <div className="col-span-1 flex justify-center py-8 px-8 bg-blue-light">
+                            <Image
+                                width={231}
+                                height={144}
+                                src="/img/partners/gcn.png"
+                                alt="Government Computing News"
                             />
                         </div>
                     </div>
