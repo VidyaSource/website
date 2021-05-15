@@ -41,10 +41,6 @@ module.exports = {
         extend: {
             spacing: {
                 youtube: "56.25%"
-            },
-            height: {
-                bigClientLink: '144px',
-                smallClientLink: '33px'
             }
         },
     },
