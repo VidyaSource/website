@@ -1,12 +1,12 @@
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = {
     main: [
-        {name: 'Courses', href: '#'},
-        {name: 'Consulting', href: '#'},
-        {name: 'Blog', href: '#'},
-        {name: 'Tutorials', href: '#'},
-        {name: 'About', href: '#'},
-        {name: 'Contact', href: '#'},
+        {name: 'Courses', href: '/courses'},
+        {name: 'Consulting', href: '/consulting'},
+        {name: 'Blog', href: '/blog'},
+        {name: 'Tutorials', href: '/tutorials'},
+        {name: 'About', href: '/about'},
+        {name: 'Contact', href: '/contact'},
     ],
     social: [
         {
@@ -105,7 +105,7 @@ export const Footer = () => {
                 </nav>
                 <div className="mt-8 flex justify-center space-x-6">
                     {navigation.social.map((item) => (
-                        <a key={item.name} href={item.href} className="hover:text-blue-dark">
+                        <a key={item.name} href={item.href} className={`hover:text-${item.name.replace(/\s+/g, '').toLowerCase()}`}>
                             <span className="sr-only">{item.name}</span>
                             <item.icon className="h-6 w-6" aria-hidden="true"/>
                         </a>
