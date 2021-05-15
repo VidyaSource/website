@@ -11,7 +11,7 @@ const navigation = {
     social: [
         {
             name: 'LinkedIn',
-            href: '#',
+            href: 'https://www.linkedin.com/company/3285099',
             icon: (props) => (
 
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}><title>LinkedIn icon</title>
@@ -25,7 +25,7 @@ const navigation = {
         },
         {
             name: 'Facebook',
-            href: '#',
+            href: 'https://www.facebook.com/VidyaSource',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                     <path
@@ -38,7 +38,7 @@ const navigation = {
         },
         {
             name: 'Twitter',
-            href: '#',
+            href: 'https://twitter.com/VidyaSource',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                     <path
@@ -50,7 +50,7 @@ const navigation = {
         },
         {
             name: 'GitHub',
-            href: '#',
+            href: 'https://github.com/VidyaSource',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                     <path
@@ -63,7 +63,7 @@ const navigation = {
         },
         {
             name: 'YouTube',
-            href: '#',
+            href: 'https://www.youtube.com/channel/UC24LVc8Bb65SF6LW-SLog9A',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                     <path
@@ -76,7 +76,7 @@ const navigation = {
         },
         {
             name: 'Stack Overflow',
-            href: '#',
+            href: 'https://stackoverflow.com/users/1347281/vidya',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                     <path
