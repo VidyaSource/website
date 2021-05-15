@@ -1,16 +1,14 @@
 /* This example requires Tailwind CSS v2.0+ */
 export const Testimonials = () => {
     return (
-        <section className="bg-indigo-800">
+        <section className="bg-white">
             <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
-                <div className="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 md:border-r md:border-indigo-900 lg:pr-16">
-                    <div className="md:flex-shrink-0">
-                        <img className="h-12" src="https://tailwindui.com/img/logos/tuple-logo-indigo-300.svg" alt="Tuple" />
-                    </div>
-                    <blockquote className="mt-6 md:flex-grow md:flex md:flex-col">
+                <div className="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 md:border-r md:border-blue-dark lg:pr-16">
+
+                    <blockquote className="mt-6 md:flex-shrink-0 md:flex md:flex-col">
                         <div className="relative text-lg font-medium text-white md:flex-grow">
                             <svg
-                                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-indigo-600"
+                                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-red"
                                 fill="currentColor"
                                 viewBox="0 0 32 32"
                                 aria-hidden="true"
@@ -19,7 +17,8 @@ export const Testimonials = () => {
                             </svg>
                             <p className="relative">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias
-                                molestiae. Numquam corrupti in laborum sed rerum et corporis.
+                                molestiae. Numquam corrupti in laborum sed rerum et corporis. Nemo expedita voluptas culpa sapiente
+                                alias molestiae.
                             </p>
                         </div>
                         <footer className="mt-8">
@@ -32,25 +31,18 @@ export const Testimonials = () => {
                                     />
                                 </div>
                                 <div className="ml-4">
-                                    <div className="text-base font-medium text-white">Judith Black</div>
-                                    <div className="text-base font-medium text-indigo-200">CEO, Tuple</div>
+                                    <div className="text-base font-medium text-red">Judith Black</div>
+                                    <div className="text-base font-medium text-gray-dark">CEO, Tuple</div>
                                 </div>
                             </div>
                         </footer>
                     </blockquote>
                 </div>
                 <div className="py-12 px-4 border-t-2 border-indigo-900 sm:px-6 md:py-16 md:pr-0 md:pl-10 md:border-t-0 md:border-l lg:pl-16">
-                    <div className="md:flex-shrink-0">
-                        <img
-                            className="h-12"
-                            src="https://tailwindui.com/img/logos/workcation-logo-indigo-300.svg"
-                            alt="Workcation"
-                        />
-                    </div>
-                    <blockquote className="mt-6 md:flex-grow md:flex md:flex-col">
+                    <blockquote className="mt-6 md:flex-shrink-0 md:flex md:flex-col">
                         <div className="relative text-lg font-medium text-white md:flex-grow">
                             <svg
-                                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-indigo-600"
+                                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-red"
                                 fill="currentColor"
                                 viewBox="0 0 32 32"
                             >
@@ -72,8 +64,8 @@ export const Testimonials = () => {
                                     />
                                 </div>
                                 <div className="ml-4">
-                                    <div className="text-base font-medium text-white">Joseph Rodriguez</div>
-                                    <div className="text-base font-medium text-indigo-200">CEO, Workcation</div>
+                                    <div className="text-base font-medium text-red">Joseph Rodriguez</div>
+                                    <div className="text-base font-medium text-gray-dark">CEO, Workcation</div>
                                 </div>
                             </div>
                         </footer>
