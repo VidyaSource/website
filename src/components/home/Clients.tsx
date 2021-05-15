@@ -59,7 +59,7 @@ export const Clients = () => {
                                     className="col-span-1 flex justify-center py-8 px-8 bg-blue-light hover:bg-red-light">
                                     <Image
                                         width={231}
-                                        height={33}
+                                        height={144}
                                         src="/img/partners/healthcaregov.png"
                                         alt="Healthcare.gov"
                                     />
@@ -72,7 +72,7 @@ export const Clients = () => {
                                     className="col-span-1 flex justify-center py-8 px-8 bg-blue-light hover:bg-red-light">
                                     <Image
                                         width={231}
-                                        height={33}
+                                        height={144}
                                         src="/img/partners/ninaday.svg"
                                         alt="Ninaday"
                                     />
@@ -84,9 +84,9 @@ export const Clients = () => {
                                 <div
                                     className="col-span-1 flex justify-center py-8 px-8 bg-blue-light hover:bg-red-light">
                                     <Image
-                                        width={144}
+                                        width={231}
                                         height={144}
-                                        src="/img/partners/eop.png"
+                                        src="/img/partners/eop.svg"
                                         alt="Executive Office of the President of the United States"
                                     />
                                 </div>
