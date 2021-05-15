@@ -8,7 +8,7 @@ export const Testimonials = () => {
                     <blockquote className="mt-6 md:flex-shrink-0 md:flex md:flex-col">
                         <div className="relative text-lg font-medium text-white md:flex-grow">
                             <svg
-                                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-red"
+                                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-green-dark"
                                 fill="currentColor"
                                 viewBox="0 0 32 32"
                                 aria-hidden="true"
@@ -42,7 +42,7 @@ export const Testimonials = () => {
                     <blockquote className="mt-6 md:flex-shrink-0 md:flex md:flex-col">
                         <div className="relative text-lg font-medium text-white md:flex-grow">
                             <svg
-                                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-red"
+                                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-green-dark"
                                 fill="currentColor"
                                 viewBox="0 0 32 32"
                             >
