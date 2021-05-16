@@ -43,9 +43,10 @@ const Description = () => {
                             layout="fill"
                             objectFit="cover"
                             quality={100}
-                            className="opacity-10 lg:opacity-100"
+                            className="opacity-20 lg:opacity-100"
                         />
                     </div>
+                    <div className="absolute inset-0 lg:bg-blue mix-blend-multiply" />
                 </div>
             </div>
             <div className="relative pt-12 pb-16 px-4 sm:pt-16 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-2">
