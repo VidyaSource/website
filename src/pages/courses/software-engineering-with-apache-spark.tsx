@@ -6,13 +6,13 @@ import {CourseHeadElement} from "../../courses/CourseHeadElement";
 export const Spark = () => {
     return (
         <Page headElement={<CourseHeadElement title="Vidya | Software Engineering with Apache Spark"  />}>
-            <Header />
+            <CourseHeader />
             <Description />
         </Page>
     )
 }
 
-export const Header = () => {
+export const CourseHeader = () => {
     return (
         <div className="bg-blue-light">
             <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
