@@ -1,4 +1,5 @@
-/* This example requires Tailwind CSS v2.0+ */
+import Link from "next/link";
+
 const navigation = {
     main: [
         {name: 'Courses', href: '/courses'},
@@ -44,7 +45,7 @@ const navigation = {
                     <path
                         fillRule="evenodd"
                         clipRule="evenodd"
-                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                 </svg>
             ),
         },
@@ -97,18 +98,22 @@ export const Footer = () => {
                 <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
                     {navigation.main.map((item) => (
                         <div key={item.name} className="px-5 py-2">
-                            <a href={item.href} className="text-base hover:text-red">
-                                {item.name}
-                            </a>
+                            <Link href={item.href}>
+                                <a className="text-base hover:text-red">
+                                    {item.name}
+                                </a>
+                            </Link>
                         </div>
                     ))}
                 </nav>
                 <div className="mt-8 flex justify-center space-x-6">
                     {navigation.social.map((item) => (
-                        <a key={item.name} href={item.href} className={`hover:text-${item.name.replace(/\s+/g, '').toLowerCase()}`}>
-                            <span className="sr-only">{item.name}</span>
-                            <item.icon className="h-6 w-6" aria-hidden="true"/>
-                        </a>
+                        <Link key={item.name} href={item.href}>
+                            <a key={item.name} className={`hover:text-${item.name.replace(/\s+/g, '').toLowerCase()}`}>
+                                <span className="sr-only">{item.name}</span>
+                                <item.icon className="h-6 w-6" aria-hidden="true"/>
+                            </a>
+                        </Link>
                     ))}
                 </div>
                 <p className="mt-8 text-center text-base lg:text-lg text-gray-dark">
