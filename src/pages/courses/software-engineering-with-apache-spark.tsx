@@ -21,7 +21,7 @@ export const CourseHeader = () => {
                     <h2 className="mt-1 text-4xl font-extrabold text-red sm:text-5xl sm:tracking-tight lg:text-6xl">
                         Software Engineering with Apache Spark
                     </h2>
-                    <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
+                    <p className="max-w-xl mt-5 mx-auto text-xl text-gray-dark">
                         Combine the power of Apache Spark with the quality from agile software engineering to transform your user data into
                         business intelligence to take your organization to the next level.
                     </p>
