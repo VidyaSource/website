@@ -39,7 +39,7 @@ const Description = () => {
                 <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
                     <div className="aspect-h-9 aspect-w-16">
                         <Image
-                            src="/img/courses/img.png"
+                            src="/img/courses/team.png"
                             alt="Collaborating software engineers"
                             layout="fill"
                             objectFit="cover"
