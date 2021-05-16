@@ -22,7 +22,7 @@ export const Header = () => {
                         Software Engineering with Apache Spark
                     </h2>
                     <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
-                        Combine the power of Apache Spark with the efficiency of agile software engineering to transform your user data into
+                        Combine the power of Apache Spark with the quality from agile software engineering to transform your user data into
                         business intelligence to take your organization to the next level.
                     </p>
                 </div>
