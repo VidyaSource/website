@@ -36,7 +36,7 @@ const Description = () => {
         <div className="relative bg-white">
             <div className="lg:absolute lg:inset-0">
                 <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
-                        <Image src="/img/courses/img.png" height={1264} width={840} quality={100}  />
+                        <Image src="/img/courses/img.png" height={1000} width={667} quality={100}  />
                 </div>
             </div>
             <div className="relative pt-12 pb-16 px-4 sm:pt-16 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-2">
@@ -60,10 +60,20 @@ const Description = () => {
                                 in your garage from critical pieces of your production architecture.
                             </p>
                             <p>
-                                Mauris ullamcorper imperdiet nec egestas mi quis quam ante vulputate. Vel faucibus adipiscing lacus,
-                                eget. Nunc fermentum id tellus donec. Ut metus odio sit sit varius non nunc orci. Eu, mi neque, ornare
-                                suspendisse amet, nibh. Facilisi volutpat lectus id sapien dis mauris rhoncus. Est rhoncus, interdum
-                                imperdiet ac eros, diam mauris, tortor. Risus id sit molestie magna.
+                                We take a more practical approach. There are rich code examples providing deep insight
+                                into the API as you’d expect, but the exercises utilize real datasets from Data.gov and
+                                encourage you to collaborate with your peers, the Spark Scaladoc, Stack Overflow, and
+                                other sources to discover solutions not explicitly discussed–just as you would at work.
+                                We also advise you on where you should drawn the line between configuring Spark yourself and
+                                outsourcing that to a provider so you can focus on what you care about.
+                            </p>
+                            <p>
+                                In addition, agile software development and DevOps have taught us the value of build
+                                automation, testing, continuous integration, and continuous delivery, and we don’t have
+                                to abandon them just because we are working in a distributed environment. In fact, the
+                                complexity of distributed systems makes them even more valuable. Software Engineering
+                                with Apache Spark shows you how to apply these techniques to improve the quality and
+                                reliability of your analytics.
                             </p>
                         </div>
                     </div>
