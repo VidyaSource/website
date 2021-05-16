@@ -132,7 +132,9 @@ const Instructor = () => {
                                 <p>
                                     I have built several Scala and Apache Spark applications currently in production, and I
                                     worked with the original Apache Spark team, AMPLab at UC Berkeley, on a research project
-                                    for DARPA known as XDATA. I have Spark and Scala badges on Stack Overflow. has extensive knowledge of Spark and believes very strongly in it.
+                                    for DARPA known as XDATA. Somehow I have helped enough developers around the world to
+                                    earn Spark and Scala badges on Stack Overflow. I am passionate about Spark and look
+                                    forward to helping you harness its power.
                                 </p>
                             </div>
                             <footer className="mt-8">
