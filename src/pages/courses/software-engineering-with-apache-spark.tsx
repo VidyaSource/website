@@ -114,6 +114,28 @@ const Syllabus = () => {
                 <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-start">
                     <div className="relative z-10">
                         <div className="text-gray-dark mx-auto lg:max-w-none">
+                            <svg
+                                className="absolute top-20 right-0 -mt-20 -mr-20 lg:top-auto lg:right-auto lg:bottom-1/2 lg:left-3/4 lg:mt-0 lg:mr-0 xl:top-1/4 xl:right-0 xl:-mr-20"
+                                width={404}
+                                height={884}
+                                fill="none"
+                                viewBox="0 0 404 884"
+                                aria-hidden="true"
+                            >
+                                <defs>
+                                    <pattern
+                                        id="bedc54bc-7371-44a2-a2bc-dc68d819ae60"
+                                        x={0}
+                                        y={0}
+                                        width={20}
+                                        height={20}
+                                        patternUnits="userSpaceOnUse"
+                                    >
+                                        <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+                                    </pattern>
+                                </defs>
+                                <rect width={404} height={384} fill="url(#bedc54bc-7371-44a2-a2bc-dc68d819ae60)" />
+                            </svg>
                             <p className="font-bold text-red text-2xl">
                                 Session 1: Mastering the Spark API
                             </p>
