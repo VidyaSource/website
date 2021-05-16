@@ -8,6 +8,7 @@ export const Spark = () => {
         <Page headElement={<CourseHeadElement title="Vidya | Software Engineering with Apache Spark"  />}>
             <CourseHeader />
             <Description />
+            <Syllabus />
             <Instructor />
         </Page>
     )
@@ -101,9 +102,54 @@ const Description = () => {
     )
 }
 
+const Syllabus = () => {
+    return (
+        <div className="py-16 bg-green-light overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 space-y-8 sm:px-6 lg:px-8">
+                <div className="text-base max-w-prose mx-auto lg:max-w-none">
+                    <h2 className="mt-2 text-4xl leading-8 font-extrabold tracking-tight text-red sm:text-5xl">
+                        Course Syllabus
+                    </h2>
+                </div>
+                <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-start">
+                    <div className="relative z-10">
+                        <div className="text-gray-dark mx-auto lg:max-w-none">
+                            <p className="font-bold text-red text-2xl">
+                                Session 1: Mastering the Spark API
+                            </p>
+                            <ul className="text-xl">
+                                <li>MapReduce: The Phantom Menace</li>
+                                <li>Advantages of Spark</li>
+                                <li>Just Enough Scala</li>
+                                <li>Using the Spark Shell</li>
+                                <li>Writing You Own Spark Jobs</li>
+                                <li>The Spark Ecosystem</li>
+                            </ul>
+                            <p className="font-bold text-red text-2xl">
+                                Session 2: Professional Spark
+                            </p>
+                            <ul className="text-xl">
+                                <li>Just Enough Hadoop</li>
+                                <li>Testing Your Spark Jobs</li>
+                                <li>Optimizing Spark and When to Stop Trying</li>
+                                <li>Spark on Docker</li>
+                                <li>Deploying Spark to Kubernetes</li>
+                                <li>Spark Security</li>
+                                <li>Visualizing Your Spark Jobs</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
 const Instructor = () => {
     return (
-        <section className="bg-red-light overflow-hidden">
+        <section className="bg-white overflow-hidden">
             <div className="relative max-w-7xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
 
                 <div className="relative lg:flex lg:items-center">
