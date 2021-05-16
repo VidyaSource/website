@@ -11,7 +11,7 @@ export const Clients = () => {
                             Government and business trust Vidya.
                         </h2>
                         <p className="mt-3 max-w-3xl text-lg text-gray-dark">
-                            We are proud to have brought our expertise and insight to large government agencies, small
+                            We are a certified minority-owned business proud to have brought our expertise and insight to large government agencies, small
                             businesses, and
                             everything in between to help them all capitalize on an ever-evolving technology landscape.
                         </p>
