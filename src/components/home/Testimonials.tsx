@@ -1,4 +1,5 @@
-/* This example requires Tailwind CSS v2.0+ */
+import Image from "next/image"
+
 export const Testimonials = () => {
     return (
         <section className="bg-white">
@@ -24,9 +25,11 @@ export const Testimonials = () => {
                         <footer className="mt-8">
                             <div className="flex items-start">
                                 <div className="flex-shrink-0 inline-flex rounded-full border-2 border-white">
-                                    <img
-                                        className="h-12 w-12 rounded-full"
-                                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    <Image
+                                        width={80}
+                                        height={80}
+                                        className="inline-block rounded-full"
+                                        src="/img/staff/president.png"
                                         alt=""
                                     />
                                 </div>
@@ -57,9 +60,11 @@ export const Testimonials = () => {
                         <footer className="mt-8">
                             <div className="flex items-start">
                                 <div className="flex-shrink-0 inline-flex rounded-full border-2 border-white">
-                                    <img
-                                        className="h-12 w-12 rounded-full"
-                                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    <Image
+                                        width={80}
+                                        height={80}
+                                        className="inline-block rounded-full"
+                                        src="/img/staff/president.png"
                                         alt=""
                                     />
                                 </div>
