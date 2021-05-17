@@ -99,7 +99,7 @@ const Description = () => {
                                 and outsourcing configuration to a provider so you can focus on what you care about.
                             </p>
                             <p>
-                                In addition, agile software development and DevOps have taught us the value of build
+                                In addition, agile software development and DevOps have taught us to incorporate quality through build
                                 automation, testing, continuous integration, and continuous delivery, and we don’t have
                                 to abandon them just because we are working in a distributed environment. In fact, the
                                 complexity of distributed systems makes them even more valuable. <span
