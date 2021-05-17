@@ -48,8 +48,8 @@ export const Header = () => {
                         </Link>
                         <div className="hidden ml-10 space-x-8 lg:block">
                             {navigation.map((link) => (
-                                <Link href={link.href}>
-                                    <a key={link.name} className="sm:text-base lg:text-lg font-medium text-white">
+                                <Link href={link.href} key={link.name}>
+                                    <a className="sm:text-base lg:text-lg font-medium text-white">
                                         {link.name}
                                     </a>
                                 </Link>
@@ -71,9 +71,8 @@ export const Header = () => {
                 </div>
                 <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
                     {navigation.map((link) => (
-                        <Link href={link.href}>
-                            <a key={link.name}
-                               className="sm:text-base lg:text-lg font-medium text-white hover:text-indigo-50">
+                        <Link href={link.href} key={link.name}>
+                            <a className="sm:text-base lg:text-lg font-medium text-white hover:text-indigo-50">
                                 {link.name}
                             </a>
                         </Link>
