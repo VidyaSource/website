@@ -1,11 +1,13 @@
 module.exports = {
     distDir: 'out',
     future: {
-        webpack5: false,
+        webpack5: true,
     },
     webpack: (config, { isServer }) => {
         if (!isServer) {
-            config.resolve.fallback.fs = false;
+            config.node = {
+                fs: 'empty'
+            }
         }
         return config;
     },
