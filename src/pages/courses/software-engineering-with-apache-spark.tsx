@@ -206,7 +206,7 @@ const Instructor = () => {
                             <footer className="mt-8">
                                 <div className="flex">
                                     <div className="flex-shrink-0 lg:hidden">
-                                        <div className="h-20 w-20 rounded-full relative">
+                                        <div className="h-32 w-32 rounded-full relative">
                                             <Image
                                                 layout="fill"
                                                 className="rounded-full"
@@ -215,7 +215,7 @@ const Instructor = () => {
                                             />
                                         </div>
                                     </div>
-                                    <div className="ml-4 lg:ml-0">
+                                    <div className="ml-4 lg:ml-0 mt-1 lg:mt-0">
                                         <div className="text-lg lg:text-xl font-medium text-gray-dark">
                                             Neil Chaudhuri
                                         </div>
