@@ -1,7 +1,7 @@
 module.exports = {
     distDir: 'out',
     future: {
-        webpack5: true,
+        webpack5: false,
     },
     webpack: (config, { isServer }) => {
         if (!isServer) {
