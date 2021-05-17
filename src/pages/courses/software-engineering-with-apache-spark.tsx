@@ -95,9 +95,8 @@ const Description = () => {
                                 into the API as you’d expect, but the exercises utilize real datasets from Data.gov and
                                 encourage you to collaborate with your peers, the Spark Scaladoc, Stack Overflow, and
                                 other sources to discover solutions not explicitly discussed–just as you would at work.
-                                We also advise you on where you should drawn the line between configuring Spark yourself
-                                and
-                                outsourcing that to a provider so you can focus on what you care about.
+                                We also advise you on where you should draw the line between configuring Spark yourself
+                                and outsourcing configuration to a provider so you can focus on what you care about.
                             </p>
                             <p>
                                 In addition, agile software development and DevOps have taught us the value of build
