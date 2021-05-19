@@ -28,5 +28,5 @@ make references to the [Stanley Cup Finals](https://en.wikipedia.org/wiki/2018_S
 
 I hope you enjoy it! Feel free to [let us know what you think](/contact).
 
-{{< youtube Ypv73bkIERQ >}}
+~~Ypv73bkIERQ|How to Buy Cyber--Getting Started~~
 

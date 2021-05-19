@@ -35,7 +35,7 @@ While in the middle of his [Jedi](http://starwars.wikia.com/wiki/Jedi) training 
 his ship has sunk into the [Dagobah](http://starwars.wikia.com/wiki/Dagobah) swamp. Ever the whiner, Luke complains about
 how difficult it will be to salvage the ship. That’s when an exasperated Yoda bestows some unforgettable wisdom.
 
-{{< youtube BQ4yd2W50No >}}
+~~BQ4yd2W50No|Do. Or do not. There is no try.~~
 
 The iconic line from this scene in [The Empire Strikes Back](http://www.imdb.com/title/tt0080684/) is *“Do. Or do not. There is no try.”*
 That’s an awesome line worthy of every t-shirt and [Big Bang Theory reference](http://www.youtube.com/watch?v=J_iH5H_jFco).

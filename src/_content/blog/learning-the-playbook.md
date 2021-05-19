@@ -50,7 +50,7 @@ the concepts and nomenclature of digital services and [agile](/categories/agile)
  
 Here is the first video in the series.
 
-{{< youtube uXC_0wqIS8g >}}
+~~uXC_0wqIS8g|An Introduction to the Digital Services Playbook~~
 
 
 I hope you enjoy it. Please [let me know your thoughts](/contact) on the topic--even, perhaps especially, if you disagree 

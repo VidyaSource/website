@@ -24,7 +24,7 @@ one and leave it to others to address the rest.
 The most memorable part of the hearing was a heated exchange between [Senator Al Franken (D-Minnesota)](https://www.franken.senate.gov/)
 and Facebook General Counsel Colin Stretch: 
 
-{{< youtube LCIGT4FWQ9Y >}}
+~~LCIGT4FWQ9Y|Senator Al Franken at the Senate Judiciary Committee Hearing Oct 31~~
 
 Senator Franken, who has not lost the sarcasm and timing that made him a great satirist, clearly was annoyed with 
 Mr. Stretch for his refusal to accept the proposition that payment in foreign currency for ads pertaining to American elections
