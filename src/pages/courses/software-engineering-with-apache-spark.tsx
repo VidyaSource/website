@@ -6,7 +6,8 @@ import {CourseHeader} from "../../components/courses/CourseHeader";
 
 export const Spark = () => {
     const name = "Software Engineering with Apache Spark"
-    const blurb = "Combine the power of Apache Spark with the quality from agile software engineering to transform your user data into business intelligence to take your organization to the next level."
+    // @ts-ignore
+    const blurb = process.env.spark.blurb
     return (
         <Page headElement={<CourseHeadElement title={`Vidya | ${name}`} />}>
             <CourseHeader category="Data Science" name={name} blurb={blurb}/>
