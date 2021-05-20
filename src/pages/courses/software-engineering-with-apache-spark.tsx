@@ -2,11 +2,14 @@ import Image from "next/image"
 import {Page} from "../../components/Page";
 import {CourseHeadElement} from "../../components/courses/CourseHeadElement";
 import {CallToAction} from "../../components/home/CallToAction";
+import {CourseHeader} from "../../components/courses/CourseHeader";
 
 export const Spark = () => {
+    const name = "Software Engineering with Apache Spark"
+    const blurb = "Combine the power of Apache Spark with the quality from agile software engineering to transform your user data into business intelligence to take your organization to the next level."
     return (
-        <Page headElement={<CourseHeadElement title="Vidya | Software Engineering with Apache Spark"/>}>
-            <CourseHeader/>
+        <Page headElement={<CourseHeadElement title={`Vidya | ${name}`} />}>
+            <CourseHeader category="Data Science" name={name} blurb={blurb}/>
             <Description/>
             <Syllabus/>
             <Instructor/>
@@ -15,7 +18,7 @@ export const Spark = () => {
     )
 }
 
-export const CourseHeader = () => {
+export const CourseHeader1 = () => {
     return (
         <div className="bg-blue-light">
             <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
