@@ -1,9 +1,9 @@
-import {BlogPost} from "../lib/blogPost-utils";
-import {constants} from "../lib/constants";
+import {BlogPost} from "../../lib/blogPost-utils";
+import {constants} from "../../lib/constants";
 import format from "date-fns/format";
 import Image from "next/image";
 import {MouseEventHandler, useMemo} from "react";
-import {selectTags} from "../lib/selectTags";
+import {selectTags} from "../../lib/selectTags";
 import Link from 'next/link'
 
 interface BlogPostCardProps {

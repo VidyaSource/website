@@ -1,4 +1,4 @@
-import {BlogPost, getBlogPostsByTags} from "../lib/blogPost-utils";
+import {BlogPost, getBlogPostsByTags} from "../../lib/blogPost-utils";
 import {BlogPostCard} from "./BlogPostCard";
 import {useQuery} from "react-query";
 import {ChangeEvent, MouseEventHandler, useEffect, useState} from "react";

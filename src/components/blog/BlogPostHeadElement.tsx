@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import {HeadElementCommon} from "../components/HeadElement";
+import {HeadElementCommon} from "../HeadElement";
 
-interface CourseHeadElementProps {
+interface BlogPostHeadElementProps {
     title: string
 }
 
-export const CourseHeadElement = (p: CourseHeadElementProps) => {
+export const BlogPostHeadElement = (p: BlogPostHeadElementProps) => {
     return (
         <Head>
             <title>{p.title}</title>

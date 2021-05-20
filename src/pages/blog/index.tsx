@@ -1,8 +1,8 @@
 import {getAllBlogPosts, getBlogPostsByTags} from "../../lib/blogPost-utils";
 import {QueryClient, useQuery} from "react-query";
 import {Page} from "../../components/Page";
-import {BlogPostHeadElement} from "../../blog/BlogPostHeadElement";
-import {BlogPostIndex} from "../../blog/BlogPostIndex";
+import {BlogPostHeadElement} from "../../components/blog/BlogPostHeadElement";
+import {BlogPostIndex} from "../../components/blog/BlogPostIndex";
 import {dehydrate} from "react-query/hydration";
 
 const BlogPosts = () => {

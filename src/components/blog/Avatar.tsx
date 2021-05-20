@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import {constants} from "../lib/constants";
+import {constants} from "../../lib/constants";
 import Link from 'next/link'
 
 interface AvatarProps {

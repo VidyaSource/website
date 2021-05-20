@@ -1,12 +1,12 @@
-import {BlogPost} from "../lib/blogPost-utils";
+import {BlogPost} from "../../lib/blogPost-utils";
 import format from "date-fns/format"
 import {Avatar} from "./Avatar";
 import ReactMarkdown from 'react-markdown'
 import {Prism} from 'react-syntax-highlighter'
 import {a11yDark} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import gfm from 'remark-gfm'
-import {YouTubeVideo} from "../components/YouTubeVideo";
-import {selectTags} from "../lib/selectTags";
+import {YouTubeVideo} from "../YouTubeVideo";
+import {selectTags} from "../../lib/selectTags";
 import {useMemo} from "react";
 
 const components = {
