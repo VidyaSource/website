@@ -28,7 +28,34 @@ module.exports = {
                 "                            integration,\n" +
                 "                            containerization with Docker, container orchestration with Kubernetes, and security\n" +
                 "                            hardening\n" +
-                "                            as the others components of your enterprise."
+                "                            as the others components of your enterprise.",
+            syllabus: {
+                "Session 1: Mastering the Spark API": [
+                    "MapReduce: The Phantom Menace",
+                    "Advantages of Spark",
+                    "Just Enough Scala",
+                    "Using the Spark Shell",
+                    "Writing You Own Spark Jobs",
+                    "The Spark Ecosystem"
+                ],
+                "Session 2: Professional Spark": [
+                    "Just Enough Hadoop",
+                    "Testing Your Spark Jobs",
+                    "Optimizing Spark and When to Stop Trying",
+                    "Spark on Docker",
+                    "Deploying Spark to Kubernetes",
+                    "Spark Security",
+                    "Visualizing Your Spark Jobs"
+                ],
+            },
+            quote: "I have built several Scala and Apache Spark applications currently in production,\n" +
+                "                                    and I\n" +
+                "                                    worked with the original Apache Spark team, AMPLab at UC Berkeley, on a research\n" +
+                "                                    project\n" +
+                "                                    for DARPA known as XDATA. Somehow I have helped enough developers around the world\n" +
+                "                                    to\n" +
+                "                                    earn Spark and Scala badges on Stack Overflow. I am passionate about Spark and look\n" +
+                "                                    forward to helping you harness its power."
         }
     }
 }
