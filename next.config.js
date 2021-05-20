@@ -9,4 +9,26 @@ module.exports = {
         }
         return config;
     },
+    env: {
+        spark: {
+            blurb: "Combine the power of Apache Spark with the quality from agile software engineering to transform your user data into business intelligence to take your organization to the next level.",
+            description1: "Apache Spark is great for organizations who want their analytics\n" +
+                "                            developed fast and executed fast. The problem is that large-scale distributed computing is\n" +
+                "                            always hard. It’s not like you can set a breakpoint on code running on multiple machines\n" +
+                "                            when\n" +
+                "                            things go wrong. Monitoring your analytics jobs and optimizing accordingly are important.\n" +
+                "                            You\n" +
+                "                            also have to rethink the way you approach concepts like architecture, security, and software\n" +
+                "                            engineering techniques like testing and DevSecOps.",
+            description2: " teaches\n" +
+                "                            you how to leverage just enough Scala to integrate\n" +
+                "                            powerful data pipelines into your existing monolithic, microservices, and/or serverless\n" +
+                "                            architecture.\n" +
+                "                            You will also learn how your pipelines can benefit from the same testing, continuous\n" +
+                "                            integration,\n" +
+                "                            containerization with Docker, container orchestration with Kubernetes, and security\n" +
+                "                            hardening\n" +
+                "                            as the others components of your enterprise."
+        }
+    }
 }
