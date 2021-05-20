@@ -1,6 +1,6 @@
 import Image from "next/image"
 import {Page} from "../../components/Page";
-import {CourseHeadElement} from "../../courses/CourseHeadElement";
+import {CourseHeadElement} from "../../components/courses/CourseHeadElement";
 import {CallToAction} from "../../components/home/CallToAction";
 
 export const Spark = () => {
