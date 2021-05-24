@@ -17,13 +17,13 @@ export const Agile = () => {
             <Description name={name} description1={description1} description2={description2}>
                 <p className="font-medium lg:text-gray-dark lg:font-normal">
                     In software engineering, we often see valuable ideas become confusing if not controversial or meaningless
-                    buzzwords because of coaches and consultants who misrepresent these ideas to
+                    buzzwords because coaches and consultants misrepresent these ideas to
                     their customers to make money. There is no better example of this than "agile." No one has
                     captured this sad reality better than Ron Jeffries, one of the signatories of
                     the <Link href="https://agilemanifesto.org/"><a>Agile Manifesto</a></Link>, whose disgust with the Agile
-                    Industrial Complex has disheartened him so much that he has resigned himself to advise
+                    Industrial Complex is so overwhelming that he has resigned himself to advise
                     us <Link href="https://ronjeffries.com/articles/018-01ff/abandon-1/"><a className="italic">Developers Should Abandon Agile</a></Link>. Not
-                    the principles but the machinery that has given us derivatives like SAFe, pointless certifications, and worst of all,
+                    the principles but the machinery that has given us heavyweight derivatives like SAFe, pointless certifications, and worst of all,
                     unhappy engineers and bad software that continue to emerge from all that bad faith.
                 </p>
                 <p className="font-medium">
