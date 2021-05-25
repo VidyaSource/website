@@ -70,15 +70,41 @@ module.exports = {
                 "communication, psychological safety, and relentless feedback about your product, your client, your technology, your \n" +
                 "competitive landscape, and most importantly, yourselves.",
             syllabus: {
-                "Session 1: Mastering the Spark API": [
-                    "MapReduce: The Phantom Menace",
-                    "Advantages of Spark",
-                    "Just Enough Scala",
-                    "Using the Spark Shell",
+                "Session 1: Leadership and Communication": [
+                    "Simple Rules",
+                    "A Helping Hand",
+                    "Listen",
+                    "Don't be Square",
+                    "Decentralized Decisions",
                     "Writing You Own Spark Jobs",
                     "The Spark Ecosystem"
                 ],
-                "Session 2: Professional Spark": [
+                "Session 2: Psychological Safety": [
+                    "Just Enough Hadoop",
+                    "Testing Your Spark Jobs",
+                    "Optimizing Spark and When to Stop Trying",
+                    "Spark on Docker",
+                    "Deploying Spark to Kubernetes",
+                    "Spark Security",
+                    "Visualizing Your Spark Jobs"
+                ],
+                "Session 3: Relentless Feedback": [
+                    "Mistake Driven Development",
+                    "Building the Right Thing: The Minimum Viable Product",
+                    "Building the Thing Right: Automation",
+                    "Talking to Customers",
+                    "Eliminating Waste",
+                    "Developing Fast",
+                    "Building Fast",
+                    "Choosing the Right Tools",
+                    "Effective Testing",
+                    "Static Analysis",
+                    "DevSecOps and Continuous Delivery Testcontainers and Buildpacks",
+                    "Mature Optimization",
+                    "Resisting Ceremony",
+                    "Continuous Improvement"
+                ],
+                "Session 4: Metrics": [
                     "Just Enough Hadoop",
                     "Testing Your Spark Jobs",
                     "Optimizing Spark and When to Stop Trying",
