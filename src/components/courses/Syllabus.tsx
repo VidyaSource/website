@@ -15,34 +15,31 @@ export const Syllabus = (p: SyllabusProps) => {
                         Course Syllabus
                     </h2>
                 </div>
-                <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-start">
-                    <div className="relative z-10">
-                        <div className="text-gray-dark mx-auto lg:max-w-none">
-                            {
-                                Object.entries(p.syllabus).map(l => {
-                                    const [title, sections] = l
+                <div className="relative z-10">
+                    <div className="text-gray-dark mx-auto lg:max-w-none">
+                        {
+                            Object.entries(p.syllabus).map(l => {
+                                const [title, sections] = l
 
-                                    return (
-                                        <div key={title}>
-                                            <p className="font-bold text-red text-2xl">
-                                                {title}
-                                            </p>
-                                            {
-                                                sections.map(s => {
-                                                    return (
-                                                        <ul className="text-xl" key={s}>
-                                                            <li>{s}</li>
-                                                        </ul>
-                                                    )
-                                                })
-                                            }
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
+                                return (
+                                    <div key={title}>
+                                        <p className="font-bold text-red text-2xl">
+                                            {title}
+                                        </p>
+                                        {
+                                            sections.map(s => {
+                                                return (
+                                                    <ul className="text-xl" key={s}>
+                                                        <li>{s}</li>
+                                                    </ul>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
-
                 </div>
             </div>
         </div>
