@@ -70,58 +70,48 @@ module.exports = {
                 "communication, psychological safety, and relentless feedback about your product, your client, your technology, your \n" +
                 "competitive landscape, and most importantly, yourselves.",
             syllabus: {
-                "Session 1: Leadership and Communication": [
+                "Session 1: Leadership, Communication, and Psychological Safety": [
                     "Simple Rules",
                     "A Helping Hand",
-                    "Listen",
                     "Don't be Square",
+                    "Guardrails",
                     "Decentralized Decisions",
-                    "Writing You Own Spark Jobs",
-                    "The Spark Ecosystem"
+                    "The Technological Maestro",
+                    "Listening",
+                    "Embracing Bad News",
+                    "No judgment. No Blame"
                 ],
-                "Session 2: Psychological Safety": [
-                    "Just Enough Hadoop",
-                    "Testing Your Spark Jobs",
-                    "Optimizing Spark and When to Stop Trying",
-                    "Spark on Docker",
-                    "Deploying Spark to Kubernetes",
-                    "Spark Security",
-                    "Visualizing Your Spark Jobs"
-                ],
-                "Session 3: Relentless Feedback": [
+                "Session 2: Relentless Feedback": [
+                    "Smaller is Better",
                     "Mistake Driven Development",
                     "Building the Right Thing: The Minimum Viable Product",
-                    "Building the Thing Right: Automation",
-                    "Talking to Customers",
+                    "Context and Core",
+                    "Building the Thing Right: Developing Fast",
+                    "Emerging Architecture and Software Design",
                     "Eliminating Waste",
-                    "Developing Fast",
-                    "Building Fast",
-                    "Choosing the Right Tools",
-                    "Effective Testing",
-                    "Static Analysis",
-                    "DevSecOps and Continuous Delivery Testcontainers and Buildpacks",
+                    "Testing Fast, Testing Right",
+                    "Deploying Fast with DevSecOps",
+                    "DevSecOps",
                     "Mature Optimization",
-                    "Resisting Ceremony",
+                    "Resisting Ceremony"
+                ],
+                "Session 3: Metrics": [
+                    "Measuring the Right Things",
+                    "Giving Developers SPACE",
+                    "Architecture Maintainability",
+                    "Code Maintainability",
+                    "Infrastructure Maintainability",
+                    "Testing and the Pitfalls of Code Coverage",
+                    "Security, Performance, and Accessibility",
+                    "Culture",
                     "Continuous Improvement"
                 ],
-                "Session 4: Metrics": [
-                    "Just Enough Hadoop",
-                    "Testing Your Spark Jobs",
-                    "Optimizing Spark and When to Stop Trying",
-                    "Spark on Docker",
-                    "Deploying Spark to Kubernetes",
-                    "Spark Security",
-                    "Visualizing Your Spark Jobs"
-                ],
             },
-            quote: "I have built several Scala and Apache Spark applications currently in production,\n" +
-                "                                    and I\n" +
-                "                                    worked with the original Apache Spark team, AMPLab at UC Berkeley, on a research\n" +
-                "                                    project\n" +
-                "                                    for DARPA known as XDATA. Somehow I have helped enough developers around the world\n" +
-                "                                    to\n" +
-                "                                    earn Spark and Scala badges on Stack Overflow. I am passionate about Spark and look\n" +
-                "                                    forward to helping you harness its power."
+            quote: "I care as much about building software the right way as I do about software itself. It hasn't been easy, but I have helped commercial businesses\n" +
+                "and the least agile organization of all, government, become more agile. I'm certified in agile, which is...OK, but I am also\n" +
+                "a member of the Government Accountability Office Agile Expert Group and a regular contributor to numerous guides for making\n" +
+                "the government agile. I also worked with the Executive Office of the President of the United States to revolutionize\n" +
+                "federal government contracting to maximize value for American taxpayers through agile development and open source."
         },
     }
 }
