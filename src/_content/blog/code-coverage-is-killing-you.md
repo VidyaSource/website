@@ -47,6 +47,14 @@ Almost no one will use that option; the vast majority of customers will pay by c
 it considers credit card tests and money order tests equally important. That's bad. A bug with credit card payments
 will cost you orders of magnitude more profit than a bug with money orders, but code coverage will never account for that.
 
+* **_Code coverage demands ceremony that may not be necessary._** Let's not lose sight of the goal, which is to gain as much
+confidence as possible that your code works. Certainly that can come from tests, but it does not have to. For example, if you are building
+a component library in React that will be consumed by application developers, it could very well be [Storybook](https://storybook.js.org/)
+is all you need. After all, a button in your component library will have no functionality on its own. Its functionality will
+come from the `onClick` event handler passed as a prop by the library consumer. All you care about is that clicking
+the button does something. It's a waste of time to write a test for something so trivial just to check a coverage box
+when Storybook gives you that for basically free.
+
 * **_Code coverage tells you how much but not how well._** This could be the worst of all. You are investing a lot of budget and schedule
 in building a test suite that should raise the quality of your software, lower costs, and improve customer satisfaction. But 
 while code coverage tells you how much you tested, it doesn't tell you how *well* you tested. You can write really poor tests
@@ -85,8 +93,8 @@ delete them entirely.
 
 There are also trends to watch.
 
-* **_Technical Debt in Tests_.** Your test code should be a first-class citizen subject to the same quality checks as production code--
-no duplication, reusable functions, design patterns where useful, *etc.* 
+* **_Low Code Quality in Tests_.** Tests are code. Your test code should be a first-class citizen subject to the same quality checks as production code--
+  no duplication, reusable functions, design patterns where useful, *etc.*
 
 * **_Time to Write Tests_.** Maybe technical debt in your tests is too high. Maybe the design 
 is poor with too many dependencies to mock. Maybe it's hard to generate test data or scenarios. Taking too long to write tests
