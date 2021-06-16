@@ -209,7 +209,7 @@ A [JAMStack](https://jamstack.org/) front end provides several advantages:
 * Device agnostic
 
 Certainly a front end in Rails or another robust monolithic framework would be effective, but I think using something 
-like [Gatsby](https://www.gatsbyjs.com/), [Next.js](https://nextjs.org/), or [Sapper](https://sapper.svelte.dev/) would 
+like [Next.js](https://nextjs.org/) or [SvelteKit](https://kit.svelte.dev/) would 
 be so much simpler and more lightweight. It would be straightforward to build the forms and push them to a CDN like 
 Cloudflare or Fastly.
 
