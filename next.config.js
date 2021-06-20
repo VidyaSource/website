@@ -116,7 +116,7 @@ module.exports = {
         },
         java: {
             blurb: "Java is one of the the most popular programming languages in the world. With all the legacy Java applications that need to be maintained\n" +
-                "and new ones created every day in so many different domains, mastery of Java will guarantee you will always be in demand. Take the first step now.",
+                "and new ones created every day, mastery of Java will guarantee you will always be in demand. Take the first step now.",
             description1: "According to Oracle, almost 20 billion devices run Java around the world. Java was the first language for Android. Java runs \n" +
                 "on microservices, serverless, machine learning pipelines, and so much of the critical infrastructure in modern applications.",
             description2: " builds on the foundation of low-level primitives like conditionals and loops\n" +
