@@ -8,7 +8,7 @@ import {Instructor} from "../../components/courses/Instructor";
 import Link from 'next/link'
 
 export const Agile = () => {
-    const name = "Agile in Real Life"
+    const name = "Modern Agile"
     // @ts-ignore
     const {blurb, description1 , description2, syllabus, quote} = process.env.agile
     return (
@@ -23,7 +23,7 @@ export const Agile = () => {
                     the <Link href="https://agilemanifesto.org/"><a>Agile Manifesto</a></Link>, whose disgust with the Agile
                     Industrial Complex is so overwhelming that he has resigned himself to advise
                     us <Link href="https://ronjeffries.com/articles/018-01ff/abandon-1/"><a className="italic">Developers Should Abandon Agile</a></Link>. Not
-                    the principles but the machinery that has given us heavyweight derivatives like SAFe, pointless certifications, and worst of all,
+                    the principles but the machinery that has given us heavyweight derivatives like Scrum and SAFe, pointless certifications, and worst of all,
                     unhappy engineers and bad software that continue to emerge from all that bad faith.
                 </p>
                 <p className="font-medium">
@@ -34,7 +34,8 @@ export const Agile = () => {
                     The difference is we aren't going to sell you any kind of one-size-fits-all approach
                     because there isn't one. We honestly don't know what will work for you. What we do know is we build software
                     ourselves and see what works and what doesn't, and we know what the highest performing organizations,
-                    in and out of tech, have in common. We will help you become one of them in a way that's uniquely yours.
+                    in and out of tech, have in common. We will lead you beyond Scrum and help you build an organizational culture and establish a set of
+                    technical practices to become one of them in a way that's uniquely yours.
                 </p>
             </Description>
             <Syllabus syllabus={syllabus}/>
