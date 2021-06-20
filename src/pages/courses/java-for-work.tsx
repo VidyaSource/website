@@ -9,7 +9,7 @@ import {Instructor} from "../../components/courses/Instructor";
 export const Java = () => {
     const name = "Java for Work"
     // @ts-ignore
-    const {blurb, description1 , description2, syllabus, quote} = process.env.spark
+    const {blurb, description1 , description2, syllabus, quote} = process.env.java
     return (
         <Page headElement={<CourseHeadElement title={`Vidya | ${name}`} />}>
             <CourseHeader category="Data Science" name={name} blurb={blurb}/>
