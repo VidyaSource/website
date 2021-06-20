@@ -24,9 +24,9 @@ export const Page: FC<PageProps> = (p) => {
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = [
     {name: 'Courses', href: '/courses'},
-    {name: 'Consulting', href: '#'},
+    {name: 'Consulting', href: '/consulting'},
     {name: 'Blog', href: '/blog'},
-    {name: 'Tutorials', href: '#'}
+    {name: 'Tutorials', href: '/tutorials'}
 ]
 
 export const Header = () => {
