@@ -23,7 +23,7 @@ export const Page: FC<PageProps> = (p) => {
 
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = [
-    {name: 'Courses', href: '#'},
+    {name: 'Courses', href: '/courses'},
     {name: 'Consulting', href: '#'},
     {name: 'Blog', href: '/blog'},
     {name: 'Tutorials', href: '#'}
