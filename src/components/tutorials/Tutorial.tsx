@@ -7,16 +7,15 @@ import {FC} from "react";
 
 interface TutorialProps {
     title: string
+    subtitle?: string
     github: string
     youTubeId: string
 }
 
 export const Tutorial: FC<TutorialProps> = (p) => {
-    const title = "Starting with Data: Using Python and D3 to Visualize JSON from the Donors Choose REST API"
-    // @ts-ignore
     return (
         <Page headElement={<TutorialHeadElement title={`Vidya | ${p.title}`} />}>
-            <TutorialHeader title={p.title} />
+            <TutorialHeader title={p.title} subtitle={p.subtitle}/>
             <TutorialContent>
                 <div>
                     <div>
