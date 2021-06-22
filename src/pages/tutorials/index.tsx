@@ -6,25 +6,25 @@ import Link from "next/link";
 const tutorials = [
     {
         title: 'Nina Reasons to Try Scala',
-        href: '/tutorials/java-for-work',
+        href: '/tutorials/nine-reasons-to-try-scala',
         description: "We will look at nine compelling features of Scala that will hopefully impress you and inspire you to explore both the language itself and its applications.",
         imageUrl: '/img/tutorials/programming.jpg',
     },
     {
         title: 'Starting with Data',
-        href: '/tutorials/modern-agile',
+        href: '/tutorials/starting-with-data',
         description: "This tutorial is for beginners in software development who want to learn just enough to access data on the web and visualize it on their own websites or mobile device applications",
         imageUrl: '/img/tutorials/data.jpg',
     },
     {
         title: 'Comparison Shopping',
-        href: 'tutorials/software-engineering-with-apache-spark',
+        href: 'tutorials/comparison-shopping',
         description: "This tutorial is for intermediate-level Java developers who want to add comparison and sorting capabilities to the custom classes they’ve created for their projects.",
         imageUrl: '/img/tutorials/car-shopping.jpg',
     },
     {
         title: 'Web Design 101',
-        href: 'tutorials/software-engineering-with-apache-spark',
+        href: 'tutorials/web-design-101',
         description: "This tutorial is for people brand new to web design who haven’t done anything more complicated on the web than tag their friends on Facebook.",
         imageUrl: '/img/tutorials/web-design.jpg',
     },

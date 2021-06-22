@@ -1,9 +1,8 @@
 import {Tutorial} from "../../components/tutorials/Tutorial";
 
 export const Scala = () => {
-    const title = "Nine Reasons to Try Scala"
     return (
-        <Tutorial title={title} github="https://github.com/VidyaSource/nine-reasons-to-try-scala" youTubeId="rbZ6GzR8B7I">
+        <Tutorial title="Nine Reasons to Try Scala" github="https://github.com/VidyaSource/nine-reasons-to-try-scala" youTubeId="rbZ6GzR8B7I">
             This tutorial is for intermediate-level Java developers, and developers in other languages too,
             who are curious about what the big deal is with the Scala programming language. We will look at
             nine compelling features of Scala that will hopefully impress you and inspire you to explore
