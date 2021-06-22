@@ -1,7 +1,6 @@
-import {ReactChildren, ReactElement} from "react";
+import {ReactElement} from "react";
 
 interface TutorialContentProps {
-    title: string
     children: ReactElement
 }
 
