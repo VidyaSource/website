@@ -5,10 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigation = [
-    {name: 'Courses', href: '#'},
-    {name: 'Consulting', href: '#'},
+    {name: 'Courses', href: '/courses'},
+    {name: 'Consulting', href: '/consulting'},
     {name: 'Blog', href: '/blog'},
-    {name: 'Tutorials', href: '#'},
+    {name: 'Tutorials', href: '/tutorials'},
 ]
 
 export const Hero = () => {

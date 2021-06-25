@@ -50,6 +50,8 @@ export const Courses = () => {
                                     <a>
                                         <div className="h-48 w-full relative">
                                             <Image
+                                                placeholder="blur"
+                                                priority={true}
                                                 objectFit="cover"
                                                 layout="fill"
                                                 quality={100}

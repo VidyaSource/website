@@ -57,12 +57,12 @@ export const Header = () => {
                         </div>
                     </div>
                     <div className="ml-10 space-x-4">
-                        <Link href="#">
+                        <Link href="/about">
                             <a className="inline-block py-2 px-4 sm:text-base lg:text-lg font-medium text-white hover:bg-opacity-75">
                                 About
                             </a>
                         </Link>
-                        <Link href="#">
+                        <Link href="/contact">
                             <a className="inline-block text-white py-2 px-4 sm:text-base lg:text-lg font-medium">
                                 Contact
                             </a>
