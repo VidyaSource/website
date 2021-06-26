@@ -18,7 +18,7 @@ const Vidya = () => {
                 </div>
                 <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-start">
                     <div className="relative z-10">
-                        <div className="mx-auto lg:max-w-none space-y-4">
+                        <div className="mx-auto prose lg:max-w-none space-y-4">
                             <h3 className="text-blue">The Vidya swan</h3>
                             <p>
                                 Vidya is associated with the Hindu deity Saraswati because she is the Goddess of Learning. In ancient Indian art and literature, she is often depicted wearing a spotless white sari and riding a white swan.
