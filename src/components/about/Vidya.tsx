@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Vidya = () => {
     return (
         <div className="py-16 bg-white overflow-hidden">
@@ -51,11 +53,13 @@ const Vidya = () => {
                             </defs>
                             <rect width={404} height={384} fill="url(#bedc54bc-7371-44a2-a2bc-dc68d819ae60)" />
                         </svg>
-                        <div className="rounded-t-lg px-6 py-8 sm:px-10 sm:pt-10 sm:pb-8">
-                            <img
-
+                        <div className="px-6 py-8 sm:px-10 sm:pt-10 sm:pb-8">
+                            <Image
+                                width={1085}
+                                height={503}
+                                quality={100}
                                 src="/img/vidya.png"
-                                alt=""
+                                alt="Vidya logo"
                             />
                         </div>
                     </div>
