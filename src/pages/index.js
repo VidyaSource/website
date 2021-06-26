@@ -4,9 +4,9 @@ import {RecentPosts} from "../components/home/RecentPosts"
 import {Footer} from "../components/Footer";
 import {CallToAction} from "../components/home/CallToAction";
 import {Testimonials} from "../components/home/Testimonials";
-import {Clients} from "../components/home/Clients";
+import {Clients} from "../components/Clients";
 import {QueryClient} from "react-query";
-import {getAllBlogPosts, getBlogPostsByTags} from "../lib/blogPost-utils";
+import {getAllBlogPosts} from "../lib/blogPost-utils";
 import {dehydrate} from "react-query/hydration";
 
 const Home = () => {
