@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Diversity = () => {
     return (
         <section className="bg-white overflow-hidden">
@@ -50,11 +52,16 @@ const Diversity = () => {
 
                 <div className="relative lg:flex lg:items-center">
                     <div className="hidden lg:block lg:flex-shrink-0">
-                        <img
-                            className="h-64 w-64 rounded-full xl:h-80 xl:w-80"
-                            src="/img/staff/president.png"
-                            alt=""
-                        />
+                        <div className="h-64 w-64 relative xl:h-80 xl:w-80">
+                            <Image
+                                layout="fill"
+                                objectFit="cover"
+                                quality={100}
+                                className="rounded-full"
+                                src="/img/staff/president.png"
+                                alt="Neil Chaudhuri, President of Vidya"
+                            />
+                        </div>
                     </div>
 
                     <div className="relative lg:ml-10">
@@ -81,11 +88,16 @@ const Diversity = () => {
                             <footer className="mt-8">
                                 <div className="flex">
                                     <div className="flex-shrink-0 lg:hidden">
-                                        <img
-                                            className="h-12 w-12 rounded-full"
-                                            src="/img/staff/president.png"
-                                            alt=""
-                                        />
+                                        <div className="h-12 w-12 relative">
+                                            <Image
+                                                layout="fill"
+                                                objectFit="cover"
+                                                quality={100}
+                                                className="rounded-full"
+                                                src="/img/staff/president.png"
+                                                alt="Neil Chaudhuri, President of Vidya"
+                                            />
+                                        </div>
                                     </div>
                                     <div className="ml-4 lg:ml-0">
                                         <div className="text-base font-medium text-gray-dark">Neil Chaudhuri</div>
