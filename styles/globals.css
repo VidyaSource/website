@@ -48,4 +48,12 @@
         border-radius: 10px;
         padding: 10px;
     }
+
+    .prose .text-red {
+        color: #9c4d61;
+    }
+
+    .prose .text-blue {
+        color: #5a82b4;
+    }
 }
