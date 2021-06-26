@@ -36,7 +36,6 @@ module.exports = {
                 DEFAULT: '#808285',
                 dark: '#494B4F',
             },
-            indigo: colors.indigo
         },
         extend: {
             spacing: {
@@ -49,7 +48,7 @@ module.exports = {
                 github: "#24292e",
                 youtube: "#FF0000",
                 stackoverflow: "#F47F24"
-            }
+            },
         },
     },
     variants: {
