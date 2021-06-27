@@ -106,17 +106,16 @@ const Form = () => {
                                     </defs>
                                 </svg>
                             </div>
-                            <h3 className="text-lg font-medium text-white">Contact information</h3>
+                            <h3 className="text-lg font-medium text-white">Contact us</h3>
                             <p className="mt-6 text-base text-white max-w-3xl">
-                                Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet.
-                                Sapien tortor
-                                lacus arcu.
+                                We would love to work with you and help you use technology to grow your business or jumpstart your career.
+                                Please let us know how we can help!
                             </p>
                             <dl className="mt-8 space-y-6">
                                 <dt>
                                     <span className="sr-only">Phone number</span>
                                 </dt>
-                                <dd className="flex text-base text-white">
+                                <dd className="flex text-base text-white hover:text-blue-light">
                                     <PhoneIcon className="flex-shrink-0 w-6 h-6 text-white" aria-hidden="true"/>
                                     <span className="ml-3">+1 (202) 430-5695</span>
                                 </dd>
@@ -125,12 +124,12 @@ const Form = () => {
                                 </dt>
                                 <dd className="flex text-base text-white">
                                     <MailIcon className="flex-shrink-0 w-6 h-6 text-white" aria-hidden="true"/>
-                                    <span className="ml-3">support@workcation.com</span>
+                                    <span className="ml-3">info@vidyasource.com</span>
                                 </dd>
                             </dl>
                             <ul className="mt-8 flex space-x-12" role="list">
                                 <li>
-                                    <a className="text-white hover:text-facebook" href="#">
+                                    <a className="text-red-light hover:text-white" href="#">
                                         <span className="sr-only">Facebook</span>
                                         <svg
                                             width={24}
@@ -138,7 +137,7 @@ const Form = () => {
                                             viewBox="0 0 24 24"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg"
-                                            className="w-6 h-6"
+                                            className="w-8 h-8"
                                             aria-hidden="true"
                                         >
                                             <path
@@ -149,7 +148,7 @@ const Form = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="text-white hover:text-github" href="#">
+                                    <a className="text-red-light hover:text-white" href="#">
                                         <span className="sr-only">GitHub</span>
                                         <svg
                                             width={24}
@@ -157,7 +156,7 @@ const Form = () => {
                                             viewBox="0 0 24 24"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg"
-                                            className="w-6 h-6"
+                                            className="w-8 h-8"
                                             aria-hidden="true"
                                         >
                                             <path
@@ -168,7 +167,7 @@ const Form = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="text-white hover:text-twitter" href="#">
+                                    <a className="text-red-light hover:text-white" href="#">
                                         <span className="sr-only">Twitter</span>
                                         <svg
                                             width={24}
@@ -176,7 +175,7 @@ const Form = () => {
                                             viewBox="0 0 24 24"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg"
-                                            className="w-6 h-6"
+                                            className="w-8 h-8"
                                             aria-hidden="true"
                                         >
                                             <path
@@ -247,7 +246,7 @@ const Form = () => {
                                 <div className="sm:col-span-2 sm:flex sm:justify-end">
                                     <button
                                         type="submit"
-                                        className="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white0 sm:w-auto"
+                                        className="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red hover:bg-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white0 sm:w-auto"
                                     >
                                         Submit
                                     </button>
