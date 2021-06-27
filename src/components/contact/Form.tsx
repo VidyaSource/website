@@ -150,7 +150,7 @@ const Form = () => {
                             </dl>
                             <ul className="mt-8 flex space-x-12" role="list">
                                 <li>
-                                    <a className="text-red-light hover:text-white" href="#">
+                                    <a className="text-red-light hover:text-white" href="https://www.facebook.com/VidyaSource">
                                         <span className="sr-only">Facebook</span>
                                         <svg
                                             width={24}
@@ -169,7 +169,7 @@ const Form = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="text-red-light hover:text-white" href="#">
+                                    <a className="text-red-light hover:text-white" href="https://github.com/VidyaSource">
                                         <span className="sr-only">GitHub</span>
                                         <svg
                                             width={24}
@@ -188,7 +188,7 @@ const Form = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="text-red-light hover:text-white" href="#">
+                                    <a className="text-red-light hover:text-white" href="https://twitter.com/VidyaSource">
                                         <span className="sr-only">Twitter</span>
                                         <svg
                                             width={24}
