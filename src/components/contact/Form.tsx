@@ -1,6 +1,30 @@
 import {MailIcon, PhoneIcon} from '@heroicons/react/outline'
+import {useState} from "react";
+
+interface Form {
+    from: string
+    subject: string
+    message: string
+}
 
 const Form = () => {
+    const [from, setFrom] = useState(undefined)
+    const [subject, setSubject] = useState(undefined)
+    const [message, setMessage] = useState(undefined)
+
+    const submit = () => {
+        if (from && subject && message) {
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({from: from, subject: subject, message: message})
+            })
+        }
+    }
+
     return (
         <div className="bg-gray-100">
             <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
@@ -205,6 +229,7 @@ const Form = () => {
                                             name="EMAIL"
                                             type="email"
                                             autoComplete="email"
+                                            onChange={e => setFrom(e.target.value)}
                                             className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-white0 focus:border-white0 border-gray-dark rounded-md"
                                         />
                                     </div>
@@ -218,6 +243,7 @@ const Form = () => {
                                             type="text"
                                             name="subject"
                                             id="subject"
+                                            onChange={e => setSubject(e.target.value)}
                                             className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-white0 focus:border-white0 border-gray-dark rounded-md"
                                         />
                                     </div>
@@ -237,6 +263,7 @@ const Form = () => {
                         name="message"
                         rows={4}
                         maxLength={500}
+                        onChange={e => setMessage(e.target.value)}
                         className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-white0 focus:border-white0 border border-gray-dark rounded-md"
                         aria-describedby="message-max"
                         defaultValue={''}
