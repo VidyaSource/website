@@ -8,9 +8,6 @@ const Form = () => {
 
     const submit = (e) => {
         e.preventDefault()
-        console.log("from " + from)
-        console.log("subject " + subject)
-        console.log("message " + message)
         if (from && subject && message) {
             fetch('/api/contact', {
                 method: 'POST',
