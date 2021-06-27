@@ -3,7 +3,6 @@ const nodemailer = require("nodemailer")
 const vidya = "vidyacontactinfo@gmail.com"
 
 export default async (req, res) => {
-  //res.status(200).json({ name: 'John Doe' })
   const {from, subject, message} = req
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
