@@ -26,7 +26,7 @@ export default async (req, res) => {
     from: vidya,
     to: "info@vidyasource.com",
     subject: subject,
-    text: `From ${from}\n\n${message|`
+    text: `From ${from}\n\n${message}`
   })
 }
 
