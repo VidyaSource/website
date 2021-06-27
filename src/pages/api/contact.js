@@ -4,7 +4,9 @@ const vidya = "vidyacontactinfo@gmail.com"
 
 export default async (req, res) => {
   const {from, subject, message} = req
-  console.log("req " + req.body)
+  console.log("from " + from)
+  console.log("subject " + subject)
+  console.log("message " + message)
   if (process.env.MAIL_PASSWORD) {
     console.log("pwd")
   } else {
@@ -19,11 +21,12 @@ export default async (req, res) => {
       pass: process.env.MAIL_PASSWORD
     },
   })
+  console.log("Sending mail")
   const info = await transporter.sendMail({
-    from: from,
-    to: vidya,
+    from: vidya,
+    to: "info@vidyasource.com",
     subject: subject,
-    text: message
+    text: `From ${from}\n\n${message|`
   })
 }
 
