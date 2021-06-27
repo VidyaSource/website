@@ -6,7 +6,8 @@ const Form = () => {
     const [subject, setSubject] = useState(undefined)
     const [message, setMessage] = useState(undefined)
 
-    const submit = () => {
+    const submit = (e) => {
+        e.preventDefault()
         console.log("from " + from)
         console.log("subject " + subject)
         console.log("message " + message)
@@ -129,7 +130,8 @@ const Form = () => {
                             </div>
                             <h3 className="text-lg font-medium text-white">Contact us</h3>
                             <p className="mt-6 text-base text-white max-w-3xl">
-                                We would love to work with you and help you use technology to grow your business or jumpstart your career.
+                                We would love to work with you and help you use technology to grow your business or
+                                jumpstart your career.
                                 Please let us know how we can help!
                             </p>
                             <dl className="mt-8 space-y-6">
