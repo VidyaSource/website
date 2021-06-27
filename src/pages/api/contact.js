@@ -3,15 +3,11 @@ const nodemailer = require("nodemailer")
 const vidya = "vidyacontactinfo@gmail.com"
 
 export default async (req, res) => {
+  console.log(JSON.stringify(req.body))
   const {from, subject, message} = req
   console.log("from " + from)
   console.log("subject " + subject)
   console.log("message " + message)
-  if (process.env.MAIL_PASSWORD) {
-    console.log("pwd")
-  } else {
-    console.log("Nope")
-  }
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -22,11 +18,12 @@ export default async (req, res) => {
     },
   })
   console.log("Sending mail")
-  const info = await transporter.sendMail({
+  await transporter.sendMail({
     from: vidya,
     to: "info@vidyasource.com",
     subject: subject,
     text: `From ${from}\n\n${message}`
   })
+  res.status(200)
 }
 
