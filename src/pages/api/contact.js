@@ -4,7 +4,7 @@ const vidya = "vidyacontactinfo@gmail.com"
 
 export default async (req, res) => {
   console.log(JSON.stringify(req.body))
-  const {from, subject, message} = req
+  const {from, subject, message} = req.body
   console.log("from " + from)
   console.log("subject " + subject)
   console.log("message " + message)
