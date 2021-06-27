@@ -4,6 +4,7 @@ const vidya = "vidyacontactinfo@gmail.com"
 
 export default async (req, res) => {
   const {from, subject, message} = req
+  console.log("req " + req.body)
   if (process.env.MAIL_PASSWORD) {
     console.log("pwd")
   } else {
