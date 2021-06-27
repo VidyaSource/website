@@ -215,10 +215,7 @@ const Form = () => {
                         {/* Contact form */}
                         <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
                             <h3 className="text-lg font-medium text-gray-dark">Send us a message</h3>
-                            <form action="https://vidyasource.us6.list-manage.com/subscribe/post?u=444f48aabb6ec4c3e7ce9e4dc&amp;id=bc9668a4fe"
-                                  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                                  target="_blank"
-                                  className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                            <form className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium text-gray-dark">
                                         Email
