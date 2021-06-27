@@ -1,18 +1,15 @@
 import {MailIcon, PhoneIcon} from '@heroicons/react/outline'
 import {useState} from "react";
 
-interface Form {
-    from: string
-    subject: string
-    message: string
-}
-
 const Form = () => {
     const [from, setFrom] = useState(undefined)
     const [subject, setSubject] = useState(undefined)
     const [message, setMessage] = useState(undefined)
 
     const submit = () => {
+        console.log("from " + from)
+        console.log("subject " + subject)
+        console.log("message " + message)
         if (from && subject && message) {
             fetch('/api/contact', {
                 method: 'POST',

@@ -4,6 +4,11 @@ const vidya = "vidyacontactinfo@gmail.com"
 
 export default async (req, res) => {
   const {from, subject, message} = req
+  if (process.env.MAIL_PASSWORD) {
+    console.log("pwd")
+  } else {
+    console.log("Nope")
+  }
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
