@@ -5,11 +5,11 @@ const Form = () => {
     const [from, setFrom] = useState(undefined)
     const [subject, setSubject] = useState(undefined)
     const [message, setMessage] = useState(undefined)
-
-    const submit = (e) => {
+    const [sent, setSent] = useState(false)
+    const submit = async (e) => {
         e.preventDefault()
         if (from && subject && message) {
-            fetch('/api/contact', {
+            await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json, text/plain, */*',
@@ -17,6 +17,7 @@ const Form = () => {
                 },
                 body: JSON.stringify({from: from, subject: subject, message: message})
             })
+            setSent(true)
         }
     }
 
@@ -209,48 +210,50 @@ const Form = () => {
                         </div>
 
                         {/* Contact form */}
-                        <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-                            <h3 className="text-lg font-medium text-gray-dark">Send us a message</h3>
-                            <form className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
-                                <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-dark">
-                                        Email
-                                    </label>
-                                    <div className="mt-1">
-                                        <input
-                                            id="email"
-                                            name="EMAIL"
-                                            type="email"
-                                            autoComplete="email"
-                                            onChange={e => setFrom(e.target.value)}
-                                            className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-white0 focus:border-white0 border-gray-dark rounded-md"
-                                        />
-                                    </div>
-                                </div>
-                                <div className="sm:col-span-2">
-                                    <label htmlFor="subject" className="block text-sm font-medium text-gray-dark">
-                                        Subject
-                                    </label>
-                                    <div className="mt-1">
-                                        <input
-                                            type="text"
-                                            name="subject"
-                                            id="subject"
-                                            onChange={e => setSubject(e.target.value)}
-                                            className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-white0 focus:border-white0 border-gray-dark rounded-md"
-                                        />
-                                    </div>
-                                </div>
-                                <div className="sm:col-span-2">
-                                    <div className="flex justify-between">
-                                        <label htmlFor="message" className="block text-sm font-medium text-gray-dark">
-                                            Message
+                        {
+                            !sent &&
+                            <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
+                                <h3 className="text-lg font-medium text-gray-dark">Send us a message</h3>
+                                <form className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                                    <div>
+                                        <label htmlFor="email" className="block text-sm font-medium text-gray-dark">
+                                            Email
                                         </label>
-                                        <span id="message-max" className="text-sm text-gray-dark">
+                                        <div className="mt-1">
+                                            <input
+                                                id="email"
+                                                name="EMAIL"
+                                                type="email"
+                                                autoComplete="email"
+                                                onChange={e => setFrom(e.target.value)}
+                                                className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-white0 focus:border-white0 border-gray-dark rounded-md"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="sm:col-span-2">
+                                        <label htmlFor="subject" className="block text-sm font-medium text-gray-dark">
+                                            Subject
+                                        </label>
+                                        <div className="mt-1">
+                                            <input
+                                                type="text"
+                                                name="subject"
+                                                id="subject"
+                                                onChange={e => setSubject(e.target.value)}
+                                                className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-white0 focus:border-white0 border-gray-dark rounded-md"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="sm:col-span-2">
+                                        <div className="flex justify-between">
+                                            <label htmlFor="message" className="block text-sm font-medium text-gray-dark">
+                                                Message
+                                            </label>
+                                            <span id="message-max" className="text-sm text-gray-dark">
                       Max. 500 characters
                     </span>
-                                    </div>
-                                    <div className="mt-1">
+                                        </div>
+                                        <div className="mt-1">
                     <textarea
                         id="message"
                         name="message"
@@ -261,18 +264,25 @@ const Form = () => {
                         aria-describedby="message-max"
                         defaultValue={''}
                     />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="sm:col-span-2 sm:flex sm:justify-end">
-                                    <button
-                                        onClick={submit}
-                                        className="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red hover:bg-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white0 sm:w-auto"
-                                    >
-                                        Submit
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                                    <div className="sm:col-span-2 sm:flex sm:justify-end">
+                                        <button
+                                            onClick={submit}
+                                            className="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red hover:bg-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white0 sm:w-auto"
+                                        >
+                                            Submit
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        }
+                        {
+                            sent &&
+                            <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
+                                <h3 className="text-lg font-medium text-gray-dark">Thank you! Talk to you soon!</h3>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
