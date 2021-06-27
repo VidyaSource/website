@@ -1,13 +1,8 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const nodemailer = require("nodemailer")
 const vidya = "vidyacontactinfo@gmail.com"
 
 export default async (req, res) => {
-  console.log(JSON.stringify(req.body))
   const {from, subject, message} = req.body
-  console.log("from " + from)
-  console.log("subject " + subject)
-  console.log("message " + message)
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -17,13 +12,16 @@ export default async (req, res) => {
       pass: process.env.MAIL_PASSWORD
     },
   })
-  console.log("Sending mail")
   await transporter.sendMail({
     from: vidya,
     to: "info@vidyasource.com",
     subject: subject,
     text: `From ${from}\n\n${message}`
+  }, function (err, info) {
+    if(err)
+      res.status(err.responseCode).json({message: err.response})
+    else
+      res.status(200).json({message: "OK"})
   })
-  res.status(200)
 }
 
