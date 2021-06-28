@@ -5,6 +5,7 @@ import Vidya from "../components/about/Vidya";
 import {Clients} from "../components/Clients";
 import Diversity from "../components/about/Diversity";
 import Offerings from "../components/about/Offerings";
+import {CallToAction} from "../components/CallToAction";
 
 const About = () => {
     return (
@@ -14,6 +15,7 @@ const About = () => {
             <Diversity />
             <Vidya />
             <Clients />
+            <CallToAction />
         </Page>
     )
 }

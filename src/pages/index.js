@@ -2,7 +2,7 @@ import {HeadElement} from "../components/HeadElement";
 import {Hero} from "../components/home/Hero"
 import {RecentPosts} from "../components/home/RecentPosts"
 import {Footer} from "../components/Footer";
-import {CallToAction} from "../components/home/CallToAction";
+import {CallToAction} from "../components/CallToAction";
 import {Testimonials} from "../components/home/Testimonials";
 import {Clients} from "../components/Clients";
 import {QueryClient} from "react-query";
