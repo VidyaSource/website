@@ -37,7 +37,7 @@ export const Courses = () => {
             </div>
             <div className="relative max-w-7xl mx-auto">
                 <div className="text-center">
-                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Courses</h2>
+                    <h2 className="text-3xl tracking-tight font-extrabold text-blue sm:text-4xl">Courses</h2>
                     <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
                         Level up in your career with these course offerings from Vidya.
                     </p>
@@ -51,6 +51,7 @@ export const Courses = () => {
                                         <div className="h-48 w-full relative">
                                             <Image
                                                 placeholder="blur"
+                                                loading="eager"
                                                 priority={true}
                                                 objectFit="cover"
                                                 layout="fill"

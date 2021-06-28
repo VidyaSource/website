@@ -54,6 +54,7 @@ export const Tutorials = () => {
                                         <div className="h-48 w-full relative">
                                             <Image
                                                 placeholder="blur"
+                                                loading="eager"
                                                 priority={true}
                                                 objectFit="cover"
                                                 layout="fill"
