@@ -97,7 +97,7 @@ const Offerings = () => {
                     </p>
                 </div>
                 <div className="mt-6 prose prose-lg text-gray-dark mx-auto">
-                    <h2 className="text-red">Our Services</h2>
+                    <h2>Our Services</h2>
                     <ul>
                         <li>Consulting with your team on architecture or development on large software projects, agile mentoring, or technical communications</li>
                         <li>Custom application development for your organization</li>

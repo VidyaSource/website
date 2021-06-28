@@ -29,7 +29,7 @@ const Form = () => {
 
                     <div className="grid grid-cols-1 lg:grid-cols-3">
                         {/* Contact information */}
-                        <div className="relative overflow-hidden py-10 px-6 bg-red sm:px-10 xl:p-12">
+                        <div className="relative overflow-hidden py-10 px-6 bg-blue sm:px-10 xl:p-12">
                             <div className="absolute inset-0 pointer-events-none sm:hidden" aria-hidden="true">
                                 <svg
                                     className="absolute inset-0 w-full h-full"
@@ -150,7 +150,7 @@ const Form = () => {
                             </dl>
                             <ul className="mt-8 flex space-x-12" role="list">
                                 <li>
-                                    <a className="text-red-light hover:text-white" href="https://www.facebook.com/VidyaSource">
+                                    <a className="text-blue-light hover:text-white" href="https://www.facebook.com/VidyaSource">
                                         <span className="sr-only">Facebook</span>
                                         <svg
                                             width={24}
@@ -169,7 +169,7 @@ const Form = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="text-red-light hover:text-white" href="https://github.com/VidyaSource">
+                                    <a className="text-blue-light hover:text-white" href="https://github.com/VidyaSource">
                                         <span className="sr-only">GitHub</span>
                                         <svg
                                             width={24}
@@ -188,7 +188,7 @@ const Form = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="text-red-light hover:text-white" href="https://twitter.com/VidyaSource">
+                                    <a className="text-blue-light hover:text-white" href="https://twitter.com/VidyaSource">
                                         <span className="sr-only">Twitter</span>
                                         <svg
                                             width={24}

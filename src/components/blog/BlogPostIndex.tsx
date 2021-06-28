@@ -36,7 +36,7 @@ export const BlogPostIndex = (p: BlogPostIndexProps) => {
     return (
         <div className="relative bg-gray-50 pt-8 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-28 lg:px-8">
             <div className="flex flex-col">
-                <label htmlFor="tag" className="mx-auto block text-lg font-medium text-red md:text-xl">
+                <label htmlFor="tag" className="mx-auto block text-lg font-medium text-blue md:text-xl">
                     Filter by tag
                 </label>
                 <div className="mt-1">
@@ -45,7 +45,7 @@ export const BlogPostIndex = (p: BlogPostIndexProps) => {
                             placeholder="Search..."
                             onChange={onChange}
                             value={selectedTag}
-                            className="mx-auto block text-red sm:text-xl lg:text-2xl focus:border-green-dark md:w-full lg:w-full shadow-sm sm:max-w-xs sm:text-sm border-red rounded-md">
+                            className="mx-auto block text-red sm:text-xl lg:text-2xl focus:border-green-dark md:w-full lg:w-full shadow-sm sm:max-w-xs sm:text-sm border-gray rounded-md">
                         <option value=""/>
                         {
                             tags.map(t => <option key={t} value={t}>{t}</option>)
