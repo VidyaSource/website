@@ -99,7 +99,7 @@ const Offerings = () => {
                 <div className="mt-6 prose prose-lg text-gray-dark mx-auto">
                     <h2 className="text-red">Our Services</h2>
                     <ul>
-                        <li>Consulting with your team on large software projects</li>
+                        <li>Consulting with your team on architecture or development on large software projects, agile mentoring, or technical communications</li>
                         <li>Custom application development for your organization</li>
                         <li>Training courses focused on the practical lessons that make you more productive and marketable in the real world</li>
                         <li>Blog posts and video tutorials on software development and the ways technology impacts the world</li>
