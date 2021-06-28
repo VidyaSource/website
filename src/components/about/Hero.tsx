@@ -18,6 +18,7 @@ export const Hero = () => {
                 <div className="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
                         <Image
                             priority={true}
+                            loading="eager"
                             placeholder="blur"
                             objectFit="cover"
                             layout="fill"
