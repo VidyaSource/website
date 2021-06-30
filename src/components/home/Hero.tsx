@@ -78,9 +78,8 @@ export const Hero = () => {
                                 </div>
                                 <div className="hidden md:flex md:space-x-10 md:text-base lg:text-lg">
                                     {navigation.map((item) => (
-                                        <Link href={item.href}>
-                                            <a key={item.name}
-                                               className="font-medium text-blue-dark hover:text-red">
+                                        <Link href={item.href} key={item.name}>
+                                            <a className="font-medium text-blue-dark hover:text-red">
                                                 {item.name}
                                             </a>
                                         </Link>
