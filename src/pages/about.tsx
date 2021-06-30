@@ -1,11 +1,13 @@
 import {Page} from "../components/Page";
-import {Hero} from "../components/about/Hero";
+import Hero from "../components/about/Hero";
 import {AboutHeadElement} from "../components/about/AboutHeadElement";
-import Vidya from "../components/about/Vidya";
-import {Clients} from "../components/Clients";
-import Diversity from "../components/about/Diversity";
-import Offerings from "../components/about/Offerings";
-import {CallToAction} from "../components/CallToAction";
+import dynamic from 'next/dynamic'
+
+const CallToAction = dynamic(() => import("../components/CallToAction"))
+const Clients = dynamic(() => import("../components/Clients"))
+const Diversity = dynamic(() => import("../components/about/Diversity"))
+const Vidya = dynamic(() => import("../components/about/Vidya"))
+const Offerings = dynamic(() => import("../components/about/Offerings"))
 
 const About = () => {
     return (
