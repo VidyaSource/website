@@ -32,9 +32,9 @@ export const Architecture = () => {
                             best suited to meet your challenges.
                         </p>
                         <p className="mt-8 text-lg font-medium lg:text-gray-dark lg:font-normal">
-                            In an industry rife with buzzwords and with vendors eager to sell you solutions you don't need,
-                            trust Vidya to help you understand patterns and technologies like microservices, state machines, event-driven
-                            architectures, serverless, event sourcing, CQRS, or Zero Trust and more importantly if and when
+                            In an industry rife with buzzwords and with vendors eager to sow confusion about them in order to sell you solutions you don't need,
+                            trust Vidya to help you understand for yourself patterns and technologies like microservices, state machines, event-driven
+                            architectures, serverless, event sourcing, CQRS, or Zero Trust but far more importantly if and when
                             they can generate value for your organization. We have guided commercial businesses and
                             government agencies to help them realize the architectures they need to deliver value to their users,
                             and we can do the same for you.
@@ -42,13 +42,13 @@ export const Architecture = () => {
                         <p className="mt-8 text-lg font-medium lg:text-gray-dark lg:font-normal">
                             Software development is similar--also an art form that balances simplicity with abstractions
                             when the complexity is worth it. But here is where the principles of the architecture become the reality
-                            that thrill your customers and generate revenue for your business. Vidya can not only help you
+                            that thrills your customers and generates revenue for your business. Vidya can not only help you
                             find the blend of programming languages, frameworks, and tools best suited for the needs of your
                             customers but also help you apply them the right way with best-in-class practices like modeling
                             your domain with object-oriented programming, composing behavior with functional programming,
                             streamlining your user interfaces with design systems and component libraries, creating reproducible
-                            machine learning pipelines, automating your builds with DevSecOps, building resiliency with
-                            immutability and static typing, and standardizing deployments across clouds with containerization and orchestration.
+                            machine learning pipelines, automating your builds with DevSecOps, building reliability with
+                            immutability and static typing, and standardizing resilient deployments across clouds with containerization and orchestration.
                         </p>
                         <p className="mt-8 text-lg font-medium lg:text-gray-dark lg:font-normal">
                             It's a lot. We can help.
