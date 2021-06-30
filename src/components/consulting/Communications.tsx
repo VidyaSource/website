@@ -1,16 +1,16 @@
-import { CameraIcon } from '@heroicons/react/solid'
+import Image from "next/image"
+import Link from "next/link"
 
 const Communications = () => {
     return (
-        <div className="bg-blue-light overflow-hidden">
+        <div className="bg-red-light overflow-hidden">
             <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
                 <div className="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen" />
                 <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
                     <div>
-                        <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Case Study</h2>
-                        <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                            Meet Whitney
-                        </h3>
+                        <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                            Technology Communications
+                        </h2>
                     </div>
                 </div>
                 <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
@@ -48,51 +48,55 @@ const Communications = () => {
                                         height={1376}
                                     />
                                 </div>
-                                <figcaption className="mt-3 flex text-sm text-gray-500">
-                                    <CameraIcon className="flex-none w-5 h-5 text-gray-400" aria-hidden="true" />
-                                    <span className="ml-2">Photograph by Marcus O’Leary</span>
+                                <figcaption className="mt-3 flex text-sm text-gray-dark">
+                                    <span className="ml-2">Vidya President Neil Chaudhuri speaking on Trends in Software Engineering</span>
                                 </figcaption>
                             </figure>
                         </div>
                     </div>
                     <div className="mt-8 lg:mt-0">
                         <div className="text-base max-w-prose mx-auto lg:max-w-none">
-                            <p className="text-lg text-gray-500">
-                                Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique
-                                pellentesque. Blandit amet, sed aenean erat arcu morbi.
+                            <p className="text-lg text-gray-dark">
+                                Technology is meaningless without the ability to express its power through engaging
+                                verbal and written communication. Whether explaining the value and risk of a particular
+                                technology to customers or writing concise but thorough prose in a proposal, we can
+                                communicate our technical expertise effectively to reach the goals of your organization.
                             </p>
-                        </div>
-                        <div className="mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
-                            <p>
-                                Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget
-                                pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna.
+                            <p className="text-lg text-gray-dark">
+                                We welcome you to look at examples of our communications, some of which target a wide
+                                audience while others target people who get excited by phrases like "dependency injection":
+                                <div className="mt-5 prose text-gray-dark mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
+                                    <ul>
+                                        <li><Link href="/blog"><a>Our blog</a></Link></li>
+                                        <li><Link href="/tutorials"><a>Our video tutorials</a></Link></li>
+                                        <li>
+                                            <Link href="https://gcn.com/Forms/Search-Results.aspx?key=2fae820b-7983-4dbf-9ed5-6ab36d6a8c93">
+                                                <a>Columns on Government Computing News</a>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/blog/learning-the-playbook/">
+                                                <a>Guest appearance on Public Spend Forum YouTube series</a>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="http://www.pdfpower.com/XML2005Proceedings/ship/77/xmlbinding.PDF">
+                                                <a>An old conference paper called XML Data Binding: Integrating XML andObject-Oriented Technologies
+                                                </a>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="http://soft.vub.ac.be/FFSE/Workshops/ELISA-submissions/09-Chaudhuri-full.pdf">
+                                                <a>An even older conference paper called J2EE or .NET: A Managerial Perspective
+                                                </a>
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
                             </p>
-                            <p>
-                                Bibendum eu nulla feugiat justo, elit adipiscing. Ut tristique sit nisi lorem pulvinar. Urna, laoreet
-                                fusce nibh leo. Dictum et et et sit. Faucibus sed non gravida lectus dignissim imperdiet a.
-                            </p>
-                            <p>
-                                Dictum magnis risus phasellus vitae quam morbi. Quis lorem lorem arcu, metus, egestas netus cursus. In.
-                            </p>
-                            <ul>
-                                <li>Quis elit egestas venenatis mattis dignissim.</li>
-                                <li>Cras cras lobortis vitae vivamus ultricies facilisis tempus.</li>
-                                <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-                            </ul>
-                            <p>
-                                Rhoncus nisl, libero egestas diam fermentum dui. At quis tincidunt vel ultricies. Vulputate aliquet
-                                velit faucibus semper. Pellentesque in venenatis vestibulum consectetur nibh id. In id ut tempus
-                                egestas. Enim sit aliquam nec, a. Morbi enim fermentum lacus in. Viverra.
-                            </p>
-                            <h3>How we helped</h3>
-                            <p>
-                                Tincidunt integer commodo, cursus etiam aliquam neque, et. Consectetur pretium in volutpat, diam.
-                                Montes, magna cursus nulla feugiat dignissim id lobortis amet. Laoreet sem est phasellus eu proin massa,
-                                lectus. Diam rutrum posuere donec ultricies non morbi. Mi a platea auctor mi.
-                            </p>
-                            <p>
-                                Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique
-                                pellentesque. Blandit amet, sed aenean erat arcu morbi.
+                            <p className="text-lg text-gray-dark">
+                                Please let us know if you would like us to help you craft RFPs, proposals, or marketing for your organization
+                                or to give a talk on any architecture or development topics.
                             </p>
                         </div>
                     </div>
