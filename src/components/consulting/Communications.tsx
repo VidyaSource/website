@@ -40,13 +40,14 @@ const Communications = () => {
                         <div className="relative text-base mx-auto max-w-prose lg:max-w-none">
                             <figure>
                                 <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
-                                    <img
-                                        className="rounded-lg shadow-lg object-cover object-center"
-                                        src="/img/staff/president.png"
-                                        alt="Whitney leaning against a railing on a downtown street"
-                                        width={1184}
-                                        height={1376}
-                                    />
+                                        <Image
+                                            width={1184}
+                                            height={1376}
+                                            objectFit="cover"
+                                            src="/img/staff/president.png"
+                                            quality={100}
+                                            className="rounded-lg shadow-lg object-center"
+                                            alt="Vidya President Neil Chaudhuri speaking on Trends in Software Engineering"/>
                                 </div>
                                 <figcaption className="mt-3 flex text-sm text-gray-dark">
                                     <span className="ml-2">Vidya President Neil Chaudhuri speaking on Trends in Software Engineering</span>
