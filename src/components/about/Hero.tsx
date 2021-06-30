@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const Hero = () => {
+const Hero = () => {
     return (
         <div className="relative bg-gray-50">
             <main className="lg:relative">
@@ -31,3 +31,5 @@ export const Hero = () => {
         </div>
     )
 }
+
+export default Hero
