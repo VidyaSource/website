@@ -40,7 +40,18 @@ export const Architecture = () => {
                             and we can do the same for you.
                         </p>
                         <p className="mt-8 text-lg font-medium lg:text-gray-dark lg:font-normal">
-                            Software development
+                            Software development is similar--also an art form that balances simplicity with abstractions
+                            when the complexity is worth it. But here is where the principles of the architecture become the reality
+                            that thrill your customers and generate revenue for your business. Vidya can not only help you
+                            find the blend of programming languages, frameworks, and tools best suited for the needs of your
+                            customers but also help you apply them the right way with best-in-class practices like modeling
+                            your domain with object-oriented programming, composing behavior with functional programming,
+                            streamlining your user interfaces with design systems and component libraries, creating reproducible
+                            machine learning pipelines, automating your builds with DevSecOps, building resiliency with
+                            immutability and static typing, and standardizing deployments across clouds with containerization and orchestration.
+                        </p>
+                        <p className="mt-8 text-lg font-medium lg:text-gray-dark lg:font-normal">
+                            It's a lot. We can help.
                         </p>
                     </div>
                 </div>
