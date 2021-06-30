@@ -1,9 +1,9 @@
 import {Page} from "../components/Page";
 import {ConsultingHeadElement} from "../components/consulting/ConsultingHeadElement";
-import {Architecture} from "../components/consulting/Architecture";
-import Communications from "../components/consulting/Communications";
+import {Architecture} from "../components/consulting/Architecture"
 import dynamic from 'next/dynamic'
 
+const Communications = dynamic(() => import("../components/consulting/Communications"))
 const CallToAction = dynamic(() => import("../components/CallToAction"))
 
 const Consulting = () => {
