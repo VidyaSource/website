@@ -83,4 +83,4 @@ export const Header = () => {
     )
 }
 
-const Footer = dynamic(() => import("./Footer"))
+const Footer = dynamic(() => import("./Footer"), { ssr: false })

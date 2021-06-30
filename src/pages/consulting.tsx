@@ -3,8 +3,8 @@ import {ConsultingHeadElement} from "../components/consulting/ConsultingHeadElem
 import {Architecture} from "../components/consulting/Architecture"
 import dynamic from 'next/dynamic'
 
-const Communications = dynamic(() => import("../components/consulting/Communications"))
-const CallToAction = dynamic(() => import("../components/CallToAction"))
+const Communications = dynamic(() => import("../components/consulting/Communications"), { ssr: false })
+const CallToAction = dynamic(() => import("../components/CallToAction"), { ssr: false })
 
 const Consulting = () => {
     return (
