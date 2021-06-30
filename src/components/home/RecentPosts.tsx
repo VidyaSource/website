@@ -1,13 +1,15 @@
-import {useQuery} from "react-query";
-import {getAllBlogPosts} from "../../lib/blogPost-utils";
+import {BlogPost} from "../../lib/blogPost-utils";
 import {constants} from "../../lib/constants";
 import format from "date-fns/format";
 import Image from "next/image";
 import Link from "next/link";
 
-export const RecentPosts = () => {
-    const {data} = useQuery('posts', getAllBlogPosts)
-    const posts = data.slice(0, 3)
+interface RecentPostsProps {
+    blogPosts: BlogPost[]
+}
+
+export const RecentPosts = (p: RecentPostsProps) => {
+    const posts = p.blogPosts.slice(0, 3)
     return (
         <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
             <div className="absolute inset-0">

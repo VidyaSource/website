@@ -1,22 +1,21 @@
-import {BlogPost, getBlogPostsByTags} from "../../lib/blogPost-utils";
+import {BlogPost, BlogPostCategories} from "../../lib/blogPost-utils";
 import {BlogPostCard} from "./BlogPostCard";
-import {useQuery} from "react-query";
-import {ChangeEvent, MouseEventHandler, useEffect, useState} from "react";
+import {ChangeEvent, useEffect, useState} from "react";
 
 interface BlogPostIndexProps {
     blogPosts: BlogPost[]
+    blogPostCategories: BlogPostCategories
 }
 
 export const BlogPostIndex = (p: BlogPostIndexProps) => {
-    const {data} = useQuery('postsByTags', getBlogPostsByTags)
-    const tags = Object.keys(data).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+    const tags = Object.keys(p.blogPostCategories).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
     const [selectedTag, selectTag] = useState<string>("")
     const [currentPosts, setCurrentPosts] = useState<BlogPost[]>(p.blogPosts)
     useEffect(() => {
         if (selectedTag === "") {
             setCurrentPosts(p.blogPosts)
         } else {
-            setCurrentPosts(data[selectedTag])
+            setCurrentPosts(p.blogPostCategories[selectedTag])
         }
     }, [p.blogPosts, selectedTag])
 

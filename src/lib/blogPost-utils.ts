@@ -58,7 +58,7 @@ export const getAllBlogPosts: () => Promise<BlogPost[]> = async () => {
     return sort(posts)
 }
 
-interface BlogPostCategories {
+export interface BlogPostCategories {
     [category: string]: undefined | BlogPost[]
 }
 
