@@ -6,7 +6,7 @@ interface InstructorProps {
     quote: string
 }
 
-export const Instructor = (p: InstructorProps) => {
+const Instructor = (p: InstructorProps) => {
     return (
         <section className="bg-white overflow-hidden">
             <div className="relative max-w-7xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
@@ -68,3 +68,5 @@ export const Instructor = (p: InstructorProps) => {
         </section>
     )
 }
+
+export default Instructor

@@ -6,7 +6,7 @@ interface SyllabusProps {
     syllabus: Syllabus
 }
 
-export const Syllabus = (p: SyllabusProps) => {
+const Syllabus = (p: SyllabusProps) => {
     return (
         <div className="py-16 bg-blue-light overflow-hidden">
             <div className="w-1/2 mx-auto px-4 space-y-8 sm:px-6 lg:px-8">
@@ -45,3 +45,5 @@ export const Syllabus = (p: SyllabusProps) => {
         </div>
     )
 }
+
+export default Syllabus
