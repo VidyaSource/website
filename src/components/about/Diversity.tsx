@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {constants} from "../../lib/constants";
 
 const Diversity = () => {
     return (
@@ -58,7 +59,7 @@ const Diversity = () => {
                                 objectFit="cover"
                                 quality={100}
                                 className="rounded-full"
-                                src="/img/staff/president.png"
+                                src={constants["Neil Chaudhuri"].image}
                                 alt="Neil Chaudhuri, President of Vidya"
                             />
                         </div>

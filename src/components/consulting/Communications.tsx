@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import {constants} from "../../lib/constants";
 
 const Communications = () => {
     return (
@@ -44,7 +45,7 @@ const Communications = () => {
                                             width={1184}
                                             height={1376}
                                             objectFit="cover"
-                                            src="/img/staff/president.png"
+                                            src={constants["Neil Chaudhuri"].image}
                                             quality={100}
                                             className="rounded-lg shadow-lg object-center"
                                             alt="Vidya President Neil Chaudhuri speaking on Trends in Software Engineering"/>
