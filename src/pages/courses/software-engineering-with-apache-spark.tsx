@@ -1,10 +1,12 @@
 import {Page} from "../../components/Page";
 import {CourseHeadElement} from "../../components/courses/CourseHeadElement";
-import {CallToAction} from "../../components/CallToAction";
 import {CourseHeader} from "../../components/courses/CourseHeader";
 import {Description} from "../../components/courses/Description";
-import {Syllabus} from "../../components/courses/Syllabus";
-import {Instructor} from "../../components/courses/Instructor";
+import dynamic from "next/dynamic";
+
+const CallToAction = dynamic(() => import("../../components/CallToAction"), { ssr: false })
+const Syllabus = dynamic(() => import("../../components/courses/Syllabus"), { ssr: false })
+const Instructor = dynamic(() => import("../../components/courses/Instructor"), { ssr: false })
 
 export const Spark = () => {
     const name = "Software Engineering with Apache Spark"
