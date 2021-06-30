@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from "next/image";
 
-export const Clients = () => {
+const Clients = () => {
     return (
         <div className="bg-green-light">
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
@@ -111,3 +111,5 @@ export const Clients = () => {
         </div>
     )
 }
+
+export default Clients

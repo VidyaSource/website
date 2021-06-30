@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export const Testimonials = () => {
+const Testimonials = () => {
     return (
         <section className="bg-white">
             <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
@@ -80,3 +80,5 @@ export const Testimonials = () => {
         </section>
     )
 }
+
+export default Testimonials

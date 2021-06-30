@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export const CallToAction = () => {
+const CallToAction = () => {
     return (
         <div className="bg-blue-light">
             <div
@@ -22,3 +22,5 @@ export const CallToAction = () => {
         </div>
     )
 }
+
+export default CallToAction
