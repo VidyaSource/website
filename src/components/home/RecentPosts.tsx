@@ -47,26 +47,26 @@ export const RecentPosts = () => {
                             <div className="flex-1 bg-blue-light p-6 flex flex-col justify-between hover:bg-red-light">
                                 <div className="flex-1">
                                     <Link href={link}>
-                                    <a className="block mt-2">
-                                        <p className="text-xl font-semibold text-gray-dark">{title}</p>
-                                        <p className="mt-3 text-base text-gray-dark">{description}</p>
-                                    </a>
+                                        <a className="block mt-2">
+                                            <p className="text-xl font-semibold text-gray-dark">{title}</p>
+                                            <p className="mt-3 text-base text-gray-dark">{description}</p>
+                                        </a>
                                     </Link>
                                 </div>
                                 <div className="mt-6 flex items-center">
                                     <div className="flex-shrink-0">
                                         <Link href={profileUrl}>
                                             <a>
-                                            <span className="sr-only">{author}</span>
-                                            <img className="h-10 w-10 rounded-full" src={authorImage} alt=""/>
+                                                <span className="sr-only">{author}</span>
+                                                <img className="h-10 w-10 rounded-full" src={authorImage} alt={author} />
                                             </a>
                                         </Link>
                                     </div>
                                     <div className="ml-3">
                                         <p className="text-sm font-medium text-gray-900">
-                                            <a href={profileUrl} className="hover:underline">
-                                                {author}
-                                            </a>
+                                            <Link href={profileUrl}>
+                                                <a className="hover:underline">{author}</a>
+                                            </Link>
                                         </p>
                                         <div className="flex space-x-1 text-sm text-gray-dark">
                                             <time dateTime={formattedDate}>{formattedDate}</time>
