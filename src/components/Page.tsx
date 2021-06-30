@@ -1,7 +1,7 @@
 import {FC, ReactElement, ReactNode} from 'react'
-import {Footer} from "./Footer"
 import Image from "next/image"
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 
 interface PageProps {
     headElement: ReactElement
@@ -82,3 +82,5 @@ export const Header = () => {
         </header>
     )
 }
+
+const Footer = dynamic(() => import("./Footer"))
