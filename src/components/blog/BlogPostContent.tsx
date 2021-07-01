@@ -63,7 +63,7 @@ export const BlogPostContent = (p: BlogPostContentProps) => {
                             <Avatar author={p.blogPost.frontMatter.author}/>
                         </div>
                     </h1>
-                    <p className="mt-2 text-xl text-gray-500 leading-8">
+                    <p className="mt-2 text-xl text-gray-dark leading-8">
                         {/* @ts-ignore */}
                         <ReactMarkdown components={components} remarkPlugins={[gfm]}>
                             {p.blogPost.content}
