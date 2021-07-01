@@ -1,28 +1,46 @@
+import { useRouter } from 'next/router'
+import ErrorPage from 'next/error'
 import {Page} from "../../components/Page";
 import {BlogPostHeadElement} from "../../components/blog/BlogPostHeadElement";
-import {BlogPost, getBlogPostBySlug} from "../../lib/blogPost-utils";
+import {BlogPost, getAllBlogPosts, getBlogPostBySlug} from "../../lib/blogPost-utils";
 import {BlogPostContent} from "../../components/blog/BlogPostContent";
 
-interface PostProps {
-    blogPost: BlogPost
-}
-
-const Post = (p: PostProps) => {
+const Post = (blogPost: BlogPost) => {
+    const router = useRouter()
+    if (!router.isFallback && !blogPost.slug) {
+        return <ErrorPage statusCode={404} />
+    }
     return (
-        <Page headElement={<BlogPostHeadElement title={p.blogPost.frontMatter.title}/>}>
-            <BlogPostContent blogPost={p.blogPost} />
+        <Page headElement={<BlogPostHeadElement title={blogPost.frontMatter.title}/>}>
+            <BlogPostContent blogPost={blogPost} />
         </Page>
     )
 }
 
 export default Post
 
-export async function getServerSideProps(context) {
-    const blogPost = await getBlogPostBySlug(context.params.slug)
+export async function getStaticProps({ params }) {
+    const post = await getBlogPostBySlug(params.slug)
 
     return {
         props: {
-            blogPost: blogPost
-        }
+            ...post,
+            content: post.content,
+        },
+    }
+}
+
+export async function getStaticPaths() {
+    const posts = await getAllBlogPosts()
+
+    return {
+        paths: posts.map((post) => {
+            return {
+                params: {
+                    slug: post.slug
+                },
+            }
+        }),
+        fallback: false,
     }
 }
