@@ -1,4 +1,9 @@
-import {BlogPost, BlogPostCategories, getAllBlogPosts, getBlogPostsByTags} from "../../lib/blogPost-utils";
+import {
+    BlogPost,
+    BlogPostCategories,
+    getAllBlogPosts,
+    getBlogPostsByTags
+} from "../../lib/blogPost-utils";
 import {Page} from "../../components/Page";
 import {BlogPostHeadElement} from "../../components/blog/BlogPostHeadElement";
 import {BlogPostIndex} from "../../components/blog/BlogPostIndex";
@@ -18,7 +23,7 @@ const BlogPosts = (p: BlogPostsProps) => {
 
 export default BlogPosts
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps(context) {
     const blogPosts = await getAllBlogPosts()
     const blogPostCategories = await getBlogPostsByTags()
 

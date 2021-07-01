@@ -1,7 +1,7 @@
 import {HeadElement} from "../components/HeadElement";
 import {Hero} from "../components/home/Hero"
 import {RecentPosts} from "../components/home/RecentPosts"
-import {BlogPost, getAllBlogPosts} from "../lib/blogPost-utils";
+import {BlogPost, getAllBlogPosts, getBlogPostsByTags} from "../lib/blogPost-utils";
 import dynamic from 'next/dynamic'
 
 const Clients = dynamic(() => import("../components/Clients"), { ssr: false })
@@ -29,7 +29,7 @@ const Home = (p: HomeProps) => {
 
 export default Home
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps(context) {
     const blogPosts = await getAllBlogPosts()
 
     return {
