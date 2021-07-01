@@ -1,9 +1,4 @@
-import {
-    BlogPost,
-    BlogPostCategories,
-    getAllBlogPosts,
-    getBlogPostsByTags
-} from "../../lib/blogPost-utils";
+import {BlogPost, BlogPostCategories, getAllBlogPosts, getBlogPostsByTags} from "../../lib/blogPost-utils";
 import {Page} from "../../components/Page";
 import {BlogPostHeadElement} from "../../components/blog/BlogPostHeadElement";
 import {BlogPostIndex} from "../../components/blog/BlogPostIndex";

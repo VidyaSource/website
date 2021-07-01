@@ -3,7 +3,7 @@
 import fs from 'fs'
 import {join} from 'path'
 import matter from 'gray-matter'
-import { zonedTimeToUtc } from 'date-fns-tz'
+import {zonedTimeToUtc} from 'date-fns-tz'
 
 export interface FrontMatter {
     author: "Neil Chaudhuri" | string

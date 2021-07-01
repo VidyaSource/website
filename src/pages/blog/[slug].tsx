@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 import ErrorPage from 'next/error'
 import {Page} from "../../components/Page";
 import {BlogPostHeadElement} from "../../components/blog/BlogPostHeadElement";
