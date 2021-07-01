@@ -87,9 +87,9 @@ export const Hero = () => {
 
                 <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
                     <div className="text-center">
-                        <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                            <span className="block xl:inline">Build faster.</span>{' '}
-                            <span className="block italic text-blue-dark xl:inline">Build better.</span>
+                        <h1 className="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
+                            <span className="block xl:inline text-red">Build faster.</span>{' '}
+                            <span className="block italic text-gray-dark xl:inline">Build better.</span>
                         </h1>
                         <p className="mt-3 max-w-md mx-auto text-base text-gray-dark sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                             Consulting and custom application development to strengthen your business. Courses
