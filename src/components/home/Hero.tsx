@@ -1,4 +1,3 @@
-import {Popover} from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -55,54 +54,50 @@ export const Hero = () => {
                 </div>
             </div>
 
-            <Popover className="relative pt-6 pb-16 sm:pb-24">
-                {({open}) => (
-                    <>
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                            <nav className="relative flex items-center justify-between sm:h-10 md:justify-center"
-                                 aria-label="Global">
-                                <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
-                                    <div className="flex items-center justify-between w-full md:w-auto">
-                                        <Link href="/">
-                                            <a className="rounded-md">
-                                                <span className="sr-only">Vidya</span>
-                                                <Image src="/img/vidya.png"
-                                                       alt="Vidya"
-                                                       height={65}
-                                                       width={140}
-                                                       quality={100}
-                                                       priority={true}/>
-                                            </a>
-                                        </Link>
-                                    </div>
-                                </div>
-                                <div className="hidden md:flex md:space-x-10 md:text-base lg:text-lg">
-                                    {navigation.map((item) => (
-                                        <Link href={item.href} key={item.name}>
-                                            <a className="font-medium text-blue-dark hover:text-red">
-                                                {item.name}
-                                            </a>
-                                        </Link>
-                                    ))}
-                                </div>
-                            </nav>
-                        </div>
-
-                        <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
-                            <div className="text-center">
-                                <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                                    <span className="block xl:inline">Build faster.</span>{' '}
-                                    <span className="block italic text-blue-dark xl:inline">Build better.</span>
-                                </h1>
-                                <p className="mt-3 max-w-md mx-auto text-base text-gray-dark sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                                    Consulting and custom application development to strengthen your business. Courses
-                                    and content to help you harness technology for yourself.
-                                </p>
+            <div className="relative pt-6 pb-16 sm:pb-24">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                    <nav className="relative flex items-center justify-between sm:h-10 md:justify-center"
+                         aria-label="Global">
+                        <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+                            <div className="flex items-center justify-between w-full md:w-auto">
+                                <Link href="/">
+                                    <a className="rounded-md">
+                                        <span className="sr-only">Vidya</span>
+                                        <Image src="/img/vidya.png"
+                                               alt="Vidya"
+                                               height={65}
+                                               width={140}
+                                               quality={100}
+                                               priority={true}/>
+                                    </a>
+                                </Link>
                             </div>
-                        </main>
-                    </>
-                )}
-            </Popover>
+                        </div>
+                        <div className="hidden md:flex md:space-x-10 md:text-base lg:text-lg">
+                            {navigation.map((item) => (
+                                <Link href={item.href} key={item.name}>
+                                    <a className="font-medium text-blue-dark hover:text-red">
+                                        {item.name}
+                                    </a>
+                                </Link>
+                            ))}
+                        </div>
+                    </nav>
+                </div>
+
+                <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+                    <div className="text-center">
+                        <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                            <span className="block xl:inline">Build faster.</span>{' '}
+                            <span className="block italic text-blue-dark xl:inline">Build better.</span>
+                        </h1>
+                        <p className="mt-3 max-w-md mx-auto text-base text-gray-dark sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                            Consulting and custom application development to strengthen your business. Courses
+                            and content to help you harness technology for yourself.
+                        </p>
+                    </div>
+                </main>
+            </div>
         </div>
     )
 }
