@@ -5,9 +5,9 @@ import {Description} from "../../components/courses/Description";
 import Link from 'next/link'
 import dynamic from "next/dynamic";
 
-const CallToAction = dynamic(() => import("../../components/CallToAction"), { ssr: false })
-const Syllabus = dynamic(() => import("../../components/courses/Syllabus"), { ssr: false })
-const Instructor = dynamic(() => import("../../components/courses/Instructor"), { ssr: false })
+const CallToAction = dynamic(() => import("../../components/CallToAction"))
+const Syllabus = dynamic(() => import("../../components/courses/Syllabus"))
+const Instructor = dynamic(() => import("../../components/courses/Instructor"))
 
 export const Agile = () => {
     const name = "Modern Agile"
