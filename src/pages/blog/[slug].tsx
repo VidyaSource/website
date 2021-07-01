@@ -8,7 +8,6 @@ interface PostProps {
 }
 
 const Post = (p: PostProps) => {
-
     return (
         <Page headElement={<BlogPostHeadElement title={p.blogPost.frontMatter.title}/>}>
             <BlogPostContent blogPost={p.blogPost} />
@@ -20,7 +19,7 @@ export default Post
 
 export async function getServerSideProps(context) {
     const blogPost = await getBlogPostBySlug(context.params.slug)
-    console.log(blogPost.frontMatter)
+
     return {
         props: {
             blogPost: blogPost
