@@ -60,7 +60,15 @@ export const RecentPosts = (p: RecentPostsProps) => {
                                         <Link href={profileUrl}>
                                             <a>
                                                 <span className="sr-only">{author}</span>
-                                                <img className="h-10 w-10 rounded-full" src={authorImage} alt={author} />
+                                                <div className="h-12 w-12 relative">
+                                                    <Image
+                                                        layout="fill"
+                                                        objectFit="cover"
+                                                        className="rounded-full"
+                                                        src={authorImage}
+                                                        alt={author}
+                                                    />
+                                                </div>
                                             </a>
                                         </Link>
                                     </div>
