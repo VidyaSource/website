@@ -4,10 +4,10 @@ import {RecentPosts} from "../components/home/RecentPosts"
 import {BlogPost, getAllBlogPosts, getBlogPostsByTags} from "../lib/blogPost-utils";
 import dynamic from 'next/dynamic'
 
-const Clients = dynamic(() => import("../components/Clients"), { ssr: false })
-const Testimonials = dynamic(() => import("../components/home/Testimonials"), { ssr: false })
-const CallToAction = dynamic(() => import("../components/CallToAction"), { ssr: false })
-const Footer = dynamic(() => import("../components/Footer"), { ssr: false })
+const Clients = dynamic(() => import("../components/Clients"))
+const Testimonials = dynamic(() => import("../components/home/Testimonials"))
+const CallToAction = dynamic(() => import("../components/CallToAction"))
+const Footer = dynamic(() => import("../components/Footer"))
 
 interface HomeProps {
     blogPosts: BlogPost[]
