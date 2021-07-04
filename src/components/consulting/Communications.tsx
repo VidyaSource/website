@@ -4,7 +4,7 @@ import {constants} from "../../lib/constants";
 
 const Communications = () => {
     return (
-        <div className="bg-red-light overflow-hidden">
+        <section className="bg-red-light overflow-hidden">
             <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
                 <div className="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen" />
                 <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
@@ -104,7 +104,7 @@ const Communications = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

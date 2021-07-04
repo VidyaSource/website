@@ -43,7 +43,7 @@ export const BlogPostContent = (p: BlogPostContentProps) => {
     return (
         <article className="relative py-4 overflow-hidden">
             <div className="relative px-4 sm:px-6 lg:px-8">
-                <div className="text-lg max-w-prose mx-auto">
+                <section className="text-lg max-w-prose mx-auto">
                     <h1>
                         <span
                             className="block text-sm text-center text-green-dark font-semibold tracking-wide uppercase">
@@ -69,7 +69,7 @@ export const BlogPostContent = (p: BlogPostContentProps) => {
                             {p.blogPost.content}
                         </ReactMarkdown>
                     </p>
-                </div>
+                </section>
             </div>
         </article>
     )

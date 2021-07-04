@@ -53,13 +53,13 @@ export const BlogPostIndex = (p: BlogPostIndexProps) => {
                 </div>
             </div>
             <div className="relative max-w-7xl mx-auto">
-                <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+                <nav className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
                     {
                         currentPosts.map((blogPost) => (
                             <BlogPostCard key={blogPost.slug} blogPost={blogPost} onTagClick={onTagClick}/>
                         ))
                     }
-                </div>
+                </nav>
             </div>
         </div>
     )

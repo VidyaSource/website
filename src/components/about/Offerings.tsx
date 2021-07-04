@@ -69,7 +69,7 @@ const Offerings = () => {
                 </div>
             </div>
             <div className="relative px-4 sm:px-6 lg:px-8">
-                <div className="text-lg max-w-prose mx-auto">
+                <section className="text-lg max-w-prose mx-auto">
                     <h1>
                         <span
                             className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
@@ -95,8 +95,8 @@ const Offerings = () => {
                     <p className="mt-8 text-xl text-gray-dark leading-8">
                         No matter what you need, we want to be of service to you.
                     </p>
-                </div>
-                <div className="mt-6 prose prose-lg text-gray-dark mx-auto">
+                </section>
+                <section className="mt-6 prose prose-lg text-gray-dark mx-auto">
                     <h2>Our Services</h2>
                     <ul>
                         <li>Consulting with your team on architecture or development on large software projects, agile mentoring, or technical communications</li>
@@ -104,7 +104,7 @@ const Offerings = () => {
                         <li>Training courses focused on the practical lessons that make you more productive and marketable in the real world</li>
                         <li>Blog posts and video tutorials on software development and the ways technology impacts the world</li>
                     </ul>
-                </div>
+                </section>
             </div>
         </div>
     )

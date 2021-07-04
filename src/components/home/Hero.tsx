@@ -86,7 +86,7 @@ export const Hero = () => {
                 </div>
 
                 <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
-                    <div className="text-center">
+                    <section className="text-center">
                         <h1 className="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
                             <span className="block xl:inline text-red">Build faster.</span>{' '}
                             <span className="block italic text-gray-dark xl:inline">Build better.</span>
@@ -95,7 +95,7 @@ export const Hero = () => {
                             Consulting and custom application development to strengthen your business. Courses
                             and content to help you harness technology for yourself.
                         </p>
-                    </div>
+                    </section>
                 </main>
             </div>
         </div>

@@ -3,7 +3,7 @@ import {constants} from "../../lib/constants";
 
 const Diversity = () => {
     return (
-        <section className="bg-red-light overflow-hidden">
+        <div className="bg-red-light overflow-hidden">
             <div className="relative max-w-7xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
                 <svg
                     className="absolute top-full left-0 transform translate-x-80 -translate-y-24 lg:hidden"
@@ -51,7 +51,7 @@ const Diversity = () => {
                     <rect width={404} height={784} fill="url(#56409614-3d62-4985-9a10-7ca758a8f4f0)" />
                 </svg>
 
-                <div className="relative lg:flex lg:items-center">
+                <section className="relative lg:flex lg:items-center">
                     <div className="hidden lg:block lg:flex-shrink-0">
                         <div className="h-64 w-64 relative xl:h-80 xl:w-80">
                             <Image
@@ -79,7 +79,7 @@ const Diversity = () => {
                             />
                         </svg>
                         <blockquote className="relative">
-                            <div className="text-2xl leading-9 font-medium text-gray-900">
+                            <div className="text-2xl leading-9 font-medium text-gray-dark">
                                 <p>
                                     We are a passionate advocate for diversity in technology. Prejudice against anyone
                                     on the basis of gender, race, ethnicity, nationality, religion, orientation, ability,
@@ -108,9 +108,9 @@ const Diversity = () => {
                             </footer>
                         </blockquote>
                     </div>
-                </div>
+                </section>
             </div>
-        </section>
+        </div>
     )
 }
 

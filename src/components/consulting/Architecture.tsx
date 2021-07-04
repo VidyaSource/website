@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Architecture = () => {
     return (
-        <div className="relative bg-white">
+        <section className="relative bg-white">
             <div className="lg:absolute lg:inset-0">
                 <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
                     <div className="aspect-h-9 aspect-w-16">
@@ -56,6 +56,6 @@ export const Architecture = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

@@ -35,14 +35,14 @@ export const Courses = () => {
             <div className="absolute inset-0">
                 <div className="bg-white h-1/3 sm:h-2/3" />
             </div>
-            <div className="relative max-w-7xl mx-auto">
+            <section className="relative max-w-7xl mx-auto">
                 <div className="text-center">
                     <h2 className="text-3xl tracking-tight font-extrabold text-blue sm:text-4xl">Courses</h2>
                     <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
                         Level up in your career with these course offerings from Vidya.
                     </p>
                 </div>
-                <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+                <nav className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
                     {courses.map((course) => (
                         <div key={course.title} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
                             <div className="flex-shrink-0 bg-gray-light hover:bg-red-light">
@@ -75,8 +75,8 @@ export const Courses = () => {
                             </div>
                         </div>
                     ))}
-                </div>
-            </div>
+                </nav>
+            </section>
         </div>
         </Page>
     )

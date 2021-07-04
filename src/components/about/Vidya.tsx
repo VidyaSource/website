@@ -3,7 +3,7 @@ import Image from "next/image";
 const Vidya = () => {
     return (
         <div className="py-16 bg-white overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 space-y-8 sm:px-6 lg:px-8">
+            <section className="max-w-7xl mx-auto px-4 space-y-8 sm:px-6 lg:px-8">
                 <div className="text-base max-w-prose mx-auto lg:max-w-none">
                     <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-blue sm:text-4xl">
                         Our name
@@ -64,7 +64,7 @@ const Vidya = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     )
 }
