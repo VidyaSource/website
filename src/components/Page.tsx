@@ -10,14 +10,17 @@ interface PageProps {
 
 export const Page: FC<PageProps> = (p) => {
     return (
-        <div className="font-sans">
-            {p.headElement}
-            <Header/>
-            <main className="bg-blue-light">
-                {p.children}
-            </main>
-            <Footer/>
-        </div>
+        <>
+            <div className="font-sans">
+                {p.headElement}
+                <Header/>
+                <main className="bg-blue-light">
+                    {p.children}
+                </main>
+                <Footer/>
+            </div>
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b9ebbff15106c8f"/>
+        </>
     )
 }
 
