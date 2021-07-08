@@ -52,12 +52,12 @@ export const BlogPostContent = (p: BlogPostContentProps) => {
                           }
                         </span>
                         <span
-                            className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-blue md:text-3xl lg:text-4xl">
+                            className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-red md:text-3xl lg:text-4xl">
                           {p.blogPost.frontMatter.title}
                         </span>
                         <div className="mx-auto">
                             <span
-                                className="mt-2 block text-lg text-center leading-8 tracking-tight text-blue lg:text-xl">
+                                className="mt-2 block text-lg text-center leading-8 tracking-tight text-red lg:text-xl">
                               {format(p.blogPost.frontMatter.date, "LLLL d, y")}
                             </span>
                             <Avatar author={p.blogPost.frontMatter.author}/>
