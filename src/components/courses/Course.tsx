@@ -22,10 +22,17 @@ interface CourseData {
     quote: string
 }
 
+interface Image {
+    url: string
+    width: number
+    height: number
+}
+
 interface CourseProps {
     courseData: CourseData
     category: string
     instructor?: Staff
+    image: Image
 }
 
 export const Course: FC<CourseProps> = (p) => {
@@ -48,10 +55,10 @@ export const Course: FC<CourseProps> = (p) => {
                     locale: "en_US",
                     images: [
                         {
-                            url: `${process.env.basePath}/img/courses/team.png`,
+                            url: `${process.env.basePath}${p.image.url}`,
                             alt: title,
-                            width: 1567,
-                            height: 1045
+                            width: p.image.width,
+                            height: p.image.height
                         },
                     ]
                 }}
