@@ -1,8 +1,5 @@
 module.exports = {
     target: 'serverless',
-    future: {
-        webpack5: true,
-    },
     webpack: (config, { isServer }) => {
         if (!isServer) {
             config.resolve.fallback.fs = false;
@@ -10,7 +7,9 @@ module.exports = {
         return config;
     },
     env: {
+        basePath: "https://www.vidyasource.com",
         spark: {
+            name: "Software Engineering with Apache Spark",
             blurb: "Combine the power of Apache Spark with the quality from agile software engineering to transform your user data into business intelligence to take your organization to the next level.",
             description1: "Apache Spark is great for organizations who want their analytics\n" +
                 "                            developed fast and executed fast. The problem is that large-scale distributed computing is\n" +
@@ -58,6 +57,7 @@ module.exports = {
                 "                                    forward to helping you harness its power."
         },
         agile: {
+            name: "Modern Agile",
             blurb: "We've all worked on projects that claim to be agile but are nothing more than the same old wasteful waterfall with daily standups. Move beyond Scrum and SAFe and learn how to be agile rather than merely do agile.",
             description1: "It's been two decades since the Agile Manifesto, and its impact on software development has been so profound that  \n" +
                 "every project claims to be agile. There's a backlog. The whole team mumbles its way through pointless daily standups.\n" +
@@ -115,6 +115,7 @@ module.exports = {
                 "federal government contracting to maximize value for American taxpayers through agile development and open source."
         },
         java: {
+            name: "Java For Work",
             blurb: "Java is one of the the most popular programming languages in the world. With all the legacy Java applications that need to be maintained\n" +
                 "and new ones created every day, mastery of Java will guarantee you will always be in demand. Take the first step now.",
             description1: "According to Oracle, almost 20 billion devices run Java around the world. Java was the first language for Android. Java runs \n" +
@@ -162,6 +163,6 @@ module.exports = {
                 "I have multiple Java badges on Stack Overflow, and I was even a Sun Certified Java Programmer when that was still a thing\n" +
                 "and when I thought certifications really meant something."
         },
-
+        googleAnalytics: ""
     }
 }
