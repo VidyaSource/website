@@ -41,7 +41,7 @@ export const Tutorials = () => {
             <section className="relative max-w-7xl mx-auto">
                 <div className="text-center">
                     <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Tutorials</h2>
-                    <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                    <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-dark sm:mt-4">
                         Watch our video tutorials (with accompanying source code on GitHub) to learn something new.
                     </p>
                 </div>
@@ -53,7 +53,6 @@ export const Tutorials = () => {
                                     <a>
                                         <div className="h-48 w-full relative">
                                             <Image
-                                                placeholder="blur"
                                                 loading="eager"
                                                 priority={true}
                                                 objectFit="cover"
