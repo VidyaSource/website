@@ -10,7 +10,7 @@ const Hero = () => {
                             <span className="block xl:inline">Vidya is a software services and consulting company</span>{' '}
                             <span className="block text-blue-dark xl:inline">based in Washington, DC, USA</span>
                         </h1>
-                        <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+                        <p className="mt-3 max-w-md mx-auto text-lg text-gray-dark sm:text-xl md:mt-5 md:max-w-3xl">
                             We are a certified Minority Business Enterprise by the Capital Region Minority Supplier Development Council and a certified Asian and minority-owned small business by the US Pan Asian American Chamber of Commerce.
                         </p>
                     </section>
@@ -19,7 +19,6 @@ const Hero = () => {
                         <Image
                             priority={true}
                             loading="eager"
-                            placeholder="blur"
                             objectFit="cover"
                             layout="fill"
                             quality={100}

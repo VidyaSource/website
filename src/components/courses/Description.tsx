@@ -29,7 +29,7 @@ export const Description: FC<DescriptionProps> = (p) => {
                 className="relative pt-12 pb-16 px-4 sm:pt-16 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-2">
                 <div className="lg:col-start-2 lg:pl-8">
                     <section className="text-base max-w-prose mx-auto lg:max-w-lg lg:ml-auto lg:mr-0">
-                        <h2 className="leading-6 text-blue font-semibold tracking-wide uppercase">Description</h2>
+                        <h2 className="leading-6 text-red font-semibold tracking-wide uppercase">Description</h2>
                         <p className="mt-8 text-lg font-medium lg:text-gray-dark lg:font-normal">
                             {p.description1}
                         </p>

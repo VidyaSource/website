@@ -1,9 +1,9 @@
-interface Syllabus {
+export interface SyllabusType {
     [title: string]: string[]
 }
 
 interface SyllabusProps {
-    syllabus: Syllabus
+    syllabus: SyllabusType
 }
 
 const Syllabus = (p: SyllabusProps) => {
@@ -11,7 +11,7 @@ const Syllabus = (p: SyllabusProps) => {
         <section className="py-16 bg-blue-light overflow-hidden">
             <div className="w-1/2 mx-auto px-4 space-y-8 sm:px-6 lg:px-8">
                 <div className="text-base max-w-prose mx-auto lg:max-w-none">
-                    <h2 className="mt-2 text-4xl leading-8 font-extrabold tracking-tight text-blue sm:text-5xl">
+                    <h2 className="mt-2 text-4xl leading-8 font-extrabold tracking-tight text-red sm:text-5xl">
                         Course Syllabus
                     </h2>
                 </div>
