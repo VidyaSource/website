@@ -18,7 +18,7 @@ export const RecentPosts = (p: RecentPostsProps) => {
             <section className="relative max-w-7xl mx-auto">
                 <div className="text-center">
                     <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">From the Vidya blog</h2>
-                    <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                    <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-dark sm:mt-4">
                         Discover new insights into everything from agile software development to innovative engineering techniques to the
                         impact of technology on our world
                     </p>
