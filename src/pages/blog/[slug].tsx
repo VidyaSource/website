@@ -6,9 +6,11 @@ import {BlogPost, getAllBlogPosts, getBlogPostBySlug} from "../../lib/blogPost-u
 import {BlogPostContent} from "../../components/blog/BlogPostContent"
 import {NextSeo} from 'next-seo'
 import { BlogJsonLd } from 'next-seo'
+import {constants} from "../../lib/constants";
 
 const Post = (blogPost: BlogPost) => {
     const router = useRouter()
+    const imageUrl = `${process.env.basePath}${blogPost.frontMatter.image}`
     if (!router.isFallback && !blogPost.slug) {
         return <ErrorPage statusCode={404}/>
     }
@@ -27,14 +29,13 @@ const Post = (blogPost: BlogPost) => {
                         publishedTime: blogPost.frontMatter.date.toISOString(),
                         modifiedTime: new Date().toISOString(),
                         authors: [
-                            'https://www.example.com/authors/@firstnameA-lastnameA',
-                            'https://www.example.com/authors/@firstnameB-lastnameB',
+                            constants[blogPost.frontMatter.author].profileUrl
                         ],
                         tags: blogPost.frontMatter.tags,
                     },
                     images: [
                         {
-                            url: `https://www.vidyasource.com/img/${blogPost.frontMatter.image}`,
+                            url: imageUrl,
                             alt: `Vidya | ${blogPost.frontMatter.title}`,
                         },
                     ],
@@ -44,7 +45,7 @@ const Post = (blogPost: BlogPost) => {
                 url={`https://www.vidyasource.com/blog/${blogPost.slug}`}
                 title={`Vidya | ${blogPost.frontMatter.title}`}
                 images={[
-                    `https://www.vidyasource.com/img/${blogPost.frontMatter.image}`
+                    imageUrl
                 ]}
                 datePublished={blogPost.frontMatter.date.toTimeString()}
                 dateModified={blogPost.frontMatter.date.toTimeString()}
