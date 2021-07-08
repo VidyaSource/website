@@ -1,21 +1,9 @@
-import {Page} from "../../components/Page";
-import {CourseHeadElement} from "../../components/courses/CourseHeadElement";
-import {CourseHeader} from "../../components/courses/CourseHeader";
-import {Description} from "../../components/courses/Description";
-import dynamic from "next/dynamic";
-
-const CallToAction = dynamic(() => import("../../components/CallToAction"))
-const Syllabus = dynamic(() => import("../../components/courses/Syllabus"))
-const Instructor = dynamic(() => import("../../components/courses/Instructor"))
+import Course from "../../components/courses/Course";
 
 export const Spark = () => {
-    const name = "Software Engineering with Apache Spark"
-    // @ts-ignore
-    const {blurb, description1 , description2, syllabus, quote} = process.env.spark
     return (
-        <Page headElement={<CourseHeadElement title={`Vidya | ${name}`} />}>
-            <CourseHeader category="Data Science" name={name} blurb={blurb}/>
-            <Description name={name} description1={description1} description2={description2}>
+        // @ts-ignore
+        <Course courseData={process.env.spark} category="Data Science">
                 <p className="font-medium lg:text-gray-dark lg:font-normal">
                     Apache Spark is a huge topic, and the typical Spark course tries to cover too much in
                     too
@@ -33,7 +21,8 @@ export const Spark = () => {
                     and outsourcing configuration to a provider so you can focus on what you care about.
                 </p>
                 <p>
-                    In addition, agile software development and DevOps have taught us to incorporate quality through build
+                    In addition, agile software development and DevOps have taught us to incorporate quality through
+                    build
                     automation, testing, continuous integration, and continuous delivery, and we don’t have
                     to abandon them just because we are working in a distributed environment. In fact, the
                     complexity of distributed systems makes them even more valuable. <span
@@ -41,11 +30,7 @@ export const Spark = () => {
                     you how to apply these techniques to improve the quality and
                     reliability of your analytics.
                 </p>
-            </Description>
-            <Syllabus syllabus={syllabus}/>
-            <Instructor name="Neil Chaudhuri" quote={quote}/>
-            <CallToAction/>
-        </Page>
+            </Course>
     )
 }
 
