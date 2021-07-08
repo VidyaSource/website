@@ -10,6 +10,7 @@ import {constants} from "../../lib/constants";
 
 const Post = (blogPost: BlogPost) => {
     const router = useRouter()
+    const title = `Vidya | ${blogPost.frontMatter.title}`
     const imageUrl = `${process.env.basePath}${blogPost.frontMatter.image}`
     if (!router.isFallback && !blogPost.slug) {
         return <ErrorPage statusCode={404}/>
@@ -17,7 +18,7 @@ const Post = (blogPost: BlogPost) => {
     return (
         <>
             <NextSeo
-                title={`Vidya | ${blogPost.frontMatter.title}`}
+                title={title}
                 description={blogPost.frontMatter.description}
                 canonical={`https://www.vidyasource.com/blog/${blogPost.slug}`}
                 openGraph={{
@@ -36,14 +37,14 @@ const Post = (blogPost: BlogPost) => {
                     images: [
                         {
                             url: imageUrl,
-                            alt: `Vidya | ${blogPost.frontMatter.title}`,
+                            alt: title,
                         },
                     ],
                 }}
             />
             <BlogJsonLd
                 url={`https://www.vidyasource.com/blog/${blogPost.slug}`}
-                title={`Vidya | ${blogPost.frontMatter.title}`}
+                title={title}
                 images={[
                     imageUrl
                 ]}
@@ -52,7 +53,7 @@ const Post = (blogPost: BlogPost) => {
                 authorName={blogPost.frontMatter.author}
                 description={blogPost.frontMatter.description}
             />
-            <Page headElement={<BlogPostHeadElement title={blogPost.frontMatter.title}/>}>
+            <Page headElement={<BlogPostHeadElement title={title}/>}>
                 <BlogPostContent blogPost={blogPost}/>
             </Page>
         </>
