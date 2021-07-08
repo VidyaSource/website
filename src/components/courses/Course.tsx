@@ -48,8 +48,10 @@ export const Course: FC<CourseProps> = (p) => {
                     locale: "en_US",
                     images: [
                         {
-                            url: `${process.env.basePath}/img/courses/programming.png`,
+                            url: `${process.env.basePath}/img/courses/team.png`,
                             alt: title,
+                            width: 1567,
+                            height: 1045
                         },
                     ]
                 }}
