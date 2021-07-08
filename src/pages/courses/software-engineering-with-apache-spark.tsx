@@ -1,9 +1,11 @@
 import Course from "../../components/courses/Course";
+import {courses} from "./index";
 
 export const Spark = () => {
+    const {imageUrl: url, width, height} = courses[2]
     return (
         // @ts-ignore
-        <Course courseData={process.env.spark} category="Data Science">
+        <Course courseData={process.env.spark} category="Data Science" image={{url: url, width: width, height: height}}>
                 <p className="font-medium lg:text-gray-dark lg:font-normal">
                     Apache Spark is a huge topic, and the typical Spark course tries to cover too much in
                     too

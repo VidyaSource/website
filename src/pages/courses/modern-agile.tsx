@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import Course from "../../components/courses/Course";
+import {courses} from "./index";
 
 export const Agile = () => {
+    const {imageUrl: url, width, height} = courses[1]
     return (
             // @ts-ignore
-            <Course courseData={process.env.agile} category="Agile">
+            <Course courseData={process.env.agile} category="Agile" image={{url: url, width: width, height: height}}>
                 <p className="font-medium lg:text-gray-dark lg:font-normal">
                     In software engineering, we often see valuable ideas become confusing if not controversial or
                     meaningless

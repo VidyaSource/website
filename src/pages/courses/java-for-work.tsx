@@ -1,9 +1,11 @@
 import Course from "../../components/courses/Course"
+import {courses} from "./index";
 
 export const Java = () => {
+    const {imageUrl: url, width, height} = courses[0]
     return (
             // @ts-ignore
-            <Course courseData={process.env.java} category="Java">
+            <Course courseData={process.env.java} category="Java" image={{url: url, width: width, height: height}}>
                 <p className="font-medium lg:text-gray-dark lg:font-normal">
                     The typical Java course teaches you how to code in Java but not how to engineer in Java. You go
                     back
