@@ -26,7 +26,6 @@ const Contact = () => {
                         contactType: 'customer support',
                         areaServed: 'US',
                         availableLanguage: ['English'],
-                        email: "info@vidyasource.com"
                     },
                 ]}
             />
