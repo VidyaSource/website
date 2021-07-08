@@ -1,16 +1,17 @@
-/* This example requires Tailwind CSS v2.0+ */
 import {CourseHeadElement} from "../../components/courses/CourseHeadElement";
 import {Page} from "../../components/Page";
 import Image from "next/image";
 import Link from "next/link";
 
-const courses = [
+export const courses = [
     {
         title: 'Java for Work',
         href: '/courses/java-for-work',
         // @ts-ignore
         description: process.env.java.blurb,
         imageUrl: '/img/courses/programming.jpg',
+        width: 6000,
+        height: 4000
     },
     {
         title: 'Modern Agile',
@@ -18,6 +19,8 @@ const courses = [
         // @ts-ignore
         description: process.env.agile.blurb,
         imageUrl: '/img/courses/agile.jpg',
+        width: 3600,
+        height: 2400
     },
     {
         title: 'Software Engineering with Apache Spark',
@@ -25,6 +28,8 @@ const courses = [
         // @ts-ignore
         description: process.env.spark.blurb,
         imageUrl: '/img/courses/spark.jpg',
+        width: 4810,
+        height: 3207
     },
 ]
 
@@ -37,8 +42,8 @@ export const Courses = () => {
             </div>
             <section className="relative max-w-7xl mx-auto">
                 <div className="text-center">
-                    <h2 className="text-3xl tracking-tight font-extrabold text-blue sm:text-4xl">Courses</h2>
-                    <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                    <h2 className="text-3xl tracking-tight font-extrabold text-red sm:text-4xl">Courses</h2>
+                    <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-dark sm:mt-4">
                         Level up in your career with these course offerings from Vidya.
                     </p>
                 </div>
@@ -50,7 +55,6 @@ export const Courses = () => {
                                     <a>
                                         <div className="h-48 w-full relative">
                                             <Image
-                                                placeholder="blur"
                                                 loading="eager"
                                                 priority={true}
                                                 objectFit="cover"
