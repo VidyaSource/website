@@ -25,7 +25,6 @@ export const BlogPostCard = (p: BlogPostCardProps) => {
                     <a>
                         <div className="h-48 w-full relative">
                             <Image
-                                placeholder="blur"
                                 objectFit="cover"
                                 layout="fill"
                                 quality={100}
@@ -81,7 +80,7 @@ export const BlogPostCard = (p: BlogPostCardProps) => {
                                 </a>
                             </Link>
                         </p>
-                        <div className="flex space-x-1 text-sm text-gray-500">
+                        <div className="flex space-x-1 text-sm text-gray-dark">
                             <time dateTime={formattedDate}>{formattedDate}</time>
                         </div>
                     </div>
