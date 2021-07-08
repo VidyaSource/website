@@ -18,7 +18,7 @@ const BlogPosts = (p: BlogPostsProps) => {
 
 export default BlogPosts
 
-export async function getServerSideProps(context) {
+export async function getStaticProps({ params }) {
     const blogPosts = await getAllBlogPosts()
     const blogPostCategories = await getBlogPostsByTags()
 
