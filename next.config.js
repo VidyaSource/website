@@ -1,5 +1,10 @@
-module.exports = {
+const withPWA = require('next-pwa')
+
+module.exports = withPWA({
     target: 'serverless',
+    pwa: {
+        dest: 'public'
+    },
     webpack: (config, { isServer }) => {
         if (!isServer) {
             config.resolve.fallback.fs = false;
@@ -163,6 +168,6 @@ module.exports = {
                 "I have multiple Java badges on Stack Overflow, and I was even a Sun Certified Java Programmer when that was still a thing\n" +
                 "and when I thought certifications really meant something."
         },
-        googleAnalytics: ""
+        googleAnalytics: "G-SV6CZCPD3B"
     }
-}
+})
