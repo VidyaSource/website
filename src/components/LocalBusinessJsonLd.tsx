@@ -9,7 +9,7 @@ export const LocalBusinessJsonLd = () => {
             type="ProfessionalService"
             id={url}
             name="Vidya"
-            description="Vidya is a technology company providing consulting services, courses, blogs, and video tutorials to help you harness technology to empower yourself or your organization. Build faster. Build better."
+            description="Build faster. Build better. Consulting and custom application development to strengthen your business. Courses and content to help you harness technology for yourself."
             url={url}
             telephone="+12024305695"
             address={{
