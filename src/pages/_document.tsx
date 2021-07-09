@@ -65,7 +65,8 @@ class VidyaDocument extends Document {
                     <meta name='apple-mobile-web-app-status-bar-style' content='default' />
                     <meta name='apple-mobile-web-app-title' content='Vidya' />
                     <meta name='mobile-web-app-capable' content='yes' />
-
+                    <meta name='theme-color' content='#5a82b4' />
+                    <link rel='manifest' href='/manifest.json' />
                     {/* PWA */}
                 </Head>
                 <body>
