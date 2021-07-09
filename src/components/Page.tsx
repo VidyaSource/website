@@ -1,10 +1,9 @@
-import {FC, ReactElement, ReactNode} from 'react'
+import {FC, ReactNode} from 'react'
 import Image from "next/image"
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 
 interface PageProps {
-    headElement: ReactElement
     children: ReactNode
 }
 
@@ -12,7 +11,6 @@ export const Page: FC<PageProps> = (p) => {
     return (
         <>
             <div className="font-sans">
-                {p.headElement}
                 <Header/>
                 <main className="bg-blue-light">
                     {p.children}
