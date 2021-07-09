@@ -1,6 +1,5 @@
 import {BlogPost, BlogPostCategories, getAllBlogPosts, getBlogPostsByTags} from "../../lib/blogPost-utils";
 import {Page} from "../../components/Page";
-import {BlogPostHeadElement} from "../../components/blog/BlogPostHeadElement";
 import {BlogPostIndex} from "../../components/blog/BlogPostIndex";
 
 interface BlogPostsProps {
@@ -10,7 +9,7 @@ interface BlogPostsProps {
 
 const BlogPosts = (p: BlogPostsProps) => {
     return (
-        <Page headElement={<BlogPostHeadElement title="Vidya | Blog"/>}>
+        <Page>
             <BlogPostIndex blogPosts={p.blogPosts} blogPostCategories={p.blogPostCategories}/>
         </Page>
     )

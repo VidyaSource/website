@@ -1,4 +1,3 @@
-import {HeadElement} from "../components/HeadElement";
 import {Hero} from "../components/home/Hero"
 import {RecentPosts} from "../components/home/RecentPosts"
 import {BlogPost, getAllBlogPosts} from "../lib/blogPost-utils";
@@ -16,7 +15,6 @@ interface HomeProps {
 const Home = (p: HomeProps) => {
     return (
         <>
-            <HeadElement title="Test title"/>
             <Hero />
             <RecentPosts blogPosts={p.blogPosts}/>
             <Clients />
