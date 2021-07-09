@@ -1,5 +1,4 @@
 import {Page} from "../../components/Page";
-import {CourseHeadElement} from "../../components/courses/CourseHeadElement";
 import {CourseHeader} from "../../components/courses/CourseHeader";
 import {Description} from "../../components/courses/Description";
 import dynamic from "next/dynamic";
@@ -8,6 +7,7 @@ import {CourseJsonLd, NextSeo} from "next-seo";
 import {FC} from "react";
 import {Staff} from "../../lib/constants"
 import {SyllabusType} from "./Syllabus";
+import {Image} from "../Image";
 
 const CallToAction = dynamic(() => import("../../components/CallToAction"))
 const Syllabus = dynamic(() => import("../../components/courses/Syllabus"))
@@ -20,12 +20,6 @@ interface CourseData {
     description2: string,
     syllabus: SyllabusType,
     quote: string
-}
-
-interface Image {
-    url: string
-    width: number
-    height: number
 }
 
 interface CourseProps {
@@ -51,8 +45,7 @@ export const Course: FC<CourseProps> = (p) => {
                     title: title,
                     description: blurb,
                     url: url,
-                    type: 'og:product',
-                    locale: "en_US",
+                    type: 'product',
                     images: [
                         {
                             url: `${process.env.basePath}${p.image.url}`,
@@ -69,7 +62,7 @@ export const Course: FC<CourseProps> = (p) => {
                 providerUrl={url}
                 description={blurb}
             />
-            <Page headElement={<CourseHeadElement title={title}/>}>
+            <Page>
                 <CourseHeader category={p.category} name={name} blurb={blurb}/>
                 <Description name={name} description1={description1} description2={description2}>
                     {p.children}
