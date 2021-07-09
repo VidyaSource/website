@@ -1,7 +1,6 @@
 import {useRouter} from 'next/router'
 import ErrorPage from 'next/error'
 import {Page} from "../../components/Page";
-import {BlogPostHeadElement} from "../../components/blog/BlogPostHeadElement";
 import {BlogPost, getAllBlogPosts, getBlogPostBySlug} from "../../lib/blogPost-utils";
 import {BlogPostContent} from "../../components/blog/BlogPostContent"
 import {NextSeo} from 'next-seo'
@@ -53,7 +52,7 @@ const Post = (blogPost: BlogPost) => {
                 authorName={blogPost.frontMatter.author}
                 description={blogPost.frontMatter.description}
             />
-            <Page headElement={<BlogPostHeadElement title={title}/>}>
+            <Page>
                 <BlogPostContent blogPost={blogPost}/>
             </Page>
         </>
