@@ -32,14 +32,13 @@ class VidyaDocument extends Document {
                     <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
                     <link rel="preconnect" href="https://fonts.gstatic.com"/>
                     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet"/>
-                    <title>Vidya | Build faster. Build better.</title>
                 </Head>
                 <body>
-                <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFPX26R"
-                        height="0" width="0" style={{display:"none", visibility:"hidden"}}/>
-                <Main/>
-                <NextScript/>
-                <Script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b9ebbff15106c8f"/>
+                    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFPX26R"
+                            height="0" width="0" style={{display: "none", visibility: "hidden"}}/>
+                    <Main/>
+                    <NextScript/>
+                    <Script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b9ebbff15106c8f"/>
                 </body>
             </Html>
         )
