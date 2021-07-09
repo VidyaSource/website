@@ -1,5 +1,4 @@
 import {Page} from "../components/Page";
-import {ContactHeadElement} from "../components/contact/ContactHeadElement";
 import Form from "../components/contact/Form";
 import {CorporateContactJsonLd, SocialProfileJsonLd} from 'next-seo'
 
@@ -29,7 +28,7 @@ const Contact = () => {
                     },
                 ]}
             />
-            <Page headElement={<ContactHeadElement title="Vidya | Contact"/>}>
+            <Page>
                 <Form/>
             </Page>
         </>
