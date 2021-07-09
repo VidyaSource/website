@@ -1,6 +1,5 @@
 import {Page} from "../components/Page";
 import Hero from "../components/about/Hero";
-import {AboutHeadElement} from "../components/about/AboutHeadElement";
 import dynamic from 'next/dynamic'
 
 const CallToAction = dynamic(() => import("../components/CallToAction"))
@@ -11,7 +10,7 @@ const Offerings = dynamic(() => import("../components/about/Offerings"))
 
 const About = () => {
     return (
-        <Page headElement={<AboutHeadElement title="Vidya | About" />}>
+        <Page>
             <Hero />
             <Offerings />
             <Diversity />
