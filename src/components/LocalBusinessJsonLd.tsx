@@ -1,6 +1,6 @@
 import {LocalBusinessJsonLd as LocalBusiness} from "next-seo"
 
-export const LocalBusinessJsonLd = () => {
+const LocalBusinessJsonLd = () => {
     const url = `${process.env.basePath}/about`
     const imageUrl = `${process.env.basePath}/img/vidya.png`
 
@@ -49,3 +49,5 @@ export const LocalBusinessJsonLd = () => {
         />
     )
 }
+
+export default LocalBusinessJsonLd
