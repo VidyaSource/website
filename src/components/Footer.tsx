@@ -93,13 +93,13 @@ const navigation = {
 
 const Footer = () => {
     return (
-        <footer className="bg-white">
+        <footer className="bg-white dark:bg-gray-dark dark:border-t-2 ">
             <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
                 <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
                     {navigation.main.map((item) => (
                         <div key={item.name} className="px-5 py-2">
                             <Link href={item.href}>
-                                <a className="text-base hover:text-red">
+                                <a className="text-base hover:text-red dark:hover:text-green-light">
                                     {item.name}
                                 </a>
                             </Link>
@@ -116,7 +116,7 @@ const Footer = () => {
                         </Link>
                     ))}
                 </div>
-                <p className="mt-8 text-center text-base lg:text-lg text-gray-dark">
+                <p className="mt-8 text-center text-base lg:text-lg text-gray-dark dark:text-green-light">
                     &copy; {new Date().getFullYear()} Vidya, LLC. All rights reserved.
                 </p>
             </div>

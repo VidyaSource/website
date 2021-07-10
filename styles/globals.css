@@ -8,23 +8,23 @@
     }
 
     a {
-        @apply text-blue;
+        @apply text-blue dark:text-blue-light hover:text-green-light;
     }
 
     h1 {
-        @apply text-red text-4xl md:text-5xl mt-8 mb-4;
+        @apply text-red dark:text-red-light text-4xl md:text-5xl mt-8 mb-4;
     }
 
     h2 {
-        @apply text-red text-3xl md:text-4xl mt-4;
+        @apply text-red dark:text-red-light text-3xl md:text-4xl mt-4;
     }
 
     h3 {
-        @apply text-red text-2xl md:text-3xl mt-8;
+        @apply text-red dark:text-red-light text-2xl md:text-3xl mt-8;
     }
     
     blockquote p {
-        @apply text-green-dark italic border-l-8 px-8 my-8;
+        @apply text-green-dark dark:text-green-light italic border-l-8 px-8 my-8;
     }
 
     .youtube {
@@ -36,7 +36,7 @@
     }
 
     span.a {
-        @apply text-blue cursor-pointer;
+        @apply text-blue dark:text-blue-light cursor-pointer;
     }
 
     li {
@@ -53,8 +53,20 @@
         color: #9c4d61;
     }
 
+    .prose .text-red-light {
+        color: #F8ECEF;
+    }
+
     .prose .text-blue {
         color: #5a82b4;
+    }
+
+    .prose a {
+        @apply text-blue dark:text-blue-light hover:text-green-light;
+    }
+
+    .prose .text-blue-light {
+        color: #F4F9FE;
     }
 
     [type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {

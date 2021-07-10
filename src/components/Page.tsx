@@ -12,7 +12,7 @@ export const Page: FC<PageProps> = (p) => {
         <>
             <div className="font-sans">
                 <Header/>
-                <main className="bg-blue-light">
+                <main className="bg-blue-light dark:bg-gray-dark">
                     {p.children}
                 </main>
                 <Footer/>
@@ -31,7 +31,7 @@ const navigation = [
 
 export const Header = () => {
     return (
-        <header className="bg-blue">
+        <header className="bg-blue dark:bg-blue">
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
                 <div className="w-full py-6 flex items-center justify-between border-b border-red-light lg:border-none">
                     <div className="flex items-center rounded-lg">

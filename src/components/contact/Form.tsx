@@ -23,7 +23,7 @@ const Form = () => {
     }
 
     return (
-        <section className="bg-blue-light">
+        <section className="bg-blue-light dark:bg-gray-dark">
             <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
                 <div className="relative bg-white shadow-xl">
                     <h2 className="sr-only">Contact us</h2>
@@ -219,11 +219,11 @@ const Form = () => {
                         {/* Contact form */}
                         {
                             !sent &&
-                            <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-                                <h3 className="text-lg font-medium text-gray-dark">Send us a message</h3>
+                            <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12 dark:bg-red">
+                                <h3 className="text-lg font-medium text-gray-dark dark:text-red-light">Send us a message</h3>
                                 <form className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                                     <div>
-                                        <label htmlFor="email" className="block text-sm font-medium text-gray-dark">
+                                        <label htmlFor="email" className="block text-sm font-medium text-gray-dark dark:text-red-light">
                                             Email
                                         </label>
                                         <div className="mt-1">
@@ -238,7 +238,7 @@ const Form = () => {
                                         </div>
                                     </div>
                                     <div className="sm:col-span-2">
-                                        <label htmlFor="subject" className="block text-sm font-medium text-gray-dark">
+                                        <label htmlFor="subject" className="block text-sm font-medium text-gray-dark dark:text-red-light">
                                             Subject
                                         </label>
                                         <div className="mt-1">
@@ -253,10 +253,10 @@ const Form = () => {
                                     </div>
                                     <div className="sm:col-span-2">
                                         <div className="flex justify-between">
-                                            <label htmlFor="message" className="block text-sm font-medium text-gray-dark">
+                                            <label htmlFor="message" className="block text-sm font-medium text-gray-dark dark:text-red-light">
                                                 Message
                                             </label>
-                                            <span id="message-max" className="text-sm text-gray-dark">
+                                            <span id="message-max" className="text-sm text-gray-dark dark:text-red-light">
                       Max. 500 characters
                     </span>
                                         </div>

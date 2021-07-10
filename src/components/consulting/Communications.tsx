@@ -4,12 +4,12 @@ import {constants} from "../../lib/constants";
 
 const Communications = () => {
     return (
-        <section className="bg-red-light overflow-hidden">
+        <section className="bg-red-light dark:bg-red overflow-hidden">
             <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
                 <div className="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen" />
                 <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
                     <div>
-                        <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-red sm:text-4xl">
+                        <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-red dark:text-red-light sm:text-4xl">
                             Technology Communications
                         </h2>
                     </div>
@@ -50,7 +50,7 @@ const Communications = () => {
                                             className="rounded-lg shadow-lg object-center"
                                             alt="Vidya President Neil Chaudhuri speaking on Trends in Software Engineering"/>
                                 </div>
-                                <figcaption className="mt-3 flex text-sm text-gray-dark">
+                                <figcaption className="mt-3 flex text-sm text-gray-dark dark:text-red-light">
                                     <span className="ml-2">Vidya President Neil Chaudhuri speaking on Trends in Software Engineering</span>
                                 </figcaption>
                             </figure>
@@ -58,13 +58,13 @@ const Communications = () => {
                     </div>
                     <div className="mt-8 lg:mt-0">
                         <div className="text-base max-w-prose mx-auto lg:max-w-none">
-                            <p className="text-lg text-gray-dark">
+                            <p className="text-lg text-gray-dark dark:text-red-light">
                                 Technology is meaningless without the ability to express its power through engaging
                                 verbal and written communication. Whether explaining the value and risk of a particular
                                 technology to customers or writing concise but thorough prose in a proposal, we can
                                 communicate our technical expertise effectively to reach the goals of your organization.
                             </p>
-                            <p className="text-lg text-gray-dark">
+                            <p className="text-lg text-gray-dark dark:text-red-light">
                                 We welcome you to look at examples of our communications, some of which target a wide
                                 audience while others target people who get excited by phrases like "dependency injection":
                                 <div className="mt-5 prose text-gray-dark mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
@@ -96,7 +96,7 @@ const Communications = () => {
                                     </ul>
                                 </div>
                             </p>
-                            <p className="text-lg text-gray-dark">
+                            <p className="text-lg text-gray-dark dark:text-red-light">
                                 Please let us know if you would like us to help you craft RFPs, proposals, or marketing for your organization
                                 or to give a talk on any architecture or development topics.
                             </p>
