@@ -2,7 +2,7 @@ import {Page} from "../components/Page";
 import Hero from "../components/about/Hero";
 import dynamic from 'next/dynamic'
 import {NextSeo} from "next-seo";
-import LocalBusinessJsonLd from "../components/LocalBusinessJsonLd";
+import {LocalBusinessJsonLd} from "../components/LocalBusinessJsonLd";
 
 const CallToAction = dynamic(() => import("../components/CallToAction"))
 const Clients = dynamic(() => import("../components/Clients"))
