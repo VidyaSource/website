@@ -34,7 +34,7 @@ export async function getStaticProps({ params }) {
 
     return {
         props: {
-            blogPosts: blogPosts
+            blogPosts: blogPosts.slice(0, 3)
         },
     }
 }
