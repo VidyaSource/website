@@ -4,11 +4,11 @@
 
 @layer components {
     p {
-        @apply py-2 text-gray-dark;
+        @apply py-2 text-gray-dark dark:text-blue-light
     }
 
     a {
-        @apply text-blue dark:text-blue-light hover:text-green-light;
+        @apply text-blue dark:text-green-light hover:text-red-light;
     }
 
     h1 {
@@ -22,7 +22,7 @@
     h3 {
         @apply text-red dark:text-red-light text-2xl md:text-3xl mt-8;
     }
-    
+
     blockquote p {
         @apply text-green-dark dark:text-green-light italic border-l-8 px-8 my-8;
     }
@@ -36,7 +36,7 @@
     }
 
     span.a {
-        @apply text-blue dark:text-blue-light cursor-pointer;
+        @apply text-blue cursor-pointer;
     }
 
     li {
@@ -72,4 +72,26 @@
     [type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
         @apply focus:outline-none ring-green border-green
     }
+
+    .contact-us {
+        @apply items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white dark:text-red dark:hover:text-blue bg-red dark:bg-red-light hover:bg-blue-dark dark:hover:bg-blue-light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .logo-dark {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .prose .dark-text-red-light {
+            color: #F8ECEF;
+        }
+
+        .prose .dark-text-blue-light {
+            color: #F4F9FE;
+        }
+    }
+
+
 }
