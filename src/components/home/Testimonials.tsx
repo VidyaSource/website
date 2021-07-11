@@ -2,14 +2,14 @@ import Image from "next/image"
 
 const Testimonials = () => {
     return (
-        <section className="bg-white">
+        <section className="bg-white dark:bg-red">
             <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
                 <div className="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 md:border-r md:border-blue-dark lg:pr-16">
 
                     <blockquote className="mt-6 md:flex-shrink-0 md:flex md:flex-col">
                         <div className="relative text-lg font-medium text-white md:flex-grow">
                             <svg
-                                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-green-dark"
+                                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-green-dark dark:text-green-light"
                                 fill="currentColor"
                                 viewBox="0 0 32 32"
                                 aria-hidden="true"
@@ -34,8 +34,8 @@ const Testimonials = () => {
                                     />
                                 </div>
                                 <div className="ml-4">
-                                    <div className="text-base font-medium text-red">Judith Black</div>
-                                    <div className="text-base font-medium text-gray-dark">CEO, Tuple</div>
+                                    <div className="text-base font-medium text-red dark:text-red-light">Judith Black</div>
+                                    <div className="text-base font-medium text-gray-dark dark:text-blue-light">CEO, Tuple</div>
                                 </div>
                             </div>
                         </footer>
@@ -45,7 +45,7 @@ const Testimonials = () => {
                     <blockquote className="mt-6 md:flex-shrink-0 md:flex md:flex-col">
                         <div className="relative text-lg font-medium text-white md:flex-grow">
                             <svg
-                                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-green-dark"
+                                className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-green-dark dark:text-green-light"
                                 fill="currentColor"
                                 viewBox="0 0 32 32"
                             >
@@ -69,8 +69,8 @@ const Testimonials = () => {
                                     />
                                 </div>
                                 <div className="ml-4">
-                                    <div className="text-base font-medium text-red">Joseph Rodriguez</div>
-                                    <div className="text-base font-medium text-gray-dark">CEO, Workcation</div>
+                                    <div className="text-base font-medium text-red dark:text-red-light">Joseph Rodriguez</div>
+                                    <div className="text-base font-medium text-gray-dark dark:text-blue-light">CEO, Workcation</div>
                                 </div>
                             </div>
                         </footer>

@@ -3,14 +3,14 @@ import Image from "next/image";
 
 const Clients = () => {
     return (
-        <section className="bg-green-light">
+        <section className="bg-green-light dark:bg-blue">
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
                 <nav className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
                     <div>
-                        <h2 className="text-3xl font-extrabold text-red sm:text-4xl">
+                        <h2 className="text-3xl font-extrabold text-red dark:text-red-light sm:text-4xl">
                             Government and business trust Vidya.
                         </h2>
-                        <p className="mt-3 max-w-3xl text-lg text-gray-dark">
+                        <p className="mt-3 max-w-3xl text-lg text-gray-dark dark:text-blue-light">
                             We are a certified minority-owned business proud to have brought our expertise and insight to large government agencies, small
                             businesses, and
                             everything in between to help them all capitalize on an ever-evolving technology landscape.
@@ -18,7 +18,7 @@ const Clients = () => {
                         <div className="mt-8 sm:flex">
                             <div className="rounded-md shadow">
                                 <Link href="/contact">
-                                    <a className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red hover:bg-blue-dark">
+                                    <a className="flex contact-us">
                                         Contact Us
                                     </a>
                                 </Link>
