@@ -23,7 +23,7 @@ const Form = () => {
     }
 
     return (
-        <section className="bg-blue-light dark:bg-gray">
+        <section className="bg-blue-light dark:bg-gray-dark">
             <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
                 <div className="relative bg-white shadow-xl">
                     <h2 className="sr-only">Contact us</h2>
