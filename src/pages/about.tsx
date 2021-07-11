@@ -41,8 +41,8 @@ const About = () => {
                 <Hero/>
                 <Offerings/>
                 <Diversity/>
-                <Vidya/>
                 <Clients/>
+                <Vidya/>
                 <CallToAction/>
             </Page>
         </>
