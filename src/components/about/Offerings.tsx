@@ -1,6 +1,6 @@
 const Offerings = () => {
     return (
-        <div className="relative py-16 bg-white overflow-hidden">
+        <div className="relative py-16 bg-white dark:bg-red overflow-hidden">
             <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
                 <div className="relative h-full text-lg max-w-prose mx-auto" aria-hidden="true">
                     <svg
@@ -72,32 +72,32 @@ const Offerings = () => {
                 <section className="text-lg max-w-prose mx-auto">
                     <h1>
                         <span
-                            className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                            className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-red dark:text-red-light sm:text-4xl">
               Our Mission
             </span>
                     </h1>
-                    <p className="mt-8 text-xl text-gray-dark leading-8">
+                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
                         At Vidya, our mission is to make technology as fun and accessible as possible. The passion we
                         have for technology doesn’t shut off at 5 PM, and we want to show you how easy it really is to do great things.
                     </p>
-                    <p className="mt-8 text-xl text-gray-dark leading-8">
+                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
                         Maybe you are a large company looking to deploy secure, modernized, cloud native services via
                         an automated DevSecOps pipeline to cut costs and improve time to market while improving value to your customers.
                     </p>
-                    <p className="mt-8 text-xl text-gray-dark leading-8">
+                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
                         Maybe you are a small company or nonprofit where everyone has to wear a lot of hats, and someone
                         has asked you to transition your manual spreadsheet analysis into something automated or to
                         retool your website when you’ve never done anything more complicated on the web than tagging people on Facebook.
                     </p>
-                    <p className="mt-8 text-xl text-gray-dark leading-8">
+                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
                         Maybe you want a passionate ally in promoting diversity and equal, positive treatment in the information technology space.
                     </p>
-                    <p className="mt-8 text-xl text-gray-dark leading-8">
+                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
                         No matter what you need, we want to be of service to you.
                     </p>
                 </section>
-                <section className="mt-6 prose prose-lg text-gray-dark mx-auto">
-                    <h2>Our Services</h2>
+                <section className="mt-6 prose prose-lg text-gray-dark dark:text-blue-light mx-auto">
+                    <h2 className="text-red dark-text-red-light">Our Services</h2>
                     <ul>
                         <li>Consulting with your team on architecture or development on large software projects, agile mentoring, or technical communications</li>
                         <li>Custom application development for your organization</li>

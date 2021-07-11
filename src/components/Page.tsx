@@ -12,7 +12,7 @@ export const Page: FC<PageProps> = (p) => {
         <>
             <div className="font-sans">
                 <Header/>
-                <main className="bg-blue-light dark:bg-gray-dark">
+                <main className="bg-blue-light dark:bg-gray">
                     {p.children}
                 </main>
                 <Footer/>
