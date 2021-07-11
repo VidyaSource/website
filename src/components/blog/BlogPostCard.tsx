@@ -37,7 +37,7 @@ export const BlogPostCard = (p: BlogPostCardProps) => {
             </div>
             <div className="flex-1 bg-white hover:bg-red-light p-6 flex flex-col justify-between">
                 <div className="flex-1">
-                    <p className="text-sm font-medium text-indigo-600">
+                    <p className="text-sm font-medium">
                         {
                             selectedTags.map(t => {
                                 return (
@@ -73,9 +73,9 @@ export const BlogPostCard = (p: BlogPostCardProps) => {
                         </Link>
                     </div>
                     <div className="ml-3">
-                        <p className="text-sm font-medium text-gray-900">
+                        <p className="text-sm font-medium">
                             <Link href={profileUrl}>
-                                <a className="hover:underline">
+                                <a className="hover:underline text-blue hover:text-green">
                                     {author}
                                 </a>
                             </Link>

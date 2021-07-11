@@ -21,8 +21,8 @@ export const Avatar = (p: AvatarProps) => {
                         alt={p.author}
                     />
                     <span className="ml-3">
-                    <p className="pb-0 mb-0 text-sm font-medium text-red group-hover:text-blue lg:text-md">{p.author}</p>
-                    <p className="pt-0 mt-0 text-xs font-medium text-red group-hover:text-blue lg:text-xs">
+                    <p className="pb-0 mb-0 text-sm font-medium text-red dark:text-red-light group-hover:text-blue lg:text-md">{p.author}</p>
+                    <p className="pt-0 mt-0 text-xs font-medium text-red group-hover:text-blue dark:group-hover:text-green-light lg:text-xs">
                         <span className="sr-only">Twitter</span>
                         <svg fill="#1DA1F2" viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
                             <path

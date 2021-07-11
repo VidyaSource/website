@@ -6,6 +6,7 @@ import {NextSeo, VideoJsonLd} from "next-seo";
 import {useRouter} from "next/router";
 import {Image} from "../Image";
 import {FC} from "react";
+import Link from "next/link"
 
 interface TutorialProps {
     metaDescription: string
@@ -99,7 +100,7 @@ export const Tutorial: FC<TutorialProps> = (p) => {
                             {p.children}
                         </div>
                         <div className="py-12">
-                            If you want to skip the video altogether, <a href={p.github}>the source is on GitHub</a>.
+                            If you want to skip the video altogether, <Link href={p.github}><a>the source is on GitHub</a></Link>.
                         </div>
                         <div className="pb-12">
                             <YouTubeVideo id={p.youTubeId} title={p.title}/>

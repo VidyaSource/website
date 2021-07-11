@@ -41,29 +41,29 @@ interface BlogPostContentProps {
 export const BlogPostContent = (p: BlogPostContentProps) => {
     const selectedTags = useMemo(() => selectTags(p.blogPost.frontMatter.tags, 6), p.blogPost.frontMatter.tags)
     return (
-        <article className="relative py-4 overflow-hidden">
+        <article className="relative py-4 overflow-hidden bg-blue-light dark:bg-gray-dark">
             <div className="relative px-4 sm:px-6 lg:px-8">
                 <section className="text-lg max-w-prose mx-auto">
                     <h1>
                         <span
-                            className="block text-sm text-center text-green-dark font-semibold tracking-wide uppercase">
+                            className="block text-sm text-center text-green-dark dark:text-green-light font-semibold tracking-wide uppercase">
                           {
                               selectedTags.join("  |  ")
                           }
                         </span>
                         <span
-                            className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-red md:text-3xl lg:text-4xl">
+                            className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-red dark:text-red-light md:text-3xl lg:text-4xl">
                           {p.blogPost.frontMatter.title}
                         </span>
                         <div className="mx-auto">
                             <span
-                                className="mt-2 block text-lg text-center leading-8 tracking-tight text-red lg:text-xl">
+                                className="mt-2 block text-lg text-center leading-8 tracking-tight text-red dark:text-red-light lg:text-xl">
                               {format(p.blogPost.frontMatter.date, "LLLL d, y")}
                             </span>
                             <Avatar author={p.blogPost.frontMatter.author}/>
                         </div>
                     </h1>
-                    <p className="mt-2 text-xl text-gray-dark leading-8">
+                    <p className="mt-2 text-xl text-gray-dark dark:text-blue-light leading-8">
                         {/* @ts-ignore */}
                         <ReactMarkdown components={components} remarkPlugins={[gfm]}>
                             {p.blogPost.content}
