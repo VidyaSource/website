@@ -3,7 +3,7 @@ import {constants} from "../../lib/constants";
 
 const Diversity = () => {
     return (
-        <div className="bg-red-light overflow-hidden">
+        <div className="bg-red-light dark:bg-gray overflow-hidden">
             <div className="relative max-w-7xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
                 <svg
                     className="absolute top-full left-0 transform translate-x-80 -translate-y-24 lg:hidden"
@@ -22,7 +22,7 @@ const Diversity = () => {
                             height={20}
                             patternUnits="userSpaceOnUse"
                         >
-                            <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="#9c4d61" />
+                            <rect x={0} y={0} width={4} height={4} className="text-red dark:text-red-light" fill="currentColor" />
                         </pattern>
                     </defs>
                     <rect width={784} height={404} fill="url(#e56e3f81-d9c1-4b83-a3ba-0d0ac8c32f32)" />
@@ -45,7 +45,7 @@ const Diversity = () => {
                             height={20}
                             patternUnits="userSpaceOnUse"
                         >
-                            <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="#9c4d61" />
+                            <rect x={0} y={0} width={4} height={4} className="text-red dark:text-red-light" fill="currentColor" />
                         </pattern>
                     </defs>
                     <rect width={404} height={784} fill="url(#56409614-3d62-4985-9a10-7ca758a8f4f0)" />
@@ -67,8 +67,7 @@ const Diversity = () => {
 
                     <div className="relative lg:ml-10">
                         <svg
-                            className="absolute top-0 left-0 transform -translate-x-8 -translate-y-24 h-36 w-36 text-indigo-200 opacity-50"
-                            stroke="#9c4d61"
+                            className="absolute top-0 left-0 transform -translate-x-8 -translate-y-24 h-36 w-36 text-green dark:text-green-light opacity-50 stroke-current"
                             fill="none"
                             viewBox="0 0 144 144"
                             aria-hidden="true"
@@ -79,7 +78,7 @@ const Diversity = () => {
                             />
                         </svg>
                         <blockquote className="relative">
-                            <div className="text-2xl leading-9 font-medium text-gray-dark">
+                            <div className="text-2xl leading-9 font-medium text-gray-dark dark:text-green-light">
                                 <p>
                                     We are a passionate advocate for diversity in technology. Prejudice against anyone
                                     on the basis of gender, race, ethnicity, nationality, religion, orientation, ability,
@@ -101,8 +100,8 @@ const Diversity = () => {
                                         </div>
                                     </div>
                                     <div className="ml-4 lg:ml-0">
-                                        <div className="text-base font-medium text-gray-dark">Neil Chaudhuri</div>
-                                        <div className="text-base font-medium text-red">President, Vidya</div>
+                                        <div className="text-base font-medium text-gray-dark dark:text-blue-light">Neil Chaudhuri</div>
+                                        <div className="text-base font-medium text-red dark:text-red-light">President, Vidya</div>
                                     </div>
                                 </div>
                             </footer>

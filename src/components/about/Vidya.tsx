@@ -2,15 +2,15 @@ import Image from "next/image";
 
 const Vidya = () => {
     return (
-        <div className="py-16 bg-white overflow-hidden">
+        <div className="py-16 bg-white dark:bg-gray-dark overflow-hidden">
             <section className="max-w-7xl mx-auto px-4 space-y-8 sm:px-6 lg:px-8">
                 <div className="text-base max-w-prose mx-auto lg:max-w-none">
-                    <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-blue sm:text-4xl">
+                    <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-red dark:text-red-light sm:text-4xl">
                         Our name
                     </p>
                 </div>
                 <div className="relative z-10 text-base max-w-prose mx-auto lg:max-w-5xl lg:mx-0 lg:pr-72">
-                    <p className="text-lg text-gray-dark">
+                    <p className="text-lg text-gray-dark dark:text-blue-light">
                         Vidya comes from the Sanskrit for “right knowledge” or “clarity.” We want to embody the learning
                         spirit that is the essence of the word. In software engineering, you learn every day–not only
                         about all the technologies out there and the new ones emerging every day but also about people
@@ -21,11 +21,11 @@ const Vidya = () => {
                 <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-start">
                     <div className="relative z-10">
                         <div className="mx-auto prose lg:max-w-none space-y-4">
-                            <h3 className="text-blue">The Vidya swan</h3>
-                            <p>
+                            <h3 className="text-red dark-text-red-light">The Vidya swan</h3>
+                            <p className="dark-text-blue-light">
                                 Vidya is associated with the Hindu deity Saraswati because she is the Goddess of Learning. In ancient Indian art and literature, she is often depicted wearing a spotless white sari and riding a white swan.
                             </p>
-                            <p>
+                            <p className="dark-text-blue-light">
                                 We just hope you like the swan more than <a href="http://www.youtube.com/watch?v=n91ckeyNvQU">Billy Madison</a>.
                             </p>
                         </div>
