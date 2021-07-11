@@ -11,14 +11,14 @@ interface RecentPostsProps {
 export const RecentPosts = (p: RecentPostsProps) => {
     const posts = p.blogPosts
     return (
-        <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+        <div className="relative bg-white dark:bg-blue-light pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
             <div className="absolute inset-0">
-                <div className="bg-white h-1/3 sm:h-2/3"/>
+                <div className="bg-white dark:bg-gray-dark h-1/3 sm:h-2/3"/>
             </div>
             <section className="relative max-w-7xl mx-auto">
                 <div className="text-center">
                     <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">From the Vidya blog</h2>
-                    <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-dark sm:mt-4">
+                    <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-dark dark:text-blue-light sm:mt-4">
                         Discover new insights into everything from agile software development to innovative engineering techniques to the
                         impact of technology on our world
                     </p>
@@ -46,7 +46,7 @@ export const RecentPosts = (p: RecentPostsProps) => {
                                     </a>
                                 </Link>
                             </div>
-                            <div className="flex-1 bg-blue-light p-6 flex flex-col justify-between hover:bg-red-light">
+                            <div className="flex-1 bg-blue-light dark:bg-white p-6 flex flex-col justify-between hover:bg-red-light">
                                 <div className="flex-1">
                                     <Link href={link}>
                                         <a className="block mt-2">
