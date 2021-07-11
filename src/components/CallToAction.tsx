@@ -12,7 +12,7 @@ const CallToAction = () => {
                 <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
                     <div className="inline-flex rounded-md shadow">
                         <Link href="/contact">
-                            <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white dark:text-red dark:hover:text-blue bg-red dark:bg-red-light hover:bg-blue-dark dark:hover:bg-blue-light">
+                            <a className="inline-flex contact-us">
                                 Contact Us
                             </a>
                         </Link>
