@@ -8,7 +8,7 @@ interface InstructorProps {
 
 const Instructor = (p: InstructorProps) => {
     return (
-        <section className="bg-white overflow-hidden">
+        <section className="bg-white dark:bg-gray-dark overflow-hidden">
             <div className="relative max-w-7xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
 
                 <div className="relative lg:flex lg:items-center">
@@ -25,8 +25,8 @@ const Instructor = (p: InstructorProps) => {
 
                     <div className="relative lg:ml-10">
                         <svg
-                            className="absolute top-0 left-0 transform -translate-x-8 -translate-y-24 h-36 w-36 text-indigo-200 opacity-50"
-                            stroke="#455930"
+                            className="absolute top-0 left-0 transform -translate-x-8 -translate-y-24 h-36 w-36 text-green-dark dark:text-green-light opacity-50"
+                            stroke="currentColor"
                             fill="none"
                             viewBox="0 0 144 144"
                             aria-hidden="true">
@@ -52,10 +52,10 @@ const Instructor = (p: InstructorProps) => {
                                         </div>
                                     </div>
                                     <div className="ml-4 lg:ml-0 mt-1 lg:mt-0">
-                                        <div className="text-lg lg:text-xl font-medium text-gray-dark">
+                                        <div className="text-lg lg:text-xl font-medium text-gray-dark dark:text-blue-light">
                                             {p.name}
                                         </div>
-                                        <div className="text-base lg:text-lg font-medium text-red">
+                                        <div className="text-base lg:text-lg font-medium text-red dark:text-red-light">
                                             Course instructor
                                         </div>
                                     </div>
