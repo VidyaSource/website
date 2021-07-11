@@ -99,7 +99,7 @@ const Footer = () => {
                     {navigation.main.map((item) => (
                         <div key={item.name} className="px-5 py-2">
                             <Link href={item.href}>
-                                <a className="text-base hover:text-red dark:hover:text-green-light">
+                                <a className="text-base dark:text-white hover:text-red dark:hover:text-green-light">
                                     {item.name}
                                 </a>
                             </Link>
@@ -109,7 +109,7 @@ const Footer = () => {
                 <div className="mt-8 flex justify-center space-x-6">
                     {navigation.social.map((item) => (
                         <Link key={item.name} href={item.href}>
-                            <a key={item.name} className={`hover:text-${item.name.replace(/\s+/g, '').toLowerCase()}`}>
+                            <a key={item.name} className={`dark:text-white hover:text-${item.name.replace(/\s+/g, '').toLowerCase()}`}>
                                 <span className="sr-only">{item.name}</span>
                                 <item.icon className="h-6 w-6" aria-hidden="true"/>
                             </a>
