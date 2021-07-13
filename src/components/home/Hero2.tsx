@@ -4,6 +4,7 @@ import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import Image from "next/image";
 import Link from "next/link";
+import {ThemeModeLinkButton} from "../ThemeModeButton";
 
 const navigation = [
     {name: 'Courses', href: '/courses'},
@@ -14,7 +15,7 @@ const navigation = [
 
 export default function Hero2() {
     return (
-        <div className="relative bg-blue-light overflow-hidden">
+        <div className="relative bg-blue-light dark:bg-blue overflow-hidden">
             <div className="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full" aria-hidden="true">
                 <div className="relative h-full max-w-7xl mx-auto">
                     <svg
@@ -33,7 +34,7 @@ export default function Hero2() {
                                 height={20}
                                 patternUnits="userSpaceOnUse"
                             >
-                                <rect x={0} y={0} width={4} height={4} className="text-green" fill="currentColor" />
+                                <rect x={0} y={0} width={4} height={4} className="text-red dark:text-red-light" fill="currentColor" />
                             </pattern>
                         </defs>
                         <rect width={404} height={184} fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)" />
@@ -54,7 +55,7 @@ export default function Hero2() {
                                 height={20}
                                 patternUnits="userSpaceOnUse"
                             >
-                                <rect x={0} y={0} width={4} height={4} className="text-red-light" fill="currentColor" />
+                                <rect x={0} y={0} width={4} height={4} className="text-red dark:text-red-light" fill="currentColor" />
                             </pattern>
                         </defs>
                         <rect width={404} height={784} fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)" />
@@ -100,6 +101,7 @@ export default function Hero2() {
                                                 </a>
                                             </Link>
                                         ))}
+                                        <ThemeModeLinkButton />
                                     </div>
                                 </nav>
                             </div>
@@ -119,20 +121,20 @@ export default function Hero2() {
                                     static
                                     className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
                                 >
-                                    <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+                                    <div className="rounded-lg shadow-md bg-white dark:bg-gray ring-1 ring-black ring-opacity-5 overflow-hidden">
                                         <div className="px-5 pt-4 flex items-center justify-between">
-                                            <div>
+                                            <div className="logo">
                                                 <span className="sr-only">Vidya</span>
                                                 <Image src="/img/vidya.png"
                                                        alt="Vidya"
-                                                       height={65}
-                                                       width={140}
+                                                       height={56}
+                                                       width={120}
                                                        quality={100}
                                                        priority={true}/>
 
                                             </div>
                                             <div className="-mr-2">
-                                                <Popover.Button className="bg-white dark:bg-red rounded-md p-2 inline-flex items-center justify-center text-gray hover:text-red hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red">
+                                                <Popover.Button className="bg-white dark:bg-blue-light rounded-md p-2 inline-flex items-center justify-center text-gray hover:text-red hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red">
                                                     <span className="sr-only">Close menu</span>
                                                     <XIcon className="h-6 w-6" aria-hidden="true" />
                                                 </Popover.Button>
@@ -143,7 +145,7 @@ export default function Hero2() {
                                                 <a
                                                     key={item.name}
                                                     href={item.href}
-                                                    className="block px-3 py-2 rounded-md text-base font-medium text-blue hover:text-red hover:bg-blue-light"
+                                                    className="block px-3 py-2 rounded-md text-base font-medium text-blue dark:text-blue-light hover:text-red hover:bg-red focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue dark:focus:ring-blue-light"
                                                 >
                                                     {item.name}
                                                 </a>
