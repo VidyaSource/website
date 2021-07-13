@@ -85,7 +85,7 @@ export default function Hero2() {
                                                 </a>
                                             </Link>
                                             <div className="-mr-2 flex items-center md:hidden">
-                                                <Popover.Button className="bg-blue-light rounded-md p-2 inline-flex items-center justify-center text-gray-dark hover:text-blue hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red">
+                                                <Popover.Button className="bg-blue-light rounded-md p-2 inline-flex items-center justify-center text-gray hover:text-blue hover:bg-gray-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray">
                                                     <span className="sr-only">Open main menu</span>
                                                     <MenuIcon className="h-6 w-6" aria-hidden="true" />
                                                 </Popover.Button>
@@ -122,14 +122,17 @@ export default function Hero2() {
                                     <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                                         <div className="px-5 pt-4 flex items-center justify-between">
                                             <div>
-                                                <img
-                                                    className="h-8 w-auto"
-                                                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                                                    alt=""
-                                                />
+                                                <span className="sr-only">Vidya</span>
+                                                <Image src="/img/vidya.png"
+                                                       alt="Vidya"
+                                                       height={65}
+                                                       width={140}
+                                                       quality={100}
+                                                       priority={true}/>
+
                                             </div>
                                             <div className="-mr-2">
-                                                <Popover.Button className="bg-white dark:bg-red rounded-md p-2 inline-flex items-center justify-center text-gray-dark hover:text-red hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red">
+                                                <Popover.Button className="bg-white dark:bg-red rounded-md p-2 inline-flex items-center justify-center text-gray hover:text-red hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red">
                                                     <span className="sr-only">Close menu</span>
                                                     <XIcon className="h-6 w-6" aria-hidden="true" />
                                                 </Popover.Button>
