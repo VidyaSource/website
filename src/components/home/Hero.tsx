@@ -4,7 +4,7 @@ import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import Image from "next/image";
 import Link from "next/link";
-import {ThemeModeLinkButton} from "../ThemeModeButton";
+import {moon, sun, ThemeModeButton, useThemeMode} from "../ThemeModeButton";
 import {DarkModeContext} from "../ThemeModeContext";
 
 const navigation = [
@@ -16,6 +16,7 @@ const navigation = [
 
 export const Hero = () => {
     const {darkMode, setDarkMode} = useContext(DarkModeContext)
+    const { onClick, label } = useThemeMode()
     return (
         <div className="relative bg-blue-light dark:bg-blue overflow-hidden">
             <div className="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full" aria-hidden="true">
@@ -103,7 +104,7 @@ export const Hero = () => {
                                                 </a>
                                             </Link>
                                         ))}
-                                        <ThemeModeLinkButton />
+                                        <ThemeModeButton />
                                     </div>
                                 </nav>
                             </div>
@@ -136,9 +137,7 @@ export const Hero = () => {
 
                                             </div>
                                             <div className="-mr-2">
-                                                <Popover.Button className="mr-4 bg-white bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray hover:text-red hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray dark:bg-gray dark:hover:bg-gray-dark">
-                                                    <ThemeModeLinkButton  />
-                                                </Popover.Button>
+                                                <ThemeModeButton className="mr-4 bg-white bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray hover:text-red hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray dark:bg-gray dark:hover:bg-gray-dark" />
                                                 <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray hover:text-red hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red dark:bg-gray dark:text-white dark:hover:bg-white dark:hover:text-blue">
                                                     <span className="sr-only">Close menu</span>
                                                     <XIcon className="h-6 w-6" aria-hidden="true" />
