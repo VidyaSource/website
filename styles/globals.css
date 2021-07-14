@@ -43,12 +43,6 @@
         @apply pl-4 italic my-4;
     }
 
-    .logo {
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 10px;
-    }
-
     .prose .text-red {
         color: #9c4d61;
     }
@@ -75,6 +69,20 @@
 
     .contact-us {
         @apply items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white dark:text-red dark:hover:text-blue bg-red dark:bg-red-light hover:bg-blue-dark dark:hover:bg-blue-light;
+    }
+
+    .dark .logo {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+    .dark .prose .dark-text-red-light {
+        color: #F8ECEF;
+    }
+
+    .dark .prose .dark-text-blue-light {
+        color: #F4F9FE;
     }
 
     @media (prefers-color-scheme: dark) {
