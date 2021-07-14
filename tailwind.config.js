@@ -6,7 +6,7 @@ module.exports = {
         './src/pages/**/*.{js,ts,jsx,tsx}',
         './src/components/**/*.{js,ts,jsx,tsx}',
     ],
-    darkMode: "media", // or 'media' or 'class'
+    darkMode: "class", // or 'media' or 'class'
     theme: {
         fontFamily: {
             sans: ['PT Sans', 'sans-serif'],
@@ -17,6 +17,7 @@ module.exports = {
             transparent: 'transparent',
             current: 'currentColor',
             white: colors.white,
+            yellow: colors.yellow,
             red: {
                 light: '#F8ECEF',
                 DEFAULT: '#9c4d61'
@@ -52,7 +53,6 @@ module.exports = {
         },
     },
     variants: {
-        extend: {},
     },
     plugins: [
         require('@tailwindcss/typography'),
