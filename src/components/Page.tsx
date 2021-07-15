@@ -2,6 +2,7 @@ import {FC, ReactNode} from 'react'
 import Image from "next/image"
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
+import {ThemeModeButton} from "./ThemeModeButton";
 
 interface PageProps {
     children: ReactNode
@@ -36,7 +37,7 @@ export const Header = () => {
                 <div className="w-full py-6 flex items-center justify-between border-b border-red-light lg:border-none">
                     <div className="flex items-center rounded-lg">
                         <Link href="/">
-                            <a className="logo">
+                            <a className="page-logo">
                                 <span className="sr-only">Vidya</span>
                                 <Image src="/img/vidya-white.png"
                                        alt="Vidya"
@@ -56,7 +57,7 @@ export const Header = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="ml-10 space-x-4">
+                    <div className="flex ml-10 space-x-4">
                         <Link href="/about">
                             <a className="inline-block py-2 px-4 sm:text-base lg:text-lg font-medium text-white hover:bg-opacity-75">
                                 About
@@ -67,6 +68,7 @@ export const Header = () => {
                                 Contact
                             </a>
                         </Link>
+                        <ThemeModeButton className="px-4 text-gray-light" />
                     </div>
                 </div>
                 <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
