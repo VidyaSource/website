@@ -5,34 +5,10 @@ interface ThemeModeButtonProps {
     className?: string
 }
 
-export const useThemeMode = () => {
-    const {darkMode, setDarkMode} = useContext(DarkModeContext)
-    const label = `${darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}`
-    useEffect(() => {
-        if (darkMode) {
-            window.document.documentElement.classList.add('dark')
-            localStorage.setItem("vidyaDarkMode", "true")
-        } else {
-            window.document.documentElement.classList.remove('dark')
-            localStorage.setItem("vidyaDarkMode", "false")
-        }
-    }, [darkMode])
-    const onClick = () => {
-        setDarkMode(!darkMode)
-    }
-
-    return {
-        onClick: onClick,
-        label: label
-    }
-}
-
 export const ThemeModeButton = (p: ThemeModeButtonProps) => {
     const {darkMode, setDarkMode} = useContext(DarkModeContext)
     const label = `${darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}`
     useEffect(() => {
-        console.log("dark mode is " + darkMode)
-
         if (darkMode) {
             window.document.documentElement.classList.add('dark')
             localStorage.setItem("vidyaDarkMode", "true")
@@ -40,12 +16,10 @@ export const ThemeModeButton = (p: ThemeModeButtonProps) => {
             window.document.documentElement.classList.remove('dark')
             localStorage.setItem("vidyaDarkMode", "false")
         }
-    }, [darkMode])
+    })
     const onClick = () => {
-        console.log("Here")
         setDarkMode(!darkMode)
     }
-
 
     return (
         <button onClick={onClick} aria-label={label} title={label} className={p.className}>
