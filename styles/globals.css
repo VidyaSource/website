@@ -71,6 +71,12 @@
         @apply items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white dark:text-red dark:hover:text-blue bg-red dark:bg-red-light hover:bg-blue-dark dark:hover:bg-blue-light;
     }
 
+    .page-logo {
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
     .dark .logo {
         background-color: #fff;
         border-radius: 10px;
