@@ -68,7 +68,7 @@ export const Header = () => {
                                 Contact
                             </a>
                         </Link>
-                        <ThemeModeButton className="px-4 text-gray-light" />
+                        <ThemeModeButton className="px-4 py-2 text-gray-light" />
                     </div>
                 </div>
                 <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
