@@ -6,11 +6,32 @@ module.exports = withPWA({
         dest: 'public',
         disable: process.env.NODE_ENV === 'development'
     },
-    webpack: (config, { isServer }) => {
+    webpack: (config, {isServer}) => {
         if (!isServer) {
             config.resolve.fallback.fs = false;
         }
         return config;
+    },
+    async headers() {
+        return [
+            {
+                source: '/(.*)',
+                headers: [
+                    {
+                        key: 'X-DNS-Prefetch-Control',
+                        value: 'on'
+                    },
+                    {
+                        key: 'X-XSS-Protection',
+                        value: '1; mode=block'
+                    },
+                    {
+                        key: 'Referrer-Policy',
+                        value: 'strict-origin-when-cross-origin'
+                    }
+                ]
+            }
+        ]
     },
     env: {
         basePath: "https://www.vidyasource.com",
