@@ -9,19 +9,13 @@ export const useThemeMode = () => {
     const {darkMode, setDarkMode} = useContext(DarkModeContext)
     const label = `${darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}`
     useEffect(() => {
-        console.log("dark mode is " + darkMode)
-
         if (darkMode) {
             window.document.documentElement.classList.add('dark')
-            console.log("setting local storage to true")
             localStorage.setItem("vidyaDarkMode", "true")
         } else {
             window.document.documentElement.classList.remove('dark')
-            console.log("setting local storage to false")
             localStorage.setItem("vidyaDarkMode", "false")
         }
-        console.log("local storage value: " + localStorage.getItem("vidyaDarkMode"))
-
     }, [darkMode])
     const onClick = () => {
         setDarkMode(!darkMode)
@@ -46,8 +40,6 @@ export const ThemeModeButton = (p: ThemeModeButtonProps) => {
             window.document.documentElement.classList.remove('dark')
             localStorage.setItem("vidyaDarkMode", "false")
         }
-        console.log("local storage value: " + localStorage.getItem("vidyaDarkMode"))
-
     }, [darkMode])
     const onClick = () => {
         console.log("Here")
