@@ -50,8 +50,8 @@ export const RecentPosts = (p: RecentPostsProps) => {
                                 <div className="flex-1">
                                     <Link href={link}>
                                         <a className="block mt-2">
-                                            <p className="text-xl font-semibold text-gray-dark">{title}</p>
-                                            <p className="mt-3 text-base text-gray-dark">{description}</p>
+                                            <p className="text-xl font-semibold text-red dark:text-red">{title}</p>
+                                            <p className="mt-3 text-base text-gray-dark dark:text-gray-dark">{description}</p>
                                         </a>
                                     </Link>
                                 </div>
@@ -73,9 +73,9 @@ export const RecentPosts = (p: RecentPostsProps) => {
                                         </Link>
                                     </div>
                                     <div className="ml-3">
-                                        <p className="text-sm font-medium text-gray-900">
+                                        <p className="text-sm font-medium hover:underline">
                                             <Link href={profileUrl}>
-                                                <a className="hover:underline">{author}</a>
+                                                <a className="hover:underline text-blue hover:text-green dark:text-blue dark:hover:text-green">{author}</a>
                                             </Link>
                                         </p>
                                         <div className="flex space-x-1 text-sm text-gray-dark">

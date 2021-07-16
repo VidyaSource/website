@@ -75,7 +75,7 @@ export const BlogPostCard = (p: BlogPostCardProps) => {
                     <div className="ml-3">
                         <p className="text-sm font-medium">
                             <Link href={profileUrl}>
-                                <a className="hover:underline text-blue hover:text-green dark:text-green-dark ">
+                                <a className="hover:underline text-blue hover:text-green dark:text-blue dark:hover:text-green">
                                     {author}
                                 </a>
                             </Link>
