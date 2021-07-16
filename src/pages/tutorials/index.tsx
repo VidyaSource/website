@@ -83,8 +83,8 @@ export const Tutorials = () => {
                                         <div className="flex-1">
                                             <Link href={tutorial.href}>
                                                 <a className="block mt-2">
-                                                    <p className="text-xl font-semibold text-red">{tutorial.title}</p>
-                                                    <p className="mt-3 text-base text-gray-dark">{tutorial.description}</p>
+                                                    <p className="text-xl font-semibold text-red dark:text-red">{tutorial.title}</p>
+                                                    <p className="mt-3 text-base text-gray-dark dark:text-gray-dark">{tutorial.description}</p>
                                                 </a>
                                             </Link>
                                         </div>
