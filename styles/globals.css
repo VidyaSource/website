@@ -90,22 +90,4 @@
     .dark .prose .dark-text-blue-light {
         color: #F4F9FE;
     }
-
-    @media (prefers-color-scheme: dark) {
-        .logo-dark {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 10px;
-        }
-
-        .prose .dark-text-red-light {
-            color: #F8ECEF;
-        }
-
-        .prose .dark-text-blue-light {
-            color: #F4F9FE;
-        }
-    }
-
-
 }
