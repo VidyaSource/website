@@ -1,11 +1,10 @@
 /* This example requires Tailwind CSS v2.0+ */
-import {Fragment, useContext} from 'react'
+import {Fragment} from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import Image from "next/image";
 import Link from "next/link";
-import {moon, sun, ThemeModeButton, useThemeMode} from "../ThemeModeButton";
-import {DarkModeContext} from "../ThemeModeContext";
+import {ThemeModeButton} from "../ThemeModeButton";
 
 const navigation = [
     {name: 'Courses', href: '/courses'},
@@ -15,8 +14,6 @@ const navigation = [
 ]
 
 export const Hero = () => {
-    const {darkMode, setDarkMode} = useContext(DarkModeContext)
-    const { onClick, label } = useThemeMode()
     return (
         <div className="relative bg-blue-light dark:bg-blue overflow-hidden">
             <div className="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full" aria-hidden="true">
