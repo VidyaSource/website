@@ -53,7 +53,11 @@ export const getBlogPostBySlug: (slug: string) => Promise<BlogPost> = async (slu
 
 export const getAllBlogPosts: () => Promise<BlogPost[]> = async () => {
     const slugs = await getBlogPostSlugs()
-    const posts = await Promise.all(slugs.map((slug) => getBlogPostBySlug(slug)))
+    const posts = await Promise.all(slugs.map(async (slug) => {
+        const post = await getBlogPostBySlug(slug)
+        delete post.content
+        return post
+    }))
 
     return sort(posts)
 }
