@@ -14,7 +14,7 @@ export const Description: FC<DescriptionProps> = (p) => {
                 <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
                     <div className="aspect-h-9 aspect-w-16">
                         <Image
-                            src="/img/courses/team.png"
+                            src="/img/courses/team.jpg"
                             alt="Collaborating software engineers"
                             layout="fill"
                             objectFit="cover"
