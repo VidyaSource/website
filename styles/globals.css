@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer components {
     p {
         @apply py-2 text-gray-dark dark:text-blue-light
