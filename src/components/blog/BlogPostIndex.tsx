@@ -1,16 +1,16 @@
-import {BlogPost, BlogPostCategories} from "../../lib/blogPost-utils";
+import {BlogPost, BlogPostCategories, BlogPostMetadata} from "../../lib/blogPost-utils";
 import {BlogPostCard} from "./BlogPostCard";
 import {ChangeEvent, useEffect, useState} from "react";
 
 interface BlogPostIndexProps {
-    blogPosts: BlogPost[]
+    blogPosts: BlogPostMetadata[]
     blogPostCategories: BlogPostCategories
 }
 
 export const BlogPostIndex = (p: BlogPostIndexProps) => {
     const tags = Object.keys(p.blogPostCategories).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
     const [selectedTag, selectTag] = useState<string>("")
-    const [currentPosts, setCurrentPosts] = useState<BlogPost[]>(p.blogPosts)
+    const [currentPosts, setCurrentPosts] = useState<BlogPostMetadata[]>(p.blogPosts)
     useEffect(() => {
         if (selectedTag === "") {
             setCurrentPosts(p.blogPosts)

@@ -14,11 +14,12 @@ export interface FrontMatter {
     tags: string[]
 }
 
-export interface BlogPost {
+export interface BlogPostMetadata {
     slug: string
     frontMatter: FrontMatter
-    content: string
 }
+
+export type BlogPost = BlogPostMetadata & { content: string}
 
 const postsDirectory = join(process.cwd(), 'src/_content/blog')
 
@@ -51,25 +52,45 @@ export const getBlogPostBySlug: (slug: string) => Promise<BlogPost> = async (slu
     }
 }
 
-export const getAllBlogPosts: () => Promise<BlogPost[]> = async () => {
+export const getBlogPostMetadataBySlug: (slug: string) => Promise<BlogPostMetadata> = async (slug) => {
+    const realSlug = slug.replace(/\.md$/, '')
+    const fullPath = join(postsDirectory, `${realSlug}.md`)
+    const fileContents = await fs.promises.readFile(fullPath, 'utf8')
+    // @ts-ignore
+    const {data, content} = matter(fileContents)
+    const tags = data.tags ?? []
+    const categories = data.categories ?? []
+    const image = data.banner || data.image
+    const frontMatter = {
+        tags: tags.concat(categories).sort(),
+        image: image,
+        date:  zonedTimeToUtc(data.date as Date, "America/New_York"),
+        author: data.author,
+        title: data.title,
+        description: data.description
+    }
+
+    return {
+        slug: realSlug,
+        frontMatter: frontMatter,
+    }
+}
+
+export const getAllBlogPosts: () => Promise<BlogPostMetadata[]> = async () => {
     const slugs = await getBlogPostSlugs()
-    const posts = await Promise.all(slugs.map(async (slug) => {
-        const post = await getBlogPostBySlug(slug)
-        delete post.content
-        return post
-    }))
+    const posts = await Promise.all(slugs.map((slug) => getBlogPostMetadataBySlug(slug)))
 
     return sort(posts)
 }
 
 export interface BlogPostCategories {
-    [category: string]: undefined | BlogPost[]
+    [category: string]: undefined | BlogPostMetadata[]
 }
 
 export const getBlogPostsByTags: () => Promise<BlogPostCategories> = async () => {
     const slugs = await getBlogPostSlugs()
     const categories: BlogPostCategories = {}
-    const posts = await Promise.all(slugs.map((slug) => getBlogPostBySlug(slug)))
+    const posts = await Promise.all(slugs.map((slug) => getBlogPostMetadataBySlug(slug)))
     posts.forEach((blogPost) => {
             blogPost.frontMatter.tags.forEach(tag => {
                 if (categories[tag]) {
@@ -86,4 +107,4 @@ export const getBlogPostsByTags: () => Promise<BlogPostCategories> = async () =>
     return categories
 }
 
-const sort: (posts: BlogPost[]) => BlogPost[] = (posts) => posts.sort((post1, post2) => (post1.frontMatter.date > post2.frontMatter.date ? -1 : 1))
+const sort: (posts: BlogPostMetadata[]) => BlogPostMetadata[] = (posts) => posts.sort((post1, post2) => (post1.frontMatter.date > post2.frontMatter.date ? -1 : 1))

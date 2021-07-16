@@ -1,4 +1,4 @@
-import {BlogPost} from "../../lib/blogPost-utils";
+import {BlogPost, BlogPostMetadata} from "../../lib/blogPost-utils";
 import {constants} from "../../lib/constants";
 import format from "date-fns/format";
 import Image from "next/image";
@@ -7,7 +7,7 @@ import {selectTags} from "../../lib/selectTags";
 import Link from 'next/link'
 
 interface BlogPostCardProps {
-    blogPost: BlogPost
+    blogPost: BlogPostMetadata
     onTagClick: (tag: string) => MouseEventHandler<HTMLElement>
 }
 

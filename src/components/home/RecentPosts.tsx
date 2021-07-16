@@ -1,11 +1,11 @@
-import {BlogPost} from "../../lib/blogPost-utils";
+import {BlogPostMetadata} from "../../lib/blogPost-utils";
 import {constants} from "../../lib/constants";
 import format from "date-fns/format";
 import Image from "next/image";
 import Link from "next/link";
 
 interface RecentPostsProps {
-    blogPosts: BlogPost[]
+    blogPosts: BlogPostMetadata[]
 }
 
 export const RecentPosts = (p: RecentPostsProps) => {

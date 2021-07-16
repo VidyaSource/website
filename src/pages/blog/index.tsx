@@ -1,10 +1,15 @@
-import {BlogPost, BlogPostCategories, getAllBlogPosts, getBlogPostsByTags} from "../../lib/blogPost-utils";
+import {
+    BlogPostCategories,
+    BlogPostMetadata,
+    getAllBlogPosts,
+    getBlogPostsByTags
+} from "../../lib/blogPost-utils";
 import {Page} from "../../components/Page";
 import {BlogPostIndex} from "../../components/blog/BlogPostIndex";
 import {NextSeo} from "next-seo";
 
 interface BlogPostsProps {
-    blogPosts: BlogPost[]
+    blogPosts: BlogPostMetadata[]
     blogPostCategories: BlogPostCategories
 }
 
