@@ -35,3 +35,7 @@ yarn-error.log*
 
 # IDEA
 /.idea/
+
+/public/workbox*
+/public/sw*
+/public/fallback-development.js
