@@ -23,7 +23,7 @@ export const ThemeModeButton = (p: ThemeModeButtonProps) => {
 
     return (
         <button onClick={onClick} aria-label={label} title={label} className={p.className}>
-            <span className="sr-only">{label}</span>
+            <span className="sr-only" suppressHydrationWarning>{label}</span>
             {
                 darkMode && sun
             }
