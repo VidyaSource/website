@@ -2,7 +2,7 @@ import {FC, ReactNode} from 'react'
 import Image from "next/image"
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import {ThemeModeButton} from "./ThemeModeButton";
+import {ThemeButton} from "./ThemeButton";
 
 interface PageProps {
     children: ReactNode
@@ -68,7 +68,7 @@ export const Header = () => {
                                 Contact
                             </a>
                         </Link>
-                        <ThemeModeButton className="px-4 py-2 text-gray-light" />
+                        <ThemeButton className="px-4 py-2 text-gray-light" />
                     </div>
                 </div>
                 <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">

@@ -4,7 +4,7 @@ import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import Image from "next/image";
 import Link from "next/link";
-import {ThemeModeButton} from "../ThemeModeButton";
+import {ThemeButton} from "../ThemeButton";
 
 const navigation = [
     {name: 'Courses', href: '/courses'},
@@ -101,7 +101,7 @@ export const Hero = () => {
                                                 </a>
                                             </Link>
                                         ))}
-                                        <ThemeModeButton className="text-gray"/>
+                                        <ThemeButton className="text-gray"/>
                                     </div>
                                 </nav>
                             </div>
@@ -134,7 +134,7 @@ export const Hero = () => {
 
                                             </div>
                                             <div className="-mr-2">
-                                                <ThemeModeButton className="text-gray mr-4 bg-white bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray hover:text-red hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray dark:bg-gray dark:hover:bg-gray-dark" />
+                                                <ThemeButton className="text-gray mr-4 bg-white bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray hover:text-red hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray dark:bg-gray dark:hover:bg-gray-dark" />
                                                 <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray hover:text-red hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red dark:bg-gray dark:text-white dark:hover:bg-white dark:hover:text-blue">
                                                     <span className="sr-only">Close menu</span>
                                                     <XIcon className="h-6 w-6" aria-hidden="true" />
