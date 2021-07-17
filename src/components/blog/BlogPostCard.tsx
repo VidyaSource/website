@@ -3,7 +3,7 @@ import {constants} from "../../lib/constants";
 import format from "date-fns/format";
 import Image from "next/image";
 import {MouseEventHandler, useMemo} from "react";
-import {selectTags} from "../../lib/se˚˚lectTags";
+import {selectTags} from "../../lib/selectTags";
 import Link from 'next/link'
 
 interface BlogPostCardProps {
