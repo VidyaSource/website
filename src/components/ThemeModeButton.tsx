@@ -16,7 +16,7 @@ export const ThemeModeButton = (p: ThemeModeButtonProps) => {
             window.document.documentElement.classList.remove('dark')
             localStorage.setItem("vidyaDarkMode", "false")
         }
-    })
+    }, [darkMode])
     const onClick = () => {
         setDarkMode(!darkMode)
     }
