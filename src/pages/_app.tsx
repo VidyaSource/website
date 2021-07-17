@@ -13,7 +13,7 @@ function MyApp({Component, pageProps}: AppProps) {
         if (typeof window !== "undefined") {
             mode = localStorage.getItem('vidyaDarkMode') === 'true' || (!('vidyaDarkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
         }
-    })
+    }, [])
     const [darkMode, setDarkMode] = useState(mode)
     return (
         <>
