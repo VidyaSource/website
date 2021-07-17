@@ -8,11 +8,15 @@ import gfm from 'remark-gfm'
 import {YouTubeVideo} from "../YouTubeVideo";
 import {selectTags} from "../../lib/selectTags";
 import {useMemo} from "react";
+import Image from 'next/image'
+import raw from 'rehype-raw'
 
 const components = {
     img: ({node, ...props}) => {
         return (
-            <img alt={props.alt} className="max-w-full my-0 mx-auto block" src={props.src} />
+            <div style={{width: props.width, height: props.height}} className="relative mx-auto">
+                <Image alt={props.alt} src={props.src} layout="fill" objectFit="cover" />
+            </div>
         )
     },
     code: ({node, inline, className, children, ...props}) => {
@@ -65,7 +69,7 @@ export const BlogPostContent = (p: BlogPostContentProps) => {
                     </h1>
                     <p className="mt-2 text-xl text-gray-dark dark:text-blue-light leading-8">
                         {/* @ts-ignore */}
-                        <ReactMarkdown components={components} remarkPlugins={[gfm]}>
+                        <ReactMarkdown components={components} remarkPlugins={[gfm]} rehypePlugins={[raw]}>
                             {p.blogPost.content}
                         </ReactMarkdown>
                     </p>
