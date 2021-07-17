@@ -19,35 +19,30 @@ On October 3, I was lucky enough to represent Vidya at the [Capital Region Minor
 (CRMSDC) Leaders & Legends Awards ceremony at MGM National Harbor, where we received an award as a Top 100 Minority-Owned 
 Business (MBE) and a nomination for 2019 Supplier of the Year in our class.  
 
-<img alt="CRMSDC Leaders and Legends Badge" style="max-width:50%; margin: 0 auto 0 auto; display:block" src="/img/blog/blog/badge.jpg" />
-<br/>
+![CRMSDC Leaders and Legends Badge](/img/blog/badge.jpg)
 
 It was an amazing night with great food and drink, celebrities like Roland Martin and Senator Ben Cardin (D-MD), and 
 most importantly, an opportunity to meet the most successful minority business owners in the DC area.
 
 I got a picture with Senator Cardin on the red carpet! 
 
-<img alt="Vidya President Neil Chaudhuri with Maryland Senator Ben Cardin at CRMSDC Leaders and Legends" style="max-width:80%; margin: 0 auto 0 auto; display:block" src="/img/blog/blog/cardin.jpg" />
-<br/>
+![Vidya President Neil Chaudhuri with Maryland Senator Ben Cardin at CRMSDC Leaders and Legends](/img/blog/cardin.jpg)
 
 And I made some friends. The opportunity to meet so many of the most accomplished leaders in the DC area and absorb their 
 insight was priceless.
 
-<img alt="Vidya President Neil Chaudhuri with other Top 100 MBE Award winners" style="max-width:50%; margin: 0 auto 0 auto; display:block" src="/img/blog/blog/smiles.jpg" />
-<br/>
+![Vidya President Neil Chaudhuri with other Top 100 MBE Award winners](/img/blog/smiles.jpg)
 
 As the night continued, it was humbling to be on stage with the other Top 100 MBEs. Can you spot me?
 
-<img alt="Top 100 MBEs at CRMSDC Leaders and Legends" style="max-width:100%; margin: 0 auto 0 auto; display:block" src="/img/blog/blog/top100.jpg" />
-<br/>
+![Top 100 MBEs at CRMSDC Leaders and Legends](/img/blog/top100.jpg)
 
 In case you're wondering, we did not win the award for Supplier of the Year. We are just getting started, and 
 even being nominated is a tremendous honor. So it's cool. For now.
 
 We did get a nice plaque as a Top 100 MBE though.
 
-<img alt="Top 100 MBE award for Vidya, LLC at CRMSDC Leaders and Legends" style="max-width:70%; margin: 0 auto 0 auto; display:block" src="/img/blog/blog/award.jpg" />
-<br/> 
+![Top 100 MBE award for Vidya at CRMSDC Leaders and Legends](/img/blog/award.jpg)
 
 All in all it was an amazing night. For more pictures from our experience at Leaders and Legends, check us out on 
 [Facebook](https://www.facebook.com/VidyaSource/posts/2621013647977589) 
