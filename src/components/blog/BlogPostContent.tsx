@@ -10,11 +10,11 @@ import {selectTags} from "../../lib/selectTags";
 import {useMemo} from "react";
 
 const components = {
-    /*img: ({node, ...props}) => (
-        <div className="aspect-w-1 aspect-h-1">
-            <Image src={node.properties.src} alt={node.properties.alt} layout="fill"/>
-        </div>
-    )*/
+    img: ({node, ...props}) => {
+        return (
+            <img alt={props.alt} className="max-w-full my-0 mx-auto block" src={props.src} />
+        )
+    },
     code: ({node, inline, className, children, ...props}) => {
         const match = /language-(\w+)/.exec(className || '')
         return !inline && match ? (
