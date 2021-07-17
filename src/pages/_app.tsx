@@ -4,14 +4,16 @@ import seo from '../../seo.config'
 import type {AppProps, NextWebVitalsMetric} from 'next/app'
 import ReactGA from "react-ga4"
 import {DarkModeContext} from "../components/ThemeModeContext";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Script from "next/script";
 
 function MyApp({Component, pageProps}: AppProps) {
     let mode
-    if (typeof window !== "undefined") {
-        mode = localStorage.getItem('vidyaDarkMode') === 'true' || (!('vidyaDarkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    }
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            mode = localStorage.getItem('vidyaDarkMode') === 'true' || (!('vidyaDarkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        }
+    })
     const [darkMode, setDarkMode] = useState(mode)
     return (
         <>
