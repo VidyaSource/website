@@ -1,8 +1,8 @@
 import {createContext} from "react";
 
-export type DarkModeContextType = {
+export type ThemeContextType = {
     darkMode: boolean
     setDarkMode: (m: boolean) => void
 }
 
-export const DarkModeContext = createContext<DarkModeContextType>(null)
+export const ThemeContext = createContext<ThemeContextType>(null)

@@ -1,12 +1,12 @@
 import {useContext, useEffect} from "react";
-import {DarkModeContext} from "./ThemeModeContext";
+import {ThemeContext} from "./ThemeModeContext";
 
 interface ThemeButtonProps {
     className?: string
 }
 
 export const ThemeButton = (p: ThemeButtonProps) => {
-    const {darkMode, setDarkMode} = useContext(DarkModeContext)
+    const {darkMode, setDarkMode} = useContext(ThemeContext)
     const label = `${darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}`
     useEffect(() => {
         if (darkMode) {

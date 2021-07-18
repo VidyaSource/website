@@ -3,7 +3,7 @@ import {DefaultSeo} from 'next-seo'
 import seo from '../../seo.config'
 import type {AppProps, NextWebVitalsMetric} from 'next/app'
 import ReactGA from "react-ga4"
-import {DarkModeContext} from "../components/ThemeModeContext";
+import {ThemeContext} from "../components/ThemeModeContext";
 import {useEffect, useState} from "react";
 import Script from "next/script";
 
@@ -38,9 +38,9 @@ function MyApp({Component, pageProps}: AppProps) {
                 }
             </Script>
             <Script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b9ebbff15106c8f" strategy="lazyOnload"/>
-            <DarkModeContext.Provider value={{darkMode: darkMode, setDarkMode: setDarkMode}}>
+            <ThemeContext.Provider value={{darkMode: darkMode, setDarkMode: setDarkMode}}>
                 <Component {...pageProps} />
-            </DarkModeContext.Provider>
+            </ThemeContext.Provider>
         </>
     )
 }
