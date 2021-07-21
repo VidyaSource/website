@@ -6,8 +6,6 @@ import ReactGA from "react-ga4"
 import {ThemeContext} from "../components/ThemeModeContext";
 import {useEffect, useState} from "react";
 import Script from "next/script";
-import Analytics from 'analytics'
-import googleTagManager from '@analytics/google-tag-manager'
 
 function MyApp({Component, pageProps}: AppProps) {
     let mode
@@ -23,7 +21,9 @@ function MyApp({Component, pageProps}: AppProps) {
             <Script strategy="beforeInteractive" src="/scripts/darkMode.js"/>
             <Script>
                 {
-                    `const analytics = Analytics({
+                    `import Analytics from 'analytics'
+                      import googleTagManager from '@analytics/google-tag-manager'
+                      const analytics = Analytics({
                       app: 'vidya-website',
                       plugins: [
                         googleTagManager({
