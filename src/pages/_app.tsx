@@ -21,10 +21,10 @@ function MyApp({Component, pageProps}: AppProps) {
         <>
             <DefaultSeo {...seo} />
             <Script strategy="beforeInteractive" src="/scripts/darkMode.js"/>
-            <Script strategy="lazyOnload">
+            <Script>
                 {
                     `const analytics = Analytics({
-                      app: 'awesome-app',
+                      app: 'vidya-website',
                       plugins: [
                         googleTagManager({
                           containerId: 'GTM-PFPX26R'
