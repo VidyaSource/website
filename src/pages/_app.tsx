@@ -21,7 +21,7 @@ function MyApp({Component, pageProps}: AppProps) {
         <>
             <DefaultSeo {...seo} />
             <Script strategy="beforeInteractive" src="/scripts/darkMode.js"/>
-            <Script>
+            <Script strategy="lazyOnload">
                 {
                     `const analytics = Analytics({
                       app: 'awesome-app',
