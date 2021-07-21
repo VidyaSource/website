@@ -6,6 +6,8 @@ import ReactGA from "react-ga4"
 import {ThemeContext} from "../components/ThemeModeContext";
 import {useEffect, useState} from "react";
 import Script from "next/script";
+import Analytics from 'analytics'
+import googleTagManager from '@analytics/google-tag-manager'
 
 function MyApp({Component, pageProps}: AppProps) {
     let mode
@@ -19,22 +21,16 @@ function MyApp({Component, pageProps}: AppProps) {
         <>
             <DefaultSeo {...seo} />
             <Script strategy="beforeInteractive" src="/scripts/darkMode.js"/>
-            <Script src="https://www.googletagmanager.com/gtag/js?id=G-SV6CZCPD3B"/>
             <Script>
                 {
-                    `window.dataLayer = window.dataLayer || [];
-                             function gtag(){dataLayer.push(arguments);}
-                             gtag('js', new Date());
-                             gtag('config', 'G-SV6CZCPD3B');`
-                }
-            </Script>
-            <Script>
-                {
-                    `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                              })(window,document,'script','dataLayer','GTM-PFPX26R');`
+                    `const analytics = Analytics({
+                      app: 'awesome-app',
+                      plugins: [
+                        googleTagManager({
+                          containerId: 'G-SV6CZCPD3B'
+                        })
+                      ]
+                    })`
                 }
             </Script>
             <Script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b9ebbff15106c8f" strategy="lazyOnload"/>
