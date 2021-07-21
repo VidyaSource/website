@@ -15,7 +15,7 @@ function MyApp({Component, pageProps}: AppProps) {
         }
     }, [])
     useEffect(() => {
-        ReactGA.initialize("GTM-PFPX26R")
+        ReactGA.initialize("G-SV6CZCPD3B")
     }, [])
     const [darkMode, setDarkMode] = useState(mode)
     return (
