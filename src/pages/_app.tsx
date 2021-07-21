@@ -27,7 +27,7 @@ function MyApp({Component, pageProps}: AppProps) {
                       app: 'awesome-app',
                       plugins: [
                         googleTagManager({
-                          containerId: 'G-SV6CZCPD3B'
+                          containerId: 'GTM-PFPX26R'
                         })
                       ]
                     })`
