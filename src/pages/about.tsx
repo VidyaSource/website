@@ -9,6 +9,7 @@ const Clients = dynamic(() => import("../components/Clients"))
 const Diversity = dynamic(() => import("../components/about/Diversity"))
 const Vidya = dynamic(() => import("../components/about/Vidya"))
 const Offerings = dynamic(() => import("../components/about/Offerings"))
+const Testimonials = dynamic(() => import("../components/home/Testimonials"))
 
 const About = () => {
     const title = "Vidya | About"
@@ -41,6 +42,7 @@ const About = () => {
                 <Hero/>
                 <Offerings/>
                 <Diversity/>
+                <Testimonials />
                 <Clients/>
                 <Vidya/>
                 <CallToAction/>
