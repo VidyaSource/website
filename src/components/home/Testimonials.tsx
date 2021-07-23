@@ -17,10 +17,9 @@ const Testimonials = () => {
                                 <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                             </svg>
                             <p className="relative">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias
-                                molestiae. Numquam corrupti in laborum sed rerum et corporis. Nemo expedita voluptas culpa sapiente
-                                alias molestiae.
+                                Vidya was a strategic partner and collaborator during the proposal phase and a sought-after facilitator during program delivery. They explained the most complicated aspects of agile development, software engineering, and DevOps with clarity and humor that enabled our non-technical program participants (and me!) to gain the understanding they needed to more effectively engage with digital service practitioners. I highly recommend them.
                             </p>
+
                         </div>
                         <footer className="mt-8">
                             <div className="flex items-start">
@@ -29,13 +28,13 @@ const Testimonials = () => {
                                         width={80}
                                         height={80}
                                         className="inline-block rounded-full"
-                                        src="/img/staff/president.png"
+                                        src="/img/testimonials/tindall.jpeg"
                                         alt=""
                                     />
                                 </div>
                                 <div className="ml-4">
-                                    <div className="text-base font-medium text-red dark:text-red-light">Judith Black</div>
-                                    <div className="text-base font-medium text-gray-dark dark:text-blue-light">CEO, Tuple</div>
+                                    <div className="text-base font-medium text-red dark:text-red-light">Lauren Tindall</div>
+                                    <div className="text-base font-medium text-gray-dark dark:text-blue-light">Learning Experience Strategy Lead, Capital One</div>
                                 </div>
                             </div>
                         </footer>
