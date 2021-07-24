@@ -10,7 +10,7 @@ class VidyaDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    <link rel="shortcut icon" href="/img/favicon.ico" />
+                    <link rel="shortcut icon" href="/img/favicon.ico"/>
                     <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
                     <link rel="preconnect" href="https://fonts.gstatic.com"/>
                     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet"/>
@@ -43,19 +43,17 @@ class VidyaDocument extends Document {
                     <link href="/img/ios/splash/ipadpro2_splash.png"
                           media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
                           rel="apple-touch-startup-image"/>
-                    <meta name='apple-mobile-web-app-capable' content='yes' />
-                    <meta name='apple-mobile-web-app-status-bar-style' content='default' />
-                    <meta name='apple-mobile-web-app-title' content='Vidya' />
-                    <meta name='mobile-web-app-capable' content='yes' />
-                    <meta name='theme-color' content='#5a82b4' />
-                    <link rel='manifest' href='/manifest.json' />
+                    <meta name='apple-mobile-web-app-capable' content='yes'/>
+                    <meta name='apple-mobile-web-app-status-bar-style' content='default'/>
+                    <meta name='apple-mobile-web-app-title' content='Vidya'/>
+                    <meta name='mobile-web-app-capable' content='yes'/>
+                    <meta name='theme-color' content='#5a82b4'/>
+                    <link rel='manifest' href='/manifest.json'/>
                     {/* PWA */}
                 </Head>
                 <body>
-                <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFPX26R"
-                        height="0" width="0" style={{display: "none", visibility: "hidden"}}/>
-                <Main/>
-                <NextScript/>
+                    <Main/>
+                    <NextScript/>
                 </body>
             </Html>
         )
