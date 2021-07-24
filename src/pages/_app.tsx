@@ -22,7 +22,7 @@ function MyApp({Component, pageProps}: AppProps) {
         <>
             <DefaultSeo {...seo} />
             <Script strategy="beforeInteractive" src="/scripts/darkMode.js"/>
-            <Script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b9ebbff15106c8f" strategy="lazyOnload"/>
+            <Script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b9ebbff15106c8f" strategy="lazyOnload"/>
             <ThemeContext.Provider value={{darkMode: darkMode, setDarkMode: setDarkMode}}>
                 <Component {...pageProps} />
             </ThemeContext.Provider>
