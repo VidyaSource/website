@@ -10,6 +10,7 @@ class VidyaDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
+                    <link rel="shortcut icon" href="/img/favicon.ico" />
                     <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
                     <link rel="preconnect" href="https://fonts.gstatic.com"/>
                     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet"/>
