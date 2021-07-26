@@ -55,8 +55,8 @@ BAT for your browsing, and in turn, you can redeem BAT for yourself and reward c
 
 That includes us.
 
-Since we are a Brave Verified Creator for this site, [Twitter](https://twitter.com/VidyaSource), 
-and [YouTube](https://www.youtube.com/channel/UC24LVc8Bb65SF6LW-SLog9A), you can reward us with some BAT if you find
+Since we are a Brave Verified Creator for this site, our [Twitter](https://twitter.com/VidyaSource) page, 
+and our [YouTube](https://www.youtube.com/channel/UC24LVc8Bb65SF6LW-SLog9A) page, you can reward us with some BAT if you find
 our content valuable. It's a win-win.
 
 We are excited to combine powerful emerging technologies like Next.js, Tailwind CSS, and Brave to bring you a better experience
