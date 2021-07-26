@@ -2,10 +2,20 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-    purge: [
-        './src/pages/**/*.{js,ts,jsx,tsx}',
-        './src/components/**/*.{js,ts,jsx,tsx}',
-    ],
+    purge: {
+        content: [
+            './src/pages/**/*.{js,ts,jsx,tsx}',
+            './src/components/**/*.{js,ts,jsx,tsx}',
+        ],
+        safelist: [
+            'text-linkedin',
+            'text-facebook',
+            'text-twitter',
+            'text-github',
+            'text-youtube',
+            'text-stackoverflow',
+        ]
+    },
     darkMode: "class", // or 'media' or 'class'
     theme: {
         fontFamily: {
@@ -52,8 +62,7 @@ module.exports = {
             },
         },
     },
-    variants: {
-    },
+    variants: {},
     plugins: [
         require('@tailwindcss/typography'),
         require('@tailwindcss/forms'),
