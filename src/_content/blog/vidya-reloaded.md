@@ -48,7 +48,7 @@ enable push notifications and caching for rapid and offline access. They can acc
 A PWA also enables mobile users to add a home screen icon like a native app. Henrik dismisses that as a "glorified bookmark," but I think 
 that's cool. Eye candy or not, one day we will be able to set permissions for PWAs, view their battery consumption,
 and do other things we take for granted with native apps. [WebAPKs](https://www.xda-developers.com/webapks-chrome-nightly-builds/)
-are just starting to enable this on [Android](/tags/android).
+are just starting to enable this on Android.
 
 From a business perspective, [mobile traffic exceeded desktop traffic for the first time in late 2016](http://gs.statcounter.com/press/mobile-and-tablet-internet-usage-exceeds-desktop-for-first-time-worldwide),
 so the speed and offline availability of PWAs are attractive. Mobile consumers are the most loyal but are also downloading fewer apps.
