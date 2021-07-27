@@ -71,7 +71,7 @@ badges on [Stack Overflow](http://stackoverflow.com/users/1347281/vidya), and I 
 anything, but that doesn’t always mean you should.
 
 For web applications, [Ruby](/tags/ruby) on [Rails](/tags/rails) is far superior. For standalone projects you want to get running fast,
-[Python](/tags/python) is far superior. For Big Data [analytics](/categories/analytics), Python, [Scala](/tags/scala),
+[Python](/tags/python) is far superior. For Big Data [analytics](/categories/analytics), Python, Scala,
 and [Clojure](/tags/clojure) are [far superior](/blog/2013/10/27/java-is-dysfunctional-with-big-data).
 
 I’m simplifying a bit, but the point is that I’ve had to unlearn a lot of the concepts that became second nature in Java in

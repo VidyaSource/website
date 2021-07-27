@@ -36,7 +36,7 @@ Even worse, you are writing tests that don't test anything except the implementa
 at all.
 
 This has really hit me as I learn to write tests for [React](/tags/react). My career has been built primarily on [Java](/tags/java), 
-[Scala](/tags/scala), [Ruby](/tags/ruby), and [Python](/tags/python)--*i.e.* backend development.
+Scala, [Ruby](/tags/ruby), and [Python](/tags/python)--*i.e.* backend development.
 Over the years I have written a lot of [JavaScript](/tags/javascript) too, but we are taking it to the next level and enduring some growing pains as 
 we migrate the front end of a [Scala application we built for a client](/blog/2018/08/10/welcoming-ninaday/) to React 
 (with all the trimmings--[Webpack](/tags/webpack), [TypeScript](/tags/typescript), [RxJS](/tags/rxjs), [Immutable.js](/tags/immutablejs), *etc.*). 

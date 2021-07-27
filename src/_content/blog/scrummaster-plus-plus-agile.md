@@ -102,7 +102,7 @@ defined by [Gerard Meszaros](https://www.linkedin.com/in/gerardmeszaros/). Make 
 share [test fixtures](https://github.com/junit-team/junit4/wiki/test-fixtures) by using the test framework to group tests 
 into suites and/or using the facilities of the language--like with superclasses in [Ruby](/tags/ruby) or 
 [Java](/tags/java) or [traits](http://alvinalexander.com/scala/scala-trait-examples) or the 
-[Loan Pattern](http://stackoverflow.com/questions/20762240/loaner-pattern-in-scala) in [Scala](/tags/scala).
+[Loan Pattern](http://stackoverflow.com/questions/20762240/loaner-pattern-in-scala) in Scala.
 
 Then separate unit tests from integration tests so that only the former run with each commit 
 while the latter run less frequently. Remember that only a representative subset of the tests--rather than 

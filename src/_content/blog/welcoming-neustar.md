@@ -42,7 +42,7 @@ with a variety of technologies and platforms. Currently, we are on a [Scrum](/ta
  [NoSQL](http://www.mongodb.com/nosql-explained) with project automation with [Gradle](/tags/gradle) and
 continuous integration with [Jenkins](http://jenkins-ci.org/),
 and you have a fun, challenging project. We expect to leverage
-[Scala](/tags/scala) and other cool technologies to add value to this project and others down the road.
+Scala and other cool technologies to add value to this project and others down the road.
 
 We are lucky to be working with Neustar so we can learn from such a talented team and contribute our own expertise to
 such interesting, challenging work.

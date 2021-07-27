@@ -39,7 +39,7 @@ is great for developers. And Spark works a lot faster because it optimizes opera
 lethargic disc I/O like [MapReduce](tags/mapreduce), which is great for everybody.
 
 Like [Software Engineering in Java](/course/software-engineering-in-java), *Analytics with
-Apache Spark* will be heavy on code--both with examples and hands-on exercises. We will use Spark’s [Scala](/tags/scala)
+Apache Spark* will be heavy on code--both with examples and hands-on exercises. We will use Spark’s Scala
 API since the [Java](/tags/java) and [Python](/tags/python) APIs aren’t as complete and performant. If you
 don’t know Scala, don’t worry. We will spend time on learning just enough Scala to be dangerous with Spark.
 

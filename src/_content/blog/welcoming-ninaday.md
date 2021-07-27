@@ -53,7 +53,7 @@ and Amazon S3 backend with CloudFront CDN for worldwide distribution of images a
 
 Over time though, we found that this architecture couldn't scale as needed--particularly with regard to long-running background work 
 that takes place with tasks like image and video processing and PDF generation. Enter [Play Framework](/tags/play-framework) in 
-[Scala](/tags/scala). We migrated the talent database to Play with a [MongoDB](/tags/mongodb) backend for a more
+Scala. We migrated the talent database to Play with a [MongoDB](/tags/mongodb) backend for a more
 flexible schema--not to mention that a document-based database is a natural fit for the data model. 
 
 Play and Scala are built for performance, and they have made the database so much faster. We also use [akka-s3](https://developer.lightbend.com/docs/alpakka/current/s3.html)

@@ -42,7 +42,7 @@ Clojure is [losing popularity among functional languages](https://stackoverflow.
 guess there is some combination of major investment in Clojure with a shrinking pool of capable Clojure developers that is driving
 up their value. 
 
-In the United States, the title for highest-paying [programming](/categories/programming) language is shared by [Scala](/tags/scala) and [Go](/tags/go). Meanwhile 
+In the United States, the title for highest-paying [programming](/categories/programming) language is shared by Scala and [Go](/tags/go). Meanwhile 
 [Python](/tags/python), which Stack Overflow declared 
 "[has a solid claim to being the fastest-growing major programming language](https://stackoverflow.blog/2017/09/06/incredible-growth-python/),"
 is the highest-paid in France and India and second-highest (to [Java](/tags/java)) in Germany. 

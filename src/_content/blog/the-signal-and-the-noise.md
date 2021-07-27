@@ -51,7 +51,7 @@ suggests, merely paying in dollars to advertise in an American election doesn't 
 
 But what about *paying in rubles or won to advertise in an American election*? Senator Franken thinks rejecting those ads should
 be a no-brainer. In fact, we could generalize his thinking beyond the United States with an algorithm expressed in trivial 
-[Scala](/tags/scala)-ish pseudocode:
+Scala-ish pseudocode:
 
 `if (ad currency == country currency) analyzeFurther() else NOPE!`
 

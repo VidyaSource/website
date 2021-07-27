@@ -20,7 +20,7 @@ aliases:
 ---
 
 [Alvin Alexander](http://alvinalexander.com/) is a renowned software engineer and author. His *[Scala Cookbook](http://scalacookbook.com/)* was invaluable when I got started with
-[Scala](/tags/scala), and that book and his prolific blog posts have remained essential reading even as I've gotten better at it.
+Scala, and that book and his prolific blog posts have remained essential reading even as I've gotten better at it.
 One of Alvin's most recent posts, [How Scala killed the Strategy Pattern](http://alvinalexander.com/scala/how-scala-killed-oop-strategy-design-pattern),
 is the latest iteration of an old criticism of the [Gang of Four (Go4) Design Patterns](http://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns-in-javas-core-libraries)
 by functional programming (FP) advocates--that you don't even need them if languages provide sufficient abstractions.

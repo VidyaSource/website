@@ -53,7 +53,7 @@ to mitigate some of those issues.
 
 A much cleaner, more sophisticated approach is to use the concept of [optional types](http://en.wikipedia.org/wiki/Option_type), 
 which is sort of utilized in Guava and has its origins in mathematical [type theory](http://en.wikipedia.org/wiki/Type_theory) 
-and functional programming languages like Haskell and [Scala](/tags/scala), where I was first introduced to the 
+and functional programming languages like Haskell and Scala, where I was first introduced to the 
 concept. Since then, Scala's `Option` type has become one of my favorite features of the language.
 
 Let's go back to our original example. In Scala, it would probably look like this.
