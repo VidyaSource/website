@@ -36,7 +36,30 @@ const Consulting = () => {
             <ProductJsonLd productName="Vidya Consulting"
                            description={description}
                            slogan="Build Faster. Build Better."
-                           brand="Vidya"/>
+                           brand="Vidya"
+                           reviews={[
+                               {
+                                   reviewRating: {
+                                       ratingValue: "5",
+                                       bestRating: "5"
+                                   },
+                                   author: {
+                                       type: "Person",
+                                       name: "Lauren Tindall"
+                                   }
+                               },
+                               {
+                                   reviewRating: {
+                                       ratingValue: "5",
+                                       bestRating: "5"
+                                   },
+                                   author: {
+                                       type: "Person",
+                                       name: "Michael Zeitlin"
+                                   }
+                               }
+                           ]}
+            />
             <Page>
                 <Architecture/>
                 <Communications/>
