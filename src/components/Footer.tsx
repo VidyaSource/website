@@ -109,12 +109,24 @@ const Footer = () => {
                 <div className="mt-8 flex justify-center space-x-6">
                     {navigation.social.map((item) => (
                         <Link key={item.name} href={item.href}>
-                            <a key={item.name} className={`dark:text-white hover:text-${item.name.replace(/\s+/g, '').toLowerCase()} dark:hover:text-red-light`}>
+                            <a className={`dark:text-white hover:text-${item.name.replace(/\s+/g, '').toLowerCase()} dark:hover:text-red-light`}>
                                 <span className="sr-only">{item.name}</span>
                                 <item.icon className="h-6 w-6" aria-hidden="true"/>
                             </a>
                         </Link>
                     ))}
+                    <Link href="https://stackoverflow.com/users/1347281/vidya">
+                        <a className="dark:text-white hover:text-stackoverflow dark:hover:text-red-light">
+                            <span className="sr-only">Stack Overflow</span>
+                            <svg fill="currentColor" viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
+                                <path
+                                    fillRule="evenodd"
+                                    d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"
+                                    clipRule="evenodd"
+                                />
+                            </svg>
+                        </a>
+                    </Link>
                 </div>
                 <p className="mt-8 text-center text-base lg:text-lg text-gray-dark dark:text-green-light">
                     &copy; {new Date().getFullYear()} Vidya, LLC. All rights reserved.
