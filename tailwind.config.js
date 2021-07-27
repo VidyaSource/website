@@ -28,6 +28,12 @@ module.exports = {
             current: 'currentColor',
             white: colors.white,
             yellow: colors.yellow,
+            linkedin: "#0073b1",
+            facebook: "#4267B2",
+            twitter: "#1DA1F2",
+            github: "#24292e",
+            youtube: "#FF0000",
+            stackoverflow: "#F47F24",
             red: {
                 light: '#F8ECEF',
                 DEFAULT: '#9c4d61'
@@ -51,14 +57,6 @@ module.exports = {
         extend: {
             spacing: {
                 youtube: "56.25%"
-            },
-            colors: {
-                linkedin: "#0073b1",
-                facebook: "#4267B2",
-                twitter: "#1DA1F2",
-                github: "#24292e",
-                youtube: "#FF0000",
-                stackoverflow: "#F47F24"
             },
         },
     },
