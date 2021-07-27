@@ -2,20 +2,6 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-    purge: {
-        content: [
-            './src/pages/**/*.{js,ts,jsx,tsx}',
-            './src/components/**/*.{js,ts,jsx,tsx}',
-        ],
-        safelist: [
-            'hover:text-linkedin',
-            'hover:text-facebook',
-            'hover:text-twitter',
-            'hover:text-github',
-            'hover:text-youtube',
-            'hover:text-stackoverflow',
-        ]
-    },
     darkMode: "class", // or 'media' or 'class'
     theme: {
         fontFamily: {
