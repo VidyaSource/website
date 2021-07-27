@@ -8,12 +8,12 @@ module.exports = {
             './src/components/**/*.{js,ts,jsx,tsx}',
         ],
         safelist: [
-            'text-linkedin',
-            'text-facebook',
-            'text-twitter',
-            'text-github',
-            'text-youtube',
-            'text-stackoverflow',
+            'hover:text-linkedin',
+            'hover:text-facebook',
+            'hover:text-twitter',
+            'hover:text-github',
+            'hover:text-youtube',
+            'hover:text-stackoverflow',
         ]
     },
     darkMode: "class", // or 'media' or 'class'
@@ -28,12 +28,12 @@ module.exports = {
             current: 'currentColor',
             white: colors.white,
             yellow: colors.yellow,
-            "linkedin": "#0073b1",
-            "facebook": "#4267B2",
-            "twitter": "#1DA1F2",
-            "github": "#24292e",
-            "youtube": "#FF0000",
-            "stackoverflow": "#F47F24",
+            linkedin: "#0073b1",
+            facebook: "#4267B2",
+            twitter: "#1DA1F2",
+            github: "#24292e",
+            youtube: "#FF0000",
+            stackoverflow: "#F47F24",
             red: {
                 light: '#F8ECEF',
                 DEFAULT: '#9c4d61'
