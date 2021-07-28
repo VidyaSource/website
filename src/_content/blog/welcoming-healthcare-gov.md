@@ -26,8 +26,8 @@ categories:
 ---
 
 Vidya is proud to have teamed with Accenture Federal Services to transition [HealthCare.gov](https://www.healthcare.gov/) from
-a conventional [Java](/categories/java) monolith built with [Spring](/categories/spring) into 
-[Scala](/categories/scala) [microservices](/categories/microservices) built with [Play Framework](/tags/play-framework). One of several factors
+a conventional Java monolith built with Spring into 
+Scala microservices built with [Play Framework](/tags/play-framework). One of several factors
 that motivate software engineers is mission, and there are few missions more fulfilling than helping people access
 health insurance and ultimately health care as efficiently as possible.
 

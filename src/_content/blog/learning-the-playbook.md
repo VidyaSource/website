@@ -46,7 +46,7 @@ practice and mine in technology and software engineering best practices compleme
 
 Frank is putting together a Public Spend Forum video series for government acquisition professionals on the Digital Service Playbook. 
 He was kind enough to ask me to sit in as a guest to provide technical commentary that will hopefully ground their understanding in 
-the concepts and nomenclature of digital services and [agile](/categories/agile) software development. 
+the concepts and nomenclature of digital services and agile software development. 
  
 Here is the first video in the series.
 

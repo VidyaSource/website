@@ -20,7 +20,7 @@ aliases:
 As I help to [revolutionize how government buys IT](/blog/all-we-do-is-win-win-win) 
 by teaching federal acquisition professionals to avoid spending hundreds of millions for 
 deliverables that don't work, I have stressed that the best  way to maximize value and save taxpayer dollars is to 
-understand the principles behind [agile](/categories/agile) software development and to construct contracts accordingly. 
+understand the principles behind agile software development and to construct contracts accordingly. 
 
 Incentives (also called *fee*) have long been a significant part of government contracts--including contracts for software application 
 development. When it comes to IT contracts, that needs to change as the government gets more agile. If you understand

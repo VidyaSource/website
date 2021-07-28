@@ -42,7 +42,7 @@ Clojure is [losing popularity among functional languages](https://stackoverflow.
 guess there is some combination of major investment in Clojure with a shrinking pool of capable Clojure developers that is driving
 up their value. 
 
-In the United States, the title for highest-paying [programming](/categories/programming) language is shared by Scala and [Go](/tags/go). Meanwhile 
+In the United States, the title for highest-paying programming language is shared by Scala and [Go](/tags/go). Meanwhile 
 [Python](/tags/python), which Stack Overflow declared 
 "[has a solid claim to being the fastest-growing major programming language](https://stackoverflow.blog/2017/09/06/incredible-growth-python/),"
 is the highest-paid in France and India and second-highest (to [Java](/tags/java)) in Germany. 
@@ -53,12 +53,12 @@ harder problems faster. At Vidya we have had the pleasure to work with all of th
 **Clojure**
 
 Yes, even Clojure. I worked on a DARPA project called [XDATA](https://www.darpa.mil/program/xdata) which identifies the 
-[analytics](/categories/analytics) tools best suited to particular kinds of problems. One such tool was 
+analytics tools best suited to particular kinds of problems. One such tool was 
 [Cascalog](https://github.com/nathanmarz/cascalog) from the mind of [Nathan Marz](https://twitter.com/nathanmarz?lang=en), 
 the creator of Apache Storm and author 
 of the [Lambda Architecture](http://lambda-architecture.net/). It's gone cold now, but at the time, Cascalog represented a powerful alternative
 to [MapReduce](/tags/mapreduce) because it is built on Clojure to harness the power of functional programming to solve 
-[Big Data](/categories/big-data) problems. This was my first professional exposure to functional programming after years of working with 
+Big Data problems. This was my first professional exposure to functional programming after years of working with 
 Java, and I became so enamored of the natural fit between functional programming and Big Data that I even 
 [blogged about its advantages over Java for building analytics](/blog/2013/10/27/java-is-dysfunctional-with-big-data/).
 
@@ -104,9 +104,9 @@ I look forward to the opportunity to wrap my head around the syntax and do more 
 **Python**
    
 [When I spoke at Code Writers DC](blog/2017/06/05/speaking-at-code-writers-workshop-2017/), I identified statically typed
-languages as a "trend" in [software engineering](/categories/software-engineering) and cited Scala, Go, [Swift](/tags/swift),
+languages as a "trend" in software engineering and cited Scala, Go, [Swift](/tags/swift),
 and [Kotlin](/tags/kotlin) as examples. Python, however, is a big exception. It's been around forever, and as Stack Overflow noted, it's
-still blowing up because of Big Data and [machine learning](/categories/machine-learning). The list of Python tools 
+still blowing up because of Big Data and machine learning. The list of Python tools 
 for data science is long--[Pandas](http://pandas.pydata.org/), [NumPy](http://www.numpy.org/), 
 [SciKit Learn](http://scikit-learn.org/stable/), and [NLTK](http://www.nltk.org/) just to name a few. [Keras](https://keras.io/), 
 arguably the leading Deep Learning tool out there, is a Python abstraction over other 

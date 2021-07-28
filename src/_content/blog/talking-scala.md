@@ -23,7 +23,7 @@ aliases:
 
 If you are in the Washington, DC, area and love free pizza, I will be speaking at [Polyglot Programming DC](http://www.meetup.com/Polyglot-Programming-DC/events/221524361/) a
 week from today on Scala, a hot programming language for everything from web development to
-"[Big Data](/categories/big-data)" to Android development.
+"Big Data" to Android development.
 
 Also, free pizza.
 

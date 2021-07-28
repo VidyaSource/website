@@ -30,11 +30,11 @@ aliases:
 - /blog/2019/03/29/vidya/technology/scala-or-go-tastes-great-or-less-filling/
 ---
 
-[Scala](/categories/scala) and [Go](/categories/go) (aka [Golang](/tags/golang)) are two of the fastest growing leading-edge 
-[programming](/categories/programming) languages in the world. In the United States, they are also among the 
+Scala and Go (aka [Golang](/tags/golang)) are two of the fastest growing leading-edge 
+programming languages in the world. In the United States, they are also among the 
 [most lucrative](https://adtmag.com/articles/2017/08/18/go-scala-salaries.aspx). Scala and Go are among a slew of 
 programming languages that innovate in numerous ways to produce faster, more resilient, more secure applications for a multicore,
-[cloud native](/categories/cloud-native), [mobile](/categories/mobile) world.   
+cloud native, mobile world.   
 
 The thing is Scala and Go have *very* different philosophies on what makes engineers most productive and what defines great
 applications. We are going to look at how Scala and Go solve five common programming tasks
@@ -51,7 +51,7 @@ tasks we will consider so you can jump to the ones that interest you most:
 Or you can skip straight to my [conclusion](#how-do-you-decide): which boils down to this: 
 
 > Despite the strong possibility that this opinion will subject me to ritual humiliation on social media, I would use
-  Scala (or a similarly featured language like [Kotlin](/categories/kotlin)) for microservices or bigger
+  Scala (or a similarly featured language like Kotlin) for microservices or bigger
   but Go both to replace any [bash or Python (or C++ or whatever) scripts](https://www.quora.com/Where-do-we-use-Python-or-shell-scripts-in-the-DevOps-project-life-cycle) 
   that are part of my continuous delivery pipeline and 
   to create [lambda functions](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html), which are supposed to be lightweight,
@@ -61,7 +61,7 @@ With that, let me introduce you to Scala and Go.
 
 # Scala
 
-Scala is an object-oriented (OO) *and* [functional programming](/categories/functional-programming) language built for 
+Scala is an object-oriented (OO) *and* functional programming language built for 
 the JVM (though [Scala Native](http://www.scala-native.org/en/v0.3.8/) is in the works). It emerged from academia at the 
 [EPFL](https://scala.epfl.ch/) in Switzerland from the mind of Academic Director Martin Odersky, who sought to prove that 
 the two paradigms--OO for representing your domain and functional for its 
@@ -78,7 +78,7 @@ you can skip the ceremony of writing a class or test and instead use a command-l
 [Ammonite](https://ammonite.io/#Ammonite-REPL). Dependency management is achieved with [SBT](/tags/sbt) typically but 
 also more general JVM build tools like [Gradle](/tags/gradle) and Maven.
 
-Scala became really popular with the advent of ["Big Data"](/categories/big-data) because 
+Scala became really popular with the advent of "Big Data" because 
 [functional programming lends itself so naturally to analytics](https://www.vidyasource.com/blog/2013/10/27/java-is-dysfunctional-with-big-data/),
 and the learning curve for 
 [modern LISPs like Haskell and Clojure](https://en.wikipedia.org/wiki/Lisp_(programming_language)#2000_to_present) 
@@ -111,7 +111,7 @@ Official dependency management is nonexistent, and you may find Go's unorthodox 
 
 After Go took off at Google and was released to the public, it got really popular as the language of concurrency, which helped
 in turn to make it the language of 
-[DevOps](/categories/devops)--particularly in concert with 
+DevOps--particularly in concert with 
 [Kubernetes](https://rancher.com/using-kubernetes-api-go-kubecon-2017-session-recap/), which also emerged from Google. 
 Go has expanded into other domains as well
 with the CMS [Hugo](https://gohugo.io/) (which was used to build this site) and the microservices framework 
@@ -141,7 +141,7 @@ Although `null` exists in Scala as a JVM language, you should (almost) never int
 [monad](https://stackoverflow.com/questions/44965/what-is-a-monad) designed specifically for this purpose. 
 We describe `Option` in more detail in [our tutorial](https://www.youtube.com/watch?v=rbZ6GzR8B7I),
 but essentially it compels you to account for the potential absence of a value at *compile* time. This avoids the costly
-`NullPointerException` at runtime that has sent thousands of [Java](/categories/java) developers to therapy.
+`NullPointerException` at runtime that has sent thousands of Java developers to therapy.
 
 ~~~scala 
 case class Student(name: String, house: String)
@@ -717,7 +717,7 @@ them to the type. When you do this, the type is called a "[receiver](https://tou
 has been assigned all the functions associated with a given interface, it is an implicit instance of that interface. You
 can then pass the type to any function expecting an instance of that interface, and it's resolved at compile time, which 
 makes you more productive in stark contrast to the runtime resolution of 
-[duck typing](https://en.wikipedia.org/wiki/Duck_typing) in dynamic languages like [Python](/categories/python).
+[duck typing](https://en.wikipedia.org/wiki/Duck_typing) in dynamic languages like Python.
 
 ~~~go
 package main
@@ -792,7 +792,7 @@ time finding Scala engineers--especially in the United States and especially if 
 have senior staff who can mentor novices and who can build abstractions that utilize functional programming's strengths 
 and the exquisite type system to constrain wayward novices, you will find the team growing very productive very quickly.
 Day-to-day tasks like compilation and continuous delivery are slower, and you will often find yourself exploring Scala's rich
-[open-source](/categories/open-source) community to enhance development.
+open-source community to enhance development.
 
 Meanwhile, anyone can learn Go. The constructs are simple and lightweight, and compiling and executing are just so fast. It's amazing.
 Mastering the more advanced concepts of Go, however, demands effort. You will also find yourself reinventing the wheel 
@@ -803,7 +803,7 @@ when dealing with unknown schemas like [unmarshaling dynamic JSON](https://stack
 
 So it all depends on if the priorities of your application and project align with the priorities of the language and ecosystem
 you choose. Despite the strong possibility that this opinion will subject me to ritual humiliation on social media, I would use
-Scala (or a similarly featured language like [Kotlin](/categories/kotlin)) for microservices or bigger
+Scala (or a similarly featured language like Kotlin for microservices or bigger
 but Go both to replace any [bash or Python (or C++ or whatever) scripts](https://www.quora.com/Where-do-we-use-Python-or-shell-scripts-in-the-DevOps-project-life-cycle) 
 that are part of my continuous delivery pipeline and 
 to create [lambda functions](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html), which are supposed to be lightweight,

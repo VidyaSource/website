@@ -22,7 +22,7 @@ aliases:
 ---
 
 I have written quite a bit recently about my longstanding passion for improving the way government procures 
-technology and manages technology [projects](/categories/project-management). The administration has taken 
+technology and manages technology projects. The administration has taken 
 [many significant steps](/blog/Projects/Agile/Scrum/Programming/Testing/Architecture/2015/07/19/the-fix-is-in) toward that goal,
 and I have played [a small role 
 in the process](blog/Projects/Agile/Scrum/Programming/Testing/Architecture/2015/10/04/learning-the-playbook) to this point.
@@ -49,7 +49,7 @@ to the needs of the students as identified with a pre-assessment and to whatever
 course of the six releases. 
 
 I will have input into all the releases--including the capstone in Release 6, but I will be the lead for Release 5, which introduces technology 
-concepts like APIs and cloud computing along with software engineering concepts like version control and [agile](/categories/agile) software
+concepts like APIs and cloud computing along with software engineering concepts like version control and agile software
 development. However, the goal isn't to turn government acquisition professionals into the cast of 
 [The Big Bang Theory](http://www.cbs.com/shows/big_bang_theory/). The goal is to provide these professionals with just enough 
 knowledge of technology and software engineering to know what they're buying and therefore design contracts in such a way as to 

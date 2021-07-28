@@ -46,13 +46,13 @@ for those permits that are particularly in-demand.
 In order to meet the demand of thousands of visitors, Rec.gov has been built with performance in mind. It utilizes what is probably
 the most innovative customer-facing technology stack in the federal government: 
 
-* [Go kit](/tags/go-kit), a [microservices](/categories/microservices) framework written in [Go](/categories/go)
+* [Go kit](/tags/go-kit), a microservices framework written in Go
 * Custom [React](/tags/react) components along with [Redux](/tags/redux) and [React Router](https://reacttraining.com/react-router/)
 * [Cassandra](/tags/cassandra) for storage although there are plans to move to [DynamoDB](https://aws.amazon.com/dynamodb/)
 * [AWS](/tags/aws)
 
 The project itself takes something of a startup's view on quality by shifting the focus from functional testing to automation via a 
-[CI/CD](/categories/continuous-delivery) pipeline powered by [Jenkins](/tags/jenkins) to build the microservices
+CI/CD pipeline powered by [Jenkins](/tags/jenkins) to build the microservices
 and perform basic [linting](https://github.com/golang/lint), [Docker](/tags/docker) to build the images, 
 and [Kubernetes](/tags/kubernetes) to orchestrate them. A dedicated [Site Reliability Engineering](https://landing.google.com/sre/) team manages
 this pipeline, and their work is impressive. I have never been on a development effort that seemingly devotes more resources to 

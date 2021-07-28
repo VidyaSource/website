@@ -74,7 +74,7 @@ rather than generically agile. It is true Scrum has a to-do list called a backlo
  - A suite of fully automatable *acceptance* tests created by developers and testers with the Product Owner to verify the
  application works--correctly, securely, and at scale
   
- - A [continuous integration](/categories/continuous-integration) infrastructure using [Jenkins](http://jenkins-ci.org/)
+ - A continuous integration infrastructure using [Jenkins](http://jenkins-ci.org/)
  or similar to build the application and run all these automated tests multiple times a day--including running all the
  unit tests anytime someone checks anything into [version control](http://git-scm.com/video/what-is-version-control)
   

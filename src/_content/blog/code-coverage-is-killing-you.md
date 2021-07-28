@@ -25,8 +25,8 @@ automation, and stunning charts to impress the people who pay for the occasional
 
 The problem is code coverage is killing you.
 
-Don't get me wrong. You deserve credit for your [agile](/categories/agile) commitment to quality and your investment 
-in [continuous integration](/categories/continuous-integration) and [continuous delivery](/categories/continuous-delivery). 
+Don't get me wrong. You deserve credit for your agile commitment to quality and your investment 
+in continuous integration and continuous delivery. 
 But why does just about everything out there say 
 100% code coverage is [at best unrealistic and at worst dangerous](https://softwareengineering.stackexchange.com/questions/1380/how-much-code-coverage-is-enough)?
 How can achieving a perfect score on a great metric be a bad thing? But OK. What's the optimal number then? There
@@ -101,7 +101,7 @@ is poor with too many dependencies to mock. Maybe it's hard to generate test dat
 will manifest in diminishing velocity and more bugs. Better design and again 
 [property-based testing](/blog/2018/09/18/the-business-case-for-functional-programming/) can help.  
 
-* **_Time to Run Tests_.** One of the core tenets of [agile](/categories/agile) development is rapid feedback, which is impossible 
+* **_Time to Run Tests_.** One of the core tenets of agile development is rapid feedback, which is impossible 
 if your tests take forever. This might be controversial, but I would recommend favoring unit tests and functional tests 
 over integration tests. Unit tests are fast (when written properly). Functional tests give you the most accurate view
 on quality, and modern tools like [Cypress](https://www.cypress.io/) can overcome the slowness and flakiness of 

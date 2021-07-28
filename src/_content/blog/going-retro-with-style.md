@@ -38,7 +38,7 @@ the answers felt like platitudes rather than actionable suggestions.
 Meanwhile, I had *empathy*. As a fellow software engineer, I felt like I was one of maybe
 a handful of people in the room who has some sense of what it is like to be singled out
 by leadership and blamed for failure. It's usually inaccurate, and it's always unfair. The best thing 
-about [agile](/categories/agile) isn't the development practices like unit testing and 
+about agile isn't the development practices like unit testing and 
 automation; it's the culture elevating developers to first-class citizens whose 
 input and perspectives are deemed just as important as leadership's.
 

@@ -26,7 +26,7 @@ aliases:
 - /blog/2018/03/11/pop-goes-the-blockchain/
 ---
 
-[Blockchain](/categories/blockchain). 
+Blockchain. 
 
 I can probably stop here. Merely having the word on the Vidya site will increase blog readership more than if I posted a deleted scene from 
 [Black Panther](https://www.youtube.com/watch?v=xjDjIWPwcPU).
@@ -134,7 +134,7 @@ upon a time, [Service-Oriented Architecture (SOA)](http://www.opengroup.org/soa/
 concept whose hype motivated vendors to sell overengineered solutions to doe-eyed customers desperate to appear visionary only
 to find themselves locked into heavyweight, proprietary products. And SOA had far more standardization than Blockchain.
 Today people are more scared to utter "SOA" than they are "[Voldemort](https://daviesnow.files.wordpress.com/2016/01/img_1031.png)" 
-despite its vindication by modern [microservices](/categories/microservices) architectures.   
+despite its vindication by modern microservices architectures.   
 
 I worry the same fate could befall Blockchain.
 
@@ -144,9 +144,9 @@ Blockchain also needs to be open to developers to build mindshare and excitement
 ultimately even create so many Blockchain developers they become cheap. This means as always
 there needs to be tooling support for syntax checking and debugging along with automation of all the software engineering tasks 
 we have come to appreciate over the last 
-decade or so of [agile software development](/categories/agile/): [testing](/categories/testing/), 
+decade or so of agile software development: testing, 
 [static analysis](https://www.owasp.org/index.php/Static_Code_Analysis), 
-[continuous integration](/categories/continuous-delivery/), and [continuous delivery](/categories/continuous-delivery/). 
+continuous integration, and continuous delivery. 
 Blockchain tools are strewn about the landscape--[the MetaMask Chrome plugin](https://metamask.io/), the 
 [Mist browser](https://github.com/ethereum/mist), an alpha-stage [Solidity plugin](https://github.com/intellij-solidity/intellij-solidity)
 for IntelliJ, and various language-specific clients like [Go Ethereum](https://geth.ethereum.org/). Despite the passion
@@ -193,7 +193,7 @@ contract in Ethereum is public; you have to handle encryption yourself to hide t
 There are a lots of ideas out there for solving this problem with [Zcash](https://z.cash/) arguably the most promising.
 Zcash is a cryptocurrency that offers privacy through even more clever cryptography 
 in the form of [zero-knowledge proofs](https://en.wikipedia.org/wiki/Zero-knowledge_proof). Another compelling alternative
-is [Corda](https://github.com/corda/corda), an [open-source](/categories/open-source/) "Blockchain for business" written
+is [Corda](https://github.com/corda/corda), an open-source "Blockchain for business" written
 in [Kotlin](/tags/kotlin) that makes privacy (along with interoperability and [tooling](https://docs.corda.net/getting-set-up.html)) 
 a first-class citizen. Various vendors offer proprietary solutions as well.
 

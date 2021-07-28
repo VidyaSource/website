@@ -40,7 +40,7 @@ technical decisions.
 
 All of this distinguishes [our Spark course](/course/analytics-with-apache-spark) 
 from all the others. We hope you will consider it if you want to make your mark
-in the [Big Data](/categories/big-data) landscape.
+in the Big Data landscape.
 
 Feel free to check out our other courses too--[Software Engineering in Java](/course/software-engineering-in-java)
 and [Agile Software Project Management with Scrum](/course/agile-software-project-management-with-scrum).

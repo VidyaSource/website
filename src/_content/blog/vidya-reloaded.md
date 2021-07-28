@@ -67,7 +67,7 @@ automated, one-click HTTPS. If they don't, you can use [Let's Encrypt](https://l
 your own [TLS certificates](https://www.globalsign.com/en/blog/ssl-vs-tls-difference/) for free. Besides, PWA or not, [Google is making you move to HTTPS anyway](https://seo-hacker.com/google-adopt-https/).
 Finally, you can test your PWA by using [Lighthouse](https://developers.google.com/web/tools/lighthouse/) either from the 
 command line or as a Chrome plugin. Lighthouse grades your PWA on its speed, [configuration](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/),
-[security](/categories/accessibility), and [accessibility](/categories/accessibility)
+security, and accessibility
 with the help of [Axe](https://www.deque.com/products/axe/).
  
 As you probably figured, it isn't all roses with PWAs, and it's primarily because of browser variability. Isn't it always?

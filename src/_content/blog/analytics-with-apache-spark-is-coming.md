@@ -31,7 +31,7 @@ by Summer 2015 tentatively called *Analytics with Apache Spark*.
 
 
 
-As “[Big Data](/categories/big-data)” becomes more and more of a thing, there just aren’t enough software engineers who know the tools and
+As “Big Data” becomes more and more of a thing, there just aren’t enough software engineers who know the tools and
 techniques for doing meaningful, performant, cloud-scale analytics. Meanwhile, [Apache Spark](/tags/apache-spark) is
 surging in popularity for two reasons. Spark provides a much easier programming model than old-school
 [MapReduce](/tags/mapreduce) in [Hadoop](/tags/hadoop), which

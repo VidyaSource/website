@@ -37,7 +37,7 @@ Here's why.
 
 ## Code Reuse For Real
 
-Code reuse is a vision long offered by object-oriented (OO) languages like [Java](/categories/java) but has proven to be a 
+Code reuse is a vision long offered by object-oriented (OO) languages like Java but has proven to be a 
 myth--like the Fountain of Youth and fat-free ranch dressing that's edible. In practice OO languages tightly couple data
 with behavior, so it's hard to extract the behavior into reusable code others can use. 
 
@@ -98,7 +98,7 @@ often requires an open-source library like [Mockito](https://site.mockito.org/) 
 arbitrary number of alternate-path and error scenarios. 
 
 *And* you need
-to write your tests efficiently so that the test suite doesn't take hours to run in [continuous integration](/categories/continuous-integration).
+to write your tests efficiently so that the test suite doesn't take hours to run in continuous integration.
 
 All of that is cumbersome, but FP can make it easier.
 
@@ -132,7 +132,7 @@ Finally, if your team's tests have sophisticated setup with expensive resources 
 clean up afterwards, have your engineers employ the [Loan Pattern](https://www.outbrain.com/techblog/2017/05/effective-testing-with-loan-pattern-in-scala/),
 which is one of the FP-est things you can do. I wrote an example 
 on [Stack Overflow](https://stackoverflow.com/questions/43729262/how-to-write-unit-tests-in-spark-2-0/43769845#43769845) 
-of how powerful this can be for testing [Big Data](/categories/big-data) jobs using [Apache Spark](/tags/apache-spark). 
+of how powerful this can be for testing Big Data jobs using [Apache Spark](/tags/apache-spark). 
 
 
 ## Easier Than You Think

@@ -57,7 +57,7 @@ Perhaps most compelling of all, you need to *interact* with people on all these 
 Have dinner with fellow conference attendees.
 
 Also keep in mind that broad methodologies and platforms matter just as much as specific technologies. For example, it is 
-just as valuable when you come across something like [agile](/categories/agile) software development or 
+just as valuable when you come across something like agile software development or 
 [NoSQL](/tags/nosql) databases in your research as it is to find specific examples like [Scrum](/tags/scrum) 
 or [MongoDB](/tags/mongodb) respectively.
 

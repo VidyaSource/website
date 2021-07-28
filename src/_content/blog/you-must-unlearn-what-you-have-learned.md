@@ -71,7 +71,7 @@ badges on [Stack Overflow](http://stackoverflow.com/users/1347281/vidya), and I 
 anything, but that doesn’t always mean you should.
 
 For web applications, [Ruby](/tags/ruby) on [Rails](/tags/rails) is far superior. For standalone projects you want to get running fast,
-[Python](/tags/python) is far superior. For Big Data [analytics](/categories/analytics), Python, Scala,
+[Python](/tags/python) is far superior. For Big Data analytics, Python, Scala,
 and [Clojure](/tags/clojure) are [far superior](/blog/2013/10/27/java-is-dysfunctional-with-big-data).
 
 I’m simplifying a bit, but the point is that I’ve had to unlearn a lot of the concepts that became second nature in Java in
@@ -94,7 +94,7 @@ The PMBOK breaks every project down into process groups and knowledge areas, and
 techniques, and outputs--all with official names. You need to memorize these precisely to pass the exam and become a
 certified PMP. What you call a “Risk Report”? You better know the PMBOK calls it a *Risk Register* on the exam, and don’t
 be surprised if “Risk Report” shows up in the choices to mess with you. If you are a proponent of
-[agile software development](/categories/agile) and think another season of [American Idol](http://www.imdb.com/title/tt0319931/)
+agile software development and think another season of [American Idol](http://www.imdb.com/title/tt0319931/)
 sounds more appealing than the idea of a Change Control Board, [you better check yourself](http://www.youtube.com/watch?v=5aAbOgdbTbM&feature=kp).
 If you are a successful project manager (especially an experienced one) hoping to get PMP certified, you have to unlearn
 the practices and even the terminology you’ve adopted so successfully in favor of the PMBOK’s. At least for the four hours you’re taking the exam.

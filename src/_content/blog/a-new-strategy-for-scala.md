@@ -86,7 +86,7 @@ thing. Our OO code, whether in Java, C#, or whatever, was better for it.
 I would be remiss if I didn't mention the more theoretical, sometimes even personal, dimension to the criticism. Much of it--not from Alvin but
 from many others--stems from a pedantic, purist elitism that believes FP to be the most intellectually
 rigorous form of programming and resents its being supplanted decades ago by "inferior" OOP that remains preeminent to this day--even
-as FP has enjoyed a renaissance with the rise of "[Big Data](/categories/big-data)" and [reactive programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754). 
+as FP has enjoyed a renaissance with the rise of "Big Data" and [reactive programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754). 
 It's true that the Go4 patterns derive from trial-and-error rather than [mathematical formalism](https://hseeberger.wordpress.com/2010/11/25/introduction-to-category-theory-in-scala/), 
 which means potentially they can be [misapplied](http://softwareengineering.stackexchange.com/questions/48811/what-design-patterns-are-the-worst-or-most-narrowly-defined) 
 or grow stale. Still, [professional software engineering](/blog/2016/04/02/the-art-of-software-engineering) 
@@ -101,7 +101,7 @@ when [Ace of Base had hit songs](https://www.youtube.com/watch?v=iqu132vTl5Y) an
 [Cleveland Browns were actually good](http://www.cleveland.com/browns/index.ssf/2015/01/story_on_the_1994_cleveland_br.html).
 Even if the patterns could use some tweaks, they remain crucial for OOP developers who want to write clean code with
 the minimal [technical debt](/tags/technical-debt) that is the hallmark
-of strong [agile](/categories/agile) teams.
+of strong agile teams.
 
 Alvin Alexander is a really accomplished thought leader in Scala and a lot of other areas. I value his work a great deal.
 But on this one, I have to side with the continued relevance of the Go4. Understanding their OOP Design Patterns *as well as*
