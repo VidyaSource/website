@@ -35,19 +35,25 @@ are a lot of heuristics, but [no one really knows](https://stackoverflow.com/que
 All of this uncertainty over an apparent no-brainer should give you pause, but it is important to understand the main reasons 
 why code coverage is so flawed.
 
-* **_Code coverage assumes all your code is equally vulnerable._** Let's say your code includes a credit card validator. There 
+### Code coverage assumes all your code is equally vulnerable 
+
+Let's say your code includes a credit card validator. There 
 is an infinite number of ways a string can fail credit card validation, but you only need a few tests to achieve 100%
 code coverage for it. Meanwhile other code may have far fewer failure scenarios. Ideally, 
 that credit card validator should have hundreds of tests associated with it while other code has far fewer. Code coverage 
 treats them all the same and only credits you for a small fraction of the tests necessary for your most vulnerable code, so you probably 
 won't write any more than you have to. I believe that's what the kids call perverse incentives.
 
-* **_Code coverage assumes all your code is equally valuable._** Let's say your application also offers payment via money order.
+### Code coverage assumes all your code is equally valuable
+
+Let's say your application also offers payment via money order.
 Almost no one will use that option; the vast majority of customers will pay by credit card. Code coverage doesn't know the difference, so 
 it considers credit card tests and money order tests equally important. That's bad. A bug with credit card payments
 will cost you orders of magnitude more profit than a bug with money orders, but code coverage will never account for that.
 
-* **_Code coverage demands ceremony that may not be necessary._** Let's not lose sight of the goal, which is to gain as much
+### Code coverage demands ceremony that may not be necessary
+
+Let's not lose sight of the goal, which is to gain as much
 confidence as possible that your code works. Certainly that can come from tests, but it does not have to. For example, if you are building
 a component library in React that will be consumed by application developers, it could very well be [Storybook](https://storybook.js.org/)
 is all you need. After all, a button in your component library will have no functionality on its own. Its functionality will
@@ -55,7 +61,9 @@ come from the `onClick` event handler passed as a prop by the library consumer. 
 the button does something. It's a waste of time to write a test for something so trivial just to check a coverage box
 when Storybook gives you that for basically free.
 
-* **_Code coverage tells you how much but not how well._** This could be the worst of all. You are investing a lot of budget and schedule
+### Code coverage tells you how much but not how well
+
+This could be the worst of all. You are investing a lot of budget and schedule
 in building a test suite that should raise the quality of your software, lower costs, and improve customer satisfaction. But 
 while code coverage tells you how much you tested, it doesn't tell you how *well* you tested. You can write really poor tests
 (*e.g.* tests that don't offer any challenging scenarios, tests that are flaky or slow, *etc.*)
@@ -76,15 +84,15 @@ The good news is we can do a lot better for a lot cheaper.
 Experience has shown me there are a lot better metrics than code coverage. Here is a good list of percentage metrics inspired by 
 [Kostis Kapelonis](http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-6---paying-excessive-attention-to-test-coverage).
 
-* **_Percentage of Developers Writing Tests (Target: 100%)_**. Everyone who writes code should write tests. 
+***Percentage of Developers Writing Tests (Target: 100%)***. Everyone who writes code should write tests. 
 
-* **_Percentage of Bugs Reproduced By Tests (Target: 100%)_.** Every bug reported by testers or users should have at least one test associated with it.
+***Percentage of Bugs Reproduced By Tests (Target: 100%)***. Every bug reported by testers or users should have at least one test associated with it.
 
-* **_Percentage of Tests That Change (Target: 0%)_.** Too often tests are coupled to implementation, so new requirements from the customer
+***Percentage of Tests That Change (Target: 0%)***. Too often tests are coupled to implementation, so new requirements from the customer
 lead to laborious updates to tests. That should stop. Shifting away from conventional, scenario-based testing to 
 [property-based testing](/blog/2018/09/18/the-business-case-for-functional-programming/) where possible can help.
 
-* **_Percentage of Consistent Tests (Target: 100%)_.** Have you ever seen the same tests pass some days and fail others? That's not consistent, and
+***Percentage of Consistent Tests (Target: 100%)***. Have you ever seen the same tests pass some days and fail others? That's not consistent, and
 engineers typically respond by disabling or commenting out offending tests. Instead, rewrite these tests to be deterministic unit tests, or 
 delete them entirely.
 
@@ -93,15 +101,15 @@ delete them entirely.
 
 There are also trends to watch.
 
-* **_Low Code Quality in Tests_.** Tests are code. Your test code should be a first-class citizen subject to the same quality checks as production code--
+***Low Code Quality in Tests***. Tests are code. Your test code should be a first-class citizen subject to the same quality checks as production code--
   no duplication, reusable functions, design patterns where useful, *etc.*
 
-* **_Time to Write Tests_.** Maybe technical debt in your tests is too high. Maybe the design 
+***Time to Write Tests***. Maybe technical debt in your tests is too high. Maybe the design 
 is poor with too many dependencies to mock. Maybe it's hard to generate test data or scenarios. Taking too long to write tests
 will manifest in diminishing velocity and more bugs. Better design and again 
 [property-based testing](/blog/2018/09/18/the-business-case-for-functional-programming/) can help.  
 
-* **_Time to Run Tests_.** One of the core tenets of agile development is rapid feedback, which is impossible 
+***Time to Run Tests***. One of the core tenets of agile development is rapid feedback, which is impossible 
 if your tests take forever. This might be controversial, but I would recommend favoring unit tests and functional tests 
 over integration tests. Unit tests are fast (when written properly). Functional tests give you the most accurate view
 on quality, and modern tools like [Cypress](https://www.cypress.io/) can overcome the slowness and flakiness of 
