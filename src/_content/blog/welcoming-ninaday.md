@@ -47,13 +47,13 @@ images and videos and generating PDFs for the presentation, a category, or indiv
 * The ability to view selections by user along with common selections made by multiple users and generate PDFs of those as well
 
     
-The Nina Day talent database began as a [Ruby on Rails](/tags/ruby-on-rails) web application with primarily a JQuery and 
-[Bootstrap](/tags/bootstrap) frontend and a [PostgreSQL](/tags/postgresql)
+The Nina Day talent database began as a Ruby on Rails web application with primarily a JQuery and 
+Bootstrap frontend and a PostgreSQL
 and Amazon S3 backend with CloudFront CDN for worldwide distribution of images and videos.
 
 Over time though, we found that this architecture couldn't scale as needed--particularly with regard to long-running background work 
-that takes place with tasks like image and video processing and PDF generation. Enter [Play Framework](/tags/play-framework) in 
-Scala. We migrated the talent database to Play with a [MongoDB](/tags/mongodb) backend for a more
+that takes place with tasks like image and video processing and PDF generation. Enter Play Framework in 
+Scala. We migrated the talent database to Play with a MongoDB backend for a more
 flexible schema--not to mention that a document-based database is a natural fit for the data model. 
 
 Play and Scala are built for performance, and they have made the database so much faster. We also use [akka-s3](https://developer.lightbend.com/docs/alpakka/current/s3.html)
@@ -61,7 +61,7 @@ from the [Alpakka](https://developer.lightbend.com/docs/alpakka/current/) projec
 has proven very helpful for reducing the memory footprint and speeding things up as well.  
 
 Some things stayed the same like S3 and CloudFront--albeit with a new key structure--and the JQuery/Bootstrap front end. That's changing 
-somewhat as we are currently migrating the user interface to a more modern stack with [Webpack](/tags/webpack) and [React](/tags/react).
+somewhat as we are currently migrating the user interface to a more modern stack with Webpack and React.
 We spent some time assessing the suitability of React, [Elm](http://elm-lang.org/), and [Vue](https://vuejs.org/) for the talent
 database UI, and as compelling as we find Elm in particular, we decided on React because of the established community 
 and consequently the availability of components that easily replicate existing functionality. Besides, we have also 

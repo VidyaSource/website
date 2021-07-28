@@ -17,7 +17,7 @@ aliases:
 
 ---
 
-Experienced [Java](/tags/java) developers know that Java 5 brought many significant improvements to the language. 
+Experienced Java developers know that Java 5 brought many significant improvements to the language. 
 One of them was the introduction of [BigDecimal](http://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html), an 
 abstraction for arbitrary-precision decimal numbers that gives you arithmetic functionality and complete control over 
 rounding and scale. All of this flexibility and power made `BigDecimal` the *de facto* class Java developers used to model money--at 

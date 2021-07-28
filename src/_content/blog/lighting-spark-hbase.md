@@ -41,7 +41,7 @@ us aren’t moving so quickly, but that doesn’t mean we still need to plod alo
 Several abstractions have come along to make cloud-scale analytics easier. One of them is
 [Apache Spark](http://spark.incubator.apache.org/). Spark was originally created by [AMPLab](https://amplab.cs.berkeley.edu/)
 at UC Berkeley and is now in incubation at Apache. It utilizes cluster memory to minimize the disk reads and writes that
-slow down MapReduce. Spark is written in Scala and exposes both a Scala and [Java](/tags/java)
+slow down MapReduce. Spark is written in Scala and exposes both a Scala and Java
 API. Though [as I’ve said before](/blog/Java/Scala/Data/Hadoop/Analytics/2013/10/27/java-is-dysfunctional-with-big-data),
 once you get past the learning curve, I don’t see how anyone would prefer Java to Scala for analytics.
 

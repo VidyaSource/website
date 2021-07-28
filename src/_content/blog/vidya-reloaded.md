@@ -26,21 +26,21 @@ Welcome to the first new post on our brand new website! Thank you for checking i
 
 At Vidya we pride ourselves on embracing emerging technologies and helping our clients leverage them to realize their
 potential. This website proves we practice what we preach. We built it with [Hugo](https://gohugo.io/),
-a stunningly fast static-site generator built on Google's popular [Go](/tags/go) programming language, which continues
+a stunningly fast static-site generator built on Google's popular Go programming language, which continues
 to shoot up the [Tiobe Index](https://www.tiobe.com/tiobe-index/go/). 
 
-As great as Hugo and Go are, the really cool thing about our new website is that it is a [Progressive Web Application](/tags/pwa) (PWA).
+As great as Hugo and Go are, the really cool thing about our new website is that it is a Progressive Web Application (PWA).
 The kids love PWAs. We identified PWAs as a "trend in software engineering" in our [last talk](/blog/2017/06/05/speaking-at-code-writers-workshop-2017/).
 Google, Twitter, Starbucks, Pinterest, Alibaba, Microsoft, and numerous other mom-and-pop shops have invested in PWAs, and a quick 
 Google search will show you why. 
 Henrik Joreteg's [ode to PWAs](https://joreteg.com/blog/betting-on-the-web) is very informative, but since 
-his post is so long it might cause your [mobile](/tags/mobile) carrier to 
+his post is so long it might cause your mobile carrier to 
 [throttle your data](https://www.engadget.com/2017/08/22/verizon-video-throttling-net-neutrality-unfair-to-customers/), 
 here is an explanation that is less long. 
 
 ## PWAs are the future of the mobile web.
 
-[Originating at Google](https://developers.google.com/web/progressive-web-apps/), PWAs are built like any other website (*i.e.* with HTML, CSS, and [JavaScript](/tags/javascript)), but they are endowed
+[Originating at Google](https://developers.google.com/web/progressive-web-apps/), PWAs are built like any other website (*i.e.* with HTML, CSS, and JavaScript), but they are endowed
 with [service workers](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) that allow mobile users
 with supporting browsers (more on this later) to enjoy a rich, native-app-like experience. Service workers use JavaScript `Promises` to 
 enable push notifications and caching for rapid and offline access. They can access native hardware as well to varying degrees by browser. 
@@ -56,7 +56,7 @@ PWAs reconcile those trends by bringing customers to your business as directly a
 for downloads and installations--and improving their experience once they arrive. Consequently, businesses like [Alibaba](https://developers.google.com/web/showcase/2016/alibaba) are seeing huge increases in conversions through PWAs.
 
 From a developer perspective, [Create React App](https://github.com/facebookincubator/create-react-app), which builds 
-a scaffold for getting started with [React](/tags/react), creates PWAs by default, so Facebook is on board. PWAs in [Vue](/tags/vuejs) are
+a scaffold for getting started with React, creates PWAs by default, so Facebook is on board. PWAs in Vue are
 similarly made possible by the [vue-cli](https://github.com/vuejs/vue-cli). Developing a PWA also forces you to think about
 security *from the start*. Service workers are very powerful, and [with great power comes great responsibility](https://www.youtube.com/watch?v=b23wrRfy7SM). 
 A man-in-the-middle could 

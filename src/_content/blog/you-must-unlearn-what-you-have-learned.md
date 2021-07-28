@@ -49,12 +49,12 @@ be true several times in my career.
 
 ## Learning NoSQL databases
 
-I have spent most of my career working with relational databases like Oracle, SQL Server, [PostgreSQL](/tags/postgresql), and MySQL. This
+I have spent most of my career working with relational databases like Oracle, SQL Server, PostgreSQL, and MySQL. This
 meant formal and informal training in normal forms in table design, SQL, stored procedures, and other critical topics
 for storing and modeling your data as efficiently as possible.
 
-All of that stuff goes out the window with [NoSQL databases](/tags/nosql) like [MongoDB](/tags/mongodb)
-and [Cassandra](/tags/cassandra). In order to understand how to model data well, I’ve had to cast aside all
+All of that stuff goes out the window with NoSQL databases like MongoDB
+and Cassandra. In order to understand how to model data well, I’ve had to cast aside all
 the relational concepts I’ve grown accustomed to and instead learn new ones like column-oriented storage, the value of
 denormalized data, the [CAP Theorem](http://en.wikipedia.org/wiki/CAP_theorem), and whole new query languages. In the
 case of [Neo4J](http://www.neo4j.org/) and [Titan](http://thinkaurelius.github.io/titan/), I’ve had to disregard
@@ -65,14 +65,14 @@ need to unlearn all the old relational rules if you want to be an expert at mode
 
 You can write a love poem in any language, but it sounds a lot better in French than it does in German. 
 
-I have spent most of my career writing code in [Java](/tags/java), and I have gotten pretty good at it. I have two Java
+I have spent most of my career writing code in Java, and I have gotten pretty good at it. I have two Java
 badges on [Stack Overflow](http://stackoverflow.com/users/1347281/vidya), and I even
 [teach a course in Java](/course/software-engineering-in-java). You can use Java to build
 anything, but that doesn’t always mean you should.
 
-For web applications, [Ruby](/tags/ruby) on [Rails](/tags/rails) is far superior. For standalone projects you want to get running fast,
-[Python](/tags/python) is far superior. For Big Data analytics, Python, Scala,
-and [Clojure](/tags/clojure) are [far superior](/blog/2013/10/27/java-is-dysfunctional-with-big-data).
+For web applications, Ruby on Rails is far superior. For standalone projects you want to get running fast,
+Python is far superior. For Big Data analytics, Python, Scala,
+and Clojure are [far superior](/blog/2013/10/27/java-is-dysfunctional-with-big-data).
 
 I’m simplifying a bit, but the point is that I’ve had to unlearn a lot of the concepts that became second nature in Java in
 order to excel in other languages. I had to ignore everything I knew about static typing in Java and get used to the

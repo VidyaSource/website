@@ -34,10 +34,10 @@ with innovative technology to deliver realtime, actionable intelligence to suppo
 We have joined a team of senior engineers with a wide variety of expertise. Currently, we are using
 [Play Framework](https://www.playframework.com/) in Scala as the web application framework with an [Angular](https://angularjs.org/) interface
 to a backend [MongoDB](https://www.mongodb.org/) database. Performance
-is critical, so aside from aggressive indexing, we are utilizing [Akka](/tags/akka) to build a highly concurrent, resilient
+is critical, so aside from aggressive indexing, we are utilizing Akka to build a highly concurrent, resilient
 architecture. Aside from the current challenges, we look forward to helping evolve this application by re-architecting it
 into [Nathan Marz](http://nathanmarz.com/)'s [Lambda Architecture](http://lambda-architecture.net/)
-with [Hadoop](/tags/hadoop) and [Elasticsearch](/tags/elasticsearch).
+with Hadoop and Elasticsearch.
 
 We are lucky to be working with TRSS so we can learn from such a talented team and contribute our own expertise to
 such interesting, challenging work.

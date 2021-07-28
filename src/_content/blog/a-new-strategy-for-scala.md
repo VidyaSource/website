@@ -100,8 +100,7 @@ surge in popularity and compelled a much needed evolution of Java. It's also unf
 when [Ace of Base had hit songs](https://www.youtube.com/watch?v=iqu132vTl5Y) and the
 [Cleveland Browns were actually good](http://www.cleveland.com/browns/index.ssf/2015/01/story_on_the_1994_cleveland_br.html).
 Even if the patterns could use some tweaks, they remain crucial for OOP developers who want to write clean code with
-the minimal [technical debt](/tags/technical-debt) that is the hallmark
-of strong agile teams.
+the minimal technical debt that is the hallmark of strong agile teams.
 
 Alvin Alexander is a really accomplished thought leader in Scala and a lot of other areas. I value his work a great deal.
 But on this one, I have to side with the continued relevance of the Go4. Understanding their OOP Design Patterns *as well as*

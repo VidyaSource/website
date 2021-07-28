@@ -32,15 +32,15 @@ by Summer 2015 tentatively called *Analytics with Apache Spark*.
 
 
 As “Big Data” becomes more and more of a thing, there just aren’t enough software engineers who know the tools and
-techniques for doing meaningful, performant, cloud-scale analytics. Meanwhile, [Apache Spark](/tags/apache-spark) is
+techniques for doing meaningful, performant, cloud-scale analytics. Meanwhile, Apache Spark is
 surging in popularity for two reasons. Spark provides a much easier programming model than old-school
-[MapReduce](/tags/mapreduce) in [Hadoop](/tags/hadoop), which
+Map-Reduce in Hadoop, which
 is great for developers. And Spark works a lot faster because it optimizes operations over cluster memory rather than
-lethargic disc I/O like [MapReduce](tags/mapreduce), which is great for everybody.
+lethargic disc I/O like Map Reduce, which is great for everybody.
 
 Like [Software Engineering in Java](/course/software-engineering-in-java), *Analytics with
 Apache Spark* will be heavy on code--both with examples and hands-on exercises. We will use Spark’s Scala
-API since the [Java](/tags/java) and [Python](/tags/python) APIs aren’t as complete and performant. If you
+API since the Java and Python APIs aren’t as complete and performant. If you
 don’t know Scala, don’t worry. We will spend time on learning just enough Scala to be dangerous with Spark.
 
 *Analytics with Apache Spark* will feature two three-hour sessions.

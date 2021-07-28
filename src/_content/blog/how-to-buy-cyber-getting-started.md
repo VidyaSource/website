@@ -20,7 +20,7 @@ I had the opportunity to join a panel discussion hosted by [Frank McNally](https
 Director of Learning and Content Development at Public Spend Forum, where we discussed cybersecurity procurement in the federal government.
 Rounding out the panel was [Spence Witten](https://www.linkedin.com/in/spence-aintfiredmeyet-witten), 
 VP of security solutions provider LunarLine, who has a wealth of experience with federal procurement in the 
-[security](/tags/security) space.
+security space.
 
 Check out why procurement officials need to take initiative when buying cybersecurity solutions (and how they can do it
 both pre-award and post-award) and how security can be built into the software engineering process. And how we managed to 

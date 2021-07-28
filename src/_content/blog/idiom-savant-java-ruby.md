@@ -29,7 +29,7 @@ reflect a deep understanding of the language or comfort with its idiosyncrasies.
 
 Idioms are just as important in programming languages.
 
-When I first started writing [Ruby](/tags/ruby) code, it was after many years of writing [Java](/tags/java)
+When I first started writing Ruby code, it was after many years of writing Java
 code. It showed. It looked like Ruby code written by a Java guy.
 It still worked, but it didn’t give me a feel for how Ruby works. Worse yet, I wasn’t taking advantage of the cool
 features Ruby has that Java doesn’t.

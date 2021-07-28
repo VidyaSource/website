@@ -39,7 +39,7 @@ Both of these premises are irrelevant in agile development, so the notion of inc
 
 On the adversarial relationship, in agile development you are all on the same team--literally. You are working together 
 daily--Product Owner and vendor, and all decisions are team decisions. As the team delivers production-quality software 
-regularly for everyone to see at each (assuming [Scrum](/tags/scrum)) Sprint Review (along with metrics like velocity, 
+regularly for everyone to see at each (assuming Scrum) Sprint Review (along with metrics like velocity, 
 [technical debt](https://www.scrumalliance.org/community/articles/2013/july/managing-technical-debt), 
 defects fixed, *etc.*), all stakeholders build trust with the vendor.
 

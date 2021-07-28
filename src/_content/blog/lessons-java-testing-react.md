@@ -35,11 +35,11 @@ Part of the problem is [code coverage is a misleading indicator of quality](http
 Even worse, you are writing tests that don't test anything except the implementation details of your code. That's almost worse than writing no tests
 at all.
 
-This has really hit me as I learn to write tests for [React](/tags/react). My career has been built primarily on [Java](/tags/java), 
-Scala, [Ruby](/tags/ruby), and [Python](/tags/python)--*i.e.* backend development.
-Over the years I have written a lot of [JavaScript](/tags/javascript) too, but we are taking it to the next level and enduring some growing pains as 
+This has really hit me as I learn to write tests for React. My career has been built primarily on Java, 
+Scala, Ruby, and Python--*i.e.* backend development.
+Over the years I have written a lot of JavaScript too, but we are taking it to the next level and enduring some growing pains as 
 we migrate the front end of a [Scala application we built for a client](/blog/2018/08/10/welcoming-ninaday/) to React 
-(with all the trimmings--[Webpack](/tags/webpack), [TypeScript](/tags/typescript), [RxJS](/tags/rxjs), [Immutable.js](/tags/immutablejs), *etc.*). 
+(with all the trimmings--Webpack, TypeScript, RxJS, Immutable.js, *etc.*). 
 React is spearheaded by Facebook and fortified by a vibrant community, so I assumed a consensus on patterns and practices. 
 
 Nope!
@@ -197,7 +197,7 @@ and using TypeScript you could have a function prop `fetch: (s: string) => Promi
 In your test, you supply a stubbed implementation like `(s: string) => { Promise.resolve({id: 5}) }` while your 
 production code supplies a function with the same shape that makes real REST calls. This is analogous in Java to having a 
 constructor parameter of type `Function<String, CompletableFuture<String>>` that you stub with 
-`(s) -> CompletableFuture.completedFuture({id: 5})` in your [JUnit](/tags/junit) tests. In either case, no mocking library is needed.
+`(s) -> CompletableFuture.completedFuture({id: 5})` in your JUnit tests. In either case, no mocking library is needed.
 
 Or...moving away from Java, stop being scared and 
 [embrace the Haskell-like idioms in Elm](https://package.elm-lang.org/packages/ryanolsonx/elm-mock-http/latest/).

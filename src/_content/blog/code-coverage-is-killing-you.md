@@ -105,7 +105,7 @@ will manifest in diminishing velocity and more bugs. Better design and again
 if your tests take forever. This might be controversial, but I would recommend favoring unit tests and functional tests 
 over integration tests. Unit tests are fast (when written properly). Functional tests give you the most accurate view
 on quality, and modern tools like [Cypress](https://www.cypress.io/) can overcome the slowness and flakiness of 
-older tools like [Selenium](/tags/selenium). You can also get a boost from your 
+older tools like Selenium. You can also get a boost from your 
 [tooling](https://engineering.linkedin.com/blog/2018/07/how-we-improved-build-time-by-400-percent).
 
 Keep these trend lines as low and as level as possible.

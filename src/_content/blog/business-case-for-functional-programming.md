@@ -72,7 +72,7 @@ technology landscape. Math isn't opinion.
 
 This is why [Elm](https://elm-lang.org/) developers often report 
 ["0 runtime exceptions" in production](https://www.slideshare.net/InfoQ/fullscale-elm-in-production), which sounds like 
-fat-free ranch dressing that's edible to [JavaScript](/tags/javascript) developers resigned to a lifetime of `undefined` 
+fat-free ranch dressing that's edible to JavaScript developers resigned to a lifetime of `undefined` 
 [errors](https://stackoverflow.com/questions/48333993/javascript-function-is-undefined-only-in-ie11) at runtime that would make 
 [Sisyphus](https://www.britannica.com/topic/Sisyphus) cry. That's a huge win, but note "0 runtime exceptions" isn't the same 
 as "0 bugs." No paradigm can guarantee that. FP can't stop a developer surviving on Red Bull after staying up all night playing 
@@ -91,7 +91,7 @@ quickly might impress unsuspecting clients at first, but watch their enthusiasm 
 of bug fixes orders of magnitude more expensive becomes apparent.
 
 To be fair, developer testing can be a pain. Test setup is slow because you need to 
-mock or stub your inputs along with any dependencies necessary for the code to execute a scenario like databases or [REST](/tags/rest) clients. This
+mock or stub your inputs along with any dependencies necessary for the code to execute a scenario like databases or REST clients. This
 often requires an open-source library like [Mockito](https://site.mockito.org/) or [unittest.mock](https://docs.python.org/3/library/unittest.mock.html).  
 
 *And* you have to repeat this process for multiple happy-path scenarios and some
@@ -123,7 +123,7 @@ will still have the identical `Int => String` shape.
 
 As for test inputs, consider [property-based testing](http://www.scalatest.org/user_guide/property_based_testing). 
 For the cost of less initial setup than you do now for a single input, tools like 
-[ScalaCheck](/tags/scalacheck) will generate literally
+ScalaCheck will generate literally
 hundreds of inputs that will put the code through the wringer against data you never imagined and would never have time to write yourself.
 I would suggest property-based tests as the first line of defense in development but conventional, scenario-based tests 
 with functional dependencies to address bugs discovered in functional testing or production.   
@@ -132,7 +132,7 @@ Finally, if your team's tests have sophisticated setup with expensive resources 
 clean up afterwards, have your engineers employ the [Loan Pattern](https://www.outbrain.com/techblog/2017/05/effective-testing-with-loan-pattern-in-scala/),
 which is one of the FP-est things you can do. I wrote an example 
 on [Stack Overflow](https://stackoverflow.com/questions/43729262/how-to-write-unit-tests-in-spark-2-0/43769845#43769845) 
-of how powerful this can be for testing Big Data jobs using [Apache Spark](/tags/apache-spark). 
+of how powerful this can be for testing Big Data jobs using Apache Spark. 
 
 
 ## Easier Than You Think
@@ -143,7 +143,7 @@ It is very likely that today you can begin to enjoy many of the FP advantages I'
 It is also critical to keep in mind that it isn't a zero-sum game among FP and other paradigms. In fact, the fundamental
 academic premise of Scala is that OO and FP can not only coexist but complement each other to produce an ideal language offering
 the best of both. Similarly, FP can complement other paradigms like the imperative, procedural philosophy that
-drives [Go](/tags/go).  
+drives Go.  
 
 Consequently, you should not worry that FP demands a radical transformation of your code 
 base that is unrealistic for your timeline and unthinkable for your client. No need to send everyone to Haskell training either.
@@ -157,6 +157,6 @@ in your arsenal. Whether you transition to
 fundamentally functional languages like [Elixir](https://elixir-lang.org/) or Scala or Elm, leverage functional capabilities 
 (or extensions) in other languages like Java or JavaScript, 
 or even just adopt corollary principles like immutability, your team will write fewer bugs and catch others faster than you
-thought possible. You should see improvement in as little as a single sprint (in a [Scrum](/tags/scrum) project), and it's an 
+thought possible. You should see improvement in as little as a single sprint (in a Scrum project), and it's an 
 investment [most software engineers are happy to make](/blog/the-art-of-software-engineering) that will generate huge
 value for all of you.

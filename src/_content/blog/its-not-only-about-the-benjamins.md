@@ -37,15 +37,15 @@ people more accustomed to [Stark Industries](https://www.youtube.com/watch?v=VVy
 It's natural to follow up by asking [which programming languages pay the most](https://insights.stackoverflow.com/survey/2017#top-paying-technologies), 
 and those answers *did* surprise me. 
 
-Worldwide it's [Clojure](/tags/clojure)! Really? This is particularly interesting since Stack Overflow has also noted that 
+Worldwide it's Clojure! Really? This is particularly interesting since Stack Overflow has also noted that 
 Clojure is [losing popularity among functional languages](https://stackoverflow.blog/2017/09/06/incredible-growth-python/). I
 guess there is some combination of major investment in Clojure with a shrinking pool of capable Clojure developers that is driving
 up their value. 
 
-In the United States, the title for highest-paying programming language is shared by Scala and [Go](/tags/go). Meanwhile 
-[Python](/tags/python), which Stack Overflow declared 
+In the United States, the title for highest-paying programming language is shared by Scala and Go. Meanwhile 
+Python, which Stack Overflow declared 
 "[has a solid claim to being the fastest-growing major programming language](https://stackoverflow.blog/2017/09/06/incredible-growth-python/),"
-is the highest-paid in France and India and second-highest (to [Java](/tags/java)) in Germany. 
+is the highest-paid in France and India and second-highest (to Java) in Germany. 
 
 It's great these languages pay so well, but what really matters is they are powerful languages that help us solve
 harder problems faster. At Vidya we have had the pleasure to work with all of them. 
@@ -57,7 +57,7 @@ analytics tools best suited to particular kinds of problems. One such tool was
 [Cascalog](https://github.com/nathanmarz/cascalog) from the mind of [Nathan Marz](https://twitter.com/nathanmarz?lang=en), 
 the creator of Apache Storm and author 
 of the [Lambda Architecture](http://lambda-architecture.net/). It's gone cold now, but at the time, Cascalog represented a powerful alternative
-to [MapReduce](/tags/mapreduce) because it is built on Clojure to harness the power of functional programming to solve 
+to Map Reduce because it is built on Clojure to harness the power of functional programming to solve 
 Big Data problems. This was my first professional exposure to functional programming after years of working with 
 Java, and I became so enamored of the natural fit between functional programming and Big Data that I even 
 [blogged about its advantages over Java for building analytics](/blog/2013/10/27/java-is-dysfunctional-with-big-data/).
@@ -69,10 +69,10 @@ created a revolutionary project called Spark.
 
 Spark was my first introduction to Scala, and I have been a huge fan of the language ever since. I marveled at how I could write
 complex analytics--at least for me at the time--with so little code. Since then, Spark became 
-open-sourced as [Apache Spark](/tags/apache-spark), and I got 
+open-sourced as Apache Spark, and I got 
 [badges in both Scala and Apache Spark on Stack Overflow](https://stackoverflow.com/users/1347281/vidya?tab=badges). I expanded my
-Scala knowledge working not only with Spark but also with [Play Framework](/tags/play-framework), [ReactiveMongo](/tags/reactivemongo),
-[Scalaz](/tags/scalaz), and [Akka](/tags/akka) for several government and commercial clients. I have come to enjoy Scala so much
+Scala knowledge working not only with Spark but also with Play Framework, ReactiveMongo,
+Scalaz, and Akka for several government and commercial clients. I have come to enjoy Scala so much
 that it is very hard to go back to writing Java. I even put together a tutorial on YouTube called 
 [Nine Reasons to Try Scala](/tutorial/nine-reasons-to-try-scala/) and have given several talks 
 based on it.
@@ -104,8 +104,8 @@ I look forward to the opportunity to wrap my head around the syntax and do more 
 **Python**
    
 [When I spoke at Code Writers DC](blog/2017/06/05/speaking-at-code-writers-workshop-2017/), I identified statically typed
-languages as a "trend" in software engineering and cited Scala, Go, [Swift](/tags/swift),
-and [Kotlin](/tags/kotlin) as examples. Python, however, is a big exception. It's been around forever, and as Stack Overflow noted, it's
+languages as a "trend" in software engineering and cited Scala, Go, Swift,
+and Kotlin as examples. Python, however, is a big exception. It's been around forever, and as Stack Overflow noted, it's
 still blowing up because of Big Data and machine learning. The list of Python tools 
 for data science is long--[Pandas](http://pandas.pydata.org/), [NumPy](http://www.numpy.org/), 
 [SciKit Learn](http://scikit-learn.org/stable/), and [NLTK](http://www.nltk.org/) just to name a few. [Keras](https://keras.io/), 
@@ -116,7 +116,7 @@ R--feature powerful data science libraries in their own right, but Python's ecos
 statically typed languages.
 
 Whenever people ask my advice on where they should begin their programming careers, I always suggest Python first
-and then [JavaScript](/tags/javascript). I enjoy Python and wrote a lot of it on XDATA, but I haven't had the opportunity
+and then JavaScript. I enjoy Python and wrote a lot of it on XDATA, but I haven't had the opportunity
 to use it as much as I would like since then. I am happy to report though that our most popular tutorial 
 [Starting with Data](/tutorial/starting-with-data/) is based on Python and JavaScript.
 

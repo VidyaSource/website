@@ -30,7 +30,7 @@ aliases:
 - /blog/2019/03/29/vidya/technology/scala-or-go-tastes-great-or-less-filling/
 ---
 
-Scala and Go (aka [Golang](/tags/golang)) are two of the fastest growing leading-edge 
+Scala and Go are two of the fastest growing leading-edge 
 programming languages in the world. In the United States, they are also among the 
 [most lucrative](https://adtmag.com/articles/2017/08/18/go-scala-salaries.aspx). Scala and Go are among a slew of 
 programming languages that innovate in numerous ways to produce faster, more resilient, more secure applications for a multicore,
@@ -75,14 +75,14 @@ very productive once you get the hang of them. Performance varies with the JVM y
 contend with the size of compiled objects and the latency of garbage collection at runtime. When you want to experiment, 
 you can skip the ceremony of writing a class or test and instead use a command-line REPL, an online REPL called 
 [Scastie](https://scastie.scala-lang.org/) you can share, or an outstanding third-party command-line REPL called 
-[Ammonite](https://ammonite.io/#Ammonite-REPL). Dependency management is achieved with [SBT](/tags/sbt) typically but 
-also more general JVM build tools like [Gradle](/tags/gradle) and Maven.
+[Ammonite](https://ammonite.io/#Ammonite-REPL). Dependency management is achieved with SBT typically but 
+also more general JVM build tools like Gradle and Maven.
 
 Scala became really popular with the advent of "Big Data" because 
 [functional programming lends itself so naturally to analytics](https://www.vidyasource.com/blog/2013/10/27/java-is-dysfunctional-with-big-data/),
 and the learning curve for 
 [modern LISPs like Haskell and Clojure](https://en.wikipedia.org/wiki/Lisp_(programming_language)#2000_to_present) 
-is too high for too many. [Apache Spark](/tags/apache-spark) is built in Scala, and when it got big, Scala got big. Since then Scala has
+is too high for too many. Apache Spark is built in Scala, and when it got big, Scala got big. Since then Scala has
 also become a popular language for other domains including 
 [reactive web applications and microservices](https://www.reactivemanifesto.org/) with 
 [Play Framework](https://www.playframework.com/) and [Akka](https://akka.io/) and even the front end with 
@@ -106,7 +106,7 @@ Go has by design a very lean feature set and simple constructs. This makes it
 relatively easy to learn. However, you have to add a lot of features yourself that you take for granted in other languages 
 or explore what Go offers as [potential workarounds](https://golang.org/doc/faq#Why_doesnt_Go_have_feature_X).
 To get *really* good at advanced features of Go like concurrency and polymorphism is still a challenge.
-Official dependency management is nonexistent, and you may find Go's unorthodox project setup based on [Git](/tags/git) repos
+Official dependency management is nonexistent, and you may find Go's unorthodox project setup based on Git repos
 [takes getting used to](https://medium.com/rungo/working-in-go-workspace-3b0576e0534a). 
 
 After Go took off at Google and was released to the public, it got really popular as the language of concurrency, which helped

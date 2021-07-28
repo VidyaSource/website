@@ -19,7 +19,7 @@ aliases:
 
 ---
 
-Imagine a method in [Java](/tags/java) that retrieves an `Employee` entity from the database by the employee id. Something like this:
+Imagine a method in Java that retrieves an `Employee` entity from the database by the employee id. Something like this:
 
 ~~~java
 public Employee findById(String id) {
@@ -46,7 +46,7 @@ is basically the worst thing ever. Even the guy who invented it
 why `null` is basically the worst thing ever, check out what the [Google Guava](https://code.google.com/p/guava-libraries/) team 
 [has to say about it](https://code.google.com/p/guava-libraries/wiki/UsingAndAvoidingNullExplained).
 
-Various languages address the issues with `null` in different ways. [Ruby](/tags/ruby), for example, has `nil`, which is a singleton 
+Various languages address the issues with `null` in different ways. Ruby, for example, has `nil`, which is a singleton 
 instance of [NilClass](http://www.ruby-doc.org/core-2.1.2/NilClass.html), which can be 
 [monkey-patched](http://stackoverflow.com/questions/394144/what-does-monkey-patching-exactly-mean-in-ruby) in clever ways 
 to mitigate some of those issues.

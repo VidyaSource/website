@@ -88,7 +88,7 @@ What's the problem?**
 
 ## Performance: Blockchains are slow and use a lot of energy
 
-Absent an ostensibly responsible central authority, Blockchain combines [cryptography](/tags/cryptography/) and 
+Absent an ostensibly responsible central authority, Blockchain combines cryptography and 
 clever data structures like [Merkel trees](https://medium.com/@evankozliner/merkle-tree-introduction-4c44250e2da7) to build trust.
 Blocks are deemed valid during the mining process by solving that complex cryptographic problem as proof-of-work. It takes time 
 to solve these problems, which means that the mining process can be far slower than what users are used to in their daily 
@@ -152,7 +152,7 @@ Blockchain tools are strewn about the landscape--[the MetaMask Chrome plugin](ht
 for IntelliJ, and various language-specific clients like [Go Ethereum](https://geth.ethereum.org/). Despite the passion
 behind these initiatives, they are all very immature.
 
-Given these barriers, it is no surprise that as of this moment there are over 1000 times more [Java](/tags/java) questions on 
+Given these barriers, it is no surprise that as of this moment there are over 1000 times more Java questions on 
 [Stack Overflow](https://stackoverflow.com/)
 than there are Blockchain questions. The comparison is flawed to be sure, but that many orders of magnitude illustrates the point
 given that Bitcoin has been around for a decade.
@@ -194,7 +194,7 @@ There are a lots of ideas out there for solving this problem with [Zcash](https:
 Zcash is a cryptocurrency that offers privacy through even more clever cryptography 
 in the form of [zero-knowledge proofs](https://en.wikipedia.org/wiki/Zero-knowledge_proof). Another compelling alternative
 is [Corda](https://github.com/corda/corda), an open-source "Blockchain for business" written
-in [Kotlin](/tags/kotlin) that makes privacy (along with interoperability and [tooling](https://docs.corda.net/getting-set-up.html)) 
+in Kotlin that makes privacy (along with interoperability and [tooling](https://docs.corda.net/getting-set-up.html)) 
 a first-class citizen. Various vendors offer proprietary solutions as well.
 
 To echo a previous point, standards related to privacy would sure come in handy here. 

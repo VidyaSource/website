@@ -37,7 +37,7 @@ Don’t do that.
 
 A *No* to any single one of these questions probably won’t matter, especially if you do really well in the rest of the 
 interview. But too many *No*’s will doom your chances. It’s pretty unfair too. [It’s not your fault](https://www.youtube.com/watch?v=GtkST5-ZFHw) 
-that you got stuck on a project maintaining a legacy [Java](/tags/java) application built with 
+that you got stuck on a project maintaining a legacy Java application built with 
 an [Apache Struts]( http://struts.apache.org/) front end, [EJB 2.x](http://help.eclipse.org/juno/index.jsp?topic=%2Forg.eclipse.jst.ejb.doc.user%2Ftopics%2Fcearch.html) 
 middleware, and an Oracle PL/SQL back end while all the cool new stuff passed you by. Still, your interviewer’s own job 
 depends on making the best choice on an expensive decision where the fate of the project hangs in the balance--rather than gambling 
@@ -58,8 +58,8 @@ Have dinner with fellow conference attendees.
 
 Also keep in mind that broad methodologies and platforms matter just as much as specific technologies. For example, it is 
 just as valuable when you come across something like agile software development or 
-[NoSQL](/tags/nosql) databases in your research as it is to find specific examples like [Scrum](/tags/scrum) 
-or [MongoDB](/tags/mongodb) respectively.
+NoSQL databases in your research as it is to find specific examples like Scrum 
+or MongoDB respectively.
 
 There is something else to keep in mind. As critical as it is to learn modern technologies, it is just as critical to 
 look for modern *tools and techniques* that distinguish expert software engineers.

@@ -26,7 +26,7 @@ Welcome to the third iteration of the Vidya website! Thank you for checking it o
 At Vidya we pride ourselves on embracing emerging technologies and helping our clients leverage them to realize their
 potential. This website proves we practice what we preach. The first version of the website was built in Ruby with a 
 tool called Octopress. The next version was built with [Hugo](https://gohugo.io/),
-a stunningly fast static-site generator built on Google's popular [Go](/tags/go) programming language.
+a stunningly fast static-site generator built on Google's popular Go programming language.
 
 This version is built in [React](https://reactjs.org/), the most popular JavaScript library in the world, using [Next.js](https://nextjs.org/), one
 of the most popular React frameworks in the world and the building block for full-stack "meta" frameworks like [RedwoodJS](https://redwoodjs.com/) and 

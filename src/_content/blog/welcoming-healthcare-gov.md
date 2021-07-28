@@ -27,7 +27,7 @@ categories:
 
 Vidya is proud to have teamed with Accenture Federal Services to transition [HealthCare.gov](https://www.healthcare.gov/) from
 a conventional Java monolith built with Spring into 
-Scala microservices built with [Play Framework](/tags/play-framework). One of several factors
+Scala microservices built with Play Framework. One of several factors
 that motivate software engineers is mission, and there are few missions more fulfilling than helping people access
 health insurance and ultimately health care as efficiently as possible.
 
@@ -36,7 +36,7 @@ and economic maelstrom. I did my best to ease that pressure on engineers by help
 I developed reusable primitives that utilize Scala's type system to summon the compiler to minimize
 mistakes. For example, I wrote [monads](https://slideslive.com/38908886/functional-programming-with-effects) 
 (without calling them monads) to ease composing data from multiple microservices asynchronously. I also introduced 
-[ScalaCheck](/tags/scalacheck) as a complement to [ScalaTest](/tags/scalatest) because I believe very strongly 
+ScalaCheck as a complement to ScalaTest because I believe very strongly 
 in [property-based testing](http://blog.jessitron.com/2013/04/property-based-testing-what-is-it.html). That one didn't
 really catch on though. You can't win 'em all.
 

@@ -19,7 +19,7 @@ I am very proud to announce that the [Capital Region Minority Supplier Developme
 (CRMSDC) has certified Vidya as a Minority Business Enterprise.
 
 At Vidya, we have been very privileged to deliver high-quality software to a wide array of commercial and government clients
-using exciting technology while promoting [lean](/tags/lean) principles, [agile](/tags/agile) software development,
+using exciting technology while promoting lean principles, agile software development,
 and diversity in software engineering. The best part about it? It's been fun! Doing great work and contributing to the community--whether 
 writing on [our blog](/blog/), answering questions on [Stack Overflow](http://stackoverflow.com/users/1347281/vidya),
 contributing to open-source on [GitHub](https://github.com/VidyaSource), 

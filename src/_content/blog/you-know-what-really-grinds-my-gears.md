@@ -42,7 +42,7 @@ quite as hilarious though potentially just as offensive to some, here are a few.
 <br>
 ### JAVA and SCRUM
 
-Stop yelling at me! [Java](/tags/java) is the most popular programming language in the world. [Scrum](/tags/scrum)
+Stop yelling at me! Java is the most popular programming language in the world. Scrum
 is the most popular agile framework
 in the world. So why do so many people, including software engineers who should know better, still fail to understand that neither is an acronym? If I ran
 [Stack Overflow](http://stackoverflow.com/), I would impose a lifetime ban on anyone who uses all caps for Java and Scrum.
@@ -85,7 +85,7 @@ particularly CSS, is easy to master.
 
 But HTML and CSS are *not* code.
 
-*Code* refers to lines written in a programming language--like the third pillar of the web, [JavaScript](/tags/javascript)--that do stuff.
+*Code* refers to lines written in a programming language--like the third pillar of the web, JavaScript--that do stuff.
 HTML, [as the M conveys](http://en.wikipedia.org/wiki/HTML), is *markup* that provides structure to a web page; CSS is a
 list of rules with unique syntax that provide *style*. But neither actually *does* anything. So refer to *HTML markup* and
 *CSS styles*. Calling either *code* is simply an insult to real code everywhere.

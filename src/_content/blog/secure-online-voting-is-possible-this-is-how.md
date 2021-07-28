@@ -233,7 +233,7 @@ There are a *lot* of great API solutions like [FastAPI](https://fastapi.tiangolo
 [Lagom](https://www.lagomframework.com/), but [Spring Boot](https://spring.io/projects/spring-boot) offers some compelling 
 advantages:
  
-* Available in [Java](/tags/java) and [Kotlin](/tags/kotlin), which are simple, statically typed languages many engineers know
+* Available in Java and Kotlin, which are simple, statically typed languages many engineers know
 * Straightforward primitives for writing [reactive](https://spring.io/reactive) APIs
 * [Good enough for Netflix](https://spring.io/blog/2020/02/24/netflix-built-a-spring-application-generator-to-boost-dev-productivity-here-s-how-you-can-too)
 

@@ -36,7 +36,7 @@ aliases:
 
 ---
 
-Anyone with a basic knowledge of [Scrum](/tags/scrum), and certainly everyone who has taken 
+Anyone with a basic knowledge of Scrum, and certainly everyone who has taken 
 [Agile Software Project Management With Scrum](/course/agile-software-project-management-with-scrum),
 knows the role of the ScrumMaster--to be a [servant leader](http://www.inc.com/peter-economy/7-secrets-of-servant-leadership-that-will-lead-you-to-success.html),
 to act as guardian of the Scrum process, to remove obstacles for the
@@ -100,8 +100,8 @@ is typically the test bed. Speed up the tests by applying the [xUnit Test Patter
 defined by [Gerard Meszaros](https://www.linkedin.com/in/gerardmeszaros/). Make sure unit tests really are unit tests where every dependency is "[doubled](http://xunitpatterns.com/Test%20Double.html)" 
 (*i.e* mocked, stubbed, dummied, or faked). Also make sure that all tests, especially the integration tests where setup is expensive,
 share [test fixtures](https://github.com/junit-team/junit4/wiki/test-fixtures) by using the test framework to group tests 
-into suites and/or using the facilities of the language--like with superclasses in [Ruby](/tags/ruby) or 
-[Java](/tags/java) or [traits](http://alvinalexander.com/scala/scala-trait-examples) or the 
+into suites and/or using the facilities of the language--like with superclasses in Ruby or 
+Java or [traits](http://alvinalexander.com/scala/scala-trait-examples) or the 
 [Loan Pattern](http://stackoverflow.com/questions/20762240/loaner-pattern-in-scala) in Scala.
 
 Then separate unit tests from integration tests so that only the former run with each commit 
@@ -123,7 +123,7 @@ with the software engineers to identify where these opportunities for automation
 ## Improve the Process
 
 A technically skilled ScrumMaster can also improve the software engineering process. For example, you can use 
-[Angular](/tags/angular) or [React](/tags/react) to make [REST](/tags/rest) calls to the APIs for your 
+Angular or React to make REST calls to the APIs for your 
 project management, source control, CI, and systems monitoring tools to produce a dashboard that
 presents all their data individually *and* mashed up to help identify the root causes of events. After all, a time series 
 on this dashboard could show that a surge in bugs coincides with the absence of the Product Owner
