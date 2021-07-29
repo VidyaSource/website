@@ -11,7 +11,7 @@ export default {
         tags: ["Vidya", "technology", "courses", "tutorials", "software", "consulting", "engineering", "automation"],
         images: [
             {
-                url: `${process.env.basePath}/img/vidya.png`,
+                url: `${process.env.basePath}/img/vidya-social.jpg`,
                 width: 600,
                 height: 387,
                 alt: 'Vidya | Build faster. Build better.',
