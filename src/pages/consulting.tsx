@@ -37,6 +37,10 @@ const Consulting = () => {
                            description={description}
                            slogan="Build Faster. Build Better."
                            brand="Vidya"
+                           aggregateRating={{
+                               ratingValue: "5",
+                               reviewCount: "2"
+                           }}
                            reviews={[
                                {
                                    reviewRating: {
