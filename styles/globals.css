@@ -9,7 +9,7 @@
     }
 
     a {
-        @apply text-blue dark:text-green-light hover:text-red-light;
+        @apply text-blue hover:text-green-dark dark:text-green-light dark:hover:text-red-light;
     }
 
     h1 {
