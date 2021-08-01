@@ -15,6 +15,7 @@ tags:
 - Ruby
 - Go  
 - JavaScript
+- TypeScript
 - React
 - Android
 - iOS
