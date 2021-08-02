@@ -5,7 +5,7 @@ interface ThemeButtonProps {
 }
 
 export const ThemeButton = (p: ThemeButtonProps) => {
-    const [darkMode, setDarkMode] = useState(undefined)
+    const [darkMode, setDarkMode] = useState<boolean | undefined>(undefined)
     const label = `${darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}`
     useEffect(() => {
         setDarkMode(document.documentElement.classList.contains("dark"))
