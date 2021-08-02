@@ -158,8 +158,7 @@ The work we did with Tailwind CSS and the `Script` tag presents our user interfa
 manage that preference to change it as the user dictates. There are two steps: 
 
 * React needs to be made aware of the initial Dark Mode preference and keep an eye on it. 
-* If the user changes that preference, React needs to add or remove the `dark` class from the root
-and persist the choice in `localStorage` accordingly.
+* If the user changes that preference, React needs to add or remove the `dark` class from the root and persist the choice in `localStorage` accordingly.
 
 These are two different effects. We will localize them where they matter most, the `ThemeButton` the user clicks to switch modes.
 
