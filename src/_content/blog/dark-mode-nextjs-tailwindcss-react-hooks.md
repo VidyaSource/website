@@ -1,8 +1,8 @@
 ---
 title: "Dark Mode in Next.js using Tailwind CSS and React Hooks"
 author: "Neil Chaudhuri"
-date: 2021-08-04T17:38:04-04:00
-description: "Use the power of Tailwind CSS and React Hooks to build Dark Mode into your Next.js site."
+date: 2021-08-02T17:38:04-04:00
+description: "Use the power of Tailwind CSS and React Hooks to build Dark Mode users can control into your Next.js site."
 image: "/img/blog/moon.jpg"
 categories:
 - Mobile
@@ -49,7 +49,7 @@ module.exports = {
 }
 ~~~
 
-But since we want more control to let the users of our Vidya website decide which look they prefer, we need the `class` setting instead:
+But since we want more control to let Vidya users decide which look they prefer, we need the `class` setting instead:
 
 ~~~js
 // tailwind.config.js
@@ -87,7 +87,7 @@ and accessible and consistent with your branding and because you want to be thor
 Just remember to [extract components](https://tailwindcss.com/docs/extracting-components) as we did above to keep things maintainable, consistent, and organized.
 
 Because we are relying on the Tailwind `class` setting for Dark Mode, we need to figure out a way to hook the `dark` class onto the
-root element of the page like this:
+root element of each page like this:
 
 ~~~html
 <html lang="en" class="dark">
@@ -99,30 +99,30 @@ And we need to be able to do it on demand. This is where our code comes into pla
 
 ## The Script Tag
 
-If you've built a website with a lot of client side domain functionality, GDPR or other consent management, Google Analytics, social media, or ads, you already know that managing JavaScript 
+If you've built a website with a lot of client side business functionality, GDPR or other consent management, Google Analytics, social media, or ads, you already know that managing JavaScript 
 execution has always been awkward. Where do you put this script on the page relative to that one? Do you put this script at the top of the `head` element 
 or at the bottom of the `body` element? It's actually easier figuring out where to seat everyone at your wedding.
 
-In v11.0.0, Next.js introduced the `Script` [tag](https://nextjs.org/docs/basic-features/script) tag, and it makes all this
+In v11.0.0, Next.js introduced the `Script` [tag](https://nextjs.org/docs/basic-features/script), and it makes all this
 a lot better. You can put the `Script` tag anywhere, and you apply one of three strategies to let Next.js know when it 
 should execute.
 
-We need to execute a script to assess the user's Dark Mode preference and apply it. For this script to work, 
-it must execute before the browser paints the page, so it has to block interactivity. This 
+Before we specify which strategy should apply here, keep in mind our goal: to assess the user's Dark Mode preference and apply it immediately. For this script to work, 
+it must execute *before* the browser paints the page, so it has to block interactivity. This 
 contradicts everything you've ever read about script optimization. Conventional guidance dictates scripts should run in an
 asynchronous, parallel fashion in order to maximize [Web Vitals](https://web.dev/vitals/) and get the user up and running as soon 
 as possible. That general guidance is accurate, but we need to make an exception for this particular script. Still, it must 
-execute quickly, or we will lose customers.
+execute very quickly, or we will lose customers.
 
 Our strategy for implementing Dark Mode will factor in potential user preferences specific to the Vidya website set in `localStorage`,
 a [key-value store available in modern browsers](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage),
-and/or system settings that the browser will tell us with `prefers-color-scheme`. The algorithm goes like this:
+and/or system settings that the browser will inform us with `prefers-color-scheme`. The algorithm goes like this:
 
 *If the user previously visited the Vidya website and indicated a preference for Dark Mode OR if there is no preference established
 and system settings are set for Dark Mode, then activate Dark Mode by attaching the dark class attribute to the root. Otherwise, 
 apply Light Mode by removing any dark class attribute.*
 
-Here is the script:
+Here is the `darkMode.js` script that does exactly that:
 
 ~~~js
 if (localStorage.getItem('vidyaDarkMode') === 'true' || (!('vidyaDarkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -132,7 +132,7 @@ if (localStorage.getItem('vidyaDarkMode') === 'true' || (!('vidyaDarkMode' in lo
 }
 ~~~
 
-That's a straightforward conditional and DOM manipulation. That should be fast. Phew!
+That's a straightforward conditional, which might even [short-circuit](https://medium.com/@amaliesmidth/javascript-short-circuit-conditionals-6606bdeaa30d), and DOM manipulation. That should be fast. Phew!
 
 And here is how we execute it before browser paint with Next.js's `Script` tag inside our `_app.tsx`:
 
@@ -157,7 +157,7 @@ see how we can use `useState` and `useEffect` to complete our Dark Mode solution
 The work we did with Tailwind CSS and the `Script` tag presents our user interface exactly as it should look from what we know so far, but React needs to
 manage that preference to change it as the user dictates. There are two steps: 
 
-* React needs to be made aware of the initial Dark Mode preference. 
+* React needs to be made aware of the initial Dark Mode preference and keep an eye on it. 
 * If the user changes that preference, React needs to add or remove the `dark` class from the root
 and persist the choice in `localStorage` accordingly.
 
@@ -184,12 +184,69 @@ It's simple but deceptively so. It's really [very very sneaky](https://www.youtu
 
 Note the empty dependency array. Many React developers, especially the other old timers who remember the awkwardness of 
 handling effects in component lifecycle events, think of this as the equivalent of the initial set up we did in `componentDidMount`. 
-That can work for you, but it's imprecise and I would say counterproductive to understanding how React works. 
+That way of thinkin can work for you, but it's imprecise and I would say counterproductive to understanding how React works. 
 
-The purpose of `useEffect` is to synchronize UI with state represented in the dependency array. In most cases, when that state changes, 
+The purpose of `useEffect` is to synchronize UI with the state represented in the dependency array. When that state changes, 
 UI changes. However, the *absence of dependencies* means that you want to synchronize your UI with the *absence of state*, 
 and state just happens to be absent when a component first mounts. So yeah, it works out the same as that `componentDidMount`
 analogy, but they're really two different things. 
 
 This is why math teachers make you show your work.
 
+As a result, this first `useEffect` call runs when state is absent as the component initially mounts, and the current `darkMode`
+value is saved to state. We can deduce the value from the root element because of the code we wrote earlier using the Next.js
+`Script` tag, which we know has already executed because we used the `beforeInteractive` strategy.
+
+See how it all fits together?
+
+Finally, there is the second hook that triggers and records a change to the theme when the user clicks the button:
+
+~~~js
+useEffect(() => {
+        if (darkMode) {
+            window.document.documentElement.classList.add('dark')
+            localStorage.setItem("vidyaDarkMode", "true")
+        } else {
+            window.document.documentElement.classList.remove('dark')
+            localStorage.setItem("vidyaDarkMode", "false")
+        }
+}, [darkMode])
+
+const onClick = () => {
+        setDarkMode(!darkMode)
+}
+~~~
+
+This is a more straightforward implementation of `useEffect`. The `darkMode` state value is in the dependency array of the effect,
+so when the user clicks the `ThemeButton` and toggles the value with `setDarkMode`, two effects execute. The code modifies the root
+element by adding or removing the `dark` class as needed and persists the setting to `localStorage` so our `Script` from
+before will pick it up again when the user returns to the Vidya website.
+
+Let's wrap up by putting together all the relevant Dark Mode logic in `ThemeButton` :
+
+~~~js
+export const ThemeButton = (p: ThemeButtonProps) => {
+    const [darkMode, setDarkMode] = useState<boolean | undefined>(undefined)
+    useEffect(() => {
+        setDarkMode(document.documentElement.classList.contains("dark"))
+    }, [])
+    useEffect(() => {
+        if (darkMode) {
+            window.document.documentElement.classList.add('dark')
+            localStorage.setItem("vidyaDarkMode", "true")
+        } else {
+            window.document.documentElement.classList.remove('dark')
+            localStorage.setItem("vidyaDarkMode", "false")
+        }
+    }, [darkMode])
+    const onClick = () => {
+        setDarkMode(!darkMode)
+    }
+
+    return ( {/* ThemeButton UI goes here */} )
+}
+~~~
+
+So that's it. I hope it's clear how the different components of our solution complement one another to bring Dark Mode to the Vidya website, but this is
+just one way of doing it. I can't wait to see how you apply the lessons learned here to build great Dark Mode experiences for your 
+audience as well. If you come up with a better way of doing it, please [let us know](https://twitter.com/VidyaSource).
