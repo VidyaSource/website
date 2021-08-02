@@ -35,7 +35,7 @@ If you would like to implement Dark Mode on a Next.js site using TailwindCSS, le
 
 * Tailwind's `dark` class
 * The `Script` tag that we got in Next.js 11
-* Understanding, like really understanding, React's `useEffect` and `useContext` hooks
+* Understanding, like really understanding, React's `useEffect` hook
 
 ## Activating Tailwind's Dark Mode Support
 
@@ -82,7 +82,7 @@ version of our `contact-us` class composing numerous Tailwind utilities in Next.
 Note that you always put `dark` first when you have multiple variants like `dark:hover:bg-blue-light`.
 
 This is where you will spend most of your time. Mostly because you want to put together a Dark Mode color palette that is usable 
-and accessible and consistent with your branding and because you want to be thorough in applying it to all your elements.
+and accessible and consistent with your branding and because you want to be thorough in applying it throughout the site.
 
 Just remember to [extract components](https://tailwindcss.com/docs/extracting-components) as we did above to keep things maintainable, consistent, and organized.
 
@@ -111,7 +111,7 @@ We need to execute a script to assess the user's Dark Mode preference and apply 
 it must execute before the browser paints the page, so it has to block interactivity. This 
 contradicts everything you've ever read about script optimization. Conventional guidance dictates scripts should run in an
 asynchronous, parallel fashion in order to maximize [Web Vitals](https://web.dev/vitals/) and get the user up and running as soon 
-as possible. That general guidance is accurate, but we need to make an exception for this particular script. It must 
+as possible. That general guidance is accurate, but we need to make an exception for this particular script. Still, it must 
 execute quickly, or we will lose customers.
 
 Our strategy for implementing Dark Mode will factor in potential user preferences specific to the Vidya website set in `localStorage`,
@@ -137,13 +137,59 @@ That's a straightforward conditional and DOM manipulation. That should be fast. 
 And here is how we execute it before browser paint with Next.js's `Script` tag inside our `_app.tsx`:
 
 ~~~js
+import Script from "next/script";
+// ...
 <Script strategy="beforeInteractive" src="/scripts/darkMode.js"/>
 ~~~
 
 The `beforeInteractive` strategy is the key. This tells Next.js to block everything until the script is finished. Again, 
-you need to use this strategy very carefully, but there is no way around it in this instance.
+you need to use this strategy very carefully, but it's [necessary and proper](https://constitution.congress.gov/browse/essay/artI_S8_C18_1/#:~:text=C18.-,1%20The%20Necessary%20and%20Proper%20Clause%3A%20Overview,%2C%20Section%208%2C%20Clause%2018%3A&text=To%20make%20all%20Laws%20which,any%20Department%20or%20Officer%20thereof.) in this instance.
 
-So thanks to Tailwind CSS and Next.js, we can successfully apply Dark Mode based on user preferences one way or another.
-The last step is to give the user a chance to switch modes on the website.
+So thanks to Tailwind CSS and Next.js, we can successfully apply Dark Mode based on user preferences one way or another
+when the Vidya website loads. The last step is to give the user a chance to switch modes and to save that preference to `localStorage`.
 
+
+## With Great Effects Come Great Responsibility
+
+When Facebook revolutionized React with Hooks, it was a game changer, but even now, years later, they can be confusing. Let's
+see how we can use `useState` and `useEffect` to complete our Dark Mode solution.
+
+The work we did with Tailwind CSS and the `Script` tag presents our user interface exactly as it should look from what we know so far, but React needs to
+manage that preference to change it as the user dictates. There are two steps: 
+
+* React needs to be made aware of the initial Dark Mode preference. 
+* If the user changes that preference, React needs to add or remove the `dark` class from the root
+and persist the choice in `localStorage` accordingly.
+
+These are two different effects. We will localize them where they matter most, the `ThemeButton` the user clicks to switch modes.
+
+Before we get into those, lets prepare to maintain state:
+
+~~~js
+const [darkMode, setDarkMode] = useState<boolean | undefined>(undefined)
+~~~
+
+Although we really want `darkMode` to be `true` or `false`, we need to initialize it with `undefined` because we don't know what
+it is until the first effect runs.
+
+Here it is:
+
+~~~js
+useEffect(() => {
+        setDarkMode(document.documentElement.classList.contains("dark"))
+}, [])
+~~~
+
+It's simple but deceptively so. It's really [very very sneaky](https://www.youtube.com/watch?v=ESrtX53Kc8Q).
+
+Note the empty dependency array. Many React developers, especially the other old timers who remember the awkwardness of 
+handling effects in component lifecycle events, think of this as the equivalent of the initial set up we did in `componentDidMount`. 
+That can work for you, but it's imprecise and I would say counterproductive to understanding how React works. 
+
+The purpose of `useEffect` is to synchronize UI with state represented in the dependency array. In most cases, when that state changes, 
+UI changes. However, the *absence of dependencies* means that you want to synchronize your UI with the *absence of state*, 
+and state just happens to be absent when a component first mounts. So yeah, it works out the same as that `componentDidMount`
+analogy, but they're really two different things. 
+
+This is why math teachers make you show your work.
 
