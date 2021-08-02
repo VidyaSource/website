@@ -3,29 +3,20 @@ import {DefaultSeo} from 'next-seo'
 import seo from '../../seo.config'
 import type {AppProps, NextWebVitalsMetric} from 'next/app'
 import ReactGA from "react-ga4"
-import {ThemeContext} from "../components/ThemeModeContext";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import Script from "next/script";
 
 function MyApp({Component, pageProps}: AppProps) {
-    let mode
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            mode = localStorage.getItem('vidyaDarkMode') === 'true' || (!('vidyaDarkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-        }
-    }, [])
     useEffect(() => {
         ReactGA.initialize("G-SV6CZCPD3B")
     }, [])
-    const [darkMode, setDarkMode] = useState(mode)
+
     return (
         <>
             <DefaultSeo {...seo} />
             <Script strategy="beforeInteractive" src="/scripts/darkMode.js"/>
             <Script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b9ebbff15106c8f" strategy="lazyOnload"/>
-            <ThemeContext.Provider value={{darkMode: darkMode, setDarkMode: setDarkMode}}>
-                <Component {...pageProps} />
-            </ThemeContext.Provider>
+            <Component {...pageProps} />
         </>
     )
 }
