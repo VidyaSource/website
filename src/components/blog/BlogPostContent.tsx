@@ -27,7 +27,7 @@ const components = {
                    children={String(children).replace(/\n$/, '')}
                    showLineNumbers={true} {...props} />
         ) : (
-            <code children={String(children).replace(/\n$/, '')} className="text-red text-code text-lg" {...props} />
+            <code children={String(children).replace(/\n$/, '')} className="text-red dark:text-red-light text-code text-lg" {...props} />
         )
     },
     del: ({node, inline, className, children, ...props}) => {
