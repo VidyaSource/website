@@ -183,7 +183,7 @@ It's simple but deceptively so. It's really [very very sneaky](https://www.youtu
 
 Note the empty dependency array. Many React developers, especially the other old timers who remember the awkwardness of 
 handling effects in component lifecycle events, think of this as the equivalent of the initial set up we did in `componentDidMount`. 
-That way of thinkin can work for you, but it's imprecise and I would say counterproductive to understanding how React works. 
+That way of thinking can work for you, but it's imprecise and I would say counterproductive to understanding how React works. 
 
 The purpose of `useEffect` is to synchronize UI with the state represented in the dependency array. When that state changes, 
 UI changes. However, the *absence of dependencies* means that you want to synchronize your UI with the *absence of state*, 
