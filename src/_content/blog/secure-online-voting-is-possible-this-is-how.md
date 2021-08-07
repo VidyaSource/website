@@ -15,7 +15,6 @@ tags:
 - Svelte
 - Spring Boot
 - FastAPI
-- Java
 - Kotlin
 - Go
 - Python
