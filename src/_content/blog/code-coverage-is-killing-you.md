@@ -122,8 +122,8 @@ Keep these trend lines as low and as level as possible.
 
 The best part about all of these metrics is that they are easily derived from your engineering tools like JIRA and Git. Nothing 
 special is required of you. Of course
-you can always take the initiative to do some clever custom things like identifying particularly vulnerable and/or valuable parts
-of the code base and ensuring there is some minimum but high number of tests. That would be coverage-ish but more targeted and robust.
+you can always take the initiative to do some clever things specific to your domain like identifying particularly vulnerable and/or valuable parts
+of the codebase and ensuring there is a high level of coverage for that specific region of surface area.
 
 In the end you should be able to look at every test in your code base and recognize how it gives you confidence that your code will work
 in production and that no one will be working weekends. The siren song of code coverage is intoxicating, but you can do
