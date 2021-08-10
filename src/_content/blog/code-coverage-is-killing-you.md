@@ -88,7 +88,7 @@ Experience has shown me there are a lot better metrics than code coverage. Here 
 
 ***Percentage of Tests That Change (Target: 0%)***. Too often tests are coupled to implementation, so new requirements from the customer
 lead to laborious updates to tests. That should stop. Shifting away from conventional, scenario-based testing to 
-[property-based testing](/blog/2018/09/18/the-business-case-for-functional-programming/) where possible can help.
+[property-based testing](/blog/business-case-for-functional-programming) where possible can help.
 
 ***Percentage of Consistent Tests (Target: 100%)***. Have you ever seen the same tests pass some days and fail others? That's not consistent, and
 engineers typically respond by disabling or commenting out offending tests. Instead, rewrite these tests to be deterministic unit tests, or 
