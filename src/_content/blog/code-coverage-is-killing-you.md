@@ -84,9 +84,7 @@ The good news is we can do a lot better for a lot cheaper.
 Experience has shown me there are a lot better metrics than code coverage. Here is a good list of percentage metrics inspired by 
 [Kostis Kapelonis](http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-6---paying-excessive-attention-to-test-coverage).
 
-***Percentage of Developers Writing Tests (Target: 100%)***. Everyone who writes code should write tests. 
-
-***Percentage of Bugs Reproduced By Tests (Target: 100%)***. Every bug reported by testers or users should have at least one test associated with it.
+***Percentage of Bugs Reproduced By Tests (Target: 100%)***. This is the best metric. Every bug reported by testers or users should have at least one test associated with it.
 
 ***Percentage of Tests That Change (Target: 0%)***. Too often tests are coupled to implementation, so new requirements from the customer
 lead to laborious updates to tests. That should stop. Shifting away from conventional, scenario-based testing to 
@@ -95,6 +93,10 @@ lead to laborious updates to tests. That should stop. Shifting away from convent
 ***Percentage of Consistent Tests (Target: 100%)***. Have you ever seen the same tests pass some days and fail others? That's not consistent, and
 engineers typically respond by disabling or commenting out offending tests. Instead, rewrite these tests to be deterministic unit tests, or 
 delete them entirely.
+
+***Percentage of Developers Writing Tests (Target: 100%)***. Everyone who writes code should write tests, but it is important not 
+to take this too far in a punitive direction. The purpose is not to uncover slackers; it's to grow a culture where all developers recognize
+test code deserves the same care as production code and to expose the entire team to the entire codebase.
 
 
 ## Trending Metrics
