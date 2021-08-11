@@ -95,8 +95,10 @@ engineers typically respond by disabling or commenting out offending tests. Inst
 delete them entirely.
 
 ***Percentage of Developers Writing Tests (Target: 100%)***. Everyone who writes code should write tests, but it is important not 
-to take this too far in a punitive direction. The purpose is not to uncover slackers; it's to grow a culture where all developers recognize
-test code deserves the same care as production code and to expose the entire team to the entire codebase.
+to take this in a punitive direction. The purpose is not to uncover slackers; it's to grow a culture where all developers recognize
+test code deserves the same care as production code and to expose the entire team to the entire codebase to promote 
+[collective code ownership](https://martinfowler.com/bliki/CodeOwnership.html). If command-and-control types do try to use
+this metric to identify what they consider "weak performers," then get rid of it. It does more harm than good.
 
 
 ## Trending Metrics
