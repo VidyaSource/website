@@ -240,7 +240,7 @@ Any of these options would be great though.
 
 ### Database: PostgreSQL. With a twist
 
-The backbone of this architecture is the immutable, append-only data store representing every single mutation to the data on the platform
+The backbone of this architecture is the [event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) architecture based on immutable, append-only data store representing every single mutation to the data on the platform
 in order to ensure full replayability and traceability. How can we do this with PostgreSQL?
 
 Easy. Revoke UPDATE and DELETE privileges!
@@ -248,7 +248,7 @@ Easy. Revoke UPDATE and DELETE privileges!
 Anything more than PostgreSQL, which is straightforward to deploy and agnostic of environment, would be overkill given the relatively low scale--particularly 
 if someone deploys the online voting platform for a small election below the state level with just a few thousand or even a few hundred voters.  
 
-We could punt here and decide on something more elaborate like MongoDB or Kafka because we decide a small election renders a secure
+In large scale infrastructures, MongoDB or Kafka because we decide a small election renders a secure
 online voting platform unnecessary, but I would disagree. Local elections are extremely important. They impact people's 
 lives the most, and voters are entitled to the same guarantees here that they are entitled to for the "big" elections. 
 
