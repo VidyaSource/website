@@ -4,7 +4,7 @@ author: "Neil Chaudhuri"
 title: "Code Coverage Is Killing You"
 description: "Code coverage is intuitive but dangerous. There are quality metrics that are so much better."
 image: "/img/blog/michael-scott.jpg"
-date: 2019-02-10
+date: 2021-08-16
 tags:
 - Scrum
 - Kanban
@@ -42,7 +42,7 @@ is an infinite number of ways a string can fail credit card validation, but you 
 code coverage for it. Meanwhile other code may have far fewer failure scenarios. Ideally, 
 that credit card validator should have hundreds of tests associated with it while other code has far fewer. Code coverage 
 treats them all the same and only credits you for a small fraction of the tests necessary for your most vulnerable code, so you probably 
-won't write any more than you have to. I believe that's what the kids call perverse incentives.
+won't write any more than you have to. I believe that's what the kids call "perverse incentives."
 
 ### Code coverage assumes all your code is equally valuable
 
@@ -59,7 +59,9 @@ a component library in React that will be consumed by application developers, it
 is all you need. After all, a button in your component library will have no functionality on its own. Its functionality will
 come from the `onClick` event handler passed as a prop by the library consumer. All you care about is that clicking
 the button does something. It's a waste of time to write a test for something so trivial just to check a coverage box
-when Storybook gives you that for basically free.
+when Storybook gives you that for basically free. Of course, if you insist, you can also 
+[use Storybook stories as fixtures for your tests](https://storybook.js.org/docs/react/workflows/unit-testing). 
+
 
 ### Code coverage tells you how much but not how well
 
@@ -86,8 +88,8 @@ Experience has shown me there are a lot better metrics than code coverage. Here 
 
 ***Percentage of Bugs Reproduced By Tests (Target: 100%)***. This is the best metric. Every bug reported by testers or users should have at least one test associated with it.
 
-***Percentage of Tests That Change (Target: 0%)***. Too often tests are coupled to implementation, so new requirements from the customer
-lead to laborious updates to tests. That should stop. Shifting away from conventional, scenario-based testing to 
+***Percentage of Tests That Change (Target: 0%)***. Too often tests are coupled to implementation, so updates to your implementation details--a new technology, updated algorithm, etc--lead 
+to laborious updates to tests. That should stop. Shifting away from conventional, scenario-based testing to 
 [property-based testing](/blog/business-case-for-functional-programming) where possible can help.
 
 ***Percentage of Consistent Tests (Target: 100%)***. Have you ever seen the same tests pass some days and fail others? That's not consistent, and
@@ -105,24 +107,22 @@ this metric to identify what they consider "weak performers," then get rid of it
 
 There are also trends to watch.
 
-***Low Code Quality in Tests***. Tests are code. Your test code should be a first-class citizen subject to the same quality checks as production code--
-  no duplication, reusable functions, design patterns where useful, *etc.*
+***Low Code Quality in Tests***. Tests are code. Your test code should be a first-class citizen subject to the same quality checks as production 
+code--limited duplication, reusable functions, design patterns where useful, *etc.*
 
-***Time to Write Tests***. Maybe technical debt in your tests is too high. Maybe the design 
-is poor with too many dependencies to mock. Maybe it's hard to generate test data or scenarios. Taking too long to write tests
-will manifest in diminishing velocity and more bugs. Better design and again 
-[property-based testing](/blog/2018/09/18/the-business-case-for-functional-programming/) can help.  
+***Time to Write Tests***. Maybe the quality of your tests is too low. Maybe the design is poor with too many dependencies to mock. 
+Maybe it's hard to generate test data or scenarios. Taking too long to write tests will manifest in diminishing velocity and more bugs. Better design and again
+[property-based testing](/blog/2018/09/18/the-business-case-for-functional-programming/) can help.
 
-***Time to Run Tests***. One of the core tenets of agile development is rapid feedback, which is impossible 
-if your tests take forever. This might be controversial, but I would recommend favoring unit tests and functional tests 
-over integration tests. Unit tests are fast (when written properly). Functional tests give you the most accurate view
-on quality, and modern tools like [Cypress](https://www.cypress.io/) can overcome the slowness and flakiness of 
-older tools like Selenium. You can also get a boost from your 
-[tooling](https://engineering.linkedin.com/blog/2018/07/how-we-improved-build-time-by-400-percent).
+***Time to Run Tests***. One of the core tenets of agile development is rapid feedback, which is impossible if your tests take forever. 
+This might be controversial, but I would recommend favoring unit tests and functional tests over integration tests. Unit tests 
+are fast (when written properly). Functional tests give you the most accurate view
+on quality, and modern tools like [Cypress](https://www.cypress.io/) can overcome the slowness and flakiness of older tools 
+like Selenium. You can also get a boost from your [tooling](https://engineering.linkedin.com/blog/2018/07/how-we-improved-build-time-by-400-percent).
 
 Keep these trend lines as low and as level as possible.
 
-The best part about all of these metrics is that they are easily derived from your engineering tools like JIRA and Git. Nothing 
+The best part about all of these metrics is that they are easily derived from your engineering tools. Nothing 
 special is required of you. Of course
 you can always take the initiative to do some clever things specific to your domain like identifying particularly vulnerable and/or valuable parts
 of the codebase and ensuring there is a high level of coverage for that specific region of surface area.
