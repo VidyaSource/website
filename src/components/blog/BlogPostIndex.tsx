@@ -12,14 +12,15 @@ export const BlogPostIndex = (p: BlogPostIndexProps) => {
     const [selectedTag, selectTag] = useState<string>("")
     const [currentPosts, setCurrentPosts] = useState<BlogPostMetadata[]>(p.blogPosts)
     useEffect(() => {
-        if (selectedTag === "") {
-            setCurrentPosts(p.blogPosts)
+        const posts = p.blogPostCategories[selectedTag]
+        if (posts) {
+            setCurrentPosts(posts)
         } else {
-            setCurrentPosts(p.blogPostCategories[selectedTag])
+            setCurrentPosts(p.blogPosts)
         }
     }, [p.blogPosts, selectedTag])
 
-    const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         const tag = e.target.value
         if (tag) {
             selectTag(tag)
@@ -39,17 +40,16 @@ export const BlogPostIndex = (p: BlogPostIndexProps) => {
                     Filter by tag
                 </label>
                 <div className="mt-1">
-                    <select id="tag"
-                            name="tag"
-                            placeholder="Search..."
-                            onChange={onChange}
-                            value={selectedTag}
-                            className="mx-auto block text-red sm:text-xl lg:text-2xl focus:border-green-dark md:w-full lg:w-full shadow-sm sm:max-w-xs sm:text-sm border-gray rounded-md">
+                    <input list="tag"
+                           placeholder="Search..."
+                           onChange={onChange}
+                           className="mx-auto p-2 outline-none block text-red sm:text-xl lg:text-2xl focus:border-green-dark md:w-full lg:w-full shadow-sm sm:max-w-xs sm:text-sm border-gray rounded-md" />
+                    <datalist id="tag">
                         <option value=""/>
                         {
                             tags.map(t => <option key={t} value={t}>{t}</option>)
                         }
-                    </select>
+                    </datalist>
                 </div>
             </div>
             <div className="relative max-w-7xl mx-auto">
