@@ -5,10 +5,13 @@ import type {AppProps, NextWebVitalsMetric} from 'next/app'
 import ReactGA from "react-ga4"
 import {useEffect} from "react";
 import Script from "next/script";
+import { useRouter } from 'next/router'
 
 function MyApp({Component, pageProps}: AppProps) {
+    const router = useRouter()
     useEffect(() => {
         ReactGA.initialize("G-SV6CZCPD3B")
+        ReactGA.send({ hitType: "pageview", page: router.pathname })
     }, [])
 
     return (
@@ -23,11 +26,13 @@ function MyApp({Component, pageProps}: AppProps) {
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
     const { id, name, startTime, label, value } = metric
-    console.log(metric)
-    ReactGA.send({
-        metric_name: name,
-        metric_id: id,
-        metric_value: value,
+    ReactGA.event({
+        category: id,
+        action: name,
+        label: label,
+        value: value,
+        nonInteraction: true,
+        transport: "beacon"
     })
 }
 
