@@ -23,8 +23,7 @@ function MyApp({Component, pageProps}: AppProps) {
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
     const body = JSON.stringify(metric)
-    /*ReactGA.initialize("G-SV6CZCPD3B")
-    ReactGA.send(body)*/
+    ReactGA.send(body)
 }
 
 export default MyApp
