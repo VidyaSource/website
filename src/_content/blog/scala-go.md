@@ -4,7 +4,7 @@ author: "Neil Chaudhuri"
 title: "Scala or Go: Tastes Great or Less Filling?"
 description: "Scala and Go are two of the most popular emerging languages. Which is best for your project?"
 image: "/img/blog/scala-go.png"
-date: 2019-03-29
+date: 2021-09-01
 gist: true
 tags:
 - Golang
@@ -124,7 +124,8 @@ Let's look at how Scala and Go handle the kinds of real-world problems you will 
 *Disclaimer:* The sample code is not meant to showcase necessarily the "best" way to solve these problems--most performant, most elegant, 
 or whatever. Instead it is meant to showcase reasonable, idiomatic solutions and, more importantly, how they reflect
 the design philosophies of the respective languages. Of course 
-[you are welcome to suggest improvements](/contact/) regardless.
+[you are welcome to suggest improvements](/contact/) regardless. Also, the Scala code uses some of the revolutionary
+[Scala 3](https://docs.scala-lang.org/scala3/new-in-scala3.html) syntax and constructs.
 
 ## Absent values
 
@@ -238,10 +239,10 @@ def squareRoot(value: Int): Try[Double] = {
     Failure(new IllegalArgumentException("Value cannot be negative"))
   }
 }
-val sum = for {
+val sum = for
   a <- squareRoot(4)
   b <- squareRoot(16)
-} yield a + b
+yield a + b
 sum.map(s => s"The result is $s") match {
   case Success(result) => result
   case Failure(t) => t.getMessage
@@ -460,12 +461,12 @@ def getUuid: Future[String] = {
 }
 val uuid1: Future[String] = getUuid
 val uuid2: Future[String] = getUuid
-val uuids = for {
+val uuids = for
   u1 <- uuid1
   u2 <- uuid2
-} yield (u1, u2)
+yield (u1, u2)
 uuids
-  .map {
+  .foreach {
     case (u1, u2) => println(s"UUIDs: $u1, $u2")
   }
   .andThen { case _ => ws.close() }
@@ -625,19 +626,17 @@ it was revolutionary, and Scala benefits as well.
 ~~~scala
 // Runtime polymorphism
 
-trait Closeable {
+trait Closeable:
   def name: String
-
   def close: String
-}
 
-case class Connection(override val name: String, database: String) extends Closeable {
+case class Connection(override val name: String, database: String) extends Closeable:
   override def close: String = s"Closing connection $name"
-}
 
-case class File(override val name: String, opener: String) extends Closeable {
+
+case class File(override val name: String, opener: String) extends Closeable:
   override def close: String = s"Closing file $name"
-}
+
 
 def showClosing(c: Closeable): String = c.close
 
@@ -664,12 +663,11 @@ use(f)
 
 case class Complex(real: Double, imaginary: Double)
 
-object Complex {
-  implicit object ComplexOrdering extends Ordering[Complex] {
+object Complex:
+  given Ordering[Complex] with
     def compare(a: Complex, b: Complex): Int = a.real.compare(b.real)
-  }
-}
 
+  
 List(Complex(3, 5), Complex(10, 2), Complex(1, 6)).sorted
 ~~~
 
@@ -694,7 +692,7 @@ The last example is what I consider the coolest and most powerful form of polymo
 In other words, you have to tell `List[T]` how to sort its elements by providing a function that 
 [lifts](https://stackoverflow.com/questions/17965059/what-is-lifting-in-scala) `T` into an `Ordering[T]`. This makes
 perfect sense, and it is enforced by Scala's type system. The code defines
-a type called `Complex` and a typeclass called `ComplexOrdering` that defines how instances of `Complex` should be sorted.
+a type called `Complex` and a way to lift `Complex` to `Ordering[Complex]` that defines how instances of `Complex` should be sorted.
 Without this, `List[Complex]` wouldn't know how to sort its contents, and that last line wouldn't compile. This means you can 
 make any `T` sortable by defining an `Ordering[T]` typeclass. More broadly, it means you can use typeclasses to add 
 polymorphic behavior to completely unrelated types, which includes types you don't control like legacy types and/or 
