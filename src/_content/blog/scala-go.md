@@ -50,12 +50,7 @@ tasks we will consider so you can jump to the ones that interest you most:
 
 Or you can skip straight to my [conclusion](#how-do-you-decide): which boils down to this: 
 
-> Despite the strong possibility that this opinion will subject me to ritual humiliation on social media, I would use
-  Scala (or a similarly featured language like Kotlin) for microservices or bigger
-  but Go both to replace any [bash or Python (or C++ or whatever) scripts](https://www.quora.com/Where-do-we-use-Python-or-shell-scripts-in-the-DevOps-project-life-cycle) 
-  that are part of my continuous delivery pipeline and 
-  to create [lambda functions](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html), which are supposed to be lightweight,
-  fast, and focused.
+> Despite the strong possibility that this opinion will subject me to ritual humiliation on social media, I would use Scala (or a similarly featured language like Kotlin) for microservices or bigger but Go both to replace any [bash or Python (or C++ or whatever) scripts that are part of my continuous delivery pipeline and to create lambda functions, which are supposed to be lightweight, fast, and focused.
 
 With that, let me introduce you to Scala and Go.
 
