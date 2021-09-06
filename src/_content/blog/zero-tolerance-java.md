@@ -55,7 +55,7 @@ That’s why things went wrong.
 What’s the right way to check if your BigDecimal instance is 0? It turns out there are two right ways. 
 
 One of them makes perfect sense if you know [Comparable](http://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html). 
-(If you don’t, check out our [tutorial](/tutorial/2013/10/27/comparison-shopping) on the topic.)
+(If you don’t, check out our [tutorial](/tutorials/comparison-shopping) on the topic.)
 
 ~~~java 
 if (price.compareTo(BigDecimal.ZERO) == 0) {

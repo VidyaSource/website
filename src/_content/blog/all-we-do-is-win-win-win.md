@@ -23,7 +23,7 @@ aliases:
 
 I have written quite a bit recently about my longstanding passion for improving the way government procures 
 technology and manages technology projects. The administration has taken 
-[many significant steps](/blog/Projects/Agile/Scrum/Programming/Testing/Architecture/2015/07/19/the-fix-is-in) toward that goal,
+[many significant steps](/blog/the-fix-is-in) toward that goal,
 and I have played [a small role 
 in the process](blog/Projects/Agile/Scrum/Programming/Testing/Architecture/2015/10/04/learning-the-playbook) to this point.
 

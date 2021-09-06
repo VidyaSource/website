@@ -36,9 +36,7 @@ aliases:
 
 ---
 
-Anyone with a basic knowledge of Scrum, and certainly everyone who has taken 
-[Agile Software Project Management With Scrum](/course/agile-software-project-management-with-scrum),
-knows the role of the ScrumMaster--to be a [servant leader](http://www.inc.com/peter-economy/7-secrets-of-servant-leadership-that-will-lead-you-to-success.html),
+Anyone with a basic knowledge of Scrum knows the role of the ScrumMaster--to be a [servant leader](http://www.inc.com/peter-economy/7-secrets-of-servant-leadership-that-will-lead-you-to-success.html),
 to act as guardian of the Scrum process, to remove obstacles for the
 delivery team, to negotiate any tension between the [Product Owner](https://www.mountaingoatsoftware.com/agile/scrum/roles/product-owner) 
 and the delivery team, to encourage the team to [self-organize](https://hbr.org/2004/09/get-self-organized) and be 

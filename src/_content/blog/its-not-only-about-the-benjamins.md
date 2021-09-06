@@ -60,7 +60,7 @@ of the [Lambda Architecture](http://lambda-architecture.net/). It's gone cold no
 to Map Reduce because it is built on Clojure to harness the power of functional programming to solve 
 Big Data problems. This was my first professional exposure to functional programming after years of working with 
 Java, and I became so enamored of the natural fit between functional programming and Big Data that I even 
-[blogged about its advantages over Java for building analytics](/blog/2013/10/27/java-is-dysfunctional-with-big-data/).
+[blogged about its advantages over Java for building analytics](/blog/java-is-dysfunctional-with-big-data/).
 
 It was also at XDATA that I met a brilliant team from [AMPLab at Berkeley](https://amplab.cs.berkeley.edu/) who had
 created a revolutionary project called Spark.

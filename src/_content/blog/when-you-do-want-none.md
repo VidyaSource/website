@@ -22,7 +22,7 @@ burgers and fries. I want absolutely nothing to do with the [Filet-O-Fish](https
 
 Scala’s [Option](http://www.scala-lang.org/api/2.11.4/index.html#scala.Option) gives us a neat way to avoid meaningless strings if we wish.
 
-I have [blogged](/blog/2014/08/04/know-your-options) about `Option` before.
+I have [blogged](/blog/know-your-options) about `Option` before.
 It helps us avoid null in an elegant, typesafe way at compile-time. The collection-like semantics of `Option` helps us turn
 [Some](http://www.scala-lang.org/api/current/index.html#scala.Some)(*meaninglessString*) into [None](http://www.scala-lang.org/api/current/index.html#scala.None$)
 (not to be confused with Python’s [None](http://stackoverflow.com/questions/19473185/what-is-a-none-value))

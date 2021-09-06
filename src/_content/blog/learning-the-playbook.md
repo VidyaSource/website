@@ -32,7 +32,7 @@ to solve the problem. One of them was to create its own
 For me, this is personal. I've witnessed a lot of government technology projects fail because of some combination of incompetence, politics, and 
 procurement methods that motivated shortsighted and suboptimal decisions. As the government begins to understand how to use 
 technology to grow more efficient and yield more value to taxpayers, I want to play a role in that process. I've already written 
-about the [misunderstandings surrounding HealthCare.gov](/blog/Projects/Agile/Scrum/Architecture/2013/11/11/dont-go-chasing-waterfall) 
+about the [misunderstandings surrounding HealthCare.gov](/blog/dont-go-chasing-waterfall) 
 as well as a [tactical overview of the Playbook](http://gcn.com/articles/2014/09/10/digital-services-playbook-tactics.aspx) 
 for Government Computing News. This is a subject that has been important to me for a long time.
 

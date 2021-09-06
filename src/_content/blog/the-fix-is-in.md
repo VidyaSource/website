@@ -36,7 +36,7 @@ Politics and ideology aside, the government has a technology problem.
 We’ve seen this most recently with the [OPM hack](http://www.washingtonpost.com/blogs/federal-eye/wp/2015/07/09/hack-of-security-clearance-system-affected-21-5-million-people-federal-authorities-say/),
 but HealthCare.gov gave us what some would call [a teachable moment](https://en.wikipedia.org/wiki/Teachable_moment).
 The problem is most people learned the wrong lesson. Even alleged technology experts who took the time to examine the way HealthCare.gov was
-executed often got their analyses [spectacularly wrong](/blog/Projects/Agile/Scrum/Architecture/2013/11/11/dont-go-chasing-waterfall).
+executed often got their analyses [spectacularly wrong](/blog/dont-go-chasing-waterfall).
 
 It was in fact because of my desire to help improve government IT that I began writing for
 [Government Computing News](http://gcn.com/Forms/Search-Results.aspx?query=chaudhuri&collection=GCN_Web) around that time.

@@ -39,7 +39,7 @@ Arlington, Virginia, on *Here's What's Trending In Software Engineering*. Whethe
 or run enterprises, you’ll discover techniques and technologies that will give you an edge in the years to come.
 
 If you saw me speak on this topic at 
-[Code Writers Workshop](/blog/2017/06/05/speaking-at-code-writers-workshop-2017/) in the summer, rest assured this talk will be different.
+[Code Writers Workshop](/blog/speaking-at-code-writers-workshop-2017/) in the summer, rest assured this talk will be different.
 First, I have added some wrinkles to the original list you will likely find compelling. Second, since I will have more time,
 I want to promote discussion. I look forward to hearing from you on why I may have exaggerated a trend and learning about trends 
 you’ve identified that I missed.

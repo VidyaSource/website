@@ -38,7 +38,7 @@ at all.
 This has really hit me as I learn to write tests for React. My career has been built primarily on Java, 
 Scala, Ruby, and Python--*i.e.* backend development.
 Over the years I have written a lot of JavaScript too, but we are taking it to the next level and enduring some growing pains as 
-we migrate the front end of a [Scala application we built for a client](/blog/2018/08/10/welcoming-ninaday/) to React 
+we migrate the front end of a [Scala application we built for a client](/blog/welcoming-ninaday/) to React 
 (with all the trimmings--Webpack, TypeScript, RxJS, Immutable.js, *etc.*). 
 React is spearheaded by Facebook and fortified by a vibrant community, so I assumed a consensus on patterns and practices. 
 
@@ -191,7 +191,7 @@ developer uses Mockito.
 * Use props to mimic constructor injection of mocked or stubbed dependencies. In fact, [render props](https://reactjs.org/docs/render-props.html), 
 which are now *en vogue* for sharing React components, essentially enable constructor injection of components. You can supply
 any component you want to a render prop in your test. 
-* [Use the functional nature of JavaScript to your advantage](/blog/2018/09/18/the-business-case-for-functional-programming/) in testing.
+* [Use the functional nature of JavaScript to your advantage](/blog/the-business-case-for-functional-programming/) in testing.
 For example, REST calls are the most common side effects in JavaScript programming, 
 and using TypeScript you could have a function prop `fetch: (s: string) => Promise<string>` to represent a REST call returning JSON.
 In your test, you supply a stubbed implementation like `(s: string) => { Promise.resolve({id: 5}) }` while your 

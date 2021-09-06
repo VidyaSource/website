@@ -82,7 +82,7 @@ If TSA had pursued any of these options, the Randomizer definitely would’ve be
 
 I discussed the Randomizer with [Frank McNally](https://twitter.com/NecessitysChild), Director of Learning & Content 
 Development at [Public Spend Forum](http://publicspendforum.net/). He and I have worked together to 
-[revolutionize government contracting of digital services](/blog/Projects/Agile/Scrum/Programming/Testing/2015/10/24/all-we-do-is-win-win-win) 
+[revolutionize government contracting of digital services](/blog/all-we-do-is-win-win-win) 
 and maximize value for American taxpayers, and he reminded me that the flawed government contracting model is likely responsible 
 for inflating the cost of the Randomizer. Large vendors sink their teeth into government agencies through multiple-award 
 contract vehicles and enterprise support contracts. As a result, decision makers in government lump every development 

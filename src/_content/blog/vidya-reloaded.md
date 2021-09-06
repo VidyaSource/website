@@ -30,7 +30,7 @@ a stunningly fast static-site generator built on Google's popular Go programming
 to shoot up the [Tiobe Index](https://www.tiobe.com/tiobe-index/go/). 
 
 As great as Hugo and Go are, the really cool thing about our new website is that it is a Progressive Web Application (PWA).
-The kids love PWAs. We identified PWAs as a "trend in software engineering" in our [last talk](/blog/2017/06/05/speaking-at-code-writers-workshop-2017/).
+The kids love PWAs. We identified PWAs as a "trend in software engineering" in our [last talk](/blog/speaking-at-code-writers-workshop-2017/).
 Google, Twitter, Starbucks, Pinterest, Alibaba, Microsoft, and numerous other mom-and-pop shops have invested in PWAs, and a quick 
 Google search will show you why. 
 Henrik Joreteg's [ode to PWAs](https://joreteg.com/blog/betting-on-the-web) is very informative, but since 

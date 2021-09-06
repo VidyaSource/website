@@ -112,7 +112,7 @@ code--limited duplication, reusable functions, design patterns where useful, *et
 
 ***Time to Write Tests***. Maybe the quality of your tests is too low. Maybe the design is poor with too many dependencies to mock. 
 Maybe it's hard to generate test data or scenarios. Taking too long to write tests will manifest in diminishing velocity and more bugs. Better design and again
-[property-based testing](/blog/2018/09/18/the-business-case-for-functional-programming/) can help.
+[property-based testing](/blog/the-business-case-for-functional-programming/) can help.
 
 ***Time to Run Tests***. One of the core tenets of agile development is rapid feedback, which is impossible if your tests take forever. 
 This might be controversial, but I would recommend favoring unit tests and functional tests over integration tests. Unit tests 

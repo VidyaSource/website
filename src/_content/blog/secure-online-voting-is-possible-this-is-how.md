@@ -75,7 +75,7 @@ the breathtaking incompetence and embarrassing failure of "modern" voting apps
 like the [IowaReporterApp](https://www.vox.com/recode/2020/2/7/21125078/iowa-caucus-2016-mobile-app-2020), and the fear of relentless
 attacks from around the nation and the world, we are in a place now where the consensus is that the only secure way to vote 
 is with paper ballots. To say nothing of the issues associated with paper ballots. Or the matter of voter access 
-to those paper ballots, which itself is fraught with bad faith arguments and [racism](/blog/vidya/technology/black-lives-matter/).
+to those paper ballots, which itself is fraught with bad faith arguments and [racism](/blog/black-lives-matter/).
 
 It's easy, if profoundly disappointing, to see how we got here, but it really doesn't have to be this way.
 
@@ -134,7 +134,7 @@ anomaly detection through analytics. This level of auditability is necessary for
 
 ### Immutable and Append-Only
 
-I have [written](/blog/vidya/technology/business-case-for-functional-programming/) and [spoken](/blog/vidya/technology/talking-trends-at-tech-talk-dc/)
+I have [written](/blog/business-case-for-functional-programming/) and [spoken](/blog/talking-trends-at-tech-talk-dc/)
 a great deal about the value of immutable data, and I think it is essential to secure online voting. The software
 should not permit updates or deletes. Rather, any change to the data--a newly registered voter, a new address for an existing voter,
 and certainly every vote--should be represented in immutable, append-only fashion. As part of the 
@@ -212,7 +212,7 @@ like [Next.js](https://nextjs.org/) or [SvelteKit](https://kit.svelte.dev/) woul
 be so much simpler and more lightweight. It would be straightforward to build the forms and push them to a CDN like 
 Cloudflare or Fastly.
 
-In addition, I think it is important that the front end is deployed as a [Progressive Web App](/blog/vidya/technology/vidya-reloaded/).
+In addition, I think it is important that the front end is deployed as a [Progressive Web App](/blog/vidya-reloaded/).
 This offers a lot of benefits, but primarily for this purpose, it is critical that the front end is always available 
 and as functional as possible regardless of connectivity, which absurdly remains a problem in the richest country in the world. 
 
@@ -258,7 +258,7 @@ by precinct or time of day or day of week or whatever else you want to know.
 
 So immutable PostgreSQL it is.
 
-By the way, what about blockchain? [No. Just. No.](/blog/vidya/technology/pop-goes-the-blockchain/)
+By the way, what about blockchain? [No. Just. No.](/blog/pop-goes-the-blockchain/)
  
 ### Deployment: Docker and Kubernetes
 
