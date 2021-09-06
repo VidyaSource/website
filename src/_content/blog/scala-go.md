@@ -60,7 +60,7 @@ Scala is an object-oriented (OO) *and* functional programming language built for
 the JVM (though [Scala Native](https://scala-native.readthedocs.io/en/latest/) is in the works). It emerged from academia at the 
 [EPFL](https://scala.epfl.ch/) in Switzerland from the mind of Academic Director Martin Odersky, who sought to prove that 
 the two paradigms--OO for representing your domain and functional for its 
-[mathematical guarantees for working programs](/blog/2018/09/18/the-business-case-for-functional-programming/)--can blend
+[mathematical guarantees for working programs](/blog/business-case-for-functional-programming)--can blend
 seamlessly to yield the best of both worlds. Scala also has an exquisite static type system that can provide a 
 powerful safety net.  
 
@@ -162,7 +162,7 @@ otherwise, `getOrElse` handles the absent value.
 `Option` allows you to safely work with potentially absent values 
 [without fear](https://marvel.fandom.com/wiki/Daredevil:_The_Man_Without_Fear_Vol_1_1). The compile-time safety makes 
 you very productive. On the other hand, every transformation on the `Option`--via `map`, `filter`, *etc.*--produces a new
-value because of the functional programming bias towards [immutability](/blog/2018/09/18/the-business-case-for-functional-programming/).
+value because of the functional programming bias towards [immutability](/blog/business-case-for-functional-programming).
 If memory is at a premium, maybe this is a concern.
 
 
