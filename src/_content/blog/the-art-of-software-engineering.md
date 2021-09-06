@@ -17,7 +17,7 @@ categories:
 - Agile
 - Continuous Delivery
 aliases:
-- /blog/Programming/Testing/Projects/Agile/2016/04/02/the-art-of-software-engineering
+- /blog/the-art-of-software-engineering
 ---
 
 At an event recently, someone was kind enough to introduce herself to me, and during the course of our pleasant 

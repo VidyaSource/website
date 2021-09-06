@@ -40,7 +40,7 @@ development landscape and even puts [job-seekers in touch with those looking for
 Over the years I have answered a lot of questions in the hope of helping my fellow engineers. Some answers are 
 certainly better than others:
 
-* [How to write unit tests in Spark 2.0+?](https://stackoverflow.com/questions/43729262/how-to-write-unit-tests-in-spark-2-0/43769845#43769845) This addresses an important but underrated topic we discuss in [our Spark course](/course/analytics-with-apache-spark/). 
+* [How to write unit tests in Spark 2.0+?](https://stackoverflow.com/questions/43729262/how-to-write-unit-tests-in-spark-2-0/43769845#43769845) This addresses an important but underrated topic we discuss in [our Spark course](/courses/software-engineering-with-apache-spark/). 
 * [Difference between Throws in method signature and Throw Statements in Java](https://stackoverflow.com/questions/19193540/difference-between-throws-in-method-signature-and-throw-statements-in-java/19193847#19193847). This is a critical distinction we draw in [our Java course](/course/software-engineering-in-java/).     
 * [What is the purpose of Gradle?](https://stackoverflow.com/questions/20787986/what-is-the-purpose-of-gradle/20788406#20788406). This addresses some key aspects of continuous integration, which is now more critical than ever.
 * [Why is O(n) equal to O(2n)](https://stackoverflow.com/questions/19371489/why-is-on-equal-to-o2n/19371607#19371607). Because Big O still matters in real life.

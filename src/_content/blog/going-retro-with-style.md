@@ -90,7 +90,7 @@ share these thoughts with him. If leadership has the willingness to improve and 
 message is constructive and data-driven rather than disparaging and defensive, this approach will work.
 
 Then again, if leadership really is perfect and there are no metrics suggesting otherwise, then your team
-should consider signing up for some of our [courses](/course).
+should consider signing up for some of our [courses](/courses).
  
 
 

@@ -89,7 +89,7 @@ rigorous form of programming and resents its being supplanted decades ago by "in
 as FP has enjoyed a renaissance with the rise of "Big Data" and [reactive programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754). 
 It's true that the Go4 patterns derive from trial-and-error rather than [mathematical formalism](https://hseeberger.wordpress.com/2010/11/25/introduction-to-category-theory-in-scala/), 
 which means potentially they can be [misapplied](http://softwareengineering.stackexchange.com/questions/48811/what-design-patterns-are-the-worst-or-most-narrowly-defined) 
-or grow stale. Still, [professional software engineering](/blog/2016/04/02/the-art-of-software-engineering) 
+or grow stale. Still, [professional software engineering](/blog/the-art-of-software-engineering) 
 happens outside the classroom, and the market chose OOP over FP. We needed the Go4 patterns, however imperfect,
 to balance structure and flexibility in the countless applications that have been built over the last several decades--
 with countless more to come. To dismiss them out-of-hand like a [hipster](http://www.urbandictionary.com/define.php?term=hipster) 

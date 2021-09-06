@@ -60,7 +60,7 @@ continuous integration and delivery, and so on. None of that is free. Then facto
 [Product Owner](https://playbook.cio.gov/#play6), who is critical, and you start to see why the cost makes more sense.
 
 Simply put, a huge problem with the Internet outrage over the Randomizer is that people, many of whom should know better, 
-[can't distinguish programming from software engineering](/blog/Programming/Testing/Projects/Agile/2016/04/02/the-art-of-software-engineering).
+[can't distinguish programming from software engineering](/blog/the-art-of-software-engineering).
 
 Remember also that government isn’t a business. Despite the political rhetoric, it’s not supposed to be. Of course 
 government needs to be efficient with resources and accountable to the people just as business needs to be efficient with 
