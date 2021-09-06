@@ -57,7 +57,7 @@ With that, let me introduce you to Scala and Go.
 # Scala
 
 Scala is an object-oriented (OO) *and* functional programming language built for 
-the JVM (though [Scala Native](http://www.scala-native.org/en/v0.3.8/) is in the works). It emerged from academia at the 
+the JVM (though [Scala Native](https://scala-native.readthedocs.io/en/latest/) is in the works). It emerged from academia at the 
 [EPFL](https://scala.epfl.ch/) in Switzerland from the mind of Academic Director Martin Odersky, who sought to prove that 
 the two paradigms--OO for representing your domain and functional for its 
 [mathematical guarantees for working programs](/blog/2018/09/18/the-business-case-for-functional-programming/)--can blend
@@ -65,7 +65,8 @@ seamlessly to yield the best of both worlds. Scala also has an exquisite static 
 powerful safety net.  
 
 Operationally, as you might expect from a language borne from academia, Scala tooling can be problematic and compilation 
-can be slow, but type inference, a vast standard library, and other features of the language make you
+can be slow--particularly if you are not yet using Scala 3, which only recently emerged and is very slowly percolating
+through the ecosystem (Remember the Python 2 to Python 3 transition?). But type inference, a vast standard library, and the time-tested reliability of the JVM make you
 very productive once you get the hang of them. Performance varies with the JVM you're running, but regardless you do have to 
 contend with the size of compiled objects and the latency of garbage collection at runtime. When you want to experiment, 
 you can skip the ceremony of writing a class or test and instead use a command-line REPL, an online REPL called 
@@ -109,8 +110,7 @@ in turn to make it the language of
 DevOps--particularly in concert with 
 [Kubernetes](https://rancher.com/using-kubernetes-api-go-kubecon-2017-session-recap/), which also emerged from Google. 
 Go has expanded into other domains as well
-with the CMS [Hugo](https://gohugo.io/) (which was used to build this site) and the microservices framework 
-[Go kit](https://gokit.io/).
+with the CMS [Hugo](https://gohugo.io/) and the microservices framework [Go kit](https://gokit.io/).
 
 # Comparing Scala and Go
 
