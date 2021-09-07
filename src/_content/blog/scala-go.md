@@ -48,7 +48,7 @@ tasks we will consider so you can jump to the ones that interest you most:
 * [Concurrency and Parallelism](#concurrency-and-parallelism)
 * [Polymorphism](#polymorphism)
 
-Or you can skip straight to my [conclusion](#how-do-you-decide): which boils down to this: 
+Or you can skip straight to my [conclusion](#how-do-you-decide), which boils down to this: 
 
 > Despite the strong possibility that this opinion will subject me to ritual humiliation on social media, I would use Scala (or a similarly featured language like Kotlin) for microservices or bigger but Go both to replace any bash or Python scripts that are part of my continuous delivery pipeline and to create lambda functions, which are supposed to be lightweight, fast, and focused.
 
