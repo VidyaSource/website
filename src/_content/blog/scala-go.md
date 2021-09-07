@@ -1,7 +1,7 @@
 ---
 
 author: "Neil Chaudhuri"
-title: "Scala or Go: Tastes Great or Less Filling?"
+title: "Scala or Go: Who Wore It Better?"
 description: "Scala and Go are two of the most popular emerging languages. Which is best for your project?"
 image: "/img/blog/scala-go.png"
 date: 2021-09-01
