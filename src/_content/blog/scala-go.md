@@ -54,7 +54,7 @@ Or you can skip straight to my [conclusion](#how-do-you-decide), which boils dow
 
 With that, let me introduce you to Scala and Go.
 
-# Scala
+## Scala
 
 Scala is an object-oriented (OO) *and* functional programming language built for 
 the JVM (though [Scala Native](https://scala-native.readthedocs.io/en/latest/) is in the works). It emerged from academia at the 
@@ -75,7 +75,7 @@ you can skip the ceremony of writing a class or test and instead use a command-l
 also more general JVM build tools like Gradle and Maven.
 
 Scala became really popular with the advent of "Big Data" because 
-[functional programming lends itself so naturally to analytics](https://www.vidyasource.com/blog/2013/10/27/java-is-dysfunctional-with-big-data/),
+[functional programming lends itself so naturally to analytics](https://www.vidyasource.com/blog/java-is-dysfunctional-with-big-data),
 and the learning curve for 
 [modern LISPs like Haskell and Clojure](https://en.wikipedia.org/wiki/Lisp_(programming_language)#2000_to_present) 
 is too high for too many. Apache Spark is built in Scala, and when it got big, Scala got big. Since then Scala has
@@ -84,7 +84,7 @@ also become a popular language for other domains including
 [Play Framework](https://www.playframework.com/) and [Akka](https://akka.io/) and even the front end with 
 [Scala.js](https://www.scala-js.org/).  
 
-# Go
+## Go
 
 Go had an pragmatic mission from the start, so it was built with simplicity, minimalism, and performance in mind. Robert Griesemer, 
 Rob Pike, and Ken Thompson created Go at Google as an [alternative to C++](https://talks.golang.org/2015/gophercon-goevolution.slide#4)
@@ -112,7 +112,7 @@ DevOps--particularly in concert with
 Go has expanded into other domains as well
 with the CMS [Hugo](https://gohugo.io/) and the microservices framework [Go kit](https://gokit.io/).
 
-# Comparing Scala and Go
+## Comparing Scala and Go
 
 Let's look at how Scala and Go handle the kinds of real-world problems you will encounter every day.
 
@@ -122,7 +122,7 @@ the design philosophies of the respective languages. Of course
 [you are welcome to suggest improvements](/contact/) regardless. Also, the Scala code uses some of the revolutionary
 [Scala 3](https://docs.scala-lang.org/scala3/new-in-scala3.html) syntax and constructs.
 
-## Absent values
+### Absent values
 
 You have to deal with potentially absent values all the time like when database queries for single entities return no hits or 
 when you are maintaining backwards-compatible microservices. Typically, absent values are represented with `null`. Sir 
@@ -131,7 +131,7 @@ Tony Hoare called his invention of `null` to represent the absence of a value hi
 Handling absent values isn't glamorous, but if you do it poorly, you will suffer significant productivity loses. 
 
 
-### Scala
+#### Scala
 
 Although `null` exists in Scala as a JVM language, you should (almost) never interact with it directly. Instead, you should work with `Option`, a 
 [monad](https://stackoverflow.com/questions/44965/what-is-a-monad) designed specifically for this purpose. 
@@ -166,7 +166,7 @@ value because of the functional programming bias towards [immutability](/blog/bu
 If memory is at a premium, maybe this is a concern.
 
 
-### Go  
+#### Go  
 
 Go handles potentially absent values through completely different idioms. Functions can return multiple return values. 
 When a value is present, it's idiomatic to return the value and a `bool` value (named `ok` by convention) of `true`; otherwise, it returns 
@@ -212,12 +212,12 @@ if you need to compose multiple potentially absent values, you need to write mul
 The simplicity may well be worth it though.
 
 
-## Error Handling
+### Error Handling
 
 This is another inglorious task that is critical to good software engineering. As programs become big and complex, proper
 error handling is critical to diagnose bugs and move builds to production as quickly as possible. 
 
-### Scala
+#### Scala
 
 As you might imagine from a language that prizes on immutability and composability, Scala offers another monad,
 `Try`, for error handling. Analogous to `Option`, it compels
@@ -254,7 +254,7 @@ works on very different types as long as they follow the [monad laws](https://mi
 As before though, keep in mind that you are generating new objects with each transformation. This means you're paying 
 for the protection immutability affords you with memory.
 
-### Go
+#### Go
 
 Just as `Option` and `Try` in Scala are similar, handling absent values and handling errors in Go is similar. Here again Go 
 takes advantage of multiple return values, but rather than a value accompanied by a `bool`, idiomatic Go error handling features a value accompanied by
@@ -327,13 +327,13 @@ Finally, even though it doesn't appear in this example, `defer` [is a simple but
 in Go that executes a call at the end of a function no matter what happens--error or otherwise. You can use `defer` to 
 clean things up after an error in the same way you'd use `finally` in other languages. 
 
-## Collections
+### Collections
 
 I don't have to tell you that manipulating data from a database, a [stream](https://medium.com/stream-processing/what-is-stream-processing-1eadfca11b97),
 a REST request, or a host of other sources is a common task in application development. Languages that facilitate seamless
 transformation and aggregation of collections of data make your life a lot easier.
 
-### Scala
+#### Scala
 
 Scala has a vast library of collections--both immutable and mutable though immutable is preferred--each of which offers in turn
 a vast collection of higher-order functions that let you manipulate the collection in numerous ways. 
@@ -354,7 +354,7 @@ There isn't much to see. This is a credit to Scala's powerful abstractions. Stil
 code performs multiple *O(n)* traversals and with each one consumes memory to produce an entirely new collection--all but the first 
 and last of which are immediately thrown away. 
 
-### Go
+#### Go
 
 Go naturally takes a far more lightweight approach to collections. You will essentially only deal with [maps](https://blog.golang.org/go-maps-in-action) and
 [slices](https://blog.golang.org/go-slices-usage-and-internals), which are array views that enable memory-efficient
@@ -391,7 +391,7 @@ The code is more verbose than its Scala counterpart, but it is significantly mor
 single *O(n)* traversal with constant-time lookups in the map, and we maintain only two collections the entire time. The efficiency
 of Go collections and the simplicity of using them are among the best reasons to use Go in a project.
 
-## Concurrency and Parallelism
+### Concurrency and Parallelism
 
 Modern software applications have a lot more to do in a lot less time, so it's important for your code to take advantage
 of every bit of power your machines have. Modern applications demand modern languages that enable you to leverage every
@@ -406,7 +406,7 @@ on available resources. Concurrency *manages* a lot of things at once while *par
 Regardless, doing concurrency and parallelism well is a hard problem. Whatever path you choose, you need to understand the 
 nature of your tasks to achieve peak performance. Are they IO- or CPU-intensive? Are they intrinsically parallel?
 
-### Scala
+#### Scala
 
 As a core language in [reactive programming](https://www.reactivemanifesto.org/), Scala takes concurrency and parallelism very seriously. 
 It offers `Future` as its [core primitive](https://docs.scala-lang.org/overviews/core/futures.html) to facilitate concurrency and parallelism--in concert with an 
@@ -507,7 +507,7 @@ where you make the call impacts the desired parallelism definitely doesn't.
 It's important to profile your application to understand what's going on because there will almost be certainly occasions
 where things don't perform as you expect. You will need to diagnose if it is a code or resource problem.
 
-### Go
+#### Go
 
 Concurrency and parallelism lie at the heart of Go's mission as well, but of course it takes a totally different approach
 with primitives called [goroutines](https://tour.golang.org/concurrency/1) and [channels](https://gobyexample.com/channels). 
@@ -600,17 +600,17 @@ as always in concurrent programming. They save memory but you need to govern acc
 Concurrency and parallelism are always hard. You have to decide which language offers primitives that comport with your mental
 model of how things should work.  
 
-## Polymorphism
+### Polymorphism
 
 You know polymorphism. Far beyond trite `Animal`-`Dog`-`Cat` examples, the business value of polymorphism is to
 leverage abstractions to limit changes to your code even as the functionality of your application grows. By defining 
 new behavior leveraged through old abstractions, you can build software efficiently, and you don't have
 to work weekends when your client demands new features immediately.
 
-### Scala
+#### Scala
 
 As an OO language, Scala offers the familiar polymorphism that developers in Java, Ruby, and similar languages 
-have loved for years, but because it is a functional lanugage with a rich type system, it also offers 
+have loved for years, but because it is a functional language with a rich type system, it also offers 
 [typeclass polymorphism](https://medium.com/@sinisalouc/ad-hoc-polymorphism-and-type-classes-442ae22e5342), which enables
 completely unrelated types to exhibit polymorphic behavior. You can think of it as functional programming's take on the 
 [Open-Closed Principle](https://stackify.com/solid-design-open-closed-principle/) from OO. Perhaps most striking of all
@@ -697,7 +697,7 @@ Polymorphism in Scala is powerful and flexible because of its sophisticated type
 in clever ways but also to constrain the solution space. In other words, you can limit the number of ways a problem can be solved,
 which makes it harder to write bugs.     
 
-### Go
+#### Go
 
 Go is not an OO language. Structs have no capacity for inheritance by design--only composition via 
 "[embedding](https://golang.org/doc/effective_go.html#embedding)". Go is not quite functional either. However, polymorphic
