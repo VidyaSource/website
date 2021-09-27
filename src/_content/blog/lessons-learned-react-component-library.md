@@ -98,7 +98,7 @@ building our APIs in TypeScript is a huge help to library consumers on applicati
 on their end and code completion in their IDEs.
 
 Let me also mention that some of our TypeScript APIs require [ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) values
-to promote accessibility if we can't derive them ourselves.
+to promote accessibility if we can't derive them ourselves from other props.
 
 ### Chakra UI
 
@@ -117,14 +117,57 @@ Chakra UI also comes with some helpful hooks like [useDisclosure](https://chakra
 
 ## Engineering
 
+Of course the fun part is building a React component library. This post is long enough, so I can't get into every detail. But
+I do want to address some of the key aspects you might want to consider when you are building your own.
+
+### Build Tool
+
+We run our build with [Vite](https://vitejs.dev/). It may seem counterintuitive since Vite is the build tool for [Vue](https://vuejs.org/) 
+while our library is built with React, but Vite is actually agnostic. In fact, it amazed me how little configuration we needed.
+It basically just worked. 
 
 ### Component structure
 
-react fc
+Our components in TypeScript take three forms.
 
-use forward ref
+The simplest components look like this:
 
-### Vite
+~~~js
+export const TimePicker = (p: TimePickerProps) => {
+    ...
+}
+~~~
+
+Our `TimePicker` component has no children, so it's as straightforward as it gets. It's just a function!
+
+If the component has children, it still isn't too bad:
+
+~~~js
+export const Card: React.FC<CardProps> = p => {
+    ...
+}
+~~~
+
+The `FC` type (for `FunctionComponent`) includes a `children` prop implicitly. We don't necessarily need it. We could also
+declare it just as we do `TimePicker` but explicitly add a `children` prop of type `ReactNode` to `CardProps`. I prefer `FC`
+because it very clearly signifies that presence of `children` to library consumers and because the type parameter lets me enjoy
+some type inference. Notice how I don't have to specify the type of `p`.
+
+Still, not too bad, right?
+
+The last kind of component is a little complicated. It applies to form components. Our developers use [React Hook Form](https://react-hook-form.com/),
+and like every other form library I've used, it uses `ref`s to communicate with form components. This means the components in our library
+need to provide a way to accept a `ref` and delegate it to their children. 
+
+Most React engineers don't know this because they don't have to, but React provides a function for exactly this purpose called 
+`forwardRef`, and we use it like this:
+
+~~~js
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(p, ref) {
+    ...
+}
+~~~
+
 
 ### Directory Structure
 
