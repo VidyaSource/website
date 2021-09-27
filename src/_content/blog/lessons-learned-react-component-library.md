@@ -54,18 +54,19 @@ This is important as violations slow down our delivery cadence.
 
 ### Accessibility
 
-Related to consistency is accessibility, which is a first-class priority for our component library. The program is required by contract and 
+Related to consistency is accessibility, which is a first-class priority for our component library. Accessibility, commonly known as #a11y, 
+is more than just empowering the visually impaired. It means empowering people who experience difficulty with hearing, 
+motion, dexterity, or anything else. It means empowering *everyone*.
+
+The program is required by contract and 
 [by law](https://www.access-board.gov/law/ra.html#section-508-federal-electronic-and-information-technology) to produce UIs that 
-are accessible--specifically [508 compliance](https://www.section508.gov/tools/playbooks/technology-accessibility-playbook-intro/).
-
+are accessible--specifically [508 compliance](https://www.section508.gov/tools/playbooks/technology-accessibility-playbook-intro/). 
 That said, accessibility is far more than a professional obligation; it is a personal priority. It is very important to me that 
-everything I build is intuitive and usable by everyone. As accessibility experts know, this is far more than 
-
+everything I build is intuitive and usable by everyone. 
 
 I will elaborate on this shortly, but our component library is built for accessibility. Development teams
 can trust the accessibility of the individual components, and as I said before, focus on their own use cases. Of course, the 
-component library can only take them part of the way full accessibility, but it's nice not to have to start from 0.
-
+component library can only take them part of the way to full accessibility, but it's nice not to have to start from 0.
 
 ### Reusability 
 
@@ -115,6 +116,7 @@ a lot lighter.
 Chakra UI also comes with some helpful hooks like [useDisclosure](https://chakra-ui.com/docs/hooks/use-disclosure) that come in handy. 
 
 ## Engineering
+
 
 ### Component structure
 
