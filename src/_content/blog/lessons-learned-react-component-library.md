@@ -150,8 +150,8 @@ export const Card: React.FC<CardProps> = p => {
 
 The `FC` type (for `FunctionComponent`) includes a `children` prop implicitly. We don't necessarily need it. We could also
 declare it just as we do `TimePicker` but explicitly add a `children` prop of type `ReactNode` to `CardProps`. I prefer `FC`
-because it very clearly signifies that presence of `children` to library consumers and because the type parameter lets me enjoy
-some type inference. Notice how I don't have to specify the type of `p`.
+because it very clearly signifies the presence of `children` to library consumers and because the type parameter lets me enjoy
+some type inference. Notice how I don't have to specify the type of `p` because it's implicit from the type parameter `CardProps`. 
 
 Still, not too bad, right?
 
@@ -168,8 +168,20 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function 
 }
 ~~~
 
+Let me try to break this down.
+
+So `forwardRef` is a [higher-order function](https://www.oreilly.com/library/view/functional-programming-in/9781492048633/ch04.html), 
+a function that takes functions as parameters, as we have here with that `Button` function that renders the component, or returns a function.
+With `forwardRef` development teams can pass refs to the form components in our library, which we pass along to our function parameter and
+ultimately the rendered implementation. The type parameters to `forwardRef` help us get type safety and inference. The type
+of `p` is `ButtonProps`, and the `ref` will be hooked onto a `HTMLButtonElement`.
+
+In the end, it's a little complicated and a fair bit of ceremony, but the result is pretty simple--a form component that accepts
+a `ref` from the caller so form libraries can work with it as needed.
 
 ### Directory Structure
+
+
 
 ### TypeScript Config
 
@@ -212,7 +224,7 @@ sem ver
 
 ### Developed first by teams
 
-
+encapsulation of theme values
 
 
 ## Philosophy
