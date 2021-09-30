@@ -261,17 +261,23 @@ we don't use them. We bundle the component library completely "raw." We find thi
 and, in extremely rare instances, report bugs with specificity. When they run their own builds, their tooling will apply 
 minifying, tree shaking, and all the other processing for production on all their code and dependencies including our component library 
 
-### Static Analysis
+### Static Analysis and Code Formatting
 
+Like everyone else, we rely on eslint and Prettier, and we don't do anything particularly special. Still, I do want to mention a couple of things.
 
+First is `eslint-plugin-jsx-a11y`. We use [this eslint plugin](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
+to automate verification of the accessibility of our component library. It checks the JSX of our components for obvious
+violations. This is as far as we can go with automation, but we complement `eslint-plugin-jsx-a11y` with manual
+auditing in Storybook I will discuss shortly.
 
-We also make use of TypeScript config inheritance because we want to apply different transpilation rules at different stages.
+There might be something gnawing at the experienced engineers reading this. In the `tsconfig.json` above, we exclude our 
+stories and tests because they don't belong in the build. Still, we should
+apply the same quality standards to story code and test code as we do to production code. 
 
-We [extend](https://www.typescriptlang.org/tsconfig#extends)
-
-eslint
-a11y
-
+To do this, we [extend](https://www.typescriptlang.org/tsconfig#extends) `tsconfig.json` in a file called `tsconfig.eslint.json`,
+replacing the `exclude` field with an empty array, and configure `eslint` to use *that*. This tells `eslint` (and therefore Prettier)
+to include *everything* in the `src` folder in its analysis with identical TypeScript configuration. This means, for example, we can't cheat
+by using an implicit `any` in our stories or tests either.
 
 ### Storybook
 
