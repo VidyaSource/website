@@ -120,12 +120,6 @@ Chakra UI also comes with some helpful hooks like [useDisclosure](https://chakra
 Of course the fun part is building a React component library. This post is long enough, so I can't get into every detail. But
 I do want to address some of the key aspects you might want to consider when you are building your own.
 
-### Build Tool
-
-We run our build with [Vite](https://vitejs.dev/). It may seem counterintuitive since Vite is the build tool for [Vue](https://vuejs.org/) 
-while our library is built with React, but Vite is actually agnostic. In fact, it amazed me how little configuration we needed.
-It basically just worked. 
-
 ### Component structure
 
 Our components in TypeScript take three forms.
@@ -179,6 +173,11 @@ of `p` is `ButtonProps`, and the `ref` will be hooked onto a `HTMLButtonElement`
 In the end, it's a little complicated and a fair bit of ceremony, but the result is pretty simple--a form component that accepts
 a `ref` from the caller so form libraries can work with it as needed.
 
+Regardless of the way we design a particular component, we go out of our way to endow it with as little functionality as 
+possible. Component APIs offer props that enable library consumers on the development teams to supply behavior. For an obvious
+example, developers supply `onClick` behavior to the `Button` component. We have more complex components that need to maintain their own state,
+but we try to minimize that where possible. This provides a clean separation of concerns, which makes testing our components much easier. 
+
 ### Directory Structure
 
 When it comes to how you should lay out your source code, it comes down to your team's preference, but as I tweeted recently:
@@ -196,14 +195,77 @@ Our `Button.tsx` contains the `ButtonProps` interface, related types, and of cou
 how Chakra UI allows us to separate theming from behavior, so the colors, spacing, font family, icon sizes, focus behavior, and other button
 details defined by our design system are in `ButtonTheme.ts`, a different file in the same directory.
 
-Finally, although we could keep our tests and stories (more on these later) in the same directory, we prefer putting them
-in their own subdirectories.
+Finally, although we could keep our tests and stories (more on these later) in the same directory, we prefer organizing them
+in their own subdirectories. I guess I've seen too much Marie Kondo.
 
 ### TypeScript Config
 
-### No Minifying
+I come from a background in [statically and strongly typed programming languages](https://stackoverflow.com/questions/2690544/what-is-the-difference-between-a-strongly-typed-language-and-a-statically-typed) 
+like Java and Scala. While I understand longtime JavaScript engineers balk at types, I find types make me extremely productive. 
+As a result, our TypeScript config is very strict. In particular from our `tsconfig.json`:
+
+~~~json
+{
+...
+  "compilerOptions": {
+    ...
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    ...
+  },
+...
+}
+~~~
+
+As for building the library for application development teams, we scope our `tsconfig.json` this way:
+
+~~~json
+{
+...
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "**/__stories__/*",
+    "**/__test__/*"
+  ],
+...
+}
+~~~
+
+All our components, stories, and tests are in the `src` directory, but we only want the components when we build the library. 
+This is why we exclude the `__stories__` and `__test__` directories inside each component directory.
+
+
+
+### The Build
+
+We run our build with [Vite](https://vitejs.dev/). It may seem counterintuitive since Vite is the build tool for [Vue](https://vuejs.org/)
+while our library is built with React, but Vite is actually agnostic. In fact, it amazed me how little configuration we needed.
+It basically just worked. Our Vite config is almost identical to the [example in the documentation](https://vitejs.dev/guide/build.html#library-mode).
+Just like the example, our build produces two bundle formats--`es` and `umd`--and it works fast. 
+
+As you may know, TypeScript builds involve two phases, type checking and transpilation to JavaScript. Type checking by `tsc`,
+the TypeScript compiler, is *very* slow, so while it is very important, you should do it rarely. We only do it via
+the IDE in real time as we code or when we build the library for production--and break the build if type checking fails.
+
+Transpiling your TypeScript source code to JavaScript is faster than type checking, but so is reading Tolstoy. Transpiling
+with `tsc` or Babel is still not fast. However, [esbuild](https://esbuild.github.io/) is written in Go, a language built for speed,
+and Vite uses under the hood. Because we are transpiling constantly, its crucial that it be fast. Thanks to esbuild,
+Vite does exactly what we need.'
+
+One last thing to note about the build. Although Vite of course provides minifying and other production readiness capabilities,
+we don't use them. We bundle the component library completely "raw." We find this helps developers debug their applications
+and, in extremely rare instances, report bugs with specificity. When they run their own builds, their tooling will apply 
+minifying, tree shaking, and all the other processing for production on all their code and dependencies including our component library 
 
 ### Lint
+
+We also make use of TypeScript config inheritance because we want to apply different transpilation rules at different stages.
+
+We [extend](https://www.typescriptlang.org/tsconfig#extends)
 
 eslint
 a11y
