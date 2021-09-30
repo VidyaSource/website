@@ -261,7 +261,9 @@ we don't use them. We bundle the component library completely "raw." We find thi
 and, in extremely rare instances, report bugs with specificity. When they run their own builds, their tooling will apply 
 minifying, tree shaking, and all the other processing for production on all their code and dependencies including our component library 
 
-### Lint
+### Static Analysis
+
+
 
 We also make use of TypeScript config inheritance because we want to apply different transpilation rules at different stages.
 
