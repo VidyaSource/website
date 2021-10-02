@@ -21,11 +21,11 @@ have joined countless other organizations and businesses in building component l
 podcasts, and YouTube tutorials. All that's left is a [Ken Burns documentary](https://kenburns.com/the-films/) on the subject.
 
 In fact, I am a software architect and senior engineer, and I currently lead the development of our own React component library that will be the basis for all the UIs for a 
-prominent US government agency.
+prominent US government agency. I want to share with you my lessons learned from the ups and downs of the process.
 
 So what's the big deal with component libraries?
 
-## The Value of a Component Library
+## The Design System
 
 It doesn't start with a component library; it starts with a design system. The Nielsen Norman Group defines design systems 
 [this way](https://www.nngroup.com/articles/design-systems-101/):
@@ -46,7 +46,17 @@ can we overcome common pitfalls like poor [contrast ratios](https://developer.mo
 Stuff like that. We use the language of [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) as a common
 nomenclature to describe the goals of the design system.
 
-All of this is independent of implementation details. These are concepts. You can choose to implement these concepts
+The challenge for us, and probably the hardest part of building a component library for us, is the tooling. Partly because of the preferences of the UX team and because 
+of constraints on our development environment due to the sensitive nature of our work, we have not been able to 
+streamline automation for versioning UX wireframes or translating them into artifacts engineers can use to build. As a result,
+we work with wireframes that are cumbersome to understand, and it's a manual process to track consistency between the design system and 
+the component library as both evolve.
+
+I never said it was pretty, but it isn't all bad either.
+
+## The Value of a Component Library
+
+The design system is a set of core principles independent of implementation details. You can choose to implement these principles
 and make them real for UI developers with whatever technology you choose.
 
 For us, that's React. Our React components generate a lot of value for us.
