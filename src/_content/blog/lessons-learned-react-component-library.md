@@ -37,6 +37,15 @@ the nomenclature every team should use in communications to break down silos and
 There are basic rules about colors, typography, spacing, and so on. All of these core principles become the basis for larger
 components--explicit, intuitive ones like buttons and date pickers and subtler ones like grid systems.
 
+Our UX team develops and maintains our design system. Like software, it evolves; it's versioned; and it's collaborative. There are conversations
+among the UX designers with me and other architects and engineers on the program about what makes sense, what is feasible.
+Are nested dropdowns necessary? Do we have time to create our own perfect `Datepicker`? 
+How do we feel about the concept of disabled buttons, and if we think they make sense, how
+can we overcome common pitfalls like poor [contrast ratios](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast)?
+
+Stuff like that. We use the language of [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) as a common
+nomenclature to describe the goals of the design system.
+
 All of this is independent of implementation details. These are concepts. You can choose to implement these concepts
 and make them real for UI developers with whatever technology you choose.
 
@@ -287,12 +296,12 @@ tests
 
 a11y
 
+
+Manual review by UX team
+
 ## Testing
 
 ### React Testing Library
-
-### Manual review by UX team
-
 
 
 
@@ -302,7 +311,6 @@ teams channel
 
 ### UX team interaction
 
-atoomic design
 
 published to nexus and npm install
 
@@ -318,6 +326,17 @@ encapsulation of theme values
 ### Dumb components
 
 ### Balancing flexibility with opinion
+
+
+semantic versioning
+
+c1ds version
+
+import alias for name collisions
+
+index.d.ts
+
+typecheck script
 
 
 
