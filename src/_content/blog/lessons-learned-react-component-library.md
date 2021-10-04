@@ -158,6 +158,8 @@ published to nexus and npm install
 
 sem ver
 
+semantic components
+
 ### Developed first by teams
 
 
@@ -173,7 +175,28 @@ I do want to address some of the key aspects you might want to consider when you
 ### Workflow
 
 When we first began building the component library, we needed to move quickly because development teams were waiting on us 
-to start building their UIs. Our management tasked me and several developers to get something done in a few sprints.  
+to start building their UIs. Our management tasked me and several developers to get something done in a few sprints at nearly
+a full time commitment.
+
+We got the initial design system specification from the UX team and got to work. After those first few sprints, we had built enough components
+to allow teams to get going. The problem is that all of us resumed our normal duties with no time allocation for the library. This
+meant that whenever the UX team designed new components or developers found bugs in existing components, there was a bottleneck
+because no one was dedicated to upgrading the library. I and others got to it when we could, but the absence of a dedicated team
+was a problem.
+
+Another problem is the initial lack of communication among the UX, developers, and me. In their zeal for creativity and creating
+modern UX for our services, far too often they provided wireframes to developers featuring components that weren't in the library. 
+Development teams assumed they *were* in the library and estimated accordingly. As you might expect, they were unhappy when 
+they discovered the components didn't exist, which impacted their ability to deliver. They let me know it, and frankly they
+had every right to be unhappy. I knew we had to improve our process.
+
+To that end, we made a couple of changes. We established a Microsoft Teams channel to encourage communication by eliminating
+the ceremony of meetings and even E-mails. We also decided that development teams will build new components initially, and if
+other teams will benefit from them, the library will absorb them, with tweaks as needed to APIs or implementations, to support broader 
+applicability. Then the team that built a component first will replace their implementation with the library's. While this means
+teams have to devote more time to developing components, it's transparent, and there is no bottleneck. 
+
+This is an evolving workflow. There is always room for improvement.
 
 ### Component structure
 
