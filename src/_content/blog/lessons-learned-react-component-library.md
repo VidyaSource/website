@@ -115,7 +115,7 @@ As I mentioned, we have built our component library on React, which is what we r
 government customer, the safe choice given its backing by Facebook, [its market penetration](https://insights.stackoverflow.com/survey/2021#section-most-popular-technologies-web-frameworks), 
 and [its popularity](https://insights.stackoverflow.com/survey/2021#most-loved-dreaded-and-wanted-webframe-want).
 
-But React is the easy part. Let's look at other parts of the component stack.
+But React is the easy part. Let's look at other parts of the component stack as it stands now.
 
 ### TypeScript
 
@@ -170,14 +170,10 @@ sem ver
 Of course the fun part is building a React component library. This post is long enough, so I can't get into every detail. But
 I do want to address some of the key aspects you might want to consider when you are building your own.
 
-### Component Philosophy
+### Workflow
 
-We go out of our way to endow our components with as little functionality as possible. Component APIs offer props that enable library 
-consumers on the development teams to supply behavior. For an obvious example, developers supply `onClick` behavior to the 
-`Button` component. We have more complex components that need to maintain their own state,
-but we try to minimize that where possible. This provides a clean separation of concerns, which makes testing our components much easier.
-
-We also find ourselves walking a fine line between imposing enough opinion 
+When we first began building the component library, we needed to move quickly because development teams were waiting on us 
+to start building their UIs. Our management tasked me and several developers to get something done in a few sprints.  
 
 ### Component structure
 
