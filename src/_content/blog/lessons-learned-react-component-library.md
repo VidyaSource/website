@@ -96,6 +96,12 @@ APIs need to impose enough opinion so that consumers don't violate the design sy
 to support a wide range of use cases. For our `Button` component, that is easy enough. For layout components like 
 `Card` and `Page`, it's tougher. The reusability that results has made individual teams and the entire program so much more productive.
 
+We also go out of our way to endow our components with as little functionality as possible. Component APIs offer props that enable library
+consumers on the development teams to supply behavior. For an obvious example, developers supply `onClick` behavior to the
+`Button` component. We have more complex components that need to maintain their own state,
+but we try to minimize that where possible. This provides a clean separation of concerns, which makes testing our components much easier,
+and anyone who has been in the game long enough knows that strong testability makes for strong reusability.
+
 ### Encapsulation
 
 There will be more about this shortly, but we do not build our components from scratch. Rather, we customize existing open source
@@ -139,13 +145,39 @@ Chakra UI also comes with some helpful hooks like [useDisclosure](https://chakra
 If you use Chakra UI for your own component library, you will probably need some alias imports to deal with name collisions.
 For example, we call our button components, to no one's surprise, `Button`, but so does Chakra UI. So we do this:
 
-`import { Button as ChakraButton } from "@chakra-ui/react"`
+~~~js
+import { Button as ChakraButton } from "@chakra-ui/react"
+~~~
+
+## Engineering Workflow
+
+teams channel
+
+
+published to nexus and npm install
+
+sem ver
+
+### Developed first by teams
+
+
+
+
 
 
 ## Engineering
 
 Of course the fun part is building a React component library. This post is long enough, so I can't get into every detail. But
 I do want to address some of the key aspects you might want to consider when you are building your own.
+
+### Component Philosophy
+
+We go out of our way to endow our components with as little functionality as possible. Component APIs offer props that enable library 
+consumers on the development teams to supply behavior. For an obvious example, developers supply `onClick` behavior to the 
+`Button` component. We have more complex components that need to maintain their own state,
+but we try to minimize that where possible. This provides a clean separation of concerns, which makes testing our components much easier.
+
+We also find ourselves walking a fine line between imposing enough opinion 
 
 ### Component structure
 
@@ -199,11 +231,6 @@ of `p` is `ButtonProps`, and the `ref` will be hooked onto a `HTMLButtonElement`
 
 In the end, it's a little complicated and a fair bit of ceremony, but the result is pretty simple--a form component that accepts
 a `ref` from the caller so form libraries can work with it as needed.
-
-Regardless of the way we design a particular component, we go out of our way to endow it with as little functionality as 
-possible. Component APIs offer props that enable library consumers on the development teams to supply behavior. For an obvious
-example, developers supply `onClick` behavior to the `Button` component. We have more complex components that need to maintain their own state,
-but we try to minimize that where possible. This provides a clean separation of concerns, which makes testing our components much easier. 
 
 ### Directory Structure
 
@@ -315,61 +342,33 @@ Vite does exactly what we need.
 
 Our production build includes [declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html) 
 for each component and an `index.d.ts` file enumerating all components. These improve DX by enabling developers' IDEs to perform
-fast code completion.
+fast code completion. We also provide the [theme file](https://chakra-ui.com/docs/theming/customize-theme) we use for our own components
+so that developers can apply the same theme to theirs.
 
 One last thing to note about the build. Although Vite of course provides minifying and other production readiness capabilities,
 we don't use them. We bundle the component library completely "raw." We find this helps developers debug their applications
 and, in extremely rare instances, report bugs with specificity. When they run their own builds, their tooling will apply
-minifying, tree shaking, and all the other processing for production on all their code and dependencies including our component library
+minifying, tree shaking, and all the other processing for production on all their code and dependencies including our component library.
 
+## Testing
 
 ### Storybook
 
+Manual review by UX team
 interactive
 
 tests
 
 a11y
 
-
-Manual review by UX team
-
-## Testing
-
 ### React Testing Library
 
-
-
-## Engineering Workflow
-
-teams channel
-
-### UX team interaction
-
-
-published to nexus and npm install
-
-sem ver
-
-### Developed first by teams
-
-encapsulation of theme values
-
-
-## Philosophy
-
-### Dumb components
-
-### Balancing flexibility with opinion
 
 
 semantic versioning
 
 c1ds version
 
-index.d.ts
-
-typecheck script
 
 
 
