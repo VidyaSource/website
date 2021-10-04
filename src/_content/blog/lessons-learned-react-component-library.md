@@ -46,10 +46,12 @@ can we overcome common pitfalls like poor [contrast ratios](https://developer.mo
 Stuff like that. We use the language of [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) as a common
 nomenclature to describe the goals of the design system.
 
-The challenge for us, and probably the hardest part of building a component library for us, is the tooling. Partly because of the preferences of the UX team and because 
+The challenge, and probably the hardest part of building a component library for us, is the tooling. Partly because of the preferences of the UX team and because 
 of constraints on our development environment due to the sensitive nature of our work, we have not been able to 
 streamline automation for versioning UX wireframes or translating them into artifacts engineers can use to build. As a result,
-we work with wireframes that are cumbersome to understand, and it's a manual process to track consistency between the design system and 
+we work with wireframes that are cumbersome to understand. In order to even view them, we either need to install the tool on our 
+machines, which takes more licenses and imposes a burden, or we need to wade through literally hundreds of static asset files and view them
+with a browser plugin. Neither is an optimal experience. Beyond that, it's a manual process to track consistency between the design system and 
 the component library as both evolve.
 
 I never said it was pretty, but it isn't all bad either.
@@ -133,6 +135,12 @@ their functionality. This separation of concerns makes it easier to reason about
 a lot lighter.
 
 Chakra UI also comes with some helpful hooks like [useDisclosure](https://chakra-ui.com/docs/hooks/use-disclosure) that come in handy. 
+
+If you use Chakra UI for your own component library, you will probably need some alias imports to deal with name collisions.
+For example, we call our button components, to no one's surprise, `Button`, but so does Chakra UI. So we do this:
+
+`import { Button as ChakraButton } from "@chakra-ui/react"`
+
 
 ## Engineering
 
@@ -257,29 +265,6 @@ As for building the library for application development teams, we scope our `tsc
 All our components, stories, and tests are in the `src` directory, but we only want the components when we build the library. 
 This is why we exclude the `__stories__` and `__test__` directories inside each component directory.
 
-
-
-### The Build
-
-We run our build with [Vite](https://vitejs.dev/). It may seem counterintuitive since Vite is the build tool for [Vue](https://vuejs.org/)
-while our library is built with React, but Vite is actually agnostic. In fact, it amazed me how little configuration we needed.
-It basically just worked. Our Vite config is almost identical to the [example in the documentation](https://vitejs.dev/guide/build.html#library-mode).
-Just like the example, our build produces two bundle formats--`es` and `umd`--and it works fast. 
-
-As you may know, TypeScript builds involve two phases, type checking and transpilation to JavaScript. Type checking by `tsc`,
-the TypeScript compiler, is *very* slow, so while it is very important, you should do it rarely. We only do it via
-the IDE in real time as we code or when we build the library for production--and break the build if type checking fails.
-
-Transpiling your TypeScript source code to JavaScript is faster than type checking, but so is reading Tolstoy. Transpiling
-with `tsc` or Babel is still not fast. However, [esbuild](https://esbuild.github.io/) is written in Go, a language built for speed,
-and Vite uses under the hood. Because we are transpiling constantly, its crucial that it be fast. Thanks to esbuild,
-Vite does exactly what we need.'
-
-One last thing to note about the build. Although Vite of course provides minifying and other production readiness capabilities,
-we don't use them. We bundle the component library completely "raw." We find this helps developers debug their applications
-and, in extremely rare instances, report bugs with specificity. When they run their own builds, their tooling will apply 
-minifying, tree shaking, and all the other processing for production on all their code and dependencies including our component library 
-
 ### Static Analysis and Code Formatting
 
 Like everyone else, we rely on eslint and Prettier, and we don't do anything particularly special. Still, I do want to mention a couple of things.
@@ -290,13 +275,53 @@ violations. This is as far as we can go with automation, but we complement `esli
 auditing in Storybook I will discuss shortly.
 
 There might be something gnawing at the experienced engineers reading this. In the `tsconfig.json` above, we exclude our 
-stories and tests because they don't belong in the build. Still, we should
-apply the same quality standards to story code and test code as we do to production code. 
+stories and tests because they don't belong in the build. Still, you know we should
+apply the same quality standards to story code and test code as we do to production code. Code is code.
 
 To do this, we [extend](https://www.typescriptlang.org/tsconfig#extends) `tsconfig.json` in a file called `tsconfig.eslint.json`,
 replacing the `exclude` field with an empty array, and configure `eslint` to use *that*. This tells `eslint` (and therefore Prettier)
 to include *everything* in the `src` folder in its analysis with identical TypeScript configuration. This means, for example, we can't cheat
 by using an implicit `any` in our stories or tests either.
+
+### Builds
+
+We run our builds with [Vite](https://vitejs.dev/). That may seem counterintuitive since Vite is the build tool for [Vue](https://vuejs.org/)
+while our library is built with React, but Vite is actually agnostic. In fact, it amazed me how little configuration we needed.
+It basically just worked. Our Vite config is almost identical to the [example in the documentation](https://vitejs.dev/guide/build.html#library-mode).
+Just like the example, our build produces two bundle formats--`es` and `umd`--and it works fast.
+
+As you may know, TypeScript features two phases, type checking and transpilation to JavaScript. Type checking by `tsc`,
+the TypeScript compiler, is *very* slow, so while it is very important, you should do it rarely. We only do it via
+the IDE in real time as we code or when we build the library for production--and break the build if type checking fails.
+
+We have a dedicated `typecheck` script in our `package.json` that looks like this:
+
+~~~json
+{
+  "scripts": {
+    ...
+    "typecheck": "tsc --p tsconfig.eslint.json --skipLibCheck --sourceRoot src --noEmit",
+    ...
+  }
+}
+~~~
+
+Note that we use `tsconfig.eslint.json` to typecheck everything.
+
+Meanwhile, transpiling your TypeScript source code to JavaScript is faster than type checking, but so is reading Tolstoy. Transpiling
+with `tsc` or Babel is still not fast. However, the transpiler [esbuild](https://esbuild.github.io/) is written in Go, a language built for speed,
+and Vite uses it under the hood. Because we are transpiling constantly to see what's happening in Storybook, its crucial that the process be fast. Thanks to esbuild,
+Vite does exactly what we need.
+
+Our production build includes [declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html) 
+for each component and an `index.d.ts` file enumerating all components. These improve DX by enabling developers' IDEs to perform
+fast code completion.
+
+One last thing to note about the build. Although Vite of course provides minifying and other production readiness capabilities,
+we don't use them. We bundle the component library completely "raw." We find this helps developers debug their applications
+and, in extremely rare instances, report bugs with specificity. When they run their own builds, their tooling will apply
+minifying, tree shaking, and all the other processing for production on all their code and dependencies including our component library
+
 
 ### Storybook
 
@@ -341,8 +366,6 @@ encapsulation of theme values
 semantic versioning
 
 c1ds version
-
-import alias for name collisions
 
 index.d.ts
 
