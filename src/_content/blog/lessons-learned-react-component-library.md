@@ -86,8 +86,13 @@ That said, accessibility is far more than a professional obligation; it is a per
 everything I build is intuitive and usable by everyone. 
 
 I will elaborate on this shortly, but our component library is built for accessibility. Development teams
-can trust the accessibility of the individual components, and as I said before, focus on their own use cases. Of course, the 
-component library can only take them part of the way to full accessibility, but it's nice not to have to start from 0.
+can trust the accessibility of the individual components, and as I said before, focus on their own use cases. Of course you
+are probably thinking in terms of accessible dropdowns and autocompletes and datepickers, which we have, but we also
+provide helper [Semantic HTML](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html) components.
+For example, the library features `Section`, which represents the `section` [HTML element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section) 
+as you would imagine, and `SectionGrid`, which is a `section` element endowed with our design system grid system.
+
+Of course, the component library can only take developers part of the way to full accessibility, but it's nice not to have to start from 0.
 
 ### Reusability 
 
@@ -148,24 +153,6 @@ For example, we call our button components, to no one's surprise, `Button`, but 
 ~~~js
 import { Button as ChakraButton } from "@chakra-ui/react"
 ~~~
-
-## Engineering Workflow
-
-teams channel
-
-
-published to nexus and npm install
-
-sem ver
-
-semantic components
-
-### Developed first by teams
-
-
-
-
-
 
 ## Engineering
 
@@ -359,10 +346,11 @@ with `tsc` or Babel is still not fast. However, the transpiler [esbuild](https:/
 and Vite uses it under the hood. Because we are transpiling constantly to see what's happening in Storybook, its crucial that the process be fast. Thanks to esbuild,
 Vite does exactly what we need.
 
-Our production build includes [declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html) 
+Our production build, versioned with [Semantic Versioning](https://semver.org/), includes [declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html) 
 for each component and an `index.d.ts` file enumerating all components. These improve DX by enabling developers' IDEs to perform
 fast code completion. We also provide the [theme file](https://chakra-ui.com/docs/theming/customize-theme) we use for our own components
-so that developers can apply the same theme to theirs.
+so that developers can apply the same theme to theirs. Our CICD pipeline publishes the library to a Nexus repository, which
+allows appropriately configured `npm` installations on developer machines to fetch the library with a conventional `npm install`.
 
 One last thing to note about the build. Although Vite of course provides minifying and other production readiness capabilities,
 we don't use them. We bundle the component library completely "raw." We find this helps developers debug their applications
