@@ -351,6 +351,8 @@ for each component and an `index.d.ts` file enumerating all components. These im
 fast code completion. We also provide the [theme file](https://chakra-ui.com/docs/theming/customize-theme) we use for our own components
 so that developers can apply the same theme to theirs. Our CICD pipeline publishes the library to a Nexus repository, which
 allows appropriately configured `npm` installations on developer machines to fetch the library with a conventional `npm install`.
+The `package.json` file accompanying the library contains all the peer dependencies they will need to use the library so `npm`
+can grab them, and for convenience it also contains the version of the design system it is built for developers to track.
 
 One last thing to note about the build. Although Vite of course provides minifying and other production readiness capabilities,
 we don't use them. We bundle the component library completely "raw." We find this helps developers debug their applications
@@ -372,9 +374,6 @@ a11y
 
 
 
-semantic versioning
-
-c1ds version
 
 
 
