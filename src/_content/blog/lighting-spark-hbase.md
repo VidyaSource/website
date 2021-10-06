@@ -101,7 +101,7 @@ rdd
 
 Once we instantiate the `[SparkContext](http://spark.incubator.apache.org/docs/latest/api/core/index.html#org.apache.spark.SparkContext)`
 for the local machine, we write an anonymous function to create an
-`[HBaseConfiguration](http://hbase.apache.org/apidocs/org/apache/hadoop/hbase/HBaseConfiguration.html)`, which will enable
+[HBaseConfiguration](http://hbase.apache.org/apidocs/org/apache/hadoop/hbase/HBaseConfiguration.html), which will enable
 us to add the HBase configuration files to any Hadoop ones we have as well as the name of the table
 we want to read. That’s an HBase thing--not a Spark thing.
 
@@ -134,8 +134,7 @@ If that is unclear, let's summarize the mapping operations this way:
 
 * Load an `RDD` of (`ImmutableBytesWritable`, `Result`) tuples from the table
 * Transform previous into an `RDD` of *Result*'s
-* Transform previous into an `RDD` of collections of `KeyValue`s (where the latest one is what we want). Collection of collections?
-[Oh no!](http://www.youtube.com/watch?v=Xpc0s9FsA1Q)
+* Transform previous into an `RDD` of collections of `KeyValue`s (where the latest one is what we want). Collection of collections? [Oh no!](http://www.youtube.com/watch?v=Xpc0s9FsA1Q)
 * Transform previous into an RDD of `byte[]` (binary representations of the current data)
 
 So using Spark, we can read the contents of an entire HBase table and perform one transformation after another--maybe
