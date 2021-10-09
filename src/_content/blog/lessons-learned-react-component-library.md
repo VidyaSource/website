@@ -457,17 +457,18 @@ form components with React Hook Form, and this exposed issues we had with our `r
 lot of composition testing until we need to [reproduce a scenario to fix a bug](https://www.vidyasource.com/blog/code-coverage-is-killing-you) 
 (and prove we've fixed it eventually).
 
-We also make use of `storybook-addon-a11y` to test for accessb
+Finally, we make heavy use of [storybook-addon-a11y](https://storybook.js.org/addons/@storybook/addon-a11y) to test for accessibility.
+As you can see from another post by [Varun Cachar](https://twitter.com/winkerVSbecks), who is definitely earning his paycheck,
+[Storybook offers a lot of features for accessibility testing](https://storybook.js.org/blog/accessibility-testing-with-storybook/).
+We make use of all of them. As I mentioned before, even though we do our best with `jsx-a11y` in the build and Storybook 
+visually to test for accessibility, it is still incumbent upon teams to add [@axe-core/react](https://www.npmjs.com/package/@axe-core/react)
+to *their* builds and perform their own visual tests in order to feel as confident as we can that we are providing the 
+best possible experience to all our users.
 
-Manual review by UX team
-
-interactive
-
-tests
-
-a11y
 
 ### React Testing Library
+
+tests from sb
 
 code coverage issue
 
