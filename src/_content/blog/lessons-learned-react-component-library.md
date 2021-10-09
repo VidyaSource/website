@@ -457,13 +457,21 @@ form components with React Hook Form, and this exposed issues we had with our `r
 lot of composition testing until we need to [reproduce a scenario to fix a bug](https://www.vidyasource.com/blog/code-coverage-is-killing-you) 
 (and prove we've fixed it eventually).
 
-Finally, we make heavy use of [storybook-addon-a11y](https://storybook.js.org/addons/@storybook/addon-a11y) to test for accessibility.
+We make heavy use of [storybook-addon-a11y](https://storybook.js.org/addons/@storybook/addon-a11y) to test for accessibility.
 As you can see from another post by [Varun Cachar](https://twitter.com/winkerVSbecks), who is definitely earning his paycheck,
 [Storybook offers a lot of features for accessibility testing](https://storybook.js.org/blog/accessibility-testing-with-storybook/).
 We make use of all of them. As I mentioned before, even though we do our best with `jsx-a11y` in the build and Storybook 
 visually to test for accessibility, it is still incumbent upon teams to add [@axe-core/react](https://www.npmjs.com/package/@axe-core/react)
 to *their* builds and perform their own visual tests in order to feel as confident as we can that we are providing the 
 best possible experience to all our users.
+
+Finally, while Storybook has been invaluable for us and I recommend it strongly, I would be remiss if I didn't mention 
+some gotchas. Storybook uses a lot of the same libraries we all use for theming, Markdown, and other things. When there are
+library conflicts between your version and theirs, bad things happen. For example, we got hit with the same conflict 
+on [Emotion](https://emotion.sh/docs/introduction) as this [issue on GitHub](https://github.com/storybookjs/storybook/issues/15879). 
+To its credit, the Storybook team releases frequently. If nothing else, make sure you use the same versions of Storybook and all its addons
+and that you upgrade as soon as you when updates are available. 
+
 
 
 ### React Testing Library
