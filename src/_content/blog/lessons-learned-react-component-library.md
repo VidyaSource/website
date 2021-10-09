@@ -349,7 +349,7 @@ Vite does exactly what we need.
 Our production build, versioned with [Semantic Versioning](https://semver.org/), includes [declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html) 
 for each component and an `index.d.ts` file enumerating all components. These improve developer experience (DX) by enabling developers' IDEs to perform
 fast code completion. We also provide the [theme file](https://chakra-ui.com/docs/theming/customize-theme) we use for our own components
-so that developers can apply the same theme to theirs. Our CI/CD pipeline publishes the library to a Nexus repository, which
+so that developers can apply the same theme to theirs. Our CI/CD pipeline publishes the library to a primate NPM registry, which
 allows appropriately configured `npm` installations on developer machines to fetch the library with a conventional `npm install`.
 The `package.json` file accompanying the library contains all the peer dependencies they will need to use the library so `npm`
 can grab them, and for convenience it also contains the version of the design system it is built for developers to track.
@@ -411,7 +411,7 @@ export const decorators = [Story => <ChakraProvider theme={theme}>{Story()}</Cha
 ~~~
 
 During testing, we also use Storybook in multiple ways. For example, because we take a mobile first approach to our components, 
-which matters for [organisms](https://bradfrost.com/blog/post/atomic-web-design/#organisms) in particular, we configure custom 
+which matters for [organisms](https://bradfrost.com/blog/post/atomic-web-design/#organisms) in particular like modals, we configure custom 
 breakpoints like this in `preview.jsx`:
 
 ~~~js
@@ -442,9 +442,25 @@ export const parameters = {
 }
 ~~~
 
+I mentioned a CI/CD pipeline that builds the library and publishes it to a private registry. It turns out the pipeline also publishes 
+our component Storybook to an [Nginx container](https://hub.docker.com/_/nginx) so that the UX team can conduct visual testing on the
+components, and the ability to toggle among viewport sizes is extremely helpful. 
+
+It's also helpful for development teams who use our components to interact with them. Thanks to
+[Storybook Controls](https://storybook.js.org/docs/react/essentials/controls), they can configure components themselves
+to see what happens. Thanks to [Storybook Docs](https://storybook.js.org/addons/@storybook/addon-docs), they can see the code
+and API props that generated each story. So Storybook provides a profound documentation benefit throughout the program.
+
+We also use Storybook for [composition testing](https://storybook.js.org/blog/how-to-actually-test-uis/) occasionally though
+not as often as the Storybook team may suggest. For example, we have stories that demonstrate how to integrate our 
+form components with React Hook Form, and this exposed issues we had with our `ref`s. Generally though, we don't do a 
+lot of composition testing until we need to [reproduce a scenario to fix a bug](https://www.vidyasource.com/blog/code-coverage-is-killing-you) 
+(and prove we've fixed it eventually).
+
+We also make use of `storybook-addon-a11y` to test for accessb
 
 Manual review by UX team
-TDD
+
 interactive
 
 tests
