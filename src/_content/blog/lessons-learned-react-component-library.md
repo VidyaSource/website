@@ -472,7 +472,32 @@ on [Emotion](https://emotion.sh/docs/introduction) as this [issue on GitHub](htt
 To its credit, the Storybook team releases frequently. If nothing else, make sure you use the same versions of Storybook and all its addons
 and that you upgrade as soon as you when updates are available. 
 
+Storybook is also well aware of the "DivOps" revolution in JavaScript build tooling [and is positioning itself accordingly](https://storybook.js.org/blog/storybook-for-webpack-5/).
+This is exciting since Webpack had a good run but feels more and more like the past, and we wanted to use Vite with Storybook.
+We installed [storybook-builder-vite](https://storybook.js.org/blog/storybook-for-vite/) knowing it's raw and experimental
+to see how it would work for us. Overall, it makes our Storybook builds fast just as we hoped. Still, when you consider
+`storybook-builder-vite` is raw, community-led by great engineers who have already done so much with their limited time and
+can't address every issue, and the general brittleness of Storybook I mentioned, your mileage may vary. Here is our
+Vite-related Storybook configuration in `main.js`:
 
+~~~js
+module.exports = {
+	...
+	core: {
+		builder: "storybook-builder-vite"
+	},
+	viteFinal: async config => {
+		return {
+			...config,
+			plugins: ...,
+			optimizeDeps: {
+				...config.optimizeDeps,
+				entries: [`${path.relative(config.root, path.resolve(__dirname, "../src"))}/**/__stories__/*.stories.@(ts|tsx)`],
+			},
+		}
+	},
+}
+~~~
 
 ### React Testing Library
 
