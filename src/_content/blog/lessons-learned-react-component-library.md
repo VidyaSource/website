@@ -347,12 +347,33 @@ and Vite uses it under the hood. Because we are transpiling constantly to see wh
 Vite does exactly what we need.
 
 Our production build, versioned with [Semantic Versioning](https://semver.org/), includes [declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html) 
-for each component and an `index.d.ts` file enumerating all components. These improve DX by enabling developers' IDEs to perform
+for each component and an `index.d.ts` file enumerating all components. These improve developer experience (DX) by enabling developers' IDEs to perform
 fast code completion. We also provide the [theme file](https://chakra-ui.com/docs/theming/customize-theme) we use for our own components
-so that developers can apply the same theme to theirs. Our CICD pipeline publishes the library to a Nexus repository, which
+so that developers can apply the same theme to theirs. Our CI/CD pipeline publishes the library to a Nexus repository, which
 allows appropriately configured `npm` installations on developer machines to fetch the library with a conventional `npm install`.
 The `package.json` file accompanying the library contains all the peer dependencies they will need to use the library so `npm`
 can grab them, and for convenience it also contains the version of the design system it is built for developers to track.
+
+It also contains configurations to define which files to package in the library and how consumers can import modules:
+
+~~~json
+{
+...  
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/index.d.ts",
+  "main": "./dist/components.umd.js",
+  "module": "./dist/components.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/components.es.js",
+      "require": "./dist/components.umd.js"
+    }
+  }
+...
+}
+~~~  
 
 One last thing to note about the build. Although Vite of course provides minifying and other production readiness capabilities,
 we don't use them. We bundle the component library completely "raw." We find this helps developers debug their applications
@@ -361,9 +382,69 @@ minifying, tree shaking, and all the other processing for production on all thei
 
 ## Testing
 
+As I mentioned before, we limit the functionality of our components to the bare minimum necessary to add value. Still, 
+components are code, and our consumers have expectations of our code. This means we need to test our components as much
+as we can.
+
+Testing is a controversial topic. On Tech Twitter, engineers are more than happy to let you know why you are wrong and stupid
+to test your code in a different way than they do. I can only describe what works for us and why we think so while also
+stipulating that our methods are subject to change as we get better at this.
+
+Our approach is heavily inspired by this [Storybook blog post](https://storybook.js.org/blog/how-to-actually-test-uis/). In it,
+[Varun Cachar](https://twitter.com/winkerVSbecks) describes different types of testing, when each is appropriate, and which tools
+make sense for which types based on the experiences of several large-scale engineering teams. 
+
 ### Storybook
 
+Storybook is crucial to the development and testing of the component library for us and to its documentation for our users.
+
+During development, we use it in a couple of ways. If the component is simple, then it's nice to have your code and Storybook
+side by side and watch your changes render as you make them with hot reload. On the other hand, when we aren't clear on
+what the API for a component should be, it's nice to write a few [stories](https://storybook.js.org/docs/react/get-started/whats-a-story) 
+to design the DX for it. Experienced engineers might recognize this approach as analogous to 
+[Test-Driven Development (TDD)](https://www.agilealliance.org/glossary/tdd/).
+
+We apply our design system custom theme in Chakra UI to every story in `preview.jsx`:
+
+~~~js
+export const decorators = [Story => <ChakraProvider theme={theme}>{Story()}</ChakraProvider>]
+~~~
+
+During testing, we also use Storybook in multiple ways. For example, because we take a mobile first approach to our components, 
+which matters for [organisms](https://bradfrost.com/blog/post/atomic-web-design/#organisms) in particular, we configure custom 
+breakpoints like this in `preview.jsx`:
+
+~~~js
+export const parameters = {
+	viewport: {
+		viewports: {
+			xs: {
+				name: "XS",
+				styles: {
+					height: "568px",
+					width: "320px",
+				},
+				type: "mobile",
+			},
+			sm: {
+				name: "SM",
+				styles: {
+					height: "896px",
+					width: "480px",
+				},
+				type: "mobile",
+			},
+			md: {...},
+			lg: {...},
+			xl: {...},
+		defaultViewport: "xs",
+	},
+}
+~~~
+
+
 Manual review by UX team
+TDD
 interactive
 
 tests
@@ -371,6 +452,8 @@ tests
 a11y
 
 ### React Testing Library
+
+code coverage issue
 
 
 
