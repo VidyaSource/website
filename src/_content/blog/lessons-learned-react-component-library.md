@@ -476,7 +476,7 @@ Storybook is also well aware of the "DivOps" revolution in JavaScript build tool
 This is exciting since Webpack had a good run but feels more and more like the past, and we wanted to use Vite with Storybook.
 We installed [storybook-builder-vite](https://storybook.js.org/blog/storybook-for-vite/) knowing it's raw and experimental
 to see how it would work for us. Overall, it makes our Storybook builds fast just as we hoped. Still, when you consider
-`storybook-builder-vite` is raw, community-led by great engineers who have already done so much with their limited time and
+`storybook-builder-vite` is raw, community-led by great engineers who have already given the community so much with their limited time and
 can't address every issue, and the general brittleness of Storybook I mentioned, your mileage may vary. Here is our
 Vite-related Storybook configuration in `main.js`:
 
