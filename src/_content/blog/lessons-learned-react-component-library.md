@@ -531,7 +531,10 @@ Aside from all that, our tests work exactly as you would expect if you know Reac
 
 ---
 
-
+I know this is a lot and might have been slightly more entertaining as an audiobook. Still, I hope I conveyed the 
+value in design systems and component libraries and the lessons we learned in project management, communications,
+accessibility, engineering, and testing to build something that will impact the lives of millions. I hope you can
+do the same...but better.
 
 
 
