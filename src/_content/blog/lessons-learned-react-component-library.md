@@ -1,8 +1,8 @@
 ---
 author: "Neil Chaudhuri"
 title: "Lessons Learned from Building a React Component Library with TypeScript"
-date: 2021-09-28
-description: "Building a component library "
+date: 2021-10-10
+description: "Lessons learned, and not only about tech, from building a React component library for government"
 image: "/img/blog/react.png"
 tags: 
 - React
@@ -21,7 +21,8 @@ have joined countless other organizations and businesses in building component l
 podcasts, and YouTube tutorials. All that's left is a [Ken Burns documentary](https://kenburns.com/the-films/) on the subject.
 
 In fact, I am a software architect and senior engineer, and I currently lead the development of our own React component library that will be the basis for all the UIs for a 
-prominent US government agency. I want to share with you my lessons learned from the ups and downs of the process.
+prominent US government agency. I want to share with you my lessons learned in project management, communications,
+accessibility, engineering, and testing to build something that will impact the lives of millions and the ups and downs of it all.
 
 So what's the big deal with component libraries?
 
