@@ -501,9 +501,39 @@ module.exports = {
 
 ### React Testing Library
 
-tests from sb
+If you have read any of my posts on testing, you know that I think our industry writ large gets testing wrong. We test some 
+things too much. We test other things too little. We don't always know what the purpose of our tests. And worst of all,
+because of perverse incentives, [we write tests to check a box](https://www.vidyasource.com/blog/code-coverage-is-killing-you).
 
-code coverage issue
+I mentioned earlier that it has been a priority to endow our components with as little behavior as possible. Aside from the fact
+simpler code is easier to maintain and understand, this approach means fewer surprises for our consumers and less for us to test.
+
+Or so I thought.
+
+Our program has a mandatory minimum of 80% code coverage for our applications, and for reasons that don't make a lot of
+sense to me, that also applies to the component library. In my view, only components that maintain internal state offer
+the complexity that demands the ceremony of formal tests beyond Storybook, but alas, I don't make the rules.
+
+React Testing Library has become the *de facto* standard for [interaction testing](https://storybook.js.org/blog/how-to-actually-test-uis/)
+in React, and of course we would be using it for our own tests. But how could we write tests as quickly as possible?
+
+If you have written tests in any programming language, you understand the concept of "[test fixtures](https://stackoverflow.com/questions/12071344/what-are-fixtures-in-programming),"
+the setup for your tests. For us, that means test fixtures are simply components configured with different props.
+
+But isn't that exactly what stories in Storybook are?
+
+Storybook offers a feature I love--the ability to import stories into tests written with React Testing Library as fixtures using
+[@storybook/testing-react](https://storybook.js.org/addons/@storybook/testing-react). Without it, we would need to duplicate 
+the same code as stories in Storybook and fixtures in tests. The autocompletion is great too thanks to the 
+TypeScript support built into `@storybook/testing-react`.
+
+Aside from all that, our tests work exactly as you would expect if you know React Testing Library.
+
+---
+
+
+
+
 
 
 
