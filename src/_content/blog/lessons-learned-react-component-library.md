@@ -1,7 +1,7 @@
 ---
 author: "Neil Chaudhuri"
 title: "Lessons Learned from Building a React Component Library with TypeScript"
-date: 2021-10-10
+date: 2021-10-11
 description: "Lessons learned, and not only about tech, from building a React component library for government"
 image: "/img/blog/react.png"
 tags: 
