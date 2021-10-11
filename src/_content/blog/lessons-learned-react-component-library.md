@@ -20,9 +20,9 @@ Component libraries are all the rage. Shopify, Salesforce, IBM, and even the [Un
 have joined countless other organizations and businesses in building component libraries. They're the subject of blog posts,
 podcasts, and YouTube tutorials. All that's left is a [Ken Burns documentary](https://kenburns.com/the-films/) on the subject.
 
-In fact, I am a software architect and senior engineer, and I currently lead the development of our own React component library that will be the basis for all the UIs for a 
+In fact, I am a software architect and senior engineer, and I currently lead the development of a React component library that will be the basis for the UIs for a 
 prominent US government agency. I want to share with you my lessons learned in project management, communications,
-accessibility, engineering, and testing to build something that will impact the lives of millions and the ups and downs of it all.
+accessibility, engineering, and testing to build something that will impact the lives of millions. And the ups and downs of it all.
 
 So what's the big deal with component libraries?
 
@@ -33,26 +33,26 @@ It doesn't start with a component library; it starts with a design system. The N
 
 > A design system is a complete set of standards intended to manage design at scale using reusable components and patterns.
 
-A design system enumerates the standards and practices that define the premier UX for consumers of your brand. It expresses
+A design system enumerates the standards and practices that comprise the premier UX for consumers of your brand. It expresses
 the nomenclature every team should use in communications to break down silos and avoid the impulse from [Conway's Law](https://www.melconway.com/Home/Conways_Law.html).
 There are basic rules about colors, typography, spacing, and so on. All of these core principles become the basis for larger
-components--explicit, intuitive ones like buttons and date pickers and subtler ones like grid systems.
+components--explicit ones like buttons and date pickers and subtler ones like grid systems.
 
 Our UX team develops and maintains our design system. Like software, it evolves; it's versioned; and it's collaborative. There are conversations
-among the UX designers with me and other architects and engineers on the program about what makes sense, what is feasible.
-Are nested dropdowns necessary? Do we have time to create our own perfect `Datepicker`? 
-How do we feel about the concept of disabled buttons, and if we think they make sense, how
+among the UX designers with me and other architects and engineers on the program about what makes sense and what is feasible.
+Are nested dropdowns necessary? Do we have time to create our own perfect `Datepicker`? Or do we try to customize something open source?
+How do we feel about disabled buttons, and if we think they make sense, how
 can we overcome common pitfalls like poor [contrast ratios](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast)?
 
-Stuff like that. We use the language of [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) as a common
-nomenclature to describe the goals of the design system.
+Stuff like that. We use the language of [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/), which deconstructs
+web interfaces into entities ranging from "atoms" to "pages," as a common nomenclature to describe the goals of the design system.
 
-The challenge, and probably the hardest part of building a component library for us, is the tooling. Partly because of the preferences of the UX team and because 
+The challenge, and probably the hardest part of building a component library for us, is the tooling. Partly because of the preferences of the UX team and partly because 
 of constraints on our development environment due to the sensitive nature of our work, we have not been able to 
 streamline automation for versioning UX wireframes or translating them into artifacts engineers can use to build. As a result,
 we work with wireframes that are cumbersome to understand. In order to even view them, we either need to install the tool on our 
-machines, which takes more licenses and imposes a burden, or we need to wade through literally hundreds of static asset files and view them
-with a browser plugin. Neither is an optimal experience. Beyond that, it's a manual process to track consistency between the design system and 
+machines, which costs more licenses and imposes a burden on developer experience (DX), or we need to wade through literally hundreds of static asset files
+with a custom browser plugin. Neither is an optimal experience. Beyond that, it's a manual process to track consistency between the design system and 
 the component library as both evolve.
 
 I never said it was pretty, but it isn't all bad either.
@@ -60,38 +60,38 @@ I never said it was pretty, but it isn't all bad either.
 ## The Value of a Component Library
 
 The design system is a set of core principles independent of implementation details. You can choose to implement these principles
-and make them real for UI developers with whatever technology you choose.
+and make them real for UI engineers with whatever technology you choose.
 
-For us, that's React. Our React components generate a lot of value for us.
+For us, that's React. Our React components generate a lot of value for the program.
 
 ### Consistency
 
 Our component library enforces our design system across our development teams. Every UI using the components all but
-guarantees they will be consistent with our brand and provide our users the best experience. Developers can feel confident they are using
+guarantees they will be consistent with our brand and provide our users the best, most intuitive experience. Developers can feel confident they are using
 components vetted with the UX team, which frees them up to work on the specific use cases of their services rather than cross-cutting concerns like
 consistency with the design system.
 
-The library also maximizes the likelihood that our UIs pass visual inspection by our UX team when it is time to deliver to our customer.
-This is important as violations slow down our delivery cadence.
+The library also maximizes the likelihood that our UIs pass visual testing by our UX team. This is important as violations slow down our delivery cadence
+and ability to get feedback.
 
 ### Accessibility
 
-Related to consistency is accessibility, which is a first-class priority for our component library. Accessibility, commonly known as #a11y, 
-is more than just empowering the visually impaired. It means empowering people who experience difficulty with hearing, 
+Related to consistency is accessibility, which is a first-class priority for our component library. Accessibility, commonly known as [#a11y](https://www.a11yproject.com/), 
+is more than just empowering the visually impaired. It also means empowering people who experience difficulty with hearing, 
 motion, dexterity, or anything else. It means empowering *everyone*.
 
 The program is required by contract and 
 [by law](https://www.access-board.gov/law/ra.html#section-508-federal-electronic-and-information-technology) to produce UIs that 
 are accessible--specifically [508 compliance](https://www.section508.gov/tools/playbooks/technology-accessibility-playbook-intro/). 
-That said, accessibility is far more than a professional obligation; it is a personal priority. It is very important to me that 
-everything I build is intuitive and usable by everyone. 
+That said, accessibility is far more than a professional obligation; it is my personal priority. It is very important to me that 
+everything I build is intuitive for every user. 
 
 I will elaborate on this shortly, but our component library is built for accessibility. Development teams
 can trust the accessibility of the individual components, and as I said before, focus on their own use cases. Of course you
 are probably thinking in terms of accessible dropdowns and autocompletes and datepickers, which we have, but we also
 provide helper [Semantic HTML](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html) components.
 For example, the library features `Section`, which represents the `section` [HTML element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section) 
-as you would imagine, and `SectionGrid`, which is a `section` element endowed with our design system grid system.
+as you would imagine, and `SectionGrid`, which is a `section` element endowed with our design system grid.
 
 Of course, the component library can only take developers part of the way to full accessibility, but it's nice not to have to start from 0.
 
@@ -117,11 +117,11 @@ but if we decide to swap it out for a different one, our consumers will be none 
 
 ## Component Stack
 
-As I mentioned, we have built our component library on React, which is what we recommended but is also, for our risk-averse 
+As I mentioned, we build our component library with React, which is what we recommended but is also, for our risk-averse 
 government customer, the safe choice given its backing by Facebook, [its market penetration](https://insights.stackoverflow.com/survey/2021#section-most-popular-technologies-web-frameworks), 
 and [its popularity](https://insights.stackoverflow.com/survey/2021#most-loved-dreaded-and-wanted-webframe-want).
 
-But React is the easy part. Let's look at other parts of the component stack as it stands now.
+But React is the easy part. Let's look at other parts of the component stack.
 
 ### TypeScript
 
