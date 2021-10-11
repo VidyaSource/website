@@ -24,6 +24,10 @@
         @apply text-red dark:text-red-light text-2xl md:text-3xl mt-8;
     }
 
+    h4 {
+        @apply text-red dark:text-red-light text-xl md:text-2xl mt-8;
+    }
+
     blockquote p {
         @apply text-green-dark dark:text-green-light italic border-l-8 px-8 my-8;
     }
