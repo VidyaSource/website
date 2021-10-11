@@ -125,7 +125,7 @@ But React is the easy part. Let's look at other parts of the component stack.
 
 ### TypeScript
 
-When we started building the component library, I felt TypeScript is essential for two reasons. By enforcing type safety 
+When we started building the component library, I considered TypeScript essential for two reasons. By enforcing type safety 
 at build time, we catch bugs much faster, which from a project management standpoint is much cheaper. More importantly,
 building our APIs in TypeScript is a huge help to library consumers on application development teams by facilitating type checking
 on their end and code completion in their IDEs.
@@ -142,8 +142,8 @@ components built with TypeScript. As you can probably infer, Chakra UI is an ins
 component library on top of it.
 
 Chakra UI also offers a powerful [theme customization API](https://chakra-ui.com/docs/theming/customize-theme) we leverage heavily
-to apply the principles of our design system to Chakra components in dedicated theme files that separate the styling of *our* components from
-their functionality. This separation of concerns makes it easier to reason about our code and makes the files themselves 
+to apply the principles of our design system to Chakra components via dedicated theme files that separate the styling from
+functionality. This separation of concerns makes it easier to reason about our code and makes the files themselves 
 a lot lighter.
 
 Chakra UI also comes with some helpful hooks like [useDisclosure](https://chakra-ui.com/docs/hooks/use-disclosure) that come in handy. 
@@ -155,10 +155,12 @@ For example, we call our button components, to no one's surprise, `Button`, but 
 import { Button as ChakraButton } from "@chakra-ui/react"
 ~~~
 
+
+
 ## Engineering
 
 Of course the fun part is building a React component library. This post is long enough, so I can't get into every detail. But
-I do want to address some of the key aspects you might want to consider when you are building your own.
+I do want to address some of the key aspects you might want to consider when you build your own.
 
 ### Workflow
 
@@ -172,17 +174,18 @@ meant that whenever the UX team designed new components or developers found bugs
 because no one was dedicated to upgrading the library. I and others got to it when we could, but the absence of a dedicated team
 was a problem.
 
-Another problem is the initial lack of communication among the UX, developers, and me. In their zeal for creativity and creating
-modern UX for our services, far too often they provided wireframes to developers featuring components that weren't in the library. 
+Another problem is the initial lack of communication within the UX team itself and among the UX team, developers, and me. In their creative zeal, 
+far too often they provided wireframes to some developers inconsistent with wireframes provided to others, 
+or they provided wireframes featuring components that weren't in the library. 
 Development teams assumed they *were* in the library and estimated accordingly. As you might expect, they were unhappy when 
-they discovered the components didn't exist, which impacted their ability to deliver. They let me know it, and frankly they
+they discovered the components didn't exist, which impacted their ability to deliver on schedule. They let me know it, and frankly they
 had every right to be unhappy. I knew we had to improve our process.
 
-To that end, we made a couple of changes. We established a Microsoft Teams channel to encourage communication by eliminating
+To that end, we made some changes. We established a Microsoft Teams channel to encourage communication by eliminating
 the ceremony of meetings and even E-mails. We also decided that development teams will build new components initially, and if
-other teams will benefit from them, the library will absorb them, with tweaks as needed to APIs or implementations, to support broader 
-applicability. Then the team that built a component first will replace their implementation with the library's. While this means
-teams have to devote more time to developing components, it's transparent, and there is no bottleneck. 
+other teams will benefit, the library will absorb them, with tweaks as needed to APIs or implementations, to support broader 
+applicability across the program. Then the team that built the component first will replace their implementation with 
+the library's when ready. While this means teams have to devote more time to developing components, it's transparent, and there is no bottleneck. 
 
 This is an evolving workflow. There is always room for improvement.
 
@@ -208,15 +211,15 @@ export const Card: React.FC<CardProps> = p => {
 }
 ~~~
 
-The `FC` type (for `FunctionComponent`) includes a `children` prop implicitly. We don't necessarily need it. We could also
+React's `FC` type (for `FunctionComponent`) includes a `children` prop implicitly. We could also
 declare it just as we do `TimePicker` but explicitly add a `children` prop of type `ReactNode` to `CardProps`. I prefer `FC`
 because it very clearly signifies the presence of `children` to library consumers and because the type parameter lets me enjoy
 some type inference. Notice how I don't have to specify the type of `p` because it's implicit from the type parameter `CardProps`. 
 
 Still, not too bad, right?
 
-The last kind of component is a little complicated. It applies to form components. Our developers use [React Hook Form](https://react-hook-form.com/),
-and like every other form library I've used, it uses `ref`s to communicate with form components. This means the components in our library
+The last kind of component is a little complicated--form components. Our developers use [React Hook Form](https://react-hook-form.com/),
+and like every other form library I've used, it uses `ref`s to maintain form state. This means our components
 need to provide a way to accept a `ref` and delegate it to their children. 
 
 Most React engineers don't know this because they don't have to, but React provides a function for exactly this purpose called 
