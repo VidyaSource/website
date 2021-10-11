@@ -14,6 +14,7 @@ tags:
 - React Testing Library
 - Storybook
 - Open source
+- Government
 ---
 
 Component libraries are all the rage. Shopify, Salesforce, IBM, and even the [United States government](https://designsystem.digital.gov/components/overview/)
@@ -233,10 +234,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function 
 
 Let me try to break this down.
 
-So `forwardRef` is a [higher-order function](https://www.oreilly.com/library/view/functional-programming-in/9781492048633/ch04.html), 
-a function that takes functions as parameters, as we have here with that `Button` function that renders the component, or returns a function.
-With `forwardRef` development teams can pass refs to the form components in our library, which we pass along to our function parameter and
-ultimately the rendered implementation. The type parameters to `forwardRef` help us get type safety and inference. The type
+A [higher-order function](https://www.oreilly.com/library/view/functional-programming-in/9781492048633/ch04.html) is
+a function that takes functions as parameters or returns a function. Here `forwardRef` takes that `Button` function that renders the component as a parameter.
+Thanks to `forwardRef`, development teams can pass refs to the form components in our library, which we pass along though that function parameter
+to our rendered implementation. The type parameters to `forwardRef` provide type safety and inference. The type
 of `p` is `ButtonProps`, and the `ref` will be hooked onto a `HTMLButtonElement`.
 
 In the end, it's a little complicated and a fair bit of ceremony, but the result is pretty simple--a form component that accepts
@@ -244,13 +245,13 @@ a `ref` from the caller so form libraries can work with it as needed.
 
 ### Directory Structure
 
-When it comes to how you should lay out your source code, it comes down to your team's preference, but as I tweeted recently:
+When considering how to lay out your source code, it comes down to your team's preference, but as I tweeted recently:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">There is a lot of commentary on how we should lay out source code in <a href="https://twitter.com/hashtag/React?src=hash&amp;ref_src=twsrc%5Etfw">#React</a>. If you take two &quot;things&quot; (functions, classes, <a href="https://twitter.com/hashtag/TypeScript?src=hash&amp;ref_src=twsrc%5Etfw">#TypeScript</a> interfaces, etc.), the higher the frequency that changing one changes the other, the closer they should be together</p>&mdash; Neil Chaudhuri (@RealNeilC) <a href="https://twitter.com/RealNeilC/status/1443309713584689154?ref_src=twsrc%5Etfw">September 29, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-But what does that really mean in practice?
+What does that really mean in practice?
 
-Simple. When it comes to our component library, this means putting stuff dedicated to a particular component in the same 
+Simple. When it comes to our component library, this means organizing code dedicated to a particular component in the same 
 directory and even in some cases the same file. This is how we do it at a high level.
 
 <img alt="CRMSDC Leaders and Legends Badge" src="/img/blog/rcl-button.png" width="356px" height="206px" />
@@ -351,12 +352,12 @@ and Vite uses it under the hood. Because we are transpiling constantly to see wh
 Vite does exactly what we need.
 
 Our production build, versioned with [Semantic Versioning](https://semver.org/), includes [declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html) 
-for each component and an `index.d.ts` file enumerating all components. These improve developer experience (DX) by enabling developers' IDEs to perform
+for each component and an `index.d.ts` file enumerating all components. These improve DX by enabling developers' IDEs to perform
 fast code completion. We also provide the [theme file](https://chakra-ui.com/docs/theming/customize-theme) we use for our own components
 so that developers can apply the same theme to theirs. Our CI/CD pipeline publishes the library to a primate NPM registry, which
 allows appropriately configured `npm` installations on developer machines to fetch the library with a conventional `npm install`.
 The `package.json` file accompanying the library contains all the peer dependencies they will need to use the library so `npm`
-can grab them, and for convenience it also contains the version of the design system it is built for developers to track.
+can grab them, and for convenience it also contains the version of the design system it is built with for developers to track.
 
 It also contains configurations to define which files to package in the library and how consumers can import modules:
 
@@ -381,8 +382,8 @@ It also contains configurations to define which files to package in the library 
 
 One last thing to note about the build. Although Vite of course provides minifying and other production readiness capabilities,
 we don't use them. We bundle the component library completely "raw." We find this helps developers debug their applications
-and, in extremely rare instances, report bugs with specificity. When they run their own builds, their tooling will apply
-minifying, tree shaking, and all the other processing for production on all their code and dependencies including our component library.
+and report bugs (in those rare cases we make mistakes) with specificity. When they run their own builds, their tooling will apply
+minifying, tree shaking, and all other production processing to all their code and dependencies including the component library.
 
 ## Testing
 
@@ -390,7 +391,7 @@ As I mentioned before, we limit the functionality of our components to the bare 
 components are code, and our consumers have expectations of our code. This means we need to test our components as much
 as we can.
 
-Testing is a controversial topic. On Tech Twitter, engineers are more than happy to let you know why you are wrong and stupid
+Testing is a controversial topic. On Tech Twitter, engineers are more than happy to let you know why you are wrong
 to test your code in a different way than they do. I can only describe what works for us and why we think so while also
 stipulating that our methods are subject to change as we get better at this.
 
@@ -400,12 +401,12 @@ make sense for which types based on the experiences of several large-scale engin
 
 ### Storybook
 
-Storybook is crucial to the development and testing of the component library for us and to its documentation for our users.
+Storybook is crucial to the development and testing of the component library for us, and it's indispensable documentation for our users.
 
 During development, we use it in a couple of ways. If the component is simple, then it's nice to have your code and Storybook
 side by side and watch your changes render as you make them with hot reload. On the other hand, when we aren't clear on
 what the API for a component should be, it's nice to write a few [stories](https://storybook.js.org/docs/react/get-started/whats-a-story) 
-to design the DX for it. Experienced engineers might recognize this approach as analogous to 
+to work out the DX for it. Experienced engineers might recognize this approach as analogous to 
 [Test-Driven Development (TDD)](https://www.agilealliance.org/glossary/tdd/).
 
 We apply our design system custom theme in Chakra UI to every story in `preview.jsx`:
@@ -453,10 +454,10 @@ components, and the ability to toggle among viewport sizes is extremely helpful.
 It's also helpful for development teams who use our components to interact with them. Thanks to
 [Storybook Controls](https://storybook.js.org/docs/react/essentials/controls), they can configure components themselves
 to see what happens. Thanks to [Storybook Docs](https://storybook.js.org/addons/@storybook/addon-docs), they can see the code
-and API props that generated each story. So Storybook provides a profound documentation benefit throughout the program.
+and API props that generate each story. So Storybook provides a profound documentation benefit throughout the program.
 
 We also use Storybook for [composition testing](https://storybook.js.org/blog/how-to-actually-test-uis/) occasionally though
-not as often as the Storybook team may suggest. For example, we have stories that demonstrate how to integrate our 
+not as often as the Storybook team may prefer. For example, we have stories that demonstrate how to integrate our 
 form components with React Hook Form, and this exposed issues we had with our `ref`s. Generally though, we don't do a 
 lot of composition testing until we need to [reproduce a scenario to fix a bug](https://www.vidyasource.com/blog/code-coverage-is-killing-you) 
 (and prove we've fixed it eventually).
@@ -473,12 +474,12 @@ Finally, while Storybook has been invaluable for us and I recommend it strongly,
 some gotchas. Storybook uses a lot of the same libraries we all use for theming, Markdown, and other things. When there are
 library conflicts between your version and theirs, bad things happen. For example, we got hit with the same conflict 
 on [Emotion](https://emotion.sh/docs/introduction) as this [issue on GitHub](https://github.com/storybookjs/storybook/issues/15879). 
-To its credit, the Storybook team releases frequently. If nothing else, make sure you use the same versions of Storybook and all its addons
-and that you upgrade as soon as you when updates are available. 
+To its credit, the Storybook team releases frequently. If nothing else, make sure you use identical versions of Storybook and all its addons
+and that you upgrade as soon as possible when updates are available. 
 
 Storybook is also well aware of the "DivOps" revolution in JavaScript build tooling [and is positioning itself accordingly](https://storybook.js.org/blog/storybook-for-webpack-5/).
 This is exciting since Webpack had a good run but feels more and more like the past, and we wanted to use Vite with Storybook.
-We installed [storybook-builder-vite](https://storybook.js.org/blog/storybook-for-vite/) knowing it's raw and experimental
+We installed [storybook-builder-vite](https://storybook.js.org/blog/storybook-for-vite/) knowing it's experimental
 to see how it would work for us. Overall, it makes our Storybook builds fast just as we hoped. Still, when you consider
 `storybook-builder-vite` is raw, community-led by great engineers who have already given the community so much with their limited time and
 can't address every issue, and the general brittleness of Storybook I mentioned, your mileage may vary. Here is our
@@ -506,7 +507,7 @@ module.exports = {
 ### React Testing Library
 
 If you have read any of my posts on testing, you know that I think our industry writ large gets testing wrong. We test some 
-things too much. We test other things too little. We don't always know what the purpose of our tests. And worst of all,
+things too much. We test other things too little. We don't always know the purpose of our tests. And worst of all,
 because of perverse incentives, [we write tests to check a box](https://www.vidyasource.com/blog/code-coverage-is-killing-you).
 
 I mentioned earlier that it has been a priority to endow our components with as little behavior as possible. Aside from the fact
@@ -519,7 +520,8 @@ sense to me, that also applies to the component library. In my view, only compon
 the complexity that demands the ceremony of formal tests beyond Storybook, but alas, I don't make the rules.
 
 React Testing Library has become the *de facto* standard for [interaction testing](https://storybook.js.org/blog/how-to-actually-test-uis/)
-in React, and of course we would be using it for our own tests. But how could we write tests as quickly as possible?
+in React, and of course we use it for our own tests. But how could we write tests as quickly as possible to limit the impact
+of the code coverage standard?
 
 If you have written tests in any programming language, you understand the concept of "[test fixtures](https://stackoverflow.com/questions/12071344/what-are-fixtures-in-programming),"
 the setup for your tests. For us, that means test fixtures are simply components configured with different props.
@@ -535,10 +537,12 @@ Aside from all that, our tests work exactly as you would expect if you know Reac
 
 ---
 
-I know this is a lot and might have been slightly more entertaining as an audiobook. Still, I hope I conveyed the 
+I know this is a lot, and it might have been slightly more entertaining as an audiobook. Still, I hope I conveyed the 
 value in design systems and component libraries and the lessons we learned in project management, communications,
 accessibility, engineering, and testing to build something that will impact the lives of millions. I hope you can
 do the same...but better.
+
+Now go take a nap. You earned it.
 
 
 
