@@ -254,7 +254,7 @@ What does that really mean in practice?
 Simple. When it comes to our component library, this means organizing code dedicated to a particular component in the same 
 directory and even in some cases the same file. This is how we do it at a high level.
 
-<img alt="CRMSDC Leaders and Legends Badge" src="/img/blog/rcl-button.png" width="356px" height="206px" />
+<img alt="Button component directory layout" src="/img/blog/rcl-button.png" width="356px" height="206px" />
 
 Our `Button.tsx` contains the `ButtonProps` interface, related types, and of course the component itself. Meanwhile, I love
 how Chakra UI allows us to separate theming from behavior, so the colors, spacing, font family, icon sizes, focus behavior, and other button
