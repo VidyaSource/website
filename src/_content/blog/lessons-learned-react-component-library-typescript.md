@@ -354,7 +354,7 @@ Vite does exactly what we need.
 Our production build, versioned with [Semantic Versioning](https://semver.org/), includes [declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html) 
 for each component and an `index.d.ts` file enumerating all components. These improve DX by enabling developers' IDEs to perform
 fast code completion. We also provide the [theme file](https://chakra-ui.com/docs/theming/customize-theme) we use for our own components
-so that developers can apply the same theme to theirs. Our CI/CD pipeline publishes the library to a primate NPM registry, which
+so that developers can apply the same theme to theirs. Our CI/CD pipeline publishes the library to a private NPM registry, which
 allows appropriately configured `npm` installations on developer machines to fetch the library with a conventional `npm install`.
 The `package.json` file accompanying the library contains all the peer dependencies they will need to use the library so `npm`
 can grab them, and for convenience it also contains the version of the design system it is built with for developers to track.
