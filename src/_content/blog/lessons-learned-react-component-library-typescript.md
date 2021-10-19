@@ -67,10 +67,10 @@ For us, that's React. Our React components generate a lot of value for the progr
 
 ### Consistency
 
-Our component library enforces our design system across our development teams. Every UI using the components all but
-guarantees they will be consistent with our brand and provide our users the best, most intuitive experience. Developers can feel confident they are using
-components vetted with the UX team, which frees them up to work on the specific use cases of their services rather than cross-cutting concerns like
-consistency with the design system.
+Our component library enforces our design system across our development teams. Using the components all but guarantees 
+a UI will be consistent with our brand and provide our users the best, most intuitive experience. Developers can feel 
+confident they are using components vetted with the UX team, which frees them up to work on the specific use cases of their 
+services rather than cross-cutting concerns like consistency with the design system.
 
 The library also maximizes the likelihood that our UIs pass visual testing by our UX team. This is important as violations slow down our delivery cadence
 and ability to get feedback.
@@ -126,10 +126,10 @@ But React is the easy part. Let's look at other parts of the component stack.
 
 ### TypeScript
 
-When we started building the component library, I considered TypeScript essential for two reasons. By enforcing type safety 
-at build time, we catch bugs much faster, which from a project management standpoint is much cheaper. More importantly,
-building our APIs in TypeScript is a huge help to library consumers on application development teams by facilitating type checking
-on their end and code completion in their IDEs.
+When we started building the component library, I considered TypeScript essential for two reasons. By enforcing type safety during
+development and at build time, we catch bugs much faster, which from a project management standpoint is much cheaper. More importantly, 
+building our APIs in TypeScript is a huge help to library consumers on application development teams by facilitating code 
+completion in their IDEs and type checking in *their* builds.
 
 Let me also mention that some of our TypeScript APIs require [ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) values
 to promote accessibility if we can't derive them ourselves from other props.
@@ -147,7 +147,7 @@ to apply the principles of our design system to Chakra components via dedicated 
 functionality. This separation of concerns makes it easier to reason about our code and makes the files themselves 
 a lot lighter.
 
-Chakra UI also comes with some helpful hooks like [useDisclosure](https://chakra-ui.com/docs/hooks/use-disclosure) that come in handy. 
+Chakra UI also features with some helpful hooks like [useDisclosure](https://chakra-ui.com/docs/hooks/use-disclosure) that come in handy. 
 
 If you use Chakra UI for your own component library, you will probably need some alias imports to deal with name collisions.
 For example, we call our button components, to no one's surprise, `Button`, but so does Chakra UI. So we do this:
@@ -328,7 +328,7 @@ while our library is built with React, but Vite is actually agnostic. In fact, i
 It basically just worked. Our Vite config is almost identical to the [example in the documentation](https://vitejs.dev/guide/build.html#library-mode).
 Just like the example, our build produces two bundle formats--`es` and `umd`--and it works fast.
 
-As you may know, TypeScript features two phases, type checking and transpilation to JavaScript. Type checking by `tsc`,
+As you may know, TypeScript builds feature two phases, type checking and transpilation to JavaScript. Type checking by `tsc`,
 the TypeScript compiler, is *very* slow, so while it is very important, you should do it rarely. We only do it via
 the IDE in real time as we code or when we build the library for production--and break the build if type checking fails.
 
@@ -347,8 +347,8 @@ We have a dedicated `typecheck` script in our `package.json` that looks like thi
 Note that we use `tsconfig.eslint.json` to typecheck everything.
 
 Meanwhile, transpiling your TypeScript source code to JavaScript is faster than type checking, but so is reading Tolstoy. Transpiling
-with `tsc` or Babel is still not fast. However, the transpiler [esbuild](https://esbuild.github.io/) is written in Go, a language built for speed,
-and Vite uses it under the hood. Because we are transpiling constantly to see what's happening in Storybook, its crucial that the process be fast. Thanks to esbuild,
+with `tsc` or Babel is still not fast. However, the transpiler [esbuild](https://esbuild.github.io/) is written in Go, a language [built for speed](/blog/scala-go),
+and Vite uses it under the hood. Because we are transpiling constantly to see what's happening in Storybook, it's crucial that the process be fast. Thanks to esbuild,
 Vite does exactly what we need.
 
 Our production build, versioned with [Semantic Versioning](https://semver.org/), includes [declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html) 
@@ -389,7 +389,7 @@ minifying, tree shaking, and all other production processing to all their code a
 
 As I mentioned before, we limit the functionality of our components to the bare minimum necessary to add value. Still, 
 components are code, and our consumers have expectations of our code. This means we need to test our components as much
-as we can.
+as we can and where it makes sense.
 
 Testing is a controversial topic. On Tech Twitter, engineers are more than happy to let you know why you are wrong
 to test your code in a different way than they do. I can only describe what works for us and why we think so while also
