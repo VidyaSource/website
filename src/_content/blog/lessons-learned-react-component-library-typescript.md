@@ -40,7 +40,7 @@ There are basic rules about colors, typography, spacing, and so on. All of these
 components--explicit ones like buttons and date pickers and subtler ones like grid systems.
 
 Our UX team develops and maintains our design system. Like software, it evolves; it's versioned; and it's collaborative. There are conversations
-among the UX designers with me and other architects and engineers on the program about what makes sense and what is feasible.
+among the UX designers and ˚with me and other architects and engineers on the program about what makes sense and what is feasible.
 Are nested dropdowns necessary? Do we have time to create our own perfect `Datepicker`? Or do we try to customize something open source?
 How do we feel about disabled buttons, and if we think they make sense, how
 can we overcome common pitfalls like poor [contrast ratios](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast)?
