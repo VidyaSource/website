@@ -33,8 +33,7 @@ I am sorry it took the lynching of [Ahmaud Arbery](https://charity.gofundme.com/
 who was pursued, attacked, and murdered *while jogging* by white supremacists, who stood over his body and cursed him using
 the worst language imaginable.
 
-I am sorry it took the breathtaking privilege of Amy Cooper, who was so angry at [avid birder  
-Christian Cooper](https://www.npr.org/2020/06/03/869052336/-blackbirdersweek-seeks-to-make-the-great-outdoors-open-to-all) for 
+I am sorry it took the breathtaking privilege of Amy Cooper, who was so angry at [avid birder Christian Cooper](https://www.npr.org/2020/06/03/869052336/-blackbirdersweek-seeks-to-make-the-great-outdoors-open-to-all) for 
 merely asking her to follow the rules and leash her dog that she called police and lied,
 "There's an African-American man recording me and threatening myself and my dog" with implicit knowledge and smug assurance
 that she has at her command an instrument for killing black people. In fact, Amy Cooper's disgusting behavior undermines 
