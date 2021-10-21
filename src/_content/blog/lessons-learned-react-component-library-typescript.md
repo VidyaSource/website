@@ -533,7 +533,33 @@ Storybook offers a feature I love--the ability to import stories into tests writ
 the same code as stories in Storybook and fixtures in tests. The autocompletion is great too thanks to the 
 TypeScript support built into `@storybook/testing-react`.
 
-Aside from all that, our tests work exactly as you would expect if you know React Testing Library.
+One last thing I want to mention is, as you might guess given how much I have emphasized it in this post, accessibility. All of our
+tests in React Testing Library use `getByRole` and `findByRole` selectors. We do this because it is a way to build implicit accessibility testing
+into our interaction tests as [the documentation describes](https://testing-library.com/docs/queries/about#priority). 
+After all, if we are unable to locate the component we wish to test by its ARIA role, that all but guarantees it isn't accessible. 
+And if it isn't accessible, I don't care if it "works" because it doesn't work for everyone.
+
+Aside from all that, our tests work exactly as you would expect if you know React Testing Library. Here is an example of a simple test
+conveying everything I described:
+
+~~~js
+...
+import {
+	DefaultMediumPrimaryButton,
+    ...
+} from "../__stories__/Button.stories"
+
+test("Button primary display works", () => {
+	const onClickMock = jest.fn()
+
+	render(<DefaultMediumPrimaryButton onClick={onClickMock} />)
+
+	const button = screen.getByRole("button", { name: "Primary" })
+
+	userEvent.click(button)
+	expect(onClickMock).toHaveBeenCalledTimes(1)
+})
+~~~
 
 ---
 
