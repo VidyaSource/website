@@ -162,9 +162,14 @@ export const Hero = () => {
                 <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
                     <section className="text-center">
                         <h1 className="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
+                            <span className="block xl:inline text-blue dark:text-blue-light">
+                                Welcome to Vidya.
+                            </span>
+                        </h1>
+                        <h2 className="text-3xl tracking-tight font-bold sm:text-4xl md:text-5xl">
                             <span className="block xl:inline text-red dark:text-red-light">Build faster.</span>{' '}
                             <span className="block italic text-gray-dark dark:text-green-light xl:inline">Build better.</span>
-                        </h1>
+                        </h2>
                         <p className="mt-3 max-w-md mx-auto text-base text-gray-dark dark:text-red-light sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                             Consulting and custom application development to strengthen your business. Courses
                             and content to help you harness technology for yourself.

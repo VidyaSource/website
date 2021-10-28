@@ -1,6 +1,6 @@
 export default {
     title: "Vidya | Build faster. Build better.",
-    description: "Consulting and custom application development to strengthen your business. Courses and content to help you harness technology for yourself.",
+    description: "Welcome to Vidya. Consulting and custom application development to strengthen your business. Courses and content to help you harness technology for yourself.",
     openGraph: {
         type: 'website',
         locale: 'en_US',
