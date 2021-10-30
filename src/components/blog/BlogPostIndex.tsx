@@ -35,8 +35,14 @@ export const BlogPostIndex = (p: BlogPostIndexProps) => {
 
     return (
         <div className="relative bg-blue-light dark:bg-gray-dark pt-8 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-28 lg:px-8">
+            <div className="text-center">
+                <h1 className="text-3xl tracking-tight font-extrabold text-red dark:text-red-light sm:text-4xl mt-0">Blog posts by the staff at Vidya</h1>
+                <h2 className="mt-3 max-w-2xl mx-auto text-xl text-gray-dark dark:text-blue-light sm:mt-4">
+                    From programming to project management, check out our observations about the tech industry.
+                </h2>
+            </div>
             <div className="flex flex-col">
-                <label htmlFor="tag" className="mx-auto block text-lg font-medium text-blue dark:text-blue-light md:text-xl">
+                <label htmlFor="tag" className="mx-auto block text-lg font-medium text-blue dark:text-blue-light md:text-xl mt-8">
                     Filter by tag
                 </label>
                 <div className="mt-1">

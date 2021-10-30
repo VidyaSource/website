@@ -26,7 +26,7 @@ const Form = () => {
         <section className="bg-blue-light dark:bg-gray-dark">
             <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
                 <div className="relative bg-white shadow-xl">
-                    <h2 className="sr-only">Contact us</h2>
+                    <h1 className="sr-only">Contact Vidya</h1>
 
                     <div className="grid grid-cols-1 lg:grid-cols-3">
                         {/* Contact information */}
@@ -127,7 +127,7 @@ const Form = () => {
                                     </defs>
                                 </svg>
                             </div>
-                            <h3 className="text-lg font-medium text-white">Contact us</h3>
+                            <h1 className="text-lg font-medium text-white">Contact Vidya</h1>
                             <p className="mt-6 text-base text-white max-w-3xl">
                                 We would love to work with you and help you use technology to grow your business or
                                 jumpstart your career.

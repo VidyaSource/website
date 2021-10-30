@@ -57,10 +57,10 @@ export const Courses = () => {
                     </div>
                     <section className="relative max-w-7xl mx-auto">
                         <div className="text-center">
-                            <h2 className="text-3xl tracking-tight font-extrabold text-red dark:text-red-light sm:text-4xl">Courses</h2>
-                            <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-dark dark:text-blue-light sm:mt-4">
-                                Level up in your career with these course offerings from Vidya.
-                            </p>
+                            <h1 className="text-3xl tracking-tight font-extrabold text-red dark:text-red-light sm:text-4xl">Courses from Vidya</h1>
+                            <h2 className="mt-3 max-w-2xl mx-auto text-xl text-gray-dark dark:text-blue-light sm:mt-4">
+                                Level up in your career with our course offerings.
+                            </h2>
                         </div>
                         <nav className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
                             {courses.map((course) => (
