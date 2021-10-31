@@ -67,9 +67,9 @@ should be possible to use Spark with HBase.
 
 It turns out that it is.
 
-As the [Scaladoc for *RDD*](http://spark.incubator.apache.org/docs/latest/api/core/index.html#org.apache.spark.RDD.RDD)
+As the [Scaladoc](http://spark.incubator.apache.org/docs/latest/api/core/index.html#org.apache.spark.RDD.RDD) for *RDD*
 shows, there are numerous concrete `RDD` implementations--each best suited for different situations. The
-`[NewHadoopRDD](http://spark.incubator.apache.org/docs/latest/api/core/index.html#org.apache.spark.RDD.NewHadoopRDD)`
+[NewHadoopRDD](http://spark.incubator.apache.org/docs/latest/api/core/index.html#org.apache.spark.RDD.NewHadoopRDD)
 is great for reading data stored in later versions of Hadoop, which is exactly what we need here.
 
 Check out this code.
@@ -99,20 +99,20 @@ rdd
 })
 ~~~
 
-Once we instantiate the `[SparkContext](http://spark.incubator.apache.org/docs/latest/api/core/index.html#org.apache.spark.SparkContext)`
+Once we instantiate the [SparkContext](http://spark.incubator.apache.org/docs/latest/api/core/index.html#org.apache.spark.SparkContext)
 for the local machine, we write an anonymous function to create an
 [HBaseConfiguration](http://hbase.apache.org/apidocs/org/apache/hadoop/hbase/HBaseConfiguration.html), which will enable
 us to add the HBase configuration files to any Hadoop ones we have as well as the name of the table
 we want to read. That’s an HBase thing--not a Spark thing.
 
 Then we create an instance of `NewHadoopRDD` with the `SparkContext` instance and three Java
-`[Class](http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html)` objects related to HBase:
+[Class](http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html) objects related to HBase:
 
 * One for the `InputFormat`, `TableInputFormat`, as mentioned earlier
-* One for the key type, which on a table scan is always `[ImmutableBytesWritable](http://hbase.apache.org/apidocs/org/apache/hadoop/hbase/io/ImmutableBytesWritable.html)`
-* One for the value type, which on a table scan is always `[Result](http://hbase.apache.org/apidocs/org/apache/hadoop/hbase/client/Result.html)`
+* One for the key type, which on a table scan is always [ImmutableBytesWritable](http://hbase.apache.org/apidocs/org/apache/hadoop/hbase/io/ImmutableBytesWritable.html)
+* One for the value type, which on a table scan is always [Result](http://hbase.apache.org/apidocs/org/apache/hadoop/hbase/client/Result.html)
 
-Then we call our anonymous function with the location of `[hbase-site.xml](http://hbase.apache.org/book/config.files.html)`
+Then we call our anonymous function with the location of [hbase-site.xml](http://hbase.apache.org/book/config.files.html)
 and the name of the table we want to read, `table-with-data`,
 to provide Spark with the necessary HBase configuration to construct the `RDD`. Once we have the `RDD`, we can perform all
 the usual operations on HBase we usually see with the more conventional usage of `RDD`s in Spark.
