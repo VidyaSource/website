@@ -10,7 +10,7 @@ export interface FrontMatter {
     title: string
     description: string
     image: string
-    date: Date
+    date: string | Date
     tags: string[]
 }
 
@@ -39,7 +39,7 @@ export const getBlogPostBySlug: (slug: string) => Promise<BlogPost> = async (slu
     const frontMatter = {
         tags: tags.concat(categories).sort(),
         image: image,
-        date:  zonedTimeToUtc(data.date as Date, "America/New_York"),
+        date:  data.date.toString(),
         author: data.author,
         title: data.title,
         description: data.description
@@ -64,7 +64,7 @@ export const getBlogPostMetadataBySlug: (slug: string) => Promise<BlogPostMetada
     const frontMatter = {
         tags: tags.concat(categories).sort(),
         image: image,
-        date:  zonedTimeToUtc(data.date as Date, "America/New_York"),
+        date:  data.date.toString(),
         author: data.author,
         title: data.title,
         description: data.description
