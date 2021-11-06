@@ -6,10 +6,12 @@ import {BlogPostContent} from "../../components/blog/BlogPostContent"
 import {NextSeo} from 'next-seo'
 import { BlogJsonLd } from 'next-seo'
 import {constants} from "../../lib/constants";
+import {zonedTimeToUtc} from "date-fns-tz";
 
 const Post = (blogPost: BlogPost) => {
     const router = useRouter()
     const title = `Vidya | ${blogPost.frontMatter.title}`
+    blogPost.frontMatter.date = zonedTimeToUtc(new Date(blogPost.frontMatter.date), "America/New_York")
     const imageUrl = `${process.env.basePath}${blogPost.frontMatter.image}`
     if (!router.isFallback && !blogPost.slug) {
         return <ErrorPage statusCode={404}/>
