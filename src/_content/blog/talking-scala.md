@@ -2,7 +2,7 @@
 
 author: "Neil Chaudhuri"
 title: "Talking Scala"
-description: 
+description: "I will be speaking on Scala at Polyglot Programming DC!"
 image: "/img/blog/scala.png"
 date: 2015-05-27
 tags:
