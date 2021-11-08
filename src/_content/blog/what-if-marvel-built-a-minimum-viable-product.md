@@ -47,6 +47,28 @@ decided without any validated learning what you want to build. The fact it's in 
 
 So what does all of this have to do with Marvel?
 
+
+## The MCU Juggernaut
+
+Unless you have been living in the [Quantum Realm](https://marvelcinematicuniverse.fandom.com/wiki/Quantum_Realm) for the last decade,
+you know the [Marvel Cinematic Universe (MCU)](https://www.marvel.com/movies). It's a monumental achievement in cinema 
+that has taken decades of Marvel comics and reformulated them into a multibillion dollar juggernaut movie franchise that has 
+raised once second-tier heroes like Iron-Man, Thor, and Black Widow to the stature of eternal favorites like Spider-Man, 
+Captain America, and Hulk and put [Mjolnirs](https://marvel.fandom.com/wiki/Mjolnir) and 
+[Infinity Gauntlets](https://marvelcinematicuniverse.fandom.com/wiki/Infinity_Gauntlet) into the homes of ardent fans worldwide.
+
+It may be hard to imagine now, but there was no guarantee of success at the beginning as Marvel was struggling as a business
+having sold off their most bankable assets. This forced Kevin Feige, the architect of the MCU, to get creative to and 
+[derive new ways to bring Marvel heroes to life](https://www.vox.com/2016/5/9/11595344/marvel-cinematic-universe-captain-america-avengers).
+
+They succeeded spectacularly, and now they have to do it all over again.
+
+Firmly entrenched in global pop culture, the MCU now faces pressure to build on its foundation with new heroes and villains,
+many of whom like [Shang-Chi](https://www.marvel.com/characters/shang-chi/in-comics) and [Kang the Conqueror](https://www.marvel.com/characters/kang),
+are all but unknown to mainstream audiences. And considering that the MCU has decided to go all in on the 
+[Multiverse](https://marvelcinematicuniverse.fandom.com/wiki/Multiverse), there are literally infinite possibilities for stories.
+
+How can Marvel decide what direction to take with the MCU?
+
+
 ## *What If?* is Marvel's MVP
-
-
