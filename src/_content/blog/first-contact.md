@@ -2,6 +2,7 @@
 
 author: "Neil Chaudhuri"
 title: "First Contact"
+description: "Welcome to Vidya"
 date: 2013-10-26
 image: "/img/vidya.png"
 aliases:
