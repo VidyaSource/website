@@ -39,7 +39,7 @@ export const getBlogPostBySlug: (slug: string) => Promise<BlogPost> = async (slu
     const frontMatter = {
         tags: tags.concat(categories).sort(),
         image: image,
-        date:  data.date.toString(),
+        date:  data.date.toISOString(),
         author: data.author,
         title: data.title,
         description: data.description
@@ -64,7 +64,7 @@ export const getBlogPostMetadataBySlug: (slug: string) => Promise<BlogPostMetada
     const frontMatter = {
         tags: tags.concat(categories).sort(),
         image: image,
-        date:  data.date.toString(),
+        date:  data.date.toISOString(),
         author: data.author,
         title: data.title,
         description: data.description
