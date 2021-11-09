@@ -103,8 +103,11 @@ with any of the *What If?...* plots in the theater or even a live action series.
 ## The Key Lesson
 
 One way or another, we are all in the business of product development, but we always assume we have accurately gauged 
-customer sentiment and they will buy what we are selling. Don't be afraid to test your assumptions. 
-
+customer sentiment and they will buy what we are selling. Don't be afraid to test that assumption before you go all in.
+Build a Minimum Viable Product--something more lightweight and less expensive that will nonetheless provide your early 
+adopters something to evaluate. The validated learning you get from their feedback will either help you pivot to something
+more aligned with what people want or empower you to persevere with your original idea with the full confidence it 
+will sell.
 
 
 
