@@ -1,16 +1,14 @@
 ---
-
 author: "Neil Chaudhuri"
-title: "What If Marvel Built a Minimum Viable Product?"
-description: "The four technologies that changed software development the most in the last decade. Sorry, no Hadoop."
+title: "What If...Marvel Built a Minimum Viable Product?"
+description: "Product development should begin with an MVP, and Marvel's What if?... is exactly that."
 image: "/img/blog/what-if.jpeg"
-date: 2021-10-12
+date: 2021-11-12
 tags:
 - Agile
 - Lean
 - Project Management
 - Software Engineering
-- Minimum Viable Product
 ---
 
 In 2011, Eric Ries published *The Lean Startup*, and it revolutionized software development. Lean principles
@@ -72,3 +70,43 @@ How can Marvel decide what direction to take with the MCU?
 
 
 ## *What If?* is Marvel's MVP
+
+There is no question Kevin Feige has sketched out the broad contours of the next iteration of the MCU. Still, as sterling
+as his record is, he's working from assumptions about what will make for great stories and what will thrill audiences going forward.
+If he followed *The Lean Startup* model, he would build a lightweight MVP to test his hypotheses with passionate fans and 
+measure their response for some validated learning.
+
+It turns out that is exactly what Marvel is doing with *What If?...*
+
+*What If?...* is an [animated show on Disney+](https://www.marvel.com/tv-shows/animation/what-if/1) that imagines
+the MCU heroes we know experiencing very different lives in other parts of the multiverse. For example, we see 
+Peggy Carter receive the super soldier serum rather than Steve Rogers to become 
+[Captain Carter](https://www.marvel.com/articles/tv-shows/what-if-episode-1-multiverse-report-captain-carter), and we watch somberly
+as T'Challa, voiced by the legendary Chadwick Boseman in his final performance, 
+[become Star-Lord](https://www.marvel.com/articles/tv-shows/what-if-new-images-episode-2) rather than
+Peter Quill. It's heroes and villains we know so well from the MCU facing new challenges alongside other heroes and villains
+we've never seen them interact with before. 
+
+The novel combinations are fun and exciting, but they're also an experiment. How will fans, primarily hardcore MCU fans (early
+adopters if you will) react? You can easily track this with viewership metrics on Disney+, mentions on Twitter, and the impressions
+of media influencers for validated learning. When a story doesn't click, Marvel can dismiss it as a fun idea for the fans
+and pivot to something more popular. On the other hand, when a story does click, Marvel can persevere and explore it further on a live-action series 
+on Disney+ or even in a movie on the big screen within established MCU canon.
+
+Best of all, Marvel can test their hypotheses, engage in validated learning, and guide the future of the MCU accordingly 
+at a low cost. *What If?...* is high-quality animation, and most of the elite talent that portrays the characters on the
+big screen voices them on the show. Still, the cost of running these experiments in animation without any real commitment 
+since the stories all happen outside the "prime" MCU universe is orders of magnitude less than it would be going all in
+with any of the *What If?...* plots in the theater or even a live action series.
+
+
+## The Key Lesson
+
+One way or another, we are all in the business of product development, but we always assume we have accurately gauged 
+customer sentiment and they will buy what we are selling. Don't be afraid to test your assumptions. 
+
+
+
+
+
+
