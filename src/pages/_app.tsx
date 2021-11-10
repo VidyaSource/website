@@ -13,24 +13,14 @@ function MyApp({Component, pageProps}: AppProps) {
         <>
             <DefaultSeo {...seo} />
             <Script strategy="beforeInteractive" src="/scripts/darkMode.js"/>
-            <Script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b9ebbff15106c8f" strategy="lazyOnload"/>
             <Script async src="https://www.googletagmanager.com/gtag/js?id=UA-42673091-1" strategy="lazyOnload" />
-            <Script strategy="lazyOnload">
-                {
-                    `window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-
-                    gtag('config', 'UA-42673091-1');`
-                }
-            </Script>
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-SV6CZCPD3B" />
             <Script strategy="lazyOnload">
                 {
                     `window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
-
+                    gtag('config', 'UA-42673091-1')
                     gtag('config', 'G-SV6CZCPD3B');`
                 }
             </Script>
