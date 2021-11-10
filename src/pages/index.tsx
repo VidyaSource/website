@@ -29,7 +29,7 @@ const Home = (p: HomeProps) => {
 
 export default Home
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps(context) {
     const blogPosts = await getAllBlogPosts()
 
     return {
