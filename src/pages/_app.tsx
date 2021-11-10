@@ -13,9 +13,9 @@ function MyApp({Component, pageProps}: AppProps) {
         <>
             <DefaultSeo {...seo} />
             <Script strategy="beforeInteractive" src="/scripts/darkMode.js"/>
-            <Script async src="https://www.googletagmanager.com/gtag/js?id=UA-42673091-1" strategy="lazyOnload" />
-            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-SV6CZCPD3B" strategy="lazyOnload" />
-            <Script strategy="lazyOnload">
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=UA-42673091-1" strategy="afterInteractive" />
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-SV6CZCPD3B" strategy="afterInteractive" />
+            <Script strategy="afterInteractive">
                 {
                     `window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
