@@ -79,37 +79,41 @@ measure their response for some validated learning.
 It turns out that is exactly what Marvel is doing with *What If?...*
 
 *What If?...* is an [animated show on Disney+](https://www.marvel.com/tv-shows/animation/what-if/1) that imagines
-the MCU heroes we know experiencing very different lives in other parts of the multiverse. For example, we see 
+the MCU heroes we know experiencing very different lives throughout the multiverse. For example, we see 
 Peggy Carter receive the super soldier serum rather than Steve Rogers to become 
 [Captain Carter](https://www.marvel.com/articles/tv-shows/what-if-episode-1-multiverse-report-captain-carter), and we watch somberly
-as T'Challa, voiced by the legendary Chadwick Boseman in his final performance, 
-[become Star-Lord](https://www.marvel.com/articles/tv-shows/what-if-new-images-episode-2) rather than
+as T'Challa, voiced just as he is portrayed on screen by the legendary Chadwick Boseman in his final performance, 
+[becomes Star-Lord](https://www.marvel.com/articles/tv-shows/what-if-new-images-episode-2) rather than
 Peter Quill. It's heroes and villains we know so well from the MCU facing new challenges alongside other heroes and villains
 we've never seen them interact with before. 
 
 The novel combinations are fun and exciting, but they're also an experiment. How will fans, primarily hardcore MCU fans (early
 adopters if you will) react? You can easily track this with viewership metrics on Disney+, mentions on Twitter, and the impressions
 of media influencers for validated learning. When a story doesn't click, Marvel can dismiss it as a fun idea for the fans
-and pivot to something more popular. On the other hand, when a story does click, Marvel can persevere and explore it further on a live-action series 
-on Disney+ or even in a movie on the big screen within established MCU canon.
+and pivot to something else. On the other hand, when a story does click, Marvel can persevere and explore it further on a live-action series 
+on Disney+ or even on the big screen within established MCU canon.
 
 Best of all, Marvel can test their hypotheses, engage in validated learning, and guide the future of the MCU accordingly 
 at a low cost. *What If?...* is high-quality animation, and most of the elite talent that portrays the characters on the
 big screen voices them on the show. Still, the cost of running these experiments in animation without any real commitment 
 since the stories all happen outside the "prime" MCU universe is orders of magnitude less than it would be going all in
-with any of the *What If?...* plots in the theater or even a live action series.
+with any of the *What If?...* plots in live action.
 
 
 ## The Key Lesson
 
-One way or another, we are all in the business of product development, but we always assume we have accurately gauged 
-customer sentiment and they will buy what we are selling. Don't be afraid to test that assumption before you go all in.
-Build a Minimum Viable Product--something more lightweight and less expensive that will nonetheless provide your early 
-adopters something to evaluate. The validated learning you get from their feedback will either help you pivot to something
-more aligned with what people want or empower you to persevere with your original idea with the full confidence it 
-will sell.
+One way or another, we are all in the business of product development. Too often we assume we have accurately gauged 
+customer sentiment, and [we exude hubris that success is inevitable only to fail miserably](https://www.youtube.com/watch?v=t-_PfdQ0DYo). 
 
+Don't be afraid to test your assumptions before you go all in. Build a Minimum Viable Product--something more lightweight 
+and less expensive that will nonetheless provide your early 
+adopters something meaningful to evaluate. The validated learning you get from their feedback will either help you pivot to something
+more aligned with what people want or empower you to persevere with your original idea with legitimate confidence it 
+will sell. Once you start executing, then you can argue on Twitter about whether you need daily meetings and whether 
+people should be allowed to sit down in them. 
 
+Using an MVP to build confidence in your product direction is exactly what the Marvel Cinematic Universe has done with *What If?...*, 
+but you don't have to be Marvel to fly [higher, further, faster, baby](https://www.youtube.com/watch?v=eKAvj9EjBmM).
 
 
 
