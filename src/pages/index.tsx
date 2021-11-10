@@ -18,6 +18,7 @@ const Home = (p: HomeProps) => {
         <>
             <LocalBusinessJsonLd />
             <Hero />
+            <RecentPosts blogPosts={p.blogPosts}/>
             <Clients />
             <Testimonials />
             <CallToAction />
