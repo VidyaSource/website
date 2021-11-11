@@ -8,7 +8,6 @@ module.exports = {
         ],
         safelist: [
             'hover:text-linkedin',
-            'hover:text-facebook',
             'hover:text-twitter',
             'hover:text-github',
             'hover:text-youtube',
@@ -28,7 +27,6 @@ module.exports = {
             white: colors.white,
             yellow: colors.yellow,
             linkedin: "#0073b1",
-            facebook: "#4267B2",
             twitter: "#1DA1F2",
             github: "#24292e",
             youtube: "#FF0000",
@@ -59,7 +57,6 @@ module.exports = {
             },
             colors: {
                 linkedin: "#0073b1",
-                facebook: "#4267B2",
                 twitter: "#1DA1F2",
                 github: "#24292e",
                 youtube: "#FF0000",

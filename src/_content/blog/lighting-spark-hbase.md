@@ -30,7 +30,7 @@ specifically [MapReduce](https://hadoop.apache.org/docs/r1.2.1/mapred_tutorial.h
 that [paper](http://static.googleusercontent.com/media/research.google.com/en/us/archive/mapreduce-osdi04.pdf) in 2004.
 That’s ten years ago! *[Million Dollar Baby](http://www.imdb.com/title/tt0405159/)* won Best Picture that year.
 *[Yeah!](http://www.youtube.com/watch?v=eSPhCS-15eE)* by Usher, Lil John and Ludacris topped the charts in the United
-States. And [Facebook](https://www.facebook.com/VidyaSource) had only just started to kill work productivity and violate
+States. And Facebook had only just started to kill work productivity and violate
 your privacy.
 
 As long ago as that feels, it is an eternity in technology. Google has of course moved on way past MapReduce to things

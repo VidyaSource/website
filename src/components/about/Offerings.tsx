@@ -87,7 +87,7 @@ const Offerings = () => {
                     <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
                         Maybe you are a small company or nonprofit where everyone has to wear a lot of hats, and someone
                         has asked you to transition your manual spreadsheet analysis into something automated or to
-                        retool your website when you’ve never done anything more complicated on the web than tagging people on Facebook.
+                        retool your website when you’ve never done anything more complicated on the web than tagging people on social media.
                     </p>
                     <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
                         Maybe you want a passionate ally in promoting diversity and equal, positive treatment in the information technology space.

@@ -45,6 +45,5 @@ We did get a nice plaque as a Top 100 MBE though.
 <img alt="Top 100 MBE award for Vidya at CRMSDC Leaders and Legend" src="/img/blog/award.jpg" width="576px" height="1024px" />
 
 All in all it was an amazing night. For more pictures from our experience at Leaders and Legends, check us out on 
-[Facebook](https://www.facebook.com/VidyaSource/posts/2621013647977589) 
-or [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6597315604837920768). You can see all the pictures from the event 
+[LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6597315604837920768). You can see all the pictures from the event 
 [here](https://crmsdc.smugmug.com/38th-Annual-Leaders-Legends-Awards-Ceremony/i-mdtTmvk).

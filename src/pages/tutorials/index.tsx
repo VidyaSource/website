@@ -25,7 +25,7 @@ const tutorials = [
     {
         title: 'Web Design 101',
         href: 'tutorials/web-design-101',
-        description: "This tutorial is for people brand new to web design who haven’t done anything more complicated on the web than tag their friends on Facebook.",
+        description: "This tutorial is for people brand new to web design who haven’t done anything more complicated on the web than tag their friends on social media.",
         imageUrl: '/img/tutorials/web-design.jpg',
     },
 ]

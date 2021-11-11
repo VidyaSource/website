@@ -10,7 +10,6 @@ const Contact = () => {
                 name="Vidya"
                 url="https://www.vidyasource.com"
                 sameAs={[
-                    'https://www.facebook.com/VidyaSource',
                     'https://github.com/VidyaSource',
                     'https://twitter.com/VidyaSource',
                     'https://www.linkedin.com/company/vidya-technology-training/',
