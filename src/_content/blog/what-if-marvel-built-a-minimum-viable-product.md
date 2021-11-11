@@ -73,7 +73,7 @@ How can Marvel decide what direction to take with the MCU?
 
 There is no question Kevin Feige has sketched out the broad contours of the next iteration of the MCU. Still, as sterling
 as his record is, he's working from assumptions about what will make for great stories and what will thrill audiences going forward.
-If he followed *The Lean Startup* model, he would build a lightweight MVP to test his hypotheses with passionate fans and 
+If he followed *The Lean Startup* model, Feige would build a lightweight MVP to test his hypotheses with passionate fans and 
 measure their response for some validated learning.
 
 It turns out that is exactly what Marvel is doing with *What If?...*
