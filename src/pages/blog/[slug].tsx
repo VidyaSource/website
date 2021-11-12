@@ -8,6 +8,8 @@ import {constants} from "../../lib/constants";
 import {zonedTimeToUtc} from "date-fns-tz";
 import dynamic from 'next/dynamic'
 
+const BlogPostContent = dynamic(() => import("../../components/blog/BlogPostContent"))
+
 const Post = (blogPost: BlogPost) => {
     const router = useRouter()
     const title = `Vidya | ${blogPost.frontMatter.title}`
@@ -16,7 +18,6 @@ const Post = (blogPost: BlogPost) => {
     if (!router.isFallback && !blogPost.slug) {
         return <ErrorPage statusCode={404}/>
     }
-    const BlogPostContent = dynamic(() => import("../../components/blog/BlogPostContent"))
 
     return (
         <>

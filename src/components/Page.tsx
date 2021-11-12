@@ -8,6 +8,8 @@ interface PageProps {
     children: ReactNode
 }
 
+const Footer = dynamic(() => import("./Footer"))
+
 export const Page: FC<PageProps> = (p) => {
     return (
         <>
@@ -84,5 +86,3 @@ export const Header = () => {
         </header>
     )
 }
-
-const Footer = dynamic(() => import("./Footer"))
