@@ -7,7 +7,7 @@ import {a11yDark} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import gfm from 'remark-gfm'
 import {YouTubeVideo} from "../YouTubeVideo";
 import {selectTags} from "../../lib/selectTags";
-import {useEffect, useMemo, useState} from "react";
+import {useMemo} from "react";
 import Image from 'next/image'
 import raw from 'rehype-raw'
 
@@ -44,12 +44,6 @@ interface BlogPostContentProps {
 
 const BlogPostContent = (p: BlogPostContentProps) => {
     const selectedTags = useMemo(() => selectTags(p.blogPost.frontMatter.tags, 6), p.blogPost.frontMatter.tags)
-    const [date, setDate] = useState(null)
-    useEffect(() => {
-        if (p.blogPost.frontMatter.date != "string") {
-            dateToString(p.blogPost.frontMatter.date as Date).then(d => setDate(d))
-        }
-    }, [p.blogPost.frontMatter.date])
 
     return (
         <article className="relative py-4 overflow-hidden bg-blue-light dark:bg-gray-dark">
@@ -69,7 +63,7 @@ const BlogPostContent = (p: BlogPostContentProps) => {
                         <div className="mx-auto">
                             <span
                                 className="mt-2 block text-lg text-center leading-8 tracking-tight text-red dark:text-red-light lg:text-xl">
-                              {typeof p.blogPost.frontMatter.date != "string" && date}
+                              {typeof p.blogPost.frontMatter.date != "string" && format(p.blogPost.frontMatter.date, "LLLL d, y")}
                             </span>
                             <Avatar author={p.blogPost.frontMatter.author}/>
                         </div>
@@ -84,11 +78,6 @@ const BlogPostContent = (p: BlogPostContentProps) => {
             </div>
         </article>
     )
-}
-
-const dateToString = async (d: Date) => {
-    const format = (await import('date-fns/format')).default
-    return format(d, "LLLL d, y")
 }
 
 export default BlogPostContent
