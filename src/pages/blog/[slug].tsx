@@ -10,6 +10,7 @@ import dynamic from 'next/dynamic'
 import {Avatar} from "../../components/blog/Avatar";
 import {useMemo} from "react";
 import {selectTags} from "../../lib/selectTags";
+import format from "date-fns/format"
 
 const BlogPostContent = dynamic(() => import("../../components/blog/BlogPostContent"))
 
@@ -77,9 +78,8 @@ const Post = (blogPost: BlogPost) => {
                           {blogPost.frontMatter.title}
                         </span>
                                 <div className="mx-auto">
-                            <span
-                                className="mt-2 block text-lg text-center leading-8 tracking-tight text-red dark:text-red-light lg:text-xl">
-
+                            <span className="mt-2 block text-lg text-center leading-8 tracking-tight text-red dark:text-red-light lg:text-xl">
+                                {typeof blogPost.frontMatter.date != "string" && format(blogPost.frontMatter.date, "LLLL d, y")}
                             </span>
                                     <Avatar author={blogPost.frontMatter.author}/>
                                 </div>
