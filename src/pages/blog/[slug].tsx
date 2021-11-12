@@ -2,11 +2,11 @@ import {useRouter} from 'next/router'
 import ErrorPage from 'next/error'
 import {Page} from "../../components/Page";
 import {BlogPost, getAllBlogPosts, getBlogPostBySlug} from "../../lib/blogPost-utils";
-import {BlogPostContent} from "../../components/blog/BlogPostContent"
 import {NextSeo} from 'next-seo'
 import { BlogJsonLd } from 'next-seo'
 import {constants} from "../../lib/constants";
 import {zonedTimeToUtc} from "date-fns-tz";
+import dynamic from 'next/dynamic'
 
 const Post = (blogPost: BlogPost) => {
     const router = useRouter()
@@ -16,6 +16,8 @@ const Post = (blogPost: BlogPost) => {
     if (!router.isFallback && !blogPost.slug) {
         return <ErrorPage statusCode={404}/>
     }
+    const BlogPostContent = dynamic(() => import("../../components/blog/BlogPostContent"))
+
     return (
         <>
             <NextSeo

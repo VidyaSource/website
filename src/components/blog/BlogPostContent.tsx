@@ -42,8 +42,9 @@ interface BlogPostContentProps {
     blogPost: BlogPost
 }
 
-export const BlogPostContent = (p: BlogPostContentProps) => {
+const BlogPostContent = (p: BlogPostContentProps) => {
     const selectedTags = useMemo(() => selectTags(p.blogPost.frontMatter.tags, 6), p.blogPost.frontMatter.tags)
+
     return (
         <article className="relative py-4 overflow-hidden bg-blue-light dark:bg-gray-dark">
             <div className="relative px-4 sm:px-6 lg:px-8">
@@ -78,3 +79,5 @@ export const BlogPostContent = (p: BlogPostContentProps) => {
         </article>
     )
 }
+
+export default BlogPostContent
