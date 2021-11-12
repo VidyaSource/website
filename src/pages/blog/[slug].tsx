@@ -7,7 +7,6 @@ import { BlogJsonLd } from 'next-seo'
 import {constants} from "../../lib/constants";
 import {zonedTimeToUtc} from "date-fns-tz";
 import dynamic from 'next/dynamic'
-import format from "date-fns/format";
 import {Avatar} from "../../components/blog/Avatar";
 import {useMemo} from "react";
 import {selectTags} from "../../lib/selectTags";
