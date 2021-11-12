@@ -1,5 +1,5 @@
 import ReactMarkdown from 'react-markdown'
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import {a11yDark} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import gfm from 'remark-gfm'
 import {YouTubeVideo} from "../YouTubeVideo";
@@ -17,7 +17,6 @@ const components: Partial<Omit<NormalComponents, keyof SpecialComponents> & Spec
     },
     code: ({node, inline, className, children, ...props}) => {
         const match = /language-(\w+)/.exec(className || '')
-
         return !inline && match ? (
             <SyntaxHighlighter style={a11yDark} language={match[1]} PreTag="div"
                    className="text-sm"
