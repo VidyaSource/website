@@ -7,6 +7,10 @@ import { BlogJsonLd } from 'next-seo'
 import {constants} from "../../lib/constants";
 import {zonedTimeToUtc} from "date-fns-tz";
 import dynamic from 'next/dynamic'
+import format from "date-fns/format";
+import {Avatar} from "../../components/blog/Avatar";
+import {useMemo} from "react";
+import {selectTags} from "../../lib/selectTags";
 
 const BlogPostContent = dynamic(() => import("../../components/blog/BlogPostContent"))
 
@@ -18,6 +22,7 @@ const Post = (blogPost: BlogPost) => {
     if (!router.isFallback && !blogPost.slug) {
         return <ErrorPage statusCode={404}/>
     }
+    const selectedTags = useMemo(() => selectTags(blogPost.frontMatter.tags, 6), blogPost.frontMatter.tags)
 
     return (
         <>
@@ -58,7 +63,34 @@ const Post = (blogPost: BlogPost) => {
                 description={blogPost.frontMatter.description}
             />
             <Page>
-                <BlogPostContent blogPost={blogPost}/>
+                <article className="relative py-4 overflow-hidden bg-blue-light dark:bg-gray-dark">
+                    <div className="relative px-4 sm:px-6 lg:px-8">
+                        <section className="text-lg max-w-prose mx-auto">
+                            <h1>
+                        <span
+                            className="block text-sm text-center text-green-dark dark:text-green-light font-semibold tracking-wide uppercase">
+                          {
+                              selectedTags.join("  |  ")
+                          }
+                        </span>
+                                <span
+                                    className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-red dark:text-red-light md:text-3xl lg:text-4xl">
+                          {blogPost.frontMatter.title}
+                        </span>
+                                <div className="mx-auto">
+                            <span
+                                className="mt-2 block text-lg text-center leading-8 tracking-tight text-red dark:text-red-light lg:text-xl">
+                              {typeof blogPost.frontMatter.date != "string" && format(blogPost.frontMatter.date, "LLLL d, y")}
+                            </span>
+                                    <Avatar author={blogPost.frontMatter.author}/>
+                                </div>
+                            </h1>
+                            <p className="mt-2 text-xl text-gray-dark dark:text-blue-light leading-8">
+                                <BlogPostContent content={blogPost.content} />
+                            </p>
+                        </section>
+                    </div>
+                </article>
             </Page>
         </>
     )
