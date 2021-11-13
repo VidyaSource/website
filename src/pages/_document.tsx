@@ -70,9 +70,7 @@ class VidyaDocument extends Document {
                     {/* PWA */}
                 </Head>
                 <body>
-                    <noscript>
-                        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFPX26R" height="0" width="0" style={{display:"none",visibility:"hidden"}} />
-                    </noscript>
+                    <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFPX26R" height="0" width="0" style={{display:"none",visibility:"hidden"}} />`}} />
                     <Main/>
                     <NextScript/>
                 </body>
