@@ -62,8 +62,8 @@ having sold off their most bankable assets. This forced Kevin Feige, the archite
 They succeeded spectacularly, and now they have to do it all over again.
 
 Firmly entrenched in global pop culture, the MCU now faces pressure to build on its foundation with new heroes and villains,
-many of whom like [Shang-Chi](https://www.marvel.com/characters/shang-chi/in-comics) and [Kang the Conqueror](https://www.marvel.com/characters/kang),
-are all but unknown to mainstream audiences. And considering that the MCU has decided to go all in on the 
+many of whom like [Moon Knight](https://marvel.fandom.com/wiki/Marc_Spector_(Earth-616)) and [Titania](https://www.marvel.com/characters/titania-mary-macpherran)
+lack the star power of Captain America and Spider-Man and are all but unknown to mainstream audiences. And considering that the MCU has decided to go all in on the 
 [Multiverse](https://marvelcinematicuniverse.fandom.com/wiki/Multiverse), there are literally infinite possibilities for stories.
 
 How can Marvel decide what direction to take with the MCU?
