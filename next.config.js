@@ -28,6 +28,10 @@ module.exports = withPWA({
                     {
                         key: 'Referrer-Policy',
                         value: 'strict-origin-when-cross-origin'
+                    },
+                    {
+                        key: 'Cache-Control',
+                        value: 'max-age=0, s-maxage=600, stale-while-revalidate=600'
                     }
                 ]
             }
