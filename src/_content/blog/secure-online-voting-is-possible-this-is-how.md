@@ -197,26 +197,25 @@ Another bit of good news? The UI is simple. It's just boring forms!
 
 ## What Might the Tech Stack Look Like?
 
-I'm not exactly sure, but I do have some ideas I would like to run by you. 
+I'm not exactly sure, and there are a lot of great options. But I do have some ideas I would like to run by you. 
 
-### The user interface: JAMStack and PWA
+### The user interface: Remix Run PWA
 
-A [JAMStack](https://jamstack.org/) front end provides several advantages:
+[Remix Run](https://remix.run/) is a new open source web framework from the creators of React Router that provides
+abstractions over core web fundamentals to build a resilient experience. In fact, it's that resiliency that makes Remix
+a compelling choice for a voting application. It's lightweight because it relies on core browser APIs and HTTP, and forms
+still work without any JavaScript because HTTP supports form submission on its own.
 
-* No need to deploy or scale web servers for rendering content derived from a database, which makes things much easier and dramatically reduces the surface area for an attack
-* The unbeatable performance of pre-built assets cached on a CDN and in the browser
-* Device agnostic
-
-Certainly a front end in Rails or another robust monolithic framework would be effective, but I think using something 
-like [Next.js](https://nextjs.org/) or [SvelteKit](https://kit.svelte.dev/) would 
-be so much simpler and more lightweight. It would be straightforward to build the forms and push them to a CDN like 
-Cloudflare or Fastly.
+Certainly a front end in Rails or another robust monolithic framework would be effective as would
+alternatives like [Next.js](https://nextjs.org/) or [SvelteKit](https://kit.svelte.dev/), but I find it hard to resist Remix's 
+lean philosophy. It even offers templates for a variety of deployment platforms like Cloudflare, Fly.io, Netlify, and Vercel,
+and that list will only grow. This deployment flexibility is essential.
 
 In addition, I think it is important that the front end is deployed as a [Progressive Web App](/blog/vidya-reloaded/).
 This offers a lot of benefits, but primarily for this purpose, it is critical that the front end is always available 
 and as functional as possible regardless of connectivity, which absurdly remains a problem in the richest country in the world. 
 
-This is orthogonal to JAMStack and PWA, but the user interface needs to have a strong 
+This is orthogonal to the choice for UI or PWAs, but the voting application needs to have a strong 
 [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) as well.
 
 By the way, it might be interesting down the road to think of voice interfaces allowing people to vote with Google Assistant,
@@ -224,11 +223,16 @@ Alexa, or Siri if privacy concerns can be addressed. One challenge at a time tho
 
 ### API: Spring Boot
 
-The purpose of the API is to authenticate requests from the JAMStack UI--in most cases, votes--and persist
+The purpose of the API is to authenticate requests from the UI--in most cases, votes--and persist
 data to the immutable, append-only data store while responding with, in the happy path scenario, a confirmation
 and a way for voters to track their votes through the process so they can have every confidence their votes count.
 
-There are a *lot* of great API solutions like [FastAPI](https://fastapi.tiangolo.com/), [Go kit](https://gokit.io/), and
+I know a UI layer and API layer add complexity beyond a simple monolith. You could build a Remix Run UI that communicates
+directly with a database (using [Prisma](https://www.prisma.io/) for example) on the server and be done with it. However,
+I think it is worth separating them to increase flexibility of deployment and to open up the possibility of multiple UIs
+like native mobile apps or voice assistants. I understand this is very debatable though.
+
+That said, there are a *lot* of great API solutions like [FastAPI](https://fastapi.tiangolo.com/), [Go kit](https://gokit.io/), and
 [Lagom](https://www.lagomframework.com/), but [Spring Boot](https://spring.io/projects/spring-boot) offers some compelling 
 advantages:
  
@@ -245,12 +249,8 @@ in order to ensure full replayability and traceability. How can we do this with 
 
 Easy. Revoke UPDATE and DELETE privileges!
 
-Anything more than PostgreSQL, which is straightforward to deploy and agnostic of environment, would be overkill given the relatively low scale--particularly 
-if someone deploys the online voting platform for a small election below the state level with just a few thousand or even a few hundred voters.  
-
-In large scale infrastructures, MongoDB or Kafka because we decide a small election renders a secure
-online voting platform unnecessary, but I would disagree. Local elections are extremely important. They impact people's 
-lives the most, and voters are entitled to the same guarantees here that they are entitled to for the "big" elections. 
+Anything more than PostgreSQL, which is straightforward to deploy and agnostic of environment, like a MongoDB would be overkill given the relatively small scale--particularly 
+if someone deploys the online voting platform for a small election below the state level with just a few thousand or even a few hundred voters.
 
 All we need to do is to store votes in a single table where a simple GROUP BY will aggregate election results. 
 That's easy. We can also store temporal and location data so we can run some basic secondary queries like measuring voter activity
