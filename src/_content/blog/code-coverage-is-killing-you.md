@@ -117,7 +117,7 @@ Maybe it's hard to generate test data or scenarios. Taking too long to write tes
 ***Time to Run Tests***. One of the core tenets of agile development is rapid feedback, which is impossible if your tests take forever. 
 This might be controversial, but I would recommend favoring unit tests and functional tests over integration tests. Unit tests 
 are fast (when written properly). Functional tests give you the most accurate view
-on quality, and modern tools like [Cypress](https://www.cypress.io/) can overcome the slowness and flakiness of older tools 
+on quality, and modern tools like [Cypress](https://www.cypress.io/) and [Playwright](https://playwright.dev/) can overcome the slowness and flakiness of older tools 
 like Selenium. You can also get a boost from your [tooling](https://engineering.linkedin.com/blog/2018/07/how-we-improved-build-time-by-400-percent).
 
 Keep these trend lines as low and as level as possible.
