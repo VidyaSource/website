@@ -78,7 +78,7 @@ const Footer = () => {
                             </svg>
                         </a>
                     </Link>
-                    <Link href="https://www.youtube.com/channel/UC24LVc8Bb65SF6LW-SLog9A">
+                    <Link href="https://stackoverflow.com/users/1347281/vidya">
                         <a className={"dark:text-white hover:text-stackoverflow dark:hover:text-red-light"}>
                             <span className="sr-only">Stack OVerflow</span>
                             <svg fill="currentColor" viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
