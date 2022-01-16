@@ -158,7 +158,7 @@ education level, ability, and other factors find the software intuitive.
 I also believe giving voters the opportunity to cast their ballots from wherever they wish is a form of usability.
 It's not just about comfort either. Because of the relentless media obsession with conflict, everyone tends to focus on candidates, 
 but what about referendums, state constitutional amendments, and bond issues? These can be complex. I know from experience 
-that it's helpful to research these comfortably from your home rather than within the space and time constraints of a traditional voting booth. 
+that it's helpful to research these comfortably from your home rather than under pressue within the space and time constraints of a traditional voting booth. 
 
 Part and parcel with usability is performance. Monitoring will help uncover issues with performance, but a modern online
 voting system needs to be architected for performance. Performance issues will not only be annoying, but they could 
@@ -225,13 +225,13 @@ Alexa, or Siri if privacy concerns can be addressed. One challenge at a time tho
 
 ### Database: PostgreSQL. With a twist
 
-The backbone of this architecture is the [event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html)-ish architecture 
+The backbone of this architecture is the [event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) architecture 
 based on an immutable, append-only data store representing every single mutation to the data on the platform in order to
 ensure full replayability and traceability. How can we do this with PostgreSQL?
 
 Easy. Revoke UPDATE and DELETE privileges!
 
-Anything more than PostgreSQL, which is straightforward to deploy and agnostic of environment, like MongoDB would be overkill given the small scale—particularly 
+Anything more than PostgreSQL, which is straightforward to deploy and agnostic of environment, would be overkill given the small scale—particularly 
 if someone deploys the online voting platform for a small election below the state level with just a few thousand or even a few hundred voters.
 
 We could store votes in a single table where a simple [GROUP BY](https://www.sqltutorial.org/sql-group-by/) will aggregate election results. 
@@ -245,8 +245,8 @@ By the way, what about blockchain? [No. Just. No.](/blog/pop-goes-the-blockchain
 
 ### Deployment: Somewhere easy
 
-I have no particular preference for where we deploying this online voting platform, but it needs to be somewhere offering 
-good DX, high availability, and disaster recovery. To me, this implies any of the out-of-the-box deployment targets for Remix Run,
+I have no particular preference for where we deploy this online voting platform, but it needs to be somewhere offering 
+good DX and resiliency. To me, this implies any of the out-of-the-box deployment targets for Remix Run,
 but it could be AWS, Heroku, or many other cloud providers. There could also be a combination like Remix Run on Cloudflare and 
 PostgreSQL, SMTP, and other infrastructure on Supabase. It all depends on what's simple, cost effective, and meets the needs
 of voters and staff.
@@ -255,7 +255,7 @@ of voters and staff.
 
 An online voting platform will come under attack from the most sophisticated hackers in the world, and its single most important
 requirement is that it always maintains the confidence of voters. In order to face these challenges, we need
-monitoring, auditing, disaster recovery, and high availability
+monitoring, auditing, disaster recovery, and high availability.
 
 These are cross-cutting concerns that apply to any non-trivial deployment, but they are undeniably essential here. It's hard
 to identify particular solutions because they are a function of the deployment platform, but suffice to say that any platform
@@ -316,12 +316,12 @@ technology but also law, finance, politics, and even philosophy. Here are some o
 * If we use PostgreSQL as an immutable, append-only store to provide a replayable log of all data mutations, we will eventually hit its limits. What's the retention period for the data? If it is even necessary to retire the data to some kind of data lake after the retention period, where would that be? How would that work?
 * To what extent can we preserve the notion of a "secret ballot" where only voters themselves know their selections? Or should a modern voting platform recognize the very concept of a secret ballot as an [anachronism that is pointless at best and harmful at worst](https://www.washingtonpost.com/posteverything/wp/2017/01/06/want-to-improve-democracy-abolish-the-secret-ballot/) and function accordingly?
 * Would machine learning serve a purpose here? If so, what's the simplest and most effective way to implement it?
-* Would there be an audience for making non-PII data available via APIS for data analytics by independent organizations? If so, how would we do that?
+* Would there be an audience for making non-PII data available via APIs for data analytics by independent organizations? If so, how would we do that?
 
 The beauty of open source is the diversity of thought and creative energy that converges to solve interesting, hard problems
 like these. 
 
 It will take a historical effort to build a secure online voting platform that allows all registered voters to make their voices
-heard and gives them the confidence that their votes count. If you find improving access to voting, guaranteeing the integrity
+heard and gives them the confidence that their votes count and that winners are legitimate. If you find improving access to voting, guaranteeing the integrity
 of elections, promoting social justice, and solving interesting problems as important and as compelling as I do, please 
 [get in touch](/contact) so we can collaborate on something that could transform society for the better.
