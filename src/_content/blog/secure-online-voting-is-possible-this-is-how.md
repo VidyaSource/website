@@ -1,19 +1,20 @@
----
+—-
 author: "Neil Chaudhuri"
 title: "Secure Online Voting is Possible. This is How"
-date: 2020-10-13
+date: 2022-01-13
 description: "If we overcome past mistakes, corruption, and bad faith, we can absolutely achieve secure online voting."
 image: "/img/blog/vote.png"
 tags: 
-- JAMStack
+- TypeScript
 - PWA
 - Docker
 - Kubernetes
-- Java
+- JavaScript
 - OIDC
 - React
 - Svelte
 - Spring Boot
+- Remix Run
 - FastAPI
 - Kotlin
 - Go
@@ -32,7 +33,7 @@ categories:
 - Software Engineering
 - Open Source
 - Microservices
----
+—-
 
 The right to vote is sacred. It's essential to live in a free society and to pick a winner on [The Voice](https://www.nbc.com/the-voice).
 Unfortunately, the right to vote is under attack worldwide, and bad actors have used tech to do it. 
@@ -42,7 +43,7 @@ hacking voting machines and voter registration databases and manipulating social
 [Other foreign state actors are interfering in elections](https://www.theverge.com/2020/9/11/21431990/russian-chinese-iranian-hackers-target-us-2020-elections-trump-biden-campaigns) 
 in similar if not quite as aggressive ways.
 
-Meanwhile, within our own borders here at home, the state legislature in North Carolina used data science with 
+Meanwhile, within our own borders here at home, state legislature in North Carolina used data science with 
 "[surgical precision](https://www.nbcnews.com/politics/politics-news/north-carolina-judges-toss-maps-slam-gerrymandering-stinging-ruling-n1049411)"
 to rig state elections at the expense of voters' constitutional rights. North Carolina is hardly alone. In 2018 in Georgia, the Secretary of State 
 running for governor had the authority to oversee his own election, and he orchestrated a complex web of corruption that actually 
@@ -51,10 +52,11 @@ running for governor had the authority to oversee his own election, and he orche
 If accountability bothers these politicians so much, they should work in meteorology or sports talk radio. 
 
 Even worse, the courts, 
-including [the Fifth Circuit Court of Appeals just this week in Texas](https://dfw.cbslocal.com/2020/10/13/reinstates-texas-order-limiti-mail-in-ballot-drop-off-locations-1-county/),
+including [the Fifth Circuit Court of Appeals in Texas](https://dfw.cbslocal.com/2020/10/13/reinstates-texas-order-limiti-mail-in-ballot-drop-off-locations-1-county/)
+and the [Supreme Court](https://www.cnn.com/2021/07/02/politics/john-roberts-voting-rights-act/index.html),
 have refused to remain above politics as the judiciary should and have chosen instead to legitimize these bad actors.
 
-We can't forget criminal mercenaries either as we also saw this week when 
+We can't forget criminal mercenaries either as we also saw when 
 [Microsoft took down Trickbot](https://blogs.microsoft.com/on-the-issues/2020/10/12/trickbot-ransomware-cyberthreat-us-elections/),
 at least for now, in their attempt to infect voting infrastructure with ransomware.
 
@@ -63,7 +65,7 @@ The goals vary. To sow chaos. To sow mistrust of the electoral process. To chang
 Regardless of the purpose of these attacks on the right to vote, they're shameful, and systemic flaws make it all possible: 
 
 * Lack of transparency as manufacturers with troubling conflicts of interest produce closed, proprietary voting machines 
-* Lack of knowledge about or interest in modern software architecture patterns, engineering best practices, UX strategies, modern technologies, accessibility, and good security hygiene
+* Lack of knowledge or interest in modern software architecture patterns, engineering best practices, UX strategies, modern technologies, accessibility, and good security hygiene
 * Lack of training for staff in using and maintaining the available voting technology
 * Lack of funding for officials acting in good faith to build robust voting infrastructure
 * Lack of access controls to prevent officials acting in *bad* faith from exercising undue influence over the infrastructure for nefarious purposes
@@ -74,7 +76,7 @@ Because of these systemic problems, the high stakes involved in electing officia
 the breathtaking incompetence and embarrassing failure of "modern" voting apps
 like the [IowaReporterApp](https://www.vox.com/recode/2020/2/7/21125078/iowa-caucus-2016-mobile-app-2020), and the fear of relentless
 attacks from around the nation and the world, we are in a place now where the consensus is that the only secure way to vote 
-is with paper ballots. To say nothing of the issues associated with paper ballots. Or the matter of voter access 
+is with paper ballots. To say nothing of the vulnerabilities associated with paper ballots. Or the matter of voter access 
 to those paper ballots, which itself is fraught with bad faith arguments and [racism](/blog/black-lives-matter/).
 
 It's easy, if profoundly disappointing, to see how we got here, but it really doesn't have to be this way.
@@ -88,18 +90,18 @@ There is an old joke:
 In order to build a modern voting solution, we need to look at the problems with existing voting solutions and "not do them."
 I believe secure online voting must have several critical features.
 
-### Open Source
+### Open Source (as much as possible)
 
 This is absolutely crucial. The core of the solution must be open-source. Period. 
-Every line of code needs to be available for all stakeholders--media, 
-elected officials, election attorneys, security analysts, and most importantly voters--to have confidence in the security 
+Every line of code needs to be available for all stakeholders—media, 
+elected officials, election attorneys, security analysts, and most importantly voters—to have confidence in the security 
 and integrity of the software and therefore in the outcomes of elections. 
 
-Now we will see shortly that it may be necessary to incorporate some commercial solutions that are closed-source, but those should 
+We will see shortly that it may be necessary to incorporate some commercial solutions that are closed-source, but those should 
 be on the margins. There should be no core functionality that isn't available for all to see.
 
-Another reason to value open source is that a mission as important as this demands diverse experiences and perspectives--on
-voting experiences, past software failures, overcoming [biases](/blog/vidya/technology/black-lives-matter/), 
+Another reason to value open source is that a mission as important as this demands diverse experiences and perspectives—on
+voting experiences, past software failures, [biases](/blog/vidya/technology/black-lives-matter/), 
 architectural patterns, tech stacks, potential vulnerabilities, and whatever else we need to understand to build 
 the best online voting platform possible.
 
@@ -128,20 +130,18 @@ privileges and integrity.
 
 While the source code will be fully transparent to give everyone confidence in the integrity and fairness
 of election outcomes, we also need that transparency to extend to the runtime operation of the software. We need to 
-know the health of the system and to know every single thing that happens throughout the architecture--and who did it. 
+know the health of the system and to know every single thing that happens throughout the architecture—and who did it. 
 This means continuous monitoring throughout the stack, elegant visualizations of the telemetry, and if we can manage it, 
 anomaly detection through analytics. This level of auditability is necessary for Zero Trust.
 
 ### Immutable and Append-Only
 
 I have [written](/blog/business-case-for-functional-programming/) and [spoken](/blog/talking-trends-at-tech-talk-dc/)
-a great deal about the value of immutable data, and I think it is essential to secure online voting. The software
-should not permit updates or deletes. Rather, any change to the data--a newly registered voter, a new address for an existing voter,
-and certainly every vote--should be represented in immutable, append-only fashion. As part of the 
-auditability of the software, we should be able to replay every event that's occurred to recreate state at any point
+a great deal about the value of immutable data, and I think it is essential for secure online voting. The software
+should not permit updates or deletes. Rather, any change to the data—a newly registered voter, a new address for an existing voter,
+and certainly every vote—should be represented in immutable, append-only fashion. As part of the 
+auditability of the software, we should be able to replay every event to recreate state at any point
 in the process.
-
-In fact, immutability might be the single best defense against bad actors.
 
 ### Client Device and Application Deployment Agnostic
 
@@ -153,14 +153,14 @@ or feature.
 
 ### Usable
 
-This might seem obvious, but secure online voting demands that all stakeholders consider it intuitive. This manifests in
-several ways. User interfaces need to reflect modern UX principles so that voters, poll workers, and state officials across age and other
-demographics find the software intuitive. This implies they be accessible as well to support users with disabilities. 
+This might seem obvious, but secure online voting demands all stakeholders consider it intuitive. This manifests in
+several ways. User interfaces need to reflect modern UX principles so that voters, poll workers, and state officials across age, 
+education level, ability, and other factors find the software intuitive.
 
-I also believe that giving voters the opportunity to cast their ballots from wherever they wish is a form of usability.
+I also believe giving voters the opportunity to cast their ballots from wherever they wish is a form of usability.
 It's not just about comfort either. Because of the relentless media obsession with conflict, everyone tends to focus on candidates, 
 but what about referendums, state constitutional amendments, and bond issues? These can be complex. I know from experience 
-that it's helpful to research these comfortably rather than within the space and time constraints of a traditional voting booth. 
+that it's helpful to research these comfortably from your home rather than within the space and time constraints of a traditional voting booth. 
 
 Part and parcel with usability is performance. Monitoring will help uncover issues with performance, but a modern online
 voting system needs to be architected for performance. Performance issues will not only be annoying, but they could 
@@ -168,13 +168,13 @@ also undermine confidence in the integrity of the vote.
 
 ### Simple
 
-To achieve all of this, there will be a lot going on in a secure online voting platform--user interfaces, APIs, encryption,
+To achieve all of this, there will be a lot going on in a secure online voting platform—user interfaces, APIs, encryption,
 databases, multifactor authentication, monitoring. It will be tempting to add complexity to integrate it all, and we 
-need to resist that temptation to overengineer. Otherwise, the application will become unsustainable for the mainainers
+need to resist the temptation to overengineer. Otherwise, the application will become unsustainable for mainainers
 and, much worse, unusable for voters and others, which will bring
-us right back to the status quo of a voting platform that diminshes the confidence we have in the integrity of our elections.
+us right back to the status quo of a voting platform that diminishes the confidence we have in the integrity of our elections.
 
----
+—-
 
 This is a lot, and in order to achieve it, a secure voting platform needs to be engineered with a continuous deployment 
 model that automates testing (for functionality, security, performance, accessibility), static analysis, and deployment.
@@ -183,7 +183,8 @@ We need a process that solves for the key metrics for software delivery performa
 lead time for changes, time to restore service, and change failure rate.
 
 The good news is that a secure online voting solution doesn't have steep demands for scalability or performance. It's not 
-like there will be tens of thousands of votes per second; this isn't [The Masked Singer](https://www.fox.com/the-masked-singer/).
+like there will be tens of thousands of votes per second. This isn't [The Masked Singer](https://www.fox.com/the-masked-singer/).
+
 Even if there were one instance of the platform for the entire United States, that's about 150 million voters.
 That's not a lot. And because in America every state runs its own platform, for better or worse, you'd have at most one 
 instance of the platform for each [state and inhabited territory](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States). 
@@ -208,125 +209,108 @@ still work without any JavaScript because HTTP supports form submission on its o
 
 Certainly a front end in Rails or another robust monolithic framework would be effective as would
 alternatives like [Next.js](https://nextjs.org/) or [SvelteKit](https://kit.svelte.dev/), but I find it hard to resist Remix's 
-lean philosophy. It even offers templates for a variety of deployment platforms like Cloudflare, Fly.io, Netlify, and Vercel,
-and that list will only grow. This deployment flexibility is essential.
+lean philosophy. As part of the trend towards more SSR at the edge, Remix Run even offers templates for a variety of 
+deployment platforms like Cloudflare, Fly.io, Netlify, and Vercel, and that list will only grow. Although edge 
+functionality isn't essential for voting software that applies across such little territory (a single state), the deployment flexibility 
+is essential, and every millisecond helps. 
 
 In addition, I think it is important that the front end is deployed as a [Progressive Web App](/blog/vidya-reloaded/).
 This offers a lot of benefits, but primarily for this purpose, it is critical that the front end is always available 
 and as functional as possible regardless of connectivity, which absurdly remains a problem in the richest country in the world. 
 
-This is orthogonal to the choice for UI or PWAs, but the voting application needs to have a strong 
+This is orthogonal to the choice for UI or PWAs, but the voting application needs to have 
+[Cross-Site Request Forgery](https://owasp.org/www-community/attacks/csrf) protections and a strong 
 [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) as well.
 
 By the way, it might be interesting down the road to think of voice interfaces allowing people to vote with Google Assistant,
-Alexa, or Siri if privacy concerns can be addressed. One challenge at a time though. 
-
-### API: Spring Boot
-
-The purpose of the API is to authenticate requests from the UI--in most cases, votes--and persist
-data to the immutable, append-only data store while responding with, in the happy path scenario, a confirmation
-and a way for voters to track their votes through the process so they can have every confidence their votes count.
-
-I know a UI layer and API layer add complexity beyond a simple monolith. You could build a Remix Run UI that communicates
-directly with a database (using [Prisma](https://www.prisma.io/) for example) on the server and be done with it. However,
-I think it is worth separating them to increase flexibility of deployment and to open up the possibility of multiple UIs
-like native mobile apps or voice assistants. I understand this is very debatable though.
-
-That said, there are a *lot* of great API solutions like [FastAPI](https://fastapi.tiangolo.com/), [Go kit](https://gokit.io/), and
-[Lagom](https://www.lagomframework.com/), but [Spring Boot](https://spring.io/projects/spring-boot) offers some compelling 
-advantages:
- 
-* Available in Java and Kotlin, which are simple, statically typed languages many engineers know
-* Straightforward primitives for writing [reactive](https://spring.io/reactive) APIs
-* [Ability to build "Initializrs" for deployment to popular platforms in a manner similar to Remix Run](https://spring.io/blog/2020/02/24/netflix-built-a-spring-application-generator-to-boost-dev-productivity-here-s-how-you-can-too)
-
-Any of these options would be great though.
+Alexa, or Siri if privacy concerns can be addressed. One challenge at a time though.
 
 ### Database: PostgreSQL. With a twist
 
-The backbone of this architecture is the [event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) architecture based on immutable, append-only data store representing every single mutation to the data on the platform
-in order to ensure full replayability and traceability. How can we do this with PostgreSQL?
+The backbone of this architecture is the [event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html)-ish architecture 
+based on an immutable, append-only data store representing every single mutation to the data on the platform in order to
+ensure full replayability and traceability. How can we do this with PostgreSQL?
 
 Easy. Revoke UPDATE and DELETE privileges!
 
-Anything more than PostgreSQL, which is straightforward to deploy and agnostic of environment, like a MongoDB would be overkill given the relatively small scale--particularly 
+Anything more than PostgreSQL, which is straightforward to deploy and agnostic of environment, like MongoDB would be overkill given the small scale—particularly 
 if someone deploys the online voting platform for a small election below the state level with just a few thousand or even a few hundred voters.
 
-All we need to do is to store votes in a single table where a simple GROUP BY will aggregate election results. 
+We could store votes in a single table where a simple [GROUP BY](https://www.sqltutorial.org/sql-group-by/) will aggregate election results. 
 That's easy. We can also store temporal and location data so we can run some basic secondary queries like measuring voter activity
-by precinct or time of day or day of week or whatever else you want to know.
+by precinct or time of day or day of week or whatever else you want to know. Changes to voter information, a popular action for bad actors, would also be 
+tracked as immutable events, and voters would be notified as they happen.
 
-So immutable PostgreSQL it is.
+So immutable PostgreSQL it is. It's easy to connect to PostgreSQL from the UI with [Prisma](https://www.prisma.io/). 
 
 By the way, what about blockchain? [No. Just. No.](/blog/pop-goes-the-blockchain/)
- 
-### Deployment: Docker and Kubernetes
 
-This hypothetical architecture has several moving parts; the real manifestation of a secure online voting platform may have
-fewer. Either way, we need deployment to be seamless and predictable across any environment. This is exactly the use case 
-for Docker containers--for microservices, data stores, monitoring software, etc.--and Kubernetes to orchestrate them. 
-Kubernetes in particular is particularly compelling because it serves as the common denominator for deployments to AWS, Azure, Google Cloud,
-and on premise. In other words, Kubernetes is central to being deployment agnostic on the back end.  
+### Deployment: Somewhere easy
 
-This post is already long enough without getting into software engineering tooling like Gradle, GitHub, 
-whatever continuous integration (CI) could be in play, and so on, but I do want to send a shout out to [Earthly](https://docs.earthly.dev/), 
-which has recently emerged as a powerful build automation tool at a layer of abstraction above Docker. We want to make sure
-we maximize reproducibility, determinism, and parallelism to make builds as simple, reliable, and performant as possible. Earthly could
-be the perfect fit. 
+I have no particular preference for where we deploying this online voting platform, but it needs to be somewhere offering 
+good DX, high availability, and disaster recovery. To me, this implies any of the out-of-the-box deployment targets for Remix Run,
+but it could be AWS, Heroku, or many other cloud providers. There could also be a combination like Remix Run on Cloudflare and 
+PostgreSQL, SMTP, and other infrastructure on Supabase. It all depends on what's simple, cost effective, and meets the needs
+of voters and staff.
 
-### Monitoring: EFK or Splunk?
+### Monitoring, Auditing, Disaster Recovery, and High Availability: It depends
 
-I'll be honest about a couple of things. I am not an expert on monitoring, and I don't really want to have to worry too
-much about it when it comes to secure online voting. Don't get me wrong. Robust monitoring is critical to the auditability and 
-traceability fundamental to the value of the platform, but it's not core functionality I care to spend a lot of time on when
-there are so many other challenges.  
+An online voting platform will come under attack from the most sophisticated hackers in the world, and its single most important
+requirement is that it always maintains the confidence of voters. In order to face these challenges, we need
+monitoring, auditing, disaster recovery, and high availability
 
-The preference is always open-source. It seems to me deploying an [EFK stack on Kubernetes](https://dzone.com/articles/efk-stack-on-kubernetes-part-1)
-would be sufficient, but that requires the skill and time to configure everything as needed. Meanwhile, Splunk, the industry 
-leader in monitoring, is proprietary and probably overkill for the same reasons a data store like Kafka would be, but the platform would
-benefit from paid Splunk support.
+These are cross-cutting concerns that apply to any non-trivial deployment, but they are undeniably essential here. It's hard
+to identify particular solutions because they are a function of the deployment platform, but suffice to say that any platform
+that cannot meet the needs of a mission-critical system like anomaly detection and alerting is a nonstarter.
+
+In the end, we need to be able to understand who, what, where, when, and how for every single event on the platform.
 
 ### Authentication and Authorization: A blend of open-source and proprietary solutions
 
-It goes without saying that the most important piece of online voting is security. In order to honor Zero Trust,
-every interface demands verification:
+It goes without saying that the most important piece of online voting is security. The challenge isn't just technical though:
 
-* An authenticated voter casting a ballot by initiating a protected HTTP request
-* An HTTP request over TLS hitting the API
-* The API inserting a record over TLS into the database
-* An authenticated user requesting monitoring data
-* The entire continuous delivery pipeline integrating version control, CI, containerization, and deployment
+* It needs to be simple to implement and maintain yet all but impregnable
+* It needs to be simple to use by all voters regardless their age, ability, tech savvy, and other factors
+* It must withstand independent audit by a trusted partner
 
-This will require a blend of solutions, and I think it makes sense to leverage proprietary implementations that have mastered
-these challenges. For example, an identity provider like Auth0 or Okta could provide multifactor authentication and [OpenID Connect](https://openid.net/connect/), particularly
-the [PKCE flow](https://dzone.com/articles/what-is-pkce) with [JWT](https://jwt.io/), to authenticate the user to the API. For mobile users, we could also look 
-into novel forms of authentication like UnifyID, which replaces passwords with machine learning to analyze unique 
-user behavior like gait and keypress habits to verify identity.
+This is where the top minds in infosec will be invaluable. I am nowhere near that class, but let me throw out some ideas.
 
-The API server can authenticate to the database server, where data are encrypted, via mutual TLS. Certificates are rotated periodically with 
-credentials configured as Kubernetes [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/) mapped to
-credentials in the identity provider. 
-  
-EFK and Splunk both offer multiple ways to authenticate. We can figure that out later. If it's Splunk, paying *them* to figure it out
-makes sense.
+In the interest of Zero Trust, the connections to the server, the database, and any other infrastructure like SMTP servers
+and caches will be authenticated over TLS, and all data at rest will be encrypted. This of course implies encryption key 
+storage like that provided by HashiCorp Vault and similar products.
+
+Voters would have a choice of authentication methods:
+
+* Username/password (12-64 characters with mixed case, numbers, and special characters required) and their choice of 
+MFA methods (*e.g.* authenticator app, physical key) along with the usual Forgot Password, Change Password flows
+* OpenID integration with Google
+
+There will always be voters who feel comfortable voting in the traditional way—showing up to their local polling places on Election Day and
+casting ballots. Polling places would simply be equipped with computers from which voters cast their ballots by setting up accounts
+and logging in through the browser to our secure online voting platform, and staff would assist in the process. If it were up to me, the government would provide
+funding for physical keys, and every voter who shows up in person on Election Day who wants one would get one and would be 
+shown how to use it.
+
+The database could associate random tokens to users, analogous to an access key for a cloud API, which for voters would have
+a quota limit of one for the duration of eligible voting. These tokens would be encrypted
+and rotated on a periodic basis, and they would represent voters in their interactions with the APIs to cast votes and staff
+in all other API calls.
 
 Finally, securing the entire DevSecOps pipeline means implementing a host of measures like keeping secrets out of code and configuration,
 managing access control and limiting permissions throughout the pipeline, signing changes to version control with PGP, 
-signing Docker images pushed to DockerHub with [Docker Content Trust](https://docs.docker.com/engine/security/trust/),
-using key management mechanisms appropriate for the deployment platform,
-and much more.
+using key management mechanisms appropriate for the deployment platform, and much more.
 
-And of course there are automated security tests in CI and full reviews by security professionals to vet the entire 
+And of course there are automated security tests in CI and full audits by security professionals to vet the entire 
 architecture.
 
----
+—-
 
 This entire stack, and really the whole architecture, is just an idea. It is all subject to change.
 
 ## Outstanding Questions
 
 Even if the architecture and technology stack are perfect, there are difficult questions that remain across not only 
-technology but also law, finance, and even philosophy. Here are some of them:
+technology but also law, finance, politics, and even philosophy. Here are some of them:
 
 * Every state has its own election laws, technology infrastructure, and budget. What kinds of legal, privacy, and technical challenges
 are there to migrating voter registration data to a new system? Is there even a need if the application can
@@ -343,11 +327,11 @@ Or should a modern voting platform recognize the very concept of a secret ballot
 [anachronism that is pointless at best and harmful at worst](https://www.washingtonpost.com/posteverything/wp/2017/01/06/want-to-improve-democracy-abolish-the-secret-ballot/) 
 and function accordingly?
 * Would machine learning serve a purpose here? If so, what's the simplest and most effective way to implement it?
+* Would there be an audience for making non-PII data available via APIS for data analytics by independent organizations? If so,
+* how would we do that?
 
 The beauty of open source is the diversity of thought and creative energy that converges to solve interesting, hard problems
 like these. 
-
----
 
 It will take a historical effort to build a secure online voting platform that allows all registered voters to make their voices
 heard and gives them the confidence that their votes count. If you find improving access to voting, guaranteeing the integrity
