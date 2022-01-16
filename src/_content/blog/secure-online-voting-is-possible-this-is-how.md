@@ -1,7 +1,7 @@
-—-
+---
 author: "Neil Chaudhuri"
 title: "Secure Online Voting is Possible. This is How"
-date: 2022-01-13
+date: 2022-01-15
 description: "If we overcome past mistakes, corruption, and bad faith, we can absolutely achieve secure online voting."
 image: "/img/blog/vote.png"
 tags: 
@@ -33,7 +33,7 @@ categories:
 - Software Engineering
 - Open Source
 - Microservices
-—-
+---
 
 The right to vote is sacred. It's essential to live in a free society and to pick a winner on [The Voice](https://www.nbc.com/the-voice).
 Unfortunately, the right to vote is under attack worldwide, and bad actors have used tech to do it. 
