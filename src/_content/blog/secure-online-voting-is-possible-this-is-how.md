@@ -43,10 +43,10 @@ hacking voting machines and voter registration databases and manipulating social
 [Other foreign state actors are interfering in elections](https://www.theverge.com/2020/9/11/21431990/russian-chinese-iranian-hackers-target-us-2020-elections-trump-biden-campaigns) 
 in similar if not quite as aggressive ways.
 
-Meanwhile, within our own borders here at home, state legislature in North Carolina used data science with 
+Meanwhile, within our own borders here at home, the state legislature in North Carolina used data science with 
 "[surgical precision](https://www.nbcnews.com/politics/politics-news/north-carolina-judges-toss-maps-slam-gerrymandering-stinging-ruling-n1049411)"
-to rig state elections at the expense of voters' constitutional rights. North Carolina is hardly alone. In 2018 in Georgia, the Secretary of State 
-running for governor had the authority to oversee his own election, and he orchestrated a complex web of corruption that actually 
+to rig state elections at the expense of voters' constitutional rights. North Carolina is hardly alone. In 2018 in Georgia, the Secretary of State, 
+who was running for governor, had the authority to oversee his own election, and he orchestrated a complex web of corruption that actually 
 [encouraged security vulnerabilities and culminated with his own breathtaking wipe of election servers and backups](https://www.engadget.com/2018-11-09-how-brian-kemp-hacked-georgias-election.html).
 
 If accountability bothers these politicians so much, they should work in meteorology or sports talk radio. 
@@ -58,9 +58,10 @@ have refused to remain above politics as the judiciary should and have chosen in
 
 We can't forget criminal mercenaries either as we also saw when 
 [Microsoft took down Trickbot](https://blogs.microsoft.com/on-the-issues/2020/10/12/trickbot-ransomware-cyberthreat-us-elections/),
-at least for now, in their attempt to infect voting infrastructure with ransomware.
+in their attempt to infect voting infrastructure with ransomware.
 
-The goals vary. To sow chaos. To sow mistrust of the electoral process. To change American policy objectives. To maintain a certain status quo. To make money.
+The goals vary. To sow chaos. To sow mistrust of the electoral process. To override the will of voters. To preserve power structures.
+To change American policy objectives. To make money.
 
 Regardless of the purpose of these attacks on the right to vote, they're shameful, and systemic flaws make it all possible: 
 
@@ -113,10 +114,7 @@ Instead, we need a Zero Trust approach to security. I will let
 [Chris Gerritz](https://www.scmagazine.com/home/opinion/executive-insight/what-is-the-zero-trust-framework-in-cybersecurity-and-5-considerations-for-building-a-zero-trust-it-environment/) 
 explain what this means:
 
-> Rather than defending only a single, enterprise-wide perimeter, the Zero Trust approach moves this perimeter to every 
-network, system, user, and devices within and outside the organization. This movement is enabled by strong identities, 
-multi-factor authentication, trusted endpoints, network segmentation, access controls, and user attribution to 
-compartmentalize and regulate access to sensitive data and systems.
+> Rather than defending only a single, enterprise-wide perimeter, the Zero Trust approach moves this perimeter to every network, system, user, and devices within and outside the organization. This movement is enabled by strong identities, multi-factor authentication, trusted endpoints, network segmentation, access controls, and user attribution to compartmentalize and regulate access to sensitive data and systems.
 
 Think of Zero Trust like a secure hotel. You need your key to get in the building, to get through front desk security, 
 to take the elevator to your floor and only your floor, and finally to enter your room or the gym or the pool. Even inside 
