@@ -174,7 +174,7 @@ need to resist the temptation to overengineer. Otherwise, the application will b
 and, much worse, unusable for voters and others, which will bring
 us right back to the status quo of a voting platform that diminishes the confidence we have in the integrity of our elections.
 
-—-
+---
 
 This is a lot, and in order to achieve it, a secure voting platform needs to be engineered with a continuous deployment 
 model that automates testing (for functionality, security, performance, accessibility), static analysis, and deployment.
@@ -281,8 +281,7 @@ storage like that provided by HashiCorp Vault and similar products.
 
 Voters would have a choice of authentication methods:
 
-* Username/password (12-64 characters with mixed case, numbers, and special characters required) and their choice of 
-MFA methods (*e.g.* authenticator app, physical key) along with the usual Forgot Password, Change Password flows
+* Username/password (12-64 characters with mixed case, numbers, and special characters required) and their choice of MFA methods (*e.g.* authenticator app, physical key) along with the usual Forgot Password, Change Password flows
 * OpenID integration with Google
 
 There will always be voters who feel comfortable voting in the traditional way—showing up to their local polling places on Election Day and
@@ -303,7 +302,7 @@ using key management mechanisms appropriate for the deployment platform, and muc
 And of course there are automated security tests in CI and full audits by security professionals to vet the entire 
 architecture.
 
-—-
+---
 
 This entire stack, and really the whole architecture, is just an idea. It is all subject to change.
 
@@ -312,23 +311,14 @@ This entire stack, and really the whole architecture, is just an idea. It is all
 Even if the architecture and technology stack are perfect, there are difficult questions that remain across not only 
 technology but also law, finance, politics, and even philosophy. Here are some of them:
 
-* Every state has its own election laws, technology infrastructure, and budget. What kinds of legal, privacy, and technical challenges
-are there to migrating voter registration data to a new system? Is there even a need if the application can
-represent registered voters some other way? 
+* Every state has its own election laws, technology infrastructure, and budget. What kinds of legal, privacy, and technical challenges are there to migrating voter registration data to a new system? Is there even a need if the application can represent registered voters some other way? 
 * Corrupt officials do not want anything that will make voting easier, but would even *honest* officials consider it? 
 * What's to stop government officials who are authorized users acting in bad faith from compromising the platform in some way?
-* While the platform would be built for resilience, what kinds of contingency plans would be in place just in case the platform 
-went down for an extended period?
-* If we use PostgreSQL as an immutable, append-only store to provide a replayable log of all data mutations, we will eventually
-hit its limits. What's the retention period for the data? If it is even necessary to retire the data to some kind of data lake
-after the retention period, where would that be? How would that work?
-* To what extent can we preserve the notion of a "secret ballot" where only voters themselves know their selections? 
-Or should a modern voting platform recognize the very concept of a secret ballot as an 
-[anachronism that is pointless at best and harmful at worst](https://www.washingtonpost.com/posteverything/wp/2017/01/06/want-to-improve-democracy-abolish-the-secret-ballot/) 
-and function accordingly?
+* While the platform would be built for resilience, what kinds of contingency plans would be in place just in case the platform went down for an extended period?
+* If we use PostgreSQL as an immutable, append-only store to provide a replayable log of all data mutations, we will eventually hit its limits. What's the retention period for the data? If it is even necessary to retire the data to some kind of data lake after the retention period, where would that be? How would that work?
+* To what extent can we preserve the notion of a "secret ballot" where only voters themselves know their selections? Or should a modern voting platform recognize the very concept of a secret ballot as an [anachronism that is pointless at best and harmful at worst](https://www.washingtonpost.com/posteverything/wp/2017/01/06/want-to-improve-democracy-abolish-the-secret-ballot/) and function accordingly?
 * Would machine learning serve a purpose here? If so, what's the simplest and most effective way to implement it?
-* Would there be an audience for making non-PII data available via APIS for data analytics by independent organizations? If so,
-* how would we do that?
+* Would there be an audience for making non-PII data available via APIS for data analytics by independent organizations? If so, how would we do that?
 
 The beauty of open source is the diversity of thought and creative energy that converges to solve interesting, hard problems
 like these. 
