@@ -175,6 +175,8 @@ us right back to the status quo of a voting platform that diminishes the confide
 
 ---
 
+None of these are sufficient on their own. For example, merely being open source isn't enough to make this platform secure.
+
 This is a lot, and in order to achieve it, a secure voting platform needs to be engineered with a continuous deployment 
 model that automates testing (for functionality, security, performance, accessibility), static analysis, and deployment.
 We need a process that solves for the key metrics for software delivery performance that Google describes in their 
