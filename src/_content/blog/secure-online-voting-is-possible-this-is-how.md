@@ -71,7 +71,8 @@ Regardless of the purpose of these attacks on the right to vote, they're shamefu
 * Lack of funding for officials acting in good faith to build robust voting infrastructure
 * Lack of access controls to prevent officials acting in *bad* faith from exercising undue influence over the infrastructure for nefarious purposes
 
-And many others.
+And many others. You can [read about the threats to and core values of a secure online voting platform](https://www.nap.edu/catalog/25120/securing-the-vote-protecting-american-democracy) 
+defined by a panel of experts.
 
 Because of these systemic problems, the high stakes involved in electing officials who will be making life and death decisions in the era of COVID,
 the breathtaking incompetence and embarrassing failure of "modern" voting apps
@@ -227,7 +228,8 @@ Alexa, or Siri if privacy concerns can be addressed. One challenge at a time tho
 
 The backbone of this architecture is the [event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) architecture 
 based on an immutable, append-only data store representing every single mutation to the data on the platform in order to
-ensure full replayability and traceability. How can we do this with PostgreSQL?
+ensure full replayability and traceability. This is particularly valuable for [risk-limiting audits](https://en.wikipedia.org/wiki/Risk-limiting_audit) 
+conducted after elections to verify the outcomes. How can we do this with PostgreSQL?
 
 Easy. Revoke UPDATE and DELETE privileges!
 
