@@ -94,7 +94,7 @@ I believe secure online voting must have several critical features.
 
 ### Open Source (as much as possible)
 
-This is absolutely crucial. The core of the solution must be open-source. Period. 
+In a world of absurd conspiracy theories and legitimate conflicts of interest for voting machine vendors, the core of the solution must be open-source.
 Every line of code needs to be available for all stakeholders—media, 
 elected officials, election attorneys, security analysts, and most importantly voters—to have confidence in the security 
 and integrity of the software and therefore in the outcomes of elections. 
@@ -116,6 +116,10 @@ Instead, we need a Zero Trust approach to security. I will let
 explain what this means:
 
 > Rather than defending only a single, enterprise-wide perimeter, the Zero Trust approach moves this perimeter to every network, system, user, and devices within and outside the organization. This movement is enabled by strong identities, multi-factor authentication, trusted endpoints, network segmentation, access controls, and user attribution to compartmentalize and regulate access to sensitive data and systems.
+
+Rather than try in vain to erect barriers to compromise, *Zero Trust assumes you have been compromised*. This posture
+demands authentication and authorization at every point of interaction. It's more work, but it's necessary to minimize
+vulnerability to modern, sophisticated attacks.
 
 Think of Zero Trust like a secure hotel. You need your key to get in the building, to get through front desk security, 
 to take the elevator to your floor and only your floor, and finally to enter your room or the gym or the pool. Even inside 
@@ -263,7 +267,7 @@ monitoring, auditing, disaster recovery, and high availability.
 
 These are cross-cutting concerns that apply to any non-trivial deployment, but they are undeniably essential here. It's hard
 to identify particular solutions because they are a function of the deployment platform, but suffice to say that any platform
-that cannot meet the needs of a mission-critical system like anomaly detection and alerting is a nonstarter.
+that cannot meet the needs of a mission-critical system like anomaly detection, alerting, and consistent backups is a nonstarter.
 
 In the end, we need to be able to understand who, what, where, when, and how for every single event on the platform.
 
