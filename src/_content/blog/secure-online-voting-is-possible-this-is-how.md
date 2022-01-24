@@ -70,6 +70,7 @@ Regardless of the purpose of these attacks on the right to vote, they're shamefu
 * Lack of training for staff in using and maintaining the available voting technology
 * Lack of funding for officials acting in good faith to build robust voting infrastructure
 * Lack of access controls to prevent officials acting in *bad* faith from exercising undue influence over the infrastructure for nefarious purposes
+* Lack of standards from NIST, DHS, and other government institutions for voting infrastructure 
 
 And many others. You can [read about the threats to and core values of a secure online voting platform](https://www.nap.edu/catalog/25120/securing-the-vote-protecting-american-democracy) 
 defined by a panel of experts.
@@ -135,7 +136,9 @@ While the source code will be fully transparent to give everyone confidence in t
 of election outcomes, we also need that transparency to extend to the runtime operation of the software. We need to 
 know the health of the system and to know every single thing that happens throughout the architecture—and who did it. 
 This means continuous monitoring throughout the stack, elegant visualizations of the telemetry, and if we can manage it, 
-anomaly detection through analytics. This level of auditability is necessary for Zero Trust.
+anomaly detection through analytics. This level of auditability is necessary for Zero Trust, and it is also
+particularly valuable for [risk-limiting audits](https://en.wikipedia.org/wiki/Risk-limiting_audit) conducted after elections
+to assess their integrity.
 
 ### Immutable and Append-Only
 
@@ -234,8 +237,7 @@ Alexa, or Siri if privacy concerns can be addressed. One challenge at a time tho
 
 The backbone of this architecture is the [event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) architecture 
 based on an immutable, append-only data store representing every single mutation to the data on the platform in order to
-ensure full replayability and traceability. This is particularly valuable for [risk-limiting audits](https://en.wikipedia.org/wiki/Risk-limiting_audit) 
-conducted after elections to verify the outcomes. How can we do this with PostgreSQL?
+ensure full replayability and traceability for risk-limiting audits. How can we do this with PostgreSQL?
 
 Easy. Revoke UPDATE and DELETE privileges!
 
