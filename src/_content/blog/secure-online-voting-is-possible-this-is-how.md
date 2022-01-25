@@ -10,7 +10,6 @@ tags:
 - Docker
 - Kubernetes
 - JavaScript
-- OIDC
 - React
 - Svelte
 - Spring Boot
@@ -21,8 +20,6 @@ tags:
 - Python
 - SQL
 - PostgreSQL
-- EFK
-- Splunk
 categories:
 - Government
 - Big Data
@@ -32,7 +29,6 @@ categories:
 - Cloud Computing
 - Software Engineering
 - Open Source
-- Microservices
 ---
 
 The right to vote is sacred. It's essential to live in a free society and to pick a winner on [The Voice](https://www.nbc.com/the-voice).
