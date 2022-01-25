@@ -166,7 +166,7 @@ education level, ability, and other factors find the software intuitive.
 I also believe giving voters the opportunity to cast their ballots from wherever they wish is a form of usability.
 It's not just about comfort either. Because of the relentless media obsession with conflict, everyone tends to focus on candidates, 
 but what about referendums, state constitutional amendments, and bond issues? These can be complex. I know from experience 
-that it's helpful to research these comfortably from your home rather than under pressue within the space and time constraints of a traditional voting booth. 
+that it's helpful to research these comfortably from your home rather than under pressure within the space and time constraints of a traditional voting booth. 
 
 Part and parcel with usability is performance. Monitoring will help uncover issues with performance, but a modern online
 voting system needs to be architected for performance. Performance issues will not only be annoying, but they could 
