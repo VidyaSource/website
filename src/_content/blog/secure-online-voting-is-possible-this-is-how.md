@@ -176,7 +176,7 @@ also undermine confidence in the integrity of the vote.
 
 To achieve all of this, there will be a lot going on in a secure online voting platform—user interfaces, APIs, encryption,
 databases, multifactor authentication, monitoring. It will be tempting to add complexity to integrate it all, and we 
-need to resist the temptation to overengineer. Otherwise, the application will become unsustainable for mainainers
+need to resist the temptation to overengineer. Otherwise, the application will become unsustainable for maintainers
 and, much worse, unusable for voters and others, which will bring
 us right back to the status quo of a voting platform that diminishes the confidence we have in the integrity of our elections.
 
