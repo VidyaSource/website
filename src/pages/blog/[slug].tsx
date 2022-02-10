@@ -50,6 +50,24 @@ const Post = (blogPost: BlogPost) => {
                         },
                     ],
                 }}
+                additionalMetaTags={[
+                    {
+                        property: 'twitter:card',
+                        content: "summary"
+                    },
+                    {
+                        property: 'twitter:description',
+                        content: blogPost.frontMatter.description
+                    },
+                    {
+                        property: 'twitter:image',
+                        content: imageUrl
+                    },
+                    {
+                        property: 'twitter:image:alt',
+                        content: title
+                    },
+                ]}
             />
             <BlogJsonLd
                 url={`https://www.vidyasource.com/blog/${blogPost.slug}`}
