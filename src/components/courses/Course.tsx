@@ -55,6 +55,24 @@ export const Course: FC<CourseProps> = (p) => {
                         },
                     ]
                 }}
+                additionalMetaTags={[
+                    {
+                        property: 'twitter:card',
+                        content: "summary"
+                    },
+                    {
+                        property: 'twitter:description',
+                        content: blurb
+                    },
+                    {
+                        property: 'twitter:image',
+                        content: `${process.env.basePath}${p.image.url}`
+                    },
+                    {
+                        property: 'twitter:image:alt',
+                        content: title
+                    },
+                ]}
             />
             <CourseJsonLd
                 courseName={name}
