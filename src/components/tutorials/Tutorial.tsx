@@ -22,7 +22,7 @@ interface TutorialProps {
 export const Tutorial: FC<TutorialProps> = (p) => {
     const router = useRouter()
     const title = `Vidya | ${p.title}`
-    const fullTitle = `${title}: ${p.subtitle}`
+    const fullTitle = `${title}${p.subtitle ? `: ${p.subtitle}` : ``}`
     const videoUrl = `https://www.youtube.com/embed/${p.youTubeId}`
     const thumbnailUrl = `${process.env.basePath}${p.thumbnail.url}`
     return (
