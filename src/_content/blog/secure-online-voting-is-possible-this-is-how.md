@@ -69,7 +69,7 @@ Regardless of the purpose of these attacks on the right to vote, they're shamefu
 * Lack of standards from NIST, DHS, and other government institutions for voting infrastructure 
 
 And many others. You can [read about the threats to and core values of a secure online voting platform](https://www.nap.edu/catalog/25120/securing-the-vote-protecting-american-democracy) 
-defined by a panel of experts.
+defined by a panel of experts. This can function as something of a requirements document.
 
 Because of these systemic problems, the high stakes involved in electing officials who will be making life and death decisions in the era of COVID,
 the breathtaking incompetence and embarrassing failure of "modern" voting apps
@@ -273,15 +273,24 @@ In the end, we need to be able to understand who, what, where, when, and how for
 
 It goes without saying that the most important piece of online voting is security. The challenge isn't just technical though:
 
+* It must guarantee sound, secure, private, bias-free identity proofing for voters.
 * It needs to be simple to implement and maintain yet all but impregnable
 * It needs to be simple to use by all voters regardless their age, ability, tech savvy, and other factors
 * It must withstand independent audit by a trusted partner
 
 This is where the top minds in infosec will be invaluable. I am nowhere near that class, but let me throw out some ideas.
 
+We have to start with the complex issue of identity proofing. This is more than just authentication. How can we know through some combination
+of biometrics or identity questions or whatever that you are you and that it is truly you casting a ballot? This is frankly
+an existential question for secure online voting. As of 2018, experts declared
+[this impossible](https://www.nap.edu/catalog/25120/securing-the-vote-protecting-american-democracy).
+If this is still true, you can stop reading, and it certainly doesn't look good after
+[the mess the IRS made with ID.me](https://www.cnet.com/personal-finance/taxes/irs-to-back-off-third-party-facial-recognition-what-happens-to-id-me/).
+But I am confident we will get there relatively soon, and I will assume the solution exists for the rest of this post.
+
 In the interest of Zero Trust, the connections to the server, the database, and any other infrastructure like SMTP servers
 and caches will be authenticated over TLS, and all data at rest will be encrypted. This of course implies encryption key 
-storage like that provided by HashiCorp Vault and similar products.
+storage and rotation like that provided by HashiCorp Vault and similar products.
 
 Voters would have a choice of authentication methods:
 
@@ -315,6 +324,7 @@ This entire stack, and really the whole architecture, is just an idea. It is all
 Even if the architecture and technology stack are perfect, there are difficult questions that remain across not only 
 technology but also law, finance, politics, and even philosophy. Here are some of them:
 
+* As described earlier, how do we do identity proofing? Is it even possible?
 * Every state has its own election laws, technology infrastructure, and budget. What kinds of legal, privacy, and technical challenges are there to migrating voter registration data to a new system? Is there even a need if the application can represent registered voters some other way? 
 * Corrupt officials do not want anything that will make voting easier, but would even *honest* officials consider it? 
 * What's to stop government officials who are authorized users acting in bad faith from compromising the platform in some way?
