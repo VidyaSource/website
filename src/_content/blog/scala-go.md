@@ -122,7 +122,8 @@ the design philosophies of the respective languages. Of course
 [you are welcome to suggest improvements](/contact/) regardless. Also, the Scala code uses some of the revolutionary
 [Scala 3](https://docs.scala-lang.org/scala3/new-in-scala3.html) syntax and constructs.
 
-### Absent values
+
+### <a name="absent-values"></a>Absent values
 
 You have to deal with potentially absent values all the time like when database queries for single entities return no hits or 
 when you are maintaining backwards-compatible microservices. Typically, absent values are represented with `null`. Sir 
@@ -212,7 +213,7 @@ if you need to compose multiple potentially absent values, you need to write mul
 The simplicity may well be worth it though.
 
 
-### Error Handling
+### <a name="error-handling"></a>Error Handling
 
 This is another inglorious task that is critical to good software engineering. As programs become big and complex, proper
 error handling is critical to diagnose bugs and move builds to production as quickly as possible. 
@@ -327,7 +328,7 @@ Finally, even though it doesn't appear in this example, `defer` [is a simple but
 in Go that executes a call at the end of a function no matter what happens--error or otherwise. You can use `defer` to 
 clean things up after an error in the same way you'd use `finally` in other languages. 
 
-### Collections
+### <a name="collections"></a>Collections
 
 I don't have to tell you that manipulating data from a database, a [stream](https://medium.com/stream-processing/what-is-stream-processing-1eadfca11b97),
 a REST request, or a host of other sources is a common task in application development. Languages that facilitate seamless
@@ -391,7 +392,7 @@ The code is more verbose than its Scala counterpart, but it is significantly mor
 single *O(n)* traversal with constant-time lookups in the map, and we maintain only two collections the entire time. The efficiency
 of Go collections and the simplicity of using them are among the best reasons to use Go in a project.
 
-### Concurrency and Parallelism
+### <a name="concurrency-and-parallelism"></a>Concurrency and Parallelism
 
 Modern software applications have a lot more to do in a lot less time, so it's important for your code to take advantage
 of every bit of power your machines have. Modern applications demand modern languages that enable you to leverage every
@@ -600,7 +601,7 @@ as always in concurrent programming. They save memory but you need to govern acc
 Concurrency and parallelism are always hard. You have to decide which language offers primitives that comport with your mental
 model of how things should work.  
 
-### Polymorphism
+### <a name="polymorphism"></a>Polymorphism
 
 You know polymorphism. Far beyond trite `Animal`-`Dog`-`Cat` examples, the business value of polymorphism is to
 leverage abstractions to limit changes to your code even as the functionality of your application grows. By defining 
