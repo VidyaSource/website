@@ -11,6 +11,7 @@ const navigation = [
     {name: 'Consulting', href: '/consulting'},
     {name: 'Blog', href: '/blog'},
     {name: 'Tutorials', href: '/tutorials'},
+    {name: 'About', href: '/about'},
 ]
 
 export const Hero = () => {
