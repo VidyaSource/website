@@ -46,7 +46,7 @@ module.exports = {
                 dark: '#436997',
             },
             gray: {
-                light: '#E0E0E0',
+                light: '#f6f6f6',
                 DEFAULT: '#808285',
                 dark: '#494B4F',
             },
