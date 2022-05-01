@@ -17,7 +17,7 @@ const RecentPosts = (p: RecentPostsProps) => {
             </div>
             <section className="relative max-w-7xl mx-auto">
                 <div className="text-center">
-                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">The latest from the Vidya blog</h2>
+                    <h2 className="text-3xl tracking-tight font-extrabold text-red sm:text-4xl">The latest from the Vidya blog</h2>
                     <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-dark dark:text-blue-light sm:mt-4">
                         Discover <Link href="/blog"><a>new insights</a></Link> into everything from agile software development to innovative engineering techniques to the
                         impact of technology on our world
