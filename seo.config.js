@@ -1,13 +1,13 @@
 export default {
     title: "Vidya | Build faster. Build better.",
-    description: "Welcome to Vidya. Consulting and custom application development to strengthen your business. Courses and content to help you harness technology for yourself.",
+    description: "Welcome to Vidya. Consulting and custom application development to strengthen your business. Courses and content to help you harness technology for yourself. We are a federally certified 8(a) small business by the US Small Business Administration.",
     openGraph: {
         type: 'website',
         locale: 'en_US',
         url: process.env.basePath,
         title: "Vidya | Build faster. Build better.",
         site_name: 'Vidya',
-        description: "Build faster. Build better. Consulting and custom application development to strengthen your business. Courses and content to help you harness technology for yourself.",
+        description: "Welcome to Vidya. Build faster. Build better. Consulting and custom application development to strengthen your business. Courses and content to help you harness technology for yourself. We are a federally certified 8(a) small business by the US Small Business Administration.",
         tags: ["Vidya", "technology", "courses", "tutorials", "software", "consulting", "engineering", "automation"],
         images: [
             {
