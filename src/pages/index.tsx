@@ -7,6 +7,7 @@ const RecentPosts = dynamic(() => import("../components/home/RecentPosts"))
 const Clients = dynamic(() => import("../components/Clients"))
 const Testimonials = dynamic(() => import("../components/home/Testimonials"))
 const CallToAction = dynamic(() => import("../components/CallToAction"))
+const Certifications = dynamic(() => import("../components/Certifications"))
 const Footer = dynamic(() => import("../components/Footer"))
 
 interface HomeProps {
@@ -20,6 +21,7 @@ const Home = (p: HomeProps) => {
             <Hero />
             <RecentPosts blogPosts={p.blogPosts}/>
             <Clients />
+            <Certifications />
             <Testimonials />
             <CallToAction />
             <Footer/>
