@@ -1,5 +1,4 @@
 ---
-
 author: "Neil Chaudhuri"
 title: "Vidya is 8(a) Certified!"
 description: "We are proud to be certified 8(a) by the US Small Business Administration."
@@ -38,3 +37,5 @@ our current offerings by making our courses available online and building new so
 
 We want to thank SBA for recognizing Vidya's past success and future potential, and we cannot wait to do business
 with you. [Let's talk](/contact).
+
+<img alt="US Small Business Administration 8(a) Certified" src="/img/certifications/8a.png" width="475px" height="529px" />
