@@ -19,7 +19,7 @@ function MyApp({Component, pageProps}: AppProps) {
     )
 }
 
-export function reportWebVitals(metric: NextWebVitalsMetric) {
+/*export function reportWebVitals(metric: NextWebVitalsMetric) {
     const { id, name, startTime, label, value } = metric
     ReactGA.initialize("G-SV6CZCPD3B")
     ReactGA.event({
@@ -30,6 +30,6 @@ export function reportWebVitals(metric: NextWebVitalsMetric) {
         nonInteraction: true,
         transport: "beacon"
     })
-}
+}*/
 
 export default MyApp
