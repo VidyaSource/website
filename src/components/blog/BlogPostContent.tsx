@@ -42,10 +42,17 @@ interface BlogPostContentProps {
 
 const BlogPostContent = (p: BlogPostContentProps) => {
     return (
+        <div>{p.content}</div>
+
+    )
+}
+
+/*const BlogPostContent = (p: BlogPostContentProps) => {
+    return (
         <ReactMarkdown components={components} remarkPlugins={[gfm]} rehypePlugins={[raw]}>
             {p.content}
         </ReactMarkdown>
     )
-}
+}*/
 
 export default BlogPostContent
