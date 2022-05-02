@@ -4,7 +4,8 @@ module.exports = withPWA({
     swcMinify: true,
     pwa: {
         dest: 'public',
-        disable: process.env.NODE_ENV === 'development'
+        disable: true
+        //disable: process.env.NODE_ENV === 'development'
     },
     webpack: (config, {isServer}) => {
         if (!isServer) {
