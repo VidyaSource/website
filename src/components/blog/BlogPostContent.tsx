@@ -5,9 +5,9 @@ import gfm from 'remark-gfm'
 import {YouTubeVideo} from "../YouTubeVideo";
 import Image from 'next/image'
 import raw from 'rehype-raw'
-import {NormalComponents, SpecialComponents} from "react-markdown/src/ast-to-react";
+import {Components} from "react-markdown/lib/ast-to-react";
 
-const components: Partial<Omit<NormalComponents, keyof SpecialComponents> & SpecialComponents> = {
+const components: Components = {
     img: ({node, ...props}) => {
         return (
             <div style={{width: props.width, height: props.height}} className="relative mx-auto">
