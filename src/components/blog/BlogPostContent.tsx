@@ -42,7 +42,7 @@ interface BlogPostContentProps {
 
 const BlogPostContent = (p: BlogPostContentProps) => {
     return (
-        <ReactMarkdown components={components}  >
+        <ReactMarkdown components={components} remarkPlugins={[gfm]} rehypePlugins={[raw]}>
             {p.content}
         </ReactMarkdown>
     )
