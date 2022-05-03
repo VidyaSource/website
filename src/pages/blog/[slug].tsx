@@ -1,7 +1,7 @@
 import {useRouter} from 'next/router'
 import ErrorPage from 'next/error'
 import {Page} from "../../components/Page";
-import {BlogPost, getAllBlogPosts, getBlogPostBySlug} from "../../lib/blogPost-utils";
+import {BlogPostMetadata, getAllBlogPosts, getBlogPostBySlug} from "../../lib/blogPost-utils";
 import {NextSeo} from 'next-seo'
 import { BlogJsonLd } from 'next-seo'
 import {constants} from "../../lib/constants";
@@ -13,10 +13,13 @@ import {selectTags} from "../../lib/selectTags";
 import format from "date-fns/format"
 import { serialize } from 'next-mdx-remote/serialize'
 import gfm from 'remark-gfm'
+import {MDXRemoteSerializeResult} from "next-mdx-remote";
 
 const BlogPostContent = dynamic(() => import("../../components/blog/BlogPostContent"))
 
-const Post = (blogPost: BlogPost) => {
+export type ProcessedBlogPost = Omit<BlogPostMetadata, "content"> & { content: MDXRemoteSerializeResult}
+
+const Post = (blogPost: ProcessedBlogPost) => {
     const router = useRouter()
     const title = `Vidya | ${blogPost.frontMatter.title}`
     blogPost.frontMatter.date = zonedTimeToUtc(new Date(blogPost.frontMatter.date), "America/New_York")
