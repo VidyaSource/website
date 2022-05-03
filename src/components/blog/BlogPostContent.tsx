@@ -1,9 +1,7 @@
-import ReactMarkdown from 'react-markdown'
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import {a11yDark} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import {YouTubeVideo} from "../YouTubeVideo";
-import Image from 'next/image'
-import {MDXRemote} from "next-mdx-remote";
+import {MDXRemote, MDXRemoteSerializeResult} from "next-mdx-remote";
 import {PostImage} from "./PostImage";
 
 const components = {
@@ -32,7 +30,7 @@ const components = {
 }
 
 interface BlogPostContentProps {
-    content: string
+    content: MDXRemoteSerializeResult
 }
 
 const BlogPostContent = (p: BlogPostContentProps) => {
