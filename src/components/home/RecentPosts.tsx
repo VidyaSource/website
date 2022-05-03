@@ -36,7 +36,7 @@ const RecentPosts = (p: RecentPostsProps) => {
                                     <a>
                                         <div className="h-48 w-full relative">
                                             <Image
-                                                objectFit="cover"
+                                                objectFit="fill"
                                                 layout="fill"
                                                 quality={100}
                                                 src={postImage}
@@ -63,7 +63,7 @@ const RecentPosts = (p: RecentPostsProps) => {
                                                 <div className="h-12 w-12 relative">
                                                     <Image
                                                         layout="fill"
-                                                        objectFit="cover"
+                                                        objectFit="fill"
                                                         className="rounded-full"
                                                         src={authorImage}
                                                         alt={author}

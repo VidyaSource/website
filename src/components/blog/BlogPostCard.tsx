@@ -25,7 +25,7 @@ export const BlogPostCard = (p: BlogPostCardProps) => {
                     <a>
                         <div className="h-48 w-full relative">
                             <Image
-                                objectFit="cover"
+                                objectFit="fill"
                                 layout="fill"
                                 quality={100}
                                 src={postImage}
