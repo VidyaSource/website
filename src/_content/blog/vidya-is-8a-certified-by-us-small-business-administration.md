@@ -2,7 +2,7 @@
 author: "Neil Chaudhuri"
 title: "Vidya is 8(a) Certified!"
 description: "We are proud to be certified 8(a) by the US Small Business Administration."
-image: "/img/blog/sba.svg"
+image: "/img/blog/sba.png"
 date: 2022-05-01
 categories: 
 - Partners
