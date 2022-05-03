@@ -247,14 +247,14 @@ a `ref` from the caller so form libraries can work with it as needed.
 
 When considering how to lay out your source code, it comes down to your team's preference, but as I tweeted recently:
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">There is a lot of commentary on how we should lay out source code in <a href="https://twitter.com/hashtag/React?src=hash&amp;ref_src=twsrc%5Etfw">#React</a>. If you take two &quot;things&quot; (functions, classes, <a href="https://twitter.com/hashtag/TypeScript?src=hash&amp;ref_src=twsrc%5Etfw">#TypeScript</a> interfaces, etc.), the higher the frequency that changing one changes the other, the closer they should be together</p>&mdash; Neil Chaudhuri (@RealNeilC) <a href="https://twitter.com/RealNeilC/status/1443309713584689154?ref_src=twsrc%5Etfw">September 29, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote className="twitter-tweet"><p lang="en" dir="ltr">There is a lot of commentary on how we should lay out source code in <a href="https://twitter.com/hashtag/React?src=hash&amp;ref_src=twsrc%5Etfw">#React</a>. If you take two &quot;things&quot; (functions, classes, <a href="https://twitter.com/hashtag/TypeScript?src=hash&amp;ref_src=twsrc%5Etfw">#TypeScript</a> interfaces, etc.), the higher the frequency that changing one changes the other, the closer they should be together</p>&mdash; Neil Chaudhuri (@RealNeilC) <a href="https://twitter.com/RealNeilC/status/1443309713584689154?ref_src=twsrc%5Etfw">September 29, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 What does that really mean in practice?
 
 Simple. When it comes to our component library, this means organizing code dedicated to a particular component in the same 
 directory and even in some cases the same file. This is how we do it at a high level.
 
-<img alt="Button component directory layout" src="/img/blog/rcl-button.png" width="356px" height="206px" />
+<PostImage alt="Button component directory layout" src="/img/blog/rcl-button.png" width="356" height="206" />
 
 Our `Button.tsx` contains the `ButtonProps` interface, related types, and of course the component itself. Meanwhile, I love
 how Chakra UI allows us to separate theming from behavior, so the colors, spacing, font family, icon sizes, focus behavior, and other button

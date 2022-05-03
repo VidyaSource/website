@@ -14,7 +14,6 @@ categories:
 - Government
 
 ---
-
 I don't have to tell you it's been a difficult few years, so I am absolutely thrilled to announce 
 [US Small Business Administration (SBA)](https://www.sba.gov/) has certified Vidya as an 
 [8(a) business](https://www.sba.gov/federal-contracting/contracting-assistance-programs/8a-business-development-program).
@@ -38,4 +37,4 @@ our current offerings by making our courses available online and building new so
 We want to thank SBA for recognizing Vidya's past success and future potential, and we cannot wait to do business
 with you. [Let's talk](/contact).
 
-<img alt="US Small Business Administration 8(a) Certified" src="/img/certifications/8a.png" width="475px" height="529px" />
+<PostImage alt="US Small Business Administration 8(a) Certified" src="/img/certifications/8a.png" width="475" height="529" />
