@@ -11,6 +11,8 @@ import {Avatar} from "../../components/blog/Avatar";
 import {useMemo} from "react";
 import {selectTags} from "../../lib/selectTags";
 import format from "date-fns/format"
+import { serialize } from 'next-mdx-remote/serialize'
+import gfm from 'remark-gfm'
 
 const BlogPostContent = dynamic(() => import("../../components/blog/BlogPostContent"))
 
@@ -117,11 +119,20 @@ export default Post
 
 export async function getStaticProps({params}) {
     const post = await getBlogPostBySlug(params.slug)
+    const content = await serialize(
+        post.content,
+        {
+            mdxOptions: {
+                remarkPlugins: [gfm],
+            },
+            parseFrontmatter: false
+        }
+    )
 
     return {
         props: {
             ...post,
-            content: post.content,
+            content: content,
         },
     }
 }
