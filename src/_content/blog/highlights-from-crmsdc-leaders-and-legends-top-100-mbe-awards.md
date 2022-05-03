@@ -3,7 +3,7 @@
 author: "Neil Chaudhuri"
 title: "Highlights from CRMSDC Leaders and Legends"
 description: "CRMSDC Leaders and Legends was a blast, and it was an honor to receive a Top 100 MBE Award."
-image: "/PostImage/blog/top100.jpg"
+image: "/img/blog/top100.jpg"
 date: 2019-11-01
 categories: 
 - Partners
