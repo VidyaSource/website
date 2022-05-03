@@ -1,35 +1,30 @@
 import ReactMarkdown from 'react-markdown'
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import {a11yDark} from 'react-syntax-highlighter/dist/cjs/styles/prism'
-import gfm from 'remark-gfm'
 import {YouTubeVideo} from "../YouTubeVideo";
 import Image from 'next/image'
-import raw from 'rehype-raw'
-import {Components} from "react-markdown/lib/ast-to-react";
+import {MDXRemote} from "next-mdx-remote";
+import {PostImage} from "./PostImage";
 
-const components: Components = {
-    img: ({node, ...props}) => {
-        return (
-            <div style={{width: props.width, height: props.height}} className="relative mx-auto">
-                <Image alt={props.alt} src={props.src} layout="fill" objectFit="cover" />
-            </div>
-        )
+const components = {
+    PostImage: (props) => {
+        return <PostImage {...props} />
     },
-    code: ({node, inline, className, children, ...props}) => {
-        const match = /language-(\w+)/.exec(className || '')
-        return !inline && match ? (
+    code: (props) => {
+        const match = /language-(\w+)/.exec(props.className || '')
+        return !props.inline && match ? (
             <SyntaxHighlighter style={a11yDark} language={match[1]} PreTag="div"
                    className="text-sm"
-                   children={String(children).replace(/\n$/, '')}
+                   children={String(props.children).replace(/\n$/, '')}
                    showLineNumbers={true} {...props} />
         ) : (
-            <code children={String(children).replace(/\n$/, '')} className="text-red dark:text-red-light text-code text-lg" {...props} />
+            <code children={String(props.children).replace(/\n$/, '')} className="text-red dark:text-red-light text-code text-lg" {...props} />
         )
     },
     // @ts-ignore
-    del: ({node, inline, className, children, ...props}) => {
+    del: (props) => {
         // @ts-ignore
-        const [id, title] = children[0].split("|")
+        const [id, title] = props.children[0].split("|")
         return (
             <YouTubeVideo id={id} title={title}/>
         )
@@ -42,9 +37,7 @@ interface BlogPostContentProps {
 
 const BlogPostContent = (p: BlogPostContentProps) => {
     return (
-        <ReactMarkdown components={components} remarkPlugins={[gfm]} rehypePlugins={[raw]}>
-            {p.content}
-        </ReactMarkdown>
+        <MDXRemote {...p.content} components={components} />
     )
 }
 
