@@ -19,15 +19,10 @@ architecture, construction, and engineering to build structures entirely from ca
 from Canstruction ultimately go to the [Capital Area Food Bank](http://www.capitalareafoodbank.org/) to feed those suffering 
 from hunger in the Washington, DC, metropolitan area.
 
-
-
 We are proud to have sponsored architecture and engineering industry leader Dewberry at [Canstruction](http://www.canstruction.org/) DC 2014. 
 This year's theme is “Play With Your Food,” so Team Dewberry used its collective expertise to build "Can-D-Land." 
-  
-{{< figure src="/img/blog/misc/canstruction.jpg" title="Team Dewberry in front of Can-D-Land at Canstruction DC 2014" class="max-width" >}}
 
-<br>
-You can see a lot more photos from Canstruction DC 2014 on our [Facebook](https://www.facebook.com/media/set/?set=a.711839755561664.1073741830.514602035285438&type=1) page. 
+You can see photos from Canstruction DC 2014 on our [Facebook](https://www.facebook.com/media/set/?set=a.711839755561664.1073741830.514602035285438&type=1) page. 
 
 If you are around DC through September 5, 2014, 
 please stop by the [National Building Museum](http://www.nbm.org/) to check out Dewberry's 
