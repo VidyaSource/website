@@ -30,7 +30,7 @@ export default function BlogSearch(p: BlogSearchProps) {
 
     return (
         <Combobox as="div" value={p.selectedTag} onChange={p.onChange}>
-            <Combobox.Label className="block text-sm font-medium text-gray-700">Filter by tag</Combobox.Label>
+            <Combobox.Label className="block text-lg font-medium text-blue dark:text-blue-light md:text-xl mt-8">Filter by tag</Combobox.Label>
             <div className="relative mt-1">
                 <Combobox.Input
                     className="w-full rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
