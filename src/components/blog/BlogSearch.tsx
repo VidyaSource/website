@@ -1,4 +1,4 @@
-import {ChangeEvent, useState} from 'react'
+import {ChangeEvent, useMemo, useState} from 'react'
 import {CheckIcon, SelectorIcon} from '@heroicons/react/solid'
 import {Combobox} from '@headlessui/react'
 
@@ -19,23 +19,26 @@ interface BlogSearchProps {
 
 export default function BlogSearch(p: BlogSearchProps) {
     const [query, setQuery] = useState("")
-    const [selectedPerson, setSelectedPerson] = useState()
     const values = p.tags.map(t => ({key: t, value: t}))
-    const filteredTags =
-        query === ''
-            ? values
-            : values.filter((v) => {
+    const filteredTags = useMemo(() => {
+        console.log("query: " + query)
+        if ( query === "") {
+            return values
+        } else {
+            return values.filter((v) => {
                 return v.value.toLowerCase().includes(query.toLowerCase())
             })
+        }
+    }, [query])
+
 
     return (
         <Combobox as="div" value={p.selectedTag} onChange={p.onChange}>
-            <Combobox.Label className="block text-lg font-medium text-blue dark:text-blue-light md:text-xl mt-8">Filter by tag</Combobox.Label>
+            <Combobox.Label className="block text-lg font-medium text-blue dark:text-blue-light sm:text-xl lg:text-2xl mt-8">Filter by tag</Combobox.Label>
             <div className="relative mt-1">
                 <Combobox.Input
-                    className="w-full rounded-md border border-gray bg-white py-2 pl-3 pr-10 shadow-sm focus:border-red focus:outline-none focus:ring-1 focus:ring-red sm:text-md lg:text-2xl text-gray-dark"
+                    className="w-full rounded-md border border-gray bg-white py-2 pl-3 pr-10 shadow-sm focus:border-red focus:outline-none focus:ring-1 focus:ring-red sm:text-2xl text-gray-dark"
                     onChange={(e) => setQuery(e.target.value)}
-                    displayValue={(s) => s}
                 />
                 <Combobox.Button
                     className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
