@@ -247,7 +247,9 @@ tracked as immutable events, and voters would be notified as they happen.
 
 So immutable PostgreSQL it is. It's easy to connect to PostgreSQL from the UI with [Prisma](https://www.prisma.io/). 
 
-By the way, what about blockchain? [No. Just. No.](/blog/pop-goes-the-blockchain/)
+By the way, what about blockchain? [No. Just. No.](/blog/pop-goes-the-blockchain/). But a compelling alternative 
+written in Go is [immudb](https://github.com/codenotary/immudb), which is no blockchain but utilizes cryptography at scale with
+relational database semantics (including ACID) to preserve immutability.
 
 ### Deployment: Somewhere easy
 
