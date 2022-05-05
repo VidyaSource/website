@@ -21,8 +21,8 @@ export default function BlogSearch(p: BlogSearchProps) {
     const [query, setQuery] = useState("")
     const values = p.tags.map(t => ({key: t, value: t}))
     const filteredTags = useMemo(() => {
-        console.log("query: " + query)
         if ( query === "") {
+            p.onChange("")
             return values
         } else {
             return values.filter((v) => {
