@@ -15,21 +15,21 @@ const certifications: Array<Certification> = [
     {
         certifier: "U.S. Small Business Administration",
         img: sba,
-        url: "https://www.sba.gov/federal-contracting/contracting-assistance-programs/8a-business-development-program",
+        url: "/blog/vidya-is-8a-certified-by-us-small-business-administration",
         alt: "U.S. Small Business Administration 8a Certification",
         description: "Vidya is a certified small disadvantaged business by the SBA"
     },
     {
         certifier: "Capital Region Minority Supplier Development Council",
         img: crmsdc,
-        url: "https://crmsdc2.wpengine.com",
+        url: "/blog/welcoming-crmsdc-diversity-technology-consulting-minority-owned-business",
         alt: "Capital Region Minority Supplier Development Council Minority Business Enterprise Certification",
         description: "Vidya is a certified Minority Business Enterprise by CRMSDC"
     },
     {
         certifier: "United States Pan Asian American Chamber of Commerce",
         img: uspaacc,
-        url: "https://uspaacc.com",
+        url: "/blog/welcoming-uspaacc-diversity-technology-consulting-minority-owned-business",
         alt: "United States Pan Asian American Chamber of Commerce Asian American/Minority Owned Business Certification",
         description: "Vidya is a certified Minority Business Enterprise by USPAACC"
     },
