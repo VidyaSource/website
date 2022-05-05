@@ -21,15 +21,6 @@ export const BlogPostIndex = (p: BlogPostIndexProps) => {
         }
     }, [p.blogPosts, selectedTag])
 
-    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const tag = e.target.value
-        if (tag) {
-            selectTag(tag)
-        } else {
-            selectTag("")
-        }
-    }
-
     const onTagClick = (tag: string) => () => {
         selectTag(tag)
     }
