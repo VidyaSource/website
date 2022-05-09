@@ -77,17 +77,23 @@ const Offerings = () => {
             </span>
                     </h1>
                     <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
-                        At Vidya, our mission is to make technology as fun and accessible as possible. The passion we
-                        have for technology doesn’t shut off at 5 PM, and we want to show you how easy it really is to do great things.
+                        At Vidya, our passion for technology doesn't shut off at 5 PM, and we want to work with you to do great things.
                     </p>
                     <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
                         Maybe you are a large company looking to deploy secure, modernized, cloud native services via
                         an automated DevSecOps pipeline to cut costs and improve time to market while improving value to your customers.
                     </p>
                     <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
-                        Maybe you are a small company or nonprofit where everyone has to wear a lot of hats, and someone
-                        has asked you to transition your manual spreadsheet analysis into something automated or to
-                        retool your website when you’ve never done anything more complicated on the web than tagging people on social media.
+                        Maybe you're a small company or nonprofit where everyone has to wear a lot of hats scrambling to do more with less.
+                    </p>
+                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
+                        Maybe you are a government agency looking to modernize your architecture to deliver more services more quickly to the American people.
+                    </p>
+                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
+                        Maybe you want a passionate ally in promoting diversity and equal, positive treatment in the information technology space.
+                    </p>
+                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
+                        Maybe you are a beginning or experienced software engineer looking to enhance your skills or learn new ones.
                     </p>
                     <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
                         Maybe you want a passionate ally in promoting diversity and equal, positive treatment in the information technology space.
