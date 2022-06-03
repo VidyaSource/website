@@ -31,11 +31,11 @@ export const Agile = () => {
                     The difference is we aren't going to sell you any kind of one-size-fits-all approach
                     because there isn't one. We honestly don't know what will work for you. What we do know is we
                     build software
-                    ourselves and see what works and what doesn't, and we know what the highest performing
+                    ourselves. We will introduce you to many techniques you can apply to be truly agile and optimize for delivery, and we know what the highest performing
                     organizations,
-                    in and out of tech, have in common. We will lead you beyond Scrum and help you build an
-                    organizational culture and establish a set of
-                    technical practices to become one of them in a way that's uniquely yours.
+                    in and out of tech, have in common. We will guide you towards deciding which of these
+                    technical practices make the most sense for you, so you can become a high performing organization in
+                    your own right doing it in a way uniquely yours.
                 </p>
             </Course>
     )

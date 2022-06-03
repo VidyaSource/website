@@ -91,15 +91,14 @@ module.exports = withPWA({
             name: "Modern Agile",
             blurb: "We've all worked on projects that claim to be agile but are nothing more than the same old wasteful waterfall with daily standups. Move beyond Scrum and SAFe and learn how to be agile rather than merely do agile.",
             description1: "It's been two decades since the Agile Manifesto, and its impact on software development has been so profound that  \n" +
-                "every project claims to be agile. There's a backlog. The whole team mumbles its way through pointless daily standups.\n" +
+                "every project claims to be agile. There's a backlog. The whole team mumbles its way through pointless meetings where no one sits because, hey,  that's the price of innovation.\n" +
                 "You even do Fist of Five votes of confidence after long Sprint Planning meetings, but they're pure theater\n" +
                 "because your boss told you to keep bad news away from the client. In the end, you\n" +
-                "know full well there is nothing agile about your project. Sound familiar?",
-            description2: " teaches you how to move past performative ceremonies--to be agile not just do agile. You will learn that what matters \n" +
-                "most of all is outcomes. How you get there day to day depends on your organizational culture, but you will\n" +
+                "know full well there is nothing agile about your project. It's just rituals to market an agile facade when you're all really just papering over waterfall. Sound familiar?",
+            description2: " teaches you how to move past performative ceremonies--to be agile not just do agile. To build products and not languish in projects. You will learn that what matters \n" +
+                "most of all is outcomes. How you get there day to day depends on your organizational culture, customer base, market environment, personnel. But you will\n" +
                 "learn about the keys to delivering the highest quality software in the least amount of time spending the least amount of money: \n" +
-                "communication, psychological safety, and relentless feedback about your product, your client, your technology, your \n" +
-                "competitive landscape, and most importantly, yourselves.",
+                "open communications, psychological safety, automation, and continuous improvement thanks to relentless, actionable feedback.",
             syllabus: {
                 "Session 1: Leadership, Communication, Trust, and Psychological Safety": [
                     "Simple Rules",
