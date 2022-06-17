@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Going Retro With Style"
 description: "It isn't just engineers who have a lot to learn from agile retrospectives."
 image: "/img/blog/record.jpeg"

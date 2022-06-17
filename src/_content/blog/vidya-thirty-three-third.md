@@ -1,6 +1,6 @@
 ---
 title: "Vidya 33 1/3"
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 date: 2021-07-25T17:38:04-04:00
 description: "The third iteration of the Vidya website is a Brave Verified Creator PWA with Dark Mode. Let's talk about it."
 image: "/img/blog/33-and-third.jpg"

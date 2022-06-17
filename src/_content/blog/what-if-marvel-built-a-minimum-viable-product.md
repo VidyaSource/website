@@ -1,5 +1,5 @@
 ---
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "What If...Marvel Built a Minimum Viable Product?"
 description: "Product development should begin with an MVP, and Marvel's What if?... is exactly that."
 image: "/img/blog/what-if.jpeg"

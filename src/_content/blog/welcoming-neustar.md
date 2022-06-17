@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Welcoming Neustar"
 description: "We are lucky to be working with Neustar, a leading telecommunications and cloud platform company."
 image: "/img/partners/neustar.png"

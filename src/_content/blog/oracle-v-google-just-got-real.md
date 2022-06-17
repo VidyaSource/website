@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Oracle v. Google Just Got Real"
 description: "The biggest names in technology are imploring the Supreme Court to keep APIs open after Oracle's victory."
 image: "/img/partners/gcn.png"

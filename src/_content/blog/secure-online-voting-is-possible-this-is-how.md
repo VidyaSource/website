@@ -1,5 +1,5 @@
 ---
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Secure Online Voting is Possible. This is How"
 date: 2022-01-15
 description: "If we overcome past mistakes, corruption, and bad faith, we can absolutely achieve secure online voting."

@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "A New Strategy for Scala"
 description: "The report of the death of the Strategy Pattern has been greatly exaggerated."
 image: "/img/blog/scala.png"

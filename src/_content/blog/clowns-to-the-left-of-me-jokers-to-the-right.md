@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Clowns to the Left of Me, Jokers to the Right"
 description: "The caricature of the TSA Randomizer was ripe for mockery, but the reality is complicated."
 image: "/img/blog/stuck.jpg"

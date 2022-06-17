@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "You Must Unlearn What You Have Learned"
 description: "Embrace the wisdom of Yoda to succeed in technology and project management."
 image: "/img/blog/yoda.jpg"

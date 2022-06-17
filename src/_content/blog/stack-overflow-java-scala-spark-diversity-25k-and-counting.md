@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "25K and Counting on Stack Overflow"
 description: "It's an honor and a privilege to have helped 2.6M developers and earned 25K points on Stack Overflow."
 image: "/img/blog/stackoverflow.png"

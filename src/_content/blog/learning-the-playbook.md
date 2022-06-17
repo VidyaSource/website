@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Learning the Playbook"
 description: "Watch the first video in our series on the U.S. Digital Service Playbook."
 image: "/img/blog/football.jpeg"

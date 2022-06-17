@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Black Lives Matter"
 description: "It's time to act. It was always time to act."  
 image: "/img/blog/black-lives-matter.png" 

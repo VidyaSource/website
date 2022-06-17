@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Welcoming HealthCare.gov"
 description: "We are proud to have helped HealthCare.gov make affordable insurance available to more Americans."
 image: "/img/blog/health-care-gov.jpg"

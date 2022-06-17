@@ -1,7 +1,7 @@
 ---
 title: "It's Not Only About the Benjamins"
 date: 2017-09-27T23:48:17-04:00
-author: Neil Chaudhuri
+author: Neil Chaudhuri (He/Him)
 description: "The highest paying languages are also among the most fun and productive. We know from experience."
 image: "/img/blog/benjamins.jpeg"
 categories:

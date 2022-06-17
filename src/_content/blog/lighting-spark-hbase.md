@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Lighting a Spark with HBase"
 description: "Apache Spark is great for Hadoop analytics, and it works just fine with HBase."
 image: "/img/blog/spark.png"

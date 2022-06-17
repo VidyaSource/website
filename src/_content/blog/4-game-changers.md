@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "4 Game Changers"
 description: "The four technologies that changed software development the most in the last decade. Sorry, no Hadoop." 
 image: "/img/blog/four.jpeg" 

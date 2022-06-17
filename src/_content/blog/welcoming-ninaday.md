@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Welcoming Nina Day"
 description: "We are lucky to be working with Nina Day, a casting and creative agency serving Fortune 500 clients worldwide."
 image: "/img/partners/ninaday-social.jpg"

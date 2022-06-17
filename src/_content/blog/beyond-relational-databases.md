@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Beyond Relational Databases"
 description: "Relational databases are old reliable, but maybe your applications could use something different."
 image: "/img/partners/gcn.png"

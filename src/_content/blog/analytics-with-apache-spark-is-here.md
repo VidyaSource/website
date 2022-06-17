@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Analytics With Apache Spark Is Here"
 description: "Learn the hottest technology in data analytics with our Apache Spark course."
 image: "/img/blog/spark.png"

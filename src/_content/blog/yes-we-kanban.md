@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Yes We Kanban"
 description: "Scrum is great, but Scrum is hard. Maybe you should lighten things up with Kanban instead."
 image: "/img/partners/gcn.png"

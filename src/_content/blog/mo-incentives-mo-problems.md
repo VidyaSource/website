@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Mo Incentives Mo Problems"
 description: "As government IT becomes more agile, it's time to rethink incentives in contracts."
 image: "/img/blog/biggie.jpeg"

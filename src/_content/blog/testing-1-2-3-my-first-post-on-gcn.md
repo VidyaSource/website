@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Testing-1-2-3: My First Post on GCN"
 subtitle: "Open-source tools to ensure quality applications"
 description: "Federal IT can leverage open-source tools, automation, and discipline to build quality into software from the start."

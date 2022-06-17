@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Welcoming CRMSDC"
 description: "We are proud to be certified by CRMSDC as a Minority Business Enterprise."
 image: "/img/blog/crmsdc-cert.png"

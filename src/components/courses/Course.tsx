@@ -34,7 +34,7 @@ export const Course: FC<CourseProps> = (p) => {
     const router = useRouter()
     const url = `${process.env.basePath}${router.pathname}`
     const title = `Vidya | ${name}`
-    const instructor = p.instructor ?? "Neil Chaudhuri"
+    const instructor = p.instructor ?? "Neil Chaudhuri (He/Him)"
     return (
         <>
             <NextSeo

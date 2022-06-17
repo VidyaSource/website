@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Security From Day 1"
 description: "Learn software engineering skills to build security into your applications from the start."  
 image: "/img/partners/gcn.png" 

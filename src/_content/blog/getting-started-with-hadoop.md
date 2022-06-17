@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Getting Started With Hadoop"
 description: "Ease into Hadoop and learn about cool technologies that build on it."
 image: "/img/blog/hadoop.png"

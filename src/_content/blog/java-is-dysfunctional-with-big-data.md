@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Java is Dysfunctional with Big Data"
 description: "Java is great, but there are far better options for big data analytics."
 date: 2013-10-27

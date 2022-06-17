@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Welcoming TRSS"
 description: "We are lucky to be working with TRSS, a leading provider of threat detection solutions."
 image: "/img/partners/trss.png"

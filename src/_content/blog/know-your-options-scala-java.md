@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Know Your Options"
 description: "Null is a real pain, but functional languages like Scala can make it a lot easier." 
 image: "/img/blog/options.jpeg" 

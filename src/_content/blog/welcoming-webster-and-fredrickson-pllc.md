@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Welcoming Webster & Fredrickson, PLLC"
 description: "We are lucky to work with Webster & Fredrickson, PLLC, a premier DC law firm."
 image: "/img/blog/court.jpeg" 

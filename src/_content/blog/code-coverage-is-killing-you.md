@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Code Coverage Is Killing You"
 description: "Code coverage is intuitive but dangerous. There are quality metrics that are so much better."
 image: "/img/blog/michael-scott.jpeg"

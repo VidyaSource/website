@@ -1,5 +1,5 @@
 ---
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "How to Buy Cyber—Getting Started"
 description: "We need to empower procurement officials to take initiative when buying cybersecurity solutions. This is how."
 image: "/img/partners/psf.png"

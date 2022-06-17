@@ -8,7 +8,7 @@ export type Constants = {
     }
 }
 export const constants: Constants = {
-    "Neil Chaudhuri": {
+    "Neil Chaudhuri (He/Him)": {
         title: "President",
         profileUrl: "https://twitter.com/RealNeilC",
         linkedIn: "https://www.linkedin.com/in/neil-chaudhuri/",
@@ -17,7 +17,7 @@ export const constants: Constants = {
     }
 }
 
-export type Staff = "Neil Chaudhuri"
+export type Staff = "Neil Chaudhuri (He/Him)"
 
 
 

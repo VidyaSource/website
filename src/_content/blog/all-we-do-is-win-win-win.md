@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: " All We Do Is Win Win Win"
 description: "The President issued a challenge to make technology work for government. We won it." 
 image: "/img/partners/eop.svg"

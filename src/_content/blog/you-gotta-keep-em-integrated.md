@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "You Gotta Keep 'Em Integrated"
 description: "Integration may be the biggest challenge in government IT. Here's how you overcome it."
 image: "/img/partners/gcn.png"

@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "No Experience? No Problem!"
 description: "You really don't need professional experience with a technology to get a job in it. Just passion." 
 image: "/img/blog/confused.jpg"

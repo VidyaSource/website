@@ -59,8 +59,8 @@ const Diversity = () => {
                                 objectFit="cover"
                                 quality={100}
                                 className="rounded-full"
-                                src={constants["Neil Chaudhuri"].image}
-                                alt="Neil Chaudhuri (He/Him/His), President of Vidya"
+                                src={constants["Neil Chaudhuri (He/Him)"].image}
+                                alt="Neil Chaudhuri (He/Him), President of Vidya"
                             />
                         </div>
                     </div>
@@ -95,12 +95,12 @@ const Diversity = () => {
                                                 quality={100}
                                                 className="rounded-full"
                                                 src="/img/staff/president.png"
-                                                alt="Neil Chaudhuri (He/Him/His), President of Vidya"
+                                                alt="Neil Chaudhuri (He/Him), President of Vidya"
                                             />
                                         </div>
                                     </div>
                                     <div className="ml-4 lg:ml-0">
-                                        <div className="text-base font-medium text-gray-dark dark:text-blue-light">Neil Chaudhuri (He/Him/His)</div>
+                                        <div className="text-base font-medium text-gray-dark dark:text-blue-light">Neil Chaudhuri (He/Him)</div>
                                         <div className="text-base font-medium text-red dark:text-red-light">President, Vidya</div>
                                     </div>
                                 </div>

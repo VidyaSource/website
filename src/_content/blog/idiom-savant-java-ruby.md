@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Idiom Savant"
 description: "Idioms are just as important in programming languages as they are in spoken languages."
 image: "/img/blog/programming.jpg"

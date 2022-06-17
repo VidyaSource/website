@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "The Play's the Thing"
 description: "The White House's new U.S. Digital Services Playbook for government applications is a great start. Let me help you apply it." 
 image: "/img/partners/gcn.png"

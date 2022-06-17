@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Speaking at Code Writers Workshop 2017"
 description: "Hope to see you at our talk 'Here's What's Trending in Software Engineering.'"
 image: "/img/blog/class.jpg"

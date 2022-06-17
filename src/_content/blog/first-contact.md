@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "First Contact"
 description: "Welcome to Vidya"
 date: 2013-10-26

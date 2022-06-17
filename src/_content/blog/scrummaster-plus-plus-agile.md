@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "ScrumMaster++"
 description: "A ScrumMaster with technical skills can use them without compromising the Scrum process."
 image: "/img/blog/settings.jpeg"

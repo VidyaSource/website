@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "When You Do Want None"
 description: "A quick tip for Scala developers for handling empty and whitespace strings in their code."
 image: "/img/blog/mixalot.jpg"

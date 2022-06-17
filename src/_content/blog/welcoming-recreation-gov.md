@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Welcoming Recreation.gov"
 description: "We are proud to have worked with Recreation.gov to help make our national treasures available to everyone."
 image: "/img/blog/recreation.png"

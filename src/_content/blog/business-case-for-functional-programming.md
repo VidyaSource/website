@@ -1,5 +1,5 @@
 ---
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "The Business Case for Functional Programming"
 description: "Learn how functional programming can make your teams more productive than you ever imagined."
 image: "/img/blog/functions.jpg"

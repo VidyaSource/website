@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Welcoming USPAACC"
 description: "We are proud to be certified by USPAACC as an Asian and minority-owned small business."
 image: "/img/blog/uspaacc-cert.jpg"

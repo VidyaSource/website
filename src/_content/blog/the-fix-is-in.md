@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "The Fix Is In"
 description: "Government software project management has suffered for a long time, but that's changing. We are happy to help."
 image: "/img/blog/court.jpeg"

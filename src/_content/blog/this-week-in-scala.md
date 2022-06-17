@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "This Week In #Scala"
 description: "Our latest tutorial made it to This Week in #Scala!"
 image: "/img/blog/scala.png"

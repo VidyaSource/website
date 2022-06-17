@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Talking Scala"
 description: "I will be speaking on Scala at Polyglot Programming DC!"
 image: "/img/blog/scala.png"

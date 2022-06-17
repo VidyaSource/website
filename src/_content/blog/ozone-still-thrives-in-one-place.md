@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Ozone Still Thrives in One Place"
 description: "OWF is a powerful tool for intel analysts and a great victory for government open-source advocates."
 image: "/img/partners/gcn.png"

@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Canstruction DC 2014"
 description: "We are thrilled to have partnered with Dewberry to fight hunger at Canstruction DC 2014."  
 image: "/img/blog/cans.jpg"

@@ -1,5 +1,5 @@
 ---
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Which Programming Languages Should I Learn First?"
 date: 2022-02-03
 description: "When you're just starting out in tech, don't focus on programming languages but on something else entirely."

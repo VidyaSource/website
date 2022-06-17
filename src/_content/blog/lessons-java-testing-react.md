@@ -1,5 +1,5 @@
 ---
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Lessons from Java for Testing in React"
 description: "See how years of testing in Java have taught us lessons you can apply to improve your testing in React."
 image: "/img/blog/react.png"

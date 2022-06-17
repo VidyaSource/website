@@ -1,5 +1,5 @@
 ---
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "POP Goes the Blockchain"
 date: 2018-03-11T13:31:40-04:00
 description: "Blockchain has great potential, but there are significant obstacles in its path to world domination."

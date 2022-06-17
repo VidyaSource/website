@@ -1,6 +1,6 @@
 ---
 
-author: "Neil Chaudhuri"
+author: "Neil Chaudhuri (He/Him)"
 title: "Zero Tolerance"
 description: "In your Java program, is your BigDecimal 0? It depends on what the meaning of the word of is is." 
 image: "/img/blog/zero.jpg" 
