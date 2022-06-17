@@ -60,7 +60,7 @@ const Diversity = () => {
                                 quality={100}
                                 className="rounded-full"
                                 src={constants["Neil Chaudhuri"].image}
-                                alt="Neil Chaudhuri, President of Vidya"
+                                alt="Neil Chaudhuri (He/Him/His), President of Vidya"
                             />
                         </div>
                     </div>

@@ -26,12 +26,12 @@ most importantly, an opportunity to meet the most successful minority business o
 
 I got a picture with Senator Cardin on the red carpet! 
 
-<PostImage alt="Vidya President Neil Chaudhuri with Maryland Senator Ben Cardin at CRMSDC Leaders and Legends" src="/PostImage/blog/cardin.jpg" width="427" height="640" />
+<PostImage alt="Vidya President Neil Chaudhuri (He/Him/His) with Maryland Senator Ben Cardin at CRMSDC Leaders and Legends" src="/PostImage/blog/cardin.jpg" width="427" height="640" />
 
 And I made some friends. The opportunity to meet so many of the most accomplished leaders in the DC area and absorb their 
 insight was priceless.
 
-<PostImage alt="Vidya President Neil Chaudhuri with other Top 100 MBE Award winners" src="/PostImage/blog/smiles.jpg" width="640" height="480" />
+<PostImage alt="Vidya President Neil Chaudhuri (He/Him/His) with other Top 100 MBE Award winners" src="/PostImage/blog/smiles.jpg" width="640" height="480" />
 
 As the night continued, it was humbling to be on stage with the other Top 100 MBEs. Can you spot me in the front row?
 

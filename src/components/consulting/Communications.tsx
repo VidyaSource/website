@@ -48,10 +48,10 @@ const Communications = () => {
                                             src={constants["Neil Chaudhuri"].image}
                                             quality={100}
                                             className="rounded-lg shadow-lg object-center"
-                                            alt="Vidya President Neil Chaudhuri speaking on Trends in Software Engineering"/>
+                                            alt="Vidya President Neil Chaudhuri (He/Him/His) speaking on Trends in Software Engineering"/>
                                 </div>
                                 <figcaption className="mt-3 flex text-sm text-gray-dark dark:text-red-light">
-                                    <span className="ml-2">Vidya President Neil Chaudhuri speaking on Trends in Software Engineering</span>
+                                    <span className="ml-2">Vidya President Neil Chaudhuri (He/Him/His) speaking on Trends in Software Engineering</span>
                                 </figcaption>
                             </figure>
                         </div>
