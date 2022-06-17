@@ -100,7 +100,7 @@ const Diversity = () => {
                                         </div>
                                     </div>
                                     <div className="ml-4 lg:ml-0">
-                                        <div className="text-base font-medium text-gray-dark dark:text-blue-light">Neil Chaudhuri</div>
+                                        <div className="text-base font-medium text-gray-dark dark:text-blue-light">Neil Chaudhuri (He/Him/His)</div>
                                         <div className="text-base font-medium text-red dark:text-red-light">President, Vidya</div>
                                     </div>
                                 </div>
