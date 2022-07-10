@@ -26,8 +26,8 @@ contributing to open-source on [GitHub](https://github.com/VidyaSource),
 speaking at [conferences](/blog/speaking-at-code-writers-workshop-2017/), and even posting video tutorials on 
 [YouTube](https://www.youtube.com/channel/UC24LVc8Bb65SF6LW-SLog9A)—have been the most rewarding professional experience of my life.  
 
-Vidya is based in Virginia just outside Washington, DC, and SWaM certification by SBSD shows Virginia Vidya has demonstrated the kind of growth potential that should make state government agencies 
-who need technology services take notice. As they [describe](https://www.sbsd.virginia.gov/certification-division/swam/):
+Vidya is based in Virginia just outside Washington, DC, and SWaM certification by SBSD shows Virginia that Vidya has demonstrated the kind of growth potential that should make state government agencies 
+who need technology services take notice. As the SBSD [describes](https://www.sbsd.virginia.gov/certification-division/swam/):
 
 > The purpose is to enhance procurement opportunities for SWaM businesses participating in state-funded projects.
 
