@@ -2,6 +2,7 @@ import Image, {StaticImageData} from "next/image";
 import sba from "../../public/img/certifications/8a.png";
 import crmsdc from "../../public/img/certifications/crmsdc.png";
 import uspaacc from "../../public/img/certifications/uspaacc.svg";
+import swam from "../../public/img/certifications/swam.jpeg";
 
 interface Certification {
     img: StaticImageData
@@ -18,6 +19,13 @@ const certifications: Array<Certification> = [
         url: "/blog/vidya-is-8a-certified-by-us-small-business-administration",
         alt: "U.S. Small Business Administration 8a Certification",
         description: "Vidya is a certified small disadvantaged business by the SBA"
+    },
+    {
+        certifier: "Virginia Department of Small Business and Supplier Diversity",
+        img: swam,
+        url: "/blog/vidya-is-swam-certified-by-virginia-department-small-business-supplier-diversity",
+        alt: "Virginia Department of Small Business and Supplier Diversity SWaM Certification",
+        description: "Vidya is a certified Small, Micro, Minority Owned, and 8(a) business by the Virginia Department of Small Business and Supplier Diversity"
     },
     {
         certifier: "Capital Region Minority Supplier Development Council",
