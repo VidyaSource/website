@@ -2,7 +2,7 @@
 author: "Neil Chaudhuri (He/Him)"
 title: "Vidya is SWaM Certified!"
 description: "We are proud to be certified as a Small, Micro, Minority Owned, and 8(a) business by the Virginia Department of Small Business and Supplier Diversity."
-image: "/img/blog/swam-min.png"
+image: "/img/blog/swam-min.jpeg"
 date: 2022-07-07
 categories: 
 - Partners
