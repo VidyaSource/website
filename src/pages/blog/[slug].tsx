@@ -57,10 +57,6 @@ const Post = (blogPost: ProcessedBlogPost) => {
                 }}
                 additionalMetaTags={[
                     {
-                        property: 'twitter:card',
-                        content: "summary"
-                    },
-                    {
                         property: 'twitter:description',
                         content: blogPost.frontMatter.description
                     },
