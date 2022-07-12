@@ -2,7 +2,7 @@
 author: "Neil Chaudhuri (He/Him)"
 title: "Vidya is SWaM Certified!"
 description: "We are proud to be certified as a Small, Micro, Minority Owned, and 8(a) business by the Virginia Department of Small Business and Supplier Diversity."
-image: "/img/blog/swam-min.jpeg"
+image: "/img/blog/swam-min.png"
 date: 2022-07-07
 categories: 
 - Partners
@@ -16,7 +16,7 @@ categories:
 ---
 
 I am excited to announce that hot off the heels of [8(a) certification by the US Small Business Administration](/blog/vidya-is-8a-certified-by-us-small-business-administration),
-the [Virginia Department of Small Business and Supplier Diversity (SBSD)](https://www.sbsd.virginia.gov/certification-division/swam/) has
+the [Commonwealth of Virginia Department of Small Business and Supplier Diversity (SBSD)](https://www.sbsd.virginia.gov/certification-division/swam/) has
 now also certified Vidya as part of its Small, Women-owned, and Minority-owned Business (SWaM) program.
 
 At Vidya, we have been very privileged to deliver high-quality software to a wide array of government and commercial clients
@@ -32,7 +32,7 @@ who need technology services take notice. As the SBSD [describes](https://www.sb
 
 > The purpose is to enhance procurement opportunities for SWaM businesses participating in state-funded projects.
 
-We look forward to building new relationships and to delivering our services to government agencies in the state of Virginia. We are also excited about expanding
+We look forward to building new relationships and to delivering our services to government agencies in the Commonwealth of Virginia. We are also excited about expanding
 our current offerings by making our courses available online and building new software products.
 
 We want to thank the Virginia Department of Small Business and Supplier Diversity for recognizing Vidya's past success and future potential, and we cannot wait to do business
