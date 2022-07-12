@@ -16,7 +16,8 @@ categories:
 ---
 
 I am excited to announce that hot off the heels of [8(a) certification by the US Small Business Administration](/blog/vidya-is-8a-certified-by-us-small-business-administration),
-Vidya is now also Small, Micro, Minority Owned, and 8(a) Certified by the [Virginia Department of Small Business and Supplier Diversity (SBSD)](https://www.sbsd.virginia.gov/certification-division/swam/).
+the [Virginia Department of Small Business and Supplier Diversity (SBSD)](https://www.sbsd.virginia.gov/certification-division/swam/) has
+now also certified Vidya as part of its Small, Women-owned, and Minority-owned Business (SWaM) program.
 
 At Vidya, we have been very privileged to deliver high-quality software to a wide array of government and commercial clients
 using exciting technology while promoting lean principles, agile software development,
