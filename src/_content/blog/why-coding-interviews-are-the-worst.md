@@ -30,7 +30,7 @@ This was all about getting deeper than any traditional interview could, you see,
 Yeah, OK.
 
 While the more absurd questions have lost some luster, one relic of our unconventional interview style that endures is the 
-coding interview. You know it. The panel of dudes who all vaguely remind you of Howard from *The Big Bang Theory* asks you 
+coding interview. You know it. The panel of dudes all vaguely reminiscent of Howard from *The Big Bang Theory* asks you 
 to go to the whiteboard or a laptop broadcasting to a screen and write code for something you've probably never seen (by design).
 It could be implementing a doubly-linked list or merge sort or a function that determines if a 
 string is a palindrome. It could be performing a breadth-first search or converting a loop into a recursive function. And on and on.
@@ -40,16 +40,33 @@ engineers, the popularity of remote work particularly in the aftermath of a glob
 feel in an era of inflation and changing pandemic fundamentals, and the uncertainty candidates feel in an era of layoffs and evolving 
 personal responsibilities and professional goals.
 
-Coding interviews are the worst. How do we know this?
+Coding interviews are the worst. How do we know?
 
-## Coding interviews solve for the most short term knowledge not the best long term teammate
+## Coding interviews solve for the Computer Science Department valedictorian or the most short term knowledge. Not the best long term culture fit
 
-not what you know but how much you can learn
-tech always changing
-culture fit
-kindness
+The biggest problem with coding interviews is the disconnect between what they measure and what actually adds value to the business.
+For 99% of you, hiring someone who understands Kruskal’s algorithm for finding a minimum spanning tree isn't relevant to 
+making your UI accessible, scaling in the cloud, improving your engineering practices, or driving revenue. 
+
+Even if you do better than silly college computer science questions and focus on the tech you use today, you focus on the wrong thing. It isn't what candidates
+know; it's how much they can learn. If you're a React shop, it's nice if a candidate understands how `useEffect` is about syncing UI with 
+state rather than a new take on `componentDidMount`, but what if you decide to move to [Solid](https://www.solidjs.com/)? Or what if
+an important new initiative demands a different set of skills entirely and you don't have the resources to hire a subject-matter expert?
+
+Instead, you want to hire people who fit with your culture and make their teams better with hard and soft skills. They do this is many ways. They listen. They are eager to learn and to help.
+They are patient and kind. They manage their time well. They can communicate with customers. 
+
+And they have the ability to think in abstractions so they can translate their prior knowledge into new skills that serve their professional growth and your bottom line.
+
+Your business needs Vision. Coding interviews at best get you Ultron.
+
+
+
+bootcamps dont go into CS
 
 ## Coding interviews do not reflect the skills necessary to excel in your actual working environment
+
+## Coding interviews further exclude systematically excluded communities
 
 ## Coding interviews do not reflect the conditions in your actual working environment
 
@@ -57,6 +74,8 @@ high pressure
 esp for women, poc
 people watching
 no google, stack overflow
+
+## Coding interviews are all too often a vanity exercise subject to bias 
 
 ## Coding interviews are the basis for an entire cottage industry dedicated to help you "ace" them
 
