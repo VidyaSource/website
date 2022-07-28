@@ -86,10 +86,10 @@ her own experience a few years ago:
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">not work, and wasn&#39;t what they were looking for. These same two pieces of code are now written about by two other individuals as best practice solutions to these problems. Do you think this coding interview was about code? No, it was an ego battle I&#39;d never be allowed to win.</p>&mdash; Cher Scarlett (@cherthedev) <a href="https://twitter.com/cherthedev/status/998914080177115136?ref_src=twsrc%5Etfw">May 22, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Of course if things can get so bad for cis white women in tech that coding interviews become a vanity exercise at their expense, just
-imagine how much worse it must be for women of color, trans people, anuerotypical people, or even people who learned tech in boot camps 
-instead of MIT.
+imagine how much worse it must be for women of color, trans people, anuerotypical people, even people who learned tech in boot camps 
+instead of MIT. And so many others.
 
-Let's use the interview process to welcome everyone into tech because the challenges that lie ahead are too great to leave anyone behind.
+Let's use the interview process to welcome as many people as possible into tech because the challenges that lie ahead are too great to leave anyone behind.
 
 ## Coding interviews are the basis for an entire cottage industry dedicated to help you "ace" them
 
