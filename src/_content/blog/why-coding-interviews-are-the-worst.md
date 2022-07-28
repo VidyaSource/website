@@ -50,32 +50,46 @@ making your UI accessible, scaling in the cloud, improving your engineering prac
 
 Even if you do better than silly college computer science questions and focus on the tech you use today, you focus on the wrong thing. It isn't what candidates
 know; it's how much they can learn. If you're a React shop, it's nice if a candidate understands how `useEffect` is about syncing UI with 
-state rather than a new take on `componentDidMount`, but what if you decide to move to [Solid](https://www.solidjs.com/)? Or what if
+state rather than a new spin on `componentDidMount`, but what if you decide to move to [Solid](https://www.solidjs.com/)? Or what if
 an important new initiative demands a different set of skills entirely and you don't have the resources to hire a subject-matter expert?
 
 Instead, you want to hire people who fit with your culture and make their teams better with hard and soft skills. They do this is many ways. They listen. They are eager to learn and to help.
-They are patient and kind. They manage their time well. They can communicate with customers. 
+They are patient and kind. They manage their time well. They can communicate with customers. They write good documentation.
 
 And they have the ability to think in abstractions so they can translate their prior knowledge into new skills that serve their professional growth and your bottom line.
 
 Your business needs Vision. Coding interviews at best get you Ultron.
 
-
-
-bootcamps dont go into CS
-
-## Coding interviews do not reflect the skills necessary to excel in your actual working environment
-
 ## Coding interviews further exclude systematically excluded communities
 
-## Coding interviews do not reflect the conditions in your actual working environment
+I am a passionate advocate for diversity in tech. Prejudice against anyone on the basis of race, gender, ethnicity, 
+nationality, religion, orientation, ability, or even academic background not only limits our individual growth but also 
+limits the creative energy necessary to develop the best software. Sadly, there are countless institutional barriers to diversity
+in tech, and coding interviews are one of them.
 
-high pressure
-esp for women, poc
-people watching
-no google, stack overflow
+Don't believe me? Check out this [study by North Carolina State University and Microsoft](https://news.ncsu.edu/2020/07/tech-job-interviews-anxiety/):
 
-## Coding interviews are all too often a vanity exercise subject to bias 
+> But the format may also serve as a barrier to entire classes of candidates. For example, in our study, all of the women who took the public interview failed, while all of the women who took the private interview passed. Our study was limited, and a larger sample size would be needed to draw firm conclusions, but the idea that the very design of the interview process may effectively exclude an entire class of job candidates is troubling.
+
+Much as society writ large is convinced DNA evidence and machine learning are "objective," tech is at best
+convinced coding interviews are also free from bias and at worst happy to capitalize on it. Bias in coding interviews
+could be favoritism, intentional or otherwise, reflected in choice of coding problem or leniency in evaluation. They are also
+biased against realistic forms of working. In real life, we don't have people staring at us as we type scrutinizing our work and 
+mannerisms. We have access to Google, Stack Overflow, and other resources. The discomfort produced by this awkward, contrived situation hurts
+otherwise talented candidates—particularly those in communities already systematically excluded in tech like the women in the study.
+
+But that's one study you say. OK, but consider anecdotal evidence from elite engineers. [Jenn Creighton](https://twitter.com/gurlcode),
+senior engineer at Netflix on the NodeJS team and host of the [single-threaded podcast](https://twitter.com/single_threaded) exposed the problem on 
+her premier episode with her guest [Erin Fox](https://twitter.com/erinfoox). Senior engineer, Apple whistleblower, and activist [Cher Scarlett](https://twitter.com/cherthedev) described 
+her own experience a few years ago:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">not work, and wasn&#39;t what they were looking for. These same two pieces of code are now written about by two other individuals as best practice solutions to these problems. Do you think this coding interview was about code? No, it was an ego battle I&#39;d never be allowed to win.</p>&mdash; Cher Scarlett (@cherthedev) <a href="https://twitter.com/cherthedev/status/998914080177115136?ref_src=twsrc%5Etfw">May 22, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Of course if things can get so bad for cis white women in tech that coding interviews become a vanity exercise at their expense, just
+imagine how much worse it must be for women of color, trans people, anuerotypical people, or even people who learned tech in boot camps 
+instead of MIT.
+
+Let's use the interview process to welcome everyone into tech because the challenges that lie ahead are too great to leave anyone behind.
 
 ## Coding interviews are the basis for an entire cottage industry dedicated to help you "ace" them
 
