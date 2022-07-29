@@ -93,7 +93,8 @@ Let's use the interview process to welcome as many people as possible into tech 
 
 ## Coding interviews are the basis for an entire cottage industry dedicated to help you "ace" them
 
-
+This is related to the other problems I mentioned. If coding interviews were actually relevant to the work we
+do every day, we wouldn't need a dedicated industry 
 
 cottage industry just to help get thru it
 
