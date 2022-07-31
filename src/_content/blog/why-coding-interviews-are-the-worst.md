@@ -2,7 +2,7 @@
 author: "Neil Chaudhuri (He/Him)"
 title: "Why Coding Interviews are the Worst"
 description: "We are proud to be certified as a Small, Micro, Minority Owned, and 8(a) business by the Virginia Department of Small Business and Supplier Diversity."
-image: "/img/blog/swam-min.jpeg"
+image: "/img/blog/the-worst.png"
 date: 2022-07-27
 categories:
 - Diversity
@@ -111,16 +111,49 @@ interviews serve as a gatekeeper excluding communities from tech—software engi
 ## What's the alternative?
 
 Coding interviews are bad for the business and bad for the candidate. Instead, you should conduct interviews that are 
-inclusive and find the best long term fit for your business.
+inclusive, find the best long term fit for your business, and convey the joy of solving problems there.
 
-robs joy and adds pressure particularly for excluded populations
+Make the interview a conversation. Share your business goals and details about the role you're hiring for and your expectations. Then
+consider questions like these.
 
-vanity exercise for the interviewer
+### "What are some examples of problems you solved at work? Take me through how you solved them."
+
+This question helps you understand the experiences candidates have had on the job. It helps you evaluate how these experiences
+apply to your business and, more importantly, how your candidates approach challenges. Feel free to explore the topic in depth
+and follow threads of conversation as candidates raise points you find particularly interesting. You don't have to be Oprah, but there
+is an art to navigating a conversation to elicit more information. You will get a good sense of how well the candidates understand their tech, their creativity,
+amd their ability to gain new knowledge. 
+
+After all, game knows game.
+
+### "Can you describe a situation at work where you were particularly proud of what you accomplished?"
+
+This question helps lighten the mood and bring positivity into a tense process. It gives candidates a chance to brag a little
+but in a way that lends value to you. You can glean if your own business offers the kinds
+of opportunities for joy the candidates want to experience, and you can again get some detail into their experience, expertise,
+and potential for growth.
+
+### "It's common to have differences of opinion on a team on how to solve problems. How have you worked through those?"
+
+This question addresses the reality of working on a team and the likelihood of a culture fit. Spend about three minutes on 
+Tech Twitter
+
+### "If you had full control of the architecture and engineering of your current code base, what would you change about the code or the process?"
+
+### "What kinds of support do you need to do your best work?"
+
+### "Do you have any questions for us?"
+
+
+titles, oppostunities for advancement, company culture
+
+
 
 instead
   what are examples of problems you solved at work and thought processes and approached you took to solving them
   provide example of a technical challenge at work that made you realize why you love working in tech
   what kinds of conflicts have you had on technical approached with team members and how did you move forward
+  what kinds of support do you ned to do your best work
   diverse panels of interviewers
   observe toxic behavior like refusing to acknoledge remale interviewers
 
