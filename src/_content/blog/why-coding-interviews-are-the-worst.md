@@ -8,6 +8,7 @@ categories:
 - Diversity
 - Programming
 - Software Engineering
+- Open source
 
 ---
 
@@ -29,6 +30,8 @@ This was all about getting deeper than any traditional interview could, you see,
 
 Yeah, OK.
 
+## Coding interviews are the worst. How do we know?
+
 While the more absurd questions have lost some luster, one relic of our unconventional interview style that endures is the 
 coding interview. You know it. The panel of dudes all vaguely reminiscent of Howard from *The Big Bang Theory* asks you 
 to go to the whiteboard or a laptop broadcasting to a screen and write code for something you've probably never seen (by design).
@@ -40,9 +43,7 @@ engineers, the popularity of remote work particularly in the aftermath of a glob
 feel in an era of inflation and changing pandemic fundamentals, and the uncertainty candidates feel in an era of layoffs and evolving 
 personal responsibilities and professional goals.
 
-Coding interviews are the worst. How do we know?
-
-## Coding interviews solve for the Computer Science Department valedictorian or the most short term knowledge. Not the best long term culture fit
+### Coding interviews solve for the Computer Science Department valedictorian or the most short term knowledge. Not the best long term culture fit
 
 The biggest problem with coding interviews is the disconnect between what they measure and what actually adds value to the business.
 For 99% of you, hiring someone who understands Kruskal’s algorithm for finding a minimum spanning tree isn't relevant to 
@@ -53,14 +54,15 @@ know; it's how much they can learn. If you're a React shop, it's nice if a candi
 state rather than a new spin on `componentDidMount`, but what if you decide to move to [Solid](https://www.solidjs.com/)? Or what if
 an important new initiative demands a different set of skills entirely and you don't have the resources to hire a subject-matter expert?
 
-Instead, you want to hire people who fit with your culture and make their teams better with hard and soft skills. They do this is many ways. They listen. They are eager to learn and to help.
-They are patient and kind. They manage their time well. They can communicate with customers. They write good documentation.
+Instead, you want to hire people who fit with your culture and make their teams better with hard and soft skills. They do this is many ways. They 
+aren't afraid to experiment and fail in order to learn new things. They listen. They are eager to help.
+They are patient and kind. They manage their time well. They can communicate with customers. They care about good code and write good documentation.
 
 And they have the ability to think in abstractions so they can translate their prior knowledge into new skills that serve their professional growth and your bottom line.
 
 Your business needs Vision. Coding interviews at best get you Ultron.
 
-## Coding interviews further exclude systematically excluded communities
+### Coding interviews further exclude systematically excluded communities
 
 I am a passionate advocate for diversity in tech. Prejudice against anyone on the basis of race, gender, ethnicity, 
 nationality, religion, orientation, ability, or even academic background not only limits our individual growth but also 
@@ -83,31 +85,33 @@ senior engineer at Netflix on the NodeJS team and host of the [single-threaded p
 her premier episode with her guest [Erin Fox](https://twitter.com/erinfoox). Senior engineer, Apple whistleblower, and activist [Cher Scarlett](https://twitter.com/cherthedev) described 
 her own experience a few years ago:
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">not work, and wasn&#39;t what they were looking for. These same two pieces of code are now written about by two other individuals as best practice solutions to these problems. Do you think this coding interview was about code? No, it was an ego battle I&#39;d never be allowed to win.</p>&mdash; Cher Scarlett (@cherthedev) <a href="https://twitter.com/cherthedev/status/998914080177115136?ref_src=twsrc%5Etfw">May 22, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote className="twitter-tweet"><p lang="en" dir="ltr">not work, and wasn&#39;t what they were looking for. These same two pieces of code are now written about by two other individuals as best practice solutions to these problems. Do you think this coding interview was about code? No, it was an ego battle I&#39;d never be allowed to win.</p>&mdash; Cher Scarlett (@cherthedev) <a href="https://twitter.com/cherthedev/status/998914080177115136?ref_src=twsrc%5Etfw">May 22, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Of course if things can get so bad for cis white women in tech that coding interviews become a vanity exercise at their expense, just
-imagine how much worse it must be for women of color, trans people, anuerotypical people, even people who learned tech in boot camps 
+imagine how much worse it must be for women of color, trans people, anuerotypical people, even people who learned tech at boot camps 
 instead of MIT. And so many others.
 
 Let's use the interview process to welcome as many people as possible into tech because the challenges that lie ahead are too great to leave anyone behind.
 
-## Coding interviews are the basis for an entire cottage industry dedicated to help you "ace" them
+### Coding interviews are the basis for an entire cottage industry dedicated to help candidates "ace" them
 
-This is related to the other problems I mentioned. If coding interviews were actually relevant to the work we
-do every day, we wouldn't need a dedicated industry 
+Precisely because coding interviews are so divorced from the reality of our lives as software engineers, job candidates need time to prepare.
+It takes time to build composure as people stare at you at the front of the room or judge every keystroke. 
+It takes time to remember, or learn for the first time, fundamental concepts of computer science or low-level implementation 
+details typically abstracted from you by frameworks and open-source libraries. It takes time to memorize it all because you may not
+be allowed access to the resources you normally have at your disposal.
 
-cottage industry just to help get thru it
+Everyone knows it, so a cottage industry has emerged to get candidates through it. There are literally hundreds of books and online courses
+promising to help them "ace" the tech interview and get that prestigious, high-paying job and ultimately the Cybertruck of their 
+dreams.
 
+This is costly. At best, it takes time away from personal life. At worst, it costs serious dollars. Either way, this is another way coding
+interviews serve as a gatekeeper excluding communities from tech—software engineers who can't afford the costs of interview preparation.
 
-solve for best comp sci grad not who can solve business problems. real life doesnt involve someone looking over your shoulder judging
-no googling or stack overflow
-proof is an entire industry built around acing the tech interview which wouldnt be necessary if the interviews were a proxy for real life
+## What's the alternative?
 
-variability in challenges: favoristim, different interviewers with diff biases
-
-no analysis of soft skills
-
-languages/frameworks come and go. want knowledge of abstractions and patterns
+Coding interviews are bad for the business and bad for the candidate. Instead, you should conduct interviews that are 
+inclusive and find the best long term fit for your business.
 
 robs joy and adds pressure particularly for excluded populations
 
