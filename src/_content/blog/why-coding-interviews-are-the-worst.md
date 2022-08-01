@@ -135,27 +135,49 @@ and potential for growth.
 
 ### "It's common to have differences of opinion on a team on how to solve problems. How have you worked through those?"
 
-This question addresses the reality of working on a team and the likelihood of a culture fit. Spend about three minutes on 
-Tech Twitter
+This question addresses the reality of working on a team and the likelihood of a culture fit. Anyone who spends about three minutes on 
+Tech Twitter knows we like to argue—often about the most trivial, self-serving things. Candidates have certainly had their share of 
+disagreements at work, and it's important to understand how constructively they handle them and if they do so in a way that
+fits with your company culture. You will also get a sense of what the candidates think is important—tech or otherwise. The question is 
+if your value system is compatible with theirs.
 
 ### "If you had full control of the architecture and engineering of your current code base, what would you change about the code or the process?"
 
+This question again helps you learn about a candidate's expertise and room for growth but from a different angle. We all have 
+regrets about technical debt, yearnings for different approaches, and other aspects of the product and process that stick in
+our craw. Give candidates a chance to vent. In the process, you will learn about what candidates value, their knowledge of the engineering and product
+delivery landscapes, and the direction they want to go. Does their vision comport with yours for your business?
+
 ### "What kinds of support do you need to do your best work?"
+
+This question addresses your responsibility to your business and what candidates can hope to expect if they join. You might
+have an issue with this question because it implicitly undermines the notion that the best engineers do their best work
+of their own accord if they have "passion" implied by a robust GitHub presence, lots of side projects, eagerness to work
+weekends, etc.
+
+Nope. For reasons why the responsibility is yours to provide "flow state" rather than theirs to have passion, read 
+[this excellent post by Sarah Drasner](https://leaddev.com/culture-engagement-motivation/why-flow-matters-more-passion),
+Director of Engineering. Core Developer Web at Google.
+
+The best engineering managers understand how to create flow state. Even if candidates are unfamiliar with management theory,
+this question informs them that you have their best interests at heart and recognize your own responsibility in making them successful.
+You can also evaluate whether their answers are aligned with your business values.
 
 ### "Do you have any questions for us?"
 
+Hopefully you are asking this question anyway regardless of whether coding interviews are part of your hiring process. Give
+candidates a chance to ask you about the things that matter to them as they consider making the considerable, potentially life-changing 
+commitment to your business. They should direct the conversation here. Expect questions about titles, commitment to and evidence
+of diversity, opportunities for advancement, and other aspects of business process and company culture.
 
-titles, oppostunities for advancement, company culture
+Be careful though not to interpret the absence of questions as apathy or really anything negative. This is their time, and if they
+don't need it, you shouldn't let that influence your decision one way or another.
 
+> As an aside, prefer diverse panels of interviewers. Also pay attention to the demeanor of candidates. Any toxic behavior like arrogance or something particularly awful like refusing to acknowledge female interviewers should make your decision easy.
 
+## But if you must do coding interviews...
 
-instead
-  what are examples of problems you solved at work and thought processes and approached you took to solving them
-  provide example of a technical challenge at work that made you realize why you love working in tech
-  what kinds of conflicts have you had on technical approached with team members and how did you move forward
-  what kinds of support do you ned to do your best work
-  diverse panels of interviewers
-  observe toxic behavior like refusing to acknoledge remale interviewers
+Let's face it. Many of you will 
 
 but if you must
   offer candidates options about take home (pay them) vs live coding
