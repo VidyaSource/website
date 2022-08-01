@@ -106,7 +106,7 @@ promising to help them "ace" the tech interview and get that prestigious, high-p
 dreams.
 
 This is costly. At best, it takes time away from personal life. At worst, it costs serious dollars. Either way, this is another way coding
-interviews serve as a gatekeeper excluding communities from tech—software engineers who can't afford the costs of interview preparation.
+interviews serve as a gatekeeper excluding communities from tech—software engineers who can't afford the costs of interview prep.
 
 ## What's the alternative?
 
@@ -168,21 +168,28 @@ You can also evaluate whether their answers are aligned with your business value
 Hopefully you are asking this question anyway regardless of whether coding interviews are part of your hiring process. Give
 candidates a chance to ask you about the things that matter to them as they consider making the considerable, potentially life-changing 
 commitment to your business. They should direct the conversation here. Expect questions about titles, commitment to and evidence
-of diversity, opportunities for advancement, and other aspects of business process and company culture.
+of diversity, opportunities for advancement, remote work and tooling, and other aspects of business process and company culture.
 
 Be careful though not to interpret the absence of questions as apathy or really anything negative. This is their time, and if they
 don't need it, you shouldn't let that influence your decision one way or another.
 
 > As an aside, prefer diverse panels of interviewers. Also pay attention to the demeanor of candidates. Any toxic behavior like arrogance or something particularly awful like refusing to acknowledge female interviewers should make your decision easy.
 
-## But if you must do coding interviews...
+## But OK, if you must do coding interviews...
 
-Let's face it. Many of you will 
+Let's face it. Many of you will never accept that coding interviews are the worst. The idea is simply too entrenched in tech.
+You're convinced instant recall of computer science fundamentals is critical to bring value to your business. Besides, tech 
+is full of imposters! You must expose them with cleverly chosen coding exercises they have never seen lest they compromise your business.
 
-but if you must
-  offer candidates options about take home (pay them) vs live coding
-  solve a real work problem
-  make it collaborative and interactive
-  make comfortable
-  provide resources
+There is no evidence any of that is true, but it sure [feeeeeeels true](https://www.cc.com/video/63ite2/the-colbert-report-the-word-truthiness)! 
+The funny thing is there are actually a lot of job candidates who also think it's true.
+
+Fine. If you must, at least adapt your coding interviews like this:
+
+* Offer candidates the option either to live code or to do a short, paid(!) project to do at home
+* Have them solve a real but non-critical and non-sensitive problem you have at work
+* If it's a live coding exercise, make candidates comfortable with collaboration and access to resources
+
+We have a lot of important work ahead of us as an industry. I hope you consider the lessons I've learned to help your business
+grow to meet the challenges ahead.
   
