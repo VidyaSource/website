@@ -3,7 +3,7 @@ author: "Neil Chaudhuri (He/Him)"
 title: "Why Coding Interviews are the Worst"
 description: "We are proud to be certified as a Small, Micro, Minority Owned, and 8(a) business by the Virginia Department of Small Business and Supplier Diversity."
 image: "/img/blog/the-worst.png"
-date: 2022-07-27
+date: 2022-08-01
 categories:
 - Diversity
 - Programming
