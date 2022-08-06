@@ -1,7 +1,7 @@
 ---
 author: "Neil Chaudhuri (He/Him)"
 title: "Why Coding Interviews are the Worst"
-description: "We are proud to be certified as a Small, Micro, Minority Owned, and 8(a) business by the Virginia Department of Small Business and Supplier Diversity."
+description: "Coding interviews are bad for job candidates and your business. Here's what to do instead."
 image: "/img/blog/the-worst.png"
 date: 2022-08-01
 categories:
@@ -15,18 +15,20 @@ categories:
 Tech interviews are broken. Much like with vegan cheese, we all agree there is a problem, but we all differ on how to fix it. How did we get here?
 
 Over the last several decades as tech became a dominant industry, the new personalities that became very rich
-very fast also became very Gavin Belson from Silicon Valley—supremely convinced of their own outside-the-box cleverness
-not only at producing revolutionary technology but also at revolutionizing the way they build it as a model for everyone else. Remember when open floor plans
-with foosball tables were the key to unleashing workplace productivity restrained too long by dehumanizing cubicles? The media 
-ate that up!
+very fast also became very [Gavin Belson from Silicon Valley](https://silicon-valley.fandom.com/wiki/Gavin_Belson)—supremely convinced of their own outside-the-box cleverness
+not only at producing revolutionary technology but also at revolutionizing the way it's built. The media decided this was the
+beginning of a new era where the novel approaches tech companies took to everything should be a model for everyone else. Remember when open floor plans
+and foosball tables and Keurigs were the key to unleashing workplace productivity restrained too long by dehumanizing cubicles? After enough writeups
+in even mainstream outlets like [CBS News](https://www.cbsnews.com/news/ditch-the-cubicles-for-better-collaboration/), everyone 
+was doing it.
 
-But we ended up just using headphones to fashion our own mental cubicles so we could work in some kind of awkward peace—particularly awkward
-for women, people of color, introverts, and many others.
+But we ended up just using headphones to fashion our own mental cubicles so we could work in some kind of awkward peace—[particularly awkward
+for women](https://www.inc.com/betsy-mikel/new-study-open-offices-are-terrible-for-women.html), people of color, introverts, and many others.
 
 A similar thing happened with tech interviews. Boring accounting firms ask about your resume but not us! The media were awestruck at
-our novel interview style asking weird questions like "*Why are manhole covers round?*" or "*How would you calculate the number of cars passing through a busy bridge?*"
+profound interview questions like "*Why are manhole covers round?*" or "*How would you calculate the number of cars passing through a busy bridge?*"
 or the famous Elon Musk riddle "*You’re standing on the surface of the Earth. You walk one mile south, one mile west, and one mile north. You end up exactly where you started. Where are you?*"
-This was all about getting deeper than any traditional interview could, you see, to reveal how candidates think!
+This is all about getting deeper than any traditional interview could, you see, to reveal how candidates think!
 
 Yeah, OK.
 
