@@ -3,6 +3,7 @@ import {a11yDark} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import {YouTubeVideo} from "../YouTubeVideo";
 import {MDXRemote, MDXRemoteSerializeResult} from "next-mdx-remote";
 import {PostImage} from "./PostImage";
+import {TwitterScript} from "./TwitterScript";
 
 const components = {
     PostImage: (props) => {
@@ -19,6 +20,7 @@ const components = {
             <code children={String(props.children).replace(/\n$/, '')} className="text-red dark:text-red-light text-code text-lg" {...props} />
         )
     },
+    script: (props => <TwitterScript />),
     // @ts-ignore
     del: (props) => {
         // @ts-ignore
