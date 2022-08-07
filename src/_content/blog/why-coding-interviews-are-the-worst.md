@@ -1,7 +1,7 @@
 ---
 author: "Neil Chaudhuri (He/Him)"
 title: "Why Coding Interviews are the Worst"
-description: "Coding interviews are bad for job candidates and your business. Here's what to do instead."
+description: "Coding interviews are bad the business and bad for the candidate. Here's what you should do instead."
 image: "/img/blog/the-worst.png"
 date: 2022-08-05
 categories:
@@ -75,11 +75,11 @@ Don't believe me? Check out this [study by North Carolina State University and M
 
 > But the format may also serve as a barrier to entire classes of candidates. For example, in our study, all of the women who took the public interview failed, while all of the women who took the private interview passed. Our study was limited, and a larger sample size would be needed to draw firm conclusions, but the idea that the very design of the interview process may effectively exclude an entire class of job candidates is troubling.
 
-Much as society writ large is convinced DNA evidence and machine learning are "objective," tech is at best
-convinced coding interviews are also free from bias and at worst happy to capitalize on it. Bias in coding interviews
+Much as society writ large is convinced [DNA evidence](https://www.youtube.com/watch?v=ScmJvmzDcG0) and [AI](https://www.theguardian.com/technology/2016/mar/24/tay-microsofts-ai-chatbot-gets-a-crash-course-in-racism-from-twitter) 
+are "objective," tech is at best convinced coding interviews are also free from bias or at worst happy to capitalize on their bias. Bias in coding interviews
 could be favoritism, intentional or otherwise, reflected in choice of coding problem or leniency in evaluation. They are also
-biased against realistic forms of working. In real life, we don't have people staring at us as we type scrutinizing our work and 
-mannerisms. We have access to Google, Stack Overflow, and other resources. The discomfort produced by this awkward, contrived situation hurts
+biased against realistic forms of working. In real life, we don't have people staring at us as we type to scrutinize our work and 
+mannerisms. We have access to Google, Stack Overflow, and other resources. The discomfort produced by contrived awkwardness in coding interviews hurts
 otherwise talented candidates—particularly those in communities already systematically excluded in tech like the women in the study.
 
 But that's one study you say. OK, but consider anecdotal evidence from elite engineers. [Jenn Creighton](https://twitter.com/gurlcode),
@@ -91,21 +91,21 @@ her own experience a few years ago:
 
 Of course if things can get so bad for cis white women in tech that coding interviews become a vanity exercise at their expense, just
 imagine how much worse it must be for women of color, trans people, anuerotypical people, even people who learned tech at boot camps 
-instead of MIT. And so many others.
+instead of MIT or have degrees in psychology. And so many others.
 
 Let's use the interview process to welcome as many people as possible into tech because the challenges that lie ahead are too great to leave anyone behind.
 
 ### Coding interviews are the basis for an entire cottage industry dedicated to help candidates "ace" them
 
-Precisely because coding interviews are so divorced from the reality of our lives as software engineers, job candidates need time to prepare.
+Precisely because coding interviews are so divorced from the reality of our lives as software engineers, job candidates need time to prepare for the experience.
 It takes time to build composure as people stare at you at the front of the room or judge every keystroke. 
 It takes time to remember, or learn for the first time, fundamental concepts of computer science or low-level implementation 
 details typically abstracted from you by frameworks and open-source libraries. It takes time to memorize it all because you may not
 be allowed access to the resources you normally have at your disposal.
 
 Everyone knows it, so a cottage industry has emerged to get candidates through it. There are literally hundreds of books and online courses
-promising to help them "ace" the tech interview and get that prestigious, high-paying job and ultimately the Cybertruck of their 
-dreams.
+promising to help them "ace" the tech interview and get that prestigious, high-paying job so you can get that Cybertruck because you
+find its ugliness endearing.
 
 This is costly. At best, it takes time away from personal life. At worst, it costs serious dollars. Either way, this is another way coding
 interviews serve as a gatekeeper excluding communities from tech—software engineers who can't afford the costs of interview prep.
@@ -115,18 +115,18 @@ interviews serve as a gatekeeper excluding communities from tech—software engi
 Coding interviews are bad for the business and bad for the candidate. Instead, you should conduct interviews that are 
 inclusive, find the best long term fit for your business, and convey the joy of solving problems there.
 
-Make the interview a conversation. Share your business goals and details about the role you're hiring for and your expectations. Then
-consider questions like these.
+Make the interview a conversation. Share your business goals and details about your mission, the role you're hiring for, your expectations technically
+and culturally, and your values as an organization. Then consider questions like these.
 
 ### "What are some examples of problems you solved at work? Take me through how you solved them."
 
 This question helps you understand the experiences candidates have had on the job. It helps you evaluate how these experiences
 apply to your business and, more importantly, how your candidates approach challenges. Feel free to explore the topic in depth
-and follow threads of conversation as candidates raise points you find particularly interesting. You don't have to be Oprah, but there
-is an art to navigating a conversation to elicit more information. You will get a good sense of how well the candidates understand their tech, their creativity,
+and follow threads of conversation as candidates raise points you find particularly interesting. You don't have to be [Oprah](https://www.youtube.com/watch?v=w-gkAM0XZMU), but there
+is an art to navigating a conversation to elicit more information. You will get a good sense of candidates' technical knowledge, their creativity,
 amd their ability to gain new knowledge. 
 
-After all, game knows game.
+After all, game recognizes game.
 
 ### "Can you describe a situation at work where you were particularly proud of what you accomplished?"
 
@@ -139,8 +139,8 @@ and potential for growth.
 
 This question addresses the reality of working on a team and the likelihood of a culture fit. Anyone who spends about three minutes on 
 Tech Twitter knows we like to argue—often about the most trivial, self-serving things. Candidates have certainly had their share of 
-disagreements at work, and it's important to understand how constructively they handle them and if they do so in a way that
-fits with your company culture. You will also get a sense of what the candidates think is important—tech or otherwise. The question is 
+disagreements at work, and it's important to understand how constructively they handle them and if their solutions
+fit with your company culture. You will also get a sense of what candidates think is important—tech or otherwise. The question is 
 if your value system is compatible with theirs.
 
 ### "If you had full control of the architecture and engineering of your current code base, what would you change about the code or the process?"
@@ -148,18 +148,20 @@ if your value system is compatible with theirs.
 This question again helps you learn about a candidate's expertise and room for growth but from a different angle. We all have 
 regrets about technical debt, yearnings for different approaches, and other aspects of the product and process that stick in
 our craw. Give candidates a chance to vent. In the process, you will learn about what candidates value, their knowledge of the engineering and product
-delivery landscapes, and the direction they want to go. Does their vision comport with yours for your business?
+delivery landscapes, the direction they want to go, and their tact with constructive criticism. Does their vision comport with yours for your business?
 
 ### "What kinds of support do you need to do your best work?"
 
-This question addresses your responsibility to your business and what candidates can hope to expect if they join. You might
-have an issue with this question because it implicitly undermines the notion that the best engineers do their best work
-of their own accord if they have "passion" implied by a robust GitHub presence, lots of side projects, eagerness to work
+This question addresses *your* responsibility to your people to achieve the goals of the business and the support candidates can expect if they join. You might
+have an issue with this question because it implicitly undermines conventional wisdom that the best engineers do their best work
+of their own accord if they have "passion" for tech implied by a robust GitHub presence, lots of side projects, eagerness to work
 weekends, etc.
 
-Nope. For reasons why the responsibility is yours to provide "flow state" rather than theirs to have passion, read 
+Nope.
+
+For reasons why the responsibility is yours to provide "flow state" rather than candidates' responsibility to have passion, read 
 [this excellent post by Sarah Drasner](https://leaddev.com/culture-engagement-motivation/why-flow-matters-more-passion),
-Director of Engineering. Core Developer Web at Google.
+Director of Engineering, Core Developer Web at Google.
 
 The best engineering managers understand how to create flow state. Even if candidates are unfamiliar with management theory,
 this question informs them that you have their best interests at heart and recognize your own responsibility in making them successful.
@@ -175,7 +177,7 @@ of diversity, opportunities for advancement, remote work and tooling, and other 
 Be careful though not to interpret the absence of questions as apathy or really anything negative. This is their time, and if they
 don't need it, you shouldn't let that influence your decision one way or another.
 
-> As an aside, prefer diverse panels of interviewers. Also pay attention to the demeanor of candidates. Any toxic behavior like arrogance or something particularly awful like refusing to acknowledge female interviewers should make your decision easy.
+> As an aside, prefer diverse panels of interviewers. Also pay attention to the demeanor of candidates. Any toxic behavior like arrogance, abruptness, or something particularly awful like refusing to acknowledge female interviewers should make your decision easy.
 
 ## But OK, if you must do coding interviews...
 
@@ -184,13 +186,14 @@ You're convinced instant recall of computer science fundamentals is critical to 
 is full of imposters! You must expose them with cleverly chosen coding exercises they have never seen lest they compromise your business.
 
 There is no evidence any of that is true, but it sure [feeeeeeels true](https://www.cc.com/video/63ite2/the-colbert-report-the-word-truthiness)! 
-The funny thing is there are actually a lot of job candidates who also think it's true.
+The funny thing is there are actually a lot of job candidates who also think it's true. They see coding interviews as
+a perfectly reasonable expectation and happily, if sometimes nervously, prepare accordingly.
 
 Fine. If you must, at least adapt your coding interviews like this:
 
 * Offer candidates the option either to live code or to do a short, paid(!) project to do at home.
 * Have them solve a real but non-critical and non-sensitive problem you have at work.
-* If it's a live coding exercise, make candidates comfortable with collaboration and access to resources.
+* If it's a live coding exercise, collaborate with candidates rather than sit back and watch and give them access to resources.
 
 We have a lot of important work ahead of us as an industry. I hope you consider the lessons I've learned to help your business
 grow to meet the challenges ahead.
