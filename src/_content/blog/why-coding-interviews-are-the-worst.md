@@ -28,6 +28,7 @@ for women](https://www.inc.com/betsy-mikel/new-study-open-offices-are-terrible-f
 A similar thing happened with tech interviews. After all, boring accounting firms ask about your resume but not us! The media were awestruck at
 profound interview questions like "*Why are manhole covers round?*" or "*How would you calculate the number of cars passing through a busy bridge?*"
 or the famous Elon Musk riddle "*You’re standing on the surface of the Earth. You walk one mile south, one mile west, and one mile north. You end up exactly where you started. Where are you?*"
+
 This is all about getting deeper than any traditional interview could, you see, to reveal how candidates think!
 
 Yeah, OK.
@@ -130,7 +131,7 @@ After all, game recognizes game.
 
 ### "Can you describe a situation at work where you were particularly proud of what you accomplished?"
 
-This question helps lighten the mood and bring positivity into a tense process. It gives candidates a chance to brag a little
+This question helps lighten the mood and bring positivity into an otherwise tense process. It gives candidates a chance to brag a little
 but in a way that lends value to you. You can glean if your own business offers the kinds
 of opportunities for joy the candidates want to experience, and you can again get some detail into their experience, expertise,
 and potential for growth.
