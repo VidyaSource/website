@@ -1,7 +1,7 @@
 ---
 author: "Neil Chaudhuri (He/Him)"
 title: "Why Coding Interviews are the Worst"
-description: "Coding interviews are bad the business and bad for the candidate. Here's what you should do instead."
+description: "Coding interviews are the worst for the business and for the candidate. Here's what you should do instead."
 image: "/img/blog/the-worst.png"
 date: 2022-08-05
 categories:
