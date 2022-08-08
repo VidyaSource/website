@@ -184,7 +184,8 @@ don't need it, you shouldn't let that influence your decision one way or another
 
 Let's face it. Many of you will never accept that coding interviews are the worst. The idea is simply too entrenched in tech.
 You're convinced instant recall of computer science fundamentals is critical to bring value to your business. Besides, tech 
-is full of imposters! You must expose them with cleverly chosen coding exercises they have never seen lest they compromise your business.
+is full of imposters! You must expose them with cleverly chosen coding exercises they have never seen lest they compromise your business
+with their duplicity.
 
 There is no evidence any of that is true, but it sure [feeeeeeels true](https://www.cc.com/video/63ite2/the-colbert-report-the-word-truthiness)! 
 The funny thing is there are actually a lot of job candidates who also think it's true. They see coding interviews as
