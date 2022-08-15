@@ -38,7 +38,7 @@ export default {
 },
         {
             property: 'twitter:image',
-            content: `${process.env.basePath}/img/vidya-twitter.jpg`
+            content: `${process.env.basePath}/img/vidya-twitter.png`
         },
         {
             property: 'twitter:image:alt',
