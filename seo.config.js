@@ -12,8 +12,8 @@ export default {
         images: [
             {
                 url: `${process.env.basePath}/img/vidya.png`,
-                width: 1085,
-                height: 503,
+                width: 1200,
+                height: 627,
                 alt: 'Vidya | Build faster. Build better.',
             }
         ]
