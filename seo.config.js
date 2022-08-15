@@ -11,7 +11,7 @@ export default {
         tags: ["Vidya", "technology", "courses", "tutorials", "software", "consulting", "engineering", "automation"],
         images: [
             {
-                url: `${process.env.basePath}/img/vidya.png`,
+                url: `${process.env.basePath}/img/vidya-social.png`,
                 width: 1200,
                 height: 627,
                 alt: 'Vidya | Build faster. Build better.',
@@ -30,6 +30,19 @@ export default {
         {
             property: 'theme-color',
             content: '#5a82b4'
-        }
+        },
+        {
+            property: 'twitter:description',
+            content: "Welcome to Vidya. Build faster. Build better. Consulting and custom application development to strengthen your business. Courses and content to help you harness technology for yourself. We are a federally certified 8(a) small business by the US Small Business Administration.",
+
+},
+        {
+            property: 'twitter:image',
+            content: `${process.env.basePath}/img/vidya.png`
+        },
+        {
+            property: 'twitter:image:alt',
+            content: "The Vidya swan logo. Build faster. Build better."
+        },
     ]
 };
