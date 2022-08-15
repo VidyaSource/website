@@ -21,7 +21,7 @@ export default {
     twitter: {
         handle: '@RealNeilC',
         site: '@VidyaSource',
-        cardType: 'summary',
+        cardType: 'summary_large_image',
     },
     facebook: {
         appId: '312450288897871'
