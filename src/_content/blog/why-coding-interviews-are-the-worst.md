@@ -25,7 +25,7 @@ was doing it.
 But we ended up just using headphones to fashion our own mental cubicles so we could work in some kind of awkward peace—[particularly awkward
 for women](https://www.inc.com/betsy-mikel/new-study-open-offices-are-terrible-for-women.html), people of color, introverts, and many others.
 
-A similar thing happened with tech interviews. After all, boring accounting firms ask about your resume but not us! The media were awestruck at
+A similar thing happened with tech interviews. After all, boring accounting firms ask about your resume, but not us! The media were awestruck at
 profound interview questions like "*Why are manhole covers round?*" or "*How would you calculate the number of cars passing through a busy bridge?*"
 or the famous Elon Musk riddle "*You’re standing on the surface of the Earth. You walk one mile south, one mile west, and one mile north. You end up exactly where you started. Where are you?*"
 
@@ -58,10 +58,10 @@ know; it's how much they can learn. If you're a React shop, it's impressive if a
 an important new initiative demands a different set of skills entirely and you don't have the resources to hire a subject-matter expert right away?
 
 Instead, you want to hire engineers who fit with your culture and make their teams better with hard and soft skills. They do this is many ways.
-They learn quickly because think in abstractions so they can translate prior knowledge into new skills that serve their professional growth and your bottom line. They 
+They learn quickly because they think in abstractions so they can translate prior knowledge into new skills that serve their professional growth and your bottom line. They 
 aren't afraid to experiment and fail in order to learn new things. They listen. They are eager to help.
 They are patient and kind. They manage their time well. They can communicate with customers. They care about good code and write good documentation.
-Their teammates trust them to support them and to assume leadership when the moments calls for it.
+Their teammates trust them to support them and to assume leadership when the moment calls for it.
 
 Your business needs [Vision](https://marvelcinematicuniverse.fandom.com/wiki/Vision). Coding interviews at best get you [Ultron](https://marvelcinematicuniverse.fandom.com/wiki/Ultron).
 
