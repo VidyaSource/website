@@ -2,7 +2,6 @@ export type Constants = {
     [s in Staff]: {
         title: string
         linkedIn: string
-        twitter: string
         profileUrl: string
         image: string
     }
@@ -10,9 +9,8 @@ export type Constants = {
 export const constants: Constants = {
     "Neil Chaudhuri (He/Him)": {
         title: "President",
-        profileUrl: "https://twitter.com/RealNeilC",
+        profileUrl: "https://www.linkedin.com/in/neil-chaudhuri/",
         linkedIn: "https://www.linkedin.com/in/neil-chaudhuri/",
-        twitter: "https://twitter.com/RealNeilC",
         image: "/img/staff/president.png"
     }
 }
