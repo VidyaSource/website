@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Offerings = () => {
     return (
         <div className="relative py-16 bg-white dark:bg-red overflow-hidden">
@@ -76,40 +78,54 @@ const Offerings = () => {
               Our Mission
             </span>
                     </h1>
+
                     <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
-                        At Vidya, our passion for technology doesn't shut off at 5 PM, and we want to work with you to do great things.
+                        Vidya, LLC builds on premise, cloud, and hybrid solutions for commercial businesses and
+                        government agencies according to their strategic objectives. Our work proves there
+                        is no need to choose between continuous delivery and high quality.
                     </p>
                     <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
-                        Maybe you are a large company looking to deploy secure, modernized, cloud native services via
-                        an automated DevSecOps pipeline to cut costs and improve time to market while improving value to your customers.
-                    </p>
-                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
-                        Maybe you're a small company or nonprofit where everyone has to wear a lot of hats scrambling to do more with less.
-                    </p>
-                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
-                        Maybe you are a government agency looking to modernize your architecture to deliver more services more quickly to the American people.
-                    </p>
-                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
-                        Maybe you want a passionate ally in promoting diversity and equal, positive treatment in the information technology space.
-                    </p>
-                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
-                        Maybe you are a beginning or experienced software engineer looking to enhance your skills or learn new ones.
-                    </p>
-                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
-                        Maybe you want a passionate ally in promoting diversity and equal, positive treatment in the information technology space.
-                    </p>
-                    <p className="mt-8 text-xl text-gray-dark dark:text-blue-light leading-8">
-                        No matter what you need, we want to be of service to you.
+                        Federal SBA 8(a), Commonwealth of Virginia SWaM, and multiple commercial certifications as a minority-owned business are testament to
+                        our ability not only to deliver lean, innovative solutions for our clients but
+                        also to do so the right way using techniques like agile development, DevSecOps, and automated
+                        testing not only for functionality but also for security, accessibility, and performance.
                     </p>
                 </section>
-                <section className="mt-6 prose prose-lg text-gray-dark dark:text-blue-light mx-auto">
-                    <h2 className="text-red dark-text-red-light">Our Services</h2>
+                <section className="text-lg max-w-prose mx-auto">
+                    <h2 className="mt-8 block text-3xl text-center leading-8 font-extrabold tracking-tight text-red dark:text-red-light sm:text-4xl">Our Differentiators</h2>
+                    <p className="mt-4 text-xl text-gray-dark dark:text-blue-light leading-8">
+                        These are some of the values that distinguish Vidya, LLC from others in the space:
+
+                        <ul>
+                            <li>Dedication to communication, which is the basis for teamwork, transparency, accountability, and humility as we don't know everything</li>
+                            <li>Commitment to listen to understand your unique business problems and solve them as simply as possible</li>
+                            <li>Proven track record of modernizing cloud-scale software by integrating a wide breadth of newer, even leading edge technologies with legacy systems that still generate value for your organization</li>
+                            <li>Expertise across disparate disciplines like modern UI, APIs, data engineering and analytics, and cybersecurity</li>
+                            <li>Understanding the profound influence non-technical disciplines like <Link href="/blog/why-coding-interviews-are-the-worst"><a>recruiting </a></Link>
+                                and <a href="https://ditap.learning-transformation.com/assets/courseware/v1/aae244dc51e2e3a16613bee911809da0/asset-v1:ICF+DITAP01+2018_T1+type@asset+block/ICF-ASI_Team_Phase_II_Submission_For_the_DSCPT_Development_Program_Challenge.pdf">contracting </a>
+                                have on the success of technology initiatives</li>
+                            <li>Staff with PMP and agile certifications</li>
+                            <li>Published content, public speaking, and cited for expertise in multiple government reports like <a href="https://www.gao.gov/assets/gao-12-681.pdf">this one</a></li>
+                            <li>Course instruction because you don’t really know something unless you can teach it</li>
+                        </ul>
+                    </p>
+                </section>
+                <section className="text-lg max-w-prose mx-auto">
+                    <h2 className="mt-8 block text-3xl text-center leading-8 font-extrabold tracking-tight text-red dark:text-red-light sm:text-4xl">Our Services</h2>
+                    <p className="mt-4 text-xl text-gray-dark dark:text-blue-light leading-8">
                     <ul>
-                        <li>Consulting with your team on architecture or development on large software projects, agile mentoring, or technical communications</li>
                         <li>Custom application development for your organization</li>
-                        <li>Training courses focused on the practical lessons that make you more productive and marketable in the real world</li>
-                        <li>Blog posts and video tutorials on software development and the ways technology impacts the world</li>
+                        <li>Consulting with your team on architecture and development on large software projects, assessing the current state of your software,
+                            optimizing your recruiting and contracting practices to motivate the right values, agile mentorship, technical communications
+                        </li>
+                        <li>Training courses focused on the practical lessons that make you more productive and
+                            marketable in the real world
+                        </li>
+                        <li>Blog posts and video tutorials on software development and the ways technology impacts the
+                            world
+                        </li>
                     </ul>
+                    </p>
                 </section>
             </div>
         </div>
