@@ -26,7 +26,7 @@ const Vidya = () => {
                                 Vidya is associated with the Hindu deity Saraswati because she is the Goddess of Learning. In ancient Indian art and literature, she is often depicted wearing a spotless white sari and riding a white swan.
                             </p>
                             <p className="dark-text-blue-light">
-                                We just hope you like the swan more than <a href="http://www.youtube.com/watch?v=n91ckeyNvQU">Billy Madison</a>.
+                                We just hope you like the swan more than <a href="http://www.youtube.com/watch?v=n91ckeyNvQU" target="_blank">Billy Madison</a>.
                             </p>
                         </div>
                     </div>

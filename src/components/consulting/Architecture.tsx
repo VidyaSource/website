@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const Architecture = () => {
     return (
@@ -14,7 +15,7 @@ export const Architecture = () => {
                             quality={100}
                             priority={true}
                             loading="eager"
-                            className="opacity-20 lg:opacity-100"
+                            className="opacity-5 lg:opacity-100"
                         />
                     </div>
                     <div className="absolute inset-0 lg:bg-blue mix-blend-multiply"/>
@@ -32,16 +33,22 @@ export const Architecture = () => {
                             best suited to meet your challenges.
                         </p>
                         <p className="mt-8 text-lg font-medium text-gray-dark dark:text-blue-light lg:font-normal">
-                            In an industry rife with buzzwords and with vendors eager to sow confusion about them in order to sell you solutions you don't need,
-                            trust Vidya to help you understand for yourself patterns and technologies like microservices, state machines, event-driven
-                            architectures, serverless, event sourcing, CQRS, or Zero Trust but far more importantly if and when
-                            they can generate value for your organization. We have guided commercial businesses and
-                            government agencies to help them realize the architectures they need to deliver value to their users,
-                            and we can do the same for you.
-                        </p>
-                        <p className="mt-8 text-lg font-medium text-gray-dark dark:text-blue-light lg:font-normal">
+                            One example where we have done this is the Bureau of Consular Affairs (CA) with the Department of State.
+                            As CA seeks to modernize its systems, which include popular services like Online Passport Renewal and Visa,
+                            Vidya has been involved in all aspects of the architectural transition. Here are just a few:
+
+                            <ul>
+                                <li>Definition of <Link href="https://adr.github.io/"><a>Architectural Design Records (ADRs)</a></Link></li>
+                                <li>Integration with various cloud providers</li>
+                                <li>Microservice development, communication, and orchestration</li>
+                                <li>Data and machine learning strategy</li>
+                                <li>Zero Trust cybersecurity</li>
+                                <li>UX design and accessibility along with the development of a component library</li>
+                                <li>DevSecOps strategy</li>
+                            </ul>
+
                             Software development is similar--also an art form that balances simplicity with abstractions
-                            when the complexity is worth it. But here is where the principles of the architecture become the reality
+                            when the complexity is worth it. But here is where the principles of the architecture become the operational reality
                             that thrills your customers and generates revenue for your business. Vidya can not only help you
                             find the blend of programming languages, frameworks, and tools best suited for the needs of your
                             customers but also help you apply them the right way with best-in-class practices like modeling
@@ -50,7 +57,7 @@ export const Architecture = () => {
                             machine learning pipelines, automating your builds with DevSecOps, building reliability with
                             immutability and static typing, and standardizing resilient deployments across clouds with containerization and orchestration.
                         </p>
-                        <p className="mt-8 text-lg font-medium text-gray-dark dark:text-blue-light  lg:font-normal">
+                        <p className="mt-8 text-lg font-medium text-gray-dark dark:text-blue-light lg:font-normal">
                             It's a lot. We can help.
                         </p>
                     </div>

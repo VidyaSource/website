@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 import {NextSeo, ProductJsonLd} from "next-seo";
 import {useRouter} from "next/router";
 
-const Communications = dynamic(() => import("../components/consulting/Communications"))
+const Culture = dynamic(() => import("../components/consulting/Culture"))
 const CallToAction = dynamic(() => import("../components/CallToAction"))
 
 const Consulting = () => {
@@ -66,7 +66,7 @@ const Consulting = () => {
             />
             <Page>
                 <Architecture/>
-                <Communications/>
+                <Culture/>
                 <CallToAction/>
             </Page>
         </>

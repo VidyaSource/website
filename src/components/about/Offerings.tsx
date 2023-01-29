@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Offerings = () => {
     return (
@@ -125,6 +126,22 @@ const Offerings = () => {
                             world
                         </li>
                     </ul>
+                    </p>
+                </section>
+                <section className="text-lg max-w-prose mx-auto">
+                    <h2 className="mt-8 block text-3xl text-center leading-8 font-extrabold tracking-tight text-red dark:text-red-light sm:text-4xl">Our Capability Statement</h2>
+                    <p className="mt-4 text-xl text-gray-dark dark:text-blue-light leading-8">
+                        <Image
+                            height="792"
+                            width="612"
+                            quality={100}
+                            className="inline-block"
+                            src="/img/about/capability-statement.png"
+                            alt="Vidya Capability Statement"
+                        />
+                    </p>
+                    <p className="mt-4 text-xl text-gray-dark dark:text-blue-light leading-8">
+                        You can also view the <a href="/capability-statement.pdf" target="_blank">Vidya Capability Statement as a PDF</a>.
                     </p>
                 </section>
             </div>
