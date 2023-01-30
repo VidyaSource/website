@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import {constants} from "../../lib/constants";
-
 const Culture = () => {
     return (
         <section className="bg-red-light dark:bg-red overflow-hidden">
