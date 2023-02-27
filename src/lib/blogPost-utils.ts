@@ -3,13 +3,15 @@
 import fs from 'fs'
 import {join} from 'path'
 import matter from 'gray-matter'
+import {zonedTimeToUtc} from "date-fns-tz";
+import format from "date-fns/format";
 
 export interface FrontMatter {
     author: "Neil Chaudhuri" | string
     title: string
     description: string
     image: string
-    date: string | Date
+    date: string
     tags: string[]
 }
 
@@ -30,7 +32,6 @@ export const getBlogPostBySlug: (slug: string) => Promise<BlogPost> = async (slu
     const realSlug = slug.replace(/\.md$/, '')
     const fullPath = join(postsDirectory, `${realSlug}.md`)
     const fileContents = await fs.promises.readFile(fullPath, 'utf8')
-    // @ts-ignore
     const {data, content} = matter(fileContents)
     const tags = data.tags ?? []
     const categories = data.categories ?? []
@@ -38,7 +39,7 @@ export const getBlogPostBySlug: (slug: string) => Promise<BlogPost> = async (slu
     const frontMatter = {
         tags: tags.concat(categories).sort(),
         image: image,
-        date:  data.date.toISOString(),
+        date: new Date(data.date.getUTCFullYear(), data.date.getUTCMonth(), data.date.getUTCDate()).toISOString(),
         author: data.author,
         title: data.title,
         description: data.description
@@ -55,7 +56,6 @@ export const getBlogPostMetadataBySlug: (slug: string) => Promise<BlogPostMetada
     const realSlug = slug.replace(/\.md$/, '')
     const fullPath = join(postsDirectory, `${realSlug}.md`)
     const fileContents = await fs.promises.readFile(fullPath, 'utf8')
-    // @ts-ignore
     const {data, content} = matter(fileContents)
     const tags = data.tags ?? []
     const categories = data.categories ?? []
@@ -63,7 +63,7 @@ export const getBlogPostMetadataBySlug: (slug: string) => Promise<BlogPostMetada
     const frontMatter = {
         tags: tags.concat(categories).sort(),
         image: image,
-        date:  data.date.toISOString(),
+        date: new Date(data.date.getUTCFullYear(), data.date.getUTCMonth(), data.date.getUTCDate()).toISOString(),
         author: data.author,
         title: data.title,
         description: data.description
@@ -106,4 +106,4 @@ export const getBlogPostsByTags: () => Promise<BlogPostCategories> = async () =>
     return categories
 }
 
-const sort: (posts: BlogPostMetadata[]) => BlogPostMetadata[] = (posts) => posts.sort((post1, post2) => (post1.frontMatter.date > post2.frontMatter.date ? -1 : 1))
+const sort: (posts: BlogPostMetadata[]) => BlogPostMetadata[] = (posts) => posts.sort((post1, post2) => (new Date(post1.frontMatter.date) > new Date(post2.frontMatter.date) ? -1 : 1))
