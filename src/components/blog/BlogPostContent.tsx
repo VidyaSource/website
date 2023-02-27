@@ -13,9 +13,8 @@ const components = {
         const match = /language-(\w+)/.exec(props.className || '')
         return !props.inline && match ? (
             <SyntaxHighlighter style={a11yDark} language={match[1]} PreTag="div"
-                   className="text-sm"
-                   children={String(props.children).replace(/\n$/, '')}
-                   showLineNumbers={true} {...props} />
+                   children={String(props.children)}
+                   showLineNumbers={false} {...props} />
         ) : (
             <code children={String(props.children).replace(/\n$/, '')} className="text-red dark:text-red-light text-code text-lg" {...props} />
         )
