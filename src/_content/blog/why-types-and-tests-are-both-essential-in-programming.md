@@ -4,7 +4,7 @@ author: "Neil Chaudhuri (He/Him)"
 title: "Why Types and Tests are Both Essential in Programming"
 description: "The arguments for types vs. tests is silly. You need both because they solve two different problems."
 image: "/img/blog/programming.jpg"
-date: 2023-02-27
+date: 2023-02-26
 categories:
 - Programming
 - Software Engineering
@@ -129,8 +129,8 @@ You've also shifted type guarantees right, from development time to runtime, and
 You know what else makes you slower? You've chosen a manual process over automation. You've sacrificed tooling support and implicit documentation for the chance to waste time 
 doing extra work types do more reliably and cheaply. That's particularly weird since one of the primary objections to types is extra work.
 
-In the end, replacing types with tests is like replacing [Chris Hemsworth with his brother Liam](https://www.eonline.com/news/1341657/liam-hemsworth-trolls-perfect-brother-chris-hemsworth-in-marvelous-birthday-tribute). 
-You could do worse but meh. Use types to automate API integrity and tests to verify API behavior *together* to build the most reliable and maintainable code in the shortest amount of time.
+In the end, substituting types with tests in your code is like substituting [Chris Hemsworth with his brother Liam](https://www.eonline.com/news/1341657/liam-hemsworth-trolls-perfect-brother-chris-hemsworth-in-marvelous-birthday-tribute)
+in the cast of your movie. You could do worse but look at how much you've lost in the process. Use types to automate API integrity and tests to verify API behavior *together* to build the most reliable and maintainable code in the shortest amount of time.
 
 
 
