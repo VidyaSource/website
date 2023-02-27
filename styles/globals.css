@@ -95,4 +95,8 @@
     .dark .prose .dark-text-blue-light {
         color: #F4F9FE;
     }
+
+    pre {
+        font-size: small;
+    }
 }
