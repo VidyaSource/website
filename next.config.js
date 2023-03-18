@@ -172,6 +172,7 @@ module.exports = withPWA({
                     "Temporal Types",
                     "Records",
                     "Immutable collections",
+                    "Serialization with JSON",
                     "Asynchronous Programming with CompletableFuture",
                     "Reactive Programming with Reactive Streams",
                     "Experimentation Using the REPL"
