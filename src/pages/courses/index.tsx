@@ -10,7 +10,7 @@ export const courses = [
         // @ts-ignore
         description: process.env.java.blurb,
         imageUrl: '/img/courses/programming.jpg',
-        width: 6000,
+        width: 8000,
         height: 4000
     },
     {
@@ -19,7 +19,7 @@ export const courses = [
         // @ts-ignore
         description: process.env.agile.blurb,
         imageUrl: '/img/courses/agile.jpg',
-        width: 3600,
+        width: 4800,
         height: 2400
     },
     {
