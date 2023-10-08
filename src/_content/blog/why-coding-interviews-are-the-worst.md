@@ -57,7 +57,7 @@ know; it's how much they can learn. If you're a React shop, it's impressive if a
 [syncing UI with state](/blog/dark-mode-nextjs-tailwindcss-react-hooks) rather than a new spin on `componentDidMount`, but what if you decide to move to [Solid](https://www.solidjs.com/)? Or what if
 an important new initiative demands a different set of skills entirely and you don't have the resources to hire a subject-matter expert right away?
 
-Instead, you want to hire engineers who fit with your culture and make their teams better with hard and soft skills. They do this is many ways.
+Instead, you want to hire engineers who fit with your culture and make their teams better with hard and soft skills. They do this in many ways.
 They learn quickly because they think in abstractions so they can translate prior knowledge into new skills that serve their professional growth and your bottom line. They 
 aren't afraid to experiment and fail in order to learn new things. They listen. They are eager to help.
 They are patient and kind. They manage their time well. They can communicate with customers. They care about good code and write good documentation.
