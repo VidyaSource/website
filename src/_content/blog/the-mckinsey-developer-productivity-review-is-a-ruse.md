@@ -132,11 +132,7 @@ to juice stock prices.
 It's an insult to the tech industry and to our intelligence. The good news is there is Dr. Forsgren show us the right way we can improve 
 as software organizations.
 
-## The Right Way
-
-I would characterize the right way to measure engineering productivity in two ways according to Dr. Forsgren's SPACE framework.
-
-### Building the Right Thing
+## Forget McKinsey. Give Yourself SPACE
 
 In his seminal book *Lean Startup*, author Eric Ries introduces the concept of the Minimal Viable Product (MVP):
 "[the] version of a new product which allows a team to collect the maximum amount of validated learning about customers with the least effort."
@@ -146,17 +142,17 @@ form of the product that helps you validate or reject your assumptions about wha
 
 >>> In the book, Ries makes it clear the product doesn't have to be tech. He gives an example of a laundry service in India that uses a prop washing machine on a truck as its MVP.
 
-As you build your product, you need to continuously validate you are giving customers and other stakeholders what they want. This is an example of the outcome 
-focus in the Performance dimension of SPACE. Dr. Forsgren describes these aspects in particular:
+As you build your product, you need to continuously validate you are giving customers and other stakeholders what they want. This is *building the right thing*.
+You also need to establish a culture of teamwork, psychological safety, flow state, and commitment to quality to promote a delivery pipeline that gets 
+your product to users with the efficiency (the **_E_** in SPACE related to all the other dimensions) they demand. This is *building the thing right*.
 
-* Quality: Reliability, absence of bugs, ongoing service health
-* Impact: Customer satisfaction, customer adoption and retention, feature usage, cost reduction
+With SPACE and the DORA metrics, Dr. Forsgren and her teams have given us the blueprint to accomplish both.
 
-If you are excelling in these areas, you've built the right thing.
-
-### Building the Thing Right
-
-
+There are many ways to achieve the goals SPACE and DORA lay out, and how you get there depends on the nature and culture of your organization.
+For example, a 100% remote workforce of experienced engineers may have different ways of working than a hybrid workforce
+of various experience levels engaging with contractors around the world. You need to figure out what works best for
+everyone to encourage diversity in all its forms to deliver the best work, but if you maintain the research-driven SPACE and DORA as your
+guide and ignore bad faith ruses from companies like McKinsey, you will succeed.
 
 
 
