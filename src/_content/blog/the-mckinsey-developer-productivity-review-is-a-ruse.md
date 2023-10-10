@@ -77,7 +77,7 @@ let me add some thoughts.
 ### McKinsey thinks code is all that matters so the best engineers churn out the most code
 
 It's true that we sell products and products are made of code, but you and I know code is the easy part. So much so
-that Generative AI can do a lot of it. The hard work is understanding your customers, learning the business domain, 
+that Generative AI can write a lot of it. The hard work is understanding your customers, learning the business domain, reviewing code because not all code is good code,
 experimenting with new tech, manually verifying accessibility, cleaning up technical debt, integrating with legacy systems, writing tests, 
 automating cloud deployments, mentoring inexperienced engineers, writing documentation, creating a design system,
 and lots of other things essential to mature software delivery. 
@@ -88,19 +88,58 @@ a small part of that. Maybe even the easiest!
 
 ### That Outer Loop/Inner Loop Dichotomy is Nonsense
 
-McKinsey distinguishes "Outer Loop" activities from "Inner Loop" activities where the latter is where the meaningful work is.
-It's telling 
+McKinsey distinguishes "Outer Loop" activities from "Inner Loop" activities where the latter is for them where the predictive work is.
+As you'd expect, the Inner Loop is churning out code. They suggest teams should aim for 70% in the Inner Loop. Where does
+that number come from? Who knows? They made it up like a middle schooler who forgot oral reports are due.
+
+It's also telling they put "Security and Compliance" in the Outer Loop category. It's that kind of mentality that causes so many large 
+companies who should know better to suffer embarrassing breaches that compromise our data. In fact, all the Outer Loop activities
+are important because they are critical to feature delivery, which is what matters.
 
 
-bad faith use of real data
+### "Contribution Analysis" and "Talent Capability Score" Have No Basis in Research
 
-here is what you measure
-why
+Based on the book of the same name, [Moneyball](https://en.wikipedia.org/wiki/Moneyball_(film)) is the true story of the Oakland Athletics, a baseball team that lacked the resources to sign expensive
+players and devised a data-driven approach to assemble cheap, undervalued players into a very good team that could challenge 
+rich teams who could afford the most expensive players. That team was at the vanguard of the analytics movement that is now commonplace
+in baseball, and one of the key objectives of this approach is to isolate the value of a particular player from the rest of the team.
+It's a nice idea, but it's really hard and not necessarily always successful. In fact, there is a modern statistic called Wins Above 
+Replacement (WAR) that purports to measure how much better one player is than a player you can find anywhere, but 
+[there are three variations on WAR](https://www.mlb.com/glossary/advanced-stats/wins-above-replacement) because the three references
+don't agree on how to calculate it.
 
-deflect blame from their own failures
+Measuring the productivity of an individual in the context of a team is all but impossible.
 
+It's even harder in software development where so many different activities go into delivering a feature from talking to users
+to building design systems to setting up automated deployments to observability and instrumentation to compliance with laws and
+regulations and on and on. McKinsey's perspective on productivity as lines of code and PRs submitted is reductive and naive.
 
-what do you do to improve or with the score
+But it gets worse.
+
+Let's imagine a developer who is struggling. After all, that happens. No matter your line of work, we all have Imposter Syndrome
+and other crises of confidence. If it persists, that isn't the developer's fault. It's the fault of organizational leadership to
+create the conditions necessary for [flow state](https://leaddev.com/culture-engagement-motivation/why-flow-matters-more-passion).
+
+In fact, this leads to the biggest problem I have with the McKinsey report.  
+
+The authors have the nerve to pay lip service to the [DORA metrics](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance)  
+and the [SPACE framework](https://queue.acm.org/detail.cfm?id=3454124), both pioneered by the legendary Dr. Nicole Forsgren
+and her colleagues on the basis of years of research, only to make up Contribution Analysis and Talent Capability Score and 
+70% Inner Loop activity as if they offer the same academic rigor. This is how you know all of this is bad faith. McKinsey 
+hasn't created a framework to measure developer productivity. McKinsey created a framework for tech CEOs to rationalize layoffs
+to juice stock prices.
+
+It's an insult to the tech industry and to our intelligence. The good news is there is Dr. Forsgren show us the right way we can improve 
+as software organizations.
+
+## The Right Way
+
+I would characterize the right way to measure engineering productivity in two ways.
+
+### Building the Right Thing
+
+You need to measure if your product is something customers actually want. The way 
+
 
 
 
