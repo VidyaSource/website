@@ -134,11 +134,28 @@ as software organizations.
 
 ## The Right Way
 
-I would characterize the right way to measure engineering productivity in two ways.
+I would characterize the right way to measure engineering productivity in two ways according to Dr. Forsgren's SPACE framework.
 
 ### Building the Right Thing
 
-You need to measure if your product is something customers actually want. The way 
+In his seminal book *Lean Startup*, author Eric Ries introduces the concept of the Minimal Viable Product (MVP):
+"[the] version of a new product which allows a team to collect the maximum amount of validated learning about customers with the least effort."
+
+While tech has taken the MVP to mean an alpha or beta version of a product, Ries means something different—a cheap, lightweight
+form of the product that helps you validate or reject your assumptions about what customers want before you invest time or money into building it.
+
+>>> In the book, Ries makes it clear the product doesn't have to be tech. He gives an example of a laundry service in India that uses a prop washing machine on a truck as its MVP.
+
+As you build your product, you need to continuously validate you are giving customers and other stakeholders what they want. This is an example of the outcome 
+focus in the Performance dimension of SPACE. Dr. Forsgren describes these aspects in particular:
+
+* Quality: Reliability, absence of bugs, ongoing service health
+* Impact: Customer satisfaction, customer adoption and retention, feature usage, cost reduction
+
+If you are excelling in these areas, you've built the right thing.
+
+### Building the Thing Right
+
 
 
 
