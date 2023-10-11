@@ -65,7 +65,7 @@ think it was because of a lack of resources to pay people, [they had the money t
 
 The Street loved the combination as it always does. Big Tech stock went up once again.
 
-The good news at last for software engineers is The Street now wants to see big investments in AI, so Big Tech is hiring again—often the 
+The good news for software engineers is The Street now wants to see big investments in AI, so Big Tech is slowly hiring again—often the 
 same people they laid off. That tells you it's not about developer performance or the numbers on a balance sheet. Just stock price.
 
 So what does all this have to do with McKinsey? 
