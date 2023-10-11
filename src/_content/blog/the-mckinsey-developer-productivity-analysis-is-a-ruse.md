@@ -29,19 +29,23 @@ brazenly made it clear they think very little of the tech workforce—from Elon 
 "[extremely hardcore](https://www.theregister.com/2022/11/16/musk_twitter_ultimatum/)" 
 to Mark Zuckerberg's "[year of efficiency](https://www.reuters.com/technology/meta-lays-off-tech-teams-battering-employee-morale-2023-04-19/)."
 
+It turns out this isn't a debate at all: _You cannot measure individual productivity._ As we will see shortly, research has settled the question, but 
+that hasn't stopped people from asking because they don't like the answer.
+
 McKinsey recently released a report called 
 *[Yes, you can measure software developer productivity](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/yes-you-can-measure-software-developer-productivity)*.
-As the title suggests, the authors affirmatively declare that you *can* measure individual productivity and offer a framework for doing so.
-
-The truth is you can't measure individual productivity, but it gets worse. McKinsey is really motivated 
-right now to offer tech managers this fiction, and it's all just a ruse to fool the tech industry and everyone who cares about it.
+As the title suggests, the authors affirmatively declare that you *can* measure individual productivity and offer a framework for doing so. 
+McKinsey is wrong, but it's worse than that. McKinsey is motivated now more than ever to offer tech managers this fiction, 
+and it's all just a ruse to get paid for telling CEOs what they want to hear.
 
 ## Who is McKinsey anyway?
 
 McKinsey is a management consultant company. In theory, they help managers become better managers. McKinsey is like [The Bobs in Office Space](https://www.youtube.com/watch?v=j_1lIFRdnhA)
 with the elite pedigree of ["the kids" in Succession](https://succession.fandom.com/wiki/Roy_family).
 
-Management consulting isn't a bad idea. In fact, it's a great idea! We have all known managers who...aren't great. They can use help. The problem is McKinsey 
+Management consulting isn't a bad idea. In fact, it's a great idea! We have all known managers who...aren't great. They can use help. 
+Luminaries like Eliyahu Goldratt, Peter Drucker, Adam Grant, and many others have made significant contributions to organizational psychology. 
+The problem is McKinsey 
 [gets a lot wrong](https://x.com/TrungTPhan/status/1688583089323438080?s=20) and, even worse, has [sold its "expertise" 
 to the worst clients and themselves have done legally dubious things](https://fortune.com/2023/06/21/mckinsey-hiring-ethics-salary/).
 
@@ -166,7 +170,7 @@ in McKinsey's Inner and Outer Loops:
 
 >>> Developer activity, if measured correctly, can provide valuable but limited insights about developer productivity, engineering systems, and team efficiency. Because of the complex and diverse activities that developers perform, their activity is not easy to measure or quantify. In fact, it is almost impossible to comprehensively measure and quantify all the facets of developer activity across engineering systems and environments. A well-designed engineering system, however, will help in capturing activity metrics along different phases of the software development life cycle and quantify developer activity at scale.
 
-But they also clarify that activity tells you nothing on its own without context about the broader systems in place.
+But they also clarify that activity tells you nothing on its own without context about the broader systems in place. Activity ≠ Productivity.
 
 There are many ways to achieve the goals SPACE and DORA lay out, and how you get there depends on the nature and culture of your organization.
 For example, a 100% remote workforce of experienced engineers may have different ways of working than a hybrid workforce
