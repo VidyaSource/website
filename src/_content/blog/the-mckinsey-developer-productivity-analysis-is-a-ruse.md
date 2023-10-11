@@ -75,7 +75,8 @@ It's a ruse.
 ## What does McKinsey get wrong about measuring the productivity of individual developers?
 
 Long story short, McKinsey does not understand how software development works in the real world because they're consultants not 
-engineers. I recommend you check out [Daniel Terhorst-North's post](https://dannorth.net/mckinsey-review/) also critical of McKinsey's report for a detailed analysis, but
+engineers. I recommend you check out [Daniel Terhorst-North's post](https://dannorth.net/mckinsey-review/) also critical of McKinsey's report,
+including the absence of gender diversity among its authors, for a detailed analysis, but
 let me add some thoughts.
 
 ### McKinsey thinks code is the unit of productivity, so the best engineers churn out the most code
