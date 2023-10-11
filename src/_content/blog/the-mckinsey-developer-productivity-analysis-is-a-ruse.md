@@ -34,7 +34,7 @@ that hasn't stopped people from asking because they don't like the answer.
 
 McKinsey recently released a report called 
 *[Yes, you can measure software developer productivity](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/yes-you-can-measure-software-developer-productivity)*.
-As the title suggests, the authors affirmatively declare that you *can* measure individual productivity and offer a framework for doing so. 
+As the title suggests, the authors affirmatively declare that you *can* measure individual productivity, and they offer a framework for doing so. 
 McKinsey is wrong, but it's worse than that. McKinsey is motivated now more than ever to offer tech managers this fiction, 
 and it's all just a ruse to get paid for telling CEOs what they want to hear.
 
@@ -78,9 +78,9 @@ It's a ruse.
 
 ## What does McKinsey get wrong about measuring the productivity of individual developers?
 
-Long story short, McKinsey does not understand how software development works in the real world because they're consultants not 
+Let's assume for the moment McKinsey did their analysis earnestly in good faith. Then McKinsey does not understand how software development works in the real world because they're consultants not 
 engineers. I recommend you check out [Daniel Terhorst-North's post](https://dannorth.net/mckinsey-review/) also critical of McKinsey's report,
-including the absence of gender diversity among its authors, for a detailed analysis, but
+including a great point on the absence of gender diversity among its authors, for a detailed analysis, but
 let me add some thoughts.
 
 ### McKinsey thinks code is the unit of productivity, so the best engineers churn out the most code
@@ -102,7 +102,7 @@ As you'd expect, the Inner Loop is about churning out code. They suggest teams s
 that number come from? Who knows? They made it up like a middle schooler who forgot oral reports are due today.
 
 It's also telling they put "Security and Compliance" in the Outer Loop. It's that kind of mentality that causes so many large 
-companies who should know better to suffer embarrassing breaches that compromise our data. In fact, all the Outer Loop activities
+companies, many of whom are likely McKinsey clients but should know better regardless, to suffer embarrassing breaches that compromise our data. In fact, all the Outer Loop activities
 are important because they are critical to feature delivery, which is what matters. Users pay for features, not code.
 
 
@@ -138,8 +138,8 @@ and her colleagues on the basis of years of research, only to shove them aside i
 70% "Inner Loop" activity with the pretense of the same academic rigor.
 
 Are you kidding? It would be like if I said "Einstein's great. He's my guy. But I would like to complement his Theory of Special Relativity expressing the equivalence of mass and energy
-with my own Theory pf Artificial Quantum Matrix Superposition that states the nutritional value of [Sour Patch Kids](https://sourpatchkids.com/) is directly proportional
-to the nutritional value of the fruits they represent. That's just science!"
+with my own Theory of Artificial Quantum Matrix Superposition that states the nutritional value of [Sour Patch Kids](https://sourpatchkids.com/) is directly proportional
+to the nutritional value of the fruits they represent. These are two equally valid theories!"
 
 This is how you know it's a ruse. McKinsey has no interest in creating a framework to measure developer productivity. Ever the ethically challenged firm, McKinsey has an interest in
 persuading tech CEOs to pay them lots of money to rationalize layoffs to juice stock prices _under the guise of a research-driven framework_ to measure developer productivity.
@@ -156,17 +156,18 @@ In his seminal book *Lean Startup*, author Eric Ries introduces the concept of t
 "[the] version of a new product which allows a team to collect the maximum amount of validated learning about customers with the least effort."
 
 While tech has taken the MVP to mean an alpha or beta version of a product, Ries means something different—a cheap, lightweight
-form of the product that helps you validate or reject your assumptions about what customers want before you invest time or money into building it.
+form of the product that helps you validate or reject your assumptions about what customers want before you invest time and money into building it.
 
 >>> In the book, Ries makes it clear the product doesn't even have to be tech. He gives an example of a laundry service in India that uses a prop washing machine on a truck as its MVP!
 
-Even before you start building and certainly as you continue building, you need to continuously validate you are giving customers and other stakeholders what they want. This is *building the right thing*.
+Even before you start building and certainly as you continue building, you need to continuously validate your organizational performance
+(the **_P_** in SPACE) at giving customers and other stakeholders what they want. This is *building the right thing*.
 
 You also need to establish a culture of teamwork, psychological safety, flow state, and commitment to quality to promote a delivery pipeline that delivers to 
 users the product they want with the efficiency (the **_E_** in SPACE uniting all the other dimensions) they demand. This is *building the thing right*.
 
 With SPACE and DORA metrics, Dr. Forsgren and her teams have given us the blueprint to accomplish both. McKinsey has weaponized their 
-work to promote their own proprietary nonsense to appease layoff-hungry CEOs.
+work to promote their own proprietary, lazy nonsense to appease layoff-hungry CEOs.
 
 To be fair, the SPACE team [acknowledges](https://queue.acm.org/detail.cfm?id=3454124) there is value in tracking raw development activity (the **_A_** in SPACE) like the kind
 in McKinsey's Inner and Outer Loops:
