@@ -138,7 +138,7 @@ and her colleagues on the basis of years of research, only to shove them aside i
 70% "Inner Loop" activity with the pretense of the same academic rigor.
 
 Are you kidding? It would be like if I said "Einstein's great. He's my guy. But I would like to complement his Theory of Special Relativity expressing the equivalence of mass and energy
-with my own Artificial Quantum Matrix Theory that states the nutritional value of [Sour Patch Kids](https://sourpatchkids.com/) is directly proportional
+with my own Theory pf Artificial Quantum Matrix Superposition that states the nutritional value of [Sour Patch Kids](https://sourpatchkids.com/) is directly proportional
 to the nutritional value of the fruits they represent. That's just science!"
 
 This is how you know it's a ruse. McKinsey has no interest in creating a framework to measure developer productivity. Ever the ethically challenged firm, McKinsey has an interest in
