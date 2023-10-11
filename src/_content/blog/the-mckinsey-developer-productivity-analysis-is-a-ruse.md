@@ -30,7 +30,7 @@ brazenly made it clear they think very little of the tech workforce—from Elon 
 to Mark Zuckerberg's "[year of efficiency](https://www.reuters.com/technology/meta-lays-off-tech-teams-battering-employee-morale-2023-04-19/)."
 
 It turns out this isn't a debate at all: _You cannot measure individual productivity._ As we will see shortly, research has settled the question, but 
-that hasn't stopped people from asking because they don't like the answer.
+that hasn't stopped people from [trying to make fetch happen](https://www.youtube.com/watch?v=Pubd-spHN-0).
 
 McKinsey recently released a report called 
 *[Yes, you can measure software developer productivity](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/yes-you-can-measure-software-developer-productivity)*.
