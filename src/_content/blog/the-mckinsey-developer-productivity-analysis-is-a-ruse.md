@@ -44,8 +44,8 @@ McKinsey is a management consultant company. In theory, they help managers becom
 with the elite pedigree of ["the kids" in Succession](https://succession.fandom.com/wiki/Roy_family).
 
 Management consulting isn't a bad idea. In fact, it's a great idea! We have all known managers who...aren't great. They can use help. 
-Luminaries like Eliyahu Goldratt, Peter Drucker, Adam Grant, and many others have made significant contributions to organizational psychology. 
-The problem is McKinsey 
+Luminaries like Eliyahu Goldratt, Susan David, Peter Drucker, AMy Edmonson, Daniel Goldman, Adam Grant, and many others 
+have made significant contributions to management consulting and organizational psychology. The problem is McKinsey 
 [gets a lot wrong](https://x.com/TrungTPhan/status/1688583089323438080?s=20) and, even worse, has [sold its "expertise" 
 to the worst clients and themselves have done legally dubious things](https://fortune.com/2023/06/21/mckinsey-hiring-ethics-salary/).
 
@@ -134,9 +134,8 @@ In fact, this leads to the biggest problem I have with the McKinsey report.
 
 The authors have the nerve to pay lip service to the [DORA metrics](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance)  
 and the [SPACE framework](https://queue.acm.org/detail.cfm?id=3454124) (more on these shortly), both pioneered by the legendary Dr. Nicole Forsgren
-and her colleagues on the basis of years of research, only to invent scientific-sounding jargon like Contribution Analysis and Talent Capability Score and 
-70% Inner Loop activity and represent these "metrics" as offering the same academic rigor. They skipped the hard work and made something up.
-
+and her colleagues on the basis of years of research, only to shove them aside in favor of contrived jargon like "Contribution Analysis" and "Talent Capability Score" and 
+70% "Inner Loop" activity with the pretense of the same academic rigor. It's preposterous.
 
 This is how you know it's a ruse. McKinsey has no interest in creating a framework to measure developer productivity. Ever the ethically challenged firm, McKinsey has an interest in
 persuading tech CEOs to pay them lots of money to rationalize layoffs to juice stock prices _under the guise of a research-driven framework_ to measure developer productivity.
