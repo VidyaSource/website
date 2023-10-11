@@ -44,7 +44,7 @@ McKinsey is a management consultant company. In theory, they help managers becom
 with the elite pedigree of ["the kids" in Succession](https://succession.fandom.com/wiki/Roy_family).
 
 Management consulting isn't a bad idea. In fact, it's a great idea! We have all known managers who...aren't great. They can use help. 
-Luminaries like Eliyahu Goldratt, Susan David, Peter Drucker, AMy Edmonson, Daniel Goldman, Adam Grant, and many others 
+Luminaries like Eliyahu Goldratt, Susan David, Peter Drucker, Amy Edmonson, Daniel Goldman, Adam Grant, and many others 
 have made significant contributions to management consulting and organizational psychology. The problem is McKinsey 
 [gets a lot wrong](https://x.com/TrungTPhan/status/1688583089323438080?s=20) and, even worse, has [sold its "expertise" 
 to the worst clients and themselves have done legally dubious things](https://fortune.com/2023/06/21/mckinsey-hiring-ethics-salary/).
@@ -114,7 +114,7 @@ players and devised a data-driven approach to assemble cheap, undervalued player
 rich teams who could afford the big names. The A's were at the vanguard of the analytics movement that is now commonplace
 in baseball, and one of the key objectives of this approach is to isolate the value of a particular player from the rest of the team.
 It's a great idea, but it's really hard and not necessarily always successful. In fact, the most popular modern statistic is Wins Above 
-Replacement (WAR), which seeks to measure how much better one player is than a "replacement" you can find anywhere, but 
+Replacement (WAR), which seeks to measure how much better one player in isolation is than a "replacement" you can find anywhere, but 
 [there are three variations on WAR](https://www.mlb.com/glossary/advanced-stats/wins-above-replacement) because the three references
 don't agree on how to calculate it.
 
@@ -162,8 +162,8 @@ form of the product that helps you validate or reject your assumptions about wha
 
 Even before you start building and certainly as you continue building, you need to continuously validate you are giving customers and other stakeholders what they want. This is *building the right thing*.
 
-You also need to establish a culture of teamwork, psychological safety, flow state, and commitment to quality to promote a delivery pipeline that gets 
-your product to users with the efficiency (the **_E_** in SPACE uniting all the other dimensions) they demand. This is *building the thing right*.
+You also need to establish a culture of teamwork, psychological safety, flow state, and commitment to quality to promote a delivery pipeline that delivers to 
+users the product they want with the efficiency (the **_E_** in SPACE uniting all the other dimensions) they demand. This is *building the thing right*.
 
 With SPACE and DORA metrics, Dr. Forsgren and her teams have given us the blueprint to accomplish both. McKinsey has weaponized their 
 work to promote their own proprietary nonsense to appease layoff-hungry CEOs.
