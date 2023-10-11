@@ -1,8 +1,8 @@
 ---
 author: "Neil Chaudhuri (He/Him)"
-title: "The McKinsey Developer Productivity Review Is a Ruse"
+title: "The McKinsey Developer Productivity Analysis Is a Ruse"
 date: 2023-10-09T13:31:40-04:00
-description: "The McKinsey Developer Productivity Review is just their latest debacle. Your organization can do so much better."
+description: "The McKinsey developer productivity analysis is worse than wrong. It's bad faith. Your organization can do so much better."
 image: "/img/blog/mckinsey.jpg"
 categories:
 - Leadership
