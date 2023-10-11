@@ -135,7 +135,11 @@ In fact, this leads to the biggest problem I have with the McKinsey report.
 The authors have the nerve to pay lip service to the [DORA metrics](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance)  
 and the [SPACE framework](https://queue.acm.org/detail.cfm?id=3454124) (more on these shortly), both pioneered by the legendary Dr. Nicole Forsgren
 and her colleagues on the basis of years of research, only to shove them aside in favor of contrived jargon like "Contribution Analysis" and "Talent Capability Score" and 
-70% "Inner Loop" activity with the pretense of the same academic rigor. It's preposterous.
+70% "Inner Loop" activity with the pretense of the same academic rigor.
+
+Are you kidding? It would be like if I said "Einstein's great. He's my guy. But I would like to complement his Theory of Special Relativity expressing the equivalence of mass and energy
+with my own Artificial Quantum Matrix Theory that states the nutritional value of [Sour Patch Kids](https://sourpatchkids.com/) is directly proportional
+to the nutritional value of the fruits they represent. That's just science!"
 
 This is how you know it's a ruse. McKinsey has no interest in creating a framework to measure developer productivity. Ever the ethically challenged firm, McKinsey has an interest in
 persuading tech CEOs to pay them lots of money to rationalize layoffs to juice stock prices _under the guise of a research-driven framework_ to measure developer productivity.
