@@ -6,6 +6,7 @@ description: "The McKinsey developer productivity analysis is worse than wrong. 
 image: "/img/blog/mckinsey.jpg"
 categories:
 - Leadership
+- AI
 - Government
 - Programming
 - Testing
@@ -43,7 +44,7 @@ and it's all just a ruse to get paid for telling CEOs what they want to hear.
 McKinsey is a management consultant company. In theory, they help managers become better managers. McKinsey is like [The Bobs in Office Space](https://www.youtube.com/watch?v=j_1lIFRdnhA)
 with the elite pedigree of ["the kids" in Succession](https://succession.fandom.com/wiki/Roy_family).
 
-Management consulting isn't a bad idea. In fact, it's a great idea! We have all known managers who...aren't great. They can use help. 
+Management consulting isn't a bad idea. In fact, it's a great idea! We have all known managers who...aren't awesome. They can use help. 
 Luminaries like Eliyahu Goldratt, Susan David, Peter Drucker, Amy Edmonson, Daniel Goldman, Adam Grant, and many others 
 have made significant contributions to management consulting and organizational psychology. The problem is McKinsey 
 [gets a lot wrong](https://x.com/TrungTPhan/status/1688583089323438080?s=20) and, even worse, has [sold its "expertise" 
@@ -80,7 +81,7 @@ It's a ruse.
 
 Let's assume for the moment McKinsey did their analysis earnestly in good faith. Then McKinsey does not understand how software development works in the real world because they're consultants not 
 engineers. I recommend you check out [Daniel Terhorst-North's post](https://dannorth.net/mckinsey-review/) also critical of McKinsey's report,
-including a great point on the absence of gender diversity among its authors, for a detailed analysis, but
+including a terrific point on the absence of gender diversity among its authors, for a detailed analysis, but
 let me add some thoughts.
 
 ### McKinsey thinks code is the unit of productivity, so the best engineers churn out the most code
