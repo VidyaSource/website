@@ -27,7 +27,7 @@ const Footer = () => {
                     ))}
                 </nav>
                 <div className="mt-8 flex justify-center space-x-6">
-                    <Link href="https://www.linkedin.com/company/3285099">
+                    <Link href="https://www.linkedin.com/company/vidya-technology-training">
                         <a className={"dark:text-white hover:text-linkedin dark:hover:text-red-light"}>
                             <span className="sr-only">LinkedIn</span>
                             <svg fill="currentColor" viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">

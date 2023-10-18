@@ -151,21 +151,21 @@ const Form = () => {
                             </dl>
                             <ul className="mt-8 flex space-x-12" role="list">
                                 <li>
-                                    <Link href="https://twitter.com/VidyaSource">
+                                    <Link href="https://www.linkedin.com/company/vidya-technology-training">
                                         <a className="text-blue-light hover:text-white">
-                                            <span className="sr-only">Twitter</span>
-                                            <svg
-                                                width={24}
-                                                height={24}
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                className="w-8 h-8"
-                                                aria-hidden="true"
-                                            >
+                                            <span className="sr-only">LinkedIn</span>
+                                            <svg width={24}
+                                                 height={24}
+                                                 viewBox="0 0 24 24"
+                                                 fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg"
+                                                 className="w-8 h-8"
+                                                 aria-hidden="true">
+                                                <title>LinkedIn icon</title>
                                                 <path
-                                                    d="M7.548 22.501c9.056 0 14.01-7.503 14.01-14.01 0-.213 0-.425-.015-.636A10.02 10.02 0 0024 5.305a9.828 9.828 0 01-2.828.776 4.94 4.94 0 002.165-2.724 9.867 9.867 0 01-3.127 1.195 4.929 4.929 0 00-8.391 4.491A13.98 13.98 0 011.67 3.9a4.928 4.928 0 001.525 6.573A4.887 4.887 0 01.96 9.855v.063a4.926 4.926 0 003.95 4.827 4.917 4.917 0 01-2.223.084 4.93 4.93 0 004.6 3.42A9.88 9.88 0 010 20.289a13.941 13.941 0 007.548 2.209"
-                                                    fill="currentColor"
+                                                    fillRule="evenodd"
+                                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                                    clipRule="evenodd" fill="currentColor"
                                                 />
                                             </svg>
                                         </a>
