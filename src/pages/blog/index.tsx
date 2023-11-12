@@ -28,7 +28,21 @@ const BlogPosts = (p: BlogPostsProps) => {
                     description: description,
                     url: url,
                     type: 'company',
+                    images: [
+                        {
+                            url: `${process.env.basePath}/img/blog/blog-posts.jpg`,
+                            width: 1200,
+                            height: 627,
+                            alt: 'Vidya Blog Posts.',
+                        }
+                    ]
                 }}
+                additionalMetaTags={[
+                    {
+                        property: 'twitter:image',
+                        content: `${process.env.basePath}/img/blog/blog-posts.jpg`,
+                    },
+                ]}
             />
             <Page>
                 <BlogPostIndex blogPosts={p.blogPosts} blogPostCategories={p.blogPostCategories}/>
