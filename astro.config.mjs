@@ -11,8 +11,13 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.vidyasource.com',
-  output: 'static',
-  adapter: cloudflare(),
+  output: 'hybrid',
+  adapter: cloudflare({
+    routes: {
+      strategy: "include",
+      imageService: "compile"
+    }
+  }),
   integrations: [tailwind(), react(), mdx({
     markdown: {
       shikiConfig: {
@@ -30,6 +35,4 @@ export default defineConfig({
       external: ['prismjs']
     }
   },
-  output: "server",
-  adapter: cloudflare()
 });
