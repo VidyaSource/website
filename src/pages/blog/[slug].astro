@@ -1,0 +1,30 @@
+---
+import Page from '../../components/Page.astro'
+import {blogPosts} from '../../layouts/blog/blogUtils';
+import BlogPost from '../../layouts/blog/BlogPost.astro'
+import vidyaSchema from '../../components/vidyaSchema.json'
+
+export const prerender = true;
+export async function getStaticPaths() {
+    return Promise.all(blogPosts.map(async (p: BlogPost) => {
+        return {
+            params: {slug: p.slug},
+            props: p,
+        };
+    }));
+}
+
+const {
+    title, description, image, schema
+} = Astro.props
+
+
+schema["publisher"] = vidyaSchema
+schema["image"] = `${Astro.url.origin}${image}`
+---
+<Page title={`${title} | Vidya LLC`}
+      description={description}
+      image={image}
+      schema={schema}>
+    <BlogPost {...Astro.props}/>
+</Page>

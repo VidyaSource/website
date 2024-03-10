@@ -1,0 +1,10 @@
+---
+import Page from "../components/Page.astro";
+import Form from '../layouts/contact/Form'
+import {SEO} from "astro-seo";
+const updatedTime = new Date().toISOString()
+---
+<Page title="Contact Vidya LLC - Custom Software Development & IT Consulting"
+      description="Get in touch with Vidya LLC for custom software development, IT consulting, and technology training services. We're an 8(a) & SWaM certified small business based near Washington, DC.">
+    <Form client:load/>
+</Page>

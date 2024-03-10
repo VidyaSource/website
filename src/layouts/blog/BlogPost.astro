@@ -1,0 +1,39 @@
+---
+import {selectTags} from "../../layouts/blog/selectTags";
+import format from "date-fns/format"
+import Avatar from '../../layouts/blog/Avatar.astro';
+import TwitterScript from '../../layouts/blog/TwitterScript.astro';
+import YouTubeVideo from '../../components/YouTubeVideo.astro'
+
+const {
+    title, description, date, keywords, youtube, render,
+    author: {title: authorTitle, name, profileUrl, image}
+} = Astro.props
+const selectedTags = selectTags(keywords, 6)
+const {Content} = await render();
+---
+<article class="relative py-4 overflow-hidden bg-blue-light dark:bg-gray-dark">
+    <div class="relative px-4 sm:px-6 lg:px-8">
+        <section class="text-lg max-w-prose mx-auto">
+            <h1>
+                    <span class="block text-sm text-center text-green-dark dark:text-green-light font-semibold tracking-wide uppercase">
+                        {
+                            selectedTags.join("  |  ")
+                        }
+                    </span>
+                <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-red dark:text-red-light md:text-3xl lg:text-4xl">
+                          {title}
+                    </span>
+                <span class="mx-auto">
+                            <span class="mt-2 block text-lg text-center leading-8 tracking-tight text-red dark:text-red-light lg:text-xl">
+                                {format(new Date(date), "LLLL d, y")}
+                            </span>
+                        <Avatar name={name} image={image} profileUrl={profileUrl}/>
+                    </span>
+            </h1>
+            <p class="mt-2 text-xl text-gray-dark dark:text-blue-light leading-8">
+                <Content components={{del: YouTubeVideo, script: TwitterScript}}/>
+            </p>
+        </section>
+    </div>
+</article>

@@ -1,0 +1,33 @@
+---
+import {Image} from 'astro:assets';
+import {images} from "../../components/Images";
+import linkedIn from '../../img/blog/linkedin.png'
+const { name, profileUrl, image} = Astro.props
+---
+
+<a href={profileUrl} class="flex-shrink-0 group block">
+    <div class="flex items-center justify-center">
+        <Image
+                height={80}
+                width={80}
+                quality="max"
+                class="inline-block h-16 w-16 rounded-full"
+                src={images[`/src${image}`]()}
+                alt={name}
+        />
+        <span class="ml-3">
+            <p class="pb-0 mb-0 text-sm font-medium text-red dark:text-red-light group-hover:text-blue lg:text-md">{name}</p>
+            <p class="pt-0 mt-0 text-xs font-medium text-red group-hover:text-blue dark:group-hover:text-green-light lg:text-xs">
+                <span class="sr-only">LinkedIn</span>
+                        <Image height={21}
+                               width={24}
+                               class="inline-block"
+                               src={linkedIn}
+                               alt={name}
+                               quality="max"
+                        />
+            </p>
+        </span>
+    </div>
+</a>
+

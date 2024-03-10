@@ -1,0 +1,52 @@
+---
+import {Image} from 'astro:assets';
+import image from "../../img/consulting/development.jpg"
+---
+<section class="relative bg-white dark:bg-gray-dark">
+    <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
+        <div class="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pt-16 xl:col-span-6">
+            <div class="mx-auto max-w-2xl lg:mx-0">
+                <div class="text-base max-w-prose mx-auto lg:max-w-lg lg:ml-auto lg:mr-0">
+                    <h2 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-red dark:text-red-light sm:text-4xl">Architecture and Development</h2>
+                    <p class="mt-8 text-lg font-medium text-gray-dark dark:text-blue-light lg:font-normal">
+                        The simplest architectures are the most maintainable and the most secure. It takes experience
+                        and skill and patience to start simple and to recognize inflection points where the benefits
+                        of more complexity outweigh the costs. Vidya can help you discover the emergent architecture
+                        best suited to meet your challenges.
+                    </p>
+                    <p class="mt-4 text-lg font-medium text-gray-dark dark:text-blue-light lg:font-normal">
+                        Here are a few examples of the architecture services we provide:
+
+                        <ul>
+                            <li>Definition of <a href="https://adr.github.io/">Architectural Design Records (ADRs)</a></li>
+                            <li>Automation to shift feedback left</li>
+                            <li>Cloud Native deployments</li>
+                            <li>Data and machine learning strategy</li>
+                            <li>Zero Trust cybersecurity</li>
+                            <li>UX design and accessibility and component library development</li>
+                            <li>DevSecOps</li>
+                        </ul>
+                    </p>
+                    <p class="mt-4 text-lg font-medium text-gray-dark dark:text-blue-light lg:font-normal">
+                    Software development is similar. It's also an art form, but it is where the principles of the architecture become the operational reality
+                    that thrills your customers and generates revenue for your business. Vidya can not only help you
+                    find the blend of programming languages, frameworks, and tools best suited for the needs of your
+                    customers but also help you apply them the right way with best-in-class practices like modeling
+                    your domain with object-oriented programming, composing behavior with functional programming,
+                    building accessible user interfaces to promote your brand, creating
+                    ML pipelines, automating your builds with DevSecOps, and standardizing resilient deployments across clouds.
+                    </p>
+                    <p class="mt-8 text-lg font-medium text-gray-dark dark:text-blue-light lg:font-normal">
+                        It's a lot. We can help.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
+            <Image
+                    src={image}
+                    alt="Collaborating software engineers"
+                    quality={100}/>
+        </div>
+    </div>
+</section>

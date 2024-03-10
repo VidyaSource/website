@@ -1,0 +1,30 @@
+---
+import Page from '../../components/Page.astro'
+import {courses} from '../../layouts/courses/courseUtils';
+import Course from '../../layouts/courses/Course.astro'
+import vidyaSchema from '../../components/vidyaSchema.json'
+
+export const prerender = true;
+export async function getStaticPaths() {
+    return Promise.all(courses.map(async (c: Course) => {
+        return {
+            params: {slug: c.slug},
+            props: c,
+        };
+    }));
+}
+
+const {
+    title, description, image, schema
+} = Astro.props
+
+schema["provider"] = vidyaSchema
+schema["image"] = `${Astro.url.origin}${image}`
+console.log(schema)
+---
+<Page title={`${title} | Vidya LLC`}
+      description={description}
+      image={image}
+      schema={schema}>
+    <Course {...Astro.props}/>
+</Page>

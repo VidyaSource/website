@@ -1,0 +1,43 @@
+---
+const {title, description, render, slug, subtitle, github, youtube, date} = Astro.props
+const {Content} = await render();
+---
+<div class="bg-blue-light dark:bg-gray-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:py-16 lg:pt-8 lg:pb-0 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="mt-1 text-4xl font-extrabold text-red dark:text-red-light sm:text-5xl sm:tracking-tight lg:text-6xl">
+                {title}
+            </h1>
+        </div>
+        {
+            subtitle &&
+                <div class="text-center">
+                    <h2 class="mt-1 text-2xl text-red dark:text-red-light sm:text-3xl sm:tracking-tight lg:text-4xl">
+                        {subtitle}
+                    </h2>
+                </div>
+        }
+    </div>
+</div>
+<article class="relative overflow-hidden dark:bg-gray-dark">
+    <div class="relative px-4 sm:px-6 lg:px-8">
+        <div class="text-lg max-w-prose mx-auto">
+            <p class="mt-2 text-xl text-gray-dark dark:text-blue-light leading-8">
+            <div>
+                <div>
+                    <Content/>
+                </div>
+                <div class="py-12">If you want to skip the video altogether, <a
+                        href={`https://www.github.com/VidyaSource/${github}`}>the source is on GitHub</a>.
+                </div>
+                <div class="pb-12">
+                    <div class="youtube">
+                        <iframe src={`https://www.youtube.com/embed/${youtube}`} allowFullScreen
+                                title={title}/>
+                    </div>
+                </div>
+            </div>
+            </p>
+        </div>
+    </div>
+</article>

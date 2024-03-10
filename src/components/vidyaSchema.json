@@ -1,0 +1,96 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vidya LLC",
+    "legalName": "Vidya LLC",
+    "url": "https://www.vidyasource.com/",
+    "logo": "https://www.vidyasource.com/vidya.png",
+    "foundingDate": "2010",
+    "description": "Vidya LLC provides custom software development, IT consulting, and technology training services. We're an 8(a) & SWaM certified small business dedicated to helping organizations leverage technology for growth.",
+    "email": "info@vidyasource.com",
+    "telephone": "+1-202-430-5695",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3057 Nutley Street #285",
+        "addressLocality": "Fairfax",
+        "addressRegion": "VA",
+        "postalCode": "22031",
+        "addressCountry": "US"
+    },
+    "sameAs": [
+        "https://twitter.com/VidyaSource",
+        "https://www.linkedin.com/company/vidya-technology-training/",
+        "https://www.youtube.com/channel/UC24LVc8Bb65SF6LW-SLog9A",
+        "https://github.com/VidyaSource",
+        "https://stackoverflow.com/users/1347281/vidya"
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Vidya LLC Services",
+        "itemListElement": [
+            {
+                "@type": "OfferCatalogProduct",
+                "name": "Custom Software Development",
+                "description": "We specialize in custom software development tailored to meet your business needs. Our experienced developers utilize the latest technologies and best practices to deliver high-quality, scalable solutions."
+            },
+            {
+                "@type": "OfferCatalogProduct",
+                "name": "IT Consulting",
+                "description": "Our IT consulting services help organizations optimize their technology strategies, implement secure and efficient systems, and leverage the latest innovations to drive growth and productivity."
+            },
+            {
+                "@type": "OfferCatalogProduct",
+                "name": "Vidya LLC Technology Training Courses",
+                "description": "Enhance your team's skills with our comprehensive technology training programs. We offer courses in software development, data engineering, and agile methodologies tailored to your specific needs.",
+                "url": "https://www.vidyasource.com/courses"
+            },
+            {
+                "@type": "OfferCatalogProduct",
+                "name": "Vidya LLC Blog",
+                "description": "Explore Vidya LLC's blog for insightful articles, industry news, and expert insights on custom software development, IT consulting, technology training, and more.",
+                "url": "https://www.vidyasource.com/blog"
+            },
+            {
+                "@type": "OfferCatalogProduct",
+                "name": "Free Online Tutorials",
+                "description": "Access Vidya LLC's library of software development tutorials. Explore our free educational content covering various technologies, tools, and best practices."
+            }
+        ]
+    },
+    "hasWebSite": {
+        "@type": "WebSite",
+        "url": "https://www.vidyasource.com",
+        "mainNavigationElement": [
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Courses",
+                "url": "https://www.vidyasource.com/courses"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Consulting",
+                "url": "https://www.vidyasource.com/consulting"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Blog",
+                "url": "https://www.vidyasource.com/blog"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Tutorials",
+                "url": "https://www.vidyasource.com/tutorials"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "name": "About",
+                "url": "https://www.vidyasource.com/about"
+            },
+            {
+                "@type": "SiteNavigationElement",
+                "name": "Consulting",
+                "url": "https://www.vidyasource.com/contact"
+            }
+        ]
+    }
+}

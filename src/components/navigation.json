@@ -1,0 +1,6 @@
+[
+  {"name": "Courses", "href": "/courses"},
+  {"name": "Consulting", "href": "/consulting"},
+  {"name": "Blog", "href": "/blog"},
+  {"name": "Tutorials", "href": "/tutorials"}
+]

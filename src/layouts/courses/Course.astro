@@ -1,0 +1,30 @@
+---
+import {courses, Course} from '../../layouts/courses/courseUtils';
+import CourseHeader from '../../layouts/courses/CourseHeader.astro'
+import Description from "../../layouts/courses/Description.astro";
+import Syllabus from '../../layouts/courses/Syllabus.astro'
+import Instructor from "../../layouts/courses/Instructor.astro";
+import CallToAction from "../../components/CallToAction.astro"
+
+export async function getStaticPaths() {
+    return Promise.all(courses.map(async (c: Course) => {
+        return {
+            params: { slug: c.slug },
+            props: {
+                course: c.course,
+                instructor: c.instructor
+            },
+        };
+    }));
+}
+
+const {title, description, category,syllabus, instructor, render, instructor: {title: instructorTitle, name, quote, image}} = Astro.props
+const { Content } = await render();
+---
+<CourseHeader title={title} description={description} category={category} />
+<Description title={title}>
+    <Content />
+</Description>
+<Syllabus syllabus={syllabus} />
+<Instructor title={instructorTitle} name={name} image={image} quote={quote} />
+<CallToAction/>

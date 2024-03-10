@@ -1,0 +1,41 @@
+---
+import BlogPostCard from '../../layouts/blog/BlogPostCard.astro'
+import {blogPosts} from "./blogUtils";
+import {BlogPostIndex} from './BlogPostSearch.tsx'
+
+const set = new Set();
+
+await blogPosts.forEach((p) => {
+    [...(p.tags || []), ...(p.categories || [])].forEach(item => {
+        set.add(item);
+    });
+})
+
+const keys = await Array.from(set).sort()
+---
+
+
+<div class="relative bg-blue-light dark:bg-gray-dark pt-8 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-28 lg:px-8">
+    <div class="text-center">
+        <h1 class="text-3xl tracking-tight font-extrabold text-red dark:text-red-light sm:text-4xl mt-0">Blog
+            posts by the staff at Vidya</h1>
+        <h2 class="mt-3 max-w-2xl mx-auto text-xl text-gray-dark dark:text-blue-light sm:mt-4">
+            From programming to project management, check out our observations about the tech industry.
+        </h2>
+    </div>
+    <div class="mx-auto w-2/4 lg:w-1/3 max-w-screen-md">
+        <BlogPostIndex client:load tags={keys}/>
+    </div>
+    <div class="relative max-w-7xl mx-auto">
+        <nav class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+            {
+                blogPosts.map((p) => <BlogPostCard {...p} classes="bg-white"/>)
+            }
+        </nav>
+    </div>
+
+</div>
+
+
+
+

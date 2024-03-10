@@ -1,0 +1,7 @@
+---
+const {value} = Astro.props
+const [id, title] = value.children[0].split("|")
+---
+<div class="youtube">
+    <iframe src={`https://www.youtube.com/embed/${id}`} allowFullScreen title={title} />
+</div>

@@ -1,0 +1,75 @@
+---
+import {Image} from 'astro:assets';
+import ThemeButton from './ThemeButton.astro'
+import navigation from './navigation.json';
+import Logo from './Logo.astro'
+import Footer from './Footer.astro'
+import { ViewTransitions } from 'astro:transitions';
+import '../globals.css'
+import VidyaSEO from "./VidyaSEO.astro";
+import Analytics from "./Analytics.astro"
+interface Props {
+    title?: string
+    description?: string
+    type?: string
+    image?: string
+    schema?: any
+}
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <Analytics />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="https://use.typekit.net/wth1wdu.css">
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <VidyaSEO {...Astro.props} />
+</head>
+<body>
+<header class="bg-blue dark:bg-blue">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
+        <div class="w-full py-6 flex items-center justify-between border-b border-red-light lg:border-none">
+            <div class="flex items-center rounded-lg">
+                <a href="/" class="page-logo">
+                    <span class="sr-only">Vidya</span>
+                    <Logo height={40}
+                          width={86} />
+                </a>
+                <div class="hidden ml-10 space-x-8 lg:block">
+                    {navigation.map((link) => (
+                            <a href={link.href} class="sm:text-base lg:text-lg font-medium text-white">
+                                {link.name}
+                            </a>
+                    ))}
+                </div>
+            </div>
+            <div class="flex ml-10 space-x-4">
+                <a href="/about" class="inline-block py-2 px-4 sm:text-base lg:text-lg font-medium text-white hover:bg-opacity-75">
+                    About
+                </a>
+                <a href="/contact" class="inline-block text-white py-2 px-4 sm:text-base lg:text-lg font-medium">
+                    Contact
+                </a>
+                <ThemeButton sunFillColor="yellow" moonFillColor="white"/>
+            </div>
+        </div>
+        <div class="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
+            {navigation.map((link) => (
+                    <a class="sm:text-base lg:text-lg font-medium text-white hover:text-indigo-50">
+                        {link.name}
+                    </a>
+            ))}
+        </div>
+    </nav>
+</header>
+<main class="bg-blue-light dark:bg-gray">
+    <slot />
+</main>
+<Footer />
+</body>
+</html>

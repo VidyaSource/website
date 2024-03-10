@@ -1,0 +1,27 @@
+---
+import Home from '../layouts/home/Home.astro';
+import {ViewTransitions} from 'astro:transitions';
+import VidyaSEO from "../components/VidyaSEO.astro"
+import vidyaSchema from '../components/vidyaSchema.json'
+import Analytics from "../components/Analytics.astro";
+---
+<html lang="en">
+<head>
+    <Analytics />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Astro description"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="https://use.typekit.net/wth1wdu.css">
+    <meta name="generator" content={Astro.generator}/>
+    <ViewTransitions/>
+    <VidyaSEO title="Vidya LLC - Custom Software Development & IT Consulting Services"
+              description="Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"
+              schema={vidyaSchema}
+    />
+</head>
+<body>
+<Home/>
+</body>
+</html>

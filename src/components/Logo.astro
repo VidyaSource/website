@@ -1,0 +1,8 @@
+---
+import {Image} from 'astro:assets';
+import logo from "../img/vidya.png"
+
+const { width, height } = Astro.props
+---
+
+<Image src={logo} alt="Vidya" height={height} width={width} quality="max" format="png"/>

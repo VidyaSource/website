@@ -1,0 +1,62 @@
+---
+import format from "date-fns/format";
+import {Image} from 'astro:assets';
+import {type BlogPost} from "./blogUtils.ts";
+import {images} from '../../components/Images'
+type Props = BlogPost & {classes: string}
+const {slug, classes, author: {name, image: authorImage, linkedIn, profileUrl}, title, description, image, date, tags, categories} = Astro.props
+const link = `/blog/${slug}`
+const formattedDate = format(new Date(date), "LLLL d, y")
+
+---
+<div class=`flex flex-col rounded-lg shadow-lg overflow-hidden blog-post ${[
+    ...(tags || []).map(tag => tag.toLowerCase().replace(/\s+/g, '-')),
+    ...(categories || []).map(category => category.toLowerCase().replace(/\s+/g, '-'))
+].join(' ')}` id={slug} >
+    <div class="flex-shrink-0 bg-gray-light hover:bg-red-light">
+        <a href={link}>
+            <div class="h-48 w-full">
+                <Image
+                        class="object-fill"
+                        src={images[`/src${image}`]()}
+                        alt={title}
+                        inferSize
+                />
+            </div>
+        </a>
+    </div>
+    <div class=`flex-1 dark:bg-white p-6 flex flex-col justify-between hover:bg-red-light ${classes}`>
+        <div class="flex-1">
+            <a href={link} class="block mt-2">
+                <p class="text-xl font-semibold text-red dark:text-red">{title}</p>
+                <p class="mt-3 text-base text-gray-dark dark:text-gray-dark">{description}</p>
+            </a>
+        </div>
+        <div class="mt-6 flex items-center">
+            <div class="flex-shrink-0">
+                <a href={profileUrl}>
+                    <span class="sr-only">{name}</span>
+                    <div class="h-12 w-12 relative">
+                        <Image
+                                class="rounded-full"
+                                src={images[`/src${authorImage}`]()}
+                                alt={name}
+                        />
+                    </div>
+                </a>
+            </div>
+            <div class="ml-3">
+                <p class="text-sm font-medium hover:underline">
+
+                    <a href={profileUrl}
+                       class="hover:underline text-blue hover:text-green dark:text-blue dark:hover:text-green">{name}</a>
+
+                </p>
+                <div class="flex space-x-1 text-sm text-gray-dark">
+                    <time dateTime={formattedDate}>{formattedDate}</time>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

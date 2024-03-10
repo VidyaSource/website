@@ -1,0 +1,30 @@
+---
+import {Image} from 'astro:assets';
+import {GenericPostType} from "../content/config.ts";
+import {images} from './Images'
+type Props = GenericPostType
+const {collection, slug, title, description, image} = Astro.props
+const link = `/${collection}/${slug}`
+---
+<div class="flex flex-col rounded-lg shadow-lg overflow-hidden" id={slug} >
+    <div class="flex-shrink-0 bg-gray-light hover:bg-red-light">
+        <a href={link}>
+            <div class="h-48 w-full">
+                <Image
+                        class="object-fill"
+                        src={images[`/src${image}`]()}
+                        alt={title}
+                />
+            </div>
+        </a>
+    </div>
+    <div class="flex-1 bg-white dark:bg-white p-6 flex flex-col justify-between hover:bg-red-light">
+        <div class="flex-1">
+            <a href={link} class="block mt-2">
+                <p class="text-xl font-semibold text-red dark:text-red">{title}</p>
+                <p class="mt-3 text-base text-gray-dark dark:text-gray-dark">{description}</p>
+            </a>
+        </div>
+    </div>
+</div>
+

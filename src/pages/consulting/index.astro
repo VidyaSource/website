@@ -1,0 +1,75 @@
+---
+import Consulting from "../../layouts/consulting/Consulting.astro";
+import Page from '../../components/Page.astro'
+import vidyaSchema from "../../components/vidyaSchema.json";
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Vidya LLC Consulting Services",
+    "description": "Vidya LLC provides consulting services to help organizations with their technology strategy, architecture, software development, organizational culture, and technical communication.",
+    "provider": vidyaSchema,
+    "serviceType": [
+        "Architecture Consulting",
+        "Software Development Consulting",
+        "Organizational Culture Consulting",
+        "Technical Communication Consulting",
+        "Technology Contracting and Recruiting Consulting"
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Vidya LLC Consulting Offerings",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Architecture Consulting",
+                    "description": "Vidya can help you discover the emergent architecture best suited to meet your challenges."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Software Development Consulting",
+                    "description": "Vidya can help you find the blend of programming languages, frameworks, and tools best suited for your customers' needs and apply them with best-in-class practices."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Organizational Culture Consulting",
+                    "description": "Vidya can help you build a strong organizational culture that promotes the right values for successful technological transformation."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Technical Communication Consulting",
+                    "description": "Vidya can help you communicate your technical expertise effectively through engaging verbal and written communication."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Technology Contracting and Recruiting Consulting",
+                    "description": "Vidya LLC provides consulting services to help organizations with technology contracting, ensuring that contracts motivate the right goals, and assisting in identifying and attracting top talent that aligns with the organization's technology challenges and culture.",
+                    "serviceType": [
+                        "Technology Contracting",
+                        "Talent Recruiting"
+                    ]
+                }
+            }
+        ]
+    }
+}
+---
+<Page title="Architecture Consulting, Software Development Services, & Culture Building | Vidya LLC"
+      description="Vidya LLC provides expert architecture consulting, technology reviews, and organizational culture building services. Our experienced team builds greaat software, helps you discover optimal architectures, review technology strategies, and improve contracting and recruiting processes for better outcomes."
+      schema={schema}>
+    <Consulting/>
+</Page>

@@ -1,0 +1,42 @@
+---
+interface Props {
+    [title: string]: string[]
+}
+
+const {syllabus} = Astro.props
+---
+<section class="py-16 bg-blue-light dark:bg-blue overflow-hidden">
+    <div class="w-1/2 mx-auto px-4 space-y-8 sm:px-6 lg:px-8">
+        <div class="text-base max-w-prose mx-auto lg:max-w-none">
+            <h2 class="mt-2 text-4xl leading-8 font-extrabold tracking-tight text-red dark:text-red-light sm:text-5xl">
+                Course Syllabus
+            </h2>
+        </div>
+        <div class="relative z-10">
+            <div class="text-gray-dark dark:text-blue-light mx-auto lg:max-w-none">
+                {
+                    Object.entries(syllabus).map(l => {
+                        const [title, sections] = l
+
+                        return (
+                                <div>
+                                    <p class="font-bold text-red dark:text-red-light text-2xl">
+                                        {title}
+                                    </p>
+                                    {
+                                        sections.map(s => {
+                                            return (
+                                                    <ul class="text-xl" key={s}>
+                                                        <li>{s}</li>
+                                                    </ul>
+                                            )
+                                        })
+                                    }
+                                </div>
+                        )
+                    })
+                }
+            </div>
+        </div>
+    </div>
+</section>

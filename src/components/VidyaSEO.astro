@@ -1,0 +1,44 @@
+---
+import {SEO} from "astro-seo";
+import {Schema} from "astro-seo-schema"
+const updatedTime = new Date().toISOString()
+
+interface Props {
+    title?: string
+    description?: string
+    type?: string
+    image?: string
+    noindex?: boolean
+    nofollow?: boolean
+    meta?: Array<{name: string, content: string}>
+    schema?: any
+}
+
+const {title, description, type, image, meta, noindex, nofollow, schema} = Astro.props
+---
+<SEO title={title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"}
+     description={description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"}
+     noindex={noindex ?? false}
+     nofollow={nofollow ?? false}
+     openGraph={{
+         basic: {
+             title: title ?? "Vidya LLC - Custom Software Development & IT Consulting Services",
+             type: type ?? "website",
+             image: image ?? "/vidya-social.png",
+             locale: "en_US",
+             updated_time: {updatedTime}
+         },
+         optional: {
+             siteName: "Vidya LLC"
+         }
+     }}
+     twitter={{
+         creator: "@VidyaSource",
+         card: "summary_large_image",
+         description: description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"
+     }}
+     extend={{
+         meta: meta ?? []
+     }}
+/>
+{schema && <Schema item={schema}/> }

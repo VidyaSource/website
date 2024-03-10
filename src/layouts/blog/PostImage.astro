@@ -1,0 +1,15 @@
+---
+import {Image} from 'astro:assets';
+import { images} from "../../components/Images";
+interface PostImageProps {
+    width: number
+    height: number
+    alt: string
+    postImage: string
+}
+
+const {height, width, alt, postImage} = Astro.props
+---
+<div style={{width: `${width}px`, height: `${height}px`}} class="relative mx-auto">
+    <Image alt={alt} src={images[`/src${postImage}`]()} class="object-cover" />
+</div>
