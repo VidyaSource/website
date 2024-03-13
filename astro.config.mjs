@@ -5,7 +5,6 @@ import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import AstroPWA from '@vite-pwa/astro';
 import sitemap from "@astrojs/sitemap";
-
 import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
