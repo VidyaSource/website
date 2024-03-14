@@ -1,19 +1,19 @@
 ---
 import Page from '../../components/Page.astro'
-import {tutorials } from '../../layouts/tutorials/tutorialUtils';
+import {tutorials} from '../../layouts/tutorials/tutorialUtils';
 import Tutorial from "../../layouts/tutorials/Tutorial.astro";
 
 export const prerender = true;
 export async function getStaticPaths() {
     return Promise.all(tutorials.map(async (t) => {
         return {
-            params: { slug: t.slug },
+            params: {slug: t.slug},
             props: t,
         };
     }));
 }
 const {
-    title, description, image, schema
+    title, description, image, schema, youtube
 } = Astro.props
 
 
@@ -22,6 +22,12 @@ schema["image"] = `${Astro.url.origin}${image}`
 ---
 <Page title={`${title} | Vidya LLC`}
       description={description}
-      image={image}>
-    <Tutorial {...Astro.props} />
+      image={image}
+      twitterCard="player"
+      meta={[
+          {name: "twitter:player", content: `https://www.youtube.com/embed/${youtube}`},
+          {name: "twitter:player:width", content: "1280"},
+          {name: "twitter:player:height", content: "720"}
+      ]}>
+    <Tutorial {...Astro.props}/>
 </Page>

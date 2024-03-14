@@ -12,9 +12,11 @@ interface Props {
     nofollow?: boolean
     meta?: Array<{name: string, content: string}>
     schema?: any
+    twitterCard?: string
 }
 
-const {title, description, type, image, meta, noindex, nofollow, schema} = Astro.props
+const {title, description, type, image, meta, noindex, nofollow, schema, twitterCard} = Astro.props
+console.log(meta)
 ---
 <SEO title={title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"}
      description={description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"}
@@ -34,7 +36,7 @@ const {title, description, type, image, meta, noindex, nofollow, schema} = Astro
      }}
      twitter={{
          creator: "@VidyaSource",
-         card: "summary_large_image",
+         card: twitterCard ?? "summary_large_image",
          description: description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"
      }}
      extend={{
