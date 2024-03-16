@@ -16,7 +16,8 @@ interface Props {
 }
 
 const {title, description, type, image, meta, noindex, nofollow, schema, twitterCard} = Astro.props
-console.log(meta)
+const modifiedTitle = title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"
+const absoluteImage = `${Astro.url.origin}${image}` ?? `${Astro.url.origin}/vidya-social.png`
 ---
 <SEO title={title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"}
      description={description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"}
@@ -24,9 +25,9 @@ console.log(meta)
      nofollow={nofollow ?? false}
      openGraph={{
          basic: {
-             title: title ?? "Vidya LLC - Custom Software Development & IT Consulting Services",
+             title: modifiedTitle,
              type: type ?? "website",
-             image: image ?? `${Astro.url.origin}/vidya-social.png`,
+             image: absoluteImage,
              locale: "en_US",
              updated_time: {updatedTime}
          },
@@ -36,8 +37,12 @@ console.log(meta)
      }}
      twitter={{
          creator: "@VidyaSource",
+         site:  "@VidyaSource",
+         title: modifiedTitle,
          card: twitterCard ?? "summary_large_image",
-         description: description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"
+         description: description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business",
+         image: absoluteImage,
+         imageAlt: description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"
      }}
      extend={{
          meta: meta ?? []
