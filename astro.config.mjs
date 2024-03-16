@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
@@ -17,6 +17,9 @@ export default defineConfig({
       imageService: "compile"
     }
   }),
+  image: {
+    service: passthroughImageService()
+  },
   integrations: [tailwind(), react(), mdx({
     markdown: {
       shikiConfig: {

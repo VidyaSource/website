@@ -17,7 +17,7 @@ interface Props {
 
 const {title, description, type, image, meta, noindex, nofollow, schema, twitterCard} = Astro.props
 const modifiedTitle = title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"
-const absoluteImage = `${import.meta.env.BASE_URL}${image}` ?? `${Astro.url.origin}/vidya-social.png`
+const absoluteImage = `${Astro.url.origin}${image}` ?? `${Astro.url.origin}/vidya-social.png`
 ---
 <SEO title={title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"}
      description={description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"}
