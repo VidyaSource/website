@@ -80,7 +80,7 @@ Much as society writ large is convinced [DNA evidence](https://www.youtube.com/w
 are "objective," tech is at best convinced coding interviews are also free from bias or at worst happy to capitalize on their bias. Bias in coding interviews
 could be favoritism, intentional or otherwise, reflected in choice of coding problem or leniency in evaluation. They are also
 biased against realistic forms of working. In real life, we don't have people staring at us to scrutinize our work and 
-mannerisms as we type. We have access to Google, Stack Overflow, and other resources. The discomfort produced by contrived awkwardness in coding interviews hurts
+mannerisms as we type. We have access to Google, Stack Overflow, GitHub Copilot, and other resources. The discomfort produced by contrived awkwardness in coding interviews hurts
 otherwise talented candidates—particularly those in communities already systematically excluded in tech like the women in the study.
 
 But that's one study you say. OK, but consider anecdotal evidence from elite engineers. [Jenn Creighton](https://twitter.com/gurlcode),
