@@ -11,10 +11,10 @@ import Footer from "../../components/Footer.astro"
 import ThemeButton from "../../components/ThemeButton.astro";
 ---
 
-<Hero client:load>
+<Hero>
     <Logo height="65" width="140" slot='desktopLogo' />
     <Logo height="56" width="120" slot='mobileLogo' />
-    <ThemeButton slot="themeButton" sunFillColor="yellow" moonFillColor="#5a82b4"/>
+    <ThemeButton slot="themeButton" sunFillColor="yellow" moonFillColor="#5a82b4" client:load/>
 </Hero>
 <RecentPosts />
 <Clients />
