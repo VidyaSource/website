@@ -8,6 +8,7 @@ import "../../globals.css"
 interface HeroProps {
     desktopLogo: any
     mobileLogo: any
+    themeButton: any
 }
 export const Hero = (p: HeroProps) => {
     return (
@@ -72,7 +73,7 @@ export const Hero = (p: HeroProps) => {
                                 >
                                     <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
                                         <div className="flex items-center justify-between w-full md:w-auto">
-                                            <a className="logo" href="/public">
+                                            <a className="logo" href="/">
                                                 <span className="sr-only">Vidya</span>
                                                 {p.desktopLogo}
                                             </a>
