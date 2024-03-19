@@ -49,11 +49,11 @@ const {sunFillColor, moonFillColor} = Astro.props
         window.localStorage.setItem('theme', theme);
 
         const handleToggleClick = () => {
-            console.log("clicked")
+
             const element = document.documentElement;
-            console.log("Before " + element.classList)
+
             element.classList.toggle("dark");
-            console.log("After " + element.classList)
+
             const isDark = element.classList.contains("dark");
             localStorage.setItem("theme", isDark ? "dark" : "light");
         }
