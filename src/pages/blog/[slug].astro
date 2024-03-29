@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 const {
-    title, description, image, schema
+    title, description, image, schema, openGraph
 } = Astro.props
 
 
@@ -25,6 +25,7 @@ schema["image"] = `${Astro.url.origin}${image}`
 <Page title={`${title} | Vidya LLC`}
       description={description}
       image={image}
+      openGraph={openGraph}
       schema={schema}>
     <BlogPost {...Astro.props}/>
 </Page>

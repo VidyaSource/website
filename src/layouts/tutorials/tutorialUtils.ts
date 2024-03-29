@@ -9,6 +9,11 @@ export const tutorials = await Promise.all(tutorialList.map(async (t) => {
         render: t.render,
         slug: t.slug,
         ...t.data,
+        openGraph: {
+            optional: {
+                video: `https://www.youtube.com/watch?v=${t.data.youtube}`
+            }
+        },
         schema: {
             "@type": "VideoObject",
             name: t.data.title,

@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     }));
 }
 const {
-    title, description, image, schema, youtube
+    title, description, image, schema, youtube, openGraph
 } = Astro.props
 
 
@@ -24,6 +24,7 @@ schema["image"] = `${Astro.url.origin}${image}`
       description={description}
       image={image}
       twitterCard="player"
+      openGraph={openGraph}
       meta={[
           {name: "twitter:player", content: `https://www.youtube.com/embed/${youtube}`},
           {name: "twitter:player:width", content: "1280"},

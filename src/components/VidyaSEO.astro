@@ -13,30 +13,33 @@ interface Props {
     nofollow?: boolean
     meta?: Array<{name: string, content: string}>
     schema?: any
+    openGraph?: any
     twitterCard?: string
 }
 
-const {title, description, type, image, meta, noindex, nofollow, schema, twitterCard} = Astro.props
+const {title, description, type, image, meta, noindex, nofollow, schema, openGraph, twitterCard} = Astro.props
 const modifiedTitle = title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"
 const imageValue = await images[`/src${image}`]?.()
 const absoluteImage = `${Astro.url.origin}${imageValue?.default.src ?? "/vidya-social.png"}`
+const baseOpenGraph = {
+    basic: {
+        title: modifiedTitle,
+        type: type ?? "website",
+        image: absoluteImage,
+        locale: "en_US",
+        updated_time: {updatedTime}
+    },
+    optional: {
+        siteName: "Vidya LLC"
+    }
+}
+const og = openGraph ? Object.assign(baseOpenGraph, openGraph) : baseOpenGraph
 ---
 <SEO title={title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"}
      description={description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"}
      noindex={noindex ?? false}
      nofollow={nofollow ?? false}
-     openGraph={{
-         basic: {
-             title: modifiedTitle,
-             type: type ?? "website",
-             image: absoluteImage,
-             locale: "en_US",
-             updated_time: {updatedTime}
-         },
-         optional: {
-             siteName: "Vidya LLC"
-         }
-     }}
+     openGraph={og}
      twitter={{
          creator: "@VidyaSource",
          site:  "@VidyaSource",

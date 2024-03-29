@@ -13,6 +13,13 @@ export const blogPosts = await Promise.all(posts.map(async (p) => {
         ...p.data,
         keywords: keywords,
         author: author.data,
+        openGraph: {
+          article: {
+              authors: [author.data.name],
+              tags: keywords,
+              publishedTime: p.data.date
+          }
+        },
         schema: {
             "@type": "BlogPosting",
             headline: p.data.title,
