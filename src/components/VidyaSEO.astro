@@ -19,8 +19,8 @@ interface Props {
 
 const {title, description, type, image, meta, noindex, nofollow, schema, openGraph, twitterCard} = Astro.props
 const modifiedTitle = title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"
-const imageValue = await images[`/src${image}`]?.()
-const absoluteImage = `${Astro.url.origin}${imageValue?.default.src ?? "/vidya-social.png"}`
+const absoluteImage = `${Astro.url.origin}${image ? `${image}` : "/vidya-social.png"}`
+
 const baseOpenGraph = {
     basic: {
         title: modifiedTitle,
