@@ -26,7 +26,8 @@ It's a win-win!
 
 I am confident that Vidya has even more to offer government customers particularly in the area of architecture
 and modernization using powerful techniques and technologies proven in industry, and this GSA MAS contract award confirms
-that government shares my confidence.
+that government shares my confidence. For those well versed in GSA Schedules, Vidya's Special Item Number (SIN) is 
+[54151S](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/multiple-award-schedule-it/it-professional-services).
 
 We look forward to building new relationships and to delivering our services to even more government agencies. We are also excited about expanding
 our current offerings by making our courses available online and building new software products that we expect will also be on a
