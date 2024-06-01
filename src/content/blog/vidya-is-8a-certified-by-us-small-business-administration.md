@@ -14,7 +14,7 @@ categories:
 - Government
 
 ---
-I don't have to tell you it's been a difficult few years, so I am absolutely thrilled to announce 
+I don't have to tell you it's been a difficult few years (for all of us!), so I am absolutely thrilled to announce 
 [US Small Business Administration (SBA)](https://www.sba.gov/) has certified Vidya as an 
 [8(a) business](https://www.sba.gov/federal-contracting/contracting-assistance-programs/8a-business-development-program).
 
