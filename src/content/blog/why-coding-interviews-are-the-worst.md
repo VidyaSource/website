@@ -125,13 +125,13 @@ This question helps you understand the experiences candidates have had on the jo
 apply to your business and, more importantly, how your candidates approach challenges. Feel free to explore the topic in depth
 and follow threads of conversation as candidates raise points you find particularly interesting. You don't have to be [Oprah](https://www.youtube.com/watch?v=w-gkAM0XZMU), but there
 is an art to navigating a conversation to elicit more information. You will get a good sense of candidates' technical knowledge, their creativity,
-amd their ability to gain new knowledge. 
+and their ability to gain new knowledge. 
 
 After all, game recognizes game.
 
 ### "Can you describe a situation at work where you were particularly proud of what you accomplished?"
 
-This question helps lighten the mood and bring positivity into an otherwise tense process. It gives candidates a chance to brag a little
+This question helps lighten the mood and brings positivity into an otherwise tense process. It gives candidates a chance to brag a little
 but in a way that lends value to you. You can glean if your own business offers the kinds
 of opportunities for joy the candidates want to experience, and you can again get some detail into their experience, expertise,
 and potential for growth.
@@ -153,7 +153,7 @@ delivery landscapes, the direction they want to go, and their tact with construc
 
 ### "What kinds of support do you need to do your best work?"
 
-This question addresses *your* responsibility to your people to achieve the goals of the business and the support candidates can expect if they join. You might
+This question addresses *your* responsibility to your people to achieve the goals of the business and the support that candidates can expect if they join. You might
 have an issue with this question because it implicitly undermines conventional wisdom that the best engineers do their best work
 of their own accord if they have "passion" for tech implied by a robust GitHub presence, lots of side projects, eagerness to work
 weekends, etc.
@@ -171,8 +171,8 @@ You can also evaluate whether their answers are aligned with your business value
 ### "Do you have any questions for us?"
 
 Hopefully you are asking this question anyway regardless of whether coding interviews are part of your hiring process. Give
-candidates a chance to ask you about the things that matter to them as they consider making the considerable, potentially life-changing 
-commitment to your business. They should direct the conversation here. Expect questions about titles, commitment to and evidence
+candidates a chance to ask you about the things that matter to them as they ponder making the considerable, potentially life-changing 
+commitment to your business. They should direct this part of the conversation. Expect questions about titles, commitment to and evidence
 of diversity, opportunities for advancement, remote work and tooling, and other aspects of business process and company culture.
 
 Be careful though not to interpret the absence of questions as apathy or really anything negative. This is their time, and if they
@@ -183,13 +183,13 @@ don't need it, you shouldn't let that influence your decision one way or another
 ## But OK, if you must do coding interviews...
 
 Let's face it. Many of you will never accept that coding interviews are the worst. The idea is simply too entrenched in tech.
-You're convinced instant recall of computer science fundamentals is critical to bring value to your business. Besides, tech 
+You're convinced instant recall of computer science fundamentals is critical for bringing value to your business. Besides, tech 
 is full of imposters! You must expose them with cleverly chosen coding exercises they have never seen lest they compromise your business
 with their duplicity.
 
-There is no evidence any of that is true, but it sure [feeeeeeels true](https://www.cc.com/video/63ite2/the-colbert-report-the-word-truthiness)! 
+There is no evidence any of that is true, but it sure [feels true in your gut](https://www.c-span.org/video/?c4293026/user-clip-stephen-colbert-truthiness).
 The funny thing is there are actually a lot of job candidates who also think it's true. They see coding interviews as
-a perfectly reasonable expectation and happily, if sometimes nervously, prepare accordingly.
+a perfectly reasonable expectation and happily, if often nervously, prepare accordingly.
 
 Fine. If you must, at least adapt your coding interviews like this:
 
