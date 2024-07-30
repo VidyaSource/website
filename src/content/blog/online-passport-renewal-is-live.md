@@ -25,7 +25,7 @@ Bureau of Consular Affairs has provided new opportunities for efficiency, user e
 
 ## Transforming Essential Services
 
-The Bureau of Consular Affairs provides essential services for customers worldwide:
+The Bureau of Consular Affairs provides essential services for customers worldwide. Here are just a few:
 
 - Issuing Certificates of Birth Abroad (CRBA) for children born to American parents overseas
 - Processing visas for international visitors
@@ -51,8 +51,7 @@ discussions of [seams](https://www.martinfowler.com/articles/uncovering-mainfram
 [integration](https://martinfowler.com/articles/cant-buy-integration.html) among many other related topics.
 
 On top of technology, it is essential to create a culture of innovation with disciplines like product management, continuous deployment, and organizational psychology. For all these reasons,
-modernization is one of the most challenging feats in our field. The first modernized service to go live was eCRBA, which has had its ups and downs but overall
-has been convenient for American parents abroad to obtain CRBAs for their children.
+modernization is one of the most challenging feats in our field. 
 
 ## Pioneering Success: eCRBA and Online Passport Renewal
 
@@ -60,6 +59,7 @@ Our first major triumph was the launch of eCRBA, streamlining the process for Am
 This service has been a game-changer, offering unprecedented convenience and efficiency.
 
 The crown jewel of our modernization efforts, Online Passport Renewal (OPR), is now live in limited beta – and it's turning heads!
+The most recent analysis of OPR revealed some welcome accomplishments: 
 
 - Processing thousands of passports daily
 - Boasting a remarkable 98% customer satisfaction rate
@@ -80,7 +80,7 @@ There may be even room for AI here, but as urgent as it is to promote safety in 
 so for government systems. We will need to explore how to maximize safety and explainability while minimizing hallucinations and 
 toxicity to protect our customers because AI vendors themselves will not. 
 
-Whether it's AI or any number of other innovations we have in mind, we hope to work with the State Department to see how we can
+Whether it's AI or any number of other innovations we have in mind, we look forward to working with the State Department to see how we can
 best leverage their capabilities for our mission.
 
 ## Your Partner in Government Modernization
