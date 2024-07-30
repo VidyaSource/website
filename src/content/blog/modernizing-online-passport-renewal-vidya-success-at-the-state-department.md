@@ -1,7 +1,7 @@
 ---
 
 author: neil-chaudhuri
-title: "Modernizing Government Services: Vidya and Online Passport Renewal"
+title: "Modernizing Online Passport Renewal: Vidya's Success at the State Department"
 description: "Vidya helped develop the architecture for Online Passport Renewal, which is now live in beta at the State Department." 
 image: "/img/blog/passport.jpg"
 date: 2024-07-28
