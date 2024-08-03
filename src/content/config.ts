@@ -23,6 +23,7 @@ export const blogSchema =  z.object({
     image: z.string(),
     categories: z.array(z.string()).optional(),
     youtube: z.string().optional(),
+    draft: z.boolean().optional()
 })
 
 const blog = defineCollection({
