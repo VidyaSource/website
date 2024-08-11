@@ -23,7 +23,7 @@ In an era where digital transformation in government is paramount to deliver the
 Vidya has played a major role in modernizing crucial government services. Our collaboration with the United States Department of State's 
 Bureau of Consular Affairs has provided new opportunities for efficiency, user experience, and technological innovation.
 
-## Transforming Essential Services
+## Transforming essential services
 
 The Bureau of Consular Affairs provides essential services for customers worldwide. Here are just a few:
 
@@ -37,7 +37,7 @@ government understand, it is critical to invest in modernization to improve
 user interfaces, performance, and security and ultimately make the user experience as efficient and intuitive as possible for both 
 State employees and customers. 
 
-## The Modernization Challenge
+## The modernization challenge
 
 In 2019, Vidya joined the most recent modernization effort as software architects. Anyone who has worked on large-scale modernizations
 knows they aren't just about updating a few lines of code. Modernization is about reimagining entire systems while ensuring uninterrupted service delivery
@@ -53,7 +53,7 @@ discussions of [seams](https://www.martinfowler.com/articles/uncovering-mainfram
 On top of technology, it is essential to create a culture of innovation with disciplines like product management, continuous deployment, and organizational psychology. For all these reasons,
 modernization is one of the most challenging feats in our field. 
 
-## Pioneering Success: eCRBA and Online Passport Renewal
+## Pioneering success: eCRBA and Online Passport Renewal
 
 Our first major triumph was the launch of eCRBA, streamlining the process for American parents to obtain birth certificates for their children born overseas. 
 This service has been a game-changer, offering unprecedented convenience and efficiency.
@@ -68,7 +68,7 @@ The most recent analysis of OPR revealed some welcome accomplishments:
 Don't just take our word for it! Sean Hollister at The Verge had a [good experience with OPR](https://www.theverge.com/2024/7/3/24190366/us-passport-online-renewal-beta-fast).
 Forbes Magazine [highlighted its innovative approach](https://www.forbes.com/sites/maryroeloffs/2024/06/12/online-passport-renewal-launch-how-does-it-work-am-i-eligible-united-states-/) as well.
 
-## The Road Ahead
+## The road ahead
 
 While we at Vidya celebrate these milestones, we're far from done. There is much more work to do:
 
@@ -83,7 +83,7 @@ toxicity to protect our customers because AI vendors themselves will not.
 Whether it's AI or any number of other innovations we have in mind, we look forward to working with the State Department to see how we can
 best leverage their capabilities for our mission.
 
-## Your Partner in Government Modernization
+## Your partner in government modernization
 
 At Vidya, we don't just build software. We revolutionize processes. We enhance user experiences. We even bring a touch of humor to even the most complex projects. 
 Our success with the State Department is just the beginning.
