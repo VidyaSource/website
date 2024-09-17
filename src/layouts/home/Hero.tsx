@@ -161,7 +161,7 @@ export const Hero = (p: HeroProps) => {
                                 className="block italic text-gray-dark dark:text-green-light xl:inline">Build better.</span>
                         </h2>
                         <p className="mt-3 max-w-md mx-auto text-base text-gray-dark dark:text-red-light sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                            Consulting and custom application development to strengthen your business. Courses
+                            Software development and modernization to strengthen your business. Courses
                             and content to help you harness technology for yourself.
                         </p>
                     </section>
