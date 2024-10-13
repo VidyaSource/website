@@ -14,6 +14,7 @@ const { name, profileUrl, image} = Astro.props
                 class="inline-block h-16 w-16 rounded-full"
                 src={images[`/src${image}`]()}
                 alt={name}
+                loading="eager"
         />
         <span class="ml-3">
             <p class="pb-0 mb-0 text-sm font-medium text-red dark:text-red-light group-hover:text-blue lg:text-md">{name}</p>
@@ -25,6 +26,7 @@ const { name, profileUrl, image} = Astro.props
                                src={linkedIn}
                                alt={name}
                                quality="max"
+                               loading="eager"
                         />
             </p>
         </span>
