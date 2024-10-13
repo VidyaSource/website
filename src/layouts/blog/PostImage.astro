@@ -12,6 +12,6 @@ const {height, width, alt, src} = Astro.props
 console.log(src)
 
 ---
-<div style={{width: `${width}px`, height: `${height}px`}} class="relative mx-auto">
+<div style={{width: `${width}px`, height: `${height}px`}} class="relative mx-auto m-5">
     <Image alt={alt} src={images[`/src${src}`]()} class="object-cover" />
 </div>
