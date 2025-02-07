@@ -1,5 +1,5 @@
 ---
-import {SEO} from "astro-seo";
+import {Seo} from "astro-seo-meta";
 import {Schema} from "astro-seo-schema"
 const updatedTime = new Date().toISOString()
 import {images} from './Images'
@@ -35,7 +35,7 @@ const baseOpenGraph = {
 }
 const og = openGraph ? Object.assign(baseOpenGraph, openGraph) : baseOpenGraph
 ---
-<SEO title={title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"}
+<Seo title={title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"}
      description={description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"}
      noindex={noindex ?? false}
      nofollow={nofollow ?? false}
