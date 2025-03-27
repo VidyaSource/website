@@ -195,7 +195,7 @@ Fine. If you must, at least adapt your coding interviews like this:
 
 * Offer candidates the option either to live code or to do a short, paid(!) project to do at home.
 * Have them solve a real but non-critical and non-sensitive problem you have at work.
-* If it's a live coding exercise, collaborate with candidates rather than sit back and watch, and give them access to resources.
+* If it's a live coding exercise, collaborate with candidates rather than sit back and watch, and give them access to resources like AI.
 
 We have a lot of important work ahead of us as an industry. I hope you consider the lessons I've learned to help your business
 grow to meet the challenges ahead.
