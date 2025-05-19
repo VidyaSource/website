@@ -1,0 +1,45 @@
+---
+
+author: neil-chaudhuri
+title: "No One Likes Cognitive Load: But Whose Cognitive Load?"
+description: "Minimizing cognitive load is more important than maximizing clean code, but cognitive load is subjective. Learn how to establish team standards that enhance productivity and maintainability."
+image: "/img/blog/conditional.png"
+date: 2025-05-18
+tags:
+- Programming
+- Functional Programming
+- Software Engineering
+- Agile
+---
+import PostImage from '../../layouts/blog/PostImage.astro';
+
+Addy Osmani works at Google as an Engineering Leader on Chrome and is a renowned author and speaker. He posted [advice on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7275880173600743424/)
+that I would summarize this way: The impulse to write "clean code" usually add complexity that increases cognitive load and only makes things worse, so your goal should always be
+reducing cognitive load rather than writing clean code. I have some experience with this.
+
+I once worked on a code base that had the cleanest, most elegant code I have ever seen, and I couldn't make sense of it at all. Interfaces with one method and one- or two-line functions strewn throughout.
+They were very proud of it too. You would find comments like "// Applying the Strategy Pattern here." It was like they wrote code for a conference talk instead of a customer.
+So I agree completely with Addy in principle. It is more important that code is easy to reason about than that it's "clean," but there is one big problem:
+
+Different teams find different code easy to reason about.
+
+Take this example from the [GitHub repo](https://github.com/zakirullin/cognitive-load) Addy cites:
+
+<PostImage alt="Author's example of complex conditionals and a better alternative" src="/img/blog/conditional.png" width="581" height="294" />
+
+This cosmetic change doesn't ease the cognitive burden or fix the real problem, which is that conditionals are inherently complex. I'd say the solution that fixes the problem is to
+introduce a [state machine](https://stately.ai/docs/state-machines-and-statecharts) to eliminate the conditionals and to guarantee that all states are accounted for.
+State machines are clear, explicit about intent, and shift feedback left by
+informing you of errors at compile time, but of course someone else might say they find state machines complicated.
+
+This goes for lots of coding concepts. I also find that static types and immutability reduce cognitive load, but a JavaScript or Python dev might not be so sure. The GitHub page
+warns of modules that are too small or too big, but how many lines of code is the sweet spot in between?
+
+I think the right strategy is to reduce cognitive load but in a manner specific to your team. How? Here are some ideas:
+
+* Use your feedback mechanism, whether it's pair programming or code reviews in a PR or even AI, to have conversations about what makes sense. Build a team consensus. Conversations can be informal too.
+* Once you have some team heuristics on what your code should look like, enforce them where possible with Architectural Fitness Functions using tools like ArchUnit or PyTestArch. Or AI.
+* Be specific in your AI prompts or better yet in AI config files (*e.g.* `.cursorrules`,`.junie/guidelines.md`, `.goosehints`, *etc*) about what the code it generates should look like to conform to team norms.
+
+So don't worry about making your code clever or "clean." Remember that your primary responsibility is to your team, your leadership, your organization, and your customer—not to yourself for
+coming up with stimulating intellectual challenges you'll enjoy. Figure out what works for your team to make code as simple to read, understand, and maintain as possible.
