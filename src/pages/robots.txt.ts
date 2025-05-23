@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 
 const robotsTxt = `
 User-agent: *
+Allow: /
 Disallow: /404.html
 
 User-agent: GPTBot
