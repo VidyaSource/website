@@ -34,23 +34,16 @@ const baseOpenGraph = {
     }
 }
 const og = openGraph ? Object.assign(baseOpenGraph, openGraph) : baseOpenGraph
+const ogImage = `${Astro.url.origin}${image ? image : "/vidya-social.png"}`
 ---
 <Seo title={title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"}
      description={description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"}
      noindex={noindex ?? false}
      nofollow={nofollow ?? false}
      openGraph={og}
-     twitter={{
-         creator: "@VidyaSource",
-         site:  "@VidyaSource",
-         title: modifiedTitle,
-         card: twitterCard ?? "summary_large_image",
-         description: description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business",
-         image: absoluteImage,
-         imageAlt: description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"
-     }}
      extend={{
          meta: meta ?? []
      }}
 />
+<meta property="og:image" content={ogImage}>
 {schema && <Schema item={schema}/> }
