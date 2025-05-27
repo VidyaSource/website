@@ -34,7 +34,6 @@ const baseOpenGraph = {
     }
 }
 const og = openGraph ? Object.assign(baseOpenGraph, openGraph) : baseOpenGraph
-const ogImage = `${Astro.url.origin}${image ? image : "/vidya-social.png"}`
 ---
 <Seo title={title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"}
      description={description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"}
@@ -45,5 +44,5 @@ const ogImage = `${Astro.url.origin}${image ? image : "/vidya-social.png"}`
          meta: meta ?? []
      }}
 />
-<meta property="og:image" content={ogImage}>
+<meta property="og:image" content={absoluteImage}>
 {schema && <Schema item={schema}/> }
