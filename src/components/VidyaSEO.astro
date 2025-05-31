@@ -2,7 +2,6 @@
 import {Seo} from "astro-seo-meta";
 import {Schema} from "astro-seo-schema"
 const updatedTime = new Date().toISOString()
-import {images} from './Images'
 
 interface Props {
     title?: string
@@ -35,8 +34,8 @@ const baseOpenGraph = {
 }
 const og = openGraph ? Object.assign(baseOpenGraph, openGraph) : baseOpenGraph
 ---
-<Seo title={title ?? "Vidya LLC - Custom Software Development & IT Consulting Services"}
-     description={description ?? "Vidya - Custom Software Development & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"}
+<Seo title={title ?? "Custom Software Development & IT Consulting for Business and Government | Vidya LLC"}
+     description={description ?? "Custom Software Development & IT Consulting Services for Business and Government | Get Started Now | Vidya LLC"}
      noindex={noindex ?? false}
      nofollow={nofollow ?? false}
      openGraph={og}
