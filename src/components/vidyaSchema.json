@@ -6,7 +6,7 @@
     "url": "https://www.vidyasource.com/",
     "logo": "https://www.vidyasource.com/vidya.png",
     "foundingDate": "2010",
-    "description": "Vidya LLC provides custom software development, IT consulting, and technology training services. We're an 8(a) & SWaM certified small business dedicated to helping organizations leverage technology for growth.",
+    "description": "Vidya LLC provides software modernization, IT consulting, and technology training services. We're an 8(a) & SWaM certified small business dedicated to helping organizations leverage technology for growth.",
     "email": "info@vidyasource.com",
     "telephone": "+1-202-430-5695",
     "address": {
@@ -29,8 +29,8 @@
         "itemListElement": [
             {
                 "@type": "OfferCatalogProduct",
-                "name": "Custom Software Development",
-                "description": "We specialize in custom software development tailored to meet your business needs. Our experienced developers utilize the latest technologies and best practices to deliver high-quality, scalable solutions."
+                "name": "Software Modernization",
+                "description": "We specialize in software modernization tailored to meet your business needs. Our experienced developers utilize the latest technologies and best practices to deliver high-quality, scalable solutions."
             },
             {
                 "@type": "OfferCatalogProduct",
@@ -46,7 +46,7 @@
             {
                 "@type": "OfferCatalogProduct",
                 "name": "Vidya LLC Blog",
-                "description": "Explore Vidya LLC's blog for insightful articles, industry news, and expert insights on custom software development, IT consulting, technology training, and more.",
+                "description": "Explore Vidya LLC's blog for insightful articles, industry news, and expert insights on software modernization, IT consulting, technology training, and more.",
                 "url": "https://www.vidyasource.com/blog"
             },
             {

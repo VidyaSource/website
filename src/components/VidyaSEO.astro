@@ -17,7 +17,7 @@ interface Props {
 }
 
 const {title, description, type, image, meta, noindex, nofollow, schema, openGraph, twitterCard} = Astro.props
-const modifiedTitle = title ?? "Vidya LLC: Custom Software Development & IT Consulting for Business and Government"
+const modifiedTitle = title ?? "Vidya LLC: Software Modernization & IT Consulting for Business and Government"
 const absoluteImage = `${Astro.url.origin}${image ? `${image}` : "/vidya-social.png"}`
 
 const baseOpenGraph = {
@@ -34,8 +34,8 @@ const baseOpenGraph = {
 }
 const og = openGraph ? Object.assign(baseOpenGraph, openGraph) : baseOpenGraph
 ---
-<Seo title={title ?? "Vidya LLC: Custom Software Development & IT Consulting for Business and Government"}
-     description={description ?? "Custom Software Development & IT Consulting Services for Business and Government | Get Started Now | Vidya LLC"}
+<Seo title={title ?? "Vidya LLC: Software Modernization & IT Consulting for Business and Government"}
+     description={description ?? "Software Modernization & IT Consulting Services for Business and Government | Get Started Now | Vidya LLC"}
      noindex={noindex ?? false}
      nofollow={nofollow ?? false}
      openGraph={og}
