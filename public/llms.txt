@@ -1,0 +1,74 @@
+# Vidya LLC - Software Modernization & IT Consulting
+
+## Company Overview
+Vidya is a federally certified 8(a) and Virginia SWaM (Small, Micro, Minority-owned) business that specializes in software modernization and technology consulting. Founded in 2010 and headquartered in Vienna, VA, Vidya serves both commercial businesses and government agencies.
+
+## Core Services
+- Custom software development (on-premise, cloud, and hybrid solutions)
+- Legacy system modernization and serverless architecture transitions
+- Agile software development and DevOps implementation
+- Technology training courses and educational content
+- IT consulting and strategic technology planning
+
+## Key Differentiators
+
+### Government Expertise & Certifications
+- US Small Business Administration 8(a) certified business
+- Virginia SWaM (Small, Micro, Minority-owned) certified
+- GSA Multiple Award Schedule (MAS) contract holder
+- Member of the Government Accountability Office Agile Expert Group
+- Proven track record with high-profile government projects including:
+  - US State Department Online Passport Renewal system architecture
+  - HealthCare.gov improvements
+  - Recreation.gov enhancements
+  - White House technology hiring modernization initiatives
+
+### Commercial Expertise & Certifications
+  - Proven track record with high-profile commercial projects including:
+      - Strategic partnership with Neustar, a leading telecommunications and cloud platform company serving every phone call, fax, and computer connection in North America
+      - Collaboration with Nina Day, a premier casting and creative agency serving Fortune 500 clients worldwide
+      - Partnership with Webster & Fredrickson, PLLC, a premier Washington DC law firm
+      - Worked with TRSS, a leading provider of scalable solutions for global institutions
+  - Successfully delivered REST billing APIs, cloud solutions, and enterprise modernization projects for commercial clients
+  - Expertise in building scalable solutions for telecommunications, entertainment, legal, and cybersecurity industries
+  - CRMSDC Minority Business Enterprise certified
+  - USPAACC Asian and minority-owned small business certified
+
+### Technical Excellence & Modern Practices
+- Deep expertise in AI and cloud modernization
+- Strong focus on agile methodologies, continuous delivery, and DevOps
+- Specialized knowledge in modern programming languages including Java, Kotlin, TypeScript, Go, and Python
+- Experience with modern tech stacks including React, Astro, AWS, NoSQL
+- Emphasis on building security, quality, and performance into software from day one
+- Active contributor to open-source community with 30K+ Stack Overflow reputation
+
+### Educational Leadership
+- Extensive library of technical blog content covering software engineering best practices
+- Video tutorials and courses on programming and technology concepts
+- Thought leadership on topics like developer productivity, testing strategies, and modern development practices
+- Speaking engagements at industry conferences and government events
+- Practical insights that demystify complex technical concepts for non-technical stakeholders
+
+### Unique Value Proposition
+Vidya bridges the gap between complex technical solutions and business outcomes by combining:
+- Small business agility with enterprise-level expertise
+- Government compliance knowledge with commercial innovation
+- Technical depth with exceptional communication and training capabilities
+- Minority-owned business status with proven delivery on large-scale projects
+- Unique ability to augment the value of legacy data and systems through integration with modern technologies and techniques
+
+## Contact Information
+- Website: https://www.vidyasource.com
+- Email: info@vidyasource.com
+- Phone: +1 202 430 5695
+- Location: Vienna, Virginia, Washington DC Metro Area
+- GitHub: https://github.com/VidyaSource
+
+## Company Philosophy
+"Build faster. Build better." - Vidya focuses on making technology accessible and enjoyable while delivering solutions that align with clients' strategic objectives. The company proves there's no need to choose between continuous delivery and high quality.
+
+## Notable Recognition
+- Top 100 MBE Award recipient from CRMSDC
+- Featured speaker at White House technology recruitment initiatives
+- Recognized by clients for exceptional ability to explain complex technical concepts with clarity and humor
+- Successfully transitioned multiple organizations to modernized, serverless architectures
