@@ -5,6 +5,7 @@ title: "Black Lives Matter"
 description: "It's time to act. It was always time to act."  
 image: "/img/blog/black-lives-matter.png" 
 date: 2020-06-20
+draft: true
 categories:
 - Black Lives Matter 
 - Diversity
