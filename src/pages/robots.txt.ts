@@ -5,6 +5,9 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
+User-agent: googlebot
+Disallow: /llms.txt
+
 Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}
 `.trim();
 
