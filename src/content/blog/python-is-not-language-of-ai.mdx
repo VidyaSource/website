@@ -1,0 +1,113 @@
+---
+
+author: neil-chaudhuri
+title: "Python Is Not the Language of AI"
+description: "Python is the language of machine learning and training AI models, but there are several reasons why Python is not the language of AI."
+image: "/img/blog/python.webp"
+date: 2025-09-07
+tags:
+- Java
+- Kotlin
+- Python 
+- Programming
+- Testing
+- Architecture
+- Open Source
+---
+import PostImage from '../../layouts/blog/PostImage.astro';
+
+MIT recently reported that a staggering [95% of enterprise AI deployments fail](https://www.forbes.com/sites/jaimecatmull/2025/08/22/mit-says-95-of-enterprise-ai-failsheres-what-the-5-are-doing-right/).
+That is *really bad!* The primary reasons are strategic rather than technical like the absence of a data strategy and no clear business objectives
+beyond "We need to use more AI or we will fall behind!" In all things, AI or otherwise, whatever you do downstream from terrible leadership is pretty much doomed to fail.
+
+However, even the most thoughtful strategy will fail without a very particular technical understanding:
+
+*Python has always been and will likely always be the language of machine learning (ML), but it is not the language of AI. The failure to understand the difference is hurting AI adoption. Succeeding with AI is a function of context not computation.* 
+
+## A little history
+
+Imagine you work at Netflix in 2010. You have a hypothesis: People are more likely to watch content, and therefore ads that will make your manager happy, that takes place in the city where
+they grew up. For example, someone who grew up in Scranton, Pennsylvania, is more likely to watch [The Office](https://www.imdb.com/title/tt0386676/) than they would otherwise.
+
+At that time and still to this day, Python was the best choice to test your hypothesis. With its dynamic typing and intuitive syntax, the 
+Python language makes it very easy for data scientists, who are not programmers and understandably have no interest in the ceremony of traditional software engineering, to experiment quickly. With that 
+growing popularity came the blossoming of a prolific ecosystem. Libraries we take for granted today like Pandas, NumPy, Scikit-learn, spaCy, GLiNER, and countless others emerged with Deep Learning
+staples like PyTorch and TensorFlow arriving later. Machine learning pipelines using tools like dbt, Dagster, Airflow, and Great Expectations became ubiquitous. 
+Bombshell tooling like Jupyter Notebooks and powerful IDEs [entered the villa](https://www.youtube.com/watch?v=Ihum2Yk3Zyk). It is easy to see why the Python ecosystem 
+has been so dominant for so long for running experiments and solving many popular use cases like spam detection, sentiment analysis, fraud detection, loan default prediction,
+and image classification. There are powerful data science alternatives like R and Julia, but they just don't have the juice.
+
+When ChatGPT came along in 2022, Python appeared poised to [become more powerful than you can possibly imagine](https://www.youtube.com/watch?v=iVBX7l2zgRw). With Python the clear choice for NLP
+and Deep Learning, AI companies use Python to train Large Language Models (LLMs). If you want to fine tune an existing model to train it for your use case, you use 
+Python tools like [Unsloth](https://unsloth.ai/). Naturally, Python also led the way in AI orchestration. As Retrieval Augmented Generation (RAG) became all the rage, [LangChain](https://www.langchain.com/) and 
+[LlamaIndex](https://www.llamaindex.ai/) inherited the Python pipeline tradition and made it easier to ground LLMs on your own structured and unstructured data. You can see the surge in Python
+poularity in various Python language rankings like the August 2025 TIOBE Index, which not only puts Python at #1 but also jumping 8.1% after the last ranking!
+
+<PostImage alt="August 2025 TIOBE Index showing Python #1 and with a huge 8.1% jump from the previous ranking" src="/img/blog/tiobe-python.webp" />
+
+However, as AI adoption explodes, organizations are butting against the limits of Python for building mission-critical, production software for real users. Python doesn't 
+readily deliver what enterprise AI needs to thrive.
+
+## In the Real World, ML ≠ AI
+
+It's a vast oversimplification, but machine learning is computation. And to be fair, it's true you need very advanced computations to build LLMs in the first place. 
+But once you have LLMs in place doing real work, generating value from them for your business is not about computation at all.
+
+It's about *context*.
+
+The key to success with AI is to provide the best context to the best suited LLM(s) so they can pattern match their way to the best result.
+
+For you individually, if you are using an LLM to find a job, context means using [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) clients like [Goose](https://block.github.io/goose/) to integrate
+the job description on a company website and other relevant pages about company strategy and values with the PDF resume on your laptop. That context helps LLMs offer suggestions
+on what to emphasize in your work history to
+maximize your chances for an interview. That doesn't require any code from you, Python or otherwise. It's simply knowing which context matters and making it available to AI.
+
+Similarly for a business, context means
+gleaning the most relevant information across the enterprise—in databases, Notion, Jira, Slack, GitHub, DropBox, Confluence, SharePoint, Google Workspace, Office 365, and all the other typical black holes of
+organizational memory in big companies—to your problem and providing *that* to an LLM. This likely requires some code, but it's just API calls to the data and the LLM(s),
+which software engineers have been doing forever, rather than calculating [root mean squared error](https://statisticsbyjim.com/regression/root-mean-square-error-rmse/).
+
+Put simply, AI is a context integration challenge not a number crunching challenge.
+
+## Python Limitations
+
+I have a deep appreciation for Python. In fact, it's the language I recommend to people who want to get into programming
+for the first time for all the same reasons it's so popular with data scientists.
+
+But there are several reasons why Python never really caught on to solve integration challenges at scale in enterprises:
+- Lack of type safety, which [Pydantic AI](https://ai.pydantic.dev/), [BAML](https://boundaryml.com/), and other modern AI libraries try to address because it's so important to ground LLMs in structure
+- Poor performance of Python at scale, which [FastAPI](https://fastapi.tiangolo.com/) and other modern libraries address in limited scope
+- Lack of mature middleware options like Kafka integration
+- Lack of mature tooling around security, observability, and resiliency 
+
+There is an old cliché in software engineering: Use the right tool for the job. The qualities that make Python dominant for ML are irrelevant, even counterproductive, to what you need for AI.
+Python is fine, but it's not the right tool for the job.
+
+## Better Choices for AI
+
+If AI is an integration challenge rather than an ML challenge, AI success demands technologies built to solve integration challenges. There are lots of languages whose features, runtimes, and ecosystems
+make them far better options than Python:
+- JVM languages like Java, which has dominated the enterprise for decades, and Kotlin, which is a modern alternative interoperable with Java and currently my favorite language
+- .NET languages like C#, which also dominates the enterprise, and F#
+- TypeScript, which has emerged very quickly as a popular integration option with libraries like Prisma and tRPC
+- Go, built for speed and integrates well with middleware
+- Rust, *really* built for speed with a devoted, growing community willing to tackle the tough learning curve
+- Elixir, niche language but purpose built for scalable, fault tolerant distributed systems
+
+Your choice depends on all the usual considerations like available talent and skills, deployment constraints, available SDKs, and so on. The key point is you are not
+limited to Python for AI because of its legacy in ML. You will even find higher-level agent frameworks that rival and arguably beat LangChain and LlamaIndex like [Koog](https://docs.koog.ai/) (Kotlin) and 
+[Embabel](https://docs.embabel.com/embabel-agent/guide/0.1.2-SNAPSHOT/) (Kotlin and Java) on the JVM, [Mastra](https://mastra.ai/) in TypeScript,
+and [Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/overview/) in C#, Java, and even Python. The great thing about these
+frameworks is they affirm the lessons we have learned about mature software engineering at scale over the last few decades by espousing concepts like
+type safety, testing, security, Domain-Driven Design, observability, and disaster recovery. While completely unnecessary for data science experiments,
+these concepts are all crucial for serious software deployed at scale, AI or otherwise.
+
+Succeeding with AI begins with sound business strategy and data strategy. After that, your technical implementation is a matter of integrating context not performing 
+computations. Solve the right problem with the right solution to maximize your chances for success with AI.
+
+
+
+
+
+
+
