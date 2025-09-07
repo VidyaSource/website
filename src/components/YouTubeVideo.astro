@@ -1,7 +1,8 @@
 ---
-const {value} = Astro.props
-const [id, title] = value.children[0].split("|")
+const {id, title} = Astro.props
 ---
-<div class="youtube">
-    <iframe src={`https://www.youtube.com/embed/${id}`} allowFullScreen title={title} />
-</div>
+<section class="p-12">
+    <div class="youtube">
+        <iframe src={`https://www.youtube.com/embed/${id}`} allowFullScreen title={title}/>
+    </div>
+</section>
