@@ -18,6 +18,7 @@ tags:
 - Open Source
 - Observability
 - Salesforce
+- Hugging Face
 ---
 import PostImage from '../../layouts/blog/PostImage.astro';
 
@@ -45,8 +46,14 @@ and image classification. There are powerful data science alternatives like R an
 When ChatGPT came along in 2022, Python appeared poised to [become more powerful than you can possibly imagine](https://www.youtube.com/watch?v=iVBX7l2zgRw). With Python the clear choice for NLP
 and Deep Learning, AI companies use Python to train Large Language Models (LLMs). If you want to fine tune an existing model to train it for your use case, you use 
 Python tools like [Unsloth](https://unsloth.ai/). Naturally, Python also led the way in AI orchestration. As Retrieval Augmented Generation (RAG) became all the rage, [LangChain](https://www.langchain.com/) and 
-[LlamaIndex](https://www.llamaindex.ai/) inherited the Python pipeline tradition and made it easier to ground LLMs on your own structured and unstructured data. You can see the surge in Python
-poularity in various Python language rankings like the August 2025 TIOBE Index, which not only puts Python at #1 but also jumping 8.1% after the last ranking!
+[LlamaIndex](https://www.llamaindex.ai/) inherited the Python pipeline tradition and made it easier to ground LLMs on your own structured and unstructured data. To take things even further, because Python has dominated ML
+for so long and there have always been so many outstanding ML models, and now AI models, on Hugging Face, core Hugging Face libraries like Transformers are Python libraries.
+Other approaches like [Deep Java Library](https://docs.djl.ai/master/docs/demos/huggingface/hybrid/index.html) and
+[Spring AI](https://docs.spring.io/spring-ai/reference/api/chat/huggingface.html) are
+technically possible to work with Hugging Face, but the process is never very straightforward.
+
+The result was predictable. You can see the surge in Python
+popularity in various Python language rankings like the August 2025 TIOBE Index, which not only puts Python at #1 but also jumping 8.1% after the last ranking!
 
 <PostImage alt="August 2025 TIOBE Index showing Python #1 and with a huge 8.1% jump from the previous ranking" src="/img/blog/tiobe-python.webp" />
 
@@ -100,7 +107,7 @@ make them far better options than Python:
 - Elixir, niche language but purpose built for scalable, fault tolerant distributed systems
 
 Your choice depends on all the usual considerations like available talent and skills, deployment constraints, available SDKs, and so on. The key point is you are not
-limited to Python for AI because of its legacy in ML. You will even find higher-level agent frameworks that rival and arguably beat LangChain and LlamaIndex like [Koog](https://docs.koog.ai/) (Kotlin) and 
+limited to and can likely do better than Python for AI because of its legacy in ML. You will even find higher-level agent frameworks that rival and arguably beat LangChain and LlamaIndex like [Koog](https://docs.koog.ai/) (Kotlin) and
 [Embabel](https://docs.embabel.com/embabel-agent/guide/0.1.2-SNAPSHOT/) (Kotlin and Java) on the JVM, [Mastra](https://mastra.ai/) in TypeScript,
 and [Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/overview/) in C#, Java, and even Python. The great thing about these
 frameworks is they affirm the lessons we have learned about mature software engineering at scale over the last few decades by espousing concepts like
