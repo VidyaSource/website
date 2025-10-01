@@ -11,7 +11,7 @@ import Footer from "../../components/Footer.astro"
 import ThemeButton from "../../components/ThemeButton.astro";
 ---
 
-<Hero>
+<Hero client:visible>
     <Logo height="65" width="140" slot='desktopLogo' />
     <Logo height="56" width="120" slot='mobileLogo' />
     <ThemeButton slot="themeButton" sunFillColor="yellow" moonFillColor="#5A82B4" transition:persist/>
