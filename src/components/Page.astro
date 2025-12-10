@@ -26,7 +26,8 @@ interface Props {
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="https://use.typekit.net/wth1wdu.css">
+    <link rel="preload" href="https://use.typekit.net/wth1wdu.css?display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://use.typekit.net/wth1wdu.css?display=swap"></noscript>
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
     <VidyaSEO {...Astro.props} />

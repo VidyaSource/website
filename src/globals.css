@@ -1,6 +1,37 @@
 @import "tailwindcss";
 @config "../tailwind.config.mjs";
 
+/* Font display optimization for Adobe Typekit fonts (myriad-pro)
+   This ensures text remains visible while fonts load, improving mobile performance
+   and preventing Flash of Invisible Text (FOIT) */
+@font-face {
+    font-family: 'myriad-pro';
+    font-display: swap;
+    src: local('Myriad Pro'), local('MyriadPro-Regular');
+}
+
+@font-face {
+    font-family: 'myriad-pro';
+    font-weight: bold;
+    font-display: swap;
+    src: local('Myriad Pro Bold'), local('MyriadPro-Bold');
+}
+
+@font-face {
+    font-family: 'myriad-pro';
+    font-style: italic;
+    font-display: swap;
+    src: local('Myriad Pro Italic'), local('MyriadPro-It');
+}
+
+@font-face {
+    font-family: 'myriad-pro';
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+    src: local('Myriad Pro Bold Italic'), local('MyriadPro-BoldIt');
+}
+
 @layer components {
     p {
         @apply py-2 text-gray-dark dark:text-blue-light
