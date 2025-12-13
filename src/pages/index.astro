@@ -1,6 +1,6 @@
 ---
 import Home from '../layouts/home/Home.astro';
-import {ViewTransitions} from 'astro:transitions';
+import {ClientRouter} from 'astro:transitions';
 import VidyaSEO from "../components/VidyaSEO.astro"
 import vidyaSchema from '../components/vidyaSchema.json'
 import Analytics from "../components/Analytics.astro";
@@ -17,9 +17,9 @@ import Analytics from "../components/Analytics.astro";
     <noscript><link rel="stylesheet" href="https://use.typekit.net/wth1wdu.css?display=swap"></noscript>
     <meta name="generator" content={Astro.generator}/>
     <meta name="theme-color" content="#5A82B4">
-    <ViewTransitions/>
-    <VidyaSEO title="Vidya LLC - Software Modernization & IT Consulting Services"
-              description="Vidya - Software Modernization & IT Consulting | Technology Training Courses | 8(a) & SWaM Certified Small Business"
+    <ClientRouter/>
+    <VidyaSEO title="Vidya | AI & Cloud Consulting and Modernization"
+              description="Vidya is a certified IT consulting firm specializing in AI, cloud, and software modernization services. Partner with our experts to transform your organization."
               schema={vidyaSchema}
     />
 </head>
