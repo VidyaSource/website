@@ -28,5 +28,5 @@ Why does this matter?
 - AAIF breaks down proprietary silos to enable interoperability across tools, platforms, and organizations.
 - AAIF shifts Agentic AI from fragmented experiments to a more unified, production-ready ecosystem.
 
-This is exciting. It's wonderful finally to see global, open technical consensus building around AI.
+This is exciting. It's wonderful finally to see global, open standards for building AI agents.
 
