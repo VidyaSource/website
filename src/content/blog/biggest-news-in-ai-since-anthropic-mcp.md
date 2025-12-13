@@ -4,7 +4,7 @@ author: neil-chaudhuri
 title: "The Biggest News in AI Since MCP"
 description: The Linux Foundation launches the Agentic AI Foundation, which formalizes MCP, Goose, and AGENTS.md into global open standards.
 image: "/img/blog/aaif.webp"
-date: 2025-10-12
+date: 2025-12-12
 tags:
 - AI
 - Software Engineering
