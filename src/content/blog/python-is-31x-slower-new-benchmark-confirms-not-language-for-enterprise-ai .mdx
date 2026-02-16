@@ -1,0 +1,92 @@
+---
+author: neil-chaudhuri
+title: "Python Is 31x Slower: You Can Do Better for Enterprise AI"
+date: 2026-02-16
+description: "A new MCP server benchmark shows Python is 31x slower than Go and Java—reinforcing why enterprise AI demands languages built for integration and performance, not just experimentation."
+image: "/img/blog/ai-mcp-benchmark.webp"
+tags:
+- AI
+- MCP
+- Python
+- Java
+- Machine Learning
+- Programming
+- Architecture
+---
+import PostImage from '../../layouts/blog/PostImage.astro';
+
+Last year I wrote about why [Python is not the language of AI](/blog/python-is-not-language-of-ai): While Python dominates machine learning, its strengths for fast, lightweight experiments become liabilities when you
+transition to the context integration and performance challenges that define enterprise AI. The response was enormous and the debate was spirited.
+
+Now we have hard numbers to back it up.
+
+## The Benchmark
+
+TM Dev Lab has published an [MCP Server Performance Benchmark](https://www.tmdevlab.com/mcp-server-performance-benchmark.html) comparing Python, Go, Java, and TypeScript across key
+performance dimensions. [Model Context Protocol](https://modelcontextprotocol.io/) is the [AAIF standard](blog/biggest-news-in-ai-since-anthropic-mcp) for connecting AI systems to enterprise data and tools. As I noted in my
+original post, AI is fundamentally a *context integration challenge*, and MCP servers are the infrastructure that makes enterprise AI agents possible at scale. Their performance is
+critical given how often agents will use them.
+
+The benchmark's conclusion about Python is blunt:
+> Not Recommended For: Any production high-load scenario (31x slower than Go/Java)
+
+Thirty-one times slower. Not 31% slower. *Thirty-one times.*
+
+## The Results
+
+The two languages in the benchark built for enterprise rigor, Java and Go, delivered exactly as you'd expect:
+
+<PostImage alt="Bar chart comparing average latency in milliseconds across four MCP server implementations over three rounds. Java and Go are nearly identical at 0.84ms and 0.86ms respectively. Node.js averages 10.66ms, and Python is slowest at 26.45ms — roughly 31 times slower than Java and Go" src="/img/blog/ai-mcp-benchmark.webp" />
+
+Go edged out Java overall, but organzations don't operate in a vacuum. Most medium-to-large enterprises have significantly more Java infrastructure and institutional knowledge than Go. Given that
+reality, Java represents the smarter tradeoff for most organizations. But if you have a strong Go team? Even better.
+
+## Why This Shouldn't Surprise Anyone
+
+As I wrote before, Python has qualities that make it extraordinary for data science and machine learning:
+dynamic typing that lets data scientists experiment quickly, an intuitive syntax that doesn't demand software engineering ceremony, and a prolific ecosystem of libraries from Pandas and NumPy to PyTorch and TensorFlow.
+
+But those same qualities work against you in production:
+
+- **Lack of type safety** — This is critical for grounding AI systems in structure. Even the Python AI community recognizes this, which is why libraries like Pydantic AI and BAML exist to retrofit type safety onto
+a language that doesn't natively provide it.
+- **Poor performance at scale** — FastAPI and other modern libraries address this in limited scope, but as this benchmark demonstrates, the fundamental performance gap remains enormous.
+- **Lack of mature middleware** — Enterprise AI demands robust Kafka integration, message queues, and event-driven architectures that the Python ecosystem doesn't serve well.
+- **Limited tooling for security, observability, and resiliency** — These are non-negotiable concerns of production software.
+
+The MCP benchmark quantifies what experienced enterprise architects already know intuitively. When you're building the connective tissue between LLMs and enterprise data—databases, APIs, event-driven pipelines,
+and SaaS platforms like Salesforce and Confluence—Python simply isn't built for the job.
+
+## AI Is a Context Integration Challenge
+
+This bears repeating because it's the fundamental insight that drives everything else:
+
+> AI success is a function of context not computation.
+
+Python makes computations like clustering and loss functions easy, but building with AI means
+building agents that can harvest your institutional memory across the enterprise as context for LLMs. It's an integration challenge. It's API calls, not math, operating under the constraints of
+enterprise security, observability, and performance requirements. Software engineers have been solving these problems for decades with languages and frameworks purpose-built for the task.
+
+MCP servers are a concrete manifestation of this. They're the infrastructure that connects AI to your enterprise context. When that infrastructure is 31x slower than it needs to be, you're not just wasting
+compute. You're throttling the quality and responsiveness of every AI capability that depends on it.
+
+## The Right Tools Exist
+
+As I outlined in my original post, there are languages whose features, runtimes, and ecosystems make them far better options for enterprise AI:
+
+- **Java and Kotlin** on the JVM, the CPU leader according to this benchmark featuring frameworks like [Koog](https://github.com/JetBrains/koog) and [Embabel](https://github.com/embabel/embabel-agent) that embrace type safety, testing, Domain-Driven Design, and observability
+- **Go**, built for speed and concurrency, now validated by this benchmark as the memory leader and overall performance leader
+- **TypeScript** with frameworks like [Mastra](https://mastra.ai/) and mature integration libraries like Prisma and tRPC
+- **C# and F#** on .NET with [Semantic Kernel](https://github.com/microsoft/semantic-kernel)
+
+These frameworks affirm the lessons we've learned about mature software engineering at scale. Type safety, testing, security, observability, and disaster recovery aren't optional. They're table stakes for
+serious software deployed at scale, AI or otherwise.
+
+## Some Caveats
+
+The usual caveats apply. Benchmarks are never the full story. MCP servers are only one segment of AI deployments. Implementation details, team expertise, and organizational context all factor into technology decisions.
+
+But when the performance gap is measured in *orders of magnitude*, it should give you pause. If you're deploying Python as the backbone of your enterprise AI infrastructure, this benchmark is one more data point
+suggesting you can do better.
+
+Succeeding with AI begins with sound business strategy and data strategy. After that, your technical implementation is a matter of integrating context, not performing computations. Solve the right problem with the right solution.
