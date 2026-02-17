@@ -7,14 +7,14 @@ import {blogPosts} from "../../layouts/blog/blogUtils";
 const schema = {
     "@type": "Blog",
     name: "Vidya LLC Blog",
-    description: "Explore Vidya LLC's blog for insightful articles, industry news, and expert insights on software modernization, IT consulting, technology training, and more.",
+    description: "Explore the Vidya blog for insightful articles, industry news, and expert insights on software modernization, IT consulting, technology training, and more.",
     url: Astro.url.href,
     publisher: vidyaSchema,
     blogPosts: blogPosts.map(p => p.schema)
 }
 ---
 <Page title={"Vidya LLC Blog - Insights on Software Development, IT Consulting & Technology"}
-      description={"Explore Vidya LLC's blog for insightful articles, industry news, and expert insights on software modernization, IT consulting, technology training, and more."}
+      description={"Explore the Vidya blog for insightful articles, industry news, and expert insights on software modernization, IT consulting, technology training, and more."}
       schema={schema}>
     <BlogPostIndex/>
 </Page>
