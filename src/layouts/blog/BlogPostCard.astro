@@ -15,14 +15,12 @@ const formattedDate = format(new Date(date), "LLLL d, y")
 ].join(' ')}` id={slug} >
     <div class="flex-shrink-0 bg-gray-light hover:bg-red-light">
         <a href={link}>
-            <div class="h-48 w-full">
-                <Image
-                        class="object-fill"
-                        src={images[`/src${image}`]()}
-                        alt={title}
-                        inferSize
-                />
-            </div>
+            <Image
+                    class="h-48 w-full object-cover object-center"
+                    src={images[`/src${image}`]()}
+                    alt={title}
+                    inferSize
+            />
         </a>
     </div>
     <div class=`flex-1 dark:bg-white p-6 flex flex-col justify-between hover:bg-red-light ${classes}`>

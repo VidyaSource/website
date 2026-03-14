@@ -1,0 +1,334 @@
+---
+author: neil-chaudhuri
+title: "Infrastructure as Code Has a New Playbook: Formae and Pkl"
+description: "Formae brings agentic, stateless IaC with Pkl's type-safe config to AWS. No drift, no state files, and an MCP server AI agents can actually use."
+image: "/img/blog/infrastructure-as-code-formae-pkl-aws.webp"
+date: 2026-03-14
+tags:
+- AWS
+- AI
+- MCP
+- Open Source
+- Architecture
+- DevSecOps
+- Software Engineering
+- Kubernetes
+- Docker
+---
+
+There's a line in *The Matrix* where Morpheus tells Neo, "You've been living in a dream world." That's kind of how I feel about infrastructure configuration
+today. We've been writing YAML files the size of *War and Peace*, passing raw strings around like it's 1999, hoping our infrastructure in production
+still matches what's in version control—and calling this "infrastructure as code." It's IaC in name, but configuration drift, fragile state files, and
+zero type safety have always made it feel more like infrastructure as wishful thinking.
+
+Two tools are reshaping what IaC can actually look like: **[Pkl](https://pkl-lang.org/)**, Apple's configuration language that brings genuine type safety to
+your config, and **[Formae](https://github.com/platform-engineering-labs/formae)**, an agentic IaC tool that treats code as the one true source of
+truth—no state files, no surprises. Together they plug the leaks that have made traditional IaC so frustrating. And Formae goes one step further with an
+MCP server that lets AI agents reason about and act on your infrastructure directly. Let's dig in.
+
+## Pkl: Configuration Drift Is Now a Compile-Time Error
+
+Configuration drift is the slow, silent disaster of infrastructure management. Someone updates an S3 bucket policy in the console. A teammate tweaks an
+ECS task definition directly. Nobody writes it down. Six months later your code says one thing and production says something completely different, and you
+spend two days figuring out why your deployment broke.
+
+The root cause is almost always the same: configuration files have no types. YAML, JSON, and TOML are all happy to accept
+`maxConnections: "fifty"` right alongside `maxConnections: 50`. They don't care. They can't care. They're just strings and scalars.
+
+[Pkl](https://pkl-lang.org/) from Apple is the antidote. It's a configuration language with a real type system—typed properties, constraints, union types,
+default values, inheritance through `amends`, and computed properties. When your config violates a constraint, you get an error *at evaluation time*, before
+anything gets deployed. It's the "make impossible states impossible" principle applied to infrastructure.
+
+Here's what that looks like in practice. Imagine you're defining the configuration for your ECS task definition shared across environments:
+
+```pkl
+// infra/base/EcsTaskConfig.pkl
+module EcsTaskConfig
+
+typealias CpuUnits  = Int(this == 256 || this == 512 || this == 1024 || this == 2048 || this == 4096)
+typealias MemoryMiB = Int(this >= 512 && this <= 30720)
+
+// Only allow known, safe log levels — no "YOLO" in production
+typealias LogLevel = "DEBUG" | "INFO" | "WARN" | "ERROR"
+
+class ContainerConfig {
+  image: String(startsWith("123456789012.dkr.ecr.us-east-1.amazonaws.com/"))
+  cpu: CpuUnits = 512
+  memory: MemoryMiB = 1024
+  logLevel: LogLevel = "INFO"
+  portMappings: Listing<UInt16>
+}
+
+class EcsTaskConfig {
+  family: String
+  containers: Listing<ContainerConfig>(length >= 1)
+  executionRoleArn: String(startsWith("arn:aws:iam::"))
+  taskRoleArn: String(startsWith("arn:aws:iam::"))
+}
+```
+
+Now your production config `amends` this base and fills in the specifics:
+
+```pkl
+// infra/production/ecs-webapp.pkl
+amends "package://pkg.pkl-lang.org/github.com/platform-engineering-labs/formae/formae@0.15.0#/Resource.pkl"
+
+import "../base/EcsTaskConfig.pkl"
+
+family = "webapp-production"
+executionRoleArn = "arn:aws:iam::123456789012:role/ecsTaskExecutionRole"
+taskRoleArn      = "arn:aws:iam::123456789012:role/webappTaskRole"
+
+containers {
+  new EcsTaskConfig.ContainerConfig {
+    image        = "123456789012.dkr.ecr.us-east-1.amazonaws.com/webapp:latest"
+    cpu          = 1024
+    memory       = 2048
+    logLevel     = "INFO"
+    portMappings { 8080 }
+  }
+}
+```
+
+Try setting `cpu = 999` or `logLevel = "TRACE"` or an image URI that doesn't match your ECR registry. Pkl tells you immediately—before Formae
+ever touches AWS. You've moved configuration errors from "3 AM production incident" to "the moment you save the file." That's the kind of
+feedback loop shift that DORA research has confirmed makes teams more productive.
+
+The `typealias` for `CpuUnits` is worth pausing on. AWS ECS only accepts specific CPU values. Pkl encodes that business rule directly in the
+type. You can't accidentally set `cpu = 300`. The type system prevents it. This is what statically typed configuration means in practice, and
+it's why I've been recommending Pkl since Apple open-sourced it.
+
+## Formae: Agentic IaC That Treats Code as the Truth
+
+Traditional IaC tools like Terraform manage a *state file*—a separate artifact that tracks what's deployed. That state file becomes a liability fast.
+It gets out of sync. It needs to be stored somewhere, typically remote, with its own locking mechanism. Someone inevitably runs something manually in the
+console and now your state file lies to you. Welcome back to configuration drift, just with extra steps.
+
+Formae takes a different approach: **no state files**. Your Pkl code *is* the source of truth. Formae's agent continuously reconciles reality against your
+code. If something drifts outside your IaC definitions—a manual change in the AWS console, an automated rotation, whatever—Formae detects it and can
+merge or reject the change depending on your configuration. This is genuinely agentic infrastructure management, not just "automation with a fancier name."
+
+Let's see what it looks like to manage an S3 bucket for static assets alongside an ECS-hosted web application behind CloudFront. First, configure your
+AWS target:
+
+```pkl
+// infra/formae-config.pkl
+amends "package://pkg.pkl-lang.org/github.com/platform-engineering-labs/formae/formae@0.15.0#/Config.pkl"
+
+local awsTarget = new Target {
+  label       = "aws-production-us-east-1"
+  namespace   = "AWS"
+  discoverable = true
+  config {
+    type    = "aws"
+    region  = "us-east-1"
+    profile = "production"
+  }
+}
+
+targets { awsTarget }
+```
+
+Then define your stack—S3 bucket for assets, ECS service for the app, and CloudFront as the CDN in front of both:
+
+```pkl
+// infra/production/webapp-stack.pkl
+amends "package://pkg.pkl-lang.org/github.com/platform-engineering-labs/formae/formae@0.15.0#/Stack.pkl"
+
+// --- S3: Static Asset Bucket ---
+local assetBucket = new Resource {
+  label  = "webapp-assets"
+  type   = "AWS::S3::Bucket"
+  target = "aws-production-us-east-1"
+  stack  = "webapp-production"
+  properties {
+    BucketName          = "my-webapp-assets-prod"
+    VersioningConfiguration { Status = "Enabled" }
+    PublicAccessBlockConfiguration {
+      BlockPublicAcls       = true
+      BlockPublicPolicy     = true
+      IgnorePublicAcls      = true
+      RestrictPublicBuckets = true
+    }
+    Tags { ["Environment"] = "production"; ["ManagedBy"] = "formae" }
+  }
+}
+
+// --- ECS Cluster ---
+local ecsCluster = new Resource {
+  label  = "webapp-cluster"
+  type   = "AWS::ECS::Cluster"
+  target = "aws-production-us-east-1"
+  stack  = "webapp-production"
+  properties {
+    ClusterName = "webapp-production"
+    Tags { ["Environment"] = "production" }
+  }
+}
+
+// --- ECS Service ---
+local ecsService = new Resource {
+  label  = "webapp-service"
+  type   = "AWS::ECS::Service"
+  target = "aws-production-us-east-1"
+  stack  = "webapp-production"
+  properties {
+    ServiceName    = "webapp-production-service"
+    Cluster        = ecsCluster.properties["ClusterName"]
+    TaskDefinition = "webapp-production:latest"
+    DesiredCount   = 2
+    LaunchType     = "FARGATE"
+    NetworkConfiguration {
+      AwsvpcConfiguration {
+        AssignPublicIp = "DISABLED"
+        Subnets        { "subnet-abc123"; "subnet-def456" }
+        SecurityGroups { "sg-webapp-prod" }
+      }
+    }
+    Tags { ["Environment"] = "production"; ["ManagedBy"] = "formae" }
+  }
+}
+
+// --- CloudFront Distribution ---
+local cdn = new Resource {
+  label  = "webapp-cdn"
+  type   = "AWS::CloudFront::Distribution"
+  target = "aws-production-us-east-1"
+  stack  = "webapp-production"
+  properties {
+    DistributionConfig {
+      Enabled         = true
+      PriceClass      = "PriceClass_100"
+      HttpVersion     = "http2and3"
+      Origins {
+        // S3 origin for static assets
+        new {
+          Id                    = "S3-webapp-assets"
+          DomainName            = "\(assetBucket.properties["BucketName"]).s3.us-east-1.amazonaws.com"
+          S3OriginConfig { OriginAccessIdentity = "origin-access-identity/cloudfront/ABCDEFG" }
+        }
+        // ECS / ALB origin for the app
+        new {
+          Id         = "ALB-webapp"
+          DomainName = "webapp-prod-alb-1234567890.us-east-1.elb.amazonaws.com"
+          CustomOriginConfig {
+            HTTPSPort            = 443
+            OriginProtocolPolicy = "https-only"
+          }
+        }
+      }
+      DefaultCacheBehavior {
+        TargetOriginId       = "ALB-webapp"
+        ViewerProtocolPolicy = "redirect-to-https"
+        CachePolicyId        = "658327ea-f89d-4fab-a63d-7e88639e58f6" // CachingOptimized
+      }
+      CacheBehaviors {
+        new {
+          PathPattern          = "/assets/*"
+          TargetOriginId       = "S3-webapp-assets"
+          ViewerProtocolPolicy = "redirect-to-https"
+          CachePolicyId        = "658327ea-f89d-4fab-a63d-7e88639e58f6"
+        }
+      }
+    }
+  }
+}
+
+resources { assetBucket; ecsCluster; ecsService; cdn }
+```
+
+Now apply it:
+
+```bash
+formae apply infra/production/webapp-stack.pkl --target aws-production-us-east-1
+```
+
+Formae's agent picks this up, resolves the dependencies in the right order (S3 before CloudFront, cluster before service), and drives the changes
+asynchronously. You can check status, simulate first with `--simulate`, or check for drift at any time:
+
+```bash
+# Preview what would change before touching anything
+formae apply --simulate infra/production/webapp-stack.pkl
+
+# Check if reality has drifted from your code
+curl -X GET "http://localhost:49684/api/v1/stacks/webapp-production/drift"
+```
+
+That drift check is powerful. If someone manually changed your S3 bucket policy or scaled the ECS service through the console, Formae tells you about it.
+Your code doesn't lie. The *infrastructure* might, and Formae is what keeps them honest with each other.
+
+## The Formae MCP Server: Your AI Agent Can Now Manage Infrastructure
+
+Here's where things get genuinely exciting, and honestly where my brain started connecting dots in a very satisfying way.
+
+Formae ships with an **[MCP server](https://modelcontextprotocol.io/)**—which means any AI agent or assistant that speaks
+Model Context Protocol can query and act on your infrastructure directly. I've written before about how [MCP is the real breakthrough in making AI useful in
+production](https://vidyasource.com/blog/python-is-not-language-of-ai), because it shifts AI from a novelty to a genuine integration layer. Formae's MCP
+server is a perfect example of that in action.
+
+When you run the Formae agent and expose its MCP interface, your AI tools gain access to tools like:
+
+- **Query your inventory** — ask "What S3 buckets are in the production stack?" and get back structured data in real time, not stale documentation
+- **Check drift** — ask "Has anything changed in the webapp-production stack since the last reconcile?" and get back a list of modified resources
+- **Simulate changes** — ask "What would change if I applied this config?" before any real action is taken
+- **Apply infrastructure** — let an agent propose and apply a Formae config with human-in-the-loop approval
+
+In practice, you configure Goose or Claude Desktop to connect to the Formae MCP server:
+
+```json
+{
+  "mcpServers": {
+    "formae": {
+      "command": "formae",
+      "args": ["mcp"],
+      "env": {
+        "FORMAE_AGENT_URL": "http://localhost:49684",
+        "FORMAE_CLIENT_ID": "goose-agent"
+      }
+    }
+  }
+}
+```
+
+Now an agent can answer questions like *"How many AWS resources are we managing across all stacks?"* or *"Is the CloudFront distribution in
+webapp-production pointing to the correct S3 origin?"* by calling the Formae REST API directly rather than hallucinating an answer based on whatever
+training data it ingested six months ago.
+
+```json
+// Real-time response from the Formae MCP tool
+{
+  "AgentId": "formae-prod-001",
+  "Version": "0.15.0",
+  "Resources": { "AWS": 12 },
+  "ResourceTypes": {
+    "AWS::S3::Bucket": 3,
+    "AWS::ECS::Cluster": 1,
+    "AWS::ECS::Service": 2,
+    "AWS::CloudFront::Distribution": 1
+  },
+  "Stacks": 2
+}
+```
+
+This is the right model for AI + infrastructure. Not an LLM making guesses about what's deployed. Not a chatbot that reads your Terraform state file from
+three weeks ago. A live, type-validated, code-first source of truth with an MCP interface that AI agents can actually trust and act on.
+
+## Why This Combination Works
+
+Pkl and Formae reinforce each other in a way that's more than the sum of their parts.
+
+Pkl gives you the type system. It catches bad configuration before anything reaches AWS. Union types enforce your allowed values. Constraints enforce your
+business rules. `amends` gives you template inheritance so staging and production share a common base without copy-paste drift.
+
+Formae gives you the runtime guarantee. It reconciles code against reality continuously. It detects drift. It manages dependencies between resources.
+It keeps the agent running even when you're not.
+
+And the MCP server connects this whole system to the AI layer—not as a novelty, but as a genuine operational interface. Your AI assistant knowing in
+real time how many ECS services are running, whether any resources have drifted, and what a proposed change would actually do to your infrastructure is
+*useful*. That's what "AI-native operations" should mean.
+
+The old playbook—raw YAML, a state file in S3 with DynamoDB locking, `terraform plan` and hope—got us a long way. But configuration drift, fragile state,
+and zero feedback at definition time have always been the unresolved cracks in the foundation. Pkl seals them at the config layer. Formae seals them at the
+infrastructure layer. Together, they make "infrastructure as code" mean exactly what it says.
+
+That's not a dream world. That's just good engineering.
