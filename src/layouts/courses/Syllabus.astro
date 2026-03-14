@@ -4,39 +4,57 @@ interface Props {
 }
 
 const {syllabus} = Astro.props
+const entries = Object.entries(syllabus)
 ---
-<section class="py-16 bg-blue-light dark:bg-blue overflow-hidden">
-    <div class="w-1/2 mx-auto px-4 space-y-8 sm:px-6 lg:px-8">
-        <div class="text-base max-w-prose mx-auto lg:max-w-none">
-            <h2 class="mt-2 text-4xl leading-8 font-extrabold tracking-tight text-red dark:text-red-light sm:text-5xl">
+<section class="relative py-20 bg-blue-light dark:bg-blue overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute top-20 -left-10 w-64 h-64 bg-green/10 dark:bg-green-light/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 -right-10 w-72 h-72 bg-red/10 dark:bg-red-light/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section header -->
+        <div class="text-center mb-14">
+            <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase rounded-full bg-green-dark text-green-light mb-4">
+                What You'll Learn
+            </span>
+            <h2 class="text-4xl font-extrabold tracking-tight text-red dark:text-red-light sm:text-5xl">
                 Course Syllabus
             </h2>
-        </div>
-        <div class="relative z-10">
-            <div class="text-gray-dark dark:text-blue-light mx-auto lg:max-w-none">
-                {
-                    Object.entries(syllabus).map(l => {
-                        const [title, sections] = l
-
-                        return (
-                                <div>
-                                    <p class="font-bold text-red dark:text-red-light text-2xl">
-                                        {title}
-                                    </p>
-                                    {
-                                        sections.map(s => {
-                                            return (
-                                                    <ul class="text-xl" key={s}>
-                                                        <li>{s}</li>
-                                                    </ul>
-                                            )
-                                        })
-                                    }
-                                </div>
-                        )
-                    })
-                }
+            <div class="mt-6 flex items-center justify-center">
+                <div class="w-16 h-1 rounded-full bg-red dark:bg-red-light"></div>
             </div>
+        </div>
+
+        <!-- Syllabus grid -->
+        <div class="grid gap-6 md:grid-cols-2">
+            {entries.map(([title, sections], index) => (
+                <div class="relative bg-white dark:bg-gray-dark rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                    <!-- Card header with lesson number accent -->
+                    <div class="bg-gradient-to-r from-blue to-blue-dark px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-white/20 text-white text-sm font-bold">
+                                {index + 1}
+                            </span>
+                            <h3 class="text-lg font-bold text-white leading-snug mt-0">
+                                {title}
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- Card body with topics -->
+                    <div class="px-6 py-5">
+                        <ul class="space-y-2">
+                            {sections.map((s) => (
+                                <li class="flex items-start gap-2 pl-0 my-0 text-base text-gray-dark dark:text-blue-light not-italic">
+                                    <span class="flex-shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full bg-green-dark dark:bg-green-light" aria-hidden="true"></span>
+                                    <span>{s}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            ))}
         </div>
     </div>
 </section>

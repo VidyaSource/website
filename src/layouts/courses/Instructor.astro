@@ -11,59 +11,67 @@ interface Props {
 const { title: instructorTitle, name, profileUrl, image, quote} = Astro.props
 
 ---
-<section class="bg-white dark:bg-gray-dark overflow-hidden">
-    <div class="relative max-w-7xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
-        <div class="relative lg:flex lg:items-center">
-            <div class="hidden lg:block lg:flex-shrink-0">
-                <div class="h-64 w-64 rounded-full xl:h-80 xl:w-80 relative">
-                    <Image
-                            layout="fill"
-                            class="rounded-full"
-                            src={images[`/src${image}`]()}
-                            alt={`Course instructor ${name}`}
-                    />
-                </div>
+<section class="relative bg-white dark:bg-gray-dark overflow-hidden">
+    <!-- Decorative background -->
+    <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-blue/5 dark:bg-blue-light/5 rounded-full blur-3xl"></div>
+        <div class="absolute -top-20 -left-20 w-72 h-72 bg-red/5 dark:bg-red-light/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <!-- Section header -->
+        <div class="text-center mb-14">
+            <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase rounded-full bg-green-dark text-green-light mb-4">
+                Meet Your Guide
+            </span>
+            <h2 class="text-4xl font-extrabold tracking-tight text-red dark:text-red-light sm:text-5xl">
+                Your Instructor
+            </h2>
+            <div class="mt-6 flex items-center justify-center">
+                <div class="w-16 h-1 rounded-full bg-red dark:bg-red-light"></div>
+            </div>
+        </div>
+
+        <!-- Instructor card -->
+        <div class="relative bg-blue-light dark:bg-gray rounded-2xl shadow-lg overflow-hidden max-w-3xl mx-auto">
+            <!-- Large decorative quote mark -->
+            <div class="absolute top-6 right-8 text-blue/10 dark:text-blue-light/10 pointer-events-none" aria-hidden="true">
+                <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 32 32">
+                    <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                </svg>
             </div>
 
-            <div class="relative lg:ml-10">
-                <svg
-                        class="absolute top-0 left-0 transform -translate-x-8 -translate-y-24 h-36 w-36 text-green-dark dark:text-green-light opacity-50"
-                        stroke="currentColor"
-                        fill="none"
-                        viewBox="0 0 144 144"
-                        aria-hidden="true">
-                    <path
-                            strokeWidth={2}
-                            d="M41.485 15C17.753 31.753 1 59.208 1 89.455c0 24.664 14.891 39.09 32.109 39.09 16.287 0 28.386-13.03 28.386-28.387 0-15.356-10.703-26.524-24.663-26.524-2.792 0-6.515.465-7.446.93 2.327-15.821 17.218-34.435 32.11-43.742L41.485 15zm80.04 0c-23.268 16.753-40.02 44.208-40.02 74.455 0 24.664 14.891 39.09 32.109 39.09 15.822 0 28.386-13.03 28.386-28.387 0-15.356-11.168-26.524-25.129-26.524-2.792 0-6.049.465-6.98.93 2.327-15.821 16.753-34.435 31.644-43.742L121.525 15z"
-                    />
-                </svg>
-                <blockquote class="relative">
-                    <div class="text-2xl leading-9 font-medium text-gray-900">
-                        <p>{quote}</p>
-                    </div>
-                    <footer class="mt-8">
-                        <div class="flex">
-                            <div class="flex-shrink-0 lg:hidden">
-                                <div class="h-32 w-32 rounded-full relative">
-                                    <Image
-                                            layout="fill"
-                                            class="rounded-full"
-                                            src={images[`/src${image}`]()}
-                                            alt={`Course instructor ${name}`}
-                                    />
-                                </div>
-                            </div>
-                            <div class="ml-4 lg:ml-0 mt-1 lg:mt-0">
-                                <div class="text-lg lg:text-xl font-medium text-gray-dark dark:text-blue-light">
-                                    {name}
-                                </div>
-                                <div class="text-base lg:text-lg font-medium text-red dark:text-red-light">
-                                    Course instructor
-                                </div>
-                            </div>
+            <div class="p-8 sm:p-10 lg:flex lg:items-center lg:gap-10">
+                <!-- Avatar -->
+                <div class="flex-shrink-0 mb-8 lg:mb-0 flex justify-center">
+                    <div class="relative">
+                        <div class="h-40 w-40 xl:h-48 xl:w-48 rounded-full ring-4 ring-white dark:ring-gray-dark shadow-lg overflow-hidden">
+                            <Image
+                                layout="fill"
+                                class="w-full h-full object-cover rounded-full"
+                                src={images[`/src${image}`]()}
+                                alt={`Course instructor ${name}`}
+                            />
                         </div>
-                    </footer>
-                </blockquote>
+                    </div>
+                </div>
+
+                <!-- Quote and info -->
+                <div class="flex-1 text-center lg:text-left">
+                    <blockquote class="relative">
+                        <p class="text-lg sm:text-xl leading-relaxed text-gray-dark dark:text-blue-light italic">
+                            "{quote}"
+                        </p>
+                    </blockquote>
+                    <div class="mt-6 pt-6 border-t border-gray/20 dark:border-gray-light/20">
+                        <div class="text-xl font-bold text-gray-dark dark:text-blue-light">
+                            {name}
+                        </div>
+                        <div class="text-base font-medium text-red dark:text-red-light mt-1">
+                            Course Instructor
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

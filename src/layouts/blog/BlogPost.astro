@@ -4,36 +4,64 @@ import format from "date-fns/format"
 import Avatar from '../../layouts/blog/Avatar.astro';
 import TwitterScript from '../../layouts/blog/TwitterScript.astro';
 import YouTubeVideo from '../../components/YouTubeVideo.astro'
+import {Image} from 'astro:assets';
+import {images} from "../../components/Images";
 
 const {
-    title, description, date, keywords, youtube, render,
-    author: {title: authorTitle, name, profileUrl, image}
+    title, description, date, image, keywords, youtube, render,
+    author: {title: authorTitle, name, profileUrl, image: authorImage}
 } = Astro.props
 const selectedTags = selectTags(keywords, 6)
 const {Content} = await render();
 ---
-<article class="relative py-4 overflow-hidden bg-blue-light dark:bg-gray-dark">
-    <div class="relative px-4 sm:px-6 lg:px-8">
-        <section class="text-lg max-w-prose mx-auto">
-            <h1>
-                    <span class="block text-sm text-center text-green-dark dark:text-green-light font-semibold tracking-wide uppercase">
-                        {
-                            selectedTags.join("  |  ")
-                        }
+<article class="relative overflow-hidden bg-blue-light dark:bg-gray-dark">
+    <!-- Hero image banner -->
+    <div class="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden">
+        <Image
+            alt={title}
+            src={images[`/src${image}`]()}
+            class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-light dark:from-gray-dark to-transparent"></div>
+    </div>
+
+    <div class="relative px-4 sm:px-6 lg:px-8 -mt-16 z-10">
+        <!-- Header section -->
+        <header class="max-w-prose lg:max-w-4xl mx-auto text-center mb-8">
+            <!-- Tag badges -->
+            <div class="flex flex-wrap justify-center gap-2 mb-6">
+                {selectedTags.map((tag: string) => (
+                    <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wide uppercase rounded-full bg-green-dark text-green-light dark:bg-green-dark dark:text-green-light">
+                        {tag}
                     </span>
-                <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-red dark:text-red-light md:text-3xl lg:text-4xl">
-                          {title}
-                    </span>
-                <span class="mx-auto">
-                            <span class="mt-2 block text-lg text-center leading-8 tracking-tight text-red dark:text-red-light lg:text-xl">
-                                {format(new Date(date), "LLLL d, y")}
-                            </span>
-                        <Avatar name={name} image={image} profileUrl={profileUrl}/>
-                    </span>
+                ))}
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-red dark:text-red-light leading-tight mt-0 mb-4">
+                {title}
             </h1>
-            <p class="mt-2 text-xl text-gray-dark dark:text-blue-light leading-8">
+
+            <!-- Date and author -->
+            <div class="flex items-center justify-center gap-4 mt-4">
+                <time class="text-base text-gray dark:text-gray-light font-medium" datetime={new Date(date).toISOString()}>
+                    {format(new Date(date), "LLLL d, y")}
+                </time>
+                <span class="text-gray dark:text-gray-light">·</span>
+                <Avatar name={name} image={authorImage} profileUrl={profileUrl}/>
+            </div>
+
+            <!-- Decorative divider -->
+            <div class="mt-8 flex items-center justify-center">
+                <div class="w-16 h-1 rounded-full bg-red dark:bg-red-light"></div>
+            </div>
+        </header>
+
+        <!-- Article body with prose typography -->
+        <section class="max-w-prose lg:max-w-4xl mx-auto pb-12">
+            <div class="text-lg text-gray-dark dark:text-blue-light leading-relaxed">
                 <Content components={{del: YouTubeVideo, script: TwitterScript}}/>
-            </p>
+            </div>
         </section>
     </div>
 </article>

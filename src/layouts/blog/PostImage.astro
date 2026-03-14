@@ -12,6 +12,7 @@ const {height, width, alt, src} = Astro.props
 console.log(src)
 
 ---
-<div class="relative mx-auto m-5">
-    <Image alt={alt} src={images[`/src${src}`]()} class="w-full h-auto object-cover" />
-</div>
+<figure class="relative mx-auto my-10">
+    <Image alt={alt} src={images[`/src${src}`]()} class="w-full h-auto object-cover rounded-lg shadow-md" />
+    {alt && <figcaption class="mt-3 text-center text-sm text-gray italic">{alt}</figcaption>}
+</figure>

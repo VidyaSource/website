@@ -2,51 +2,95 @@
 import {Image} from 'astro:assets';
 import image from "../../img/consulting/development.jpg"
 ---
-<section class="relative bg-white dark:bg-gray-dark">
-    <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-        <div class="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pt-16 xl:col-span-6">
-            <div class="mx-auto max-w-2xl lg:mx-0">
-                <div class="text-base max-w-prose mx-auto lg:max-w-lg lg:ml-auto lg:mr-0">
-                    <h2 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-red dark:text-red-light sm:text-4xl">Modernized Architecture</h2>
-                    <p class="mt-8 text-lg font-medium text-gray-dark dark:text-blue-light lg:font-normal">
-                        The simplest architectures are the most maintainable and the most secure. It takes experience
-                        and skill and patience to start simple and to recognize inflection points where the benefits
-                        of more complexity outweigh the costs. Vidya can help you discover the emergent architecture
-                        best suited to meet your challenges.
-                    </p>
-                    <p class="mt-4 text-lg font-medium text-gray-dark dark:text-blue-light lg:font-normal">
-                        Here are a few examples of the architecture services we provide:
+<section class="relative bg-gradient-to-br from-blue-light via-white to-blue-light dark:from-gray-dark dark:via-gray-dark dark:to-gray-dark overflow-hidden">
+    <!-- Decorative orbs -->
+    <div class="absolute top-10 left-10 w-72 h-72 bg-blue rounded-full opacity-5 blur-3xl" aria-hidden="true"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-red rounded-full opacity-5 blur-3xl" aria-hidden="true"></div>
 
-                        <ul>
-                            <li>Integrating legacy systems with modern technologies</li>
-                            <li>Software and data architecture</li>
-                            <li>Cloud Native deployments</li>
-                            <li>AI, which is less about LLMs and more about <a href="/blog/python-is-not-language-of-ai/">integrating context at scale</a></li>
-                            <li>Zero Trust</li>
-                            <li>UX design and accessibility and component library development</li>
-                            <li>Agile (<a href="/courses/modern-agile/">the modern way</a>) and DevSecOps</li>
-                        </ul>
+    <div class="relative mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
+        <!-- Section label -->
+        <div class="text-center mb-12">
+            <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-blue text-white rounded-full">
+                Our Expertise
+            </span>
+            <h2 class="mt-6 text-4xl font-extrabold tracking-tight text-red dark:text-red-light sm:text-5xl">
+                Modernized Architecture
+            </h2>
+            <div class="mt-4 mx-auto w-16 h-1 bg-red rounded-full"></div>
+        </div>
+
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+            <!-- Text content -->
+            <div class="max-w-xl mx-auto lg:mx-0">
+                <p class="text-lg leading-relaxed text-gray-dark dark:text-blue-light">
+                    The simplest architectures are the most maintainable and the most secure. It takes experience
+                    and skill and patience to start simple and to recognize inflection points where the benefits
+                    of more complexity outweigh the costs. Vidya can help you discover the emergent architecture
+                    best suited to meet your challenges.
+                </p>
+
+                <div class="mt-8">
+                    <h3 class="text-lg font-semibold text-blue-dark dark:text-blue mb-4">Architecture services we provide:</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 flex-shrink-0 w-2 h-2 bg-red rounded-full"></span>
+                            <span class="text-gray-dark dark:text-blue-light">Integrating legacy systems with modern technologies</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 flex-shrink-0 w-2 h-2 bg-red rounded-full"></span>
+                            <span class="text-gray-dark dark:text-blue-light">Software and data architecture</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 flex-shrink-0 w-2 h-2 bg-red rounded-full"></span>
+                            <span class="text-gray-dark dark:text-blue-light">Cloud Native deployments</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 flex-shrink-0 w-2 h-2 bg-red rounded-full"></span>
+                            <span class="text-gray-dark dark:text-blue-light">AI, which is less about LLMs and more about <a href="/blog/python-is-not-language-of-ai/" class="text-blue hover:text-blue-dark underline underline-offset-2">integrating context at scale</a></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 flex-shrink-0 w-2 h-2 bg-red rounded-full"></span>
+                            <span class="text-gray-dark dark:text-blue-light">Zero Trust</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 flex-shrink-0 w-2 h-2 bg-red rounded-full"></span>
+                            <span class="text-gray-dark dark:text-blue-light">UX design and accessibility and component library development</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 flex-shrink-0 w-2 h-2 bg-red rounded-full"></span>
+                            <span class="text-gray-dark dark:text-blue-light">Agile (<a href="/courses/modern-agile/" class="text-blue hover:text-blue-dark underline underline-offset-2">the modern way</a>) and DevSecOps</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-10 p-6 bg-white dark:bg-gray-dark rounded-2xl shadow-lg border border-gray-light dark:border-gray">
+                    <p class="text-lg leading-relaxed text-gray-dark dark:text-blue-light">
+                        Software development is where the principles of the architecture become the operational reality
+                        that thrills your customers and generates revenue for your business. Vidya can help you
+                        find the blend of programming languages, frameworks, and tools best suited for your
+                        customers and help you apply them the right way with best-in-class practices like modeling
+                        your domain with object-oriented programming, composing behavior with functional programming,
+                        building accessible user interfaces, creating
+                        ML pipelines, automating your builds with DevSecOps, and standardizing resilient deployments across clouds.
                     </p>
-                    <p class="mt-4 text-lg font-medium text-gray-dark dark:text-blue-light lg:font-normal">
-                    Software development is similar. It's also an art form, but it is where the principles of the architecture become the operational reality
-                    that thrills your customers and generates revenue for your business. Vidya can not only help you
-                    find the blend of programming languages, frameworks, and tools best suited for the needs of your
-                    customers but also help you apply them the right way with best-in-class practices like modeling
-                    your domain with object-oriented programming, composing behavior with functional programming,
-                    building accessible user interfaces to promote your brand, creating
-                    ML pipelines, automating your builds with DevSecOps, and standardizing resilient deployments across clouds.
-                    </p>
-                    <p class="mt-8 text-lg font-medium text-gray-dark dark:text-blue-light lg:font-normal">
+                    <p class="mt-4 text-xl font-semibold text-red dark:text-red-light">
                         It's a lot. We can help.
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
-            <Image
-                    src={image}
-                    alt="Collaborating software engineers"
-                    quality={100}/>
+
+            <!-- Image -->
+            <div class="mt-12 lg:mt-0">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-br from-blue to-blue-dark rounded-2xl opacity-10 blur-sm" aria-hidden="true"></div>
+                    <Image
+                        src={image}
+                        alt="Collaborating software engineers"
+                        quality={100}
+                        class="relative rounded-2xl shadow-xl object-cover w-full"
+                    />
+                </div>
+            </div>
         </div>
     </div>
 </section>

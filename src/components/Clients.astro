@@ -12,66 +12,69 @@ import gsa from '../img/partners/gsa.png'
 import mediabarn from '../img/partners/mediabarn.png'
 ---
 
-<section class="bg-green-light dark:bg-blue">
-    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <nav class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+<section class="relative bg-green-light dark:bg-blue overflow-hidden">
+    <!-- Decorative accents -->
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-dark/20 to-transparent" aria-hidden="true"></div>
+    <div class="absolute -top-32 -left-32 w-64 h-64 bg-green/10 dark:bg-green-light/5 rounded-full blur-3xl" aria-hidden="true"></div>
+
+    <div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
+        <nav class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
             <div>
-                <h2 class="text-3xl font-extrabold text-red dark:text-red-light sm:text-4xl">
+                <p class="text-sm font-semibold tracking-widest uppercase text-green-dark dark:text-green-light mb-3">Our Partners</p>
+                <h2 class="text-3xl font-extrabold text-red dark:text-red-light sm:text-4xl leading-tight">
                     Government and business trust Vidya.
                 </h2>
-                <p class="mt-3 max-w-3xl text-lg text-gray-dark dark:text-blue-light">
+                <p class="mt-4 max-w-3xl text-lg text-gray-dark dark:text-blue-light leading-relaxed">
                     We are a certified minority-owned business proud to have brought our expertise and insight to large
                     government agencies, small
                     businesses, and
                     everything in between to help them all capitalize on an ever-evolving technology landscape.
                 </p>
                 <div class="mt-8 sm:flex">
-                    <div class="rounded-md shadow">
+                    <div class="rounded-xl shadow-lg">
                         <a href="/contact" class="flex contact-us">
                             Contact Us
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
-                <div class="col-span-1 flex justify-center py-8 px-8 bg-blue-light hover:bg-red-light">
+            <div class="mt-10 grid grid-cols-2 gap-3 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
+                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                     <Image src={dos}
                             alt="United States Department of State"
                     />
                 </div>
-
-
-                <div class="col-span-1 flex justify-center py-8 px-8 bg-blue-light hover:bg-red-light">
+                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                     <Image src={trss}
                             alt="Thomson Reuters Special Services"
                     />
                 </div>
-                <div class="col-span-1 flex justify-center py-8 px-8 bg-blue-light hover:bg-red-light">
+                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                     <Image src={healthCareGov}
                            alt="Healthcare.gov"
                     />
                 </div>
-                <div class="col-span-1 flex justify-center py-8 px-8 bg-blue-light hover:bg-red-light">
+                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                     <Image src={ninaday}
                            alt="Ninaday"
                     />
                 </div>
-                <div class="col-span-1 flex justify-center py-8 px-8 bg-blue-light hover:bg-red-light">
+                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                     <Image src={eop}
                            alt="Executive Office of the President of the United States"
                     />
                 </div>
-                <div class="col-span-1 flex justify-center py-8 px-8 bg-blue-light hover:bg-red-light">
+                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                     <Image src={gsa}
                            alt="Government Services Administration"
                     />
                 </div>
-                <div class="col-span-1 flex justify-center py-8 px-8 bg-blue-light hover:bg-red-light">
+                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                     <Image src={eureka}
                            alt="Eureka Golf Products"
                     />
                 </div>
-                <div class="col-span-1 flex justify-center py-8 px-8 bg-blue-light hover:bg-red-light">
+                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                     <Image src={mediabarn}
                            alt="MediaBarn"
                     />
@@ -80,4 +83,3 @@ import mediabarn from '../img/partners/mediabarn.png'
         </nav>
     </div>
 </section>
-

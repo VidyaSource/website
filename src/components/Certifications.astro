@@ -11,56 +11,61 @@ const certifications = [
         img: sba,
         url: "/blog/vidya-is-8a-certified-by-us-small-business-administration",
         alt: "U.S. Small Business Administration 8a Certification",
-        description: "Vidya is a certified small disadvantaged business by the SBA"
+        description: "Certified small disadvantaged business by the SBA"
     },
     {
-        certifier: "Virginia Department of Small Business and Supplier Diversity",
+        certifier: "Virginia DSBSD",
         img: swam,
         url: "/blog/vidya-is-swam-certified-by-virginia-department-small-business-supplier-diversity",
         alt: "Virginia Department of Small Business and Supplier Diversity SWaM Certification",
-        description: "Vidya is a certified Small, Micro, Minority Owned, and 8(a) business by the Virginia Department of Small Business and Supplier Diversity"
+        description: "Certified Small, Micro, Minority Owned, and 8(a) business"
     },
     {
-        certifier: "Capital Region Minority Supplier Development Council",
+        certifier: "CRMSDC",
         img: crmsdc,
         url: "/blog/welcoming-crmsdc-diversity-technology-consulting-minority-owned-business",
         alt: "Capital Region Minority Supplier Development Council Minority Business Enterprise Certification",
-        description: "Vidya is a certified Minority Business Enterprise by CRMSDC"
+        description: "Certified Minority Business Enterprise by CRMSDC"
     },
     {
-        certifier: "United States Pan Asian American Chamber of Commerce",
+        certifier: "USPAACC",
         img: uspaacc,
         url: "/blog/welcoming-uspaacc-diversity-technology-consulting-minority-owned-business",
         alt: "United States Pan Asian American Chamber of Commerce Asian American/Minority Owned Business Certification",
-        description: "Vidya is a certified Minority Business Enterprise by USPAACC"
+        description: "Certified Minority Business Enterprise by USPAACC"
     },
 ]
 ---
-<div class="relative bg-red-light dark:bg-blue-light pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-    <div class="absolute inset-0">
-        <div class="bg-red-light dark:bg-gray h-1/3 sm:h-2/3"/>
-    </div>
+<div class="relative bg-white dark:bg-gray-dark pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8 overflow-hidden">
+    <!-- Decorative accents -->
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red/20 to-transparent" aria-hidden="true"></div>
+    <div class="absolute -bottom-32 -right-32 w-80 h-80 bg-red/5 dark:bg-red-light/5 rounded-full blur-3xl" aria-hidden="true"></div>
+
     <section class="relative max-w-7xl mx-auto">
         <div class="text-center">
-            <h2 class="text-3xl tracking-tight font-extrabold text-red sm:text-4xl">Certifications</h2>
-            <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-dark dark:text-blue-light sm:mt-4">
+            <p class="text-sm font-semibold tracking-widest uppercase text-green-dark dark:text-green-light mb-3">Recognized Excellence</p>
+            <h2 class="text-3xl tracking-tight font-extrabold text-red dark:text-red-light sm:text-4xl">Certifications</h2>
+            <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-dark dark:text-blue-light leading-relaxed sm:mt-5">
                 Government and industry recognize Vidya as a small business that brings big value to anyone
                 excited about leveraging technology to do great things.
             </p>
+            <div class="mt-6 flex items-center justify-center">
+                <div class="w-12 h-1 rounded-full bg-red dark:bg-red-light"></div>
+            </div>
         </div>
-        <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+        <div class="mt-12 max-w-lg mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:max-w-none">
             {certifications.map((c) => {
                 return (
-                        <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-                            <div class="flex-shrink-1 bg-gray-light hover:bg-blue-light">
-                                <div class="h-48 w-full relative">
-                                    <span class="overflow-hidden block box-border absolute m-0 p-0 opacity-100 top-0 left-0 border-0 bottom-0 right-0">
-                                        <Image src={c.img} alt={c.alt}
-                                               class="min-w-full max-w-full min-h-full max-h-full object-contain"/>
-                                    </span>
-                                </div>
-                            </div>
+                    <a href={c.url} class="group flex flex-col rounded-xl shadow-sm hover:shadow-lg overflow-hidden bg-blue-light dark:bg-gray hover:-translate-y-1 transition-all duration-200">
+                        <div class="flex-shrink-0 flex items-center justify-center p-6 bg-white dark:bg-blue-light h-40">
+                            <Image src={c.img} alt={c.alt}
+                                   class="max-w-full max-h-full object-contain"/>
                         </div>
+                        <div class="flex-1 p-4 text-center">
+                            <p class="text-sm font-bold text-red dark:text-red-light group-hover:text-blue-dark dark:group-hover:text-blue-light transition-colors duration-200">{c.certifier}</p>
+                            <p class="mt-1 text-xs text-gray-dark dark:text-blue-light leading-snug">{c.description}</p>
+                        </div>
+                    </a>
                 )
             })}
         </div>

@@ -1,16 +1,32 @@
-<div class="bg-blue-light dark:bg-blue">
-    <section
-            class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-24 lg:px-8 lg:flex lg:items-center lg:justify-between">
-        <h2 class="text-3xl font-extrabold tracking-tight text-gray-dark md:text-4xl">
-            <span class="block dark:text-green-light">Want to transform your business?</span>
-            <span class="block text-red dark:text-blue-light">Get in touch today!</span>
-        </h2>
-        <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-            <div class="inline-flex rounded-md shadow">
-                <a href="/contact" class="inline-flex contact-us">
-                    Contact Us
-                </a>
-            </div>
+<section class="relative bg-gradient-to-br from-blue via-blue-dark to-blue dark:from-gray-dark dark:via-gray dark:to-gray-dark overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-red/10 dark:bg-red-light/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-72 h-72 bg-green/10 dark:bg-green-light/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8 lg:flex lg:items-center lg:justify-between">
+        <div>
+            <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">
+                <span class="block text-white dark:text-green-light">Want to transform your business?</span>
+                <span class="block text-red-light dark:text-blue-light mt-1">Get in touch today!</span>
+            </h2>
+            <p class="mt-4 max-w-xl text-lg text-blue-light/80 dark:text-gray-light/80 leading-relaxed">
+                Partner with Vidya to modernize your technology, empower your teams, and accelerate your mission.
+            </p>
         </div>
-    </section>
-</div>
+        <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <a href="/contact" class="inline-flex items-center justify-center
+                px-8 py-4 text-base sm:text-lg font-semibold rounded-xl
+                bg-red dark:bg-red-light text-white dark:text-blue-dark
+                hover:bg-red-light hover:text-red dark:hover:bg-blue-light dark:hover:text-blue-dark
+                shadow-lg hover:shadow-xl
+                transform hover:scale-105 transition-all duration-200">
+                Contact Us
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
