@@ -62,7 +62,7 @@ interface Props {
         </div>
         <div class="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
             {navigation.map((link) => (
-                    <a class="sm:text-base lg:text-lg font-medium text-white hover:text-indigo-50">
+                    <a href={link.href} class="sm:text-base lg:text-lg font-medium text-white hover:text-indigo-50">
                         {link.name}
                     </a>
             ))}
