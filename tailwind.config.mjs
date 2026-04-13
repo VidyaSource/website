@@ -22,21 +22,21 @@ export default {
 			stackoverflow: "#F47F24",
 			red: {
 				light: '#F8ECEF',
-				DEFAULT: '#9c4d61'
+				DEFAULT: '#914452'
 			},
 			green: {
 				light: '#CFE1BB',
-				DEFAULT: '#9bae87',
+				DEFAULT: '#9DB290',
 				dark: '#455930',
 			},
 			blue: {
 				light: '#F4F9FE',
-				DEFAULT: '#5a82b4',
+				DEFAULT: '#5381AC',
 				dark: '#436997',
 			},
 			gray: {
 				light: '#f6f6f6',
-				DEFAULT: '#808285',
+				DEFAULT: '#808284',
 				dark: '#494B4F',
 			},
 		},
