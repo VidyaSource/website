@@ -1,0 +1,129 @@
+---
+author: neil-chaudhuri
+title: "Create a Culture of Context for AI"
+description: "DICE planning, event logs, data mesh, and medallion architecture form the culture of context that turns enterprise AI from theater into real value."
+image: "/img/blog/culture-of-context.webp"
+date: 2026-05-22
+tags:
+- AI
+- Architecture
+- Data
+- Agentic AI
+- Embabel
+- Kotlin
+- Software Engineering
+- DevSecOps
+- Domain-Driven Design
+---
+
+When I wrote that [Python is not the language of AI](//blog/python-is-not-language-of-ai), I made the case that success with AI is a function of context, not computation. Last month Gartner finally caught up.
+
+The line that earned my attention came from [Rita Sallam](https://www.gartner.com/en/experts/rita-sallam), a Distinguished VP Analyst at Gartner, speaking at the firm's Data and Analytics Summit in London:
+
+>> Agentic AI outcomes depend on context including semantic representations of data, Without context, AI agents cannot operate accurately and are far more likely to hallucinate, introduce bias and produce unreliable results.
+
+Gartner now [predicts](https://www.gartner.com/en/newsroom/press-releases/2026-05-11-gartner-says-lack-of-semantics-causes-inaccurate-artificial-intelligence-agents-and-wasted-spending) that by 2027,
+organizations that prioritize semantics in AI-ready data will lift agentic accuracy by up to 80% and cut costs by up to 60%.
+
+When even consultants who don't build anything get it, the dam has broken.
+
+LLMs are cool, sophisticated pattern matchers, but they should not be your focus. It's the harnesses powered by AI agents that matter, but they are only useful when they have access to complete, consumable context.
+Agents need to know where your institutional memory lives, how all its key entities like customers and orders and products relate to each other, how it changes over time,
+and how to reconcile contradictions to generate value.
+
+So what does building that context look like?
+
+## The Goldilocks Principle of AI Context
+
+While LLMs fail on tasks that demand taste and creativity, they are great pattern matchers, and there are a lot of tasks where pattern matching is useful. However, the question becomes which patterns they
+are matching. The most important thing you can do to succeed with AI is to provide agents the important context relevant to you—your mental model, your priorities, your expertise, your challenges, your concerns.
+This context becomes the pattern models match against. If you don't provide sufficient context, then models will pattern match on their training, which will only be vaguely relevant at best. That wastes time
+and tokens.
+
+On the other hand, too much context is also a problem. You might think that the 1M token context windows in frontier models give you license to jam everything into the model, but then you
+expose yourself to context rot, where the relevant signal to your task is buried somewhere the model can't find. Imagine you have watched every movie and TV show in the Marvel Cinematic Universe
+going back 20 years and I ask you the name of Thor's mother. If you are a huge MCU fan, you'll get it right away, but most people will visualize her, recall her sweetness and the profound impact her death (spoiler alert)
+has on Thor and Loki, but have no idea what her name is. This is the kind of "lost in the middle" problem LLMs have when you overload them with too much context.
+
+In other words, if you give AI too little context, then AI will fill in the gaps with its own training and produce hallucinations. If you give AI too much context, then AI wil miss the critical needle in a haystack
+of irrelevant, no matter how personal, information.
+
+It's a Goldilocks situation. You don't want too little or too much context. It needs to be "just right."
+
+## Progressive Disclosure in Layers
+
+The best way to provide just the right amount of context is "progressive disclosure."
+
+## The Building Blocks of Context
+
+
+
+The third leg is the one most enterprises trip on. Even with good planners and good event logs, a federated organization keeps data sprawled across dozens of systems of record nobody owns coherently. The cure is a knowledge layer, and that takes more than a Confluence space and a SharePoint folder.
+
+Start with the architecture. [Zhamak Dehghani's Data Mesh](https://martinfowler.com/articles/data-mesh-principles.html) is the only posture that scales here. Treat data as a product. The domain that produces the data owns it. Federate governance through interface contracts, not through one heroic Master Data Management team trying to model the universe. Let consumers query across domains through standardized interfaces and a shared catalog. Vidya proposes data mesh on every serious federal data RFI for a reason. The alternative, centralized MDM, has stalled federal modernization for two decades.
+
+Stack the [Medallion architecture](https://www.databricks.com/glossary/medallion-architecture) on top. Bronze for raw ingest. Silver for conformed, row-level refinement. Gold for the curated marts and aggregates an AI agent can consume. The separation does real work. It keeps regulatory data in the right zone, makes lineage tractable, and gives the agent a Gold-layer surface shaped to the queries you expect. Vidya proposed exactly this for the NHTSA CAFE database modernization, with Bronze on S3, Silver in Aurora, and a Gold-layer Knowledge Layer that [Amazon Bedrock](https://aws.amazon.com/bedrock/) agents query in natural language.
+
+Then wrap it in real data governance. I have been ranting on LinkedIn about this since at least early 2025. You need a data governance and data architecture strategy before your organization can get good at AI. Without it, automation amplifies whatever your organization already is, including the parts you would rather not amplify. The super-soldier serum effect plays out at the org chart level: Steve Rogers gets stronger, and so does the Red Skull, and the difference between the two depends on the values you wired in before the syringe.
+
+Sallam said the same thing in fewer Captain America references: "Organizations that fail to adopt comprehensive context structures, supported by a robust data layer, will perpetuate data inefficiencies and face heightened financial costs, as well as legal and reputational damage." Same argument. Different uniform.
+
+## The Planner Needs to See the Board
+
+Vidya runs every AI product on top of [Embabel](https://github.com/embabel/embabel), the Kotlin agent framework Rod Johnson designed for enterprise work. Embabel's killer feature is [Goal-Oriented Action Planning](https://en.wikipedia.org/wiki/Goal-oriented_action_planning), which Vidya pairs with the DICE planner. GOAP comes out of video game AI, where the planner picks the next action by scoring a goal against the current world state and choosing the cheapest path between them.
+
+Here is the catch nobody talks about. A planner is only as good as the world model it inherits. Send a chess engine the wrong board and it will dutifully calculate the wrong move at thirty plies deep. Send DICE an enterprise without a coherent state representation and it will plan with the confidence of a Friday-night Madden CPU running a fourth-and-26 quarterback draw. Confident. Wrong.
+
+The fix is not a smarter planner. The fix is feeding the planner what your organization already knows. The customer's open tickets. The contract's price ceilings. The compliance rules that turn an otherwise-good action into a fineable one. None of that lives in the LLM weights. Engineers have to marshal it, type it, govern it, and hand it to the agent at decision time.
+
+That is the engineering job, and it is bigger than the agent layer.
+
+## Event Logs Are the Receipts
+
+Three months ago I [wrote on LinkedIn](https://www.linkedin.com/in/neilchaudhuri/) that as AI agents take over the enterprise, event logs will become a big deal for generating the organizational context agents need to add value. I want to push that further here.
+
+Put aside the formal [Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) literature for a moment. You already swim in event logs. Software engineers have [Git](https://git-scm.com/). Your database has a [write-ahead log](https://www.postgresql.org/docs/current/wal-intro.html). Bank statements, flight recorders, legal case dockets, hospital charts: all event logs. The pattern dominates real life because real life has a memory, and the most reliable memories are append-only.
+
+[Nathan Marz](https://en.wikipedia.org/wiki/Lambda_architecture) made this point in the Lambda Architecture. Treat the event log as the source of truth and let everything else be a materialized view over it. Views go stale, queries get wrong, and consumers occasionally rewrite their schema, but the log survives all of it and lets the rest of the stack rebuild from scratch.
+
+Modeling an event log is the easy part. A sealed type per event, immutability by default, and a fold that derives state from history:
+
+```kotlin
+sealed interface OrderEvent {
+  val orderId: OrderId
+  val occurredAt: Instant
+}
+
+data class OrderPlaced(
+  override val orderId: OrderId,
+  override val occurredAt: Instant,
+  val customerId: CustomerId,
+  val lineItems: List<LineItem>,
+) : OrderEvent
+
+data class OrderShipped(
+  override val orderId: OrderId,
+  override val occurredAt: Instant,
+  val trackingNumber: TrackingNumber,
+) : OrderEvent
+
+// State is a fold over the event log
+fun OrderState.apply(event: OrderEvent): OrderState = when (event) {
+  is OrderPlaced  -> placed(event)
+  is OrderShipped -> shipped(event)
+}
+```
+
+Agents need that log. They need the durable trail of what happened, who did it, and which decisions the company already settled. Friends of mine running their work in [Linear](https://linear.app/) describe how much value they get from a project history that stays "durable, searchable, and reviewable" for their agents. That is the culture of context working as designed. An agent that can read the ledger of how your company got here does not have to guess.
+
+You do not even have to fight for it inside a fancy new system. Vidya delivered [Online Passport Renewal](/blog/learning-the-playbook) for the Bureau of Consular Affairs on event-driven Java microservices over RabbitMQ. The same instinct, just dressed for the State Department. Append-only is not new, and it is the boring foundation every AI strategy keeps wanting to skip on the way to the demo.
+
+## Game Recognizes Game
+
+Here is the unfashionable position I will hold without hedging. Most enterprise AI initiatives are not failing because the model is too small. They fail because the organization cannot serve the model the context it needs. Buying a bigger LLM is the equivalent of installing a turbocharger on a car that has no fuel line. Loud. Briefly impressive. Stalled by Tuesday.
+
+The teams that win the next two years will look boring from the outside. They will be the ones who took the time to wire up DICE-style planning, an event-sourced spine, a data-mesh knowledge layer, and the governance to keep it all honest. They will run their agents on the JVM with Kotlin and [Spring AI](https://spring.io/projects/spring-ai), because [Python is not the language of the enterprise](/blog/python-is-not-language-of-ai) and never has been. They will treat context as the product and the model as the consumer.
+
+Gartner expects regulators to start demanding semantic transparency, and boards to start treating semantic governance as a strategic risk and a competitive opportunity. I agree. The clock has already started.
+
+Build a culture of context, or your AI will flail.
