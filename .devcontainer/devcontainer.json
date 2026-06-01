@@ -1,0 +1,28 @@
+{
+  "name": "Vidya Website",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "forwardPorts": [4321],
+  "portsAttributes": {
+    "4321": {
+      "label": "Astro Dev Server",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "npm install",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+  },
+  "remoteEnv": {
+    "NODE_ENV": "development"
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.junie,target=/home/node/.junie,type=bind,consistency=cached",
+    "source=claude-code-config,target=/home/node/.claude,type=volume"
+  ],
+  "customizations": {
+    "jetbrains": {
+      "backend": "WebStorm"
+    }
+  }
+}
