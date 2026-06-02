@@ -77,6 +77,15 @@ const tutorials = defineCollection({
     schema: tutorialSchema,
 });
 
+export const llmsSchema = z.object({
+    title: z.string(),
+});
+
+const llms = defineCollection({
+    type: 'content',
+    schema: llmsSchema,
+});
+
 export const collections = {
-    blog, staff, courses, tutorials
+    blog, staff, courses, tutorials, llms
 };

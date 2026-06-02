@@ -1,4 +1,6 @@
-# Vidya | AI & Cloud Consulting and Modernization
+---
+title: "Vidya | AI & Cloud Consulting and Modernization"
+---
 
 ## Company Overview
 Vidya is a federally certified 8(a) and Virginia SWaM (Small, Micro, Minority-owned) business that specializes in software modernization and technology consulting. Founded in 2010 and headquartered in Vienna, VA, Vidya serves both commercial businesses and government agencies.
@@ -65,7 +67,7 @@ Vidya bridges the gap between complex technical solutions and business outcomes 
 - GitHub: https://github.com/VidyaSource
 
 ## Company Philosophy
-"Build faster. Build better." - Vidya focuses on making technology accessible and enjoyable while delivering solutions that align with clients' strategic objectives. The company proves there's no need to choose between continuous delivery and high quality.
+"Build faster. Build better." Vidya focuses on making technology accessible and enjoyable while delivering solutions that align with clients' strategic objectives. The company proves there's no need to choose between continuous delivery and high quality.
 
 ## Notable Recognition
 - Top 100 MBE Award recipient from CRMSDC
