@@ -31,7 +31,8 @@ const providers = [
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Ask ${p.name} about Vidya`}
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 dark:text-white hover:text-red dark:hover:text-green-light hover:border-red dark:hover:border-green-light transition-colors text-sm lg:text-base"
+                data-ai-provider={p.name}
+                class="ask-ai-link inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 dark:text-white hover:text-red dark:hover:text-green-light hover:border-red dark:hover:border-green-light transition-colors text-sm lg:text-base"
             >
                 <svg fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">
                     <title>{p.name} icon</title>
@@ -42,3 +43,16 @@ const providers = [
         ))}
     </div>
 </div>
+
+<script>
+    document.querySelectorAll<HTMLAnchorElement>('.ask-ai-link').forEach((el) => {
+        el.addEventListener('click', () => {
+            const provider = el.dataset.aiProvider ?? 'unknown';
+            (window as any).dataLayer = (window as any).dataLayer || [];
+            (window as any).dataLayer.push({
+                event: 'ask_ai_click',
+                ai_provider: provider,
+            });
+        });
+    });
+</script>
