@@ -21,3 +21,7 @@ pnpm-debug.log*
 .DS_Store
 
 .idea/
+
+# vite-pwa / workbox scratch output that leaks to project root
+[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]*/
+node-compile-cache/
