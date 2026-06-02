@@ -1,84 +1,85 @@
 ---
 author: neil-chaudhuri
 title: "Create a Culture of Context for AI"
-description: "DICE planning, event logs, data mesh, and medallion architecture form the culture of context that turns enterprise AI from theater into real value."
+description: "Agentic AI fails without the right context. Learn how progressive disclosure, institutional memory, Data Mesh, and Knowledge Layers build a Culture of Context that cuts hallucinations and token waste."
 image: "/img/blog/culture-of-context.webp"
-date: 2026-05-22
+date: 2026-06-02
 tags:
 - AI
 - Architecture
 - Data
 - Agentic AI
-- Embabel
-- Kotlin
 - Software Engineering
-- DevSecOps
-- Domain-Driven Design
 ---
 
 When I wrote that [Python is not the language of AI](//blog/python-is-not-language-of-ai), I made the case that success with AI is a function of context, not computation. Last month Gartner finally caught up.
 
-The line that earned my attention came from [Rita Sallam](https://www.gartner.com/en/experts/rita-sallam), a Distinguished VP Analyst at Gartner, speaking at the firm's Data and Analytics Summit in London:
+The line that caught my eye came from [Rita Sallam](https://www.gartner.com/en/experts/rita-sallam), a Distinguished VP Analyst at Gartner, speaking at the firm's Data and Analytics Summit in London:
 
->> Agentic AI outcomes depend on context including semantic representations of data, Without context, AI agents cannot operate accurately and are far more likely to hallucinate, introduce bias and produce unreliable results.
+>> Agentic AI outcomes depend on context including semantic representations of data. Without context – a clear understanding of the specific relationships and rules within an organization’s data – AI agents cannot operate accurately and are far more likely to hallucinate, introduce bias and produce unreliable results.
 
-Gartner now [predicts](https://www.gartner.com/en/newsroom/press-releases/2026-05-11-gartner-says-lack-of-semantics-causes-inaccurate-artificial-intelligence-agents-and-wasted-spending) that by 2027,
-organizations that prioritize semantics in AI-ready data will lift agentic accuracy by up to 80% and cut costs by up to 60%.
+Gartner now [predicts](https://www.gartner.com/en/newsroom/press-releases/2026-05-11-gartner-says-lack-of-semantics-causes-inaccurate-artificial-intelligence-agents-and-wasted-spending) that by 2027
+organizations that prioritize context will lift agentic accuracy by up to 80% and cut costs by up to 60%.
 
 When even consultants who don't build anything get it, the dam has broken.
 
-LLMs are cool, sophisticated pattern matchers, but they should not be your focus. It's the harnesses powered by AI agents that matter, but they are only useful when they have access to complete, consumable context.
-Agents need to know where your institutional memory lives, how all its key entities like customers and orders and products relate to each other, how it changes over time,
+LLMs are interesting, but they should not be your focus. It's the higher level of abstraction, the harnesses that drive AI agents, that matter. Still, they are only useful
+when they have access to complete, discoverable, consumable context. Agents need to know where your institutional memory lives, how all its key entities like customers and orders and products relate to each other, how it changes over time,
 and how to reconcile contradictions to generate value.
 
 So what does building that context look like?
 
 ## The Goldilocks Principle of AI Context
 
-While LLMs fail on tasks that demand taste and creativity, they are great pattern matchers, and there are a lot of tasks where pattern matching is useful. However, the question becomes which patterns they
+While LLMs fail on tasks that demand taste and creativity, they are great pattern matchers. There are a lot of tasks where pattern matching is useful. However, the question becomes which patterns they
 are matching. The most important thing you can do to succeed with AI is to provide agents the important context relevant to you—your mental model, your priorities, your expertise, your challenges, your concerns.
-This context becomes the pattern models match against. If you don't provide sufficient context, then models will pattern match on their training, which will only be vaguely relevant at best. That wastes time
-and tokens.
+This context becomes the patterns that models match against. If you don't provide sufficient context, then models will pattern match on their training, which will only be vaguely relevant at best or
+produce hallcinations at worst. That wastes time and tokens.
 
-On the other hand, too much context is also a problem. You might think that the 1M token context windows in frontier models give you license to jam everything into the model, but then you
-expose yourself to context rot, where the relevant signal to your task is buried somewhere the model can't find. Imagine you have watched every movie and TV show in the Marvel Cinematic Universe
+On the other hand, too much context is also a problem. You might think that the 1M token context windows in frontier models give you license to jam everything in there, but then you
+expose yourself to context rot, where the relevant signal to your task is buried somewhere the model can't find. Imagine you have watched every movie and TV show in the Marvel Cinematic Universe (MCU)
 going back 20 years and I ask you the name of Thor's mother. If you are a huge MCU fan, you'll get it right away, but most people will visualize her, recall her sweetness and the profound impact her death (spoiler alert)
 has on Thor and Loki, but have no idea what her name is. This is the kind of "lost in the middle" problem LLMs have when you overload them with too much context.
 
-In other words, if you give AI too little context, then AI will fill in the gaps with its own training and produce hallucinations. If you give AI too much context, then AI wil miss the critical needle in a haystack
-of irrelevant, no matter how personal, information.
+Simply put, if you give models too little context, they will fill in the gaps with their own training and hallucinate. If you give models too much context, they wil miss the critical needle in a haystack
+of irrelevant information.
 
 It's a Goldilocks situation. You don't want too little or too much context. It needs to be "just right."
 
 ## Progressive Disclosure
 
-The best way to provide just the right amount of context is "progressive disclosure." You provide initial context, really a "meta" context index, that succinctly lets the agent know all the deeper
-context at its disposal and lets it decide what to pull to accomplish the task you give it. Progressive disclosure is a common tactic for many different AI modalities. For example, if you're writing code,
+The best way to provide just the right amount of context is "progressive disclosure." You provide initial context, really a "meta" context index. The index succinctly lets the agent know all the deeper
+context at its disposal and lets it decide on demand what to pull to accomplish the task you give it. Progressive disclosure is a common tactic for many different AI modalities.
+
+If you're writing code,
 it's a good idea to put generic, cross-cutting guidance in CLAUDE.md (or AGENTS.md if you want to follow [standards](/blog/biggest-news-in-ai-since-anthropic-mcp/)) alongside links to more specialized
-context like SECURITY.md or FRONTEND.md. If you happen to ask a coding agent about your Zero Trust implementation in the code base, it only loads the initial context and then SECURITY.md while
-ignoring FRONTEND.md, OBSERVABILITY.md, TESTING.md and other specialized context that is available.
+context like SECURITY.md or FRONTEND.md. For example, if you happen to ask a coding agent about your Zero Trust implementation in the code base, it loads CLAUDE.md first, which contains a
+link pointing to SECURITY.md for the whole story. Meanwhile, the agent bypasses FRONTEND.md, OBSERVABILITY.md, TESTING.md and other specialized context that is available because they aren't
+relevant to Zero Trust. They will come in handy with other questions later on when the agent decides.
 
 Similarly, it is important to use progressive disclosure when authoring [Agent Skills](https://agentskills.io/home). Your SKILL.md file should be a concise index with references to the `scripts`, `references`, and
-`assets` folders that agents can read if they feel they need to. One of the big complaints about MCP servers, and one reason why a lot of engineers prefer CLIs, is that MCP tool descriptions are all loaded by default when
-most of them have no bearing on the task at hand. [Claude Code](https://code.claude.com/docs/en/agent-sdk/tool-search), the [Embabel Agent framework](https://docs.embabel.com/embabel-agent/guide/0.4.0/#reference.tools__progressive)
-for Kotlin and Java, and many other leading agents offer various forms of progressive disclosure to minimize context bloat from MCP servers.
+`assets` folders that agents can read if they feel they need to. Progressive disclosure is also important for Model Context Protocol (MCP). One of the big complaints
+about MCP servers, and one reason why a lot of engineers prefer CLIs, is that agents load all tool descriptions at the jump
+before you have any idea which, if any, you will need. You waste tokens before you've even started. [Claude Code](https://code.claude.com/docs/en/agent-sdk/tool-search), the [Embabel Agent framework](https://docs.embabel.com/embabel-agent/guide/0.4.0/#reference.tools__progressive)
+for Kotlin and Java, and many other leading options offer various forms of progressive disclosure to minimize context bloat from MCP servers.
 
 Across all the different ways you can utilize AI agents, progressive disclosure combines discoverability and lazy loading to provide context that's "just right."
 
-## Institutional Memory As Context
+## Institutional Memory as Context
 
 Context takes many forms. Context to guide agents on *how* to work is one, but of course there is the critical context necessary to *do* the work. This is your institutional memory.
 
-Institutional memory takes many forms. If you are one person or a small business, it's context like this:
+If you are one person or a small business, institutional memory is context like this:
 - Email
 - Calendars
-- Local files
 - Notes (*e.g.* Notion, Obsidian, *etc.*)
 - Spreadsheets
 - Documents (*e.g.* PDFs, Microsoft Word documents, *etc.*)
 - Branding (*e.g.* logos, font files, *etc.*)
 - Blog posts
 - Version control
+- Specs in Markdown for Spec-Driven Development
+- Accounting platforms
 
 For a larger company, institutional memory combines all of that with much more:
 - Wikis
@@ -87,6 +88,7 @@ For a larger company, institutional memory combines all of that with much more:
 - Databases
 - Cloud storage
 - SaaS platforms (*e.g.* Salesforce, Excalidraw)
+- Chat platforms (*e.g.* Slack, Microsoft Teaams)
 
 It is absolutely essential to make this context available to your agents. Analysts can do this with Claude Cowork connectors. Software engineers can configure AGENTS.md to run CLIs or configure Claude Code
 to load MCP servers. If you build agents for customers using Embabel, LangChain, Mastra, or similar frameworks, it is essential to connect to context sources, typically over MCP, to help your customers
@@ -95,44 +97,75 @@ solve their problems. These frameworks make it easy and offer methods of progres
 ## The Hard Part for Businesses
 
 The challenge for businesses, especially larger ones, is that their institutional memory is a mess. For one thing, they are missing a lot of it. Have you ever been in a meeting where no one knew the answer to
-an important question because the expert was on vacation or someone else discussed making accommodations in case the expert "was hit by a bus"? These are indicators that important information,
+an important question because the expert was on vacation or someone described contingencies in case the expert "was hit by a bus"? These are indicators that important information,
 vital context for AI agents, is in people's heads rather than sufficiently documented because no one likes writing documentation.
 
 An even worse problem is that the institutional memory you *do* have is siloed. I have worked with clients with multiple product lines that share customers, and they had no idea that
-Mary Smith in one database was the same Mary Smith in another database. Entity resolution problems like that have always been an issue, but AI makes them worse.
+Mary Smith in one database is the same Mary Smith in another database. Entity resolution problems like that have always been an issue, but AI makes them worse. Why is that?
 
-To keep with the MCU theme, AI is like Dr. Erskine's super soldier serum that turns Steve Rogers into Captain America in the Marvel Cinematic Universe. Both AI and the serum
+To keep with the MCU theme, AI is like Dr. Erskine's super soldier serum that turns Steve Rogers into Captain America. Both AI and the serum
 amplify what you already are. As Erskine [puts it](https://www.youtube.com/watch?v=n_NAiUvSjqw), "Good becomes great. Bad becomes worse." If your strategic planning, data architecture,
 and engineering processes are already good, AI makes you great. If they're not, AI makes things much worse, and this is the primary reason so many businesses fail at AI.
+A business that lacks the semantics to generate the context necessary to recgonize that Mary Smith is the same in both databases will find that agents become
+just as confused as humans trying to make sense of it all.
 
-To improve your chances of success, start with the data architecture. [Zhamak Dehghani's Data Mesh](https://martinfowler.com/articles/data-mesh-principles.html) is the only posture that scales here. Treat data as a product. The
-domain that produces the data owns it. Federate governance through interface contracts instead of an overworked Master Data Management team bottleneck trying to model the universe. Let analysts and AI agents query across domains through
-standardized interfaces and a shared catalog.
+To improve your chances of success, start with business strategy. Don't use AI out of Fear of Missing Out (FOMO). FOMO is not a strategy. Address a real business need. Have a plan.
 
-You can take combine Data Mesh with [Medallion architecture](https://www.databricks.com/blog/what-is-medallion-architecture-article) to take things to the next level. Medallion offers three kinds of data:
+Then focus on the data architecture. [Zhamak Dehghani's Data Mesh](https://martinfowler.com/articles/data-mesh-principles.html) is the only posture that scales here. Treat data as products. The
+domain that owns the data, and therefore knows it best, builds data products and publishes them to the rest of the organization. This is in contrast to the overworked Master Data Management team trying to model the whole
+business on their own with their generalist knolwedge of every domain. Worst of all, because all analytics go through them, they become a bottleneck and single point of
+failure for the organization. Data meshes distribute the work to those who know it best, and data products allow analysts and AI agents across the organization to query them through standardized interfaces.
+
+You can combine Data Mesh with [Medallion Architecture](https://www.databricks.com/blog/what-is-medallion-architecture-article) to take things to the next level. Medallion features three kinds of data:
 - Bronze for raw ingest, the source for any data analysis
 - Silver for clean, row-level refinement
 - Gold for curated aggregations reflecting common queries
 
-Each business domain in a mature data architecture offers Broze, Silver, and Gold data products, and all of it enjoys robust data governance, which provides semantic meaning across products. In other words,
-governance expresses business concepts as glossaries, catalogs, and ontologies in natural language. This is critical context for Enterprise AI to add value, and it is often called the "Knowledge Layer."
-AI agents can query the Knowledge Layer for context about the underlying data sources and then reach into the data sources themselves for answers. This approach
-provides progressive disclosure at enterprise scale, but you need the supporting architecture to make it work.
+Each business domain in a mature data architecture offers Broze, Silver, and Gold data products, and most importantly, they all enjoy robust data governance, which provides semantic meaning across products. In other words,
+governance expresses metadata as glossaries, catalogs, and ontologies in natural language. This is critical context for Enterprise AI to add value, and it is often called the "Knowledge Layer."
+AI agents can query the Knowledge Layer for context about the underlying data sources and then reach into the data sources themselves for specific answers. This
+is progressive disclosure at enterprise scale, but you need the supporting architecture to make it work.
 
-## Context and Progressive Disclosure is the Antidote to Tokenmaxxing
+There are also open source and commercial vendors out there offering ways to derive existing data into new projections to augment the Knowledge Layer, for example by
+creating graphs across different data sources. Whatever approach you take, just keep in mind that Knowlege Layers are critical for agents
+to drive value at work.
 
-Like most Silicon Valley fads, tokenmaxxing, the act of maximizing AI token spend as a signal of productivity and innovation, was always completely unserious. Our goal is to build cool software
-that makes the lives of our users easier and better, not to indulge ourselves in AI for the sake of it. [Uber](https://www.businessinsider.com/uber-coo-andrew-macdonald-ai-token-spending-harder-justify-2026-5)
-and [Amazon](https://www.404media.co/amazon-shuts-down-internal-ai-leaderboard-after-employees-cheated/), one of worst offenders in Big Tech, finally figured it out. If you have
-had trouble making AI work for you, maybe it helps to know that industry leaders who should know better are so easily susceptible to hype and nonsense that even they make big mistakes.
+I should also mention that making context discoverable and digestible by agents is starting to become so important that it is driving a whole new set of talking points around
+"Agent Experience," even going so far as to claim that Agent Experience (AX) is more important than user experience (UX). I would be cautious about this latest hype train.
+This is the most important reason:
 
-If you want to use AI in a mature, serious way, you should consider tokens a precious resource like memory and network bandwidth. This will save on costs to you and to the planet. Token
-efficiency starts with context. AI that veers off on its own without any guardrails wastes tokens. Context grounds agents and steers them in the right direction for better token efficiency.
-However, too much context will also waste tokens. Combining context with progressive disclosure to control how agents work and guide them to the light at the end of the tunnel will
+> Nothing will ever be more important than user experience becuase no one will ever be more important than users.
+
+The purpose of AX is to improve UX.
+
+AX also is merely the
+evolution of systems interoperabilty, something software engineers have thought about for decades. The vision for agent swarms acting autonomously is cool, but it doesn't mean
+discoverability, performance, resilency, and other key principles of systems interoperability are brand new ideas.
+
+To be fair, there is an art to AX that is new because now AI agents are making decisions rather than `if` statements in code. After all, the premise for this post
+is the importance of managing context to make your data available in the most usable way for agents, but I see AX as more buzzword than substance.
+
+Tech sure likes its buzzwords. Speaking of which...
+
+## Context and Progressive Disclosure are the Antidote to Tokenmaxxing
+
+Like most Silicon Valley fads, tokenmaxxing, the act of maximizing AI token spend as a signal of productivity and innovation, was always completely unserious and frankly embarrasing. Our goal should be to build cool software
+that makes the lives of our users easier and better, not to indulge ourselves in AI for the sake of it and an unwillingness to seek therapy. [Uber](https://www.businessinsider.com/uber-coo-andrew-macdonald-ai-token-spending-harder-justify-2026-5)
+and [Amazon](https://www.404media.co/amazon-shuts-down-internal-ai-leaderboard-after-employees-cheated/), one of the worst offenders in Big Tech, finally figured it out. On the bright side, if you have
+had trouble making AI work for you, maybe it helps to know that industry leaders who should know better are so easily susceptible to hype and nonsense that even they
+[fail miserably](https://www.youtube.com/watch?v=F6uUY-BNLbY).
+
+If you want to use AI in a mature, serious way, you should consider tokens a precious resource like memory, processing power,  and network bandwidth. This will save on costs to you and to the planet. Token
+efficiency starts with context. AI that veers off on its own without any guardrails wastes tokens. Context grounds agents and steers them in the right direction.
+However, too much context also wastes tokens. Combining context with progressive disclosure to control how agents work and guide them to the light at the end of the tunnel will
 maximize token efficiency.
 
 It's easy to be overwhelmed by all the new models, tools, techniques, and terms that emerge literally every day in the AI space. The anxiety is real. Rather than get caught up
 in hype, do yourself a favor. Focus on patterns around ways of working that transcend trends. Create a Culture of Context for yourself and your business to take the lead in AI.
+
+---
+
+If you are still wondering, Thor's mother is [Queen Frigga of Asgard](https://marvelcinematicuniverse.fandom.com/wiki/Frigga).
 
 
 
