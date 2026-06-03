@@ -98,13 +98,13 @@ It is absolutely essential to make this context available to your agents. Analys
 to load MCP servers. If you build agents for customers using Embabel, LangChain, Mastra, or similar frameworks, it is essential to connect to context sources, typically over MCP, to help your customers
 solve their problems. These frameworks make it easy and offer methods of progressive disclosure.
 
-I left out one critical piece of context: agentic memory. I could say agentic memry is such a big topic that it deserves its own post, but in fact
-it is such a big topic that that it's the subject of countlesss academic research papers. The relevant point here is that AI agents
+I left out one critical piece of context: agentic memory. I could say agentic memory is such a big topic that it deserves its own post, but in fact
+it is such a big topic that it's the subject of countlesss academic research papers. The relevant point here is that AI agents
 need to learn from their mistakes. At its simplest, agentic memory could result from you revising a `SKILL.md` file because your first run of the skill
 exposed a lack of specificity. For example, I once created a skill to generate a YouTube transcript and place it in a specific folder for subsequent ingestion
 into my knowledge base, but in my head I assumed the output would be a Markdown file with an intuitive name. The funny thing is that is exactly what I got
 the first few times, but for some reason I eventually got JSON named after the YouTube ID, which is jibberish. I revised `SKILL.md` to be explicit about what I wanted,
-and that is agentic memory at the smalles scale. Enterprise agentic memory uses dedicated databases to enable agents to remember what worked and what didn't.
+and that is agentic memory at the smallest scale. Enterprise agentic memory uses dedicated databases to enable agents to remember what worked and what didn't.
 
 Either way, agentic memory must also be an essential part of your context strategy.
 
