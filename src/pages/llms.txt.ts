@@ -5,8 +5,14 @@ export const prerender = true;
 const SITE = 'https://www.vidyasource.com';
 
 export async function GET() {
-    const overviewEntries = await getCollection('llms');
-    const overview = overviewEntries.find(e => e.slug === 'overview') ?? overviewEntries[0];
+    const llmsEntries = await getCollection('llms');
+    const bySlug = new Map(llmsEntries.map(e => [e.slug, e]));
+    const overview = bySlug.get('overview');
+    const consulting = bySlug.get('consulting');
+    const about = bySlug.get('about');
+
+    const courses = (await getCollection('courses'))
+        .sort((a, b) => a.data.title.localeCompare(b.data.title));
 
     const posts = (await getCollection('blog', ({ data }) => data.draft !== true))
         .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
@@ -21,6 +27,36 @@ export async function GET() {
         lines.push(overview.body.trim());
         lines.push('');
     }
+
+    if (consulting?.body) {
+        lines.push(consulting.body.trim());
+        lines.push('');
+        lines.push(`See: ${SITE}/consulting`);
+        lines.push('');
+    }
+
+    if (about?.body) {
+        lines.push(about.body.trim());
+        lines.push('');
+        lines.push(`See: ${SITE}/about`);
+        lines.push('');
+    }
+
+    lines.push('## Courses');
+    for (const c of courses) {
+        lines.push('');
+        lines.push(`### ${c.data.title} (${c.data.category})`);
+        lines.push(c.data.description);
+        const lessons = Object.keys(c.data.syllabus ?? {});
+        if (lessons.length) {
+            lines.push('Syllabus:');
+            for (const lesson of lessons) {
+                lines.push(`- ${lesson}`);
+            }
+        }
+        lines.push(`Link: ${SITE}/courses/${c.slug}`);
+    }
+    lines.push('');
 
     lines.push('## Recent Blog Posts');
     for (const p of posts.slice(0, 30)) {
