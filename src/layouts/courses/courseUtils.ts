@@ -8,6 +8,7 @@ export const courses = await Promise.all(courseList.map(async (c) => {
     return {
         slug: c.slug,
         render: c.render,
+        badge: c.data.badge,
         ...c.data,
         instructor: {
             quote: c.data.quote,

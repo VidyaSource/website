@@ -6,9 +6,10 @@ interface Props {
     name: string
     image: string
     quote: string
+    badge?: string
 }
 
-const { title: instructorTitle, name, profileUrl, image, quote} = Astro.props
+const { title: instructorTitle, name, profileUrl, image, quote, badge} = Astro.props
 
 ---
 <section class="relative bg-white dark:bg-gray-dark overflow-hidden">
@@ -63,13 +64,24 @@ const { title: instructorTitle, name, profileUrl, image, quote} = Astro.props
                             "{quote}"
                         </p>
                     </blockquote>
-                    <div class="mt-6 pt-6 border-t border-gray/20 dark:border-gray-light/20">
-                        <div class="text-xl font-bold text-gray-dark dark:text-blue-light">
-                            {name}
+                    <div class="mt-6 pt-6 border-t border-gray/20 dark:border-gray-light/20 flex flex-col sm:flex-row items-center lg:items-start gap-4">
+                        <div class="flex-1">
+                            <div class="text-xl font-bold text-gray-dark dark:text-blue-light">
+                                {name}
+                            </div>
+                            <div class="text-base font-medium text-red dark:text-red-light mt-1">
+                                Course Instructor
+                            </div>
                         </div>
-                        <div class="text-base font-medium text-red dark:text-red-light mt-1">
-                            Course Instructor
-                        </div>
+                        {badge && (
+                            <div class="flex-shrink-0">
+                                <Image
+                                    class="h-16 w-16 md:h-20 md:w-20 object-contain"
+                                    src={images[`/src${badge}`]()}
+                                    alt="Ambassador Badge"
+                                />
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
