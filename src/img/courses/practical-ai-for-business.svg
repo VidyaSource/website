@@ -1,0 +1,83 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" font-family="myriad-pro, 'Helvetica Neue', Arial, sans-serif">
+  <title>Practical AI for Business</title>
+  <desc>A live business dashboard powered by skills, custom agents, and autopilot loops, with the owner keeping the final say.</desc>
+
+  <rect x="0" y="0" width="1200" height="630" fill="#F4F9FE"/>
+  <circle cx="120" cy="80" r="230" fill="#914452" opacity="0.05"/>
+  <circle cx="1130" cy="570" r="260" fill="#5381AC" opacity="0.07"/>
+  <circle cx="1090" cy="70" r="120" fill="#9DB290" opacity="0.12"/>
+
+  <!-- Autopilot loop: skills -> agents -> loops -->
+  <circle cx="250" cy="330" r="120" fill="none" stroke="#9DB290" stroke-width="6" opacity="0.6"/>
+
+  <!-- center refresh / loop glyph -->
+  <path d="M225.6,321.1 A26,26 0 0 1 274.4,321.1" fill="none" stroke="#455930" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="274.4,321.1 283,316 280,327" fill="#455930"/>
+  <path d="M274.4,338.9 A26,26 0 0 1 225.6,338.9" fill="none" stroke="#455930" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="225.6,338.9 217,344 220,333" fill="#455930"/>
+
+  <!-- node: Skill -->
+  <circle cx="250" cy="210" r="38" fill="#CFE1BB" stroke="#455930" stroke-width="2.5"/>
+  <text x="250" y="215" text-anchor="middle" font-size="15" font-weight="600" fill="#455930">Skill</text>
+  <!-- node: Agent -->
+  <circle cx="146" cy="390" r="38" fill="#C9DCEF" stroke="#436997" stroke-width="2.5"/>
+  <text x="146" y="395" text-anchor="middle" font-size="15" font-weight="600" fill="#436997">Agent</text>
+  <!-- node: Loop -->
+  <circle cx="354" cy="390" r="38" fill="#F8ECEF" stroke="#914452" stroke-width="2.5"/>
+  <text x="354" y="395" text-anchor="middle" font-size="15" font-weight="600" fill="#914452">Loop</text>
+
+  <text x="250" y="494" text-anchor="middle" font-size="16" font-weight="600" fill="#914452">You stay in charge</text>
+
+  <!-- flow from loop into the dashboard -->
+  <path d="M392,392 C430,398 440,412 462,424" fill="none" stroke="#808284" stroke-width="2.5" stroke-dasharray="6 6" stroke-linecap="round"/>
+  <polygon points="462,424 451,420 453,432" fill="#808284"/>
+
+  <!-- Live dashboard window -->
+  <rect x="470" y="120" width="620" height="400" rx="22" fill="#FFFFFF" stroke="#E4E7EC" stroke-width="1.5"/>
+
+  <!-- title bar -->
+  <circle cx="502" cy="151" r="6" fill="#914452"/>
+  <circle cx="522" cy="151" r="6" fill="#E0A82E"/>
+  <circle cx="542" cy="151" r="6" fill="#9DB290"/>
+  <text x="562" y="157" font-size="17" font-weight="600" fill="#494B4F">Your business &#8212; live</text>
+  <rect x="978" y="138" width="80" height="26" rx="13" fill="#F8ECEF" stroke="#914452" stroke-width="1.5"/>
+  <circle cx="993" cy="151" r="4" fill="#914452"/>
+  <text x="1007" y="156" font-size="13" font-weight="700" fill="#914452">LIVE</text>
+  <line x1="470" y1="178" x2="1090" y2="178" stroke="#EEF0F3" stroke-width="1.5"/>
+
+  <!-- KPI tiles -->
+  <rect x="500" y="196" width="174" height="92" rx="12" fill="#F4F9FE"/>
+  <text x="518" y="224" font-size="13" fill="#808284">Pipeline</text>
+  <text x="518" y="258" font-size="27" font-weight="700" fill="#494B4F">$128K</text>
+  <polyline points="600,250 615,244 630,247 645,236 660,230" fill="none" stroke="#455930" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="693" y="196" width="174" height="92" rx="12" fill="#F4F9FE"/>
+  <text x="711" y="224" font-size="13" fill="#808284">Bookings</text>
+  <text x="711" y="258" font-size="27" font-weight="700" fill="#494B4F">42</text>
+  <polyline points="793,248 808,250 823,240 838,242 853,232" fill="none" stroke="#436997" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="886" y="196" width="174" height="92" rx="12" fill="#F4F9FE"/>
+  <text x="904" y="224" font-size="13" fill="#808284">Growth</text>
+  <text x="904" y="258" font-size="27" font-weight="700" fill="#455930">+18%</text>
+  <polyline points="986,250 1001,242 1016,238 1031,228 1046,222" fill="none" stroke="#455930" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- combo chart -->
+  <rect x="500" y="312" width="560" height="184" rx="12" fill="#F4F9FE"/>
+  <g>
+    <rect x="524" y="436" width="36" height="40" rx="4" fill="#A9C3DD"/>
+    <rect x="588" y="418" width="36" height="58" rx="4" fill="#A9C3DD"/>
+    <rect x="652" y="426" width="36" height="50" rx="4" fill="#A9C3DD"/>
+    <rect x="716" y="402" width="36" height="74" rx="4" fill="#A9C3DD"/>
+    <rect x="780" y="410" width="36" height="66" rx="4" fill="#A9C3DD"/>
+    <rect x="844" y="384" width="36" height="92" rx="4" fill="#A9C3DD"/>
+    <rect x="908" y="392" width="36" height="84" rx="4" fill="#A9C3DD"/>
+    <rect x="972" y="358" width="36" height="118" rx="4" fill="#A9C3DD"/>
+  </g>
+  <path d="M542,452 L606,440 L670,444 L734,420 L798,426 L862,400 L926,406 L990,378 L1041,366 L1041,476 L542,476 Z" fill="#CFE1BB" opacity="0.45"/>
+  <polyline points="542,452 606,440 670,444 734,420 798,426 862,400 926,406 990,378 1041,366" fill="none" stroke="#455930" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1041" cy="366" r="6" fill="#455930" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- "you keep the final say" approval badge -->
+  <circle cx="1078" cy="132" r="40" fill="#914452" stroke="#FFFFFF" stroke-width="4"/>
+  <path d="M1061,133 l11,12 l21,-23" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
