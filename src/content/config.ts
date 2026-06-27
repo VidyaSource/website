@@ -36,6 +36,7 @@ export const courseSchema =  z.object({
     title: z.string(),
     category: z.string(),
     image: z.string(),
+    badge: z.string().optional(),
     instructor: reference('staff'),
     description: z.string(),
     quote: z.string(),
