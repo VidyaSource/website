@@ -2,6 +2,8 @@
 import {Image} from 'astro:assets';
 
 import dos from '../img/partners/dos.svg'
+import aaif from '../img/partners/AAIF_Primary_Logo_Black.svg'
+import neustar from '../img/partners/neustar.png'
 import trss from '../img/partners/trss.png'
 import healthCareGov from '../img/partners/healthcaregov.png'
 import ninaday from '../img/partners/ninaday.svg'
@@ -10,6 +12,8 @@ import gcn from '../img/partners/routefifty.png'
 import eureka from '../img/partners/eureka.png'
 import gsa from '../img/partners/gsa.png'
 import mediabarn from '../img/partners/mediabarn.png'
+import recreation from '../img/partners/recreation.svg'
+import concurrentRealtime from '../img/partners/concurrent.png'
 ---
 
 <section class="relative bg-green-light dark:bg-blue overflow-hidden">
@@ -38,10 +42,25 @@ import mediabarn from '../img/partners/mediabarn.png'
                     </div>
                 </div>
             </div>
-            <div class="mt-10 grid grid-cols-2 gap-3 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
+            <div class="mt-10 grid grid-cols-2 gap-3 auto-rows-fr md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
+                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                    <Image src={aaif}
+                           alt="Agentic AI Foundation"
+                    />
+                </div>
                 <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                     <Image src={dos}
                             alt="United States Department of State"
+                    />
+                </div>
+                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                    <Image src={neustar}
+                           alt="Neustar"
+                    />
+                </div>
+                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                    <Image src={eop}
+                           alt="Executive Office of the President of the United States"
                     />
                 </div>
                 <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
@@ -60,11 +79,6 @@ import mediabarn from '../img/partners/mediabarn.png'
                     />
                 </div>
                 <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                    <Image src={eop}
-                           alt="Executive Office of the President of the United States"
-                    />
-                </div>
-                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                     <Image src={gsa}
                            alt="Government Services Administration"
                     />
@@ -77,6 +91,18 @@ import mediabarn from '../img/partners/mediabarn.png'
                 <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                     <Image src={mediabarn}
                            alt="MediaBarn"
+                    />
+                </div>
+                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                    <Image src={recreation}
+                           alt="Recreation.gov"
+                           width={200}
+                    />
+                </div>
+                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                    <Image src={concurrentRealtime}
+                           alt="Concurrent Real-Time"
+                           width={200}
                     />
                 </div>
             </div>
