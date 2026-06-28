@@ -1,0 +1,157 @@
+---
+author: neil-chaudhuri
+title: "I'm an Agentic AI Foundation Ambassador!"
+description: "I've been named an inaugural Agentic AI Foundation Ambassador. Here's why AAIF and open standards in general are critical for any technology to meet its potential."
+image: "/img/blog/aaif-ambassador-gray.webp"
+date: 2026-06-27
+tags:
+- AI
+- MCP
+- Agentic AI
+- Open Source
+- Agents
+- Architecture
+- AGENTS.md
+- Goose
+- agentgateway
+- Government
+---
+import PostImage from '../../layouts/blog/PostImage.astro';
+
+I am thrilled to announce some news I could only have dreamed of a few months ago.
+
+It is an honor to announce that the [Agentic AI Foundation](https://aaif.io/) has chosen me to be a part of the inaugural cohort of 138 Ambassadors across 41 countries
+representing AAIF-hosted open source projects to show you how to use them to help your teams solve real problems in a practical, cost-efficient, vendor-agnostic way.
+
+Why is this so exciting for me? And more importantly, why is the AAIF so important for the world?
+
+## A Little Backstory
+
+When I appeared at the [MCP Roundtable](/blog/vidya-talks-ai-and-mcp/) late last year, I made the point that, despite its surging popularity, something had to happen for [MCP](https://modelcontextprotocol.io/docs/getting-started/intro)
+to really hit. Decades ago, it was standards like HTTP, HTML, and JSON that built the Internet and transformed the world. For AI to do the same, MCP would also have to join other
+foundational technologies as standards in a global governance structure that was neutral, transparent, and collaborative.
+
+In other words, MCP had to evolve from a de facto standard maintained by a vendor (in this case Anthropic) to a real standard maintained by an open community for the benefit
+of everyone.
+
+Then it happened. The AAIF formed out of the Linux Foundation. MCP joined [AGENTS.md](https://AGENTS.md/) and [Goose](https://goose-docs.ai/), both of which I had also been using regularly for some time,
+as inaugural AAIF standards. This, and the recent addition of the [agentgateway](https://agentgateway.dev/), made me happy.
+
+## Why the Agentic AI Foundation Is Such a Big Deal
+
+When you remember what the W3C did for the web, it is clear that any technology needs the guidance of an open, global steward to be transformative rather than merely trendy.
+This is why I called the creation of AAIF [the biggest news in AI since Anthropic announced MCP](/blog/biggest-news-in-ai-since-anthropic-mcp).
+The technology was already exciting. What it was missing was a home that could make it durable.
+
+I build agentic AI for my own company and for my customers, so for me this is not abstract. With new AI tools and ways of working emerging literally daily,
+it is more important to develop a standard practice for how to use AI across tools than to focus on a specific tool. In fact, I have always had a relentless
+passion for building on standards like OpenAPI, Open Container Initiative, and OpenTelemetry throughout my career. Standards are important not only
+to avoid vendor lock-in but also to make the entire range of tools out there available for you to use. We take it for granted today, but building REST
+services on HTTP and JSON has enabled us to use `curl`, Postman, SoapUI, and countless other client tools to test our APIs for decades.
+
+Standards are even more important in the era of AI with everything changing so quickly. If you build your AI strategy on AAIF standards, updates are a matter of changes to
+configuration rather than wholesale vendor replacements, which minimizes disruption for your team.
+
+## The (Current) Standards I Get to Represent
+
+AAIF launched with three inaugural standards followed recently by a fourth with many more to come over time. Here is why each one is powerful.
+
+### MCP: The Standard Adapter Protocol
+
+You probably already know about [MCP](https://modelcontextprotocol.io/), which dominated the AI conversation in 2025 after Anthropic blogged about it in late 2024. MCP provides a
+standard adapter between LLMs and tools. It does for agents what JDBC does for Java code connecting to relational databases.
+
+Before MCP, every model-to-tool integration was bespoke, which doesn't scale. Imagine if each connection in the diagram below has to be its own thing. MCP collapses an M×N integration problem into M+N.
+
+<PostImage alt="Connecting Claude Code, Codex, Cursor, and JetBrains IDEs to GitHub, Jira, Notion, Hugging Face, and Slack." src="/img/blog/mcp-architecture.png" width="800" height="450" />
+
+MCP helped launch Agentic AI, and it's particularly valuable for agents in the enterprise. AAIF has been improving MCP aggressively, and MCP is such a big deal that it now serves
+as the model for [WebMCP](https://webmcp.dev/) and [Universal Commerce Protocol](https://developers.google.com/merchant/ucp), two Google proposals that may be standards themselves one day.
+
+### `AGENTS.md`: The Standard Rules for Agents
+
+If MCP is how agents reach your tools, [`AGENTS.md`](https://AGENTS.md/) is how they learn your rules. It started at OpenAI and is now the AAIF standard for declaring
+coding patterns and practices in Markdown files. Claude Code, Goose, Cursor, and Junie all read it. `AGENTS.md` is not for generic practices that coding agents
+already know like lower camel case for Java and Go variables. They encode team practices:
+
+```markdown
+# AGENTS.md
+
+## Build & test
+- Test: `npm test`. All changes must pass before commit.
+
+## Conventions
+- TypeScript only. No `any`. Make impossible states impossible.
+- Errors are values (Result/Either), not thrown exceptions.
+
+## More context (load only when the task needs it)
+- Security & Zero Trust: see SECURITY.md
+- Observability: see OBSERVABILITY.md
+```
+
+Here we enforce strict rules about our TypeScript code and our engineering process. We also use [progressive disclosure](/blog/create-a-culture-of-context-for-ai), where
+the top-level `AGENTS.md` links out to `SECURITY.md` and `OBSERVABILITY.md`. Progressive disclosure helps avoid context bloat and token spend by letting agents pull
+just enough context to perform the task at hand.
+
+It used to be that we enforced team coding standards in conversation and maybe in code review and static analysis. Let the AAIF standard `AGENTS.md` define them from the start
+no matter which coding agent you use.
+
+### Goose: The Standard Coding Agent
+
+Originally developed at Block, [Goose](https://github.com/block/goose) is the AAIF standard coding agent. Like Claude Code and Codex, Goose offers both a desktop interface
+and CLI as well as support for Agent Skills, extensions (like connectors in Claude Code), [MCP Apps](https://modelcontextprotocol.io/extensions/apps/overview),
+and automation via scheduled tasks to achieve the [Loop Engineering](https://addyosmani.com/blog/loop-engineering/) functionality
+that has gained popularity lately.
+
+It's possible to integrate different models into closed harnesses. For example, a lot of people have reported Opus-level success integrating GLM 5.2 into Claude Code.
+Still, it takes a little bit of effort, but in Goose, interoperability is a first-class priority. Mixing and matching models among tasks and workflows is where
+Goose shines.
+
+Interoperability also lies at the heart of Goose support for Agent Client Protocol (ACP). ACP is an open standard created by IBM that recently joined Agent2Agent (A2A), another open standard
+created by Google. Neither is an AAIF standard yet, but both have become popular with support in all the major AI agent development frameworks like Embabel and LangChain and in IDEs and agents.
+ACP enables coding agents to integrate seamlessly with coding harnesses. For example, I use JetBrains IDEs, which for a small fee
+(yeah, [I know](https://intellij-support.jetbrains.com/hc/en-us/community/posts/31142845556370-Serious-Concerns-Regarding-JetBrains-AI-Pricing-Credit-Consumption-with-Junie-and-AI-Assistant))
+come with a coding agent called Junie. Because Junie also supports ACP, I can configure my IDE to use Goose instead.
+
+I cannot stress enough how much AI demands interoperability so we can enjoy freedom of choice with our tools, and Goose shines here. I recently recommended Goose
+to a potential client particularly nervous about vendor lock-in and interested in a variety of interfaces across skill levels. I told them that Goose runs as one agent across three surfaces:
+in the IDE so engineers can run inference in familiar tools, in a CLI for drafting pull requests and wiring up CI/CD, and on the desktop so non-technical users can migrate one-off "vibe coding" into
+reusable Goose Recipes. One agent across multiple surfaces cuts training cost, shrinks the attack surface, and produces a single coherent audit trail.
+
+This flexibility offers the kind of power and governance that serious institutions like, but don't sleep on Goose for your own individual needs.
+
+### agentgateway: The Standard Gateway
+
+The fourth AAIF standard is [agentgateway](https://agentgateway.dev/), which only recently became an official AAIF standard. I must confess I have not worked with agentgateway yet, but I cannot stress
+how much we need a gateway standard, especially in the enterprise.
+
+Gateways have been important for a long time. They are critical to any distributed architecture because they concentrate cross-cutting concerns at a single boundary instead of scattering them across every service.
+In a microservices situation, it's a bad idea to make each service handle its own authentication, rate limiting, logging, routing, and other common functionality. Use a gateway. That single
+entry point becomes the place to issue and revoke credentials, enforce quotas and budgets,
+and capture a coherent audit trail. The payoff is that policy lives in one surface you can reason about, and the services themselves stay focused on their actual work
+instead of duplicating plumbing that drifts out of sync the moment one team does it differently.
+
+AI gateways extend that same discipline. After all, for all the excitement and novelty around AI, AI architectures are still just API calls across a distributed system, but
+the stakes are higher with new failure modes.
+
+The most immediate driver is cost. Model traffic is expensive and opaque by default, so routing every request through a gateway lets you track and cap token spend, attribute it per team, and
+monitor usage, latency, and acceptance from a single vantage point. The gateway is also where you contain risks specific to AI:
+- Scanning inbound content from users, LLMs, and even MCP servers for injection attacks
+- Scanning outbound traffic for secrets or sensitive data
+
+In addition, the gateway serves as the abstraction layer that hides which model you are calling, so swapping providers becomes much easier and provides the flexibility I consider crucial to AI success.
+
+It is for all these reasons that I have long recommended gateways to enterprise customers. The cross-cutting concerns we have always centralized apply to a greater degree as
+AI gateways add token economics, guardrails, and model portability to the list of concerns the gateway owns.
+
+The AAIF agentgateway elevates all of these ideas to a standard for AI architectures, bringing much needed maturity and discipline. This diagram from the [agentgateway GitHub](https://github.com/agentgateway/agentgateway)
+illustrates the gateway's role in the architecture:
+
+<PostImage alt="agentgateway architecture" src="/img/blog/agentgateway.svg" width="800" height="450" />
+
+## How Can I Help You?
+
+It's hard for me to express how excited I am about the work that AAIF is doing and my opportunity to be a part of it. MCP, `AGENTS.md`, Goose, agentgateway, and the AAIF standards to follow will
+transform the way we deploy AI around the world by bringing an engineering maturity and a neutral, open, collaborative spirit that has been lacking so far.
+
+I had been already advocating AAIF standards to my customers, and I am excited to continue that work. How can I help you?
