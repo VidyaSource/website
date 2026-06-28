@@ -8,12 +8,26 @@ import trss from '../img/partners/trss.png'
 import healthCareGov from '../img/partners/healthcaregov.png'
 import ninaday from '../img/partners/ninaday.svg'
 import eop from '../img/partners/eop.svg'
-import gcn from '../img/partners/routefifty.png'
 import eureka from '../img/partners/eureka.png'
 import gsa from '../img/partners/gsa.png'
 import mediabarn from '../img/partners/mediabarn.png'
 import recreation from '../img/partners/recreation.svg'
 import concurrentRealtime from '../img/partners/concurrent.png'
+
+const partners = [
+    {src: aaif, alt: 'Agentic AI Foundation'},
+    {src: dos, alt: 'United States Department of State'},
+    {src: neustar, alt: 'Neustar'},
+    {src: eop, alt: 'Executive Office of the President of the United States'},
+    {src: trss, alt: 'Thomson Reuters Special Services'},
+    {src: healthCareGov, alt: 'Healthcare.gov'},
+    {src: ninaday, alt: 'Ninaday'},
+    {src: gsa, alt: 'Government Services Administration'},
+    {src: eureka, alt: 'Eureka Golf Products'},
+    {src: mediabarn, alt: 'MediaBarn'},
+    {src: recreation, alt: 'Recreation.gov', width: 200},
+    {src: concurrentRealtime, alt: 'Concurrent Real-Time', width: 200},
+]
 ---
 
 <section class="relative bg-green-light dark:bg-blue overflow-hidden">
@@ -22,90 +36,31 @@ import concurrentRealtime from '../img/partners/concurrent.png'
     <div class="absolute -top-32 -left-32 w-64 h-64 bg-green/10 dark:bg-green-light/5 rounded-full blur-3xl" aria-hidden="true"></div>
 
     <div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
-        <nav class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
-            <div>
-                <p class="text-sm font-semibold tracking-widest uppercase text-green-dark dark:text-green-light mb-3">Our Partners</p>
-                <h2 class="text-3xl font-extrabold text-red dark:text-red-light sm:text-4xl leading-tight">
-                    Government and business trust Vidya.
-                </h2>
-                <p class="mt-4 max-w-3xl text-lg text-gray-dark dark:text-blue-light leading-relaxed">
-                    We are a certified minority-owned business proud to have brought our expertise and insight to large
-                    government agencies, small
-                    businesses, and
-                    everything in between to help them all capitalize on an ever-evolving technology landscape.
-                </p>
-                <div class="mt-8 sm:flex">
-                    <div class="rounded-xl shadow-lg">
-                        <a href="/contact" class="flex contact-us">
-                            Contact Us
-                        </a>
-                    </div>
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="text-sm font-semibold tracking-widest uppercase text-green-dark dark:text-green-light mb-3">Our Partners</p>
+            <h2 class="text-3xl font-extrabold text-red dark:text-red-light sm:text-4xl leading-tight">
+                Government and business trust Vidya.
+            </h2>
+            <p class="mt-4 text-lg text-gray-dark dark:text-blue-light leading-relaxed">
+                We are a certified minority-owned business proud to have brought our expertise and insight to large
+                government agencies, small businesses, and everything in between to help them all capitalize on an
+                ever-evolving technology landscape.
+            </p>
+            <div class="mt-8 flex justify-center">
+                <div class="rounded-xl shadow-lg">
+                    <a href="/contact" class="flex contact-us">
+                        Contact Us
+                    </a>
                 </div>
             </div>
-            <div class="mt-10 grid grid-cols-2 gap-3 auto-rows-fr md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
-                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                    <Image src={aaif}
-                           alt="Agentic AI Foundation"
-                    />
-                </div>
-                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                    <Image src={dos}
-                            alt="United States Department of State"
-                    />
-                </div>
-                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                    <Image src={neustar}
-                           alt="Neustar"
-                    />
-                </div>
-                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                    <Image src={eop}
-                           alt="Executive Office of the President of the United States"
-                    />
-                </div>
-                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                    <Image src={trss}
-                            alt="Thomson Reuters Special Services"
-                    />
-                </div>
-                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                    <Image src={healthCareGov}
-                           alt="Healthcare.gov"
-                    />
-                </div>
-                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                    <Image src={ninaday}
-                           alt="Ninaday"
-                    />
-                </div>
-                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                    <Image src={gsa}
-                           alt="Government Services Administration"
-                    />
-                </div>
-                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                    <Image src={eureka}
-                           alt="Eureka Golf Products"
-                    />
-                </div>
-                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                    <Image src={mediabarn}
-                           alt="MediaBarn"
-                    />
-                </div>
-                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                    <Image src={recreation}
-                           alt="Recreation.gov"
-                           width={200}
-                    />
-                </div>
-                <div class="col-span-1 flex justify-center items-center py-6 px-6 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                    <Image src={concurrentRealtime}
-                           alt="Concurrent Real-Time"
-                           width={200}
-                    />
-                </div>
-            </div>
-        </nav>
+        </div>
+
+        <ul role="list" class="mt-14 grid grid-cols-2 gap-4 auto-rows-fr sm:grid-cols-3 lg:mt-16 lg:grid-cols-4">
+            {partners.map((partner) => (
+                <li class="flex justify-center items-center min-h-32 p-5 bg-white dark:bg-blue-light rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                    <Image src={partner.src} alt={partner.alt} width={partner.width} class="max-h-24 w-auto object-contain" />
+                </li>
+            ))}
+        </ul>
     </div>
 </section>
