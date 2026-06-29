@@ -59,7 +59,7 @@ export async function GET() {
     lines.push('');
 
     lines.push('## Recent Blog Posts');
-    for (const p of posts.slice(0, 30)) {
+    for (const p of posts.slice(0, 50)) {
         lines.push(`- ${p.data.title} — ${p.data.description} (${SITE}/blog/${p.slug})`);
     }
     lines.push('');
