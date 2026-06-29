@@ -65,7 +65,7 @@ There is something else to keep in mind. As critical as it is to learn modern te
 look for modern *tools and techniques* that distinguish expert software engineers.
 
 * [Version control](http://git-scm.com/book/en/Getting-Started-About-Version-Control) 
-* [Test-Driven Development](http://www.agiledata.org/essays/tdd.html) and [all the different kinds of testing](http://gcn.com/Articles/2013/12/10/software-testing.aspx?Page=1)
+* Building quality into your code through testing (in all its forms), static analysis, and CI/CD automation in a DevSecOps pipeline
 * [Build automation](http://stackoverflow.com/questions/610732/what-is-build-automation-software-for-example-ant) and [dependency management](http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html) 
 * [Continuous integration](http://martinfowler.com/articles/continuousIntegration.html) 
 * [Refactoring](http://en.wikipedia.org/wiki/Code_refactoring) 

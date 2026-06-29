@@ -31,8 +31,7 @@ I contributed to a [GAO report](http://www.gao.gov/products/GAO-12-681) on apply
 government. Check it out if for no other reason than to double its readership. And someone is going to try to blame
 agile methods for this mess? Oh. [It’s on now](http://www.youtube.com/watch?v=uvqJ1mTkEuY).
 
-[Michael Daconta](http://www.linkedin.com/profile/view?id=713784) recently published an
-[article](http://gcn.com/blogs/reality-check/2013/11/healthcare-agile.aspx) on GCN, the leading online publication for
+[Michael Daconta](http://www.linkedin.com/profile/view?id=713784) recently published on GCN, the leading online publication for
 American public sector IT. Despite patronizing praise for some agile practices, it’s pretty clear the accomplished Mr. Daconta
 is the epitome of the traditional waterfall executive. More than that, his hostility to agile software development is a
 preexisting condition (See what I did there?). He is eager to embrace the failure of the allegedly agile HealthCare.gov
