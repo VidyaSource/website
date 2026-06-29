@@ -23,13 +23,12 @@ aliases:
 
 I have written quite a bit recently about my longstanding passion for improving the way government procures 
 technology and manages technology projects. The administration has taken 
-[many significant steps](/blog/the-fix-is-in) toward that goal,
-and I have played [a small role 
-in the process](blog/Projects/Agile/Scrum/Programming/Testing/Architecture/2015/10/04/learning-the-playbook) to this point.
+many significant steps toward that goal,
+and I have played a small role in the process to this point.
 
 But that role is about to get [a lot bigger](https://www.youtube.com/watch?v=uvqJ1mTkEuY).
 
-As I wrote [before](/blog/the-fix-is-in), the 
+The 
 [Office of Management and Budget](https://www.whitehouse.gov/omb) (OMB)--the largest office 
 within the Executive Office of the President of the United States--
 [challenged](https://www.challenge.gov/challenge/digital-service-contracting-professional-training-and-development-program-challenge-2/) 

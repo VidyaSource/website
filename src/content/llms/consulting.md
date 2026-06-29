@@ -28,4 +28,4 @@ Even the most far-reaching technological transformation has no chance for succes
 
 ### Technology Communication
 
-Technology is meaningless without the ability to express its power through engaging verbal and written communication. Vidya communicates technical expertise effectively, whether explaining the value and risk of a particular technology to customers or writing concise prose in a proposal. Examples of Vidya's communication work include the company blog, video tutorials, and columns on Government Computing News.
+Technology is meaningless without the ability to express its power through engaging verbal and written communication. Vidya communicates technical expertise effectively, whether explaining the value and risk of a particular technology to customers or writing concise prose in a proposal. Examples of Vidya's communication work include the company blog and video tutorials.
