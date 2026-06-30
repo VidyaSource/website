@@ -1,7 +1,6 @@
 ---
 import {Seo} from "astro-seo-meta";
 import {Schema} from "astro-seo-schema"
-const updatedTime = new Date().toISOString()
 
 interface Props {
     title?: string
@@ -17,31 +16,36 @@ interface Props {
 }
 
 const {title, description, type, image, meta, noindex, nofollow, schema, openGraph, twitterCard} = Astro.props
-const modifiedTitle = title ?? "Vidya LLC: Software Modernization & IT Consulting for Business and Government"
-const absoluteImage = `${Astro.url.origin}${image ? `${image}` : "/vidya-social.png"}`
 
-const baseOpenGraph = {
-    basic: {
-        title: modifiedTitle,
-        type: type ?? "website",
-        image: absoluteImage,
-        locale: "en_US",
-        updated_time: {updatedTime}
-    },
-    optional: {
-        siteName: "Vidya LLC"
-    }
-}
-const og = openGraph ? Object.assign(baseOpenGraph, openGraph) : baseOpenGraph
+const modifiedTitle = title ?? "Vidya | AI & Cloud Consulting and Modernization"
+const modifiedDescription = description ?? "Vidya is a certified IT consulting firm specializing in AI, cloud, and software modernization services. Partner with our experts to transform your organization."
+
+const base = Astro.site ?? new URL(Astro.url.origin)
+const absoluteImage = new URL(image ?? "/vidya-social.png", base).href
+const canonicalUrl = new URL(Astro.url.pathname, base).href
+const ogType = type ?? (openGraph?.article ? "article" : "website")
+const robots = `${noindex ? "noindex" : "index"}, ${nofollow ? "nofollow" : "follow"}`
+const article = openGraph?.article
 ---
-<Seo title={title ?? "Vidya | AI & Cloud Consulting and Modernization"}
-     description={description ?? "Vidya is a certified IT consulting firm specializing in AI, cloud, and software modernization services. Partner with our experts to transform your organization."}
-     noindex={noindex ?? false}
-     nofollow={nofollow ?? false}
-     openGraph={og}
-     extend={{
-         meta: meta ?? []
+<Seo title={modifiedTitle}
+     description={modifiedDescription}
+     robots={robots}
+     facebook={{
+         image: absoluteImage,
+         url: canonicalUrl,
+         type: ogType
+     }}
+     twitter={{
+         image: absoluteImage,
+         card: twitterCard ?? "summary_large_image"
      }}
 />
-<meta property="og:image" content={absoluteImage}>
+<link rel="canonical" href={canonicalUrl}>
+<meta property="og:site_name" content="Vidya LLC">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content={modifiedTitle}>
+{article?.publishedTime && <meta property="article:published_time" content={new Date(article.publishedTime).toISOString()}>}
+{article?.authors?.map((a: string) => <meta property="article:author" content={a}>)}
+{article?.tags?.map((t: string) => <meta property="article:tag" content={t}>)}
+{(meta ?? []).map((m) => <meta name={m.name} content={m.content}>)}
 {schema && <Schema item={schema}/> }
