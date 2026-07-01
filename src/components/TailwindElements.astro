@@ -1,7 +1,18 @@
 ---
 // Registers the Tailwind Plus Elements custom elements (el-autocomplete,
 // el-popover, etc.) globally. Include once per document <head>.
+//
+// Loaded on idle rather than eagerly: the runtime (~24 KiB) only enhances
+// interactivity (the mobile menu, the blog tag filter), so keeping it off the
+// critical request chain improves LCP/TBT. Custom elements upgrade whenever the
+// script arrives, and the registry is global, so it also covers pages reached
+// via view transitions.
 ---
 <script>
-    import '@tailwindplus/elements';
+    const load = () => import('@tailwindplus/elements');
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => load(), {timeout: 2000});
+    } else {
+        setTimeout(load, 200);
+    }
 </script>
