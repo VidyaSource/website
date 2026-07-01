@@ -1,4 +1,5 @@
 import {defineCollection, reference, z} from 'astro:content';
+import {glob} from 'astro/loaders';
 
 
 export const staffSchema =  z.object({
@@ -10,7 +11,7 @@ export const staffSchema =  z.object({
 })
 
 const staff = defineCollection({
-    type: 'data',
+    loader: glob({pattern: '**/*.json', base: './src/content/staff'}),
     schema: staffSchema
 });
 
@@ -27,7 +28,7 @@ export const blogSchema =  z.object({
 })
 
 const blog = defineCollection({
-    type: 'content', // v2.5.0 and later
+    loader: glob({pattern: '**/*.{md,mdx}', base: './src/content/blog'}),
     schema: blogSchema,
 });
 
@@ -53,7 +54,7 @@ export const courseSchema =  z.object({
     syllabus: z.record(z.string(), sessionSchema)
 })
 const courses = defineCollection({
-    type: 'content',
+    loader: glob({pattern: '**/*.{md,mdx}', base: './src/content/courses'}),
     schema: courseSchema
 });
 
@@ -84,7 +85,7 @@ export const tutorialSchema =  z.object({
 export type TutorialType = z.infer<typeof tutorialSchema>;
 
 const tutorials = defineCollection({
-    type: 'content', // v2.5.0 and later
+    loader: glob({pattern: '**/*.{md,mdx}', base: './src/content/tutorials'}),
     schema: tutorialSchema,
 });
 
@@ -93,7 +94,7 @@ export const llmsSchema = z.object({
 });
 
 const llms = defineCollection({
-    type: 'content',
+    loader: glob({pattern: '**/*.md', base: './src/content/llms'}),
     schema: llmsSchema,
 });
 

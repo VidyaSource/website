@@ -1,13 +1,12 @@
-import {type CollectionEntry, getCollection} from "astro:content";
-import {type TutorialType } from "../../content/config.ts";
+import {type CollectionEntry, getCollection, render} from "astro:content";
 import vidyaSchema from '../../components/vidyaSchema.json'
 
-const tutorialList: CollectionEntry<TutorialType>[] = await getCollection('tutorials').then(c => c.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()));
+const tutorialList: CollectionEntry<'tutorials'>[] = await getCollection('tutorials').then(c => c.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()));
 
 export const tutorials = await Promise.all(tutorialList.map(async (t) => {
     return {
-        render: t.render,
-        slug: t.slug,
+        render: () => render(t),
+        slug: t.id,
         ...t.data,
         openGraph: {
             optional: {

@@ -1,13 +1,12 @@
-import {type CollectionEntry, getCollection, getEntry} from "astro:content";
-import {type CourseType} from "../../content/config.ts";
+import {type CollectionEntry, getCollection, getEntry, render} from "astro:content";
 
-const courseList: CollectionEntry<CourseType>[] = await getCollection('courses').then(c => c.sort((a, b) => b.data.title.valueOf() - a.data.title.valueOf()));
+const courseList: CollectionEntry<'courses'>[] = await getCollection('courses').then(c => c.sort((a, b) => b.data.title.valueOf() - a.data.title.valueOf()));
 
 export const courses = await Promise.all(courseList.map(async (c) => {
     const instructor = await getEntry(c.data.instructor);
     return {
-        slug: c.slug,
-        render: c.render,
+        slug: c.id,
+        render: () => render(c),
         badge: c.data.badge,
         ...c.data,
         instructor: {

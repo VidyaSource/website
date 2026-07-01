@@ -6,7 +6,7 @@ const SITE = 'https://www.vidyasource.com';
 
 export async function GET() {
     const llmsEntries = await getCollection('llms');
-    const bySlug = new Map(llmsEntries.map(e => [e.slug, e]));
+    const bySlug = new Map(llmsEntries.map(e => [e.id, e]));
     const overview = bySlug.get('overview');
     const consulting = bySlug.get('consulting');
     const about = bySlug.get('about');
@@ -54,19 +54,19 @@ export async function GET() {
                 lines.push(`- ${lesson}`);
             }
         }
-        lines.push(`Link: ${SITE}/courses/${c.slug}`);
+        lines.push(`Link: ${SITE}/courses/${c.id}`);
     }
     lines.push('');
 
     lines.push('## Recent Blog Posts');
     for (const p of posts.slice(0, 50)) {
-        lines.push(`- ${p.data.title} — ${p.data.description} (${SITE}/blog/${p.slug})`);
+        lines.push(`- ${p.data.title} — ${p.data.description} (${SITE}/blog/${p.id})`);
     }
     lines.push('');
 
     lines.push('## Tutorials');
     for (const t of tutorials) {
-        lines.push(`- ${t.data.title} — ${t.data.description} (${SITE}/tutorials/${t.slug})`);
+        lines.push(`- ${t.data.title} — ${t.data.description} (${SITE}/tutorials/${t.id})`);
     }
     lines.push('');
 

@@ -1,7 +1,6 @@
-import {type CollectionEntry, getCollection, getEntry} from "astro:content";
-import {type PostType} from "../../content/config.ts";
+import {type CollectionEntry, getCollection, getEntry, render} from "astro:content";
 
-export const posts: CollectionEntry<PostType>[] = await getCollection('blog', ({data}) => {
+export const posts: CollectionEntry<'blog'>[] = await getCollection('blog', ({data}) => {
     return import.meta.env.PROD ? data.draft !== true : true;
 }).then(c => c.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()));
 
@@ -10,8 +9,8 @@ export const blogPosts = await Promise.all(posts.map(async (p) => {
     const keywords = [...(p.data.tags || []), ...(p.data.categories || [])]
 
     return {
-        render: p.render,
-        slug: p.slug,
+        render: () => render(p),
+        slug: p.id,
         ...p.data,
         keywords: keywords,
         author: author.data,
