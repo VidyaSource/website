@@ -4,6 +4,7 @@ import {ClientRouter} from 'astro:transitions';
 import VidyaSEO from "../components/VidyaSEO.astro"
 import vidyaSchema from '../components/vidyaSchema.json'
 import Analytics from "../components/Analytics.astro";
+import TailwindElements from "../components/TailwindElements.astro";
 ---
 <html lang="en">
 <head>
@@ -22,6 +23,7 @@ import Analytics from "../components/Analytics.astro";
               description="Vidya modernizes legacy systems with cloud, enterprise AI, and data engineering for business and government. Ship continuously without sacrificing quality."
               schema={vidyaSchema}
     />
+    <TailwindElements />
 </head>
 <body>
 <Home/>

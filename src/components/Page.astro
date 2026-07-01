@@ -8,6 +8,7 @@ import { ClientRouter } from 'astro:transitions';
 import '../globals.css'
 import VidyaSEO from "./VidyaSEO.astro";
 import Analytics from "./Analytics.astro"
+import TailwindElements from "./TailwindElements.astro"
 interface Props {
     title?: string
     description?: string
@@ -31,6 +32,7 @@ interface Props {
     <meta name="generator" content={Astro.generator} />
     <ClientRouter />
     <VidyaSEO {...Astro.props} />
+    <TailwindElements />
 </head>
 <body>
 <header class="bg-blue dark:bg-blue">
