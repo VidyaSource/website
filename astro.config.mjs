@@ -4,7 +4,6 @@ import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import AstroPWA from '@vite-pwa/astro';
 import sitemap from "@astrojs/sitemap";
-import cloudflare from "@astrojs/cloudflare";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -12,12 +11,6 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
     site: 'https://www.vidyasource.com',
     output: 'static',
-    adapter: cloudflare({
-        routes: {
-            strategy: "include",
-            imageService: "compile"
-        }
-    }),
     image: {
         service: passthroughImageService()
     },
