@@ -18,13 +18,13 @@ export async function getStaticPaths() {
     }));
 }
 
-const {title, description, category,syllabus, badge, instructor, render, instructor: {title: instructorTitle, name, quote, image}} = Astro.props
+const {title, description, category,syllabus, duration, badge, instructor, render, instructor: {title: instructorTitle, name, quote, image}} = Astro.props
 const { Content } = await render();
 ---
 <CourseHeader title={title} description={description} category={category} />
 <Description title={title}>
     <Content />
 </Description>
-<Syllabus syllabus={syllabus} />
+<Syllabus syllabus={syllabus} duration={duration} />
 <Instructor title={instructorTitle} name={name} image={image} quote={quote} badge={badge} />
 <CallToAction/>

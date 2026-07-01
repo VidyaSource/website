@@ -32,6 +32,15 @@ const blog = defineCollection({
 });
 
 
+export const sessionSchema = z.union([
+    z.array(z.string()).nonempty(),
+    z.object({
+        duration: z.string(),
+        outcome: z.string(),
+        topics: z.array(z.string()).nonempty()
+    })
+])
+
 export const courseSchema =  z.object({
     title: z.string(),
     category: z.string(),
@@ -40,7 +49,8 @@ export const courseSchema =  z.object({
     instructor: reference('staff'),
     description: z.string(),
     quote: z.string(),
-    syllabus: z.record(z.string(), z.array(z.string()).nonempty())
+    duration: z.string().optional(),
+    syllabus: z.record(z.string(), sessionSchema)
 })
 const courses = defineCollection({
     type: 'content',

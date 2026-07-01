@@ -3,47 +3,60 @@ title: Java For Work
 category: Java
 image: /img/courses/programming.jpg
 description: Enhance your Java skills with Vidya's Java for Work course. Designed for professionals, this practical training covers real-world Java programming, best practices, and industry-relevant topics to boost your productivity and career growth.
+duration: 'About 17 hours total across four lessons of 4 to 5 hours each. Spread them across four days or combine them into longer blocks.'
 syllabus:
     'Lesson 1: A Java Refresher':
-        - A Brief History of Java
-        - 'Tooling: IntelliJ IDEA and Gradle'
-        - The Anatomy of a Java Class
-        - Primitives and Objects
-        - Control Structures
-        - The Three Collections You Have to Know
-        - Practical Error Handling
-        - Enums
-        - Annotations
+        duration: '4 hours'
+        outcome: 'Refresh the fundamentals, from classes and collections to error handling, with IntelliJ and Gradle at your side.'
+        topics:
+            - A Brief History of Java
+            - 'Tooling: IntelliJ IDEA and Gradle'
+            - The Anatomy of a Java Class
+            - Primitives and Objects
+            - Control Structures
+            - The Three Collections You Have to Know
+            - Practical Error Handling
+            - Enums
+            - Annotations
     'Lesson 2: Combining Object-Oriented and Functional Programming':
-        - Modeling Domain vs. Modeling Process
-        - 'The Power of Polymoprhism: Inheritance and Composition'
-        - Interfaces as Mixins
-        - Generic Types
-        - Domain-Driven Design
-        - Functional Interfaces
-        - Composing Functions
-        - Practical Design Patterns
+        duration: '4 hours'
+        outcome: 'Blend object-oriented and functional programming to model your domain and compose behavior cleanly.'
+        topics:
+            - Modeling Domain vs. Modeling Process
+            - 'The Power of Polymoprhism: Inheritance and Composition'
+            - Interfaces as Mixins
+            - Generic Types
+            - Domain-Driven Design
+            - Functional Interfaces
+            - Composing Functions
+            - Practical Design Patterns
     'Lesson 3: Leveling Up with Java':
-        - Package Management Strategies
-        - 'Avoiding null: The "Billion-Dollar Mistake"'
-        - Records and Pattern Matching
-        - Java Streams
-        - Revisiting Conditionals
-        - Structured Concurrency with Virtual Threads
-        - Temporal Types
-        - Experimentation Using the REPL
+        duration: '4 hours'
+        outcome: 'Level up with modern Java: records, pattern matching, streams, and structured concurrency with virtual threads.'
+        topics:
+            - Package Management Strategies
+            - 'Avoiding null: The "Billion-Dollar Mistake"'
+            - Records and Pattern Matching
+            - Java Streams
+            - Revisiting Conditionals
+            - Structured Concurrency with Virtual Threads
+            - Temporal Types
+            - Experimentation Using the REPL
     'Lesson 4: Professional Java':
-        - Automating Quality
-        - APIs and JSON
-        - Database Persistence
-        - File Processing
-        - Cloud-Native Java and GraalVM
-        - Securing Java Applications
-        - Testing with JUnit and Testcontainers
-        - Documentation with JavaDoc and Snippets
-        - Logging and Observability
-        - Building AI Applications
-        - Alternative Languages for the JVM
+        duration: '5 hours'
+        outcome: 'Build production-grade Java with automated quality, persistence, security, observability, and AI.'
+        topics:
+            - Automating Quality
+            - APIs and JSON
+            - Database Persistence
+            - File Processing
+            - Cloud-Native Java and GraalVM
+            - Securing Java Applications
+            - Testing with JUnit and Testcontainers
+            - Documentation with JavaDoc and Snippets
+            - Logging and Observability
+            - Building AI Applications
+            - Alternative Languages for the JVM
 instructor: neil-chaudhuri
 quote: I am self-taught in Java with many years of experience delivering large-scale solutions ranging from microservices to web and mobile and AI applications for government and commercial clients.I have multiple Java badges on Stack Overflow, and I was even a Sun Certified Java Programmer when that was still a thing and when I thought certifications really meant something.
 ---
@@ -52,13 +65,13 @@ quote: I am self-taught in Java with many years of experience delivering large-s
     {
         <>
             <p className="mt-4 text-lg font-medium text-gray-dark dark:text-blue-light lg:font-normal">
-                According to Oracle, almost 20 billion devices run Java around the world. Java was the first language for Android. Java runs AI, microservices,
-                serverless, machine learning pipelines, and so much of the critical infrastructure in modern applications.
+                According to Oracle, almost 20 billion devices run Java. It was the first language for Android, and it powers AI,
+                microservices, serverless, machine learning pipelines, and much of the critical infrastructure in modern applications.
             </p>
             <p className="mt-4 text-lg font-medium text-gray-dark dark:text-blue-light lg:font-normal">
-                <span className=" text-red dark:text-red-light font-semibold">Java For Work</span> builds on the foundation of
-                low-level primitives like conditionals, loops, and objects to provide a comprehensive discussion of key topics like AI, security, structured concurrency,
-                functional programming, cloud native APIs, and observability you won't find anywhere else.
+                <span className=" text-red dark:text-red-light font-semibold">Java For Work</span> starts from primitives like
+                conditionals, loops, and objects and builds up to the topics that matter at work: AI, security, structured concurrency,
+                functional programming, cloud-native APIs, and observability you won't find covered together anywhere else.
             </p>
         </>
     }
@@ -67,15 +80,15 @@ quote: I am self-taught in Java with many years of experience delivering large-s
         {
             <>
                 <p className="font-medium text-gray-dark dark:text-blue-light lg:font-normal">
-                    The typical Java course teaches you how to code in Java but not how to build production software in Java. They are not the same thing, so the typical course sends you
-                    back to work ready to solve toy LeetCode problems but completely unprepared for the challenges you will face when your team expects you to deliver for real customers.
+                    The typical Java course teaches you to code in Java, not to build production software in Java. Those are different
+                    skills, so you go back to work ready for toy LeetCode problems and unprepared for what your team faces when it has to
+                    deliver for real customers.
                 </p>
                 <p className="font-medium text-gray-dark dark:text-blue-light">
-                    <span className="text-red dark:text-red-light font-semibold">Java for Work</span> operates from the premise that the
-                    greatest asset in professional software engineering is not memorizing the syntax of particular programming languages but instead
-                    understanding the craft of building software. The course uses Java 25, the latest LTS version of Java that companies should be migrating to as soon as possible, to describe how best to
-                    apply modern Java to solve real problems using hard lessons learned over many years about the best ways to architect and design your code
-                    for maintainability and productivity.
+                    <span className="text-red dark:text-red-light font-semibold">Java for Work</span> rests on a simple premise: the
+                    greatest asset in professional engineering is understanding the craft of building software, not memorizing syntax. The
+                    course uses Java 25, the latest LTS release companies should migrate to as soon as possible, and applies hard lessons
+                    learned over many years about architecting and designing code for maintainability and productivity.
                 </p>
                 <p className="text-gray-dark dark:text-blue-light">
                     When you finish this course, you will be a <span className="italic">professional</span> Java

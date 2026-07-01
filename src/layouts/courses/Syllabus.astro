@@ -1,10 +1,21 @@
 ---
+type Session = string[] | { duration: string; outcome: string; topics: string[] }
+
 interface Props {
-    [title: string]: string[]
+    syllabus: Record<string, Session>
+    duration?: string
 }
 
-const {syllabus} = Astro.props
-const entries = Object.entries(syllabus)
+const {syllabus, duration} = Astro.props
+const entries = Object.entries(syllabus).map(([title, session]) => {
+    const detailed = !Array.isArray(session)
+    return {
+        title,
+        sessionDuration: detailed ? session.duration : null,
+        outcome: detailed ? session.outcome : null,
+        topics: detailed ? session.topics : session
+    }
+})
 ---
 <section class="relative py-20 bg-blue-light dark:bg-blue overflow-hidden">
     <!-- Decorative background elements -->
@@ -25,11 +36,16 @@ const entries = Object.entries(syllabus)
             <div class="mt-6 flex items-center justify-center">
                 <div class="w-16 h-1 rounded-full bg-red dark:bg-red-light"></div>
             </div>
+            {duration && (
+                <p class="mt-6 text-base font-medium text-gray-dark dark:text-blue-light max-w-2xl mx-auto">
+                    {duration}
+                </p>
+            )}
         </div>
 
         <!-- Syllabus grid -->
         <div class="grid gap-6 md:grid-cols-2">
-            {entries.map(([title, sections], index) => (
+            {entries.map(({title, sessionDuration, outcome, topics}, index) => (
                 <div class="relative bg-white dark:bg-gray-dark rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                     <!-- Card header with lesson number accent -->
                     <div class="bg-gradient-to-r from-blue to-blue-dark px-6 py-4">
@@ -40,12 +56,22 @@ const entries = Object.entries(syllabus)
                             <h3 class="text-lg font-bold text-white leading-snug mt-0">
                                 {title}
                             </h3>
+                            {sessionDuration && (
+                                <span class="flex-shrink-0 ml-auto px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold whitespace-nowrap">
+                                    {sessionDuration}
+                                </span>
+                            )}
                         </div>
                     </div>
                     <!-- Card body with topics -->
                     <div class="px-6 py-5">
+                        {outcome && (
+                            <p class="mt-0 mb-4 text-sm font-semibold text-green-dark dark:text-green-light not-italic">
+                                {outcome}
+                            </p>
+                        )}
                         <ul class="space-y-2">
-                            {sections.map((s) => (
+                            {topics.map((s) => (
                                 <li class="flex items-start gap-2 pl-0 my-0 text-base text-gray-dark dark:text-blue-light not-italic">
                                     <span class="flex-shrink-0 mt-2 w-1.5 h-1.5 rounded-full bg-green-dark dark:bg-green-light" aria-hidden="true"></span>
                                     <span>{s}</span>
