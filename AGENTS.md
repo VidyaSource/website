@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is the **Vidya** company website ([vidyasource.com](https://www.vidyasource.com)), a static site built with **Astro 5**, deployed to **Cloudflare Pages**. It showcases the company's consulting services, blog, courses, and tutorials.
+This is the **Vidya** company website ([vidyasource.com](https://www.vidyasource.com)), a static site built with **Astro 7**, deployed to **Cloudflare Pages**. It showcases the company's consulting services, blog, courses, and tutorials.
 
 ---
 
@@ -10,11 +10,11 @@ This is the **Vidya** company website ([vidyasource.com](https://www.vidyasource
 
 | Layer | Technology |
 |---|---|
-| Framework | Astro 5 (`output: 'static'`) |
+| Framework | Astro 7 (`output: 'static'`) |
 | UI Components | React 18 (interactive islands) + Astro components |
 | Styling | Tailwind CSS v4 (via `@tailwindcss/vite` plugin) |
-| Content | Astro Content Collections (Markdown `.md` / MDX `.mdx`) |
-| Deployment | Cloudflare Pages via `@astrojs/cloudflare` adapter |
+| Content | Astro Content Layer collections (glob loaders, Markdown `.md` / MDX `.mdx`) |
+| Deployment | Cloudflare Pages (static output to flat `dist/`, no adapter) |
 | PWA | `@vite-pwa/astro` |
 | SEO | `astro-seo-meta`, `astro-seo-schema`, sitemap via `@astrojs/sitemap` |
 | Analytics | Google Tag Manager via `@astrojs/partytown` |
@@ -151,8 +151,9 @@ The dev container (`.devcontainer/devcontainer.json`) uses Node 22 and forwards 
 
 ## Deployment
 
-- **Target**: Cloudflare Pages (static output)
-- The `@astrojs/cloudflare` adapter is configured with `strategy: "include"` routes and `imageService: "compile"`.
+- **Target**: Cloudflare Pages (static output). Build output directory is the flat `dist/`.
+- No adapter: the site is fully static, so Astro builds directly to `dist/` (no `@astrojs/cloudflare`, no `dist/client` + `dist/server` split). If SSR is ever needed, re-add the Cloudflare adapter and point the Pages output directory at `dist/client`.
+- `public/_headers` sets the immutable `Cache-Control` for hashed `/_astro/*` assets (previously injected by the adapter).
 - No server-side rendering — all pages are pre-rendered at build time.
 
 ---
