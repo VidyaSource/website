@@ -1,5 +1,4 @@
 import {defineConfig, passthroughImageService} from 'astro/config';
-import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import AstroPWA from '@vite-pwa/astro';
@@ -15,7 +14,6 @@ export default defineConfig({
         service: passthroughImageService()
     },
     integrations: [
-        react(),
         mdx({
             markdown: {
                 shikiConfig: {

@@ -11,7 +11,7 @@ This is the **Vidya** company website ([vidyasource.com](https://www.vidyasource
 | Layer | Technology |
 |---|---|
 | Framework | Astro 7 (`output: 'static'`) |
-| UI Components | React 18 (interactive islands) + Astro components |
+| UI Components | Astro components + Tailwind Plus Elements (`@tailwindplus/elements`) for interactivity |
 | Styling | Tailwind CSS v4 (via `@tailwindcss/vite` plugin) |
 | Content | Astro Content Layer collections (glob loaders, Markdown `.md` / MDX `.mdx`) |
 | Deployment | Cloudflare Pages (static output to flat `dist/`, no adapter) |
@@ -26,7 +26,7 @@ This is the **Vidya** company website ([vidyasource.com](https://www.vidyasource
 
 ```
 src/
-├── components/       # Shared Astro and React components
+├── components/       # Shared Astro components
 ├── content/          # Astro Content Collections (typed, schema-validated)
 │   ├── blog/         # Blog posts (.md and .mdx)
 │   ├── courses/      # Course content (.mdx)
@@ -81,8 +81,8 @@ All collections are defined and typed in `src/content/config.ts`. **Always respe
 ## Key Conventions
 
 ### Components
-- **Astro components** (`.astro`) are used for static/layout UI — prefer these by default.
-- **React components** (`.tsx`) are used only when client-side interactivity is needed (Astro islands). They live in `src/layouts/` or `src/components/`.
+- **Astro components** (`.astro`) are the only UI layer — the site has no React/framework islands.
+- **Interactivity** uses Tailwind Plus Elements web components (`<el-autocomplete>`, `<el-popover>`, etc., registered via `TailwindElements.astro`) plus small inline `<script>` blocks. No client-side framework.
 - The `src/components/Images.ts` file centralizes image path helpers.
 
 ### Styling
