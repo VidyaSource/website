@@ -1,10 +1,8 @@
 ---
 import Page from "../components/Page.astro";
-import Form from '../layouts/contact/Form'
-import {SEO} from "astro-seo";
-const updatedTime = new Date().toISOString()
+import Form from '../layouts/contact/Form.astro'
 ---
 <Page title="Contact Vidya LLC - AI & Cloud Consulting and Modernization"
       description="Get in touch with Vidya LLC for software modernization, AI, IT consulting, and technology training services. We're an 8(a) & SWaM certified small business based near Washington, DC.">
-    <Form client:load/>
+    <Form />
 </Page>
