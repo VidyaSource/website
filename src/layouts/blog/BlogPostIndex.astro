@@ -1,7 +1,6 @@
 ---
 import BlogPostCard from '../../layouts/blog/BlogPostCard.astro'
 import {blogPosts} from "./blogUtils";
-import {BlogPostIndex} from './BlogPostSearch.tsx'
 
 const set = new Set();
 
@@ -25,7 +24,39 @@ const keys = await Array.from(set).sort()
         </h2>
     </div>
     <div class="mx-auto w-2/4 lg:w-1/3 max-w-screen-md">
-        <BlogPostIndex client:load tags={keys}/>
+        <label for="tag-filter"
+               class="block text-lg font-medium text-blue dark:text-blue-light sm:text-xl lg:text-2xl mt-8">
+            Filter by tag
+        </label>
+        <el-autocomplete class="relative mt-2 block">
+            <input
+                id="tag-filter"
+                type="text"
+                placeholder="Filter by tag"
+                autocomplete="off"
+                class="w-full rounded-md border border-gray bg-white py-2 pl-3 pr-10 shadow-sm text-gray-dark focus:border-red focus:outline-none focus:ring-1 focus:ring-red sm:text-2xl dark:border-gray dark:bg-gray-dark dark:text-blue-light"
+            />
+            <button type="button"
+                    aria-label="Show tags"
+                    class="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-5 w-5 text-gray">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M10.53 3.47a.75.75 0 0 0-1.06 0L6.22 6.72a.75.75 0 0 0 1.06 1.06L10 5.06l2.72 2.72a.75.75 0 1 0 1.06-1.06l-3.25-3.25Zm-4.31 9.81 3.25 3.25a.75.75 0 0 0 1.06 0l3.25-3.25a.75.75 0 1 0-1.06-1.06L10 14.94l-2.72-2.72a.75.75 0 0 0-1.06 1.06Z"/>
+                </svg>
+            </button>
+            <el-options
+                anchor="bottom"
+                popover
+                class="max-h-60 w-(--input-width) overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-gray-dark/5 transition-discrete [--anchor-gap:--spacing(1)] data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:text-md lg:text-2xl dark:bg-gray-dark dark:ring-white/10">
+                {keys.map((key) => (
+                    <el-option
+                        value={key}
+                        class="block cursor-default select-none truncate px-3 py-2 text-gray-dark aria-selected:bg-blue aria-selected:text-white dark:text-blue-light dark:aria-selected:bg-blue">
+                        {key}
+                    </el-option>
+                ))}
+            </el-options>
+        </el-autocomplete>
     </div>
     <div class="relative max-w-7xl mx-auto">
         <nav class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
@@ -36,6 +67,24 @@ const keys = await Array.from(set).sort()
     </div>
 
 </div>
+
+<script>
+    // Filter the blog cards by the tag chosen in the <el-autocomplete>.
+    // Selecting an option fires a `change` event on the input; an empty value
+    // (cleared field) shows every post again.
+    function initTagFilter() {
+        const input = document.getElementById('tag-filter') as HTMLInputElement | null;
+        if (!input) return;
+        input.addEventListener('change', () => {
+            const slug = input.value.trim().toLowerCase().replace(/\s+/g, '-');
+            document.querySelectorAll<HTMLElement>('.blog-post').forEach((el) => {
+                el.style.display = !slug || el.classList.contains(slug) ? '' : 'none';
+            });
+        });
+    }
+
+    document.addEventListener('astro:page-load', initTagFilter);
+</script>
 
 
 
