@@ -6,7 +6,7 @@ export default {
 	darkMode: "class", // or 'media' or 'class'
 	theme: {
 		fontFamily: {
-			sans: ['myriad-pro', 'sans-serif'],
+			sans: ['"Source Sans 3 Variable"', '"Source Sans Fallback"', 'sans-serif'],
 			serif: ['Inter var', 'serif'],
 			code: ['Source Code Pro', 'font-mono', 'serif']
 		},

@@ -1,35 +1,21 @@
 @import "tailwindcss";
+@import "@fontsource-variable/source-sans-3/wght.css";
+@import "@fontsource-variable/source-sans-3/wght-italic.css";
 @config "../tailwind.config.mjs";
 
-/* Font display optimization for Adobe Typekit fonts (myriad-pro)
-   This ensures text remains visible while fonts load, improving mobile performance
-   and preventing Flash of Invisible Text (FOIT) */
+/* Self-hosted Source Sans 3 (Adobe's open descendant of Myriad Pro) replaces the
+   Adobe Typekit load. It ships with font-display: swap, so text paints
+   immediately in the fallback instead of blocking on the web font — the fix for
+   the FCP/LCP/Speed-Index cost of Typekit's font-display: auto. The
+   metric-adjusted Arial fallback below keeps layout shift near zero during the
+   swap (protecting the current CLS of 0). */
 @font-face {
-    font-family: 'myriad-pro';
-    font-display: swap;
-    src: local('Myriad Pro'), local('MyriadPro-Regular');
-}
-
-@font-face {
-    font-family: 'myriad-pro';
-    font-weight: bold;
-    font-display: swap;
-    src: local('Myriad Pro Bold'), local('MyriadPro-Bold');
-}
-
-@font-face {
-    font-family: 'myriad-pro';
-    font-style: italic;
-    font-display: swap;
-    src: local('Myriad Pro Italic'), local('MyriadPro-It');
-}
-
-@font-face {
-    font-family: 'myriad-pro';
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-    src: local('Myriad Pro Bold Italic'), local('MyriadPro-BoldIt');
+    font-family: 'Source Sans Fallback';
+    src: local('Arial');
+    ascent-override: 92.14%;
+    descent-override: 25.55%;
+    line-gap-override: 0%;
+    size-adjust: 106.72%;
 }
 
 @layer components {
