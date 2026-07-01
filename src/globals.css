@@ -33,6 +33,42 @@
 }
 
 @layer components {
+    /* Mobile nav menu (el-popover in Hero.tsx). Styled by id because React 18
+       does not map className onto custom elements. Full-width dropdown from the
+       top, overriding the browser's default [popover] box, with a fade/slide
+       enter and leave. */
+    #mobile-menu {
+        position: fixed;
+        inset: 0.5rem 0.5rem auto 0.5rem;
+        width: auto;
+        max-width: none;
+        margin: 0;
+        border: 0;
+        padding: 0;
+        background: transparent;
+        overflow: visible;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        transition-behavior: allow-discrete;
+    }
+
+    #mobile-menu:not(:popover-open) {
+        opacity: 0;
+        transform: translateY(-0.5rem);
+    }
+
+    @starting-style {
+        #mobile-menu:popover-open {
+            opacity: 0;
+            transform: translateY(-0.5rem);
+        }
+    }
+
+    @media (min-width: 768px) {
+        #mobile-menu {
+            display: none !important;
+        }
+    }
+
     p {
         @apply py-2 text-gray-dark dark:text-blue-light
     }

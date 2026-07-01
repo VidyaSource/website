@@ -1,6 +1,5 @@
-import {Popover, Transition} from '@headlessui/react'
-import {Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline'
-import {Fragment, useEffect, useState} from 'react'
+import {Bars3Icon} from '@heroicons/react/24/outline'
+import {useEffect, useState} from 'react'
 import navigation from '../../components/navigation.json';
 import "../../globals.css"
 
@@ -59,160 +58,76 @@ export const Hero = (p: HeroProps) => {
 
             {/* Header with navigation */}
             <header className="relative pt-6 pb-4 z-10">
-                <Popover>
-                    {({open, close}) => (
-                        <>
-                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                <nav
-                                    className="relative flex items-center justify-between bg-white/60 dark:bg-blue-dark/70 backdrop-blur-md rounded-xl px-4 py-3 shadow-sm ring-1 ring-gray/10 dark:ring-white/10"
-                                    aria-label="Main navigation"
-                                    role="navigation"
-                                >
-                                    {/* Logo */}
-                                    <div className="flex items-center flex-shrink-0">
-                                        <a 
-                                            className="logo group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue rounded-lg transition-transform duration-200 hover:scale-105" 
-                                            href="/"
-                                            aria-label="Vidya - Go to homepage"
-                                        >
-                                            {p.desktopLogo}
-                                        </a>
-                                    </div>
-
-                                    {/* Desktop navigation */}
-                                    <div className="hidden md:flex md:items-center md:space-x-1 lg:space-x-2">
-                                        {navigation.map((item) => (
-                                            <a
-                                                key={item.name}
-                                                href={item.href}
-                                                aria-current={isCurrentPage(item.href) ? 'page' : undefined}
-                                                className={`
-                                                    relative px-4 py-2 text-sm lg:text-base font-semibold rounded-lg
-                                                    transition-all duration-200 ease-in-out
-                                                    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue
-                                                    ${isCurrentPage(item.href)
-                                                        ? 'text-red dark:text-red-light bg-red-light/50 dark:bg-red/20'
-                                                        : 'text-blue-dark dark:text-white hover:text-red dark:hover:text-red-light hover:bg-gray-light dark:hover:bg-white/20'
-                                                    }
-                                                `}
-                                            >
-                                                {item.name}
-                                                {/* Active indicator */}
-                                                {isCurrentPage(item.href) && (
-                                                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 h-0.5 bg-red dark:bg-red-light rounded-full" />
-                                                )}
-                                            </a>
-                                        ))}
-                                        <div className="ml-4 pl-4 border-l-2 border-blue/50 dark:border-blue-light/60 flex items-center">
-                                            {p.themeButton}
-                                        </div>
-                                    </div>
-
-                                    {/* Mobile menu button */}
-                                    <div className="flex items-center md:hidden space-x-3">
-                                        <div className="p-1 rounded-lg bg-gray-light/50 dark:bg-white/10">
-                                            {p.themeButton}
-                                        </div>
-                                        <Popover.Button
-                                            className="inline-flex items-center justify-center p-2 rounded-lg
-                                                text-blue-dark dark:text-white
-                                                bg-gray-light/50 dark:bg-white/10
-                                                hover:bg-gray-light dark:hover:bg-white/20
-                                                focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue
-                                                transition-colors duration-200"
-                                            aria-expanded={open}
-                                        >
-                                            <span className="sr-only">{open ? 'Close menu' : 'Open main menu'}</span>
-                                            <Bars3Icon className="h-6 w-6" aria-hidden="true"/>
-                                        </Popover.Button>
-                                    </div>
-                                </nav>
-                            </div>
-
-                            {/* Mobile navigation menu */}
-                            <Transition
-                                show={open}
-                                as={Fragment}
-                                enter="duration-200 ease-out"
-                                enterFrom="opacity-0 -translate-y-2"
-                                enterTo="opacity-100 translate-y-0"
-                                leave="duration-150 ease-in"
-                                leaveFrom="opacity-100 translate-y-0"
-                                leaveTo="opacity-0 -translate-y-2"
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <nav
+                        className="relative flex items-center justify-between bg-white/60 dark:bg-blue-dark/70 backdrop-blur-md rounded-xl px-4 py-3 shadow-sm ring-1 ring-gray/10 dark:ring-white/10"
+                        aria-label="Main navigation"
+                        role="navigation"
+                    >
+                        {/* Logo */}
+                        <div className="flex items-center flex-shrink-0">
+                            <a
+                                className="logo group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue rounded-lg transition-transform duration-200 hover:scale-105"
+                                href="/"
+                                aria-label="Vidya - Go to homepage"
                             >
-                                <Popover.Panel
-                                    className="absolute top-0 inset-x-0 z-50 p-2 transition transform origin-top md:hidden"
-                                >
-                                    <div className="rounded-2xl shadow-xl bg-white dark:bg-gray-dark ring-1 ring-black/5 dark:ring-white/10 overflow-hidden">
-                                        {/* Mobile menu header */}
-                                        <div className="px-5 pt-4 pb-3 flex items-center justify-between border-b border-gray-light/50 dark:border-gray/50">
-                                            <a 
-                                                href="/" 
-                                                className="logo focus:outline-none focus:ring-2 focus:ring-blue rounded-lg"
-                                                aria-label="Vidya - Go to homepage"
-                                                onClick={() => close()}
-                                            >
-                                                {p.mobileLogo}
-                                            </a>
-                                            <Popover.Button
-                                                className="inline-flex items-center justify-center p-2 rounded-lg
-                                                    text-gray-dark dark:text-gray-light
-                                                    hover:bg-gray-light dark:hover:bg-gray
-                                                    focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue
-                                                    transition-colors duration-200"
-                                            >
-                                                <span className="sr-only">Close menu</span>
-                                                <XMarkIcon className="h-6 w-6" aria-hidden="true"/>
-                                            </Popover.Button>
-                                        </div>
-                                        
-                                        {/* Mobile menu navigation links */}
-                                        <nav className="px-3 py-4 space-y-1" role="navigation" aria-label="Mobile navigation">
-                                            {navigation.map((item) => (
-                                                <a
-                                                    key={item.name}
-                                                    href={item.href}
-                                                    aria-current={isCurrentPage(item.href) ? 'page' : undefined}
-                                                    className={`
-                                                        flex items-center px-4 py-3 rounded-xl text-base font-medium
-                                                        transition-all duration-200
-                                                        focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue
-                                                        ${isCurrentPage(item.href)
-                                                            ? 'text-red dark:text-red-light bg-red-light/30 dark:bg-red/20'
-                                                            : 'text-blue-dark dark:text-blue-light hover:bg-blue-light dark:hover:bg-blue/30'
-                                                        }
-                                                    `}
-                                                    onClick={() => close()}
-                                                >
-                                                    {item.name}
-                                                    {isCurrentPage(item.href) && (
-                                                        <span className="ml-auto w-2 h-2 bg-red dark:bg-red-light rounded-full" />
-                                                    )}
-                                                </a>
-                                            ))}
-                                        </nav>
+                                {p.desktopLogo}
+                            </a>
+                        </div>
 
-                                        {/* Mobile menu CTA */}
-                                        <div className="px-5 py-4 bg-gray-light/50 dark:bg-gray/30 border-t border-gray-light/50 dark:border-gray/50">
-                                            <a
-                                                href="/consulting"
-                                                className="block w-full text-center px-4 py-3 rounded-xl
-                                                    bg-red dark:bg-red-light text-white dark:text-blue-dark
-                                                    font-semibold text-base
-                                                    hover:bg-blue-dark dark:hover:bg-blue-light
-                                                    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red
-                                                    transition-colors duration-200"
-                                                onClick={() => close()}
-                                            >
-                                                Get Started
-                                            </a>
-                                        </div>
-                                    </div>
-                                </Popover.Panel>
-                            </Transition>
-                        </>
-                    )}
-                </Popover>
+                        {/* Desktop navigation */}
+                        <div className="hidden md:flex md:items-center md:space-x-1 lg:space-x-2">
+                            {navigation.map((item) => (
+                                <a
+                                    key={item.name}
+                                    href={item.href}
+                                    aria-current={isCurrentPage(item.href) ? 'page' : undefined}
+                                    className={`
+                                        relative px-4 py-2 text-sm lg:text-base font-semibold rounded-lg
+                                        transition-all duration-200 ease-in-out
+                                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue
+                                        ${isCurrentPage(item.href)
+                                            ? 'text-red dark:text-red-light bg-red-light/50 dark:bg-red/20'
+                                            : 'text-blue-dark dark:text-white hover:text-red dark:hover:text-red-light hover:bg-gray-light dark:hover:bg-white/20'
+                                        }
+                                    `}
+                                >
+                                    {item.name}
+                                    {/* Active indicator */}
+                                    {isCurrentPage(item.href) && (
+                                        <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 h-0.5 bg-red dark:bg-red-light rounded-full" />
+                                    )}
+                                </a>
+                            ))}
+                            <div className="ml-4 pl-4 border-l-2 border-blue/50 dark:border-blue-light/60 flex items-center">
+                                {p.themeButton}
+                            </div>
+                        </div>
+
+                        {/* Mobile menu button */}
+                        <div className="flex items-center md:hidden space-x-3">
+                            <div className="p-1 rounded-lg bg-gray-light/50 dark:bg-white/10">
+                                {p.themeButton}
+                            </div>
+                            <button
+                                type="button"
+                                command="toggle-popover"
+                                commandfor="mobile-menu"
+                                aria-controls="mobile-menu"
+                                aria-label="Open main menu"
+                                className="inline-flex items-center justify-center p-2 rounded-lg
+                                    text-blue-dark dark:text-white
+                                    bg-gray-light/50 dark:bg-white/10
+                                    hover:bg-gray-light dark:hover:bg-white/20
+                                    focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue
+                                    transition-colors duration-200"
+                            >
+                                <span className="sr-only">Open main menu</span>
+                                <Bars3Icon className="h-6 w-6" aria-hidden="true"/>
+                            </button>
+                        </div>
+                    </nav>
+                </div>
             </header>
 
             {/* Hero content */}

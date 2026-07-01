@@ -9,6 +9,7 @@ import Testimonials from "../../components/Testimonials.astro"
 import CallToAction from "../../components/CallToAction.astro"
 import Footer from "../../components/Footer.astro"
 import ThemeButton from "../../components/ThemeButton.astro";
+import navigation from "../../components/navigation.json";
 ---
 
 <Hero client:visible>
@@ -16,6 +17,41 @@ import ThemeButton from "../../components/ThemeButton.astro";
     <Logo height="56" width="120" slot='mobileLogo' />
     <ThemeButton slot="themeButton" sunFillColor="yellow" moonFillColor="#5A82B4" transition:persist/>
 </Hero>
+
+{/* Mobile navigation menu — a top-layer popover toggled by the Hero hamburger
+    (command="toggle-popover" commandfor="mobile-menu"). Kept out of the React
+    island so the elements runtime can upgrade it without tripping React
+    hydration. Positioned via #mobile-menu in globals.css. */}
+<el-popover id="mobile-menu" popover="auto">
+    <div class="rounded-2xl shadow-xl bg-white dark:bg-gray-dark ring-1 ring-black/5 dark:ring-white/10 overflow-hidden">
+        <div class="px-5 pt-4 pb-3 flex items-center justify-between border-b border-gray-light/50 dark:border-gray/50">
+            <a href="/" class="logo focus:outline-none focus:ring-2 focus:ring-blue rounded-lg" aria-label="Vidya - Go to homepage">
+                <Logo height="56" width="120" />
+            </a>
+            <button type="button" command="hide-popover" commandfor="mobile-menu" aria-label="Close menu"
+                    class="inline-flex items-center justify-center p-2 rounded-lg text-gray-dark dark:text-gray-light hover:bg-gray-light dark:hover:bg-gray focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue transition-colors duration-200">
+                <span class="sr-only">Close menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <nav class="px-3 py-4 space-y-1" role="navigation" aria-label="Mobile navigation">
+            {navigation.map((item) => (
+                <a href={item.href}
+                   class="flex items-center px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue text-blue-dark dark:text-blue-light hover:bg-blue-light dark:hover:bg-blue/30">
+                    {item.name}
+                </a>
+            ))}
+        </nav>
+        <div class="px-5 py-4 bg-gray-light/50 dark:bg-gray/30 border-t border-gray-light/50 dark:border-gray/50">
+            <a href="/consulting"
+               class="block w-full text-center px-4 py-3 rounded-xl bg-red dark:bg-red-light text-white dark:text-blue-dark font-semibold text-base hover:bg-blue-dark dark:hover:bg-blue-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red transition-colors duration-200">
+                Get Started
+            </a>
+        </div>
+    </div>
+</el-popover>
 <RecentPosts />
 <Clients />
 <Certifications />
