@@ -1,4 +1,4 @@
-import {defineConfig, passthroughImageService} from 'astro/config';
+import {defineConfig} from 'astro/config';
 import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import AstroPWA from '@vite-pwa/astro';
@@ -10,9 +10,6 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
     site: 'https://www.vidyasource.com',
     output: 'static',
-    image: {
-        service: passthroughImageService()
-    },
     integrations: [
         mdx({
             markdown: {

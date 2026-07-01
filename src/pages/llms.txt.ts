@@ -31,14 +31,14 @@ export async function GET() {
     if (consulting?.body) {
         lines.push(consulting.body.trim());
         lines.push('');
-        lines.push(`See: ${SITE}/consulting`);
+        lines.push(`See: [Consulting](${SITE}/consulting)`);
         lines.push('');
     }
 
     if (about?.body) {
         lines.push(about.body.trim());
         lines.push('');
-        lines.push(`See: ${SITE}/about`);
+        lines.push(`See: [About](${SITE}/about)`);
         lines.push('');
     }
 
@@ -54,19 +54,19 @@ export async function GET() {
                 lines.push(`- ${lesson}`);
             }
         }
-        lines.push(`Link: ${SITE}/courses/${c.id}`);
+        lines.push(`Link: [${c.data.title}](${SITE}/courses/${c.id})`);
     }
     lines.push('');
 
     lines.push('## Recent Blog Posts');
     for (const p of posts.slice(0, 50)) {
-        lines.push(`- ${p.data.title} — ${p.data.description} (${SITE}/blog/${p.id})`);
+        lines.push(`- [${p.data.title}](${SITE}/blog/${p.id}): ${p.data.description}`);
     }
     lines.push('');
 
     lines.push('## Tutorials');
     for (const t of tutorials) {
-        lines.push(`- ${t.data.title} — ${t.data.description} (${SITE}/tutorials/${t.id})`);
+        lines.push(`- [${t.data.title}](${SITE}/tutorials/${t.id}): ${t.data.description}`);
     }
     lines.push('');
 

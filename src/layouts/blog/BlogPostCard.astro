@@ -36,6 +36,8 @@ const formattedDate = format(new Date(date), "LLLL d, y")
                     <span class="sr-only">{name}</span>
                     <div class="h-12 w-12 relative">
                         <Image
+                                width={96}
+                                height={96}
                                 class="rounded-full"
                                 src={images[`/src${authorImage}`]()}
                                 alt={name}
