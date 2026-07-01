@@ -13,10 +13,10 @@ export async function getStaticPaths() {
     }));
 }
 const {
-    title, description, image, schema, youtube, openGraph
+    title, description, image, youtube, openGraph
 } = Astro.props
 
-
+const schema = Astro.props.schema as Record<string, any>
 schema["contentUrl"] = Astro.url.href
 schema["image"] = `${Astro.url.origin}${image}`
 ---

@@ -4,6 +4,8 @@ export const posts: CollectionEntry<'blog'>[] = await getCollection('blog', ({da
     return import.meta.env.PROD ? data.draft !== true : true;
 }).then(c => c.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()));
 
+export type BlogPost = (typeof blogPosts)[number]
+
 export const blogPosts = await Promise.all(posts.map(async (p) => {
     const author = await getEntry(p.data.author);
     const keywords = [...(p.data.tags || []), ...(p.data.categories || [])]

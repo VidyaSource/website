@@ -6,7 +6,7 @@ import vidyaSchema from '../../components/vidyaSchema.json'
 
 export const prerender = true;
 export async function getStaticPaths() {
-    return Promise.all(courses.map(async (c: Course) => {
+    return Promise.all(courses.map(async (c) => {
         return {
             params: {slug: c.slug},
             props: c,
@@ -15,9 +15,10 @@ export async function getStaticPaths() {
 }
 
 const {
-    title, description, image, schema
+    title, description, image
 } = Astro.props
 
+const schema = Astro.props.schema as Record<string, any>
 schema["provider"] = vidyaSchema
 schema["image"] = `${Astro.url.origin}${image}`
 ---

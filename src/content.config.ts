@@ -1,4 +1,5 @@
-import {defineCollection, reference, z} from 'astro:content';
+import {defineCollection, reference} from 'astro:content';
+import {z} from 'astro:schema';
 import {glob} from 'astro/loaders';
 
 
@@ -58,18 +59,16 @@ const courses = defineCollection({
     schema: courseSchema
 });
 
-export type PostType = z.infer<typeof blogSchema> & { render: () => any }
-export type AuthorType = z.infer<typeof staffSchema>
-
-const genericPostSchema = blogSchema.pick({
-    title: true,
-    description: true,
-    image: true
-});
-
-export type GenericPostType = z.infer<typeof genericPostSchema> & {collection: string}
-export type CourseType = Omit<z.infer<typeof courseSchema>, "quote"> & { render: () => any }
-export type InstructorType = z.infer<typeof staffSchema> & { quote: string }
+// The generic card (GenericCard.astro) only needs these three fields plus the
+// collection name. Declared explicitly to avoid z.infer, whose type namespace
+// isn't re-exported through astro:schema.
+export type GenericPostType = {
+    slug: string
+    title: string
+    description: string
+    image: string
+    collection: string
+}
 
 export const tutorialSchema =  z.object({
     title: z.string(),
@@ -81,8 +80,6 @@ export const tutorialSchema =  z.object({
     youtube: z.string(),
     tags: z.array(z.string()).optional().or(z.null()),
 });
-
-export type TutorialType = z.infer<typeof tutorialSchema>;
 
 const tutorials = defineCollection({
     loader: glob({pattern: '**/*.{md,mdx}', base: './src/content/tutorials'}),

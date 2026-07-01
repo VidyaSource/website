@@ -9,7 +9,7 @@ interface Props {
     badge?: string
 }
 
-const { title: instructorTitle, name, profileUrl, image, quote, badge} = Astro.props
+const { title: instructorTitle, name, image, quote, badge} = Astro.props
 
 ---
 <section class="relative bg-white dark:bg-gray-dark overflow-hidden">
@@ -48,7 +48,6 @@ const { title: instructorTitle, name, profileUrl, image, quote, badge} = Astro.p
                     <div class="relative">
                         <div class="h-40 w-40 xl:h-48 xl:w-48 rounded-full ring-4 ring-white dark:ring-gray-dark shadow-lg overflow-hidden">
                             <Image
-                                layout="fill"
                                 class="w-full h-full object-cover rounded-full"
                                 src={images[`/src${image}`]()}
                                 alt={`Course instructor ${name}`}

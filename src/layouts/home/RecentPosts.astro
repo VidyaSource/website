@@ -1,6 +1,6 @@
 ---
 import BlogPostCard from '../../layouts/blog/BlogPostCard.astro'
-import {blogPosts, BlogPost} from "../blog/blogUtils";
+import {blogPosts, type BlogPost} from "../blog/blogUtils";
 
 const recentPosts: Array<BlogPost> = await blogPosts.slice(0, 3)
 

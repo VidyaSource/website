@@ -33,11 +33,11 @@ const article = openGraph?.article
      facebook={{
          image: absoluteImage,
          url: canonicalUrl,
-         type: ogType
+         type: ogType as any
      }}
      twitter={{
          image: absoluteImage,
-         card: twitterCard ?? "summary_large_image"
+         card: (twitterCard ?? "summary_large_image") as any
      }}
 />
 <link rel="canonical" href={canonicalUrl}>

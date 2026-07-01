@@ -16,6 +16,10 @@ interface Props {
     image?: string
     openGraph?: any
     schema?: any
+    noindex?: boolean
+    nofollow?: boolean
+    meta?: Array<{name: string, content: string}>
+    twitterCard?: string
 }
 ---
 <!doctype html>

@@ -1,6 +1,8 @@
 import {type CollectionEntry, getCollection, getEntry, render} from "astro:content";
 
-const courseList: CollectionEntry<'courses'>[] = await getCollection('courses').then(c => c.sort((a, b) => b.data.title.valueOf() - a.data.title.valueOf()));
+const courseList: CollectionEntry<'courses'>[] = await getCollection('courses').then(c => c.sort((a, b) => b.data.title.localeCompare(a.data.title)));
+
+export type Course = (typeof courses)[number]
 
 export const courses = await Promise.all(courseList.map(async (c) => {
     const instructor = await getEntry(c.data.instructor);
