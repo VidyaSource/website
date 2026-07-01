@@ -1,6 +1,6 @@
 ---
-import {Hero} from "./Hero";
-import {Image} from 'astro:assets';
+import "../../globals.css";
+import Hero from "./Hero.astro";
 import Logo from "../../components/Logo.astro"
 import RecentPosts from "./RecentPosts.astro"
 import Clients from "../../components/Clients.astro"
@@ -8,15 +8,10 @@ import Certifications from "../../components/Certifications.astro"
 import Testimonials from "../../components/Testimonials.astro"
 import CallToAction from "../../components/CallToAction.astro"
 import Footer from "../../components/Footer.astro"
-import ThemeButton from "../../components/ThemeButton.astro";
 import navigation from "../../components/navigation.json";
 ---
 
-<Hero client:visible>
-    <Logo height="65" width="140" slot='desktopLogo' />
-    <Logo height="56" width="120" slot='mobileLogo' />
-    <ThemeButton slot="themeButton" sunFillColor="yellow" moonFillColor="#5A82B4" transition:persist/>
-</Hero>
+<Hero />
 
 {/* Mobile navigation menu — a top-layer popover toggled by the Hero hamburger
     (command="toggle-popover" commandfor="mobile-menu"). Kept out of the React
