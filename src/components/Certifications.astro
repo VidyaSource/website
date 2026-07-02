@@ -1,11 +1,19 @@
 ---
 import {Image} from 'astro:assets';
+import aaif from "../img/certifications/aaif-ambassador.png";
 import sba from "../img/certifications/8a.png";
 import crmsdc from "../img/certifications/crmsdc.png";
 import uspaacc from "../img/certifications/uspaacc.svg";
 import swam from "../img/certifications/swam.jpeg";
 
 const certifications = [
+    {
+        certifier: "Agentic AI Foundation",
+        img: aaif,
+        url: "/blog/agentic-ai-foundation-ambassador",
+        alt: "Agentic AI Foundation Ambassador 2026 Badge",
+        description: "Named an inaugural AAIF Ambassador for 2026"
+    },
     {
         certifier: "U.S. Small Business Administration",
         img: sba,
@@ -44,7 +52,7 @@ const certifications = [
     <section class="relative max-w-7xl mx-auto">
         <div class="text-center">
             <p class="text-sm font-semibold tracking-widest uppercase text-green-dark dark:text-green-light mb-3">Recognized Excellence</p>
-            <h2 class="text-3xl tracking-tight font-extrabold text-red dark:text-red-light sm:text-4xl">Certifications</h2>
+            <h2 class="text-3xl tracking-tight font-extrabold text-red dark:text-red-light sm:text-4xl">Certifications and Distinctions</h2>
             <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-dark dark:text-blue-light leading-relaxed sm:mt-5">
                 Government and industry recognize Vidya as a small business that brings big value to anyone
                 excited about leveraging technology to do great things.
@@ -53,7 +61,7 @@ const certifications = [
                 <div class="w-12 h-1 rounded-full bg-red dark:bg-red-light"></div>
             </div>
         </div>
-        <div class="mt-12 max-w-lg mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:max-w-none">
+        <div class="mt-12 max-w-lg mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:max-w-none">
             {certifications.map((c) => {
                 return (
                     <a href={c.url} class="group flex flex-col rounded-xl shadow-sm hover:shadow-lg overflow-hidden bg-blue-light dark:bg-gray hover:-translate-y-1 transition-all duration-200">
