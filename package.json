@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build && cp -r src/img dist/img",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "functions:dev": "wrangler pages dev -- npm run dev"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
@@ -24,12 +25,19 @@
     "astro-seo-meta": "^7.0.0",
     "astro-seo-schema": "^7.0.0",
     "date-fns": "^4.4.0",
+    "effect": "^3.22.0",
+    "resend": "^6.18.0",
     "tailwindcss": "^4.0.4",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "validator": "^13.15.35",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260724.1",
+    "@types/validator": "^13.15.10",
     "@vite-pwa/astro": "^1.2.0",
-    "schema-dts": "^1.1.2"
+    "schema-dts": "^1.1.2",
+    "wrangler": "^4.114.0"
   },
   "overrides": {
     "@vite-pwa/astro": {

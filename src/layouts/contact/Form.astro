@@ -144,6 +144,15 @@
                                 ></textarea>
                             </div>
                         </div>
+                        {/* Honeypot: hidden from sighted users and assistive tech; bots that fill every field trip this */}
+                        <div style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
+                            <label for="website">Leave this field blank</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+                        </div>
+                        <div class="sm:col-span-2">
+                            <div class="cf-turnstile" data-sitekey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY}></div>
+                        </div>
+                        <p id="contact-error" class="hidden sm:col-span-2 text-sm text-red" role="alert"></p>
                         <div class="sm:col-span-2 sm:flex sm:justify-end">
                             <button
                                 type="submit"
@@ -162,30 +171,69 @@
     </div>
 </section>
 
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
+    declare const turnstile: { reset: (widget?: string | HTMLElement) => void } | undefined;
+
     function initContactForm() {
         const form = document.getElementById('contact-form') as HTMLFormElement | null;
         if (!form) return;
         const wrap = form.closest('[data-form-wrap]');
         const thanks = document.getElementById('contact-thanks');
+        const errorEl = document.getElementById('contact-error');
+        const turnstileWidget = form.querySelector('.cf-turnstile') as HTMLElement | null;
+        const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+
+        const showError = (message: string) => {
+            if (!errorEl) return;
+            errorEl.textContent = message;
+            errorEl.classList.remove('hidden');
+        };
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
+            errorEl?.classList.add('hidden');
+
             const data = new FormData(form);
             const from = data.get('EMAIL');
             const subject = data.get('subject');
             const message = data.get('message');
-            if (from && subject && message) {
-                await fetch('/api/contact', {
+            const website = data.get('website') ?? '';
+            const turnstileToken = data.get('cf-turnstile-response') ?? '';
+
+            if (!from || !subject || !message) return;
+
+            if (submitButton) submitButton.disabled = true;
+            try {
+                const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json, text/plain, */*',
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({from, subject, message})
+                    body: JSON.stringify({from, subject, message, website, turnstileToken})
                 });
-                wrap?.classList.add('hidden');
-                thanks?.classList.remove('hidden');
+                const result = await response.json().catch(() => null);
+
+                if (response.ok && result?.ok) {
+                    wrap?.classList.add('hidden');
+                    thanks?.classList.remove('hidden');
+                } else {
+                    showError(result?.error || 'Something went wrong. Please try again.');
+                }
+            } catch {
+                showError('Something went wrong. Please try again.');
+            } finally {
+                if (submitButton) submitButton.disabled = false;
+                // Reset is best-effort: an unrendered/invalid widget throws, and that must
+                // never clobber the error message already shown above.
+                try {
+                    if (typeof turnstile !== 'undefined' && turnstileWidget) {
+                        turnstile.reset(turnstileWidget);
+                    }
+                } catch {
+                    // ignore
+                }
             }
         });
     }

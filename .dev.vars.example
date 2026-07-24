@@ -1,0 +1,4 @@
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+CONTACT_FROM_EMAIL=Vidya Website <contact@vidyasource.com>
+CONTACT_TO_EMAIL=info@vidyasource.com
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
