@@ -147,7 +147,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         ),
       EmailSendError: () =>
         Effect.succeed(
-          Response.json({ ok: false, error: "Failed to send message" }, { status: 502 }),
+          // 502/504/520-527 get silently replaced by Cloudflare's own edge
+          // error page, hiding the real body from the client. 500 passes through.
+          Response.json({ ok: false, error: "Failed to send message" }, { status: 500 }),
         ),
     }),
   );
