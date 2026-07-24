@@ -2,5 +2,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "vidya-website",
   "compatibility_date": "2026-07-24",
-  "pages_build_output_dir": "dist"
+  "pages_build_output_dir": "dist",
+  "vars": {
+    "CONTACT_TO_EMAIL": "info@vidyasource.com",
+    "PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAAD84mBlMy0EnXWxA"
+  }
 }
