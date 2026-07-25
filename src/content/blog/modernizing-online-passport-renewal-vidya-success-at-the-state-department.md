@@ -62,7 +62,7 @@ The crown jewel of our modernization efforts, Online Passport Renewal (OPR), is 
 The most recent analysis of OPR revealed some welcome accomplishments: 
 
 - Processing thousands of passports daily
-- Boasting a remarkable 97% customer satisfaction rate
+- Boasting a remarkable 97% customer satisfaction rate and 80% increased trust in government
 - Generating neutral to positive social media sentiment
 
 Don't just take our word for it! Sean Hollister at The Verge had a [good experience with OPR](https://www.theverge.com/2024/7/3/24190366/us-passport-online-renewal-beta-fast).
