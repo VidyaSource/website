@@ -58,11 +58,11 @@ modernization is one of the most challenging feats in our field.
 Our first major triumph was the launch of eCRBA, streamlining the process for American parents to obtain birth certificates for their children born overseas. 
 This service has been a game-changer, offering unprecedented convenience and efficiency.
 
-The crown jewel of our modernization efforts, Online Passport Renewal (OPR), is now live in limited beta – and it's turning heads!
+The crown jewel of our modernization efforts, Online Passport Renewal (OPR), is now live.
 The most recent analysis of OPR revealed some welcome accomplishments: 
 
 - Processing thousands of passports daily
-- Boasting a remarkable 98% customer satisfaction rate
+- Boasting a remarkable 97% customer satisfaction rate
 - Generating neutral to positive social media sentiment
 
 Don't just take our word for it! Sean Hollister at The Verge had a [good experience with OPR](https://www.theverge.com/2024/7/3/24190366/us-passport-online-renewal-beta-fast).
