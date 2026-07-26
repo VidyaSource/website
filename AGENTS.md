@@ -155,7 +155,15 @@ The dev container (`.devcontainer/devcontainer.json`) uses Node 22 and forwards 
 - No adapter: the site is fully static, so Astro builds directly to `dist/` (no `@astrojs/cloudflare`, no `dist/client` + `dist/server` split). If SSR is ever needed, re-add the Cloudflare adapter and point the Pages output directory at `dist/client`.
 - `public/_headers` sets the immutable `Cache-Control` for hashed `/_astro/*` assets (previously injected by the adapter).
 - No server-side rendering — all pages are pre-rendered at build time.
+- There is a function that runs in the code base that runs on Cloudflare to support email delivery from the Contact form.
 
+---
+
+# AI consumption
+
+- The Vidya website supports consumption by ChatGPT, Claude, and Perplexity via llms.txt so that visitors can have AI evaluate Vidya. 
+- Every Astro content collection should be mined for llms.txt content.
+- 
 ---
 
 ## Things to Avoid
