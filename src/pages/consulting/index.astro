@@ -2,74 +2,19 @@
 import Consulting from "../../layouts/consulting/Consulting.astro";
 import Page from '../../components/Page.astro'
 import vidyaSchema from "../../components/vidyaSchema.json";
+import {services} from "../../layouts/consulting/consultingUtils";
 
 const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Vidya LLC Consulting Services",
-    "description": "Vidya LLC provides consulting services to help organizations with their technology strategy, architecture, AI & software development, organizational culture, and technical communication.",
-    "provider": vidyaSchema,
-    "serviceType": [
-        "Architecture Consulting",
-        "Software Development Consulting",
-        "Organizational Culture Consulting",
-        "Technical Communication Consulting",
-        "Technology Contracting and Recruiting Consulting"
-    ],
-    "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Vidya LLC Consulting Offerings",
-        "itemListElement": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Software Architecture",
-                    "description": "Vidya is a certified IT consulting firm specializing in software modernization with the cloud, AI, data analytics, and modern UI."
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Software Development",
-                    "description": "Vidya is a certified IT consulting firm specializing in software modernization with the cloud, AI, data analytics, and modern UI."
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Organizational Culture Consulting",
-                    "description": "Vidya can help you build a strong organizational culture that promotes the right values for successful technological transformation."
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Technical Communication Consulting",
-                    "description": "Vidya can help you communicate your technical expertise effectively through engaging verbal and written communication."
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Technology Contracting and Recruiting Consulting",
-                    "description": "Vidya LLC provides consulting services to help organizations with technology contracting, ensuring that contracts motivate the right goals, and assisting in identifying and attracting top talent that aligns with the organization's technology challenges and culture.",
-                    "serviceType": [
-                        "Technology Contracting",
-                        "Talent Recruiting"
-                    ]
-                }
-            }
-        ]
-    }
+    "@type": "CollectionPage",
+    name: "Vidya Consulting Services",
+    description: "Vidya's consulting practice areas: AI, software modernization, cloud native and DevSecOps, architecture, technology culture, and government modernization.",
+    mainEntity: services.map(s => ({...s.schema, provider: vidyaSchema, url: `${Astro.url.origin}/consulting/${s.slug}`})),
+    publisher: vidyaSchema
 }
 ---
-<Page title="Architecture Consulting, Software Development Services, & Culture Building | Vidya LLC"
-      description="Vidya provides expert architecture consulting, technology reviews, and organizational culture building services. Our experienced team builds greaat software, helps you discover optimal architectures, review technology strategies, and improve contracting and recruiting processes for better outcomes."
+<Page title="Software Modernization, AI & Architecture Consulting | Vidya"
+      description="Vidya's consulting practice areas: AI, software modernization, cloud native and DevSecOps, architecture, technology culture, and government modernization. Pick a practice area."
       schema={schema}>
     <Consulting/>
 </Page>

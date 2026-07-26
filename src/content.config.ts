@@ -95,6 +95,25 @@ const llms = defineCollection({
     schema: llmsSchema,
 });
 
+export const consultingSchema = z.object({
+    title: z.string(),
+    seoTitle: z.string(),
+    tagline: z.string(),
+    description: z.string(),
+    image: z.string(),
+    tags: z.array(z.string()),
+    order: z.number(),
+    faqs: z.array(z.object({
+        question: z.string(),
+        answer: z.string()
+    })).optional()
+})
+
+const consulting = defineCollection({
+    loader: glob({pattern: '**/*.{md,mdx}', base: './src/content/consulting'}),
+    schema: consultingSchema,
+});
+
 export const collections = {
-    blog, staff, courses, tutorials, llms
+    blog, staff, courses, tutorials, llms, consulting
 };

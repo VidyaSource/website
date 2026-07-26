@@ -35,13 +35,39 @@
                 "itemListElement": [
                     {
                         "@type": "OfferCatalogProduct",
-                        "name": "Software Modernization",
-                        "description": "We specialize in software modernization tailored to meet your business needs. Our experienced developers utilize the latest technologies and best practices to deliver high-quality, scalable solutions."
+                        "name": "AI Consulting & Agentic Engineering",
+                        "description": "Vidya builds agentic AI systems for business and government on Spring AI, Embabel, MCP, and LangChain4j, engineered for production use.",
+                        "url": "https://www.vidyasource.com/consulting/ai-consulting"
                     },
                     {
                         "@type": "OfferCatalogProduct",
-                        "name": "IT Consulting",
-                        "description": "Our IT consulting services help organizations optimize their technology strategies, implement secure and efficient systems, and leverage the latest innovations to drive growth and productivity."
+                        "name": "Software Modernization for Legacy Systems",
+                        "description": "Vidya modernizes legacy government and commercial systems incrementally, the approach behind the State Department's Online Passport Renewal and the Recreation.gov migration.",
+                        "url": "https://www.vidyasource.com/consulting/software-modernization"
+                    },
+                    {
+                        "@type": "OfferCatalogProduct",
+                        "name": "Cloud Native Architecture & DevSecOps",
+                        "description": "Vidya builds cloud-native, container-based systems on AWS and Azure with DevSecOps pipelines that shipped the State Department's passport service and tripled Recreation.gov's reservation volume.",
+                        "url": "https://www.vidyasource.com/consulting/cloud-native-devsecops"
+                    },
+                    {
+                        "@type": "OfferCatalogProduct",
+                        "name": "Software & Data Architecture",
+                        "description": "Vidya designs event-driven microservices, Zero Trust access, and Data Mesh architectures, the same discipline behind a React component library used across 6 State Department product teams.",
+                        "url": "https://www.vidyasource.com/consulting/software-architecture"
+                    },
+                    {
+                        "@type": "OfferCatalogProduct",
+                        "name": "Technology Culture & Organizational Consulting",
+                        "description": "Vidya builds engineering culture, contracting, and recruiting practices beyond Scrum ceremony, backed by GAO Agile Expert Group membership and the training program that became DITAP.",
+                        "url": "https://www.vidyasource.com/consulting/technology-culture"
+                    },
+                    {
+                        "@type": "OfferCatalogProduct",
+                        "name": "AI & Modernization Consulting for Government",
+                        "description": "Vidya is an 8(a) and SWaM-certified firm on GSA MAS schedule 47QTCA24D0069 (SIN 54151S), delivering modernization and AI work for the State Department and other federal agencies.",
+                        "url": "https://www.vidyasource.com/consulting/government-modernization"
                     },
                     {
                         "@type": "OfferCatalogProduct",
@@ -99,7 +125,7 @@
                 },
                 {
                     "@type": "SiteNavigationElement",
-                    "name": "Consulting",
+                    "name": "Contact",
                     "url": "https://www.vidyasource.com/contact"
                 }
             ]

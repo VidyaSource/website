@@ -1,0 +1,30 @@
+---
+import Page from '../../components/Page.astro'
+import {services} from '../../layouts/consulting/consultingUtils';
+import Service from '../../layouts/consulting/Service.astro'
+import vidyaSchema from '../../components/vidyaSchema.json'
+
+export const prerender = true;
+export async function getStaticPaths() {
+    return Promise.all(services.map(async (s) => {
+        return {
+            params: {slug: s.slug},
+            props: s,
+        };
+    }));
+}
+
+const {
+    seoTitle, description, image
+} = Astro.props
+
+const schema = Astro.props.schema as Record<string, any>
+schema["provider"] = vidyaSchema
+schema["image"] = `${Astro.url.origin}${image}`
+---
+<Page title={seoTitle}
+      description={description}
+      image={image}
+      schema={schema}>
+    <Service {...Astro.props}/>
+</Page>

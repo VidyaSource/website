@@ -2,10 +2,17 @@
 import BlogPostCard from '../blog/BlogPostCard.astro'
 import {blogPosts} from '../blog/blogUtils'
 
-const CONSULTING_TOPICS = ['architecture', 'ai', 'agentic ai', 'modernization', 'cloud', 'culture']
+const DEFAULT_TOPICS = ['architecture', 'ai', 'agentic ai', 'modernization', 'cloud', 'culture']
+
+interface Props {
+    topics?: string[]
+    heading?: string
+}
+
+const {topics = DEFAULT_TOPICS, heading = "Insights on Architecture & Modernization"} = Astro.props
 
 const insights = blogPosts
-    .filter(p => p.keywords.some(k => CONSULTING_TOPICS.includes(k.toLowerCase())))
+    .filter(p => p.keywords.some(k => topics.includes(k.toLowerCase())))
     .slice(0, 3)
 ---
 {insights.length > 0 && (
@@ -16,7 +23,7 @@ const insights = blogPosts
                     From Our Blog
                 </span>
                 <h2 class="mt-6 text-4xl font-extrabold tracking-tight text-red dark:text-red-light sm:text-5xl">
-                    Insights on Architecture & Modernization
+                    {heading}
                 </h2>
                 <div class="mt-4 mx-auto w-16 h-1 bg-red rounded-full"></div>
             </div>
