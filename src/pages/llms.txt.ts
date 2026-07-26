@@ -14,6 +14,9 @@ export async function GET() {
     const courses = (await getCollection('courses'))
         .sort((a, b) => a.data.title.localeCompare(b.data.title));
 
+    const services = (await getCollection('consulting'))
+        .sort((a, b) => a.data.order - b.data.order);
+
     const posts = (await getCollection('blog', ({ data }) => data.draft !== true))
         .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
@@ -41,6 +44,16 @@ export async function GET() {
         lines.push(`See: [About](${SITE}/about)`);
         lines.push('');
     }
+
+    lines.push('## Consulting Service Pages');
+    for (const s of services) {
+        lines.push('');
+        lines.push(`### ${s.data.title}`);
+        lines.push(s.data.tagline);
+        lines.push(s.data.description);
+        lines.push(`Link: [${s.data.title}](${SITE}/consulting/${s.id})`);
+    }
+    lines.push('');
 
     lines.push('## Courses');
     for (const c of courses) {
