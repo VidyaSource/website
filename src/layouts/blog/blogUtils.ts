@@ -40,3 +40,17 @@ export const blogPosts = await Promise.all(posts.map(async (p) => {
         }
     };
 }));
+
+export const getRelatedPosts = (slug: string, keywords: string[], max = 3): BlogPost[] => {
+    const keywordSet = new Set(keywords.map(k => k.toLowerCase()))
+    return blogPosts
+        .filter(p => p.slug !== slug)
+        .map(p => ({
+            post: p,
+            score: p.keywords.filter(k => keywordSet.has(k.toLowerCase())).length
+        }))
+        .filter(({score}) => score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, max)
+        .map(({post}) => post)
+}

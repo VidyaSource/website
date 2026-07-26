@@ -4,14 +4,18 @@ import {format} from "date-fns/format"
 import Avatar from '../../layouts/blog/Avatar.astro';
 import TwitterScript from '../../layouts/blog/TwitterScript.astro';
 import YouTubeVideo from '../../components/YouTubeVideo.astro'
+import BlogPostCard from '../../layouts/blog/BlogPostCard.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import {getRelatedPosts} from '../../layouts/blog/blogUtils';
 import {Image} from 'astro:assets';
 import {images} from "../../components/Images";
 
 const {
-    title, description, date, image, keywords, youtube, render,
+    slug, title, description, date, image, keywords, youtube, render,
     author: {title: authorTitle, name, profileUrl, image: authorImage}
 } = Astro.props
 const selectedTags = selectTags(keywords, 6)
+const relatedPosts = getRelatedPosts(slug, keywords, 3)
 const {Content} = await render();
 ---
 <article class="relative overflow-hidden bg-blue-light dark:bg-gray-dark">
@@ -65,3 +69,18 @@ const {Content} = await render();
         </section>
     </div>
 </article>
+
+{relatedPosts.length > 0 && (
+    <section class="relative bg-white dark:bg-gray-dark px-4 sm:px-6 lg:px-8 py-16">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-extrabold tracking-tight text-red dark:text-red-light text-center mb-10">
+                Related Reading
+            </h2>
+            <div class="grid gap-8 md:grid-cols-3">
+                {relatedPosts.map((p) => <BlogPostCard {...p} classes="bg-white"/>)}
+            </div>
+        </div>
+    </section>
+)}
+
+<CallToAction/>

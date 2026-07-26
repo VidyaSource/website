@@ -1,0 +1,31 @@
+---
+import BlogPostCard from '../blog/BlogPostCard.astro'
+import {blogPosts} from '../blog/blogUtils'
+
+const CONSULTING_TOPICS = ['architecture', 'ai', 'agentic ai', 'modernization', 'cloud', 'culture']
+
+const insights = blogPosts
+    .filter(p => p.keywords.some(k => CONSULTING_TOPICS.includes(k.toLowerCase())))
+    .slice(0, 3)
+---
+{insights.length > 0 && (
+    <section class="relative bg-blue-light dark:bg-gray-dark overflow-hidden">
+        <div class="relative mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-blue text-white rounded-full">
+                    From Our Blog
+                </span>
+                <h2 class="mt-6 text-4xl font-extrabold tracking-tight text-red dark:text-red-light sm:text-5xl">
+                    Insights on Architecture & Modernization
+                </h2>
+                <div class="mt-4 mx-auto w-16 h-1 bg-red rounded-full"></div>
+            </div>
+            <div class="grid gap-8 md:grid-cols-3">
+                {insights.map((p) => <BlogPostCard {...p} classes="bg-white"/>)}
+            </div>
+            <div class="text-center mt-10">
+                <a href="/blog" class="text-blue hover:text-blue-dark underline underline-offset-2 font-semibold">Read more on our blog &rarr;</a>
+            </div>
+        </div>
+    </section>
+)}
