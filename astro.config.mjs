@@ -10,6 +10,10 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
     site: 'https://www.vidyasource.com',
     output: 'static',
+    // Renamed 2026-07-29: /consulting/software-modernization became
+    // /consulting/legacy-system-modernization. The 301 lives in public/_redirects
+    // rather than Astro's `redirects` option, because Astro emits a meta-refresh
+    // HTML file whose presence can shadow the host redirect rule.
     integrations: [
         mdx({
             markdown: {

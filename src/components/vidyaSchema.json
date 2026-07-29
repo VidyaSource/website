@@ -12,7 +12,7 @@
                 "url": "https://www.vidyasource.com/vidya.png"
             },
             "foundingDate": "2010",
-            "description": "Vidya LLC provides software modernization, IT consulting, and technology training services. We're an 8(a) & SWaM certified small business dedicated to helping organizations leverage technology for growth.",
+            "description": "Vidya LLC provides legacy system modernization, IT consulting, and technology training services, spanning application code, data architecture, and agile and DevSecOps culture. We're an 8(a) & SWaM certified small business dedicated to helping organizations leverage technology for growth.",
             "email": "info@vidyasource.com",
             "telephone": "+1-202-430-5695",
             "address": {
@@ -41,9 +41,9 @@
                     },
                     {
                         "@type": "OfferCatalogProduct",
-                        "name": "Software Modernization for Legacy Systems",
-                        "description": "Vidya modernizes legacy government and commercial systems incrementally, the approach behind the State Department's Online Passport Renewal and the Recreation.gov migration.",
-                        "url": "https://www.vidyasource.com/consulting/software-modernization"
+                        "name": "Legacy System Modernization",
+                        "description": "Vidya modernizes legacy government and commercial systems incrementally, covering application code, data architecture, and delivery culture, the approach behind the State Department's Online Passport Renewal and the Recreation.gov migration.",
+                        "url": "https://www.vidyasource.com/consulting/legacy-system-modernization"
                     },
                     {
                         "@type": "OfferCatalogProduct",
@@ -78,7 +78,7 @@
                     {
                         "@type": "OfferCatalogProduct",
                         "name": "Vidya LLC Blog",
-                        "description": "Explore Vidya LLC's blog for insightful articles, industry news, and expert insights on software modernization, IT consulting, technology training, and more.",
+                        "description": "Explore Vidya LLC's blog for insightful articles, industry news, and expert insights on legacy system modernization, IT consulting, technology training, and more.",
                         "url": "https://www.vidyasource.com/blog"
                     },
                     {
@@ -112,6 +112,11 @@
                     "@type": "SiteNavigationElement",
                     "name": "Blog",
                     "url": "https://www.vidyasource.com/blog"
+                },
+                {
+                    "@type": "SiteNavigationElement",
+                    "name": "Case Studies",
+                    "url": "https://www.vidyasource.com/case-studies"
                 },
                 {
                     "@type": "SiteNavigationElement",

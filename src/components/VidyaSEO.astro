@@ -18,7 +18,7 @@ interface Props {
 const {title, description, type, image, meta, noindex, nofollow, schema, openGraph, twitterCard} = Astro.props
 
 const modifiedTitle = title ?? "Vidya | AI & Cloud Consulting and Modernization"
-const modifiedDescription = description ?? "Vidya is a certified IT consulting firm specializing in AI, cloud, and software modernization services. Partner with our experts to transform your organization."
+const modifiedDescription = description ?? "Vidya is a certified IT consulting firm specializing in AI, cloud, and legacy system modernization. Partner with our experts to transform your organization."
 
 const base = Astro.site ?? new URL(Astro.url.origin)
 const absoluteImage = new URL(image ?? "/vidya-social.png", base).href

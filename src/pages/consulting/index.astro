@@ -8,13 +8,13 @@ const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Vidya Consulting Services",
-    description: "Vidya's consulting practice areas: AI, software modernization, cloud native and DevSecOps, architecture, technology culture, and government modernization.",
+    description: "Vidya's consulting practice areas: AI, legacy system modernization, cloud native and DevSecOps, architecture, technology culture, and government modernization.",
     mainEntity: services.map(s => ({...s.schema, provider: vidyaSchema, url: `${Astro.url.origin}/consulting/${s.slug}`})),
     publisher: vidyaSchema
 }
 ---
-<Page title="Software Modernization, AI & Architecture Consulting | Vidya"
-      description="Vidya's consulting practice areas: AI, software modernization, cloud native and DevSecOps, architecture, technology culture, and government modernization. Pick a practice area."
+<Page title="Legacy System Modernization & AI Consulting | Vidya"
+      description="Vidya's practice areas span AI, legacy system modernization, cloud native DevSecOps, architecture, culture, and government modernization."
       schema={schema}>
     <Consulting/>
 </Page>

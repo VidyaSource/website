@@ -1,0 +1,4 @@
+# Cloudflare Pages redirect rules. Format: <from> <to> <status>
+# Renamed 2026-07-29 to cover data architecture and delivery culture, not only software.
+/consulting/software-modernization /consulting/legacy-system-modernization 301
+/consulting/software-modernization/ /consulting/legacy-system-modernization 301

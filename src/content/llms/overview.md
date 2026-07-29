@@ -3,7 +3,7 @@ title: "Vidya | AI & Cloud Consulting and Modernization"
 ---
 
 ## Company Overview
-Vidya is a federally certified 8(a) and Virginia SWaM (Small, Micro, Minority-owned) business that specializes in software modernization and technology consulting. Founded in 2010 and headquartered in Vienna, VA, Vidya serves both commercial businesses and government agencies.
+Vidya is a federally certified 8(a) and Virginia SWaM (Small, Micro, Minority-owned) business that specializes in legacy system modernization and technology consulting, covering application code, data architecture, and the agile and DevSecOps culture that sustains both. Founded in 2010 and headquartered in Vienna, VA, Vidya serves both commercial businesses and government agencies.
 
 ## Core Services
 - Custom software development (on-premise, cloud, and hybrid solutions)
