@@ -1,0 +1,31 @@
+---
+import Page from '../../components/Page.astro'
+import {caseStudies} from '../../layouts/case-studies/caseStudyUtils';
+import CaseStudy from '../../layouts/case-studies/CaseStudy.astro'
+import vidyaSchema from '../../components/vidyaSchema.json'
+
+export const prerender = true;
+export async function getStaticPaths() {
+    return Promise.all(caseStudies.map(async (s) => {
+        return {
+            params: {slug: s.slug},
+            props: s,
+        };
+    }));
+}
+
+const {
+    seoTitle, description, image
+} = Astro.props
+
+const schema = Astro.props.schema as Record<string, any>
+schema["publisher"] = vidyaSchema
+schema["author"] = vidyaSchema
+schema["image"] = `${Astro.url.origin}${image}`
+---
+<Page title={seoTitle}
+      description={description}
+      image={image}
+      schema={schema}>
+    <CaseStudy {...Astro.props}/>
+</Page>

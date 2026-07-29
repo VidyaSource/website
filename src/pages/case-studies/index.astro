@@ -1,0 +1,20 @@
+---
+import CaseStudiesIndex from "../../layouts/case-studies/CaseStudiesIndex.astro";
+import Page from '../../components/Page.astro'
+import vidyaSchema from "../../components/vidyaSchema.json";
+import {caseStudies} from "../../layouts/case-studies/caseStudyUtils";
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Vidya Case Studies",
+    description: "Delivered modernization, AI, and threat detection engagements from Vidya for the State Department, HealthCare.gov, Thomson Reuters Special Services, Neustar, and others.",
+    mainEntity: caseStudies.map(s => ({...s.schema, publisher: vidyaSchema, url: `${Astro.url.origin}/case-studies/${s.slug}`})),
+    publisher: vidyaSchema
+}
+---
+<Page title="Legacy System Modernization & AI Case Studies | Vidya"
+      description="How Vidya delivered passport renewal for the State Department, performance gains on HealthCare.gov, and machine learning threat detection for Thomson Reuters."
+      schema={schema}>
+    <CaseStudiesIndex/>
+</Page>

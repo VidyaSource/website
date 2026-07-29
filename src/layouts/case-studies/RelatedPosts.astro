@@ -1,0 +1,125 @@
+---
+import BlogPostCard from '../blog/BlogPostCard.astro'
+import {blogPosts} from '../blog/blogUtils'
+import {supersededPosts} from './caseStudyUtils'
+
+interface Props {
+    topics?: string[]
+    technologies?: string[]
+    excluded?: string[]
+    pinned?: string[]
+    heading?: string
+}
+
+const {topics = [], technologies = [], excluded = [], pinned = [], heading = "Related Insights"} = Astro.props
+
+const COUNT = 3
+
+// Blog posts and case studies spell the same technology differently often enough
+// to matter. Strict synonyms only. Mapping a specific tool to a broad topic
+// ("scalatest" to "testing") manufactures matches and drowns out real ones.
+const ALIASES: Record<string, string[]> = {
+    'go': ['golang'],
+    'golang': ['go'],
+    'aws': ['amazon ec2', 'amazon s3', 'amazon cloudfront', 'amazon web services'],
+    'amazon ec2': ['aws'],
+    'amazon s3': ['aws'],
+    'amazon cloudfront': ['aws'],
+    'apache spark': ['spark'],
+    'spark': ['apache spark'],
+    'apache kafka': ['kafka'],
+    'kafka': ['apache kafka'],
+    'spring boot': ['spring'],
+    'spring': ['spring boot'],
+    'java virtual machine': ['java'],
+    'ruby on rails': ['ruby'],
+    'postgresql': ['rdbms'],
+    'mongodb': ['nosql'],
+    'microsoft azure': ['azure'],
+}
+
+// Partner announcements read as news, not insight, and several are being retired
+// in favor of these very pages. Keep them off the "Related Insights" row.
+const isAnnouncement = (slug: string) => slug.startsWith('welcoming-')
+
+const normalize = (s: string) => s.toLowerCase().trim()
+
+const expand = (terms: string[]): Set<string> => {
+    const out = new Set<string>()
+    for (const t of terms.map(normalize)) {
+        out.add(t)
+        for (const alias of ALIASES[t] ?? []) out.add(alias)
+    }
+    return out
+}
+
+const blocked = new Set([...supersededPosts, ...excluded])
+const techTerms = expand(technologies)
+const tagTerms = expand(topics)
+
+// Document frequency across the blog corpus. "Programming" tags half the blog and
+// says nothing; "Play Framework" tags a handful and says a lot.
+const documentFrequency = new Map<string, number>()
+for (const p of blogPosts) {
+    for (const k of new Set(p.keywords.map(normalize))) {
+        documentFrequency.set(k, (documentFrequency.get(k) ?? 0) + 1)
+    }
+}
+const corpusSize = blogPosts.length
+const inverseDocumentFrequency = (k: string) =>
+    Math.log(corpusSize / ((documentFrequency.get(k) ?? 0) + 1)) + 1
+
+// A named technology beats a broad topic tag, so it scores triple. Dividing by
+// the square root of the post's tag count stops conference recaps that tag 25
+// technologies from outranking a post actually about the case study's stack.
+const ranked = blogPosts
+    .filter(p => !blocked.has(p.slug) && !isAnnouncement(p.slug))
+    .map(p => {
+        const keywords = [...new Set(p.keywords.map(normalize))]
+        const raw = keywords.reduce((sum, k) => {
+            if (techTerms.has(k)) return sum + inverseDocumentFrequency(k) * 3
+            if (tagTerms.has(k)) return sum + inverseDocumentFrequency(k)
+            return sum
+        }, 0)
+        return {post: p, score: raw / Math.sqrt(Math.max(keywords.length, 1))}
+    })
+    .sort((a, b) => b.score - a.score || b.post.date.valueOf() - a.post.date.valueOf())
+
+// Pinned posts lead in authored order, then the ranking fills the row to COUNT.
+const chosen = pinned
+    .filter(slug => !blocked.has(slug))
+    .map(slug => blogPosts.find(p => p.slug === slug))
+    .filter((p): p is NonNullable<typeof p> => p !== undefined)
+
+const taken = new Set(chosen.map(p => p.slug))
+for (const {post} of ranked) {
+    if (chosen.length >= COUNT) break
+    if (taken.has(post.slug)) continue
+    chosen.push(post)
+    taken.add(post.slug)
+}
+
+const related = chosen.slice(0, COUNT)
+const columns = related.length === 2 ? 'md:grid-cols-2 max-w-3xl mx-auto' : 'md:grid-cols-3'
+---
+{related.length > 0 && (
+    <section class="relative bg-blue-light dark:bg-gray-dark overflow-hidden">
+        <div class="relative mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-blue text-white rounded-full">
+                    From Our Blog
+                </span>
+                <h2 class="mt-6 text-4xl font-extrabold tracking-tight text-red dark:text-red-light sm:text-5xl">
+                    {heading}
+                </h2>
+                <div class="mt-4 mx-auto w-16 h-1 bg-red rounded-full"></div>
+            </div>
+            <div class:list={["grid gap-8", columns]}>
+                {related.map((p) => <BlogPostCard {...p} classes="bg-white"/>)}
+            </div>
+            <div class="text-center mt-10">
+                <a href="/blog" class="text-blue hover:text-blue-dark underline underline-offset-2 font-semibold">Read more on our blog &rarr;</a>
+            </div>
+        </div>
+    </section>
+)}

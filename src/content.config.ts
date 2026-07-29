@@ -114,6 +114,43 @@ const consulting = defineCollection({
     schema: consultingSchema,
 });
 
+export const caseStudySchema = z.object({
+    title: z.string(),
+    seoTitle: z.string(),
+    client: z.string(),
+    sector: z.string(),
+    period: z.string(),
+    tagline: z.string(),
+    description: z.string(),
+    image: z.string(),
+    tags: z.array(z.string()),
+    order: z.number(),
+    // Engineering engagements only. Technologies render as chips and feed the Article
+    // schema keywords. Omit the field entirely on advisory, culture, and content
+    // engagements, where naming a stack would misrepresent the work.
+    technologies: z.array(z.string()).nonempty().optional(),
+    // Qualitative or quantified. `metric` is the headline, `detail` the substantiation.
+    outcomes: z.array(z.object({
+        metric: z.string(),
+        detail: z.string()
+    })).nonempty(),
+    // Blog slugs this case study supersedes. Plain strings rather than
+    // reference('blog') so deleting the post does not break the build.
+    excludedPosts: z.array(z.string()).optional(),
+    // Pins the related-posts list to these blog slugs, in order, instead of
+    // matching on tags. Same plain-string rationale as excludedPosts.
+    relatedPosts: z.array(z.string()).optional(),
+    faqs: z.array(z.object({
+        question: z.string(),
+        answer: z.string()
+    })).optional()
+})
+
+const caseStudies = defineCollection({
+    loader: glob({pattern: '**/*.{md,mdx}', base: './src/content/case-studies'}),
+    schema: caseStudySchema,
+});
+
 export const collections = {
-    blog, staff, courses, tutorials, llms, consulting
+    blog, staff, courses, tutorials, llms, consulting, caseStudies
 };
