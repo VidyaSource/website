@@ -11,13 +11,14 @@ import TailwindElements from "../components/TailwindElements.astro";
     <Analytics />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="description" content="Vidya modernizes legacy systems with cloud, enterprise AI, and data engineering for business and government. Ship continuously without sacrificing quality."/>
+    <!-- VidyaSEO below owns the meta description. Do not add one here: it emits a
+         second, competing description tag ahead of the real one. -->
     <meta name="viewport" content="width=device-width"/>
     <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
     <meta name="generator" content={Astro.generator}/>
     <meta name="theme-color" content="#5A82B4">
     <ClientRouter/>
-    <VidyaSEO title="Software Modernization & AI Engineering | Vidya"
+    <VidyaSEO title="Legacy System Modernization & AI Engineering | Vidya"
               description="Vidya modernizes legacy systems with cloud, enterprise AI, and data engineering for business and government. Ship continuously without sacrificing quality."
               schema={vidyaSchema}
     />

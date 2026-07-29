@@ -28,7 +28,8 @@ interface Props {
     <Analytics />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="description" content="Astro description" />
+    <!-- VidyaSEO below owns the meta description. Do not add a placeholder one here:
+         it emits a second, competing description tag ahead of the real one. -->
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
