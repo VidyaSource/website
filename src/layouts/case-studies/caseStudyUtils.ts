@@ -4,10 +4,6 @@ import {type CollectionEntry, getCollection, render} from "astro:content";
 // its related-posts list so no reader lands on a post slated for removal.
 export const supersededPosts: string[] = [
     'modernizing-online-passport-renewal-vidya-success-at-the-state-department',
-    'welcoming-healthcare-gov',
-    'welcoming-trss',
-    'welcoming-neustar',
-    'welcoming-ninaday',
     'vidya-talks-modernizing-tech-hiring-federal-government-white-house'
 ]
 

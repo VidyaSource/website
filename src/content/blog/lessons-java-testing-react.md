@@ -38,7 +38,7 @@ at all.
 This has really hit me as I learn to write tests for React. My career has been built primarily on Java, 
 Scala, Ruby, and Python--*i.e.* backend development.
 Over the years I have written a lot of JavaScript too, but we are taking it to the next level and enduring some growing pains as 
-we migrate the front end of a [Scala application we built for a client](/blog/welcoming-ninaday/) to React 
+we migrate the front end of a [Scala application we built for a client](/case-studies/casting-platform-nina-day) to React 
 (with all the trimmings--Webpack, TypeScript, RxJS, Immutable.js, *etc.*). 
 React is spearheaded by Facebook and fortified by a vibrant community, so I assumed a consensus on patterns and practices. 
 
