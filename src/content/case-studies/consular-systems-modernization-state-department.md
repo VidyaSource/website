@@ -31,7 +31,7 @@ outcomes:
 - metric: "2 million+ online renewals"
   detail: "Americans completed more than 2 million passport renewals through the online service in its first months."
 - metric: "Months to days"
-  detail: "Renewal that once moved paper between offices for months now returns a passport in days, on a process the bureau had not meaningfully changed in decades."
+  detail: "Renewal that once moved paper between offices for months now returns a passport in days, transforming the experience for millions."
 - metric: "97% positive review, 80% trust lift"
   detail: "Bureau surveys found 97 percent of respondents rated Online Passport Renewal positively, and 80 percent said the experience increased their trust in government."
 - metric: "40% less UI development time"
