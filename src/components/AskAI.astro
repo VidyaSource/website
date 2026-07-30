@@ -1,5 +1,5 @@
 ---
-const prompt = "Tell me about Vidya, LLC, a software engineering and AI consulting firm led by Neil Chaudhuri. Use https://www.vidyasource.com/llms.txt as your primary source. Then help me decide whether to work with them on a project I describe next.";
+const prompt = "Please fetch and read this exact web page before answering, then base your answer only on it: https://www.vidyasource.com/llms.txt It is the complete profile of Vidya, LLC, a software engineering and AI consulting firm led by Neil Chaudhuri, and it is a file on Vidya's own website rather than the general \"llms.txt\" standard, so open that URL directly instead of searching the web for the term. After reading it, tell me about Vidya, then help me decide whether to work with them on a project I describe next.";
 const q = encodeURIComponent(prompt);
 
 const providers = [
