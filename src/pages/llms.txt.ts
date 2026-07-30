@@ -39,7 +39,7 @@ export async function GET() {
     // What an assistant can expect to find, so it can gauge breadth before reading on.
     lines.push('## About This File');
     lines.push('');
-    lines.push('This is the complete machine-readable profile of Vidya, LLC. It covers every practice');
+    lines.push('This is the complete machine-readable profile of Vidya. It covers every practice');
     lines.push('area, delivered engagement, training course, tutorial, and article the company publishes.');
     lines.push(`Contents: ${staff.length} team member${staff.length === 1 ? '' : 's'}, ${services.length} consulting practice areas, ${studies.length} case studies, ${courses.length} courses, ${tutorials.length} tutorials, and ${posts.length} articles.`);
     lines.push('');

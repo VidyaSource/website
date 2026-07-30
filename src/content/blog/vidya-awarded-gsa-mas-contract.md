@@ -14,7 +14,7 @@ categories:
 - Government
 
 ---
-I am excited to announce Vidya, LLC has been awarded a GSA Multiple Award Schedule (MAS) contract for providing IT Professional Services to the government.
+I am excited to announce Vidya has been awarded a GSA Multiple Award Schedule (MAS) contract for providing IT Professional Services to the government.
 
 Our GSA MAS contract gives us the opportunity to join other contract holders in a marketplace so we can sell our 
 software architecture, software engineering, and software consulting services directly to the federal government. Government 

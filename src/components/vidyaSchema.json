@@ -4,7 +4,7 @@
         {
             "@type": "Organization",
             "@id": "https://www.vidyasource.com/#organization",
-            "name": "Vidya LLC",
+            "name": "Vidya",
             "legalName": "Vidya LLC",
             "url": "https://www.vidyasource.com/",
             "logo": {
@@ -12,7 +12,7 @@
                 "url": "https://www.vidyasource.com/vidya.png"
             },
             "foundingDate": "2010",
-            "description": "Vidya LLC provides legacy system modernization, IT consulting, and technology training services, spanning application code, data architecture, and agile and DevSecOps culture. We're an 8(a) & SWaM certified small business dedicated to helping organizations leverage technology for growth.",
+            "description": "Vidya provides legacy system modernization, IT consulting, and technology training services, spanning application code, data architecture, and agile and DevSecOps culture. We're an 8(a) & SWaM certified small business dedicated to helping organizations leverage technology for growth.",
             "email": "info@vidyasource.com",
             "telephone": "+1-202-430-5695",
             "address": {
@@ -31,7 +31,7 @@
             ],
             "hasOfferCatalog": {
                 "@type": "OfferCatalog",
-                "name": "Vidya LLC Services",
+                "name": "Vidya Services",
                 "itemListElement": [
                     {
                         "@type": "OfferCatalogProduct",
@@ -71,20 +71,20 @@
                     },
                     {
                         "@type": "OfferCatalogProduct",
-                        "name": "Vidya LLC Technology Training Courses",
+                        "name": "Vidya Technology Training Courses",
                         "description": "Enhance your team's skills with our comprehensive technology training programs. We offer courses in software development, data engineering, and agile methodologies tailored to your specific needs.",
                         "url": "https://www.vidyasource.com/courses"
                     },
                     {
                         "@type": "OfferCatalogProduct",
-                        "name": "Vidya LLC Blog",
-                        "description": "Explore Vidya LLC's blog for insightful articles, industry news, and expert insights on legacy system modernization, IT consulting, technology training, and more.",
+                        "name": "Vidya Blog",
+                        "description": "Explore Vidya's blog for insightful articles, industry news, and expert insights on legacy system modernization, IT consulting, technology training, and more.",
                         "url": "https://www.vidyasource.com/blog"
                     },
                     {
                         "@type": "OfferCatalogProduct",
                         "name": "Free Online Tutorials",
-                        "description": "Access Vidya LLC's library of software development tutorials. Explore our free educational content covering various technologies, tools, and best practices."
+                        "description": "Access Vidya's library of software development tutorials. Explore our free educational content covering various technologies, tools, and best practices."
                     }
                 ]
             }
@@ -93,7 +93,7 @@
             "@type": "WebSite",
             "@id": "https://www.vidyasource.com/#website",
             "url": "https://www.vidyasource.com",
-            "name": "Vidya, LLC",
+            "name": "Vidya",
             "publisher": {
                 "@id": "https://www.vidyasource.com/#organization"
             },

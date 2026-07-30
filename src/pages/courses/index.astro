@@ -7,13 +7,13 @@ import vidyaSchema from "../../components/vidyaSchema.json";
 const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Vidya LLC Courses",
+    name: "Vidya Courses",
     mainEntity: courses.map(c => c.schema),
     publisher: vidyaSchema
 }
 ---
-<Page title={"Professional Development Courses | Software, Data & Agile Training | Vidya LLC"}
-      description={"Explore Vidya LLC's comprehensive range of professional development courses. Enhance your skills with practical training in software development, data engineering, agile methodologies, and more. Browse our industry-relevant curriculum today."}
+<Page title={"Professional Development Courses | Software, Data & Agile Training | Vidya"}
+      description={"Explore Vidya's comprehensive range of professional development courses. Enhance your skills with practical training in software development, data engineering, agile methodologies, and more. Browse our industry-relevant curriculum today."}
       schema={schema}>
     <CourseIndex />
 </Page>

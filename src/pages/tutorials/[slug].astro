@@ -20,7 +20,7 @@ const schema = Astro.props.schema as Record<string, any>
 schema["contentUrl"] = Astro.url.href
 schema["image"] = `${Astro.url.origin}${image}`
 ---
-<Page title={`${title} | Vidya LLC`}
+<Page title={`${title} | Vidya`}
       description={description}
       image={image}
       twitterCard="player"

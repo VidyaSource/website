@@ -8,7 +8,7 @@ Vidya is a software services and consulting company based in Washington, DC, USA
 
 ### Our Mission
 
-Vidya, LLC builds modernized on-premise, cloud, and hybrid solutions for commercial businesses and government agencies according to their strategic objectives. Vidya's work proves there is no need to choose between continuous delivery and high quality. Federal SBA 8(a), Commonwealth of Virginia SWaM, and multiple commercial certifications as a minority-owned business are testament to Vidya's ability to deliver lean, innovative solutions for clients and to do so the right way using techniques like agile development, DevSecOps, and automated testing for functionality, security, accessibility, and performance.
+Vidya builds modernized on-premise, cloud, and hybrid solutions for commercial businesses and government agencies according to their strategic objectives. Vidya's work proves there is no need to choose between continuous delivery and high quality. Federal SBA 8(a), Commonwealth of Virginia SWaM, and multiple commercial certifications as a minority-owned business are testament to Vidya's ability to deliver lean, innovative solutions for clients and to do so the right way using techniques like agile development, DevSecOps, and automated testing for functionality, security, accessibility, and performance.
 
 ### Our Differentiators
 
