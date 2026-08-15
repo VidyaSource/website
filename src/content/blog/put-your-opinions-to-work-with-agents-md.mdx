@@ -1,0 +1,425 @@
+---
+author: neil-chaudhuri
+title: "Put Your Opinions to Work with AGENTS.md"
+description: "Tech runs on strong opinions. AGENTS.md turns yours into engineering standards AI coding agents enforce on every change, if you respect the instruction budget."
+image: "/img/blog/put-your-opinions-to-work-with-agents-md.webp"
+date: 2026-08-14
+tags:
+- AI
+- Software Engineering
+- Programming
+- Architecture
+- TypeScript
+- Kotlin
+- Functional Programming
+- Testing
+- Open Source
+- DevSecOps
+---
+
+I've seen enough social media debates to understand that software engineering is the most opinionated profession in the world. [Tailwind CSS](https://tailwindcss.com) either ruins your markup or saves your team. Agile died a decade ago, or it never actually started.
+Microservices are dead, and the person announcing their death is shipping a distributed monolith as we speak. to be honest, I have always found it absurd. Don't people get tired of having
+the same arguments every other week?
+
+While I try to avoid the fights, I am no exception when it comes to having strong engineering opinions. I believe [static type systems](/blog/why-types-and-tests-are-both-essential-in-programming) should make invalid states impossible to express, so a boolean never replaces a state machine
+and magic strings never replace better types.
+I believe type safety should extend to configuration, which is why I always use [Pkl](https://pkl-lang.org) rather than bury myself in endless, error-prone YAML files.
+I believe [property-based testing](https://kotest.io/docs/proptest/property-based-testing.html) finds
+the bugs your manual test scenarios were never going to find. I believe effect-oriented programming is essential to write code easier to reason about, which is why our TypeScript
+code uses [Effect](https://effect.website) and our Kotlin code gets very close to true effects with [context parameters](https://kotlinlang.org/docs/context-parameters.html).
+
+Whatever the opinions of you and your team when it comes to building great software, the challenge has always been enforcing them.It was always a combination of static analysis and code review.
+Both are problematic. It takes time to find good static analysis tools and customize them to your specific standards, so it's common to take a "good enough" approach. Code review is a
+[bottleneck](/blog/beyond-github-culture-reconsider-pull-requests/) because reviewers are busy doing their real jobs, so reviews are typically ruber stamps that allow all sorts of
+violations of your perspective on good code.
+
+AI changes that. Specificially, the AGENTS.md file changes that.
+Write an opinion down once, and every coding agent applies it to every file to every change.
+
+## What is AGENTS.md?
+
+`AGENTS.md` is a Markdown file checked into your repository that customizes how AI coding agents behave. It loads right below the system prompt and sits at the top of the conversation on every single
+request, which makes it a configuration layer between the model's base instructions and your actual code.
+
+On December 9, 2025, the Linux Foundation announced formation of  the [Agentic AI Foundation](https://aaif.io/), and OpenAI donated [AGENTS.md](https://agents.md/) into it alongside Anthropic's Model Context Protocol and Block's goose.
+I [wrote about why that matters](/blog/agentic-ai-foundation-ambassador) when AAIF named me an inaugural Ambassador. The adoption numbers are cleaar. More than 700,000 repositories, 24,000 stars, 303 contributors, and roughly
+twenty tools use `AGENTS.md`. The people (and their coding agents) have spoken.
+
+`AGENTS.md` is where you put your opinions, or the consensus opinions of your team at work, to teach coding agents the ground rules for the kind of code base you want. But there are a few gotchas you
+should be aware of.
+
+## AGENTS.md Discoverability
+
+There is no unified approach to using it. Zed puts `AGENTS.md` seventh in the preference hierarchy behind other non-standard options like `.rules` and `.cursorrules`, so a stray `.cursorrules` a teammate committed two years ago silently wins. Codex caps combined
+instruction bytes at 32 KiB and truncates the rest. Claude Code reads `CLAUDE.md` and ignores `AGENTS.md` entirely, which surprises a lot of teams including us at first.
+
+The fix in all these situations is trivial if a bit annoying. Make `AGENTS.md` the source of truth for coding patterns and practices and then use a specific agent's syntax to import `AGENTS.md` into whichever other files rank higher in the agent's
+hierarchy. For example, you can instruct Claude Code to use your `AGENTS.md` with their `@` import syntax:
+
+```markdown
+# CLAUDE.md
+
+@AGENTS.md
+
+# Claude-specific instructions below
+```
+
+Claude Code expands the `@` import at session start and loads the shared file as if it were inline. A symlink does the same job:
+
+```bash
+`ln -s AGENTS.md CLAUDE.md`
+```
+
+## Balancing the Instruction Budget
+
+`AGENTS.md` loads on every request rather than on demand. On one level, this is good because your opinions should apply to all the code you write. The problem is that not every
+task demands every opinion. My Kotlin code does not need to know that my TypeScript code uses Effect, so coding agents waste tokens understanding my TypeScript
+opinions when they need to update a Spring Boot repository.
+
+Matt Pocock's [complete guide to AGENTS.md](https://www.aihero.dev/a-complete-guide-to-agents-md) credits Kyle Mistele of HumanLayer with a term for this: the *instruction budget*. According to Kyle, frontier AI models follow roughly 150 to 200
+instructions with consistency. Smaller models follow fewer. Others more or less agree. GitHub's guidance says no longer than two pages. Codex enforces 32 KiB in code. The specific numbers don't
+matter, and they vary and evolve across the matrix of vendors and models anyway. The key is to understand that there is an art to writing a good `AGENTS.md` that is compact but thorough. Unfortunately,
+a [study](https://huggingface.co/papers/2511.12884) of 2,303 real `AGENTS.md` files found that most run far too long about the wrong things. It's no surprise that people went off on their tech opinions in these files
+unrestrained by the limits of social media.
+
+`AGENTS.md` demands a balance between long enough to capture your preferences but short enough to influence coding agents meaningfully. First, take advantage of model training. Coding agents already
+know how to compile Kotlin and typecheck TypeScript. Don't bother adding commands straight ont of a `README` on GitHub to your `AGENTS.md`. Add only unique commands. For example, I have
+AI agents written in Kotlin, but my `AGENTS.md` doesn't have the standard Gradle `build` command that agents already know. It does have the Gradle command that runs the custom
+build task that composes other Gradle tasks to spin up Docker Compose to run the whole agent appication locally with databases, cloud mocks, and all the other infrastruture. That enforces
+my opinions and creates a setup specific to my product. That's perfect for `AGENTS.md`.
+
+In general, your `AGENTS.md` should be handcrafted like an Etsy product, not agent-generated beecause they are naturally verbose, with a short project description, the "pillars" of the code base representing your patterns and practices at a high level,
+and bespoke commands. Resist the urge to enumerate file structures, which change constantly to create a maintenance headache and tokens wasted on wild goose chases.
+
+## Progressive Disclosure
+
+The opinionated depth you trim from `AGENTS.md` is still important and belongs somewhere. You need a documentation tree the agent pulls in on demaand only when necessary, which is the
+developer-level "[culture of context](/blog/create-a-culture-of-context-for-ai)" that agents need to thrive. Create context files representing the various concerns across your prodouct like UI, testing, and
+observability. Then link to them from `AGENTS.md` so that it functions like an index. For example, you could link to an `OBSERVABILITY.md` from `AGENTS.md`.
+THen when you give your coding agent an observability task, it will load the `AGENTS.md` first and recognize that it needs to load `OBSERVABILITY.md` for detailed context while
+ignoring `FRONTEND.md`, `TESTING.md`, and whatever other context files you have expressing your opinions. This focuses the agent with the context it need while
+limiting bloat on irrelevant topics.
+
+Here is a sample `AGENTS.md` file that balances the instruction budget while expressing my opinions.
+
+```markdown
+# AGENTS.md
+
+## Project
+
+- Package manager: `pnpm`
+- Typecheck: `pnpm typecheck` (`tsc --noEmit`, strict)
+- Lint: `eslint --fix <touched-file>`
+- Full build: only when requested
+- Before changing code, inspect relevant existing patterns and docs.
+
+## Rules
+
+### Required
+
+- Never hardcode credentials, hostnames, or URLs. Runtime configuration comes through Pkl.
+- Model invalid states out of existence with types. Do not use booleans as state machines or nullable fields to represent meaningful absence.
+- Use typed error values (`Either`, `Result`, or Effect's error channel). Do not throw across module boundaries.
+- Keep the functional core pure: no clock, randomness, or I/O. Inject these dependencies at the boundary.
+- Add behavior tests before implementation for new behavior. For refactors, type-only changes, and trivial changes, use judgment.
+
+### Conventions
+
+Follow these docs when relevant:
+
+- TypeScript / Effect: `docs/TYPESCRIPT.md`
+- Testing / Kotest / fast-check: `docs/TESTING.md`
+- Pkl configuration: `docs/CONFIG.md`
+
+If these docs conflict with this file, this file wins.
+
+## Permissions
+
+### No approval needed
+
+- Read files
+- Run tests
+- Run `pnpm typecheck`
+- Lint touched files
+
+### Ask first
+
+- Add or update dependencies
+- Change CI
+- Change infrastructure
+- Rename or remove a public export
+- Make changes outside the task's scope
+
+### Never
+
+- Commit secrets
+- Force-push
+- Rewrite prose in documents I authored
+```
+
+This file has just over 50 lines, and every one of them expresses core values that are imporant to me in this code base like Effect conventions, property-based testing patterns, and Pkl configuration.
+Details on specific concerns like `TESTING.md` live elsewhere, and they cost nothing until the agent needs them.
+
+Notice also the split among what an agent must follow, what it should follow, and what merely helps. These categories help agents "think" like a senior engineer focused on higher priority concerns first.
+
+You also have the option for implicit progressive disclosure through multiple `AGENTS.md` files across a monorepo or subprojects so that each `AGENTS.md` file is focused on its particulary subtree.
+Consider something like this:
+
+```bash
+repo/
+├── AGENTS.md
+├── docs/
+│   ├── TYPESCRIPT.md
+│   ├── TESTING.md
+│   └── CONFIG.md
+├── apps/
+│   ├── web/
+│   │   └── AGENTS.md        # web-specific rules
+│   └── api/
+│       └── AGENTS.md        # API-specific rules
+└── packages/
+├── core/
+│   └── AGENTS.md        # core-specific architecture
+└── config/
+└── AGENTS.md
+```
+
+In this case each lower-level `AGENTS.md` applies the same rules as the top-level one but only specific to its subtree. The advantage is that you do not have create explicit
+links to bespoke Markdown files because coding agents understand what `AGENTS.md` is, which is the beauty of the standard. There are two key disadvantages. You can take things too far
+and create a maintenance nightmare across folders, and you multiply the compatibility concerns across agents because of the different approaches they take to consuming `AGENTS.md`.
+I personally prefer keeping things at the top level and using lower level `AGENTS.md` files sparingly. That's your call.
+
+Speaking of maintenance, I said earlier that there is an art to crafting a good `AGENTS.md.` Any art takes time, and you never get it right the first time. OpenAI's own guidance for Codex says that when an agent
+repeats a mistake, ask it for a retrospective and have it update `AGENTS.md`. When your coding agents fail you, take the time to work with them to curate `AGENTS.md` so it gets better and better
+over time.
+
+## Then Add Skills
+
+`AGENTS.md` is always resident to express your opinions and high-level patterns for your code base. An [agent skill](https://code.claude.com/docs/en/skills) loads only when its description triggers to apply your opinions to specific, repeatable tasks. They complement each other.
+
+The sample `AGENTS.md` articulates my opinions that errors are values, which is an important principle in Effect-Oriented Programming, and that I haave a preference for property-based testing. A complementary Agent Skill can put these ideas into practice:
+
+```markdown
+---
+name: effect-service
+description: Scaffold a new Effect-TS service with its Layer, tagged error types,
+  a Pkl config schema, and a fast-check property test. Use when adding a service
+  under src/services/. Do NOT use for React components, for one-off scripts, or for
+  modifying a service that already exists.
+---
+```
+
+[Philipp Schmid](https://www.philschmid.de/agent-skills-tips) and others have shown that the `description` metadata is the key trigger mechanism for firing skills when appropriate. Skills demand progressive disclosure in their own right.
+The `description` espresses its purpose, when to use it, and the negative cases while leaving the details to the body of the skill and its optional artifacts like assets and scripts.
+
+Encoding your opnions in `AGENTS.md` and complementing them with Agent Skills to apply them in practice is a powerful combination.
+
+## Protect Your Opinions
+
+If you borrow content from the Internet like open source `AGENTS.md` files or Agent Skills as starters for your own, be careful. They can be Trojan horses, no [Odyssey](https://www.youtube.com/watch?v=Mzw2ttJD2qQ) pun intended, for prompt injection attacks
+on your own machine that can leak secrets to attackers and cause many other problems.
+
+Even beyond that, any file with the power of `AGENTS.md` is a standing vulnerability. NVIDIA published a
+[working proof of concept](https://developer.nvidia.com/blog/mitigating-indirect-agents-md-injection-attacks-in-agentic-environments/)
+that shows exactly how it breaks. The attack runs in four steps:
+
+1. You install a dependency. You may well have audited that package, but nobody reads the source of every
+   transitive package underneath it. The attack assumes precisely that.
+2. The package runs its install script, which inspects its surroundings and recognizes that it is sitting
+   inside a Codex session.
+3. It then writes an `AGENTS.md` into your repository. The text it plants tells the agent to treat that
+   file as authoritative over anything you type.
+4. Your next session begins. The agent loads the file as standing instructions before you type a word.
+
+Step 4 is the attack. Nobody needs to trick you, and nobody needs to jailbreak the model. The
+attacker writes a file your agent already treats as policy, and no human reviews it at read time.
+
+Pillar Security demonstrated an even nastier variant they named the [Rules File Backdoor](https://www.pillar.security/blog/new-vulnerability-in-github-copilot-and-cursor-how-hackers-can-weaponize-code-agents).
+They hide the injected directives inside
+invisible Unicode, so the poisoned file looks byte for byte identical to the clean one in your editor and in
+your pull request diff. They disclosed it to Cursor and GitHub in early 2025, but Snyk's agent scanner still
+carries no issue code for a malicious repository instruction file. Assume your existing tooling misses
+this entirely.
+
+Let's step back and understand all the threat vectors to `AGENTS.md`:
+
+- **Install-time write.** A dependency executes code while you install it and writes the file, which is
+  NVIDIA's proof of concept above. Every ecosystem has its own version. With npm it is a lifecycle script,
+  and `--ignore-scripts` closes it. `uv` and `pip` execute `setup.py` whenever they build from a source
+  distribution, so `--only-binary=:all:` closes that. Gradle never executes a dependency jar on
+  resolution, but a third-party plugin runs at configuration time with no flag to stop it. Vetting and
+  pinning your plugins is the whole defense there.
+- **Runtime write.** A package that executes later, during your build, your tests, or your dev server, does
+  the same thing at a moment without install-time protection.
+- **Borrowed content.** You copy an open-source `AGENTS.md` or Agent Skill that arrives poisoned, which is
+  the Trojan horse I mentioned.
+- **Inbound change.** A clone, a merge, or a teammate's pull request carries it in.
+
+Invisible Unicode is not a fifth door. It hides whichever of the four above an attacker picked, which is what makes
+Pillar's variant particularly insidious.
+
+No single defense closes all four, so a strong defense demands a layered approach.
+
+| Threat | Block install code | Dev Container | Checksum | ASCII lint | CODEOWNERS |
+|---|---|---|---|---|---|
+| Install-time write | blocks (npm, uv) | blocks | detects | | |
+| Runtime write | | blocks | detects | | |
+| Borrowed content | | | | if hidden | at review |
+| Inbound change | | | detects | if hidden | blocks |
+| Hidden in Unicode | | | | detects | |
+
+Two rows are espeically noteworthy. **Borrowed content** slips past nearly everything because you chose to add
+the file, so the checksum blesses it and the mount dutifully protects it. Reading it yourself is the real
+defense there. And `CODEOWNERS` never appears against the first two rows, because NVIDIA's four steps
+complete before a pull request exists. It guards your repository from your machine rather than your machine
+from the package.
+
+**Close the install-script door.** This kills NVIDIA's vector at step two, because a package that never
+executes cannot detect anything or write anything.
+
+```bash
+# Node
+npm ci --ignore-scripts
+
+# Python
+uv pip install --only-binary=:all: -r requirements.txt
+```
+
+Gradle and Maven have no equivalent switch, since running plugin code is how those builds work at all. Pin
+your plugin versions and treat adding one with the same care you give a new dependency.
+
+**Give the agent less authority than you have.** Here is the uncomfortable part, and it decides everything
+else in this list. A `postinstall` script runs under your own user id, and `chmod` answers to ownership
+rather than to root, so any lock you can undo the script can undo too. It flips your carefully protected
+file back to `644`, appends whatever it likes, and never breaks a sweat. Permissions answer the question
+"which user," nothing in the filesystem answers "which program," and that gap is why you cannot write a rule
+saying your editor may touch `AGENTS.md` while npm may not. Move the untrusted code instead of decorating the
+file. Run your coding agents inside a
+[Dev Container](https://containers.dev) and mount both `AGENTS.md` and its checksum read-only, and the
+boundary turns real because the kernel finally sees a genuinely different principal. Add this to your
+`.devcontainer/devcontainer.json`, matching each `target` to your own workspace folder.
+
+```jsonc
+// .devcontainer/devcontainer.json
+"mounts": [
+  "source=${localWorkspaceFolder}/AGENTS.md,target=/workspaces/website/AGENTS.md,type=bind,readonly",
+  "source=${localWorkspaceFolder}/AGENTS.md.sha256,target=/workspaces/website/AGENTS.md.sha256,type=bind,readonly"
+]
+```
+
+Inside that container, the `chmod` trick that walks through `chmod 444` fails outright with `Read-only file
+system`, and so does every append and delete. Mount the checksum alongside the file it guards, since an agent
+that can rewrite the hash can quietly pre-approve a poisoning that lands later.
+
+**Trip an alarm when the bytes change.** Commit the hash, then fail the build on any drift. `shasum -c`
+exits 1 when the file changes, so CI stops on its own. Detection beats prevention here, because this one
+still works when everything above it fails.
+
+```bash
+shasum -a 256 AGENTS.md > AGENTS.md.sha256   # once, and commit it
+shasum -a 256 -c AGENTS.md.sha256            # in CI
+```
+
+**Catch what your eyes cannot.** Flag anything outside printable ASCII, which is where Pillar hides its
+payload.
+
+```bash
+perl -ne 'print "$ARGV:$.\n" if /[^\x09\x0A\x20-\x7E]/' AGENTS.md
+```
+
+**Put a human at the door.** Add `/AGENTS.md @your-handle` to your `CODEOWNERS` [file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) so any pull
+request touching it needs a named approver before it merges. Of course you still need to edit your own file now and then. Make the change, regenerate the hash, and commit
+both together.
+
+```bash
+$EDITOR AGENTS.md                             # edit
+shasum -a 256 AGENTS.md > AGENTS.md.sha256    # regenerate the hash
+```
+
+Regenerating the hash in the same commit as the edit makes a big difference. That one line in the diff says
+you changed the rules deliberately. An install script that rewrites `AGENTS.md` behind your back never
+bothers to update it, so your CI pipeline catches the difference.
+
+Now I know what you are thinking. This is a lot of work for a vulnerability you do not need to worry about. You might be right.
+If you are a solo developer who is very careful about how you code with agents, your risk might be small. But if you work heavily
+with agent swarms like Hermes aand OpenClaw, you're lax on policy enforcement, and you rubber stamp every action your agents take, the risk is much
+greater than you realize.
+
+On the bright side, changes to `AGENTS.md` aren't common especially the further along you get with the product. Still, I am aalways
+looking for ways to make things easier for myself. In this case, remembering to regenerate a checksum by hand
+is exactly the sort of thing I refuse to trust myself with at 5pm on a Friday. Any ritual worth repeating
+belongs in the build, where the tooling remembers the steps and my IDE runs them for me. Better still, every
+row of that table collapses into one command. Four of the five defenses are configuration, and configuration
+rots silently, so the task checks that each one is still in force rather than trusting that I set it up once.
+On the JVM that means Gradle, and the tasks show up in the tool window in IntelliJ or WebStorm ready for a
+keyboard shortcut like anything else.
+
+```kotlin
+val agentsMd = layout.projectDirectory.file("AGENTS.md").asFile
+val agentsSha = layout.projectDirectory.file("AGENTS.md.sha256").asFile
+
+fun sha256(f: File) = MessageDigest.getInstance("SHA-256")
+    .digest(f.readBytes()).joinToString("") { "%02x".format(it) }
+
+fun contains(path: String, regex: Regex) =
+    file(path).let { it.exists() && it.readText().contains(regex) }
+
+tasks.register("updateAgentsMd") {
+    group = "agents"
+    doLast { agentsSha.writeText("${sha256(agentsMd)}  ${agentsMd.name}\n") }
+}
+
+tasks.register("auditAgentsMd") {
+    group = "agents"
+    doLast {
+        val failures = buildList {
+            if (agentsSha.readText().trim().substringBefore(" ") != sha256(agentsMd))
+                add("Checksum drifted, so something rewrote AGENTS.md.")
+            if (agentsMd.readText().any { it.code !in 32..126 && it.code != 9 && it.code != 10 })
+                add("Non-ASCII characters found, the hiding place for invisible directives.")
+            if (!contains("CODEOWNERS", Regex("AGENTS\\.md")))
+                add("CODEOWNERS has no AGENTS.md entry, so a PR can change it unreviewed.")
+            if (!contains(".devcontainer/devcontainer.json", Regex("AGENTS\\.md[^\"]*readonly")))
+                add("Dev Container does not mount AGENTS.md readonly.")
+        }
+        if (failures.isNotEmpty()) throw GradleException(failures.joinToString("\n") { "  - $it" })
+        logger.lifecycle("AGENTS.md audit passed.")
+    }
+}
+```
+
+A Node project gets the same coverage with a lot less ceremony, and it can assert one thing Gradle cannot,
+because `--ignore-scripts` is a setting to check while plugin execution has no switch to assert.
+
+```json
+{
+  "scripts": {
+    "agents-md:update":   "shasum -a 256 AGENTS.md > AGENTS.md.sha256",
+    "agents-md:checksum": "shasum -a 256 -c AGENTS.md.sha256",
+    "agents-md:ascii":    "perl -ne 'exit 1 if /[^\\x09\\x0A\\x20-\\x7E]/' AGENTS.md",
+    "agents-md:install":  "grep -q '^ignore-scripts=true' .npmrc",
+    "agents-md:owners":   "grep -q AGENTS.md CODEOWNERS",
+    "agents-md:mount":    "grep -q 'AGENTS.md[^\"]*readonly' .devcontainer/devcontainer.json",
+    "agents-md:audit":    "npm run -s agents-md:checksum && npm run -s agents-md:ascii && npm run -s agents-md:install && npm run -s agents-md:owners && npm run -s agents-md:mount"
+  }
+}
+```
+
+Notice that the audit collects every failure before it throws rather than stopping at the first one, so you
+fix the whole picture in one pass. It also catches a case the checksum alone cannot. Poison the file with a
+zero-width character and regenerate the hash, and the checksum happily passes from then on while the ASCII
+check keeps failing. That is the layering from the table, enforced.
+
+The read-only mount splits these two tasks cleanly by where they run. `updateAgentsMd` belongs on the host, the
+only place the file is writable at all, and it is the deliberate act of changing your own rules.
+`auditAgentsMd` belongs in CI and inside the container, where reading is all it ever needed. Wire it into
+`check` and let CI hold the line. Give `AGENTS.md` the same suspicion you would give a shell script a package wants to run, which is
+the [Zero Trust](https://csrc.nist.gov/pubs/sp/800/207/final) posture you should apply everywhere else.
+
+## Say It Once
+
+Tech Twitter will keep arguing about Tailwind, and that is fine. Nothing I write here settles whether microservices are dead.
+
+What changed is where an opinion goes once you have one. For twenty years my strong views lived in my head, in review comments, and in the patience of whoever sat next to me. Now they live in about
+forty lines of Markdown that every agent on the team reads before it writes a character, with the details one link away and a permissions boundary at the bottom. Write yours down. Keep them short enough
+that the model can actually hold them, put the rest behind links, and let your opinions do the arguing for you.
