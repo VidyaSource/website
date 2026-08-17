@@ -270,10 +270,10 @@ Meanwhile, invisible Unicode hides whichever of the four above an attacker picke
 Pillar's variant particularly insidious.
 
 No single defense addresses all four threat vectors, so a strong defense demands a layered approach where you
-block install code, use Dev Containers, calculate checksums, perform ASCII linting, and use the
+block install code, use Dev Containers, calculate checksums, lint for hidden characters, and use the
 `CODEOWNERS` [file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners):
 
-| Threat | Block install code | Dev Container | Checksum | ASCII lint | CODEOWNERS |
+| Threat | Block install code | Dev Container | Checksum | Hidden char lint | CODEOWNERS |
 |---|---|---|---|---|---|
 | Install-time write | blocks (npm, uv); pins (Gradle) | blocks | detects | | |
 | Runtime write | | blocks | detects | | |
@@ -281,28 +281,9 @@ block install code, use Dev Containers, calculate checksums, perform ASCII linti
 | Inbound change | | | detects | if hidden | blocks with branch protection |
 | Invisible Unicode | | | | detects | |
 
-There is another problem that arises from the monorepo pattern where you have multilevel `AGENTS.md` files. Each
-mitigation guards a file you name, and NVIDIA's proof of concept attack writes a file nobody named. An attacker who writes
-`apps/api/AGENTS.md` skates past a root-only checksum, a root-only mount, and a root-only `CODEOWNERS` entry, and your agent
-loads it anyway. So the unit of protection has to be the *set* of `AGENTS.md` files your agents load rather than just the top-level one. Every mitigation
-below works on that set.
-
-That set needs a written declaration, and a single checksum manifest serves as both the declaration and the integrity record.
-`shasum` accepts many files at once and verifies all of them in one pass.
-
-```bash
-find . -name AGENTS.md -not -path './node_modules/*' -not -path './.git/*' \
-  | sort | xargs shasum -a 256 > agents-md.sha256
-```
-
-That produces one line per sanctioned file, which you commit.
-
-```
-4df3a22bda9eb2ecc46970b4ea0d6f96be470119f0ad322dc14731f936454f7c  ./AGENTS.md
-d68fede7db226f22bf27a0b3a114810d757da1d20fdad3df8db0aa94b5b23822  ./apps/api/AGENTS.md
-```
-
-Now let's get into the details of these mitigations.
+Let's get into the details of these mitigations. Each one below protects the single `AGENTS.md` at the root of your
+repository, which covers most teams and makes the right starting point. Once all five work there, I will come back and widen
+them to a monorepo with `AGENTS.md` files at several levels, because that case needs a different unit of protection entirely.
 
 **Block install code.** *Stops the install-time write.* A package that never executes cannot detect anything
 or write anything, which kills NVIDIA's vector at step two.
@@ -315,7 +296,7 @@ npm ci --ignore-scripts
 uv pip install --only-binary=:all: -r requirements.txt
 ```
 
-Gradle has no equivalent switch since running plugin code is how those builds work at all. What it does give
+Gradle has no equivalent switch since the entire build is based on running plugins. What it does give
 you is dependency verification, which pins a checksum for every artifact it resolves so you at least get the
 plugin jar you vetted rather than a swapped one.
 
@@ -328,58 +309,261 @@ controls *which* jar arrives rather than whether plugin code runs, so treat addi
 care you give a new dependency.
 
 **Dev Container.** *Stops the install-time write and the runtime write.* When you work directly on your machine, the untrusted
-code runs under your own user id. `chmod` lets the owner of a file change its mode, so that code carries your authority and
-unlocks anything you can unlock. It flips your carefully protected file back to `644` and appends whatever it likes. In other
-words, POSIX permissions answer the question "which user," and they never answer "which program." That gap is why no `chmod`
-incantation lets your IDE touch `AGENTS.md` while denying npm. Mandatory access control does answer "which program," and
-SELinux or AppArmor can express exactly that rule, though writing and maintaining a profile precise enough to help here costs
-more than most teams will ever spend. The cheaper answer moves the untrusted code instead of decorating the file. Run your
+code runs under your own user id. `chmod` lets the owner of a file change its mode, so it carries your authority and
+unlocks anything you can unlock. It flips your carefully protected file back to `644`, making it writeable, and appends whatever it likes. In other
+words, POSIX permissions answer the question "which user," but they never distinguish "which program by that user." That gap is why no `chmod`
+technique lets your IDE touch `AGENTS.md` while denying npm. OS-level tools like SELinux or AppArmor enforce access control on a per-program basis
+but they are complex. The easier answer moves the untrusted code instead of decorating the file. Run your
 coding agents inside a [Dev Container](https://containers.dev) and mount both `AGENTS.md` and its checksum read-only. The
-boundary becomes real because the container's mount namespace flags those paths read-only in the kernel, and no user id inside
+separation is valuable because the container's mount namespace flags those paths read-only in the kernel, and no user id inside
 the container overrides that.
 
 JVM developers might recognize something. In the old days, the JVM `SecurityManager` ostensibly gated file access, network access, and much more per class loader,
 which limited the blast radius from untrusted code at the cost of a lot of complexity and reliability, which led to
 [JEP 411](https://openjdk.org/jeps/411) deprecating `SecurityManager` and [JEP 486](https://openjdk.org/jeps/486)
 disabling it completely in Java 24. Container isolation now does the job the JVM sandbox once attempted, so Dev Containers fit
-that history well.
+ well.
 
-Add one mount per file to your `.devcontainer/devcontainer.json`, matching each `target` to your own workspace folder. Mount
-every `AGENTS.md` in your manifest, plus the manifest itself.
+Two mounts do it. Add them to your `.devcontainer/devcontainer.json`, matching each `target` to your own
+workspace folder.
 
 ```jsonc
 // .devcontainer/devcontainer.json
 "mounts": [
   "source=${localWorkspaceFolder}/AGENTS.md,target=/workspaces/website/AGENTS.md,type=bind,readonly",
-  "source=${localWorkspaceFolder}/apps/api/AGENTS.md,target=/workspaces/website/apps/api/AGENTS.md,type=bind,readonly",
-  "source=${localWorkspaceFolder}/agents-md.sha256,target=/workspaces/website/agents-md.sha256,type=bind,readonly"
+  "source=${localWorkspaceFolder}/AGENTS.md.sha256,target=/workspaces/website/AGENTS.md.sha256,type=bind,readonly"
 ]
 ```
 
-Inside that container, the `chmod` trick that beats `chmod 444` fails outright with `Read-only file
-system`, and so does every append and delete. Mount the manifest alongside the files it guards because an agent
-that can rewrite the hashes can quietly pre-approve an attack that comes later.
+Inside that container, the `chmod` trick that beats `chmod 444` fails outright with a `Read-only file
+system` error, and so does every append and delete. Mount the checksum alongside the file it checks because an agent
+that can rewrite the hash can quietly pre-approve an attack that comes later.
 
-Docker gives you no wildcard here, so the list grows one line per subtree. Treat that as a feature. Enumerating the mounts
-forces you to state which `AGENTS.md` files you actually sanction, and it makes the maintenance cost of scattering them
-visible. That cost is a good reason to keep nested `AGENTS.md` files rare, which is the same conclusion I reached earlier for
-entirely different reasons. Bear in mind the mount protects the paths you list and nothing else, so a payload that writes a
-brand new `apps/web/AGENTS.md` still lands. The discovery check below is what catches that one.
-
-**Checksum.** *Detects the install-time write, the runtime write, and an inbound change.* Commit the manifest and
+**Checksum.** *Detects the install-time write, the runtime write, and an inbound change.* Commit the hash and
 then break the build on any drift. `shasum -c`
-exits 1 when any listed file changes, so CI alerts you to the change. In general, I am a big proponent of shifting
+exits 1 when the file changes, so CI alerts you to the change. In general, I am a big proponent of shifting
 feedback left and breaking the build with anything, and I mean anything, that violates my engineering principles.
 This is another example.
 
 ```bash
-shasum -a 256 -c agents-md.sha256            # in CI
+shasum -a 256 AGENTS.md > AGENTS.md.sha256   # once, and commit it
+shasum -a 256 -c AGENTS.md.sha256            # in CI
 ```
 
-That verifies the files you declared, and it says nothing at all about a file you never declared. I tested exactly the
-scenario NVIDIA demonstrated: with a clean manifest covering the root and `apps/api`, planting a fresh
-`apps/web/AGENTS.md` leaves `shasum -c` exiting 0 and perfectly happy. So pair the hash check with a discovery check that
-compares what exists on disk against what the manifest claims.
+**Invisible character lint.** *Detects a payload hidden in Unicode wherever it came from.* A naive version of this check
+flags everything outside printable ASCII, but that fires on smart quotes, a teammate named
+Bj&#246;rn, and every emoji. A linter that cries wolf with false positives is a linter your team turns off after about two
+days. It is not easy to reduce false positives to zero, but this is one way to make them rare in Node:
+
+```js
+#!/usr/bin/env node
+import { readFileSync } from "node:fs";
+
+const FILE = process.argv[2] || "AGENTS.md";
+const text = readFileSync(FILE, "utf8").replace(/^\uFEFF/, "");  // a leading BOM is ordinary
+
+// Occupies bytes in the file and no space on the screen.
+const HIDDEN = /[\p{Cc}\p{Cf}\p{Co}\p{Default_Ignorable_Code_Point}\u00A0\u2000-\u200A\u202F\u205F\u2800\u3000]/u;
+const FINE   = /[\t\p{Variation_Selector}]/u;  // tab, and a lone selector picks an emoji or CJK glyph
+const JOINER = /\p{Join_Control}/u;            // exactly ZWNJ and ZWJ
+
+const found = [];
+const flag = (ln, col, msg, ch) => found.push(
+  `${FILE}:${ln}:${col} ${msg} U+${ch.codePointAt(0).toString(16).toUpperCase().padStart(4, "0")}`);
+
+text.split(/\r?\n/).forEach((line, i) => {
+  const cps = [...line];
+  cps.forEach((ch, j) => {
+    const prev = cps[j - 1]?.codePointAt(0), next = cps[j + 1]?.codePointAt(0);
+    // a joiner between two non-ASCII characters welds emoji or shapes Arabic and Indic text;
+    // the same character touching ASCII is a payload
+    if (JOINER.test(ch)) { if (!(prev > 127 && next > 127)) flag(i + 1, j + 1, "joiner", ch); }
+    else if (!FINE.test(ch) && HIDDEN.test(ch)) flag(i + 1, j + 1, "hidden character", ch);
+  });
+  if (/\p{Variation_Selector}{2,}/u.test(line))
+    found.push(`${FILE}:${i + 1} variation selector run; likely hidden-data encoding`);
+});
+
+found.forEach(f => console.log(f));
+process.exit(found.length ? 1 : 0);
+```
+
+I think the most interesting thing about this script is what it *doesn't* do. It doesn't merely report warnings. Every finding
+fails the buildwith a report like this with the critical information a reviewer needs:
+
+```bash
+AGENTS.md:5:9 joiner U+200D
+AGENTS.md:6:13 hidden character U+202E
+AGENTS.md:7:7 hidden character U+E0068
+AGENTS.md:8 variation selector run; likely hidden-data encoding
+```
+
+Of course Unicode keeps shipping new characters, so revisit these classes when a fresh smuggling technique makes the rounds.
+
+**CODEOWNERS.** *Gates an inbound change and puts borrowed content in front of a reviewer.* Claim both the file and its hash
+in your `CODEOWNERS` file.
+
+```bash
+/AGENTS.md          @your-handle
+/AGENTS.md.sha256   @your-handle
+```
+
+Guard the `AGENTS.md` checksum like you guard `AGENTS.md`. A pull request that quietly rewrites `AGENTS.md.sha256` pre-approves
+whatever arrives next, so it deserves a human as much as the instructions themselves do. Also remember that `CODEOWNERS` on
+its own only requests a review automatically, so pair it with a branch protection rule or a ruleset that turns on "Require
+review from Code Owners." Only then does the pull request need a named approver before it merges.
+
+WHen you do need to edit `AGENTS.md` every now and then, make the change, regenerate the hash, and commit both together.
+
+```bash
+$EDITOR AGENTS.md                             # edit
+shasum -a 256 AGENTS.md > AGENTS.md.sha256    # regenerate the hash
+```
+
+Regenerating the hash in the same commit as the edit makes a big difference. That one line in the diff says
+you changed the rules deliberately. A dependency that rewrites `AGENTS.md` behind your back never
+bothers to update the hash, and your CI pipeline catches the difference.
+
+Now I know what you are thinking. ALl of this is a lot of work for a vulnerability you are confident you do not need to worry about. You might be right.
+If you are a solo developer who is very careful about how you code with agents, your risk might be small. But if you work on a team, you heavily
+utilize agent swarms like Hermes and OpenClaw, you're lax on policy enforcement, and/or you rubber stamp every action your agents take, the risk is much
+greater than you realize.
+
+On the bright side, changes to `AGENTS.md` aren't common especially the further along you get with the product. Still, I am always
+looking for ways to make things easier for myself, and I like using my build tools to help. Better still, I can use my build tool to
+collapse those layers of protection into one command. As I mentioned earlier, I build my agents in Kotlin, so I can do this in Gradle
+and execute it from my IDE. Notice how I compose the layers into the single `auditAgentsMd` task:
+
+```kotlin
+import java.security.MessageDigest
+
+val agentsMd = layout.projectDirectory.file("AGENTS.md").asFile
+val agentsSha = layout.projectDirectory.file("AGENTS.md.sha256").asFile
+
+fun sha256(f: File) = MessageDigest.getInstance("SHA-256")
+    .digest(f.readBytes()).joinToString("") { "%02x".format(it) }
+
+fun contains(path: String, regex: Regex) =
+    file(path).let { it.exists() && it.readText().contains(regex) }
+
+// the JVM equivalent of the lint script's error tier
+val FATAL = setOf(
+    Character.CONTROL, Character.SURROGATE, Character.FORMAT,
+    Character.LINE_SEPARATOR, Character.PARAGRAPH_SEPARATOR,
+).map(Byte::toInt).toSet()
+
+fun isSelector(cp: Int) = cp in 0xFE00..0xFE0F || cp in 0xE0100..0xE01EF
+fun isFiller(cp: Int) = cp == 0x3164 || cp == 0xFFA0 || cp == 0x115F || cp == 0x1160
+
+fun hidden(text: String) = text.split(Regex("\\r?\\n")).any { line ->
+    val cps = line.codePoints().toArray()
+    var run = 0
+    cps.indices.any { i ->
+        val cp = cps[i]
+        val prev = cps.getOrElse(i - 1) { -1 }
+        val next = cps.getOrElse(i + 1) { -1 }
+        when {
+            cp == 9 -> { run = 0; false }
+            isSelector(cp) -> ++run >= 2
+            else -> { run = 0
+                when {
+                    cp == 0x200C || cp == 0x200D -> !(prev > 127 && next > 127)
+                    isFiller(cp) -> true
+                    else -> Character.getType(cp) in FATAL
+                }
+            }
+        }
+    }
+}
+
+tasks.register("updateAgentsMd") {
+    group = "agents"
+    doLast { agentsSha.writeText("${sha256(agentsMd)}  ${agentsMd.name}\n") }
+}
+
+tasks.register("auditAgentsMd") {
+    group = "agents"
+    doLast {
+        val failures = buildList {
+            if (!agentsSha.exists())
+                add("No AGENTS.md.sha256, so run updateAgentsMd and commit the result.")
+            else if (agentsSha.readText().trim().substringBefore(" ") != sha256(agentsMd))
+                add("Checksum drifted, so something rewrote AGENTS.md.")
+            if (hidden(agentsMd.readText()))
+                add("Hidden characters found, the place invisible directives live.")
+            if (!contains("CODEOWNERS", Regex("AGENTS\\.md")))
+                add("CODEOWNERS has no AGENTS.md entry, so a PR can change it unreviewed.")
+            if (!contains(".devcontainer/devcontainer.json", Regex("AGENTS\\.md[^\"]*readonly")))
+                add("Dev Container does not mount AGENTS.md readonly.")
+            if (!file("gradle/verification-metadata.xml").exists())
+                add("Dependency verification is off, so plugin jars are unpinned.")
+        }
+        if (failures.isNotEmpty()) throw GradleException(failures.joinToString("\n") { "  - $it" })
+        logger.lifecycle("AGENTS.md audit passed.")
+    }
+}
+```
+
+The read-only mount splits these two tasks cleanly by where they run. The `updateAgentsMd` task belongs on the host where `AGENTS.md` is writable and where you manually
+update the hash by design to affirm your deliberate update. Then
+`auditAgentsMd` belongs in CI and inside the container where reading is all it ever needed. Wire it into
+`check` and let CI do the rest. Give `AGENTS.md` the same suspicion you would give a shell script a package wants to run, which is
+the [Zero Trust](https://csrc.nist.gov/pubs/sp/800/207/final) posture you should apply everywhere else.
+
+I also mentioned I use TypeScript for UI, and I can take an analogous approach. Inside `package.json`, Node can apply the same protections with a
+lot less ceremony:
+
+```json
+{
+  "scripts": {
+    "agents-md:update":   "shasum -a 256 AGENTS.md > AGENTS.md.sha256",
+    "agents-md:checksum": "shasum -a 256 -c AGENTS.md.sha256",
+    "agents-md:hidden":   "node scripts/hidden-chars.mjs AGENTS.md",
+    "agents-md:install":  "grep -q '^ignore-scripts=true' .npmrc",
+    "agents-md:owners":   "grep -q AGENTS.md CODEOWNERS",
+    "agents-md:mount":    "grep -q 'AGENTS.md[^\"]*readonly' .devcontainer/devcontainer.json",
+    "agents-md:audit":    "npm run -s agents-md:checksum && npm run -s agents-md:hidden && npm run -s agents-md:install && npm run -s agents-md:owners && npm run -s agents-md:mount"
+  }
+}
+```
+
+Add `--strict` to the `agents-md:hidden` script when you want the warning tier to fail the build too.
+
+While Gradle verifies dependencies, these `package.json` scripts check `ignore-scripts`.
+Setting `ignore-scripts=true` in `.npmrc` genuinely stops lifecycle code from running. Two approaches customized to two ecosystems.
+
+Notice how differently the two audits report. The Gradle task collects every failure into a list before it throws, so one run
+hands you the whole picture. The npm chain strings its checks together with `&&`, which stops at the first failure, so budget a
+few round trips there. If that bothers you, move the checks into a small script that runs all of them and exits non-zero at
+the end.
+
+## Protect Every AGENTS.md, Not Only the Top One
+
+Everything to this point assumed one `AGENTS.md` at the root of your repository. If you took the monorepo path from earlier
+and scattered `AGENTS.md` files across subtrees, read on because every mitigation above misses something in this case.
+
+Each of those five layers guards a path you named, but NVIDIA's payload writes a
+path nobody named. An attacker who drops `apps/api/AGENTS.md` sneaks past a root-only checksum, a root-only mount, and a
+root-only `CODEOWNERS` entry, and your agent loads the file anyway. So the unit of protection has to become the *set* of
+`AGENTS.md` files your agents load.
+
+That set needs a written declaration, and a single checksum manifest serves as both the declaration and the integrity record.
+`shasum` accepts many files at once and verifies all of them in one pass.
+
+```bash
+find . -name AGENTS.md -not -path './node_modules/*' -not -path './.git/*' \
+  | sort | xargs shasum -a 256 > agents-md.sha256
+```
+
+That produces one line per sanctioned file, which you commit in place of the old single-file `AGENTS.md.sha256`.
+
+```bash
+4df3a22bda9eb2ecc46970b4ea0d6f96be470119f0ad322dc14731f936454f7c  ./AGENTS.md
+d68fede7db226f22bf27a0b3a114810d757da1d20fdad3df8db0aa94b5b23822  ./apps/api/AGENTS.md
+```
+
+Now `shasum -a 256 -c agents-md.sha256` covers every file you declared. It's necessary to pair the hash check with a
+discovery check that compares what sits on disk against what the manifest claims.
 
 ```bash
 node -e '
@@ -396,81 +580,38 @@ node -e '
 '
 ```
 
-Together the two checks cover the whole set. The hash catches a rewrite of a file you sanctioned, and the walk catches a file
-that appeared without your consent. Neither one catches both, so run them both.
+The hash catches a rewrite of a file you sanctioned, and the walk catches a file that appeared without your consent.
+You need to do both. Run the hidden character lint across the set too because a nested `AGENTS.md` hides a zero-width
+joiner just like the top-level one.
 
-**ASCII lint.** *Detects a payload hidden in Unicode wherever it came from.* Flag anything outside
-printable ASCII, which is where Pillar hides its payload. Here it is for one file, and run it over every file in your manifest
-rather than the root alone. A nested `AGENTS.md` hides a zero-width joiner exactly as well as a top-level one.
+`CODEOWNERS` needs a subtler change. It follows `gitignore` pattern rules, where a leading slash
+anchors the pattern to the repository root. The `/AGENTS.md` entry from before only covers your root
+file and nothing else, so every nested file merges unreviewed. Drop the slash and the pattern matches at any depth.
 
 ```bash
-node -e '
-  const f = "AGENTS.md";
-  const bad = require("fs").readFileSync(f, "utf8").split(/\r?\n/)
-    .flatMap((l, i) => /[^\t\x20-\x7E]/.test(l) ? [`${f}:${i + 1}`] : []);
-  bad.forEach(b => console.log(b));
-  process.exit(bad.length ? 1 : 0);
-'
-```
-
-Split on `/\r?\n/` rather than on `"\n"`. A file with Windows line endings otherwise trips the check on every single line, and a
-linter that cries wolf on a clean file is a linter your team turns off by Thursday. Expect a few legitimate hits too, since
-smart quotes and accented names live outside printable ASCII. Fix them or restrict the check to a whitelist of the invisible
-ranges attackers actually use.
-
-Any language does this in a handful of lines, and both consolidated audits later in this section fold it into the loop over the
-set. Whatever you reach for, make it exit non-zero when it finds something. A checker that merely prints a
-warning and returns success passes CI, which defeats the purpose.
-
-**CODEOWNERS.** *Gates an inbound change, and puts borrowed content in front of a reviewer.* Watch the leading slash here,
-because it decides whether you cover one file or all of them. `CODEOWNERS` borrows gitignore pattern rules, where a leading
-slash anchors the pattern to the repository root. Write `/AGENTS.md @your-handle` and every nested file merges unreviewed.
-Drop the slash and the pattern matches at any depth, which is what you want.
-
-```
 AGENTS.md          @your-handle
 agents-md.sha256   @your-handle
 ```
 
-Guard the manifest with the same rule. A pull request that quietly adds a line to `agents-md.sha256` pre-approves whatever
-that line points at, so it deserves a human as much as the instructions themselves do. Also remember that `CODEOWNERS` on its
-own only requests a review automatically, so pair it with a branch protection rule or a ruleset that turns on "Require review
-from Code Owners." Only then does the pull request need a named approver before it merges.
+The Dev Container needs one mount per file, since Docker gives you no wildcard here.
 
-Of course you still need to edit your own files now and then. Make the change, regenerate the manifest, and commit both
-together.
-
-```bash
-$EDITOR apps/api/AGENTS.md                    # edit any file in the set
-find . -name AGENTS.md -not -path './node_modules/*' -not -path './.git/*' \
-  | sort | xargs shasum -a 256 > agents-md.sha256
+```jsonc
+// .devcontainer/devcontainer.json
+"mounts": [
+  "source=${localWorkspaceFolder}/AGENTS.md,target=/workspaces/website/AGENTS.md,type=bind,readonly",
+  "source=${localWorkspaceFolder}/apps/api/AGENTS.md,target=/workspaces/website/apps/api/AGENTS.md,type=bind,readonly",
+  "source=${localWorkspaceFolder}/agents-md.sha256,target=/workspaces/website/agents-md.sha256,type=bind,readonly"
+]
 ```
 
-Regenerating the manifest in the same commit as the edit makes a big difference. Those changed lines in the diff say you
-changed the rules deliberately. A dependency that rewrites an `AGENTS.md` behind your back never bothers to update the
-manifest, and your CI pipeline catches the difference. Watch that regeneration step in review, though, since it happily
-absorbs a planted file into the declaration. Read the added paths before you commit them.
+Treat that growing list as a feature. Enumerating the mounts forces you to state which `AGENTS.md` files you actually
+sanction, so that is one more argument for keeping nested `AGENTS.md` files rare.
 
-Now I know what you are thinking. This is a lot of work for a vulnerability you are confident you do not need to worry about. You might be right.
-If you are a solo developer who is very careful about how you code with agents, your risk might be small. But if you work on a team, you heavily
-utilize agent swarms like Hermes and OpenClaw, you're lax on policy enforcement, and/or you rubber stamp every action your agents take, the risk is much
-greater than you realize.
-
-On the bright side, changes to `AGENTS.md` aren't common especially the further along you get with the product. Still, I am always
-looking for ways to make things easier for myself, and I like using my build tools to help. Better still, I can use my build tool to
-collapse those layers of protection into one command. As I mentioned earlier, I build my agents in Kotlin, so I can do this in Gradle
-and execute it from my IDE. Notice how I compose the layers into the single `auditAgentsMd` task:
+Folding all of it back into Gradle gives you the following Gradle build script. Keep the `sha256` and `contains` helpers from the
+earlier one and replace everything below them:
 
 ```kotlin
-import java.security.MessageDigest
-
 val manifest = layout.projectDirectory.file("agents-md.sha256").asFile
-
-fun sha256(f: File) = MessageDigest.getInstance("SHA-256")
-    .digest(f.readBytes()).joinToString("") { "%02x".format(it) }
-
-fun contains(path: String, regex: Regex) =
-    file(path).let { it.exists() && it.readText().contains(regex) }
 
 // every AGENTS.md on disk, keyed by its path relative to the project root
 fun discovered(): Map<String, File> = fileTree(projectDir) {
@@ -506,8 +647,8 @@ tasks.register("auditAgentsMd") {
                     sha256(f) -> Unit
                     else -> add("Checksum drifted for $path, so something rewrote it.")
                 }
-                if (f.readText().any { it.code !in 32..126 && it.code !in listOf(9, 10, 13) })
-                    add("Non-ASCII characters in $path, the hiding place for invisible directives.")
+                if (hidden(f.readText()))
+                    add("Hidden characters in $path, the place invisible directives live.")
                 if (!contains(".devcontainer/devcontainer.json", Regex("${Regex.escape(path)}[^\"]*readonly")))
                     add("Dev Container does not mount $path readonly.")
             }
@@ -525,40 +666,18 @@ tasks.register("auditAgentsMd") {
 }
 ```
 
-Everything here works on the whole set rather than one path. `discovered()` walks the tree, `declared()` reads the manifest,
-and the audit reconciles the two in both directions. A file on disk that the manifest never sanctioned fails as
-`Undeclared`, which is the untracked file NVIDIA's payload drops and equally the nested `AGENTS.md` a teammate adds under
-`apps/api` in good faith. A file in the manifest that no longer exists fails as stale. Every sanctioned file gets its own hash
-check, its own ASCII scan, and its own read-only mount check. Adding a legitimate subtree stays a two-step ritual: run
-`updateAgentsMd`, then add the mount.
+In the Gradle build file, `discovered()` walks the tree, `declared()` reads the manifest, and the audit reconciles them both ways. An `AGENTS.md`
+no one wrote fails as `Undeclared`, which covers the file NVIDIA's attack creates, as well as an
+`AGENTS.md` a teammate legitimately adds under `apps/api`. A file in the manifest that no longer exists fails as stale. Every
+legitimate file earns its own hash check, its own hidden character scan, and its own read-only mount check. Every new subtree your team creates
+enjoyws a two-step ritual: run `updateAgentsMd`, then add the mount.
 
-The read-only mount splits these two tasks cleanly by where they run. `updateAgentsMd` belongs on the host, the
-only place the files are writable at all, and it is the deliberate act of changing your own rules.
-`auditAgentsMd` belongs in CI and inside the container, where reading is all it ever needed. Wire it into
-`check` and let CI hold the line. Give every `AGENTS.md` the same suspicion you would give a shell script a package wants to run, which is
-the [Zero Trust](https://csrc.nist.gov/pubs/sp/800/207/final) posture you should apply everywhere else.
-
-I also mentioned I use TypeScript for UI, and I can take an analogous approach. The checks that work on one file at a time
-stay inline in `package.json`, and the ones that reconcile the whole set move into a small script:
-
-```json
-{
-  "scripts": {
-    "agents-md:update":   "find . -name AGENTS.md -not -path './node_modules/*' -not -path './.git/*' | sort | xargs shasum -a 256 > agents-md.sha256",
-    "agents-md:checksum": "shasum -a 256 -c agents-md.sha256",
-    "agents-md:tree":     "node scripts/agents-md.mjs",
-    "agents-md:install":  "grep -q '^ignore-scripts=true' .npmrc",
-    "agents-md:owners":   "grep -qE '^[[:space:]]*AGENTS[.]md[[:space:]]' CODEOWNERS",
-    "agents-md:audit":    "npm run -s agents-md:checksum && npm run -s agents-md:tree && npm run -s agents-md:install && npm run -s agents-md:owners"
-  }
-}
-```
-
-Note the `owners` pattern. It insists on an unanchored `AGENTS.md` line and rejects the `/AGENTS.md` that covers only your
-root file. Then `scripts/agents-md.mjs` carries the set-aware half, mirroring what the Gradle task does:
+The analogous npm version is similar. Simple checks stay inline and the set-aware half moves into
+`scripts/agents-md.mjs`, wired up as `"agents-md:tree": "node scripts/agents-md.mjs"`.
 
 ```js
 import { readFileSync, readdirSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 
 const walk = d => readdirSync(d, { withFileTypes: true }).flatMap(e =>
   e.name === "node_modules" || e.name === ".git" ? []
@@ -576,9 +695,8 @@ const failures = [];
 for (const f of onDisk) {
   if (!declared.includes(f)) failures.push(`undeclared ${f}`);
   if (!mounted(f.slice(2))) failures.push(`not mounted readonly ${f}`);
-  readFileSync(f, "utf8").split(/\r?\n/).forEach((l, i) => {
-    if (/[^\t\x20-\x7E]/.test(l)) failures.push(`non-ascii ${f}:${i + 1}`);
-  });
+  try { execFileSync("node", ["scripts/hidden-chars.mjs", f], { stdio: "pipe" }); }
+  catch { failures.push(`hidden characters in ${f}`); }
 }
 for (const d of declared) if (!onDisk.includes(d)) failures.push(`declared but missing ${d}`);
 
@@ -586,22 +704,15 @@ failures.forEach(f => console.log(f));
 process.exit(failures.length ? 1 : 0);
 ```
 
-The `mounted` check matches on `${localWorkspaceFolder}/<path>,` rather than on the bare filename, which matters more than it
-looks. A naive `grep` for `AGENTS.md` finds the `apps/api` mount line and cheerfully reports your root file as protected.
+The scan calls `hidden-chars.mjs` at Line 20, so you change only one file when attackers devise a new technique to hide characters.
 
-While Gradle verifies dependencies, these `package.json` scripts check `ignore-scripts`.
-Setting `ignore-scripts=true` in `.npmrc` genuinely stops lifecycle code from running, and pnpm honors the same setting in the
-same file. Two approaches customized to two ecosystems.
+One concern here is that the `find` pipeline hashes whatever it discovers regardless of whther it is legitimate or a hack.
+Run it in the same commit as your edit and then read the
+manifest diff before you commit. A changed hash on a path you recognize is routine. A brand new path is the thing to refuseh.
 
-Notice how differently the two audits report. The Gradle task collects every failure into a list before it throws, so one run
-hands you the whole picture. The npm chain strings its checks together with `&&`, which stops at the first failure, so budget a
-few round trips there. `agents-md.mjs` at least collects within itself, and moving the remaining greps into it would finish the
-job.
-
-A closing word on where all this stops. Every layer here defends the instruction files, and none of it defends the documents
-they point at. Your `docs/TESTING.md` and `docs/CONFIG.md` reach the agent's context the moment `AGENTS.md` sends it there,
-which makes them the same attack surface wearing a different name. Once the set-based machinery exists, widening the manifest
-to cover them costs you a changed glob and nothing else.
+The last thing is these layers have a limit. They protect the instruction files. They do not protect the documents that an `AGENTS.md`
+refers to `docs/TESTING.md` and `docs/CONFIG.md`, but this is where we need to remember to balance practicality with absolutism.
+But if you insist on protecting those files, change the glob pattern in the `find` pipeline.
 
 ## Make Your Opinions Something Real
 
