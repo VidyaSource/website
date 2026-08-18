@@ -373,39 +373,13 @@ costs too much to maintain and fires so many false positives that we turn the wh
 - A smart quote fails the build, and so does a teammate named Bj&#246;rn. You retype the quote as ASCII and move on.
 - Git respects `.gitignore`, so a write into `node_modules/x/AGENTS.md` stays invisible. Agents do not load instruction files out
   of ignored trees, so I accept that. Add `--ignored=matching` if you disagree.
-- An attacker who manages to commit a bad `AGENTS.md` defeats the drift half outright. Run the audit in CI, where the checkout starts
-  clean and the build itself becomes the only thing that can dirty it, and let the ASCII half plus a human reviewer summoned with a
-  `CODEOWNERS` [file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) cover the rest.
-
-There are also helpful configuration options:
-
-- **Set `ignore-scripts=true` in `.npmrc`**, or run `npm ci --ignore-scripts`. That genuinely stops npm lifecycle code. Python
-  needs `--only-binary=:all:`, which closes the [PEP 517](https://peps.python.org/pep-0517/) build backend that otherwise runs
-  arbitrary code on your machine. However, it fails outright for any package that publishes no wheel, and a wheel can still ship a
-  `.pth` file that runs at interpreter startup. Gradle has no equivalent switch, so pin your plugin jars with
-  `gradle --write-verification-metadata sha256 help` and commit the result. Just understand that this only covers an install-time attack
-   and leaves NVIDIA's build-time attack completely untouched.
-- **Claim the file in `CODEOWNERS`.** Write `AGENTS.md` with no leading slash to cover every instance to arbitrary depth. Pair it with a branch
-  protection rule that requires review from code owners since the `CODEOWNERS` [file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
-on its own only requests a reviewer.
-- **Mount `AGENTS.md` read-only in your [Dev Container](https://containers.dev).** This is the coolest because it is the only layer here that prevents
-  rather than detects. Untrusted code on your own machine runs under your user id, and `chmod` lets the owner of a file change
-  its mode. Any read-only `chmod 444` protection flips right back to writable `644` before an attack appends whatever it likes. POSIX
-  permissions answer the question "which user" but never distinguish "which program by that user." A bind mount does because
-  the kernel flags the path read-only in the container's mount namespace and no user id inside overrides it.
-
-```jsonc
-// .devcontainer/devcontainer.json
-"mounts": ["source=${localWorkspaceFolder}/AGENTS.md,target=${containerWorkspaceFolder}/AGENTS.md,type=bind,readonly"]
-```
-
-That mount needs one entry per `AGENTS.md`. That might seem annoying, but I don't mind because every entry forces you to be deliberate
-about which files you actually sanction. Some things are important enough to demand your attention.
+- An attacker who manages to commit a bad `AGENTS.md` defeats the drift half outright. Run the audit in CI, where the checkout starts clean and the build becomes
+  the only thing that can dirty it. Then let the ASCII half and a human reviewer cover the rest. Claim `AGENTS.md`  in a `CODEOWNERS`
+  [file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) with no leading slash so it
+  matches at every depth, and turn on the branch protection rule that requires code owner approval (because `CODEOWNERS` on its own only requests a reviewer).
 
 One last key point. These checks protect the instruction files themselves and leave the documents they point to, like `docs/TESTING.md`
-and `docs/CONFIG.md`, wide open. Add those paths to the list if that keeps you up at night. Give `AGENTS.md` the same suspicion you would
-give a shell script a package wants to run, which is the [Zero Trust](https://csrc.nist.gov/pubs/sp/800/207/final) posture you
-apply everywhere else anyway.
+and `docs/CONFIG.md`, wide open. Add those paths to the list if that keeps you up at night.
 
 ## Make Your Opinions Real
 
@@ -413,6 +387,7 @@ You and I have opinions on how to build the best software. For decades, these op
 and meaningless, wasteful social media debates at worst.
 
 One of the great things about the age of AI is that it presents us with the opportunity to encode our opinions for agents via `AGENTS.md`. If we take time to understand the
-art in crafting a strong `AGENTS.md`, to learn how to complement it with Agent Skills, and to protect it from attack, then we can turn our opinions into
-a blueprint for building great software and delivering the best experiences for our customers.
+art in crafting a thorough but efficient `AGENTS.md`, to learn how to complement it with Agent Skills, and to treat it with the same [Zero Trust](https://csrc.nist.gov/pubs/sp/800/207/final) suspicion we would
+treat a shell script the package wants to run, then we can turn our opinions into
+an actionable blueprint for building great software and delivering the best experiences for our customers.
 
