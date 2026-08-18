@@ -1,7 +1,7 @@
 ---
 author: neil-chaudhuri
 title: "The McKinsey Developer Productivity Analysis Is a Ruse"
-date: 2023-10-09T13:31:40-04:00
+date: 2023-10-09
 description: "The McKinsey developer productivity analysis is worse than wrong. It's bad faith. Your organization can do so much better."
 image: "/img/blog/mckinsey.jpg"
 categories:

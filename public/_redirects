@@ -2,3 +2,6 @@
 # Renamed 2026-07-29 to cover data architecture and delivery culture, not only software.
 /consulting/software-modernization /consulting/legacy-system-modernization 301
 /consulting/software-modernization/ /consulting/legacy-system-modernization 301
+# Retitled 2026-08-17 to cover protecting AGENTS.md, not only writing it.
+/blog/put-your-opinions-to-work-with-agents-md /blog/put-your-opinions-to-work-with-agents-md-and-keep-them-safe 301
+/blog/put-your-opinions-to-work-with-agents-md/ /blog/put-your-opinions-to-work-with-agents-md-and-keep-them-safe 301

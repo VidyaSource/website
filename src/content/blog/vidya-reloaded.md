@@ -1,7 +1,7 @@
 ---
 title: "Vidya Reloaded"
 author: neil-chaudhuri
-date: 2017-09-10T17:38:04-04:00
+date: 2017-09-10
 description: "Our new website is a Progressive Web Application. Here's why that's cool."
 image: "/img/blog/matrix.jpg"
 categories:

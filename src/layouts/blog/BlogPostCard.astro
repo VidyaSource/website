@@ -1,12 +1,12 @@
 ---
-import {format} from "date-fns/format";
 import {Image} from 'astro:assets';
 import {type BlogPost} from "./blogUtils.ts";
 import {images} from '../../components/Images'
+import {formatPostDate, toDateAttribute} from '../../components/dates'
 type Props = BlogPost & {classes: string}
 const {slug, classes, author: {name, image: authorImage, linkedIn, profileUrl}, title, description, image, date, tags, categories} = Astro.props
 const link = `/blog/${slug}`
-const formattedDate = format(new Date(date), "LLLL d, y")
+const formattedDate = formatPostDate(date)
 
 ---
 <div class=`flex flex-col rounded-lg shadow-lg overflow-hidden blog-post ${[
@@ -53,7 +53,7 @@ const formattedDate = format(new Date(date), "LLLL d, y")
 
                 </p>
                 <div class="flex space-x-1 text-sm text-gray-dark">
-                    <time datetime={formattedDate}>{formattedDate}</time>
+                    <time datetime={toDateAttribute(date)}>{formattedDate}</time>
                 </div>
             </div>
         </div>

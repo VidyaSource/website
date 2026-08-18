@@ -1,11 +1,28 @@
 ---
+// Two gates keep local traffic out of the production GA property.
+//
+// 1. `import.meta.env.PROD` is false under `astro dev`, so the dev server emits
+//    no tag at all. Partytown is fully functional on localhost, so without this
+//    every page you open while developing was recorded as a real pageview.
+// 2. `astro preview` and a local `astro build` both run as PROD, so the runtime
+//    host check below refuses to configure GA anywhere but the canonical host.
+const measurementId = 'G-SV6CZCPD3B';
+const analyticsHost = new URL(Astro.site ?? 'https://www.vidyasource.com').hostname;
 ---
-<!-- Google tag (gtag.js) -->
-<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-SV6CZCPD3B"></script>
-<script type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+{import.meta.env.PROD && (
+    <>
+        <!-- Google tag (gtag.js) -->
+        <script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
+        <script type="text/partytown" define:vars={{ measurementId, analyticsHost }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-    gtag('config', 'G-SV6CZCPD3B');
-</script>
+            // Skipping config leaves gtag loaded but silent, so preview builds and
+            // any non-canonical host send nothing.
+            if (location.hostname === analyticsHost) {
+                gtag('config', measurementId);
+            }
+        </script>
+    </>
+)}

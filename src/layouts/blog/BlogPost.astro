@@ -1,6 +1,6 @@
 ---
 import {selectTags} from "../../layouts/blog/selectTags";
-import {format} from "date-fns/format"
+import {formatPostDate, toDateAttribute} from '../../components/dates'
 import Avatar from '../../layouts/blog/Avatar.astro';
 import TwitterScript from '../../layouts/blog/TwitterScript.astro';
 import YouTubeVideo from '../../components/YouTubeVideo.astro'
@@ -48,8 +48,8 @@ const {Content} = await render();
 
             <!-- Date and author -->
             <div class="flex items-center justify-center gap-4 mt-4">
-                <time class="text-base text-gray dark:text-gray-light font-medium" datetime={new Date(date).toISOString()}>
-                    {format(new Date(date), "LLLL d, y")}
+                <time class="text-base text-gray dark:text-gray-light font-medium" datetime={toDateAttribute(date)}>
+                    {formatPostDate(date)}
                 </time>
                 <span class="text-gray dark:text-gray-light">·</span>
                 <Avatar name={name} image={authorImage} profileUrl={profileUrl}/>

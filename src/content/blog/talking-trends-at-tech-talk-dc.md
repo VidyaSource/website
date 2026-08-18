@@ -3,7 +3,7 @@ title: "Talking Trends at Tech Talk DC"
 author: neil-chaudhuri
 description: "Hope to see you at our talk 'Here's What's Trending in Software Engineering.'"
 image: "/img/blog/class.jpg"
-date: 2017-10-11T14:11:51-04:00
+date: 2017-10-11
 tags:
 - Java
 - Ruby

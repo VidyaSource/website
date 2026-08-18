@@ -14,15 +14,17 @@ export default defineConfig({
     // /consulting/legacy-system-modernization. The 301 lives in public/_redirects
     // rather than Astro's `redirects` option, because Astro emits a meta-refresh
     // HTML file whose presence can shadow the host redirect rule.
+    // `markdown` belongs at the top level. Nested inside mdx() it was silently
+    // ignored, so code blocks fell back to Shiki's github-dark default and `wrap`
+    // never applied. MDX inherits these settings from here.
+    markdown: {
+        shikiConfig: {
+            theme: 'catppuccin-mocha',
+            wrap: true
+        }
+    },
     integrations: [
-        mdx({
-            markdown: {
-                shikiConfig: {
-                    theme: 'dracula',
-                    wrap: true
-                }
-            }
-        }),
+        mdx(),
         partytown({
             config: {
                 forward: ["dataLayer.push"],

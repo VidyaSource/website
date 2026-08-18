@@ -131,6 +131,32 @@
         @apply pl-4 italic my-4 dark:text-blue-light;
     }
 
+    /* Preflight leaves tables completely unstyled, so cells run together with no
+       padding or rules. Sized down like code blocks to keep wide comparison tables
+       inside the prose column, and scrollable on narrow screens rather than
+       pushing the page sideways. */
+    article table {
+        @apply w-full my-8 text-sm block overflow-x-auto;
+    }
+
+    article th {
+        @apply text-left align-bottom font-semibold px-3 pb-2 border-b-2 border-gray;
+    }
+
+    article td {
+        @apply align-top px-3 py-2 border-b border-gray-light dark:border-gray;
+    }
+
+    /* Tailwind's preflight strips markers from every ol/ul, and the article carries
+       no `prose` class to put them back, so ordered lists in post content rendered
+       unnumbered. Restore the counter and open a gutter wide enough for it to sit
+       outside the `pl-4` that `li` applies. Scoped to article so nav and footer
+       lists keep their reset. */
+    article ol {
+        list-style: decimal outside;
+        padding-left: 1.5rem;
+    }
+
     .prose .text-red {
         color: #9c4d61;
     }
@@ -175,8 +201,31 @@
         color: #F4F9FE;
     }
 
+    /* Code blocks run smaller than body copy so long lines fit without horizontal
+       scrolling. `pre code` inherits, overriding the typography plugin's own sizing. */
+    /* Paragraphs on this site carry no margins and rely on line-height for rhythm,
+       which leaves a filled code block butting straight against the text that
+       follows it. Give the block its own breathing room below. */
     pre {
-        @apply p-4
+        @apply p-4 mb-8 text-sm leading-relaxed;
+    }
+
+    pre code {
+        @apply text-sm leading-relaxed;
+        /* Shiki puts the newline BETWEEN .line spans, so those spans cannot become
+           blocks while the code element preserves whitespace: every line would
+           double-space. Collapsing here lets each .line be a block and restore its
+           own pre-wrap below, which is what makes the hanging indent possible. */
+        white-space: normal;
+    }
+
+    /* Hanging indent: the counter sits in the 3rem gutter and wrapped continuation
+       lines align with the code column instead of running under the numbers. */
+    pre code .line {
+        display: block;
+        white-space: pre-wrap;
+        padding-left: 3rem;
+        text-indent: -3rem;
     }
 
     code {
@@ -188,12 +237,16 @@
         counter-increment: step 0;
     }
 
+    /* Shiki wraps long lines, so the gutter must hold a whole number on one row.
+       A 1rem box split two-digit counts across lines once wrapping turned on. */
     code .line::before {
         content: counter(step);
-        counter-increment: step;width: 1rem;
-        margin-right: 2rem;
+        counter-increment: step;
+        width: 1.75rem;
+        margin-right: 1.25rem;
         display: inline-block;
         text-align: right;
+        white-space: pre;
         color: #F8ECEF;
     }
 }
