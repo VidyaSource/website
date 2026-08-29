@@ -1,6 +1,5 @@
 import {defineConfig} from 'astro/config';
 import mdx from "@astrojs/mdx";
-import partytown from "@astrojs/partytown";
 import AstroPWA from '@vite-pwa/astro';
 import sitemap from "@astrojs/sitemap";
 
@@ -25,11 +24,6 @@ export default defineConfig({
     },
     integrations: [
         mdx(),
-        partytown({
-            config: {
-                forward: ["dataLayer.push"],
-            },
-        }),
         AstroPWA(),
         sitemap()
     ],

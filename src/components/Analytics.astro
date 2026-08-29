@@ -1,28 +1,41 @@
 ---
-// Two gates keep local traffic out of the production GA property.
+// Google Analytics 4, loaded with Google's own gtag.js snippet on the main thread.
+//
+// This tag ran through Partytown until 2026-08-29 and sent nothing. Partytown
+// itself loaded correctly (its config, its sandbox iframe, and its service worker
+// at /~partytown/ were all live), but it never executed the tag: on every page
+// load the script kept its `text/partytown` type attribute, no request reached
+// googletagmanager.com, and dataLayer filled up on the main thread with nothing
+// to transmit it. Astro's `define:vars` also dropped the `type` attribute from
+// the second script at build time, which split the pair across two execution
+// contexts. Partytown saves a few milliseconds on a 90 KB async script. It is
+// not worth another silent outage, so the tag now loads directly.
+//
+// Two gates keep local and preview traffic out of the production property:
 //
 // 1. `import.meta.env.PROD` is false under `astro dev`, so the dev server emits
-//    no tag at all. Partytown is fully functional on localhost, so without this
-//    every page you open while developing was recorded as a real pageview.
-// 2. `astro preview` and a local `astro build` both run as PROD, so the runtime
-//    host check below refuses to configure GA anywhere but the canonical host.
+//    no tag at all.
+// 2. `astro preview`, a local `astro build`, and Cloudflare preview branches all
+//    run as PROD, so the host check below skips the `config` call anywhere but
+//    the canonical host. It writes a console warning when it skips, so a build
+//    that stops reporting says so instead of going quiet.
 const measurementId = 'G-SV6CZCPD3B';
 const analyticsHost = new URL(Astro.site ?? 'https://www.vidyasource.com').hostname;
+const gtagSnippet = `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+if (location.hostname === ${JSON.stringify(analyticsHost)}) {
+  gtag('config', ${JSON.stringify(measurementId)});
+} else {
+  console.warn('[analytics] Host is ' + location.hostname + ', not ' + ${JSON.stringify(analyticsHost)} + '. GA4 config skipped. No data is sent.');
+}
+`;
 ---
 {import.meta.env.PROD && (
     <>
         <!-- Google tag (gtag.js) -->
-        <script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
-        <script type="text/partytown" define:vars={{ measurementId, analyticsHost }}>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            // Skipping config leaves gtag loaded but silent, so preview builds and
-            // any non-canonical host send nothing.
-            if (location.hostname === analyticsHost) {
-                gtag('config', measurementId);
-            }
-        </script>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
+        <script is:inline set:html={gtagSnippet}></script>
     </>
 )}

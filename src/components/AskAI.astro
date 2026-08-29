@@ -48,9 +48,11 @@ const providers = [
     document.querySelectorAll<HTMLAnchorElement>('.ask-ai-link').forEach((el) => {
         el.addEventListener('click', () => {
             const provider = el.dataset.aiProvider ?? 'unknown';
-            (window as any).dataLayer = (window as any).dataLayer || [];
-            (window as any).dataLayer.push({
-                event: 'ask_ai_click',
+            // gtag.js only reads `gtag()` argument objects off the dataLayer. A bare
+            // `dataLayer.push({event: ...})` is GTM container syntax, and this site has
+            // no GTM container, so that form recorded nothing. `gtag` is undefined
+            // in dev and on non-canonical hosts, where the optional call is a no-op.
+            (window as any).gtag?.('event', 'ask_ai_click', {
                 ai_provider: provider,
             });
         });
