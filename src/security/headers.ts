@@ -47,7 +47,11 @@ export const securityHeaders = {
     'Referrer-Policy': 'strict-origin-when-cross-origin',
     // `payment` opens up when a checkout provider needs the Payment Request API.
     'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=(), usb=()',
-    'Cross-Origin-Opener-Policy': 'same-origin'
+    'Cross-Origin-Opener-Policy': 'same-origin',
+    // IETF AIPREF draft (draft-ietf-aipref-vocab / -attach): a preference, not access
+    // control. Vidya wants to be found and quoted by AI search and allows model
+    // training on its public content. robots.txt carries the same line.
+    'Content-Usage': 'train-ai=y, search=y'
 } as const satisfies HeaderMap;
 
 /** Cache policy for negotiated and HTML responses: always revalidate at the edge. */

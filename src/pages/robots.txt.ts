@@ -11,13 +11,20 @@ const aiAgents = [
     'GPTBot', 'OAI-SearchBot', 'ChatGPT-User',
     'ClaudeBot', 'Claude-User', 'Claude-SearchBot',
     'PerplexityBot', 'Perplexity-User',
-    'Google-Extended', 'Applebot-Extended', 'Bingbot'
+    'Google-Extended', 'Applebot-Extended', 'Bingbot',
+    'Amazonbot', 'meta-externalagent', 'CCBot', 'Bytespider'
 ];
 
+// The `*` group carries no Disallow at all. A crawler that is not named below must
+// still read as fully allowed; a single Disallow line here would count against every
+// unlisted agent. The 404 page is never linked, so it needs no rule.
+//
+// Content-Usage is the IETF AIPREF draft vocabulary for content-use preferences. The
+// same values go out as an HTTP header from src/security/headers.ts.
 const robotsTxt = [
     'User-agent: *',
     'Allow: /',
-    'Disallow: /404.html',
+    'Content-Usage: train-ai=y, search=y',
     '',
     ...aiAgents.map((agent) => `User-agent: ${agent}`),
     'Allow: /',

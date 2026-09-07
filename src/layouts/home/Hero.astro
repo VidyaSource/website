@@ -96,29 +96,21 @@ import {VIDYA_HEADLINE} from "../../agent/site";
         the content can never sit under it when the hero grows taller than the viewport. */}
     <main id="main-content" class="relative z-10 flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20 md:pb-24">
         <section class="text-center max-w-4xl mx-auto py-10 sm:py-14">
-            {/* Main headline: the same sentence llms.txt and the page metadata use, so a
-                reader or an agent gets the purpose of the site from the H1 alone. */}
-            <p class="hero-enter text-lg sm:text-xl md:text-2xl font-semibold tracking-tight text-blue dark:text-blue-light" style="animation-delay: 100ms">
-                Welcome to Vidya.
-            </p>
-            <h1 class="hero-enter mt-2 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-blue-dark dark:text-white" style="animation-delay: 200ms">
+            {/* One headline, one tagline, two actions. The headline is the same sentence
+                llms.txt and the page metadata use, so a reader or an agent gets the purpose
+                of the site from the H1 alone. */}
+            <h1 class="hero-enter text-4xl sm:text-5xl md:text-6xl tracking-tight font-extrabold text-blue-dark dark:text-white text-balance" style="animation-delay: 100ms">
                 {VIDYA_HEADLINE}
             </h1>
 
-            {/* Subheadline */}
-            <h2 class="hero-enter text-2xl sm:text-3xl md:text-4xl tracking-tight font-bold mt-4" style="animation-delay: 300ms">
+            {/* Tagline */}
+            <p class="hero-enter mt-6 text-2xl sm:text-3xl md:text-4xl tracking-tight font-bold" style="animation-delay: 250ms">
                 <span class="text-red dark:text-red-light">Build faster.</span>{' '}
                 <span class="italic text-gray-dark dark:text-green-light">Build better.</span>
-            </h2>
-
-            {/* Description */}
-            <p class="hero-enter mt-6 max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl text-gray-dark dark:text-gray-light leading-relaxed" style="animation-delay: 400ms">
-                Software development and architecture modernization to strengthen your business.
-                Courses and content to help you harness technology for yourself.
             </p>
 
             {/* CTA Buttons */}
-            <div class="hero-enter mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6" style="animation-delay: 500ms">
+            <div class="hero-enter mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6" style="animation-delay: 400ms">
                 <a
                     href="/consulting"
                     class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold rounded-xl bg-red dark:bg-red-light text-white dark:text-blue-dark hover:bg-blue-dark dark:hover:bg-blue-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
