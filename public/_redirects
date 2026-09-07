@@ -5,3 +5,7 @@
 # Retitled 2026-08-17 to cover protecting AGENTS.md, not only writing it.
 /blog/put-your-opinions-to-work-with-agents-md /blog/put-your-opinions-to-work-with-agents-md-and-keep-them-safe 301
 /blog/put-your-opinions-to-work-with-agents-md/ /blog/put-your-opinions-to-work-with-agents-md-and-keep-them-safe 301
+# 2026-09-07: the sitemap moved from @astrojs/sitemap's index+chunk pair to one
+# hand-built /sitemap.xml (src/pages/sitemap.xml.ts). Old URLs stay resolvable.
+/sitemap-index.xml /sitemap.xml 301
+/sitemap-0.xml /sitemap.xml 301

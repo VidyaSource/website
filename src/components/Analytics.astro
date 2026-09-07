@@ -1,41 +1,52 @@
 ---
-// Google Analytics 4, loaded with Google's own gtag.js snippet on the main thread.
+// Google Analytics 4, loaded with Google's own gtag.js on the main thread.
 //
 // This tag ran through Partytown until 2026-08-29 and sent nothing. Partytown
 // itself loaded correctly (its config, its sandbox iframe, and its service worker
 // at /~partytown/ were all live), but it never executed the tag: on every page
 // load the script kept its `text/partytown` type attribute, no request reached
 // googletagmanager.com, and dataLayer filled up on the main thread with nothing
-// to transmit it. Astro's `define:vars` also dropped the `type` attribute from
-// the second script at build time, which split the pair across two execution
-// contexts. Partytown saves a few milliseconds on a 90 KB async script. It is
+// to transmit it. Partytown saves a few milliseconds on a 90 KB async script. It is
 // not worth another silent outage, so the tag now loads directly.
+//
+// The config snippet is a bundled Astro script, not an inline one, because the
+// Content-Security-Policy allows no inline scripts (see src/security/headers.ts). It
+// reads the measurement id and the canonical host from the two <meta> tags below.
 //
 // Two gates keep local and preview traffic out of the production property:
 //
 // 1. `import.meta.env.PROD` is false under `astro dev`, so the dev server emits
 //    no tag at all.
 // 2. `astro preview`, a local `astro build`, and Cloudflare preview branches all
-//    run as PROD, so the host check below skips the `config` call anywhere but
-//    the canonical host. It writes a console warning when it skips, so a build
-//    that stops reporting says so instead of going quiet.
+//    run as PROD, so the host check skips the `config` call anywhere but the
+//    canonical host. It writes a console warning when it skips, so a build that
+//    stops reporting says so instead of going quiet.
 const measurementId = 'G-SV6CZCPD3B';
 const analyticsHost = new URL(Astro.site ?? 'https://www.vidyasource.com').hostname;
-const gtagSnippet = `
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-if (location.hostname === ${JSON.stringify(analyticsHost)}) {
-  gtag('config', ${JSON.stringify(measurementId)});
-} else {
-  console.warn('[analytics] Host is ' + location.hostname + ', not ' + ${JSON.stringify(analyticsHost)} + '. GA4 config skipped. No data is sent.');
-}
-`;
 ---
 {import.meta.env.PROD && (
     <>
+        <meta name="analytics:measurement-id" content={measurementId} />
+        <meta name="analytics:host" content={analyticsHost} />
         <!-- Google tag (gtag.js) -->
         <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
-        <script is:inline set:html={gtagSnippet}></script>
+        <script>
+            const read = (name: string): string =>
+                document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`)?.content ?? '';
+            const measurementId = read('analytics:measurement-id');
+            const analyticsHost = read('analytics:host');
+
+            type Gtag = (...args: unknown[]) => void;
+            const w = window as Window & { dataLayer?: unknown[]; gtag?: Gtag };
+            w.dataLayer = w.dataLayer ?? [];
+            const gtag: Gtag = (...args) => { w.dataLayer?.push(args); };
+            w.gtag = gtag;
+            gtag('js', new Date());
+            if (location.hostname === analyticsHost) {
+                gtag('config', measurementId);
+            } else {
+                console.warn(`[analytics] Host is ${location.hostname}, not ${analyticsHost}. GA4 config skipped. No data is sent.`);
+            }
+        </script>
     </>
 )}

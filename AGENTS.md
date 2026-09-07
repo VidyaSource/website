@@ -153,17 +153,31 @@ The dev container (`.devcontainer/devcontainer.json`) uses Node 22 and forwards 
 
 - **Target**: Cloudflare Pages (static output). Build output directory is the flat `dist/`.
 - No adapter: the site is fully static, so Astro builds directly to `dist/` (no `@astrojs/cloudflare`, no `dist/client` + `dist/server` split). If SSR is ever needed, re-add the Cloudflare adapter and point the Pages output directory at `dist/client`.
-- `public/_headers` sets the immutable `Cache-Control` for hashed `/_astro/*` assets (previously injected by the adapter).
+- Response headers come from one typed module, `src/security/headers.ts`. An Astro integration (`src/security/cloudflare-headers.ts`) renders it into `dist/_headers` on every build, and the Pages Function middleware attaches the same headers to every response it returns, because Cloudflare does not apply `_headers` to Function responses. There is no hand-written `public/_headers`.
 - No server-side rendering — all pages are pre-rendered at build time.
-- There is a function that runs in the code base that runs on Cloudflare to support email delivery from the Contact form.
+- Two Pages Functions run on Cloudflare: `functions/api/contact.ts` delivers the contact form by email, and `functions/_middleware.ts` does HTTP content negotiation and header decoration for every page route. `public/_routes.json` keeps static assets and the machine-readable twins out of the Function so they cost no invocation.
 
 ---
 
-# AI consumption
+## Security headers and Content-Security-Policy
 
-- The Vidya website supports consumption by ChatGPT, Claude, and Perplexity via llms.txt so that visitors can have AI evaluate Vidya. 
-- Every Astro content collection should be mined for llms.txt content.
-- 
+- The CSP in `src/security/headers.ts` allows **no inline scripts**. Every `<script>` must be a bundled Astro script (no `is:inline`, no `define:vars`, no `set:html`), and `vite.build.assetsInlineLimit` is `0` so Astro never inlines a small bundle back into the HTML. Server values a script needs go in a `<meta>` tag the script reads (see `Analytics.astro`).
+- The only external script origins are Google Analytics, Cloudflare Turnstile, and Twitter's widget loader. A new third-party script, frame, or fetch target must be added to the policy in `headers.ts` or the browser blocks it silently.
+- Styles allow `'unsafe-inline'` because Shiki code blocks, `define:vars` on `<style>`, and Tailwind Plus Elements set style attributes at runtime.
+- `form-action` and `Permissions-Policy: payment` are the two lines that change when a checkout provider is added.
+
+---
+
+## AI consumption
+
+- The Vidya website supports consumption by ChatGPT, Claude, and Perplexity via llms.txt so that visitors can have AI evaluate Vidya.
+- `src/agent/catalog.ts` is the single typed model of every page an agent can read. `llms.txt`, `llms-full.txt`, `sitemap.xml`, `rss.xml`, and the per-page twins all read it. A new content collection is one loader in the catalog and then appears everywhere.
+- Every HTML page `/x/y/` has a Markdown twin at `/x/y.md` and a JSON-LD twin at `/x/y.json` (`src/pages/[...stem].md.ts` and `[...stem].json.ts`). The homepage twins are `/index.md` and `/index.json`. Each page advertises them with `<link rel="alternate">` from `src/components/MachineReadable.astro`.
+- `functions/_middleware.ts` serves the twin in place when a request's `Accept` header prefers `text/markdown`, `text/plain`, or `application/json`, with `Vary: Accept`. 404s under a JSON preference are RFC 9457 `application/problem+json`. No User-Agent sniffing anywhere.
+- `llms.txt` follows llmstxt.org (H1, blockquote, H2 link lists, `## Optional` last) and stays near 10 KB. `llms-full.txt` is every twin concatenated. `public/skill.md` is an Agent Skill that tells an agent how to evaluate Vidya.
+- The `offers` field on courses (and the `products` collection) is the schema.org `Offer` shape. Fill it in and the price and purchase link show up in JSON-LD, the twins, and `llms.txt` with no further code.
+- The hero headline and the `llms.txt` summary are the same constants in `src/agent/site.ts`, so they cannot drift.
+
 ---
 
 ## Things to Avoid

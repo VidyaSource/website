@@ -9,6 +9,7 @@ import '../globals.css'
 import VidyaSEO from "./VidyaSEO.astro";
 import Analytics from "./Analytics.astro"
 import TailwindElements from "./TailwindElements.astro"
+import MachineReadable from "./MachineReadable.astro"
 interface Props {
     title?: string
     description?: string
@@ -26,12 +27,11 @@ interface Props {
 <html lang="en">
 <head>
     <Analytics />
-    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- VidyaSEO below owns the meta description. Do not add a placeholder one here:
          it emits a second, competing description tag ahead of the real one. -->
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <MachineReadable noindex={Astro.props.noindex} />
     <meta name="generator" content={Astro.generator} />
     <ClientRouter />
     <VidyaSEO {...Astro.props} />

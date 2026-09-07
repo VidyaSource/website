@@ -39,11 +39,15 @@ const {sunFillColor, moonFillColor} = Astro.props
     }
 </style>
 
-<script is:inline>
+{/* Bundled, not inline: the Content-Security-Policy allows no inline scripts. It
+    already waited for astro:page-load, so bundling changes nothing about when it runs. */}
+<script>
     document.addEventListener('astro:page-load', () => {
-        const theme = (() => {
-            if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-                return localStorage.getItem('theme');
+        type Theme = 'light' | 'dark';
+        const theme: Theme = (() => {
+            const stored = typeof localStorage !== 'undefined' ? localStorage.getItem('theme') : null;
+            if (stored === 'light' || stored === 'dark') {
+                return stored;
             }
             if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 return 'dark';
@@ -66,7 +70,8 @@ const {sunFillColor, moonFillColor} = Astro.props
         }
 
         // Use delegated event listener so dynamically-mounted buttons also work (e.g., inside mobile popover)
-        if (!window.__themeToggleDelegated) {
+        const w = window as Window & { __themeToggleDelegated?: boolean };
+        if (!w.__themeToggleDelegated) {
             document.addEventListener("click", (e) => {
                 const target = e.target;
                 if (target && target instanceof Element) {
@@ -76,7 +81,7 @@ const {sunFillColor, moonFillColor} = Astro.props
                     }
                 }
             }, { passive: true });
-            window.__themeToggleDelegated = true;
+            w.__themeToggleDelegated = true;
         }
     });
 </script>

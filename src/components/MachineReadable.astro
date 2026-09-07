@@ -1,0 +1,29 @@
+---
+// Everything in <head> that tells a crawler, a feed reader, an installer, or an AI agent
+// where the machine-readable versions of this site live. Shared by Page.astro and the
+// homepage so the two never drift.
+import {jsonPath, markdownPath} from '../agent/paths';
+
+interface Props {
+    /** Pages that must not be indexed (404) have no twins to advertise. */
+    noindex?: boolean
+}
+
+const {noindex = false} = Astro.props
+const path = Astro.url.pathname
+---
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#5A82B4" />
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+<link rel="alternate" type="application/rss+xml" title="Vidya Blog" href="/rss.xml" />
+<link rel="alternate" type="text/markdown" title="Vidya for LLMs" href="/llms.txt" />
+<link rel="alternate" type="text/markdown" title="Vidya full content for LLMs" href="/llms-full.txt" />
+{!noindex && (
+    <>
+        <link rel="alternate" type="text/markdown" title="This page as Markdown" href={markdownPath(path)} />
+        <link rel="alternate" type="application/ld+json" title="This page as JSON-LD" href={jsonPath(path)} />
+    </>
+)}

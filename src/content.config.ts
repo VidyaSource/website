@@ -43,6 +43,29 @@ export const sessionSchema = z.union([
     })
 ])
 
+// Commerce vocabulary shared by courses and products. Mirrors schema.org Offer so the
+// same front matter feeds JSON-LD, the markdown and JSON twins, and llms.txt without
+// translation. Purchase URLs are content, not code: they live in front matter.
+export const currencyCodes = ['USD'] as const;
+export const itemAvailabilities = [
+    'InStock', 'OutOfStock', 'PreOrder', 'PreSale', 'LimitedAvailability',
+    'OnlineOnly', 'SoldOut', 'Discontinued', 'BackOrder'
+] as const;
+export const offerCategories = ['Paid', 'Free', 'Subscription'] as const;
+
+export const offerSchema = z.object({
+    name: z.string().optional(),
+    price: z.number().nonnegative(),
+    priceCurrency: z.enum(currencyCodes),
+    url: z.string().url(),
+    availability: z.enum(itemAvailabilities).default('InStock'),
+    category: z.enum(offerCategories).optional(),
+    validFrom: z.date().optional(),
+    validThrough: z.date().optional()
+})
+
+export const courseModes = ['online', 'onsite', 'blended'] as const;
+
 export const courseSchema =  z.object({
     title: z.string(),
     category: z.string(),
@@ -52,7 +75,14 @@ export const courseSchema =  z.object({
     description: z.string(),
     quote: z.string(),
     duration: z.string().optional(),
-    syllabus: z.record(z.string(), sessionSchema)
+    syllabus: z.record(z.string(), sessionSchema),
+    // How to buy. Empty until the course is purchasable; then every machine-readable
+    // surface (JSON-LD, twins, llms.txt) shows price, availability, and the purchase link.
+    offers: z.array(offerSchema).optional(),
+    courseMode: z.enum(courseModes).optional(),
+    // ISO 8601 duration (for example PT8H) for schema.org courseWorkload. `duration`
+    // above stays the human sentence.
+    workload: z.string().optional()
 })
 const courses = defineCollection({
     loader: glob({pattern: '**/*.{md,mdx}', base: './src/content/courses'}),
@@ -151,6 +181,30 @@ const caseStudies = defineCollection({
     schema: caseStudySchema,
 });
 
+// Products for sale (digital goods, templates, packaged services). The directory is
+// empty until the first product ships; the catalog, sitemap, twins, and llms.txt already
+// read it, so a new product is one file.
+export const productSchema = z.object({
+    title: z.string(),
+    seoTitle: z.string().optional(),
+    category: z.string(),
+    description: z.string(),
+    image: z.string(),
+    sku: z.string().optional(),
+    tags: z.array(z.string()),
+    order: z.number(),
+    offers: z.array(offerSchema).nonempty(),
+    faqs: z.array(z.object({
+        question: z.string(),
+        answer: z.string()
+    })).optional()
+})
+
+const products = defineCollection({
+    loader: glob({pattern: '**/*.{md,mdx}', base: './src/content/products'}),
+    schema: productSchema,
+});
+
 export const collections = {
-    blog, staff, courses, tutorials, llms, consulting, caseStudies
+    blog, staff, courses, tutorials, llms, consulting, caseStudies, products
 };
