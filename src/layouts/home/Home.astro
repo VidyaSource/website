@@ -3,6 +3,8 @@ import "../../globals.css";
 import Hero from "./Hero.astro";
 import Logo from "../../components/Logo.astro"
 import RecentPosts from "./RecentPosts.astro"
+import Services from "./Services.astro"
+import FeaturedCaseStudies from "./FeaturedCaseStudies.astro"
 import Clients from "../../components/Clients.astro"
 import Certifications from "../../components/Certifications.astro"
 import Testimonials from "../../components/Testimonials.astro"
@@ -47,6 +49,10 @@ import navigation from "../../components/navigation.json";
         </div>
     </div>
 </el-popover>
+{/* What we do, the evidence for it, what we write, and who vouches for us.
+    Courses are deliberately absent: a teaser reads as the full catalog. */}
+<Services />
+<FeaturedCaseStudies />
 <RecentPosts />
 <Clients />
 <Certifications />

@@ -3,9 +3,13 @@ import Logo from "../../components/Logo.astro";
 import ThemeButton from "../../components/ThemeButton.astro";
 import navigation from "../../components/navigation.json";
 import {VIDYA_HEADLINE} from "../../agent/site";
+import {proofPoints} from "./proof";
 ---
 
-<div class="relative bg-gradient-to-br from-blue-light via-white to-blue-light dark:from-blue dark:via-blue-dark dark:to-blue overflow-hidden min-h-[90vh] flex flex-col">
+{/* The hero is sized to its content. Peers in this field (Ad Hoc, Truss, Skylight)
+    keep the first screen short and put proof directly under the headline; the
+    three results below do that job here. */}
+<div class="relative bg-gradient-to-br from-blue-light via-white to-blue-light dark:from-blue dark:via-blue-dark dark:to-blue overflow-hidden flex flex-col">
     {/* Skip to main content link - accessibility best practice */}
     <a
         href="#main-content"
@@ -94,23 +98,27 @@ import {VIDYA_HEADLINE} from "../../agent/site";
     {/* Hero content */}
     {/* The bottom padding reserves room for the decorative wave below (h-12/16/20), so
         the content can never sit under it when the hero grows taller than the viewport. */}
-    <main id="main-content" class="relative z-10 flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20 md:pb-24">
-        <section class="text-center max-w-4xl mx-auto py-10 sm:py-14">
-            {/* One headline, one tagline, two actions. The headline is the same sentence
-                llms.txt and the page metadata use, so a reader or an agent gets the purpose
-                of the site from the H1 alone. */}
-            <h1 class="hero-enter text-4xl sm:text-5xl md:text-6xl tracking-tight font-extrabold text-blue-dark dark:text-white text-balance" style="animation-delay: 100ms">
-                {VIDYA_HEADLINE}
-            </h1>
-
-            {/* Tagline */}
-            <p class="hero-enter mt-6 text-2xl sm:text-3xl md:text-4xl tracking-tight font-bold" style="animation-delay: 250ms">
+    <main id="main-content" class="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24">
+        <section class="text-center max-w-4xl mx-auto pt-4 sm:pt-6">
+            {/* Brand line, headline, one sentence, two actions. The headline is the same
+                sentence llms.txt and the page metadata use, so a reader or an agent gets
+                the purpose of the site from the H1 alone. */}
+            <p class="hero-enter text-base sm:text-lg font-bold tracking-tight" style="animation-delay: 50ms">
                 <span class="text-red dark:text-red-light">Build faster.</span>{' '}
                 <span class="italic text-gray-dark dark:text-green-light">Build better.</span>
             </p>
 
+            <h1 class="hero-enter mt-4 text-4xl sm:text-5xl md:text-6xl tracking-tight font-extrabold text-blue-dark dark:text-white text-balance" style="animation-delay: 150ms">
+                {VIDYA_HEADLINE}
+            </h1>
+
+            <p class="hero-enter mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-dark dark:text-blue-light leading-relaxed text-balance" style="animation-delay: 250ms">
+                Vidya is a certified small business that helps commercial companies and federal
+                agencies modernize what they have and build what comes next.
+            </p>
+
             {/* CTA Buttons */}
-            <div class="hero-enter mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6" style="animation-delay: 400ms">
+            <div class="hero-enter mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6" style="animation-delay: 350ms">
                 <a
                     href="/consulting"
                     class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold rounded-xl bg-red dark:bg-red-light text-white dark:text-blue-dark hover:bg-blue-dark dark:hover:bg-blue-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
@@ -128,6 +136,22 @@ import {VIDYA_HEADLINE} from "../../agent/site";
                 </a>
             </div>
         </section>
+
+        {/* Proof: three results, each linked to the case study that backs it. */}
+        <section class="hero-enter w-full max-w-5xl mx-auto mt-10 sm:mt-12" style="animation-delay: 500ms" aria-label="Results Vidya has delivered">
+            <ul role="list" class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                {proofPoints.map((p) => (
+                    <li class="not-italic pl-0 my-0">
+                        <a href={p.href}
+                           class="group flex h-full flex-col rounded-2xl bg-white/70 dark:bg-blue-dark/60 backdrop-blur-md px-6 py-5 ring-1 ring-blue/10 dark:ring-white/10 hover:ring-red/40 dark:hover:ring-red-light/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 text-left">
+                            <p class="text-3xl sm:text-4xl font-extrabold tracking-tight text-red dark:text-red-light">{p.value}</p>
+                            <p class="mt-2 flex-1 text-base text-gray-dark dark:text-blue-light leading-snug">{p.label}</p>
+                            <p class="mt-4 text-xs font-semibold tracking-widest uppercase text-blue dark:text-blue-light group-hover:text-red dark:group-hover:text-red-light transition-colors duration-200">{p.client}</p>
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </section>
     </main>
 
     {/* Decorative bottom wave */}
@@ -135,7 +159,7 @@ import {VIDYA_HEADLINE} from "../../agent/site";
         <svg class="relative block w-full h-12 sm:h-16 md:h-20" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path
                 d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C57.1,118.92,156.63,69.08,321.39,56.44Z"
-                class="fill-white dark:fill-gray-dark"
+                class="fill-blue-dark dark:fill-gray-dark"
             />
         </svg>
     </div>
