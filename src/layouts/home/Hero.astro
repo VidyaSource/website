@@ -92,31 +92,29 @@ import {VIDYA_HEADLINE} from "../../agent/site";
     </header>
 
     {/* Hero content */}
-    <main id="main-content" class="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <section class="text-center max-w-4xl mx-auto py-12 sm:py-16">
-            {/* Eyebrow */}
-            <p class="hero-enter text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-blue dark:text-blue-light" style="animation-delay: 100ms">
+    {/* The bottom padding reserves room for the decorative wave below (h-12/16/20), so
+        the content can never sit under it when the hero grows taller than the viewport. */}
+    <main id="main-content" class="relative z-10 flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20 md:pb-24">
+        <section class="text-center max-w-4xl mx-auto py-10 sm:py-14">
+            {/* Main headline: the same sentence llms.txt and the page metadata use, so a
+                reader or an agent gets the purpose of the site from the H1 alone. */}
+            <p class="hero-enter text-lg sm:text-xl md:text-2xl font-semibold tracking-tight text-blue dark:text-blue-light" style="animation-delay: 100ms">
                 Welcome to Vidya.
             </p>
-
-            {/* Main headline: states what Vidya does and for whom, the same sentence
-                llms.txt and the page metadata use, so a reader or an agent gets the
-                purpose of the site from the H1 alone. */}
-            <h1 class="hero-enter mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight font-extrabold text-blue-dark dark:text-white" style="animation-delay: 200ms">
+            <h1 class="hero-enter mt-2 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-blue-dark dark:text-white" style="animation-delay: 200ms">
                 {VIDYA_HEADLINE}
             </h1>
 
             {/* Subheadline */}
-            <h2 class="hero-enter text-2xl sm:text-3xl md:text-4xl tracking-tight font-bold mt-5" style="animation-delay: 300ms">
+            <h2 class="hero-enter text-2xl sm:text-3xl md:text-4xl tracking-tight font-bold mt-4" style="animation-delay: 300ms">
                 <span class="text-red dark:text-red-light">Build faster.</span>{' '}
                 <span class="italic text-gray-dark dark:text-green-light">Build better.</span>
             </h2>
 
             {/* Description */}
-            <p class="hero-enter mt-6 sm:mt-8 max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl text-gray-dark dark:text-gray-light leading-relaxed" style="animation-delay: 400ms">
-                Vidya is a certified small business in Northern Virginia. We modernize legacy systems,
-                build enterprise AI, and design cloud and data architecture for commercial companies
-                and federal agencies. Our courses and content help you harness technology for yourself.
+            <p class="hero-enter mt-6 max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl text-gray-dark dark:text-gray-light leading-relaxed" style="animation-delay: 400ms">
+                Software development and architecture modernization to strengthen your business.
+                Courses and content to help you harness technology for yourself.
             </p>
 
             {/* CTA Buttons */}
@@ -125,7 +123,7 @@ import {VIDYA_HEADLINE} from "../../agent/site";
                     href="/consulting"
                     class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold rounded-xl bg-red dark:bg-red-light text-white dark:text-blue-dark hover:bg-blue-dark dark:hover:bg-blue-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
-                    Explore consulting services
+                    Partner With Us
                     <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                     </svg>
@@ -134,14 +132,14 @@ import {VIDYA_HEADLINE} from "../../agent/site";
                     href="/courses"
                     class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold rounded-xl bg-white/80 dark:bg-white/10 text-blue-dark dark:text-blue-light border-2 border-blue dark:border-blue-light hover:bg-blue-light dark:hover:bg-blue/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue transform hover:scale-105 transition-all duration-200"
                 >
-                    Browse courses
+                    Explore Courses
                 </a>
             </div>
         </section>
     </main>
 
     {/* Decorative bottom wave */}
-    <div class="absolute bottom-0 left-0 right-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden z-0" aria-hidden="true">
         <svg class="relative block w-full h-12 sm:h-16 md:h-20" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path
                 d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C57.1,118.92,156.63,69.08,321.39,56.44Z"
