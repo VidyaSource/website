@@ -9,7 +9,7 @@ import {proofPoints} from "./proof";
 {/* The hero is sized to its content. Peers in this field (Ad Hoc, Truss, Skylight)
     keep the first screen short and put proof directly under the headline; the
     three results below do that job here. */}
-<div class="relative bg-gradient-to-br from-blue-light via-white to-blue-light dark:from-blue dark:via-blue-dark dark:to-blue overflow-hidden flex flex-col">
+<div class="relative bg-gradient-to-b from-white via-blue-light to-blue/15 dark:from-blue dark:via-blue-dark dark:to-blue overflow-hidden flex flex-col">
     {/* Skip to main content link - accessibility best practice */}
     <a
         href="#main-content"
@@ -137,13 +137,15 @@ import {proofPoints} from "./proof";
             </div>
         </section>
 
-        {/* Proof: three results, each linked to the case study that backs it. */}
+        {/* Proof: three results, each linked to the case study that backs it. The cards
+        are opaque with a red top rule, a ring, and a shadow so they read as distinct
+        objects against the tinted lower half of the hero rather than blending into it. */}
         <section class="hero-enter w-full max-w-5xl mx-auto mt-10 sm:mt-12" style="animation-delay: 500ms" aria-label="Results Vidya has delivered">
             <ul role="list" class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 {proofPoints.map((p) => (
                     <li class="not-italic pl-0 my-0">
                         <a href={p.href}
-                           class="group flex h-full flex-col rounded-2xl bg-white/70 dark:bg-blue-dark/60 backdrop-blur-md px-6 py-5 ring-1 ring-blue/10 dark:ring-white/10 hover:ring-red/40 dark:hover:ring-red-light/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 text-left">
+                           class="group flex h-full flex-col rounded-2xl bg-white dark:bg-blue-dark border-t-4 border-red dark:border-red-light px-6 py-5 shadow-lg shadow-blue-dark/15 dark:shadow-gray-dark/60 ring-1 ring-blue/25 dark:ring-white/15 hover:ring-red/50 dark:hover:ring-red-light/50 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-left">
                             <p class="text-3xl sm:text-4xl font-extrabold tracking-tight text-red dark:text-red-light">{p.value}</p>
                             <p class="mt-2 flex-1 text-base text-gray-dark dark:text-blue-light leading-snug">{p.label}</p>
                             <p class="mt-4 text-xs font-semibold tracking-widest uppercase text-blue dark:text-blue-light group-hover:text-red dark:group-hover:text-red-light transition-colors duration-200">{p.client}</p>
