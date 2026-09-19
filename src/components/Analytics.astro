@@ -39,7 +39,9 @@ const analyticsHost = new URL(Astro.site ?? 'https://www.vidyasource.com').hostn
             type Gtag = (...args: unknown[]) => void;
             const w = window as Window & { dataLayer?: unknown[]; gtag?: Gtag };
             w.dataLayer = w.dataLayer ?? [];
-            const gtag: Gtag = (...args) => { w.dataLayer?.push(args); };
+            // gtag.js reads only `arguments` objects from dataLayer as commands. A plain
+            // array, such as a rest parameter, is silently ignored and no hit is sent.
+            function gtag(..._args: unknown[]): void { w.dataLayer?.push(arguments); }
             w.gtag = gtag;
             gtag('js', new Date());
             if (location.hostname === analyticsHost) {

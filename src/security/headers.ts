@@ -23,12 +23,15 @@ export interface HeaderRule {
 // `define:vars`, and Tailwind Plus Elements all set style attributes at runtime.
 const contentSecurityPolicy: string = [
     "default-src 'self'",
-    "script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://challenges.cloudflare.com https://platform.twitter.com",
+    "script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://challenges.cloudflare.com https://static.cloudflareinsights.com https://platform.twitter.com",
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: https:",
     "font-src 'self'",
     "frame-src https://www.youtube.com https://www.youtube-nocookie.com https://challenges.cloudflare.com https://platform.twitter.com https://syndication.twitter.com",
-    "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://syndication.twitter.com https://cdn.syndication.twimg.com https://platform.twitter.com",
+    // GA4 sends hits to *.google-analytics.com, the bare analytics.google.com (which
+    // `*.analytics.google.com` does not match), *.g.doubleclick.net, and www.google.com.
+    // cloudflareinsights.com receives the Cloudflare Web Analytics beacon.
+    "connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://www.google.com https://cloudflareinsights.com https://syndication.twitter.com https://cdn.syndication.twimg.com https://platform.twitter.com",
     "worker-src 'self'",
     "manifest-src 'self'",
     "object-src 'none'",

@@ -162,7 +162,9 @@ The dev container (`.devcontainer/devcontainer.json`) uses Node 22 and forwards 
 ## Security headers and Content-Security-Policy
 
 - The CSP in `src/security/headers.ts` allows **no inline scripts**. Every `<script>` must be a bundled Astro script (no `is:inline`, no `define:vars`, no `set:html`), and `vite.build.assetsInlineLimit` is `0` so Astro never inlines a small bundle back into the HTML. Server values a script needs go in a `<meta>` tag the script reads (see `Analytics.astro`).
-- The only external script origins are Google Analytics, Cloudflare Turnstile, and Twitter's widget loader. A new third-party script, frame, or fetch target must be added to the policy in `headers.ts` or the browser blocks it silently.
+- The only external script origins are Google Analytics, Cloudflare Turnstile, the Cloudflare Web Analytics beacon, and Twitter's widget loader.
+- Google Analytics sends hits to several hosts, and `connect-src` must list all of them (`*.google-analytics.com`, the bare `analytics.google.com`, `*.g.doubleclick.net`, `www.google.com`). `gtag` must push the `arguments` object to `dataLayer`, never a rest-parameter array, or gtag.js ignores every command.
+- Cloudflare's bot-detection (JS detections) snippet is an inline script with a different hash on every request. The CSP cannot allow it without `'unsafe-inline'`, so turn JavaScript detections off in the Cloudflare dashboard and expect a console violation until you do. A new third-party script, frame, or fetch target must be added to the policy in `headers.ts` or the browser blocks it silently.
 - Styles allow `'unsafe-inline'` because Shiki code blocks, `define:vars` on `<style>`, and Tailwind Plus Elements set style attributes at runtime.
 - `form-action` and `Permissions-Policy: payment` are the two lines that change when a checkout provider is added.
 
