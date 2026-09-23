@@ -27,64 +27,104 @@
                 "https://www.linkedin.com/company/vidya-technology-training/",
                 "https://www.youtube.com/channel/UC24LVc8Bb65SF6LW-SLog9A",
                 "https://github.com/VidyaSource",
-                "https://stackoverflow.com/users/1347281/vidya"
+                "https://stackoverflow.com/users/1347281/vidya",
+                "https://www.crunchbase.com/organization/vidya-fe84",
+                "https://x.com/VidyaSource",
+                "https://share.google/AYOz0HvZJ33anfjcJ"
             ],
             "hasOfferCatalog": {
                 "@type": "OfferCatalog",
                 "name": "Vidya Services",
                 "itemListElement": [
                     {
-                        "@type": "OfferCatalogProduct",
-                        "name": "AI Consulting & Agentic Engineering",
-                        "description": "Vidya builds agentic AI systems for business and government on Spring AI, Embabel, MCP, and LangChain4j, engineered for production use.",
-                        "url": "https://www.vidyasource.com/consulting/ai-consulting"
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "AI Consulting & Agentic Engineering",
+                            "description": "Vidya builds agentic AI systems for business and government on Spring AI, Embabel, MCP, and LangChain4j, engineered for production use.",
+                            "url": "https://www.vidyasource.com/consulting/ai-consulting/",
+                            "provider": {"@id": "https://www.vidyasource.com/#organization"}
+                        }
                     },
                     {
-                        "@type": "OfferCatalogProduct",
-                        "name": "Legacy System Modernization",
-                        "description": "Vidya modernizes legacy government and commercial systems incrementally, covering application code, data architecture, and delivery culture, the approach behind the State Department's Online Passport Renewal and the Recreation.gov migration.",
-                        "url": "https://www.vidyasource.com/consulting/legacy-system-modernization"
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Legacy System Modernization",
+                            "description": "Vidya modernizes legacy government and commercial systems incrementally, covering application code, data architecture, and delivery culture, the approach behind the State Department's Online Passport Renewal and the Recreation.gov migration.",
+                            "url": "https://www.vidyasource.com/consulting/legacy-system-modernization/",
+                            "provider": {"@id": "https://www.vidyasource.com/#organization"}
+                        }
                     },
                     {
-                        "@type": "OfferCatalogProduct",
-                        "name": "Cloud Native Architecture & DevSecOps",
-                        "description": "Vidya builds cloud-native, container-based systems on AWS and Azure with DevSecOps pipelines that shipped the State Department's passport service and tripled Recreation.gov's reservation volume.",
-                        "url": "https://www.vidyasource.com/consulting/cloud-native-devsecops"
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Cloud Native Architecture & DevSecOps",
+                            "description": "Vidya builds cloud-native, container-based systems on AWS and Azure with DevSecOps pipelines that shipped the State Department's passport service and tripled Recreation.gov's reservation volume.",
+                            "url": "https://www.vidyasource.com/consulting/cloud-native-devsecops/",
+                            "provider": {"@id": "https://www.vidyasource.com/#organization"}
+                        }
                     },
                     {
-                        "@type": "OfferCatalogProduct",
-                        "name": "Software & Data Architecture",
-                        "description": "Vidya designs event-driven microservices, Zero Trust access, and Data Mesh architectures, the same discipline behind a React component library used across 6 State Department product teams.",
-                        "url": "https://www.vidyasource.com/consulting/software-architecture"
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Software & Data Architecture",
+                            "description": "Vidya designs event-driven microservices, Zero Trust access, and Data Mesh architectures, the same discipline behind a React component library used across 6 State Department product teams.",
+                            "url": "https://www.vidyasource.com/consulting/software-architecture/",
+                            "provider": {"@id": "https://www.vidyasource.com/#organization"}
+                        }
                     },
                     {
-                        "@type": "OfferCatalogProduct",
-                        "name": "Technology Culture & Organizational Consulting",
-                        "description": "Vidya builds engineering culture, contracting, and recruiting practices beyond Scrum ceremony, backed by GAO Agile Expert Group membership and the training program that became DITAP.",
-                        "url": "https://www.vidyasource.com/consulting/technology-culture"
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Technology Culture & Organizational Consulting",
+                            "description": "Vidya builds engineering culture, contracting, and recruiting practices beyond Scrum ceremony, backed by GAO Agile Expert Group membership and the training program that became DITAP.",
+                            "url": "https://www.vidyasource.com/consulting/technology-culture/",
+                            "provider": {"@id": "https://www.vidyasource.com/#organization"}
+                        }
                     },
                     {
-                        "@type": "OfferCatalogProduct",
-                        "name": "AI & Modernization Consulting for Government",
-                        "description": "Vidya is an 8(a) and SWaM-certified firm on GSA MAS schedule 47QTCA24D0069 (SIN 54151S), delivering modernization and AI work for the State Department and other federal agencies.",
-                        "url": "https://www.vidyasource.com/consulting/government-modernization"
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "AI & Modernization Consulting for Government",
+                            "description": "Vidya is an 8(a) and SWaM-certified firm on GSA MAS schedule 47QTCA24D0069 (SIN 54151S), delivering modernization and AI work for the State Department and other federal agencies.",
+                            "url": "https://www.vidyasource.com/consulting/government-modernization/",
+                            "provider": {"@id": "https://www.vidyasource.com/#organization"}
+                        }
                     },
                     {
-                        "@type": "OfferCatalogProduct",
-                        "name": "Vidya Technology Training Courses",
-                        "description": "Enhance your team's skills with our comprehensive technology training programs. We offer courses in software development, data engineering, and agile methodologies tailored to your specific needs.",
-                        "url": "https://www.vidyasource.com/courses"
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Vidya Technology Training Courses",
+                            "description": "Enhance your team's skills with our comprehensive technology training programs. We offer courses in software development, data engineering, and agile methodologies tailored to your specific needs.",
+                            "url": "https://www.vidyasource.com/courses/",
+                            "provider": {"@id": "https://www.vidyasource.com/#organization"}
+                        }
                     },
                     {
-                        "@type": "OfferCatalogProduct",
-                        "name": "Vidya Blog",
-                        "description": "Explore Vidya's blog for insightful articles, industry news, and expert insights on legacy system modernization, IT consulting, technology training, and more.",
-                        "url": "https://www.vidyasource.com/blog"
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Vidya Blog",
+                            "description": "Explore Vidya's blog for insightful articles, industry news, and expert insights on legacy system modernization, IT consulting, technology training, and more.",
+                            "url": "https://www.vidyasource.com/blog/",
+                            "provider": {"@id": "https://www.vidyasource.com/#organization"}
+                        }
                     },
                     {
-                        "@type": "OfferCatalogProduct",
-                        "name": "Free Online Tutorials",
-                        "description": "Access Vidya's library of software development tutorials. Explore our free educational content covering various technologies, tools, and best practices."
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Free Online Tutorials",
+                            "description": "Access Vidya's library of software development tutorials. Explore our free educational content covering various technologies, tools, and best practices.",
+                            "url": "https://www.vidyasource.com/tutorials/",
+                            "provider": {"@id": "https://www.vidyasource.com/#organization"}
+                        }
                     }
                 ]
             }

@@ -4,7 +4,7 @@ seoTitle: "State Dept Consular Systems Modernization | Vidya"
 client: "U.S. Department of State, Bureau of Consular Affairs"
 sector: "Federal Government"
 period: "Multi-year engagement"
-tagline: "Vidya moderninized dozens of legacy services, most notably Online Passport Renewal, without taking the service offline for a day. Millions now benefit from faster, better service."
+tagline: "Vidya modernized dozens of legacy services, most notably Online Passport Renewal, without taking the service offline for a day. Millions now benefit from faster, better service."
 description: "The Bureau of Consular Affairs cut passport renewal from months to days. A Consular Systems Modernization case study on Vidya's architecture work at State."
 image: "/img/blog/passport.jpg"
 tags:

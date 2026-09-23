@@ -4,7 +4,7 @@ title: "About Vidya"
 
 ## About Vidya
 
-Vidya is a software services and consulting company based in Washington, DC, USA.
+Vidya is a software services and consulting company near Washington, DC, USA.
 
 ### Our Mission
 

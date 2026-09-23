@@ -1,11 +1,61 @@
 # Cloudflare Pages redirect rules. Format: <from> <to> <status>
 # Renamed 2026-07-29 to cover data architecture and delivery culture, not only software.
-/consulting/software-modernization /consulting/legacy-system-modernization 301
-/consulting/software-modernization/ /consulting/legacy-system-modernization 301
+/consulting/software-modernization /consulting/legacy-system-modernization/ 301
+/consulting/software-modernization/ /consulting/legacy-system-modernization/ 301
 # Retitled 2026-08-17 to cover protecting AGENTS.md, not only writing it.
-/blog/put-your-opinions-to-work-with-agents-md /blog/put-your-opinions-to-work-with-agents-md-and-keep-them-safe 301
-/blog/put-your-opinions-to-work-with-agents-md/ /blog/put-your-opinions-to-work-with-agents-md-and-keep-them-safe 301
+/blog/put-your-opinions-to-work-with-agents-md /blog/put-your-opinions-to-work-with-agents-md-and-keep-them-safe/ 301
+/blog/put-your-opinions-to-work-with-agents-md/ /blog/put-your-opinions-to-work-with-agents-md-and-keep-them-safe/ 301
 # 2026-09-07: the sitemap moved from @astrojs/sitemap's index+chunk pair to one
 # hand-built /sitemap.xml (src/pages/sitemap.xml.ts). Old URLs stay resolvable.
 /sitemap-index.xml /sitemap.xml 301
 /sitemap-0.xml /sitemap.xml 301
+
+# 2026-09-22: "welcoming" posts removed 2026-07-29 (0200c5c); point each at its case study.
+/blog/welcoming-healthcare-gov /case-studies/healthcare-gov-modernization/ 301
+/blog/welcoming-healthcare-gov/ /case-studies/healthcare-gov-modernization/ 301
+/blog/welcoming-neustar /case-studies/api-modernization-neustar/ 301
+/blog/welcoming-neustar/ /case-studies/api-modernization-neustar/ 301
+/blog/welcoming-ninaday /case-studies/casting-platform-nina-day/ 301
+/blog/welcoming-ninaday/ /case-studies/casting-platform-nina-day/ 301
+/blog/welcoming-recreation-gov /case-studies/recreation-gov-modernization/ 301
+/blog/welcoming-recreation-gov/ /case-studies/recreation-gov-modernization/ 301
+/blog/welcoming-trss /case-studies/machine-learning-threat-detection-trss/ 301
+/blog/welcoming-trss/ /case-studies/machine-learning-threat-detection-trss/ 301
+
+# 2026-09-22: posts renamed in June 2026 without a redirect.
+/blog/aaif-ambassador /blog/agentic-ai-foundation-ambassador/ 301
+/blog/aaif-ambassador/ /blog/agentic-ai-foundation-ambassador/ 301
+/blog/build-a-culture-of-context-or-your-ai-will-flail /blog/create-a-culture-of-context-for-ai/ 301
+/blog/build-a-culture-of-context-or-your-ai-will-flail/ /blog/create-a-culture-of-context-for-ai/ 301
+
+# 2026-09-22: older posts removed 2026-06-29 (55f1bdd); point each at the closest topic.
+/blog/4-game-changers /blog/ 301
+/blog/4-game-changers/ /blog/ 301
+/blog/beyond-relational-databases /blog/ 301
+/blog/beyond-relational-databases/ /blog/ 301
+/blog/devops-hooray /consulting/cloud-native-devsecops/ 301
+/blog/devops-hooray/ /consulting/cloud-native-devsecops/ 301
+/blog/getting-started-with-hadoop /courses/data-engineering-with-spark/ 301
+/blog/getting-started-with-hadoop/ /courses/data-engineering-with-spark/ 301
+/blog/learning-the-playbook /consulting/government-modernization/ 301
+/blog/learning-the-playbook/ /consulting/government-modernization/ 301
+/blog/oracle-v-google-just-got-real /blog/ 301
+/blog/oracle-v-google-just-got-real/ /blog/ 301
+/blog/ozone-still-thrives-in-one-place /blog/ 301
+/blog/ozone-still-thrives-in-one-place/ /blog/ 301
+/blog/pop-goes-the-blockchain /blog/ 301
+/blog/pop-goes-the-blockchain/ /blog/ 301
+/blog/secure-online-voting-is-possible-this-is-how /consulting/government-modernization/ 301
+/blog/secure-online-voting-is-possible-this-is-how/ /consulting/government-modernization/ 301
+/blog/security-from-day-1 /consulting/cloud-native-devsecops/ 301
+/blog/security-from-day-1/ /consulting/cloud-native-devsecops/ 301
+/blog/testing-1-2-3-my-first-post-on-gcn /case-studies/healthcare-gov-modernization/ 301
+/blog/testing-1-2-3-my-first-post-on-gcn/ /case-studies/healthcare-gov-modernization/ 301
+/blog/the-fix-is-in /consulting/government-modernization/ 301
+/blog/the-fix-is-in/ /consulting/government-modernization/ 301
+/blog/the-plays-the-thing /consulting/government-modernization/ 301
+/blog/the-plays-the-thing/ /consulting/government-modernization/ 301
+/blog/yes-we-kanban /courses/modern-agile/ 301
+/blog/yes-we-kanban/ /courses/modern-agile/ 301
+/blog/you-gotta-keep-em-integrated /consulting/legacy-system-modernization/ 301
+/blog/you-gotta-keep-em-integrated/ /consulting/legacy-system-modernization/ 301
