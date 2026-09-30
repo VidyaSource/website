@@ -42,7 +42,7 @@ block on the result, use a decision model.
 TypeSafe calls the building blocks of that answer space [primitives](https://docs.typesafe.ai/primitives), and each one pairs a question type with a typed answer:
 
 - **Noul** answers a yes-or-no question with the probability of yes. "Is the customer satisfied?"
-- **Choice** picks one option from a set you define and returns the top option, the probability of every option, and a confidence value. "Is the customer most likely to buy drinks, appeteizers, meals, or desserts?"
+- **Choice** picks one option from a set you define and returns the top option, the probability of every option, and a confidence value. "Is the customer most likely to buy drinks, appetizers, meals, or desserts?"
 - **Score** places the state on an ordered scale of levels you describe and returns a probability-weighted position on that scale. "On a scale from Kid Rock to Taylor Swift, how much did the customer like this song?"
 
 One request can ask several questions about the same state, and Jev answers each one independently under an identifier you choose. Your code can ask for
@@ -82,7 +82,7 @@ consider a bargain for a calibrated answer.
 
 ## Teaching Goose to Use Jev
 
-I cannot stress enough how much AI demands interoperability so we can enjoy freedom of choice with our tools, and [Goose](https://goose-docs.ai/) shines here. I
+I cannot stress enough how much AI demands interoperability so we can enjoy freedom of choice with our tools, and [Goose](https://goose-docs.ai/) shines here.
 It also supports [Agent Skills](https://goose-docs.ai/docs/guides/context-engineering/using-skills), the open standard for packaging instructions, domain expertise, and
 resources that an agent loads on demand, and it discovers global skills in `~/.agents/skills`. A skill you write for one agent carries over to Goose. This is the
 beauty of standards, which I am also [relentless](/blog/agentic-ai-foundation-ambassador/) about.
@@ -103,7 +103,7 @@ reference and the guide for each primitive from their site. I replaced those lin
 for [progressive disclosure](/blog/put-your-opinions-to-work-with-agents-md-and-keep-them-safe/) that the
 [Agent Skills specification](https://agentskills.io/specification) also recommends for documentation. The folder holds a copy of TypeSafe's API reference and
 a condensed guide to writing questions. The skill tells Goose to read those files and to fetch nothing without asking me first. Goose now works
-from documentation I reviewed instead of whatever a web page somehwere says at the moment it loads.
+from documentation I reviewed instead of whatever a web page somewhere says at the moment it loads.
 
 That difference matters for security. Every page an agent fetches can carry a [prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/),
 the first risk in the OWASP Top 10 for LLM Applications. I have
@@ -148,8 +148,8 @@ A trivial example shows how the two models split the work. I asked Goose, runnin
 sentence about my favorite baseball team.
 
 ```markdown
-Using the typesafe skill tell me if this is a postive sentiment: "My favorite
-baseball team is in the top 10 in team OPS in Major Leauge Baseball."
+Using the typesafe skill tell me if this is a positive sentiment: "My favorite
+baseball team is in the top 10 in team OPS in Major League Baseball."
 ```
 
 Goose loaded the `typesafe-ai` skill and its `references/api.md` file, ran one `curl` command against the TypeSafe API, and returned this response:
@@ -266,7 +266,7 @@ Gemini can explain the decision to anyone who asks.
 
 The pairing also keeps every layer replaceable. Goose let me choose Gemini for the conversation, and it would let me choose Claude or a local model just
 as easily. The skill follows the open Agent Skills standard, and Jev sits behind a single API endpoint. This is the beauty of standards like Goose, Agent Skills, and
-even old school standards like HTTP. You can swap the LLM and decision model (for example, to replace Jev with the open source
+even old-school standards like HTTP. You can swap the LLM and decision model (for example, to replace Jev with the open source
 [Laya decision model](https://huggingface.co/blog/sora-2/laya-ai-model-how-it-works-run-it-locally-and-eval)) without changing your workflow.
 
 The pairing has one cost to watch. For a single question, the $0.07 that Gemini cost dwarfs the fraction of a cent that TypeSafe charges for Jev. Gemini
@@ -274,7 +274,7 @@ has to read the skill, the reference, and the whole conversation to plan each st
 every item in a batch to Jev, the LLM plans the run and explains the results while Jev makes every decision in between. Your LLM bill then tracks
 conversations, and your Jev bill tracks decisions.
 
-This is your regular reminder that old fashioned code will always be your best option.
+This is your regular reminder that old-fashioned code will always be your best option.
 
 ## A Real Business Case for Vidya: Triage for Sources Sought Notices
 
@@ -302,7 +302,7 @@ solutions treat the symptom rather than cure the disease, which is that LLMs are
 
 I updated `finding-sources-sought` to use Jev instead of LLM judgment to identify opportunities that truly align with our core capabilities.
 
-As the skill pours through the array of opportunities in the response from the SAM API, it can hand each one to Jev for evaluation.
+As the skill pores through the array of opportunities in the response from the SAM API, it can hand each one to Jev for evaluation.
 Gemini orchestrates everything. Deterministic rules such as the response deadline and the set-aside code stay in code. Jev makes the decision on each
 opportunity, and Gemini turns the combined results into a judgment for me in plain English.
 
@@ -403,7 +403,7 @@ These are the results.
 }
 ```
 
-Jev put the modernization work at 2.89 out of 3 and the Alerton notice at 1.12. That gap is what the filter in my skill needs to be useful.
+Jev put the modernization work at 2.89 out of 3 and the maintenance work at 1.12. That gap is what the filter in my skill needs to be useful.
 
 What you do with the result is up to you. TypeSafe recommends keeping every question and threshold in one file so a person can review them, and the policy for this skill fits in a few lines of
 TypeScript.
@@ -444,13 +444,13 @@ export const triage = ({ work_type, sole_source_decided, capability_fit }: Notic
 ```
 
 That policy puts the two notices far apart. The maintenance work drops out because its fit of 1.12 falls below the 1.5 cutoff. The modernization work
-notice passes every check and enters the report as modernization work with a fit of 2.89 out of 3.
+notice passes every check and enters the report as a fit of 2.89 out of 3.
 
 Gemini's judgment then names the opportunities worth a response and carries the probabilities behind each recommendation. I can see why the skill kept or dropped each notice without
 rereading an LLM's reasoning, and your team gets the same audit trail for any decision it automates this way.
 
 ## Start with One Decision
 
-Most of your work is making decsions, and the decisions your agents make have a short list of acceptable answers. Keep your LLM for the conversation, and pick one of those decisions,
+Most of your work is making decisions, and the decisions your agents make have a short list of acceptable answers. Keep your LLM for the conversation, and pick one of those decisions,
 such as ticket routing or lead triage, to rewrite as a single Choice or Noul question. Then send the same 50 real cases to Jev and to the frontier model you use today. Within a week, you will know what your
 agents pay for each snap judgment and whether they need to keep paying it.
