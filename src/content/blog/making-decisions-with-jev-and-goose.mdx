@@ -1,0 +1,398 @@
+---
+author: neil-chaudhuri
+title: "Making Decisions with Jev and Goose"
+description: "Pair an LLM in Goose with TypeSafe's Jev, and your AI agents talk in plain English while they make fast, calibrated decisions for a fraction of a cent."
+image: "/img/blog/making-decisions-with-jev-and-goose.webp"
+date: 2026-09-30
+tags:
+- AI
+- Agentic AI
+- Agents
+- Agent Skills
+- Machine Learning
+- Open Source
+- Government
+- Security
+- Architecture
+- TypeScript
+---
+
+Most of the work your business runs on comes down to decisions. Your teams route support tickets, approve or flag invoices, and triage security alerts.
+Your AI agents spend their days on the same kind of work, and nearly every one of those tasks has a short list of acceptable answers.
+None of them needs a model that can write poems from the perspective of Voldemort in Harry Potter.
+
+Many teams send those decisions to the same frontier LLM that drafts their emails. An LLM writes its answer one token at a time,
+so even a one-word label arrives as generated text that your code must parse and validate before it can act. You wait for and pay for every one of those tokens.
+
+A decision model answers the question directly. Jev, the first decision model from TypeSafe, takes your application's state along with a set of typed
+questions and returns typed answers with probabilities in a fraction of a second. You can run Jev from Goose, the open source agent that Block contributed to the
+[Agentic AI Foundation](/blog/agentic-ai-foundation-ambassador/) (AAIF), with an LLM that orchestrates the work flow and interacts with you through natural language.
+I believe that pairing beats either model on its own. The LLM speaks
+natural language with the people who use the agent, and the decision model makes cheap, fast, calibrated calls for the software behind it.
+
+## The Power of a Decision Model
+
+A recent [Hugging Face guide](https://huggingface.co/blog/sora-2/jev-ai-vs-llms-when-should-you-use-a-decision-mode) to choosing between Jev and an LLM
+makes the distinction concrete. An LLM generates content for people to read, and even its structured output remains generated text that your code must
+check for missing fields and formatting drift. A decision model starts from an answer space you define and returns a yes-or-no
+probability, choice, or
+a score for software to act on. The guide offers a simple test. If you can list the possible answers in advance and your code will route, rank, or
+block on the result, use a decision model.
+
+TypeSafe calls the building blocks of that answer space [primitives](https://docs.typesafe.ai/primitives), and each one pairs a question type with a typed answer:
+
+- **Noul** answers a yes-or-no question with the probability of yes. "Is the customer satisfied?"
+- **Choice** picks one option from a set you define and returns the top option, the probability of every option, and a confidence value. "Is the customer most likely to buy drinks, appeteizers, meals, or desserts?"
+- **Score** places the state on an ordered scale of levels you describe and returns a probability-weighted position on that scale. "On a scale from Kid Rock to Taylor Swift, how much did the customer like this song?"
+
+One request can ask several questions about the same state, and Jev answers each one independently under an identifier you choose. Your code can ask for
+a department, an urgency level, and a refund flag in a single call and then tune the threshold for each answer without touching the others.
+
+TypeSafe calls Jev a [System One model](https://docs.typesafe.ai/concepts/system-one), a name that borrows from the fast, automatic System 1 in Daniel Kahneman's
+[account of human judgment](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow). TypeSafe trains these models
+with a method it calls Reinforcement Learning for Calibrated Decisions (RLCD) to provide the kind of judgment an expert makes in about a second. The [home page](https://typesafe.ai) argues that the Reinforcement
+Learning from Human Feedback (RLHF) behind chat models makes them overconfident. Calibration means the probabilities track real outcomes across many
+predictions. TypeSafe's documentation also cautions that calibration cannot guarantee any single answer, so your code should weigh each probability as
+evidence before it acts.
+
+## The Need for Speed
+
+Over the last few years, we have delegated decisions to frontier models with type safety optional although I am personally [relentless about type safety](/blog/python-is-not-language-of-ai/).
+It was the best we could do even if we know deep down the judgments LLMs give us and the probabilities they may ascribe to their judgments are more or less
+confident fiction.
+
+The Hugging Face guide suggests a decision model whenever a workflow needs many small judgments, routing by probability, or a decision interface that holds steady
+at high volume. I completely agree because decision models are built for that while LLMs are not.
+
+TypeSafe's [workflow evaluations](https://evals.typesafe.ai) put numbers on that choice. The evaluations cover 705 cases across four automation workflows,
+from invoice fraud triage to security alert triage, and every model runs at its provider's default reasoning setting. Across all four workflows, Jev matched
+the 67.8 percent average accuracy of Claude Sonnet 5 for $0.0004 per case instead of $0.1174. Jev also finished each case in 0.4 seconds against
+78.1 seconds for Claude Sonnet 5. At those prices, your agent can run more than 250 cases through Jev for the cost of one case on Claude Sonnet 5.
+
+The same evaluations make a second point that matters even more. Every model that TypeSafe tested in both modes scored higher as a structured workflow of
+small decisions than as one standalone prompt. Claude Haiku 4.5 alone jumped from 18.1 percent to 53.6 percent. Your agents gain accuracy as soon as you
+break their work into decisions, and a decision model makes each of those decisions cheap.
+
+TypeSafe publishes the
+[harness on GitHub](https://github.com/typesafe-ai/WorkflowEvals) and the
+[datasets on Hugging Face](https://huggingface.co/collections/typesafe/workflowevals-6abaf8dcb1e283d9e3d57b6b), so your team can rerun the comparison on
+your own cases before committing. My own measurements are consistent with theirs. Each of the three requests I sent to TypeSafe directly from my Mac made the round trip in 185 to 218 milliseconds,
+network included. At that speed, a check before each tool call adds about a fifth of a second to your agent's work, which I consider a bargain for a
+calibrated answer.
+
+## Teaching Goose to Use Jev
+
+I cannot stress enough how much AI demands interoperability so we can enjoy freedom of choice with our tools, and [Goose](https://goose-docs.ai/) shines here. I
+It also supports [Agent Skills](https://goose-docs.ai/docs/guides/context-engineering/using-skills), the open standard for packaging instructions, domain expertise, and
+resources that an agent loads on demand, and it discovers global skills in `~/.agents/skills`. A skill you write for one agent carries over to Goose. This is the
+beauty of standards, which I am also [relentless](/blog/agentic-ai-foundation-ambassador/) about.
+
+TypeSafe publishes an [agent skill](https://docs.typesafe.ai/agent-skill) that teaches a coding agent the three question types, their architectural
+patterns, and their practices for evaluating results. Any agent that supports the standard can install it with one command.
+
+```bash
+npx skills add typesafe-ai/skills --skill typesafe-ai
+```
+
+I made two changes before I let Goose use it.
+
+### Bundled References
+
+TypeSafe's skill points the agent to its `llms.txt` documentation index and has it fetch pages such as the API
+reference and the guide for each primitive from their site. I replaced those links with a `references` folder inside the skill, a layout
+for [progressive disclosure](/blog/put-your-opinions-to-work-with-agents-md-and-keep-them-safe/) that the
+[Agent Skills specification](https://agentskills.io/specification) also recommends for documentation. The folder holds a copy of TypeSafe's API reference and
+a condensed guide to writing questions. The skill tells Goose to read those files and to fetch nothing without asking me first. Goose now works
+from documentation I reviewed instead of whatever a web page somehwere says at the moment it loads.
+
+That difference matters for security. Every page an agent fetches can carry a [prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/),
+the first risk in the OWASP Top 10 for LLM Applications. I have
+[warned before](/blog/put-your-opinions-to-work-with-agents-md-and-keep-them-safe/) that borrowed agent content is a vulnerability. The bundled folder also saves
+a network round trip on every task, and in some of my environments it saves an approval prompt too.
+
+Bundled references do offer one risk. TypeSafe's own troubleshooting guide warns that a stale skill can lead an agent to invent request or response
+fields, and my copy starts to age the day TypeSafe changes its API. Every Jev response names the model that produced it, `jev-1.13.0` as I write this,
+so a change in that field tells you it is time to compare the folder against TypeSafe's documentation. This is your regular reminder
+that we still have to wrestle with breaking changes in the age of AI.
+
+### A Key from the Keychain
+
+TypeSafe's quickstart expects the API key in the `TYPESAFE_API_KEY` environment variable. An environment variable travels to every process the shell
+starts, and an agent that prints its environment can copy the key straight into a transcript. My version of the skill tells Goose to read the key from the
+macOS keychain through the [Computer Controller extension](https://goose-docs.ai/docs/mcp/computer-controller-mcp), which ships with Goose and automates
+macOS applications and system tasks. The keychain encrypts the key at rest, and the skill has Goose read the key and send the request in one command so
+the value never lands in the transcript.
+
+Storing the key is easy. With `-w` at the end, `security` prompts for the value and keeps it out of your shell history.
+
+```bash
+security add-generic-password -a "$USER" -s "TYPESAFE_API_KEY" -w
+```
+
+The call reads the key and uses it in the same step. Piping the header into `curl -K -` also keeps the key out of the process list.
+
+```bash
+KEY="$(security find-generic-password -a "$USER" -s "TYPESAFE_API_KEY" -w)"
+printf 'header = "Authorization: Bearer %s"\n' "$KEY" |
+  curl -sS -K - https://api.typesafe.ai/v1/systemone \
+    -H "Content-Type: application/json" \
+    --data-binary @request.json
+unset KEY
+```
+
+The same pattern works with any secret store your platform offers, and it keeps every credential your agents use out of their transcripts.
+
+## A Trivial First Decision
+
+A trivial example shows how the two models split the work. I asked Goose, running Gemini 3.1 Pro, to judge the sentiment of one
+sentence about my favorite baseball team.
+
+```markdown
+Using the typesafe skill tell me if this is a postive sentiment: "My favorite
+baseball team is in the top 10 in team OPS in Major Leauge Baseball."
+```
+
+Goose loaded the `typesafe-ai` skill and its `references/api.md` file, ran one `curl` command against the TypeSafe API, and returned this response:
+
+```markdown
+Using the `typesafe-ai` skill, I evaluated the statement with the `jev-latest` model.
+
+**Yes, this is a positive sentiment.**
+
+The model returned a `noul` (probability) of **0.96**, indicating a 96% certainty that the statement expresses a positive, happy, or proud sentiment. Being in the top 10 for team OPS (On-base Plus Slugging) is a strong offensive statistic in baseball, making it a positive statement to make about a favorite team!
+```
+
+The whole exchange finished within the same minute,
+and Goose reported $0.07 of Gemini usage for it. Gemini also explained that a Top 10 rank in OPS marks a strong offense, which is true. That is context
+that Jev may not know and would never tell me anyway because it returns only typed values.
+
+This might be a silly example, but it gives you a sense of how decision models and LLMs complement each other so well.
+
+## Gemini Talks, Jev Decides
+
+That exchange gave each model the job it does best. Gemini handled every step that needed language. It understood a request in natural language.
+It then wrote a valid API request from the bundled reference and explained Jev's answer back to me in natural language. Jev handled the one step that
+needed a judgment. The result is a cheap, fast decision that an LLM orchestrates and explains in a manner I can easily understand.
+
+The typed answer matters as much as the explanation because it lets the same judgment move from a conversation into code. A message from a website
+contact form makes a good example because it needs two answers from one request. I sent this request straight to the TypeSafe API from my Mac.
+
+```json
+{
+  "model": "jev-latest",
+  "state": {
+    "message": "Hi Neil, our team runs a 15-year-old Java application on servers we have to vacate next year, and nobody left on the team knows how it works. Could Vidya help us move it to the cloud before our data center lease ends in June?"
+  },
+  "questions": {
+    "intent": {
+      "type": "choice",
+      "instructions": "What does the sender of `message` want from Vidya?",
+      "criteria": {
+        "consulting": "Help to build, modernize, or run software, cloud, data, or AI systems",
+        "training": "A course, workshop, or coaching for their team",
+        "job": "A job, internship, or subcontracting role with Vidya",
+        "sales_pitch": "To sell Vidya a product or service",
+        "other": null
+      }
+    },
+    "has_deadline": {
+      "type": "noul",
+      "instructions": "Does `message` name a date or deadline for the work?"
+    }
+  }
+}
+```
+
+Jev answered in 218 milliseconds, network included.
+
+```json
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "intent": {
+      "type": "choice",
+      "choice": "consulting",
+      "confidence": 0.99,
+      "probabilities": {
+        "training": 0.0,
+        "other": 0.0,
+        "sales_pitch": 0.0,
+        "consulting": 0.99,
+        "job": 0.01
+      }
+    },
+    "has_deadline": {
+      "type": "noul",
+      "noul": 0.97
+    }
+  },
+  "usage": {
+    "input_tokens": 473,
+    "output_tokens": 77
+  }
+}
+```
+
+Jev put 99 percent of its probability on a consulting inquiry and 97 percent on the presence of a deadline. A Choice maps onto a `switch` statement, and a
+Noul maps onto an `if`. Your code can move this message to the top of the inbox before anyone reads it, and an LLM can still explain the decision to
+anyone who asks.
+
+The pairing also keeps every layer replaceable. Goose let me choose Gemini for the conversation, and it would let me choose Claude or a local model just
+as easily. The skill follows the open Agent Skills standard, and Jev sits behind a single API endpoint. You can swap the LLM without touching a single
+decision.
+
+The pairing has one cost to watch. For a single question, the $0.07 that Gemini cost dwarfs the fraction of a cent that TypeSafe charges for Jev. Gemini
+has to read the skill, the reference, and the whole conversation to plan each step. The fix is to give loops to code. When a skill ships a script that sends
+every item in a batch to Jev, the LLM plans the run and explains the results while Jev makes every decision in between. Your LLM bill then tracks
+conversations, and your Jev bill tracks decisions.
+
+## Triage for Sources Sought Notices
+
+Before they write a solicitation, federal agencies publish Sources Sought notices on [SAM.gov](https://sam.gov), the government's System for Award
+Management. A Sources Sought notice is market research. The contracting officer uses the responses to learn which businesses can do the work and whether
+enough capable small businesses exist to set the contract aside for them. A response never wins a contract on its own, but it can shape the requirement
+and the set-aside decision before the competition begins. For a small business like Vidya, those notices are some of the most valuable reading on SAM.gov.
+
+My sources sought skill searches SAM.gov through the official [Opportunities API](https://open.gsa.gov/api/get-opportunities-public-api/) with one call for
+each of Vidya's six North American Industry Classification System (NAICS) codes. It drops notices that announce a sole-source award and notices that require
+a certification Vidya lacks. The last step checks each surviving notice against the capabilities in my Vidya knowledge base, and it is the hardest step to
+get right.
+
+NAICS codes are broad, so SAM.gov has returned Cisco SmartNet hardware maintenance and Dell tower computer purchases under Vidya's software codes. The skill
+runs a hybrid search over the knowledge base that blends keyword matching with embeddings. Words like maintenance, support, and training appear in nearly
+every federal notice and in nearly every one of Vidya's past responses. That shared vocabulary makes it hard for any search to separate a real match from
+a coincidence.
+
+I ran the search today for two notices the skill has already processed. The top hit for Alerton Envision Maintenance and Emergency Services, a contract to
+maintain a building controls system, scored 0.0310. The top hit for Digital GI Bill Automation and Modernization, a software modernization effort that fits
+Vidya's work, scored 0.0325. The knowledge base ranks hits with reciprocal rank fusion, which rewards a page for ranking well in both keyword and vector
+search. That score reflects position in two lists and says little about whether a page describes the same work as the notice. Today the skill asks the LLM
+behind the agent to read every snippet and make a judgment call, which is exactly the kind of decision Jev exists to make.
+
+The skill can hand that judgment to Jev with one request per notice. The state holds the notice's title and description excerpt alongside the top five
+passages the knowledge base returns for it. Deterministic rules such as the response deadline and the set-aside code stay in code, and Jev answers only the
+semantic questions. The LLM behind the agent still runs the skill and summarizes the results for me in plain English. A script sends the notices to
+Jev so the LLM never judges them one at a time.
+
+A Choice classifies the kind of work the notice requests. A Noul checks whether the agency has already decided on a sole-source award. A Score grades how
+closely the knowledge base evidence matches the notice, and its levels spell out the difference between shared subject matter and shared vocabulary.
+
+```json
+{
+  "model": "jev-latest",
+  "state": {
+    "notice": {
+      "title": "Digital GI Bill Automation and Modernization",
+      "description_excerpt": "..."
+    },
+    "vidya_evidence": ["<top five passages from the knowledge base>"]
+  },
+  "questions": {
+    "work_type": {
+      "type": "choice",
+      "instructions": "What kind of work does `notice` ask a contractor to perform?",
+      "criteria": {
+        "custom_software": "Build, modernize, integrate, or operate software, cloud, data, or AI systems",
+        "software_training": "Teach software engineering, cloud, data, or AI skills",
+        "hardware": "Buy, install, or repair computers, networks, or other equipment",
+        "license_resale": "Resell or support a vendor's commercial software licenses",
+        "facilities": "Maintain buildings or building systems such as HVAC, electrical, plumbing, or physical security",
+        "other": "Any other kind of work"
+      }
+    },
+    "sole_source_decided": {
+      "type": "noul",
+      "instructions": "Does `notice` say the agency has already decided to award the work to a specific contractor?",
+      "criteria": {
+        "true": "States an intent to award a sole-source contract to a named or identified contractor",
+        "false": "Has no sole-source language, or only says the agency may consider a sole-source award"
+      }
+    },
+    "capability_fit": {
+      "type": "score",
+      "instructions": "How closely does the work in `notice` match the work described in `vidya_evidence`?",
+      "criteria": [
+        "The evidence describes unrelated work",
+        "The evidence shares words such as maintenance, support, or training with the notice but describes a different subject",
+        "The evidence describes adjacent work that Vidya could credibly deliver",
+        "The evidence describes the same kind of work the notice requests"
+      ]
+    }
+  }
+}
+```
+
+I sent the first question to Jev with nothing but each notice's title as the state. Jev put 94 percent of its probability on facilities work for the
+Alerton notice and all of it on custom software for the GI Bill notice. Each answer took less than 190 milliseconds.
+
+```jsonc
+// Alerton Envision Maintenance and Emergency Services
+"work_type": {
+  "type": "choice",
+  "choice": "facilities",
+  "confidence": 0.93,
+  "probabilities": { "other": 0.03, "custom_software": 0.0, "license_resale": 0.0, "hardware": 0.03, "software_training": 0.0, "facilities": 0.94 }
+}
+
+// Digital GI Bill Automation and Modernization
+"work_type": {
+  "type": "choice",
+  "choice": "custom_software",
+  "confidence": 1.0,
+  "probabilities": { "custom_software": 1.0, "hardware": 0.0, "software_training": 0.0, "license_resale": 0.0, "other": 0.0, "facilities": 0.0 }
+}
+```
+
+The knowledge base scores sat less than 5 percent apart while Jev's answers pointed to different kinds of work with high confidence. That separation is
+what the filter needs, and Jev found it in a title alone.
+
+TypeSafe recommends keeping every question and threshold in one file so a person can review them, and the policy for this skill fits in a few lines of
+TypeScript.
+
+```typescript
+type WorkType =
+  | "custom_software"
+  | "software_training"
+  | "hardware"
+  | "license_resale"
+  | "facilities"
+  | "other";
+
+type NoticeAnswers = Readonly<{
+  work_type: Readonly<{ choice: WorkType; confidence: number }>;
+  sole_source_decided: Readonly<{ noul: number }>;
+  capability_fit: Readonly<{ score: number; confidence: number }>;
+}>;
+
+type Triage =
+  | Readonly<{ kind: "pursue"; fit: number }>
+  | Readonly<{ kind: "drop"; reason: string }>
+  | Readonly<{ kind: "review"; reason: string }>;
+
+// Starting points to calibrate against past go and no-go decisions
+const PURSUED_WORK: ReadonlySet<WorkType> = new Set<WorkType>(["custom_software", "software_training"]);
+const SOLE_SOURCE_CUTOFF = 0.9;
+const MIN_CONFIDENCE = 0.8;
+const MIN_FIT = 1.5; // Score levels run from 0 to 3
+
+export const triage = ({ work_type, sole_source_decided, capability_fit }: NoticeAnswers): Triage => {
+  if (sole_source_decided.noul >= SOLE_SOURCE_CUTOFF) return { kind: "drop", reason: "sole source" };
+  if (work_type.confidence < MIN_CONFIDENCE) return { kind: "review", reason: "uncertain work type" };
+  if (!PURSUED_WORK.has(work_type.choice)) return { kind: "drop", reason: work_type.choice };
+  if (capability_fit.score < MIN_FIT) return { kind: "drop", reason: "weak capability fit" };
+  return { kind: "pursue", fit: capability_fit.score };
+};
+```
+
+The skill's report can then show every probability next to the notice it describes. I can see why the skill kept or dropped each notice without
+rereading an LLM's reasoning, and your team gets the same audit trail for any decision it automates this way.
+
+Jev has one limit that matters here. It reads text only, but agencies often put the decisive detail in an attached document. The Alerton notice itself
+announced a sole-source award without naming the contractor anywhere in its description. The fix belongs in code. The skill can extract the attachment text
+before it builds the state, and the thresholds above can start conservative until I calibrate them against my past go and no-go decisions.
+
+## Start with One Decision
+
+Most of the decisions your agents make have a short list of acceptable answers. Keep your LLM for the conversation, and pick one of those decisions,
+such as ticket routing or lead triage, to rewrite as a single Choice or Noul question. Then send the same 50 real cases to Jev and to the frontier model you use today. Within a week, you will know what your
+agents pay for each snap judgment and whether they need to keep paying it.
