@@ -76,9 +76,9 @@ break their work into decisions, and a decision model makes each of those decisi
 TypeSafe publishes the
 [harness on GitHub](https://github.com/typesafe-ai/WorkflowEvals) and the
 [datasets on Hugging Face](https://huggingface.co/collections/typesafe/workflowevals-6abaf8dcb1e283d9e3d57b6b), so your team can rerun the comparison on
-your own cases before committing. My own measurements are consistent with theirs. Each of the three requests I sent to TypeSafe directly from my Mac made the round trip in 185 to 218 milliseconds,
-network included. At that speed, a check before each tool call adds about a fifth of a second to your agent's work, which I consider a bargain for a
-calibrated answer.
+your own cases before committing. My own measurements are consistent with theirs. The two requests behind my sources sought example below made the round trip from my Mac to TypeSafe in 169
+and 184 milliseconds, network included. At that speed, a check before each tool call adds less than a fifth of a second to your agent's work, which I
+consider a bargain for a calibrated answer.
 
 ## Teaching Goose to Use Jev
 
@@ -276,7 +276,7 @@ conversations, and your Jev bill tracks decisions.
 
 This is your regular reminder that old fashioned code will always be your best option.
 
-## A Real Gusiness Case for Vidya: Triage for Sources Sought Notices
+## A Real Business Case for Vidya: Triage for Sources Sought Notices
 
 Vidya serves government customers as well as commercial businesses, and Sources Sought is a key marketing strategy for us.
 
@@ -295,42 +295,56 @@ runs a hybrid search over the knowledge base that blends keyword matching with e
 every federal notice and in nearly every one of Vidya's past responses. That shared vocabulary makes it hard for any search to separate a real match from
 a coincidence.
 
-Just for fun, I ran the the skill today unchanged. The top hits were for a contract to
-maintain a building controls system, which is not our lane at all, and a software modernization effort, which is our lane exactly. They should not
-be anywhere near each other in the rankings. I could try to update the way the Vidya knowledge base works or tweak the language of the skill, but those
+Just for fun, I ran the skill's knowledge base search today on two notices it had already processed. The best matches for a contract to
+maintain a building controls system, which is not our lane at all, and a software modernization effort, which is our lane exactly, scored within 5
+percent of each other. They should not be anywhere near each other in the rankings. I could try to update the way the Vidya knowledge base works or tweak the language of the skill, but those
 solutions treat the symptom rather than cure the disease, which is that LLMs are not built for decision making.
 
 I updated `finding-sources-sought` to use Jev instead of LLM judgment to identify opportunities that truly align with our core capabilities.
 
 As the skill pours through the array of opportunities in the response from the SAM API, it can hand each one to Jev for evaluation.
-Gemini orchestrates everything. It holds the notice's title and description excerpt alongside the top five
-passages the knowledge base returns for it. Deterministic rules such as the response deadline and the set-aside code stay in code. Jev makes the decisions, and
-Gemini summarizes the results for me in plain English.
+Gemini orchestrates everything. Deterministic rules such as the response deadline and the set-aside code stay in code. Jev makes the decision on each
+opportunity, and Gemini turns the combined results into a judgment for me in plain English.
 
-A Jev `Choice` classifies the kind of work the notice requests. A `Noul` checks whether the agency has already decided on a sole-source award. A `Score` grades how
-closely the knowledge base evidence matches the notice, and its levels spell out the difference between shared subject matter and shared vocabulary.
+Each notice gets one Jev request with three questions. Its state holds the notice and the seven service lines in Vidya's capability statement from the
+knowledge base. A `Choice` names the kind of work the notice requests. A `Noul` asks whether the agency has already decided on a sole-source award. A
+`Score` rates how well the notice fits Vidya's services, and its levels spell out the difference between shared subject matter and shared vocabulary.
 
+The `Choice` takes its options from the knowledge base, one for each kind of work Vidya pursues: modernization, architecture, AI, user
+experience, data, training, cybersecurity, and DevSecOps. [TypeSafe advises](https://docs.typesafe.ai/primitives/choice) an `other` option when the list
+might not cover every input, but I left it out because the `Score` decides whether a notice fits. Jev cannot pick an option you leave out, which is what the
+type safety is for, so it labels every notice with one of those eight.
 ```json
 {
   "model": "jev-latest",
   "state": {
     "notice": {
-      "title": "Digital GI Bill Automation and Modernization",
+      "title": "Automation and Modernization",
       "description_excerpt": "..."
     },
-    "vidya_evidence": ["<top five passages from the knowledge base>"]
+    "vidya_capabilities": [
+      "Architecture modernization to use industry-leading technologies and get the most out of valuable legacy data.",
+      "Software development at cloud scale to make services available to anyone around the world.",
+      "Elegant, accessible web development to showcase the brand with memorable user experiences.",
+      "Machine learning and AI to help everyone do things faster.",
+      "Cybersecurity and Zero Trust to protect everyone's assets.",
+      "Engineering automation through DevSecOps to deliver fast at high quality.",
+      "Engineering training courses to help anyone change the world with technology."
+    ]
   },
   "questions": {
     "work_type": {
       "type": "choice",
       "instructions": "What kind of work does `notice` ask a contractor to perform?",
       "criteria": {
-        "custom_software": "Build, modernize, integrate, or operate software, cloud, data, or AI systems",
-        "software_training": "Teach software engineering, cloud, data, or AI skills",
-        "hardware": "Buy, install, or repair computers, networks, or other equipment",
-        "license_resale": "Resell or support a vendor's commercial software licenses",
-        "facilities": "Maintain buildings or building systems such as HVAC, electrical, plumbing, or physical security",
-        "other": "Any other kind of work"
+        "modernization": "Modernize legacy systems and integrate them with modern technologies",
+        "architecture": "Design and build software, APIs, and platforms at cloud scale",
+        "ai": "Build machine learning and AI solutions, including agents, that help people do things faster",
+        "user_experience": "Design and build accessible websites and web applications with memorable user experiences",
+        "data": "Engineer data pipelines, platforms, and analytics that get the most out of valuable data",
+        "training": "Design and deliver engineering training courses that help people change the world with technology",
+        "cybersecurity": "Protect systems and data with cybersecurity and Zero Trust",
+        "devsecops": "Automate engineering through DevSecOps to deliver software fast at high quality"
       }
     },
     "sole_source_decided": {
@@ -343,53 +357,67 @@ closely the knowledge base evidence matches the notice, and its levels spell out
     },
     "capability_fit": {
       "type": "score",
-      "instructions": "How closely does the work in `notice` match the work described in `vidya_evidence`?",
+      "instructions": "How well does the work that `notice` requests fit the services in `vidya_capabilities`?",
       "criteria": [
-        "The evidence describes unrelated work",
-        "The evidence shares words such as maintenance, support, or training with the notice but describes a different subject",
-        "The evidence describes adjacent work that Vidya could credibly deliver",
-        "The evidence describes the same kind of work the notice requests"
+        "None of the services covers this kind of work",
+        "A service shares words with the notice, such as maintenance, support, or training, but covers a different kind of work",
+        "A service covers related work, but the notice centers on something else",
+        "A service covers exactly this kind of work"
       ]
     }
   }
 }
 ```
 
-I sent the first question to Jev with nothing but each notice's title as the state. Jev put 94 percent of its probability on facilities work for the
-Alerton notice and all of it on custom software for the GI Bill notice. Each answer took less than 190 milliseconds.
+These are the results.
 
 ```jsonc
-// Alerton Envision Maintenance and Emergency Services
+// Maintenance and Emergency Services
 "work_type": {
   "type": "choice",
-  "choice": "facilities",
-  "confidence": 0.93,
-  "probabilities": { "other": 0.03, "custom_software": 0.0, "license_resale": 0.0, "hardware": 0.03, "software_training": 0.0, "facilities": 0.94 }
+  "choice": "modernization",
+  "confidence": 0.54,
+  "probabilities": { "devsecops": 0.03, "cybersecurity": 0.05, "user_experience": 0.04, "architecture": 0.23, "data": 0.0, "training": 0.03, "modernization": 0.61, "ai": 0.01 }
+},
+"sole_source_decided": { "type": "noul", "noul": 0.03 },
+"capability_fit": {
+  "type": "score",
+  "score": 1.12,
+  "confidence": 0.57,
+  "probabilities": { "0": 0.15, "1": 0.63, "2": 0.17, "3": 0.05 }
 }
 
-// Digital GI Bill Automation and Modernization
+// Automation and Modernization
 "work_type": {
   "type": "choice",
-  "choice": "custom_software",
-  "confidence": 1.0,
-  "probabilities": { "custom_software": 1.0, "hardware": 0.0, "software_training": 0.0, "license_resale": 0.0, "other": 0.0, "facilities": 0.0 }
+  "choice": "modernization",
+  "confidence": 0.99,
+  "probabilities": { "devsecops": 0.01, "ai": 0.0, "architecture": 0.0, "user_experience": 0.0, "modernization": 0.99, "data": 0.0, "cybersecurity": 0.0, "training": 0.0 }
+},
+"sole_source_decided": { "type": "noul", "noul": 0.03 },
+"capability_fit": {
+  "type": "score",
+  "score": 2.89,
+  "confidence": 0.89,
+  "probabilities": { "0": 0.0, "1": 0.0, "2": 0.09, "3": 0.91 }
 }
 ```
 
-The knowledge base scores sat less than 5 percent apart while Jev's answers pointed to different kinds of work with high confidence. That separation is
-what the filter needs, and Jev found it in a title alone.
+Jev put the modernization work at 2.89 out of 3 and the Alerton notice at 1.12. That gap is what the filter in my skill needs to be useful.
 
-TypeSafe recommends keeping every question and threshold in one file so a person can review them, and the policy for this skill fits in a few lines of
+What you do with the result is up to you. TypeSafe recommends keeping every question and threshold in one file so a person can review them, and the policy for this skill fits in a few lines of
 TypeScript.
 
 ```typescript
 type WorkType =
-  | "custom_software"
-  | "software_training"
-  | "hardware"
-  | "license_resale"
-  | "facilities"
-  | "other";
+  | "modernization"
+  | "architecture"
+  | "ai"
+  | "user_experience"
+  | "data"
+  | "training"
+  | "cybersecurity"
+  | "devsecops";
 
 type NoticeAnswers = Readonly<{
   work_type: Readonly<{ choice: WorkType; confidence: number }>;
@@ -398,34 +426,31 @@ type NoticeAnswers = Readonly<{
 }>;
 
 type Triage =
-  | Readonly<{ kind: "pursue"; fit: number }>
+  | Readonly<{ kind: "pursue"; work: WorkType; fit: number }>
   | Readonly<{ kind: "drop"; reason: string }>
   | Readonly<{ kind: "review"; reason: string }>;
 
 // Starting points to calibrate against past go and no-go decisions
-const PURSUED_WORK: ReadonlySet<WorkType> = new Set<WorkType>(["custom_software", "software_training"]);
 const SOLE_SOURCE_CUTOFF = 0.9;
 const MIN_CONFIDENCE = 0.8;
 const MIN_FIT = 1.5; // Score levels run from 0 to 3
 
 export const triage = ({ work_type, sole_source_decided, capability_fit }: NoticeAnswers): Triage => {
   if (sole_source_decided.noul >= SOLE_SOURCE_CUTOFF) return { kind: "drop", reason: "sole source" };
-  if (work_type.confidence < MIN_CONFIDENCE) return { kind: "review", reason: "uncertain work type" };
-  if (!PURSUED_WORK.has(work_type.choice)) return { kind: "drop", reason: work_type.choice };
   if (capability_fit.score < MIN_FIT) return { kind: "drop", reason: "weak capability fit" };
-  return { kind: "pursue", fit: capability_fit.score };
+  if (work_type.confidence < MIN_CONFIDENCE) return { kind: "review", reason: "uncertain work type" };
+  return { kind: "pursue", work: work_type.choice, fit: capability_fit.score };
 };
 ```
 
-The skill's report can then show every probability next to the notice it describes. I can see why the skill kept or dropped each notice without
-rereading an LLM's reasoning, and your team gets the same audit trail for any decision it automates this way.
+That policy puts the two notices far apart. The maintenance work drops out because its fit of 1.12 falls below the 1.5 cutoff. The modernization work
+notice passes every check and enters the report as modernization work with a fit of 2.89 out of 3.
 
-Jev has one limit that matters here. It reads text only, but agencies often put the decisive detail in an attached document. The Alerton notice itself
-announced a sole-source award without naming the contractor anywhere in its description. The fix belongs in code. The skill can extract the attachment text
-before it builds the state, and the thresholds above can start conservative until I calibrate them against my past go and no-go decisions.
+Gemini's judgment then names the opportunities worth a response and carries the probabilities behind each recommendation. I can see why the skill kept or dropped each notice without
+rereading an LLM's reasoning, and your team gets the same audit trail for any decision it automates this way.
 
 ## Start with One Decision
 
-Most of the decisions your agents make have a short list of acceptable answers. Keep your LLM for the conversation, and pick one of those decisions,
+Most of your work is making decsions, and the decisions your agents make have a short list of acceptable answers. Keep your LLM for the conversation, and pick one of those decisions,
 such as ticket routing or lead triage, to rewrite as a single Choice or Noul question. Then send the same 50 real cases to Jev and to the frontier model you use today. Within a week, you will know what your
 agents pay for each snap judgment and whether they need to keep paying it.
