@@ -21,7 +21,7 @@ I've seen enough social media debates to understand that software engineering is
 Microservices are dead or completely necessary to scale. To be honest, I have always found it all absurd. Don't people get tired of having
 the same arguments every other week?
 
-While I try to avoid the fights, I am no exception when it comes to having strong engineering opinions. I believe [static type systems](/blog/why-types-and-tests-are-both-essential-in-programming) should make invalid states impossible to express, so a boolean never replaces a state machine
+While I try to avoid the fights, I am no exception when it comes to having strong engineering opinions. I believe [static type systems](/blog/why-types-and-tests-are-both-essential-in-programming/) should make invalid states impossible to express, so a boolean never replaces a state machine
 and magic strings never replace real types.
 I believe type safety should extend to configuration, which is why I always use [Pkl](https://pkl-lang.org) rather than bury myself in endless, error-prone YAML files.
 I believe [property-based testing](https://kotest.io/docs/proptest/property-based-testing.html) finds
@@ -41,7 +41,7 @@ AI changes that. Specifically, the `AGENTS.md` file changes that. Write an opini
 request, which makes it a configuration layer between the model's base instructions and your actual code.
 
 On December 9, 2025, the Linux Foundation announced the formation of the [Agentic AI Foundation](https://aaif.io/), and OpenAI donated [AGENTS.md](https://agents.md/) to the AAIF alongside Anthropic's Model Context Protocol and Block's goose.
-I [wrote about why that matters](/blog/agentic-ai-foundation-ambassador) when AAIF named me an inaugural Ambassador. The adoption numbers are clear. More than 60,000 repositories, almost 24,000 GitHub stars, and
+I [wrote about why that matters](/blog/agentic-ai-foundation-ambassador/) when AAIF named me an inaugural Ambassador. The adoption numbers are clear. More than 60,000 repositories, almost 24,000 GitHub stars, and
 countless tools use `AGENTS.md`. The people (and their coding agents) have spoken.
 
 `AGENTS.md` is where you put your opinions, or the consensus opinions of your team at work, to teach coding agents the ground rules for the kind of code base you want. But there are a few gotchas you
@@ -96,7 +96,7 @@ and bespoke commands. Resist the urge to enumerate file structures, which change
 ## Progressive Disclosure
 
 The opinionated depth you trim from `AGENTS.md` is still important and belongs somewhere. You need a documentation tree the agent pulls in on demand only when necessary, which is the
-developer-level "[culture of context](/blog/create-a-culture-of-context-for-ai)" that agents need to thrive. Create context files representing the various concerns across your product like UI, testing, and
+developer-level "[culture of context](/blog/create-a-culture-of-context-for-ai/)" that agents need to thrive. Create context files representing the various concerns across your product like UI, testing, and
 observability. Then link to them from `AGENTS.md` so that it functions like an index. For example, you could link to an `OBSERVABILITY.md` from `AGENTS.md`.
 Then when you give your coding agent an observability task, it will load `AGENTS.md` first and recognize that it needs to load `OBSERVABILITY.md` for detailed context while
 ignoring `FRONTEND.md`, `TESTING.md`, and whatever other context files you have expressing your opinions. This focuses the agent on the context it needs while

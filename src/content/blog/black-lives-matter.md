@@ -16,7 +16,7 @@ categories:
 
 Black Lives Matter.
 
-While we at Vidya have made it [very clear](/about) that diversity in tech has always been a priority and that we have zero tolerance
+While we at Vidya have made it [very clear](/about/) that diversity in tech has always been a priority and that we have zero tolerance
 for racism, I am sorry it took so long for me to state those words in this space. 
 
 I am sorry it took the murder of [Breonna Taylor](https://www.gofundme.com/f/9v4q2-justice-for-breonna-taylor) *in her sleep in her home* 
@@ -59,9 +59,9 @@ It's time to act. It was always time to act.
 Not enough. It will never be enough. But we can try.
 
 At Vidya we have made longstanding efforts to promote black people, particularly black women, in STEM and of course technology through
-our [courses](/courses), talks at conferences, and volunteering to support organizations that help black women build careers
+our [courses](/courses/), talks at conferences, and volunteering to support organizations that help black women build careers
 in technology, and we will expand these efforts. Still, this moment calls for much more. We will work in the following areas
-to build technology solutions that support black lives. Please [contact us](/contact) if you have ideas or would like to collaborate.
+to build technology solutions that support black lives. Please [contact us](/contact/) if you have ideas or would like to collaborate.
 
 ### Data science 
 

@@ -41,5 +41,5 @@ export const proofPoints: readonly Proof[] = await Promise.all(candidates.map(as
     if (!study) {
         throw new Error(`Homepage proof point "${p.value}" cites a case study that does not exist: ${p.slug}`);
     }
-    return {...p, href: `/case-studies/${p.slug}`, title: study.data.title};
+    return {...p, href: `/case-studies/${p.slug}/`, title: study.data.title};
 }));

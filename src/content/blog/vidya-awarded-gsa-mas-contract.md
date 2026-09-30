@@ -34,4 +34,4 @@ our current offerings by making our courses available online and building new so
 GSA Schedule one day.
 
 We want to thank GSA for recognizing Vidya's past success and future potential, and we cannot wait to do business
-with you. [Let's talk](/contact).
+with you. [Let's talk](/contact/).

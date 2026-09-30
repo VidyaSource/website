@@ -25,7 +25,7 @@ aliases:
 ---
 
 As promised earlier this year, we at Vidya are proud to officially announce our newest course 
-[Software Engineering with Apache Spark](/courses/software-engineering-with-apache-spark). 
+[Software Engineering with Apache Spark](/courses/software-engineering-with-apache-spark/). 
 Spark is a cool technology making an enormous--and growing--impact in the Big Data space, so naturally there are a lot
 of courses out there. Ours is different. 
 
@@ -37,10 +37,10 @@ seem to ignore these concerns even though they are actually *more* important in 
 We even survey many of the other leading analytics tools out there so you can get a feel for your options and make informed 
 technical decisions.   
 
-All of this distinguishes [our Spark course](/courses/software-engineering-with-apache-spark) 
+All of this distinguishes [our Spark course](/courses/software-engineering-with-apache-spark/) 
 from all the others. We hope you will consider it if you want to make your mark
 in the Big Data landscape.
 
-Feel free to check out our other courses too--[Java for Work](/courses/java-for-work)
-and [Modern Agile](/courses/modern-agile).
+Feel free to check out our other courses too--[Java for Work](/courses/java-for-work/)
+and [Modern Agile](/courses/modern-agile/).
 

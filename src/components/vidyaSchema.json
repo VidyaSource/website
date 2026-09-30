@@ -132,7 +132,7 @@
         {
             "@type": "WebSite",
             "@id": "https://www.vidyasource.com/#website",
-            "url": "https://www.vidyasource.com",
+            "url": "https://www.vidyasource.com/",
             "name": "Vidya",
             "publisher": {
                 "@id": "https://www.vidyasource.com/#organization"
@@ -141,37 +141,37 @@
                 {
                     "@type": "SiteNavigationElement",
                     "name": "Courses",
-                    "url": "https://www.vidyasource.com/courses"
+                    "url": "https://www.vidyasource.com/courses/"
                 },
                 {
                     "@type": "SiteNavigationElement",
                     "name": "Consulting",
-                    "url": "https://www.vidyasource.com/consulting"
+                    "url": "https://www.vidyasource.com/consulting/"
                 },
                 {
                     "@type": "SiteNavigationElement",
                     "name": "Blog",
-                    "url": "https://www.vidyasource.com/blog"
+                    "url": "https://www.vidyasource.com/blog/"
                 },
                 {
                     "@type": "SiteNavigationElement",
                     "name": "Case Studies",
-                    "url": "https://www.vidyasource.com/case-studies"
+                    "url": "https://www.vidyasource.com/case-studies/"
                 },
                 {
                     "@type": "SiteNavigationElement",
                     "name": "Tutorials",
-                    "url": "https://www.vidyasource.com/tutorials"
+                    "url": "https://www.vidyasource.com/tutorials/"
                 },
                 {
                     "@type": "SiteNavigationElement",
                     "name": "About",
-                    "url": "https://www.vidyasource.com/about"
+                    "url": "https://www.vidyasource.com/about/"
                 },
                 {
                     "@type": "SiteNavigationElement",
                     "name": "Contact",
-                    "url": "https://www.vidyasource.com/contact"
+                    "url": "https://www.vidyasource.com/contact/"
                 }
             ]
         }

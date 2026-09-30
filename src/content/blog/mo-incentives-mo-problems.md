@@ -17,7 +17,7 @@ aliases:
 - /blog/Projects/Agile/2016/01/10/mo-incentives-mo-problems
 ---
 
-As I help to [revolutionize how government buys IT](/blog/all-we-do-is-win-win-win) 
+As I help to [revolutionize how government buys IT](/blog/all-we-do-is-win-win-win/) 
 by teaching federal acquisition professionals to avoid spending hundreds of millions for 
 deliverables that don't work, I have stressed that the best  way to maximize value and save taxpayer dollars is to 
 understand the principles behind agile software development and to construct contracts accordingly. 

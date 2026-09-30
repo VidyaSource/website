@@ -4,7 +4,7 @@ import {type GenericPostType} from "../content.config.ts";
 import {images} from './Images'
 type Props = GenericPostType
 const {collection, slug, title, description, image} = Astro.props
-const link = `/${collection}/${slug}`
+const link = `/${collection}/${slug}/`
 ---
 <div class="flex flex-col rounded-lg shadow-lg overflow-hidden" id={slug} >
     <div class="flex-shrink-0 bg-gray-light hover:bg-red-light">

@@ -9,7 +9,7 @@ const schema = {
     "@type": "CollectionPage",
     name: "Vidya Case Studies",
     description: "Delivered modernization, AI, and threat detection engagements from Vidya for the State Department, HealthCare.gov, Thomson Reuters Special Services, Neustar, and others.",
-    mainEntity: caseStudies.map(s => ({...s.schema, publisher: vidyaSchema, url: `${Astro.url.origin}/case-studies/${s.slug}`})),
+    mainEntity: caseStudies.map(s => ({...s.schema, publisher: vidyaSchema, url: `${Astro.url.origin}/case-studies/${s.slug}/`})),
     publisher: vidyaSchema
 }
 ---

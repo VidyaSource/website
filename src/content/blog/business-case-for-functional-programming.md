@@ -158,5 +158,5 @@ fundamentally functional languages like [Elixir](https://elixir-lang.org/) or Sc
 (or extensions) in other languages like Java or JavaScript, 
 or even just adopt corollary principles like immutability, your team will write fewer bugs and catch others faster than you
 thought possible. You should see improvement in as little as a single sprint (in a Scrum project), and it's an 
-investment [most software engineers are happy to make](/blog/the-art-of-software-engineering) that will generate huge
+investment [most software engineers are happy to make](/blog/the-art-of-software-engineering/) that will generate huge
 value for all of you.

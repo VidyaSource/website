@@ -36,4 +36,4 @@ new relationships and to delivering our services to even more clients in the Was
 our current offerings by making our courses available online and building new software products.
 
 We want to thank USPAACC for recognizing Vidya's past success and future potential, and we cannot wait to do business
-with you. [Let's talk](/contact).
+with you. [Let's talk](/contact/).

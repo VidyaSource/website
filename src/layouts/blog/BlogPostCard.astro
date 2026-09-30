@@ -5,7 +5,7 @@ import {images} from '../../components/Images'
 import {formatPostDate, toDateAttribute} from '../../components/dates'
 type Props = BlogPost & {classes: string}
 const {slug, classes, author: {name, image: authorImage, linkedIn, profileUrl}, title, description, image, date, tags, categories} = Astro.props
-const link = `/blog/${slug}`
+const link = `/blog/${slug}/`
 const formattedDate = formatPostDate(date)
 
 ---

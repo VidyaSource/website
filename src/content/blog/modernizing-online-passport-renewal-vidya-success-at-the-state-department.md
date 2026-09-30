@@ -88,7 +88,7 @@ best leverage their capabilities for our mission.
 At Vidya, we don't just build software. We revolutionize processes. We enhance user experiences. We even bring a touch of humor to even the most complex projects. 
 Our success with the State Department is just the beginning.
 
-[Join us](/contact) as we continue to push the boundaries of what's possible in government modernization. With Vidya, the future of streamlined, efficient 
+[Join us](/contact/) as we continue to push the boundaries of what's possible in government modernization. With Vidya, the future of streamlined, efficient 
 government services is not just a possibility. It's a reality we're creating every day.
 
 

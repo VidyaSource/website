@@ -67,12 +67,12 @@ You can write a love poem in any language, but it sounds a lot better in French 
 
 I have spent most of my career writing code in Java, and I have gotten pretty good at it. I have two Java
 badges on [Stack Overflow](http://stackoverflow.com/users/1347281/vidya), and I even
-[teach a course in Java](/course/software-engineering-in-java). You can use Java to build
+[teach a course in Java](/course/software-engineering-in-java/). You can use Java to build
 anything, but that doesn’t always mean you should.
 
 For web applications, Ruby on Rails is far superior. For standalone projects you want to get running fast,
 Python is far superior. For Big Data analytics, Python, Scala,
-and Clojure are [far superior](/blog/java-is-dysfunctional-with-big-data).
+and Clojure are [far superior](/blog/java-is-dysfunctional-with-big-data/).
 
 I’m simplifying a bit, but the point is that I’ve had to unlearn a lot of the concepts that became second nature in Java in
 order to excel in other languages. I had to ignore everything I knew about static typing in Java and get used to the

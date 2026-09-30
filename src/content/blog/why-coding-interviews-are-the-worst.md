@@ -54,7 +54,7 @@ making your UI accessible, scaling in the cloud, improving your engineering prac
 
 Even if you do better than silly college computer science questions and focus on the tech you use today, you focus on the wrong thing. It isn't what candidates
 know; it's how much they can learn. If you're a React shop, it's impressive if a candidate understands how `useEffect` is about 
-[syncing UI with state](/blog/dark-mode-nextjs-tailwindcss-react-hooks) rather than a new spin on `componentDidMount`, but what if you decide to move to [Solid](https://www.solidjs.com/)? Or what if
+[syncing UI with state](/blog/dark-mode-nextjs-tailwindcss-react-hooks/) rather than a new spin on `componentDidMount`, but what if you decide to move to [Solid](https://www.solidjs.com/)? Or what if
 an important new initiative demands a different set of skills entirely and you don't have the resources to hire a subject-matter expert right away?
 
 Instead, you want to hire engineers who fit with your culture and make their teams better with hard and soft skills. They do this in many ways.

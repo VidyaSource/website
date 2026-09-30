@@ -34,7 +34,7 @@ of the most popular React frameworks in the world and the building block for ful
 [Blitz](https://blitzjs.com/). The user interface itself is crafted with the ever popular [Tailwind CSS](https://tailwindcss.com/).
 
 Even with the migration from Hugo to Next.js, the site remains a Progressive Web Application. We described what that is 
-[before](/blog/vidya-reloaded), but essentially a PWA uses web technologies to provide a native mobile-like experience. And I 
+[before](/blog/vidya-reloaded/), but essentially a PWA uses web technologies to provide a native mobile-like experience. And I 
 don't mean simply a responsive UI, but also caching for offline usability, a home screen icon, and other niceties we usually
 only expect from native mobile apps written in Kotlin, Swift, Flutter, or React Native.
 
@@ -61,6 +61,6 @@ and our [YouTube](https://www.youtube.com/channel/UC24LVc8Bb65SF6LW-SLog9A) page
 our content valuable. It's a win-win.
 
 We are excited to combine powerful emerging technologies like Next.js, Tailwind CSS, and Brave to bring you a better experience
-on the Vidya website. Please check it out and [let us know what you think](/contact).
+on the Vidya website. Please check it out and [let us know what you think](/contact/).
 
 

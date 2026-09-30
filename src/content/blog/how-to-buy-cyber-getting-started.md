@@ -26,7 +26,7 @@ Check out why procurement officials need to take initiative when buying cybersec
 both pre-award and post-award) and how security can be built into the software engineering process. And how we managed to 
 make references to the [Stanley Cup Finals](https://en.wikipedia.org/wiki/2018_Stanley_Cup_Finals) and Shakespeare and Hemingway. 
 
-I hope you enjoy it! Feel free to [let us know what you think](/contact).
+I hope you enjoy it! Feel free to [let us know what you think](/contact/).
 
 ~~Ypv73bkIERQ|How to Buy Cyber--Getting Started~~
 
