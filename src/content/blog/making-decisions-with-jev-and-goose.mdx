@@ -174,88 +174,120 @@ That exchange gave each model the job it does best. Gemini handled every step th
 It then wrote a valid API request from the bundled reference and explained Jev's answer back to me in natural language. Jev handled the one step that
 needed a judgment. The result is a cheap, fast decision that an LLM orchestrates and explains in a manner I can easily understand.
 
-The typed answer matters as much as the explanation because it lets the same judgment move from a conversation into code. A message from a website
-contact form makes a good example because it needs two answers from one request. I sent this request straight to the TypeSafe API from my Mac.
+The typed answer matters as much as the explanation because it lets the same judgment move from a conversation into code. Gemini translates natural language into
+the types Jev needs and then interprets the types in Jev's response to the language I need.
+
+Here is a more interesting example.
+
+```markdown
+Using the typesafe skill, tell me what the sender of this contact form message wants from
+Vidya and whether the message names a deadline: "Hi Neil, our team runs a 15-year-old Java
+application on servers we have to vacate next year, and nobody left on the team knows how it
+works. Could Vidya help us move it to the cloud before our data center lease ends in June?"
+```
+
+Gemini designed the questions itself and turned that prompt into this request.
 
 ```json
 {
   "model": "jev-latest",
-  "state": {
-    "message": "Hi Neil, our team runs a 15-year-old Java application on servers we have to vacate next year, and nobody left on the team knows how it works. Could Vidya help us move it to the cloud before our data center lease ends in June?"
-  },
+  "state": "Hi Neil, our team runs a 15-year-old Java application on servers we have to vacate next year, and nobody left on the team knows how it works. Could Vidya help us move it to the cloud before our data center lease ends in June?",
   "questions": {
-    "intent": {
+    "service_requested": {
       "type": "choice",
-      "instructions": "What does the sender of `message` want from Vidya?",
+      "instructions": "What primary service is the sender requesting from Vidya?",
       "criteria": {
-        "consulting": "Help to build, modernize, or run software, cloud, data, or AI systems",
-        "training": "A course, workshop, or coaching for their team",
-        "job": "A job, internship, or subcontracting role with Vidya",
-        "sales_pitch": "To sell Vidya a product or service",
-        "other": null
+        "cloud_migration": "Moving an existing legacy application or system to cloud infrastructure.",
+        "new_development": "Building a brand new software application from scratch.",
+        "team_training": "Training or upskilling the existing team on new technologies.",
+        "unclear": "The requested service is not clear or is something else."
       }
     },
     "has_deadline": {
       "type": "noul",
-      "instructions": "Does `message` name a date or deadline for the work?"
+      "instructions": "Does the message explicitly name a deadline or time constraint?",
+      "criteria": {
+        "true": "The sender states a specific month, timeline, or event by which the work must be completed.",
+        "false": "The sender does not state any time constraints or deadlines."
+      }
     }
   }
 }
 ```
 
-Jev answered in 218 milliseconds, network included.
+Jev returned typed answers under the identifiers that Gemini chose.
 
 ```json
 {
   "model": "jev-1.13.0",
   "answers": {
-    "intent": {
+    "service_requested": {
       "type": "choice",
-      "choice": "consulting",
-      "confidence": 0.99,
+      "choice": "cloud_migration",
+      "confidence": 1.0,
       "probabilities": {
-        "training": 0.0,
-        "other": 0.0,
-        "sales_pitch": 0.0,
-        "consulting": 0.99,
-        "job": 0.01
+        "unclear": 0.0,
+        "new_development": 0.0,
+        "cloud_migration": 1.0,
+        "team_training": 0.0
       }
     },
     "has_deadline": {
       "type": "noul",
-      "noul": 0.97
+      "noul": 0.98
     }
   },
   "usage": {
-    "input_tokens": 473,
-    "output_tokens": 77
+    "input_tokens": 502,
+    "output_tokens": 78
   }
 }
 ```
 
-Jev put 99 percent of its probability on a consulting inquiry and 97 percent on the presence of a deadline. A Choice maps onto a `switch` statement, and a
-Noul maps onto an `if`. Your code can move this message to the top of the inbox before anyone reads it, and an LLM can still explain the decision to
-anyone who asks.
+Gemini then translated those answers back into natural language.
+
+```markdown
+Using the `typesafe-ai` skill, here is the structured evaluation of the contact form message:
+
+- **What they want:** The model determined with **100% confidence** (`choice: "cloud_migration"`) that the sender wants help moving their legacy application to cloud infrastructure.
+- **Is there a deadline: Yes**. The model gave a **0.98** probability (`noul: 0.98`) that the message explicitly names a deadline or time constraint. (Specifically, the text mentions having to vacate servers next year and the lease ending in June).
+```
+
+Orchestrated all in Goose, Gemini picked four options that fit this message better than a generic list would, and it followed the skill's advice to define what yes and no mean for
+the deadline question. Jev ascribed certainty (or at least a confidence of 1) on cloud migration and 0.98 on the deadline. Gemini then interpreted the June lease and the server move as
+its evidence, a rationale that Jev never gives because it returns only typed values.
+
+To be clear, Gemini described the answer with
+"100% confidence," but TypeSafe's guidance says confidence only summarizes how concentrated the probabilities are. It does not tell you whether the answer
+is correct.
+
+A Choice maps onto a `switch` statement, and a Noul maps onto an `if`. Your code can move this message to the top of the inbox before anyone reads it, and
+Gemini can explain the decision to anyone who asks.
 
 The pairing also keeps every layer replaceable. Goose let me choose Gemini for the conversation, and it would let me choose Claude or a local model just
-as easily. The skill follows the open Agent Skills standard, and Jev sits behind a single API endpoint. You can swap the LLM without touching a single
-decision.
+as easily. The skill follows the open Agent Skills standard, and Jev sits behind a single API endpoint. This is the beauty of standards like Goose, Agent Skills, and
+even old school standards like HTTP. You can swap the LLM and decision model (for example, to replace Jev with the open source
+[Laya decision model](https://huggingface.co/blog/sora-2/laya-ai-model-how-it-works-run-it-locally-and-eval)) without changing your workflow.
 
 The pairing has one cost to watch. For a single question, the $0.07 that Gemini cost dwarfs the fraction of a cent that TypeSafe charges for Jev. Gemini
 has to read the skill, the reference, and the whole conversation to plan each step. The fix is to give loops to code. When a skill ships a script that sends
 every item in a batch to Jev, the LLM plans the run and explains the results while Jev makes every decision in between. Your LLM bill then tracks
 conversations, and your Jev bill tracks decisions.
 
-## Triage for Sources Sought Notices
+This is your regular reminder that old fashioned code will always be your best option.
 
-Before they write a solicitation, federal agencies publish Sources Sought notices on [SAM.gov](https://sam.gov), the government's System for Award
-Management. A Sources Sought notice is market research. The contracting officer uses the responses to learn which businesses can do the work and whether
+## A Real Gusiness Case for Vidya: Triage for Sources Sought Notices
+
+Vidya serves government customers as well as commercial businesses, and Sources Sought is a key marketing strategy for us.
+
+Before they write a solicitation, federal agencies publish Sources Sought notices on [SAM.gov](https://sam.gov).
+A Sources Sought notice is market research. The contracting officer uses the responses to learn which businesses can do the work and whether
 enough capable small businesses exist to set the contract aside for them. A response never wins a contract on its own, but it can shape the requirement
-and the set-aside decision before the competition begins. For a small business like Vidya, those notices are some of the most valuable reading on SAM.gov.
+and the set-aside decision before the competition begins. For a small business like Vidya, those notices are some of the most valuable ways to get noticed.
 
-My sources sought skill searches SAM.gov through the official [Opportunities API](https://open.gsa.gov/api/get-opportunities-public-api/) with one call for
+My `finding-sources-sought` skill searches SAM.gov through the official [Opportunities API](https://open.gsa.gov/api/get-opportunities-public-api/) with one call for
 each of Vidya's six North American Industry Classification System (NAICS) codes. It drops notices that announce a sole-source award and notices that require
-a certification Vidya lacks. The last step checks each surviving notice against the capabilities in my Vidya knowledge base, and it is the hardest step to
+a certification Vidya lacks. The last step checks each surviving notice against our capabilities in the Vidya knowledge base, and it is the hardest step to
 get right.
 
 NAICS codes are broad, so SAM.gov has returned Cisco SmartNet hardware maintenance and Dell tower computer purchases under Vidya's software codes. The skill
@@ -263,18 +295,19 @@ runs a hybrid search over the knowledge base that blends keyword matching with e
 every federal notice and in nearly every one of Vidya's past responses. That shared vocabulary makes it hard for any search to separate a real match from
 a coincidence.
 
-I ran the search today for two notices the skill has already processed. The top hit for Alerton Envision Maintenance and Emergency Services, a contract to
-maintain a building controls system, scored 0.0310. The top hit for Digital GI Bill Automation and Modernization, a software modernization effort that fits
-Vidya's work, scored 0.0325. The knowledge base ranks hits with reciprocal rank fusion, which rewards a page for ranking well in both keyword and vector
-search. That score reflects position in two lists and says little about whether a page describes the same work as the notice. Today the skill asks the LLM
-behind the agent to read every snippet and make a judgment call, which is exactly the kind of decision Jev exists to make.
+Just for fun, I ran the the skill today unchanged. The top hits were for a contract to
+maintain a building controls system, which is not our lane at all, and a software modernization effort, which is our lane exactly. They should not
+be anywhere near each other in the rankings. I could try to update the way the Vidya knowledge base works or tweak the language of the skill, but those
+solutions treat the symptom rather than cure the disease, which is that LLMs are not built for decision making.
 
-The skill can hand that judgment to Jev with one request per notice. The state holds the notice's title and description excerpt alongside the top five
-passages the knowledge base returns for it. Deterministic rules such as the response deadline and the set-aside code stay in code, and Jev answers only the
-semantic questions. The LLM behind the agent still runs the skill and summarizes the results for me in plain English. A script sends the notices to
-Jev so the LLM never judges them one at a time.
+I updated `finding-sources-sought` to use Jev instead of LLM judgment to identify opportunities that truly align with our core capabilities.
 
-A Choice classifies the kind of work the notice requests. A Noul checks whether the agency has already decided on a sole-source award. A Score grades how
+As the skill pours through the array of opportunities in the response from the SAM API, it can hand each one to Jev for evaluation.
+Gemini orchestrates everything. It holds the notice's title and description excerpt alongside the top five
+passages the knowledge base returns for it. Deterministic rules such as the response deadline and the set-aside code stay in code. Jev makes the decisions, and
+Gemini summarizes the results for me in plain English.
+
+A Jev `Choice` classifies the kind of work the notice requests. A `Noul` checks whether the agency has already decided on a sole-source award. A `Score` grades how
 closely the knowledge base evidence matches the notice, and its levels spell out the difference between shared subject matter and shared vocabulary.
 
 ```json
