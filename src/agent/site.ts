@@ -11,12 +11,14 @@ export const SITE: string = new URL(configured).origin;
 
 export const absolute = (path: string): string => new URL(path, SITE).href;
 
-/** Two sentences that state what Vidya is, for whom, and where. The homepage hero,
- *  llms.txt, and the markdown twins all render this same text, so they cannot drift. */
+/** The sentences that state what Vidya is, for whom, and where, and that the company name
+ *  is not the domain name. llms.txt and the markdown twins all render this same text, so
+ *  they cannot drift. */
 export const VIDYA_SUMMARY =
-    'Vidya is a certified small business in Northern Virginia that modernizes legacy systems, ' +
+    'Vidya LLC is a certified small business in Northern Virginia that modernizes legacy systems, ' +
     'builds enterprise AI, and designs cloud and data architecture for commercial companies and ' +
     'federal agencies. Vidya documents its delivered engagements in case studies and publishes ' +
-    'courses, tutorials, and articles for engineers and the people who lead them.';
+    'courses, tutorials, and articles for engineers and the people who lead them. ' +
+    'The company name is Vidya. Its website is vidyasource.com.';
 
 export const VIDYA_HEADLINE = 'Legacy system modernization and AI engineering for business and government.';

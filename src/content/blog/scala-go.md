@@ -1,8 +1,8 @@
 ---
 
 author: neil-chaudhuri
-title: "Scala or Go: Who Wore It Better?"
-description: "Scala and Go are two of the most popular emerging languages. Which is best for your project?"
+title: "Scala vs Go: Who Wore It Better?"
+description: "Scala vs Go compared on error handling, collections, and absent values. Which one fits your project?"
 image: "/img/blog/scala-go.png"
 date: 2021-09-01
 gist: true

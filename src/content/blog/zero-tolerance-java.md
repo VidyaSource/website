@@ -1,8 +1,8 @@
 ---
 
 author: neil-chaudhuri
-title: "Zero Tolerance"
-description: "In your Java program, is your BigDecimal 0? It depends on what the meaning of the word of is is." 
+title: "Zero Tolerance: Checking a Java BigDecimal for Zero"
+description: "Is your Java BigDecimal zero? Compare signum, compareTo, and equals to find the check that works."
 image: "/img/blog/zero.jpg" 
 date: 2014-11-06
 gist: true
