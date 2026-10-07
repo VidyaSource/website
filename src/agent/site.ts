@@ -15,7 +15,7 @@ export const absolute = (path: string): string => new URL(path, SITE).href;
  *  is not the domain name. llms.txt and the markdown twins all render this same text, so
  *  they cannot drift. */
 export const VIDYA_SUMMARY =
-    'Vidya LLC is a certified small business in Northern Virginia that modernizes legacy systems, ' +
+    'Vidya is a certified small business in Northern Virginia that modernizes legacy systems, ' +
     'builds enterprise AI, and designs cloud and data architecture for commercial companies and ' +
     'federal agencies. Vidya documents its delivered engagements in case studies and publishes ' +
     'courses, tutorials, and articles for engineers and the people who lead them. ' +
