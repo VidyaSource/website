@@ -1,5 +1,6 @@
 import {type CollectionEntry, getCollection, render} from "astro:content";
 import vidyaSchema from '../../components/vidyaSchema.json'
+import {absolute} from '../../agent/site'
 
 const tutorialList: CollectionEntry<'tutorials'>[] = await getCollection('tutorials').then(c => c.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()));
 
@@ -18,6 +19,7 @@ export const tutorials = await Promise.all(tutorialList.map(async (t) => {
             name: t.data.title,
             description: t.data.description,
             publisher: vidyaSchema,
+            thumbnailUrl: absolute(t.data.image),
             uploadDate: t.data.date,
             embedUrl: `https://www.youtube.com/watch?v=${t.data.youtube}`,
         }

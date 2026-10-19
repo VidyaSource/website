@@ -248,6 +248,7 @@ const articles = async (): Promise<MachinePage[]> => {
                     video: {
                         '@type': 'VideoObject',
                         name: p.data.title,
+                        thumbnailUrl: image,
                         embedUrl: `https://www.youtube.com/embed/${p.data.youtube}`,
                         uploadDate: p.data.date.toISOString()
                     }
