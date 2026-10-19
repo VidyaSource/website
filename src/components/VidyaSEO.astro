@@ -26,6 +26,11 @@ const canonicalUrl = new URL(Astro.url.pathname, base).href
 const ogType = type ?? (openGraph?.article ? "article" : "website")
 const robots = `${noindex ? "noindex" : "index"}, ${nofollow ? "nofollow" : "follow"}`
 const article = openGraph?.article
+// JSON-LD without a top-level @context is not valid schema.org markup, and Google ignores it.
+// Pages pass bare typed objects, so the context is added here once for all of them.
+const jsonLd = schema && !Array.isArray(schema) && !schema["@context"]
+    ? {"@context": "https://schema.org", ...schema}
+    : schema
 ---
 <Seo title={modifiedTitle}
      description={modifiedDescription}
@@ -48,4 +53,4 @@ const article = openGraph?.article
 {article?.authors?.map((a: string) => <meta property="article:author" content={a}>)}
 {article?.tags?.map((t: string) => <meta property="article:tag" content={t}>)}
 {(meta ?? []).map((m) => <meta name={m.name} content={m.content}>)}
-{schema && <Schema item={schema}/> }
+{jsonLd && <Schema item={jsonLd}/> }
