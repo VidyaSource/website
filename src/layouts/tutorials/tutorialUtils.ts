@@ -21,7 +21,7 @@ export const tutorials = await Promise.all(tutorialList.map(async (t) => {
             publisher: vidyaSchema,
             thumbnailUrl: absolute(t.data.image),
             uploadDate: t.data.date,
-            embedUrl: `https://www.youtube.com/watch?v=${t.data.youtube}`,
+            embedUrl: `https://www.youtube.com/embed/${t.data.youtube}`,
         }
     };
 }));

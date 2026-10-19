@@ -16,13 +16,19 @@ const {
     title, description, image, youtube, openGraph
 } = Astro.props
 
-const schema = Astro.props.schema as Record<string, any>
-schema["contentUrl"] = Astro.url.href
-schema["image"] = `${Astro.url.origin}${image}`
+// Google's video rich results need a top-level @context and the page URL. Copy the shared
+// schema so the ItemList on the index page never sees these page-specific fields.
+const schema = {
+    "@context": "https://schema.org",
+    ...Astro.props.schema,
+    url: Astro.url.href,
+    image: `${Astro.url.origin}${image}`
+}
 ---
 <Page title={`${title} | Vidya`}
       description={description}
       image={image}
+      schema={schema}
       twitterCard="player"
       openGraph={openGraph}
       meta={[
