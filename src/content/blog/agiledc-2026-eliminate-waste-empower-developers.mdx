@@ -1,0 +1,163 @@
+---
+author: neil-chaudhuri
+title: "AgileDC 2026: Eliminate Waste and Empower Developers with AI"
+description: "My AgileDC 2026 talk: why agile is not dead, how AI tempts teams into big batches, and how MCP, AGENTS.md, and Agent Skills put agile values to work."
+image: "/img/blog/agiledc-2026-eliminate-waste-empower-developers.webp"
+date: 2026-10-26
+tags:
+- Agile
+- AI
+- Agentic AI
+- MCP
+- AGENTS.md
+- Agent Skills
+- Lean
+- Software Engineering
+- Continuous Delivery
+---
+
+I just gave a talk at [AgileDC 2026](https://www.agiledc.org/) called *Eliminate Waste and Empower Developers: Agentic AI Standards Across the Value Stream*.
+I have been a true believer in agile from the beginning. I have seen agile applied well and poorly during my career as a software engineer and architect. I also
+helped create DITAP, which teaches federal procurement officials to write contracts that promote agile values,
+and I served on the GAO Agile Expert Group alongside Jez Humble, one of the pioneers of DevOps and a leader at DORA research.
+So I have grown a little annoyed when consultants on LinkedIn started to declare agile dead in favor of the "Agentic SDLC" and other ridiculous, self-serving ideas.
+
+The talk is my answer. Here is the short version.
+
+## Agile Is Just Fine
+
+Start with what agile actually is. It is not delivering in sprints or making sure no one sits down during a meeting. The whole point is to deliver in small batches for fast feedback
+to overcome uncertainty. Nothing about that changed when the models got good.
+
+The problem is that big batches are a feature, not a bug, and they are the whole basis for vibe coding. It seems cool
+to be able to generate entire features or even whole applications with just a few words. Those big batches are the primary tension with agile,
+and the [2024 DORA report](https://cloud.google.com/blog/products/devops-sre/announcing-the-2024-dora-report) demonstrates why big batches are bad. DORA associated a 25% increase in AI adoption
+with an estimated *1.5%* decrease in delivery throughput and an estimated *7.2%* decrease in delivery stability.
+
+Big batches move slower through review because there is too much to reason about, and you can't have enough meetings to scale the conversations to meet the batch sizes.
+The team shares less understanding of what changed and why. You also can't build quality into a product when every change arrives as a pile.
+
+The fundamentals of cooking did not change when we got air fryers and Instant Pots. Flavor profiles, blooming spices, and the Maillard reaction still decide whether dinner is any good.
+Similarly, the fundamentals of small batches, fast feedback, and the choice to pivot or persevere are still fundamental to software engineering. That isn't just an opinion.
+Research and even mathematics bear it out.
+
+Agile and AI are orthogonal. Agile is a research-driven way of working to navigate uncertainty, and you can back it up with Little's Law and queuing theory.
+AI is a tool that you can use in good ways and bad. The right move is to use AI responsibly in line with agile principles so you deliver for your customers.
+
+## Standards First
+
+Thirty years ago, the W3C and other standards bodies gave us HTTP, HTML, XML, and JSON. We take them for granted now, but they were the building blocks of the Internet, which changed the world.
+Standards keep you free of vendor lock-in because your work outlives any one vendor's roadmap. They also leave room for the whole universe of tooling from every vendor now and in the future.
+Standards matter even more in the age of AI since the costs and capabilities of models change literally every day.
+
+The [Agentic AI Foundation](https://aaif.io/) (AAIF) spun out of the Linux Foundation to do for AI what the W3C did for the web.
+As an [AAIF Ambassador](/blog/agentic-ai-foundation-ambassador/), I focused the talk on three AAIF standards:
+
+- [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) connects AI agents to your data sources and tools.
+- [AGENTS.md](https://agents.md/) instructs coding agents on the mental models, design patterns, coding standards, and automations in your code base.
+- [Agent Skills](https://agentskills.io/home) package your domain expertise into reusable instructions that agents load for common tasks.
+
+Together they let you build what I call a "[Culture of Context](/blog/create-a-culture-of-context-for-ai)". The rest of the talk applied them to lessons from the agile icons who shaped how I work
+as well as [DORA](https://dora.dev/) research on delivery performance and [SPACE](https://queue.acm.org/detail.cfm?id=3454124) research on developer experience and productivity.
+Optimize for all of those metrics together or you fall prey to Goodhart's Law.
+
+## The Poppendiecks and Value Stream Mapping
+
+In *Lean Software Development*, Mary and Tom Poppendieck define waste as anything that does not add value as the customer perceives it.
+[Value stream mapping](https://dora.dev/guides/value-stream-management/) makes that waste visible across the whole flow of work from idea to production.
+
+You can use MCP to connect agents to your enterprise systems to track a new feature over its lifetime. One agent can read ticket timestamps from your issue tracker, commits and pull requests from version control,
+pipeline runs from CI/CD, sync events from your deployment tool, and error rates from your OpenTelemetry backend.
+
+I showed an Agent Skill that generates a value stream map to track with the Poppendiecks' guidance. Here is the metadata and the beginning of the skill:
+
+```markdown
+---
+name: value-stream-map
+description: Map software delivery from idea to production, rank waste and fixes, and recommend what to fix first. Use when asked to "map our value stream" or "find our bottlenecks".
+---
+
+# Value Stream Map
+
+Separate value-added time from wait time; waits usually dominate lead time.
+Code measures, Jev judges, code ranks. Never guess; mark gaps "unmeasured".
+```
+
+The skill draws the map, but that is only the beginning. It also collects evidence for the seven wastes of software development the Poppendiecks describe like stale branches, reopened tickets, and failed builds.
+[Jev](/blog/making-decisions-with-jev-and-goose) scores waste according to a value measure, a combination of how wasteful an
+activity is and how easy it is to eliminate, and the skill reports recommendations for next steps.
+
+## Jean Tabaka and Better Meetings
+
+In her book *Collaboration Explained*, Jean Tabaka gave facilitators a ten-step approach to conflict. You return to the last point of agreement and name one champion for each opposing recommendation.
+You ask each champion factual questions about benefits, costs, risks, and ROI. Then the group looks for a new recommendation that combines the best features of the others.
+
+I presented a `collaboration-review` skill. It takes a meeting transcript and asks Jev to score each Tabaka step as "absent," "attempted but incomplete," or "done clearly." Code aggregates the scores.
+The LLM writes the assessment and cites the transcript, but it never overrides a score. It also runs a fairness check that calls out any champion who got less airtime or more interruptions.
+The skill then generates recommendations for better meetings in the future.
+
+## Dave Farley and AGENTS.md
+
+Dave Farley is one of the world's leading experts on software delivery. His books *Continuous Delivery* and *Modern Software Engineering* have been a big influence on me.
+He has a lot of great aphorisms to promote the notion that speed and quality are not mutually exclusive:
+- "Working iteratively in small steps works better than not."
+- "Fixing broken builds remains the top priority for the development team."
+- "Done Means Released."
+
+I presented several Agent Skills that represent Farley's guidance, but I also presented an AGENTS.md file.
+AGENTS.md grounds agents in your specifications for the code base and your engineering workflow. The same file that tells an agent how to build also tells it how your team agrees to work.
+Here is part of the one I showed for a Kotlin Spring Boot service:
+
+```markdown
+## Three commitments
+
+1. Determinism: same inputs, same results, every run.
+2. Feedback keeps pace: when AI writes faster, test faster.
+3. Small, reversible steps: every commit is a hypothesis.
+
+## Work in small batches
+
+- Ask what problem a request solves before writing code.
+- Slice work to ship in a day or two; never one big batch.
+- Commit to main many times a day; keep main releasable.
+- Fix a red build before anything else.
+
+## Done means
+
+- The build and acceptance tests pass, and you show the output.
+- The change emits telemetry, and we watch it in production.
+```
+
+Think of AGENTS.md like the onboarding guidance you would give a new hire.
+The file also puts build, test, deploy, and smoke-test commands in one place so every environment runs the same commands.
+If AI writes code faster, your feedback loop has to keep pace with it.
+
+## Dr. Nicole Forsgren and Team Productivity
+
+Dr. Nicole Forsgren, one of the pioneers of DevOps as a co-author of *Accelerate* and a co-creator of the SPACE framework, acknowledges that invisible work and the coordination work around tasks are hard to measure.
+She offers proxies instead. Examples include how easily people find documentation and expertise, how fast work gets integrated, the quality of reviews, and the onboarding experience of new team members.
+
+I presented a `space-collaboration-review` skill that gathers evidence for each proxy through MCP from chat, the wiki, version control, and the issue tracker.
+Jev judges that evidence against Forsgren's recommendations. The agent then names the two weakest proxies and recommends three to five team-level changes.
+The skill reports on the team and never on individuals.
+
+## A Shared Agile Consciousness
+
+I closed with General Stanley McChrystal's *Team of Teams*, a book that has nothing to do with software engineering, let alone agile development. McChrystal argues that shared consciousness produces an organization that adapts
+nimbly to complex problems. The Poppendiecks describe the same idea as simple rules that let teams decentralize and move faster. SPACE targets clarity of purpose to achieve flow state, which also lies in the vein
+of shared consciousness.
+
+MCP along with AGENTS.md and Agent Skills in version control help create a shared consciousness. Your team norms, your expertise, and your data become context that every developer and every agent uses the same way.
+
+## What Attendees Said
+
+The feedback I received on the talk made my day. Here are a couple of examples:
+
+> "Best of Agile DC" real, authentic, and highly practical. Will use this tomorrow
+
+> Strong, clear speaking voice - wish all the podcasts I listen to were this clear!
+Å
+"Will use this tomorrow" is the compliment I value most because it was the whole goal of the talk.
+
+I hope everyone came away from the talk with a clear understanding of how to use AI to implement the expertise of some of the greatest minds in the history of agile development. Throttle
+back the vibe coded behemoths and instead use AI to deliver small batches for fast feedback in the face of uncertainty. [Reach out](/contact) if you want help doing it.
