@@ -24,7 +24,7 @@ export const blogPosts = await Promise.all(posts.map(async (p) => {
             }
         },
         schema: {
-            "@type": "BlogPosting",
+            "@type": p.data.articleType,
             headline: p.data.title,
             datePublished: p.data.date,
             author: [

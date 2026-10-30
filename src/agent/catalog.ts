@@ -19,6 +19,7 @@ import type {
     Product,
     Question,
     Service,
+    NewsArticle,
     Thing,
     VideoObject,
     WebPage,
@@ -229,9 +230,9 @@ const articles = async (): Promise<MachinePage[]> => {
         const tags = [...(p.data.tags ?? []), ...(p.data.categories ?? [])];
         const image = absolute(p.data.image);
         const body = bodyToMarkdown(p.body ?? '', absolute);
-        const jsonLd: WithContext<BlogPosting> = {
+        const jsonLd: WithContext<BlogPosting | NewsArticle> = {
             '@context': CONTEXT,
-            '@type': 'BlogPosting',
+            '@type': p.data.articleType,
             '@id': url,
             url,
             mainEntityOfPage: url,

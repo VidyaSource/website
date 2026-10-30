@@ -26,14 +26,14 @@ outcomes:
 excludedPosts:
 - vidya-talks-modernizing-tech-hiring-federal-government-white-house
 faqs:
-- question: "What was Vidya's role in the White House engagement for Mediabarn?"
-  answer: "Vidya performed this work for Mediabarn as an advisory and thought-leadership engagement. The White House hosted Technology Day and supplied the audience, a cohort of federal recruiters. Vidya's founder wrote and delivered the talk, and Vidya shipped no software on this engagement."
-- question: "How does a federal agency modernize technical hiring?"
-  answer: "Start with the artifacts a candidate actually reads. Align position titles and career ladders with the language private industry uses, so an engineer can tell what the job involves and where it leads. Then replace the coding interview with a structured conversation about real work the candidate has done. Federal technical hiring modernization fails when an agency copies commercial practice wholesale, because commercial practice still runs on the screen that costs agencies the candidates they want."
-- question: "Why does Vidya argue against coding interviews for government software engineer recruiting?"
-  answer: "Coding interviews measure short-term recall of computer science trivia and composure under observation. A North Carolina State University and Microsoft study found that every woman who took a public technical interview failed, while every woman who took the same interview privately passed. Agencies competing for White House tech talent cannot afford a filter that removes qualified engineers for reasons unrelated to the work."
-- question: "Which hiring change should a program office make first?"
-  answer: "Rewrite one position description and the interview loop attached to it, then run that loop on the next open requisition. A single requisition gives the hiring manager a controlled comparison against the agency's standard process within one hiring cycle. Vidya recommends measuring the change by who applies and who accepts, because those two numbers move before any org-wide policy does."
+- question: "Has Vidya advised federal recruiters on tech hiring, and who was the client?"
+  answer: "Vidya's founder briefed a cohort of federal recruiters on modernizing technical hiring at Technology Day at the White House. Vidya performed this work for Mediabarn as an advisory and thought-leadership engagement. The White House hosted the event and supplied the audience. Vidya's founder wrote and delivered the talk. Vidya shipped no software on this engagement and reports no hires made or policy changed as a result."
+- question: "How can my agency modernize technical hiring to compete for software engineers?"
+  answer: "Vidya gives agencies a practical hiring playbook that starts with the artifacts a candidate actually reads. First, align position titles and career ladders with the language private industry uses. An engineer can then tell what the job involves and where it leads. Next, replace the coding interview with a structured conversation about real work the candidate has done. Vidya warns against copying commercial practice wholesale. Commercial practice still runs on the screen that costs agencies the candidates they want."
+- question: "Why does Vidya tell agencies to drop coding interviews when they hire engineers?"
+  answer: "Vidya bases its hiring advice on evidence about what a screen actually measures. Coding interviews measure short-term recall of computer science trivia and composure under observation. A North Carolina State University and Microsoft study found that every woman who took a public technical interview failed. Every woman who took the same interview privately passed. Agencies that compete for tech talent cannot afford a filter that removes qualified engineers for reasons unrelated to the work."
+- question: "If we want to change how we hire engineers, where should we start?"
+  answer: "Vidya starts hiring change with a single requisition, so a program office gets a measured result within one hiring cycle. Rewrite one position description and the interview loop attached to it. Then run that loop on the next open requisition. The hiring manager gets a controlled comparison against the agency's standard process. Vidya recommends measuring the change by who applies and who accepts. Those two numbers move before any org-wide policy does."
 ---
 
 ## The Challenge

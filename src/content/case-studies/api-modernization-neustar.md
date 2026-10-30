@@ -32,14 +32,14 @@ outcomes:
 - metric: "NexGen cloud portfolio gained a shared service"
   detail: "Neustar formed the NexGen group to expand its cloud offerings, and the billing API gave every new offering in that portfolio a metering and charging path it did not have to build itself."
 faqs:
-- question: "What did Vidya actually modernize at Neustar?"
-  answer: "Vidya joined a team of senior engineers inside Neustar's NexGen group and rebuilt the company's billing capability as a REST API in Java and Groovy on Dropwizard, deployed to Amazon EC2. Gradle handled project automation and Jenkins handled continuous integration. The engagement ran roughly three years."
-- question: "How do you run a legacy API migration to REST without breaking downstream consumers?"
-  answer: "Vidya publishes the new HTTP contract before the implementation moves, so consuming teams code against a stable surface while the legacy system still answers underneath. Reserving GET for reads keeps those calls idempotent and cacheable, which means a client can retry a failed request safely. Consumers then migrate on their own schedule, and no one has to survive a single cutover date."
-- question: "Why Dropwizard instead of a full application server?"
-  answer: "Dropwizard packages an HTTP service and its embedded server into a single executable JAR file. Neustar's team shipped one artifact to an Amazon EC2 instance and skipped the shared application server entirely, which removed a class of container configuration failures from the release path. Each service also owned its own runtime, so one team's upgrade never forced an upgrade on another team."
-- question: "Does Vidya do telecom API platform modernization outside government work?"
-  answer: "Yes. Neustar is Vidya's commercial API modernization reference, and Vidya has carried the same HTTP and contract discipline into federal programs including Consular Systems Modernization at the Department of State and HealthCare.gov at the Centers for Medicare and Medicaid Services."
+- question: "What legacy system did Vidya modernize for Neustar, and how long did the work run?"
+  answer: "Vidya turned Neustar's legacy billing capability into a shared REST service that any product team could call. The engagement ran roughly three years. Vidya joined a team of senior engineers inside Neustar's NexGen group and deployed the service to Amazon EC2. Every code change ran through an automated build and test, so engineers caught a broken build within minutes. Neustar's own engineers owned the number directory and its carrier interfaces. Vidya's scope stayed inside the NexGen cloud portfolio."
+- question: "Can Vidya move a legacy API to REST without breaking the teams that depend on it?"
+  answer: "Vidya moves a legacy API to REST without forcing consuming teams through a single cutover date. Vidya publishes the new HTTP contract before the implementation moves. Consuming teams build against that stable contract while the legacy system still answers underneath. Read requests stay idempotent and cacheable, so a client can safely retry a failed request. At Neustar, the team designed the billing service so a retry never charged anyone twice. Consumers then migrate on their own schedule."
+- question: "How does Vidya keep releases simple for a service that other teams depend on?"
+  answer: "Vidya keeps the release path short and gives it as few moving parts as possible. At Neustar, the team packaged the billing service and its embedded server into a single executable file. Operators shipped that one artifact to Amazon EC2 and skipped the shared application server. That removed a class of container configuration failures from the release path. Each service also owned its own runtime, so one team's upgrade never forced an upgrade on another team. Vidya chose a deployment approach Neustar's staff already ran every day instead of a container technology that had just shipped its first stable release."
+- question: "Has Vidya done API modernization for commercial companies, or only for government agencies?"
+  answer: "Vidya modernizes APIs for commercial companies as well as federal agencies. Neustar, a telecom infrastructure company, is Vidya's commercial API modernization reference. Vidya has carried the same HTTP and contract discipline into federal programs. These include Consular Systems Modernization at the Department of State and HealthCare.gov at the Centers for Medicare and Medicaid Services."
 ---
 
 ## The Challenge

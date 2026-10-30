@@ -1,6 +1,7 @@
 ---
 
 author: neil-chaudhuri
+articleType: NewsArticle
 title: "Speaking at Code Writers Workshop 2017"
 description: "Hope to see you at our talk 'Here's What's Trending in Software Engineering.'"
 image: "/img/blog/class.jpg"

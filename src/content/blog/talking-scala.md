@@ -1,6 +1,7 @@
 ---
 
 author: neil-chaudhuri
+articleType: NewsArticle
 title: "Talking Scala"
 description: "I will be speaking on Scala at Polyglot Programming DC!"
 image: "/img/blog/scala.png"

@@ -1,6 +1,7 @@
 ---
 
 author: neil-chaudhuri
+articleType: NewsArticle
 title: "Welcoming Madena Solutions"
 description: "We are lucky to be working with Madena, a premier provider of consulting services in the Medicare space."
 image: "/img/partners/madena.png"

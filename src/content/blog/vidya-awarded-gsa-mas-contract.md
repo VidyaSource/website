@@ -1,5 +1,6 @@
 ---
 author: neil-chaudhuri
+articleType: NewsArticle
 title: "Vidya Awarded a GSA MAS Contract"
 description: "Vidya is proud that GSA has awarded us a Multiple Award Schedule contract for providing IT Professional Services to the government."
 image: "/img/blog/gsa-landscape.jpg"

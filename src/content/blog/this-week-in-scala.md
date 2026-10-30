@@ -1,6 +1,7 @@
 ---
 
 author: neil-chaudhuri
+articleType: NewsArticle
 title: "This Week In #Scala"
 description: "Our latest tutorial made it to This Week in #Scala!"
 image: "/img/blog/scala.png"

@@ -39,14 +39,14 @@ outcomes:
 - metric: "Talent maintain their own profiles"
   detail: "A secure profile lets talent upload their own headshots, reels, and resumes, so the roster stays current without the agency typing it in."
 faqs:
-- question: "What does a casting database platform actually have to do?"
-  answer: "It has to hold rich talent attributes and large media in the same record, then return a shortlist fast enough to use inside a casting meeting. Nina Day's platform handles secure self-entry by talent, granular query across the roster, presentation building with drag-and-drop ordering, permissioned client galleries, and PDF export at the presentation, category, or individual level. Vidya built all of it on Play Framework in Scala with MongoDB."
-- question: "What technology stack runs the Nina Day talent database?"
-  answer: "Play Framework in Scala serves the application and MongoDB stores talent profiles, whose attributes differ from one performer to the next. The front end runs React and TypeScript. Amazon S3 holds the media behind Amazon CloudFront, with Cloudinary for image delivery and Flowplayer for video playback."
-- question: "Does Vidya build talent management software for agencies?"
-  answer: "Yes. Nina Day is Vidya's commercial reference for custom talent management software, and Vidya has run the platform as prime for over a decade. The same team also delivers commercial API and platform modernization, including the billing API Vidya built for Neustar."
-- question: "How do you keep a custom media search platform fast when the assets are large?"
-  answer: "Vidya separates the metadata path from the media path. Search hits MongoDB with indexing, paging, and Scala parallelism, while headshots and reels stream from object storage through a content delivery network close to the viewer. The Alpakka connector for Amazon S3 streams uploads asynchronously, which keeps the memory footprint per upload low even when several people upload reels at once."
+- question: "Can Vidya build a custom search and presentation platform for a creative agency?"
+  answer: "Vidya built and runs the talent database that lets Nina Day return a casting shortlist fast enough to use inside a casting meeting. Each record holds rich talent attributes and large media together. Talent enter their own details through a secure profile, and the agency queries the whole roster at a granular level. Nina Day's team builds presentations with drag-and-drop ordering. Brand clients open only the galleries their permissions allow. They can export a PDF of a full presentation, one category, or a single performer."
+- question: "What technology does Vidya use for the Nina Day talent database?"
+  answer: "Vidya chose a stack that fits casting data, where each performer's profile looks different, and that delivers large media quickly to viewers anywhere. Play Framework in Scala serves the application. MongoDB stores the talent profiles, whose attributes differ from one performer to the next. The front end runs React and TypeScript. Amazon S3 holds the media behind Amazon CloudFront. Cloudinary handles image delivery and Flowplayer handles video playback."
+- question: "Does Vidya build talent management software for agencies, and how long has it supported one?"
+  answer: "Vidya has run Nina Day's custom talent management platform as prime for over a decade. Nina Day keeps Vidya on a monthly retainer. Vidya also rebuilt the platform once the agency's growth outgrew the first version. Nina Day's president rated Vidya Exceptional on quality, business relations, key personnel, and reliability. That rating came from the past-performance questionnaire Vidya submitted for its GSA Multiple Award Schedule contract. The same team delivers commercial API and platform modernization, including the billing API work for Neustar."
+- question: "How does Vidya keep a media-heavy platform fast when the files are large?"
+  answer: "Vidya keeps a media-heavy platform fast by separating the metadata path from the media path. Search runs against the database with indexing, paging, and parallel processing. Headshots and reels stream from object storage through a content delivery network close to the viewer. Uploads stream to Amazon S3 asynchronously. That keeps the memory footprint per upload low even when several people upload reels at once. Long jobs such as image processing, video handling, and PDF generation run in the background, so nobody waits on them."
 ---
 
 ## The Challenge

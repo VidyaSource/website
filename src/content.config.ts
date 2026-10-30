@@ -16,8 +16,14 @@ const staff = defineCollection({
     schema: staffSchema
 });
 
+// The schema.org type a post declares in JSON-LD. Opinion and how-to posts stay
+// BlogPosting. Factual reports (talks given, awards, certifications, announcements)
+// are NewsArticle.
+export const articleTypes = ['BlogPosting', 'NewsArticle'] as const;
+
 export const blogSchema =  z.object({
     author: reference('staff'),
+    articleType: z.enum(articleTypes).default('BlogPosting'),
     title: z.string(),
     date: z.date(),
     description: z.string(),

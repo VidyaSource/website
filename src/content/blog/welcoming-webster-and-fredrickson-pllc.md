@@ -1,6 +1,7 @@
 ---
 
 author: neil-chaudhuri
+articleType: NewsArticle
 title: "Welcoming Webster & Fredrickson, PLLC"
 description: "We are lucky to work with Webster & Fredrickson, PLLC, a premier DC law firm."
 image: "/img/blog/court.jpeg" 

@@ -3,17 +3,18 @@ import {absolute} from '../agent/site';
 
 export const prerender = true;
 
-// Every crawler and AI agent is welcome. The named AI user agents are listed so the
-// intent is explicit to scanners and to people reading the file. Google is asked not to
+// Every crawler and AI agent is welcome. Each named AI user agent gets its own group so
+// the intent is explicit to scanners and to people reading the file. Google is asked not to
 // index the machine-readable twins, which would otherwise compete with the HTML pages
 // as duplicate content; agents still read them.
 const aiAgents = [
     'GPTBot', 'OAI-SearchBot', 'ChatGPT-User',
-    'ClaudeBot', 'Claude-User', 'Claude-SearchBot',
+    'ClaudeBot', 'anthropic-ai', 'Claude-User', 'Claude-SearchBot',
     'PerplexityBot', 'Perplexity-User',
-    'Google-Extended', 'Applebot-Extended', 'Bingbot',
-    'Amazonbot', 'meta-externalagent', 'CCBot', 'Bytespider'
-];
+    'Google-Extended', 'Amazonbot', 'CCBot',
+    'Bingbot', 'BingPreview', 'Applebot', 'Applebot-Extended',
+    'meta-externalagent', 'Bytespider'
+] as const;
 
 // The `*` group carries no Disallow at all. A crawler that is not named below must
 // still read as fully allowed; a single Disallow line here would count against every
@@ -26,9 +27,7 @@ const robotsTxt = [
     'Allow: /',
     'Content-Usage: train-ai=y, search=y',
     '',
-    ...aiAgents.map((agent) => `User-agent: ${agent}`),
-    'Allow: /',
-    '',
+    ...aiAgents.flatMap((agent) => [`User-agent: ${agent}`, 'Allow: /', '']),
     'User-agent: Googlebot',
     'Disallow: /llms.txt',
     'Disallow: /llms-full.txt',

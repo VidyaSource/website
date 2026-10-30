@@ -1,6 +1,7 @@
 ---
 
 author: neil-chaudhuri
+articleType: NewsArticle
 title: "Welcoming CRMSDC"
 description: "We are proud to be certified by CRMSDC as a Minority Business Enterprise."
 image: "/img/blog/crmsdc-cert.png"

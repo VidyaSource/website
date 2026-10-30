@@ -26,14 +26,14 @@ outcomes:
 - metric: "An OFPP memo formalized the specialization"
   detail: "The Office of Federal Procurement Policy established the Federal Acquisition Certification in Core-Plus Specialization in Digital Services in a memo, which gave the training a permanent place in the federal certification structure."
 faqs:
-- question: "What is the origin of DITAP training?"
-  answer: "The Executive Office of the President competed a training effort aimed at the federal acquisition workforce. Vidya earned a place on the winning team and worked with the United States Digital Service, 18F, and other vendors to create the first iteration of the Digital IT Acquisition Professional curriculum. The TechFAR Hub runs that program today as DITAP."
-- question: "What did Vidya actually do on the DITAP program?"
-  answer: "Vidya teamed with other vendors alongside the United States Digital Service and 18F to build the first iteration of the curriculum, and Vidya taught the course for the Executive Office of the President. Vidya held a teaming position on that award and never held the prime contract. The government owns the curriculum, and the program now runs without any of the original vendors."
-- question: "Is DITAP required for federal contracting officers?"
-  answer: "Yes, for a defined population. An Office of Federal Procurement Policy memo established the Federal Acquisition Certification in Core-Plus Specialization in Digital Services. FAC-C (Professional) holders working digital services acquisitions above the FAR 13.500(c) thresholds have to complete DITAP, and graduates earn 60 to 80 Continuous Learning Points toward it."
-- question: "Does Vidya still work on federal software acquisition training and strategy?"
-  answer: "Yes. Vidya belongs to the GAO Agile Expert Group, has contributed to Government Accountability Office agile reports, and carries the same position on contract structure into federal market research today. Vidya also runs engineering and agile training courses for government and commercial teams."
+- question: "Did Vidya help create the federal DITAP training for software acquisition?"
+  answer: "Vidya helped build the first iteration of the Digital IT Acquisition Professional curriculum, which the federal government now runs as DITAP. The Executive Office of the President competed a training effort aimed at the federal acquisition workforce. Vidya earned a place on the winning team. Vidya then worked with the United States Digital Service, 18F, and other vendors to create the curriculum. The TechFAR Hub runs that program today."
+- question: "What exactly did Vidya do on DITAP, and was Vidya the prime contractor?"
+  answer: "Vidya authored curriculum and taught federal contracting officers how to buy software in increments for the Executive Office of the President. Vidya teamed with other vendors alongside the United States Digital Service and 18F to build the first iteration of the course. Vidya held a teaming position on that award and never held the prime contract. The government owns the curriculum. The program now runs without any of the original vendors."
+- question: "Do federal contracting officers have to complete DITAP?"
+  answer: "The curriculum Vidya helped start is now a required credential for a defined group of federal contracting officers. An Office of Federal Procurement Policy memo established the Federal Acquisition Certification in Core-Plus Specialization in Digital Services. FAC-C (Professional) holders who work digital services acquisitions above the FAR 13.500(c) thresholds have to complete DITAP. Graduates earn 60 to 80 Continuous Learning Points toward the credential."
+- question: "Can Vidya still help my agency with software acquisition strategy and training?"
+  answer: "Vidya still advises on federal software acquisition as a member of the GAO Agile Expert Group. Vidya has contributed to Government Accountability Office agile reports. Vidya also brings the same position on contract structure into federal market research today. In addition, Vidya runs engineering and agile training courses for government and commercial teams."
 ---
 
 ## The Challenge
