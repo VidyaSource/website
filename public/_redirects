@@ -63,10 +63,10 @@
 # 2026-11-08: URLs that Search Console reports as 404 and that have a current page.
 # Old dated paths from the earlier site generator still have links from other sites.
 /blog/Data/Hadoop/Analytics/Programming/Scala/Java/Python/Architecture/2015/04/22/analytics-with-apache-spark-is-coming /blog/analytics-with-apache-spark-is-here/ 301
-/blog/Programming/Scala/Java/Data/Hadoop/Analytics/2014/01/25/lighting-a-spark-with-hbase /blog/lighting-spark-hbase/ 301
+/blog/Programming/Scala/Java/Data/Hadoop/Analytics/2014/01/25/lighting-a-spark-with-hbase /courses/data-engineering-with-spark/ 301
 /blog/2018/08/10/welcoming-ninaday/ /case-studies/casting-platform-nina-day/ 301
 /blog/2018/10/21/lessons-from-java-for-testing-in-react/ /blog/lessons-java-testing-react/ 301
-/blog/2017/06/05/speaking-at-code-writers-workshop-2017/ /blog/speaking-at-code-writers-workshop-2017/ 301
+/blog/2017/06/05/speaking-at-code-writers-workshop-2017/ /about/ 301
 /tutorial/Programming/Java/2013/10/27/comparison-shopping /tutorials/comparison-shopping/ 301
 /course/Scala/Java/Python/Programming/Data/Hadoop/Analytics/Testing/Architecture/Projects/Agile/2015/08/15/analytics-with-apache-spark /courses/data-engineering-with-spark/ 301
 /course/Agile/Scrum/Projects/2013/10/20/agile-software-project-management-with-scrum /courses/modern-agile/ 301
@@ -89,3 +89,62 @@
 # Relative links in post bodies once resolved under the post's own path.
 /blog/business-case-for-functional-programming/tags/* /blog/business-case-for-functional-programming/ 301
 /blog/python-is-31x-slower-new-benchmark-confirms-not-language-for-enterprise-ai/blog/* /blog/:splat/ 301
+
+# 2026-11-08: thin, dated, or off-topic posts removed after a Search Console review.
+# None had external links. Each points at the closest page. Alias paths from the old site are included.
+/blog/canstruction-dc-2014 /about/ 301
+/blog/canstruction-dc-2014/ /about/ 301
+/blog/Projects/2014/08/25/canstruction-dc-2014 /about/ 301
+/blog/clowns-to-the-left-of-me-jokers-to-the-right /blog/ 301
+/blog/clowns-to-the-left-of-me-jokers-to-the-right/ /blog/ 301
+/blog/Agile/Scrum/Projects/Testing/Mobile/iOs/2016/04/25/clowns-to-the-left-of-me-jokers-to-the-right /blog/ 301
+/blog/first-contact /about/ 301
+/blog/first-contact/ /about/ 301
+/blog/2013/10/26/first-contact /about/ 301
+/blog/highlights-from-crmsdc-leaders-and-legends-top-100-mbe-awards /about/ 301
+/blog/highlights-from-crmsdc-leaders-and-legends-top-100-mbe-awards/ /about/ 301
+/blog/how-to-buy-cyber-getting-started /case-studies/ditap-digital-acquisition-training-eop/ 301
+/blog/how-to-buy-cyber-getting-started/ /case-studies/ditap-digital-acquisition-training-eop/ 301
+/blog/lighting-spark-hbase /courses/data-engineering-with-spark/ 301
+/blog/lighting-spark-hbase/ /courses/data-engineering-with-spark/ 301
+/blog/2014/01/25/lighting-a-spark-with-hbase /courses/data-engineering-with-spark/ 301
+/blog/no-experience-no-problem /blog/why-coding-interviews-are-the-worst/ 301
+/blog/no-experience-no-problem/ /blog/why-coding-interviews-are-the-worst/ 301
+/blog/Programming/Java/Testing/Projects/Agile/Scrum/2014/09/09/no-experience-no-problem /blog/why-coding-interviews-are-the-worst/ 301
+/blog/speaking-at-code-writers-workshop-2017 /about/ 301
+/blog/speaking-at-code-writers-workshop-2017/ /about/ 301
+/blog/Programming/Java/Ruby/JavaScript/Python/Groovy/Scala/Testing/Architecture/Web/HTML/CSS/REST/Mobile/Android/iOS/Data/Hadoop/Analytics/2017/06/05/speaking-at-code-writers-workshop-2017 /about/ 301
+/blog/stack-overflow-java-scala-spark-diversity-25k-and-counting /about/ 301
+/blog/stack-overflow-java-scala-spark-diversity-25k-and-counting/ /about/ 301
+/blog/2019/05/29/25k-and-counting /about/ 301
+/blog/vidya/technology/25k-and-counting /about/ 301
+/blog/talking-scala /tutorials/nine-reasons-to-try-scala/ 301
+/blog/talking-scala/ /tutorials/nine-reasons-to-try-scala/ 301
+/blog/Scala/Programming/Architecture/Web/Mobile/Android/Data/Analytics/2015/05/27/talking-scala /tutorials/nine-reasons-to-try-scala/ 301
+/blog/talking-trends-at-tech-talk-dc /about/ 301
+/blog/talking-trends-at-tech-talk-dc/ /about/ 301
+/blog/the-signal-and-the-noise /blog/ 301
+/blog/the-signal-and-the-noise/ /blog/ 301
+/blog/this-week-in-scala /tutorials/nine-reasons-to-try-scala/ 301
+/blog/this-week-in-scala/ /tutorials/nine-reasons-to-try-scala/ 301
+/blog/Scala/Programming/2015/04/29/this-week-in-scala /tutorials/nine-reasons-to-try-scala/ 301
+/blog/vidya-reloaded /about/ 301
+/blog/vidya-reloaded/ /about/ 301
+/blog/vidya-thirty-three-third /about/ 301
+/blog/vidya-thirty-three-third/ /about/ 301
+/blog/welcoming-crmsdc-diversity-technology-consulting-minority-owned-business /about/ 301
+/blog/welcoming-crmsdc-diversity-technology-consulting-minority-owned-business/ /about/ 301
+/blog/welcoming-madena-solutions /about/ 301
+/blog/welcoming-madena-solutions/ /about/ 301
+/blog/Programming/Java/Data/Testing/2014/04/21/welcoming-madena-solutions /about/ 301
+/blog/welcoming-uspaacc-diversity-technology-consulting-minority-owned-business /about/ 301
+/blog/welcoming-uspaacc-diversity-technology-consulting-minority-owned-business/ /about/ 301
+/blog/welcoming-uspaacc /about/ 301
+/blog/welcoming-webster-and-fredrickson-pllc /case-studies/ 301
+/blog/welcoming-webster-and-fredrickson-pllc/ /case-studies/ 301
+/blog/Web/HTML/CSS/Programming/JavaScript/Mobile/Android/iOS/2016/08/07/welcoming-webster-and-fredrickson-pllc /case-studies/ 301
+/blog/which-programming-languages-should-i-learn-first /courses/ 301
+/blog/which-programming-languages-should-i-learn-first/ /courses/ 301
+/blog/you-must-unlearn-what-you-have-learned /blog/ 301
+/blog/you-must-unlearn-what-you-have-learned/ /blog/ 301
+/blog/Programming/Java/Python/Scala/Data/Analytics/Projects/PMP/Agile/2014/03/14/you-must-unlearn-what-you-have-learned /blog/ 301

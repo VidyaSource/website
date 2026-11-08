@@ -74,7 +74,7 @@ open-sourced as Apache Spark, and I got
 Scala knowledge working not only with Spark but also with Play Framework, ReactiveMongo,
 Scalaz, and Akka for several government and commercial clients. I have come to enjoy Scala so much
 that it is very hard to go back to writing Java. I even put together a tutorial on YouTube called 
-[Nine Reasons to Try Scala](/tutorial/nine-reasons-to-try-scala/) and have given several talks 
+[Nine Reasons to Try Scala](/tutorials/nine-reasons-to-try-scala/) and have given several talks 
 based on it.
 
 Scala motivated the evolution of Java that began with 
@@ -103,7 +103,7 @@ I look forward to the opportunity to wrap my head around the syntax and do more 
 
 **Python**
    
-[When I spoke at Code Writers DC](/blog/speaking-at-code-writers-workshop-2017/), I identified statically typed
+When I spoke at Code Writers DC, I identified statically typed
 languages as a "trend" in software engineering and cited Scala, Go, Swift,
 and Kotlin as examples. Python, however, is a big exception. It's been around forever, and as Stack Overflow noted, it's
 still blowing up because of Big Data and machine learning. The list of Python tools 

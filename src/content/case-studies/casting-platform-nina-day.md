@@ -15,7 +15,6 @@ tags:
 order: 8
 relatedPosts:
 - business-case-for-functional-programming
-- talking-scala
 technologies:
 - Scala
 - Play Framework

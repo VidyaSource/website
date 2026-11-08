@@ -15,7 +15,6 @@ tags:
 order: 6
 relatedPosts:
 - dont-go-chasing-waterfall
-- how-to-buy-cyber-getting-started
 outcomes:
 - metric: "DITAP became a required federal credential"
   detail: "Contracting officers who hold FAC-C (Professional) and work digital services acquisitions above the FAR 13.500(c) thresholds must now complete DITAP."

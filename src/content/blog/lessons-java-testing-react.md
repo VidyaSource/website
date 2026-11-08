@@ -191,7 +191,7 @@ developer uses Mockito.
 * Use props to mimic constructor injection of mocked or stubbed dependencies. In fact, [render props](https://reactjs.org/docs/render-props.html), 
 which are now *en vogue* for sharing React components, essentially enable constructor injection of components. You can supply
 any component you want to a render prop in your test. 
-* [Use the functional nature of JavaScript to your advantage](/blog/the-business-case-for-functional-programming/) in testing.
+* [Use the functional nature of JavaScript to your advantage](/blog/business-case-for-functional-programming/) in testing.
 For example, REST calls are the most common side effects in JavaScript programming, 
 and using TypeScript you could have a function prop `fetch: (s: string) => Promise<string>` to represent a REST call returning JSON.
 In your test, you supply a stubbed implementation like `(s: string) => { Promise.resolve({id: 5}) }` while your 
