@@ -103,7 +103,7 @@ I look forward to the opportunity to wrap my head around the syntax and do more 
 
 **Python**
    
-[When I spoke at Code Writers DC](blog/2017/06/05/speaking-at-code-writers-workshop-2017/), I identified statically typed
+[When I spoke at Code Writers DC](/blog/speaking-at-code-writers-workshop-2017/), I identified statically typed
 languages as a "trend" in software engineering and cited Scala, Go, Swift,
 and Kotlin as examples. Python, however, is a big exception. It's been around forever, and as Stack Overflow noted, it's
 still blowing up because of Big Data and machine learning. The list of Python tools 

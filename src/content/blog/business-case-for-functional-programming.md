@@ -30,7 +30,7 @@ Functional programming isn't exactly a fun topic anywhere outside of technical c
 code often tune out when they hear terms like [monad](http://stackoverflow.com/questions/44965/what-is-a-monad)
 and [referential transparency](https://stackoverflow.com/questions/210835/what-is-referential-transparency). 
 But if you are a technical manager or executive, heads up. Functional programming will limit your 
-[technical debt](tags/technical-debt) so you build better 
+technical debt so you build better 
 software faster than you imagined and will earn you the Tesla you always wanted. 
 
 Here's why.

@@ -59,3 +59,33 @@
 /blog/yes-we-kanban/ /courses/modern-agile/ 301
 /blog/you-gotta-keep-em-integrated /consulting/legacy-system-modernization/ 301
 /blog/you-gotta-keep-em-integrated/ /consulting/legacy-system-modernization/ 301
+
+# 2026-11-08: URLs that Search Console reports as 404 and that have a current page.
+# Old dated paths from the earlier site generator still have links from other sites.
+/blog/Data/Hadoop/Analytics/Programming/Scala/Java/Python/Architecture/2015/04/22/analytics-with-apache-spark-is-coming /blog/analytics-with-apache-spark-is-here/ 301
+/blog/Programming/Scala/Java/Data/Hadoop/Analytics/2014/01/25/lighting-a-spark-with-hbase /blog/lighting-spark-hbase/ 301
+/blog/2018/08/10/welcoming-ninaday/ /case-studies/casting-platform-nina-day/ 301
+/blog/2018/10/21/lessons-from-java-for-testing-in-react/ /blog/lessons-java-testing-react/ 301
+/blog/2017/06/05/speaking-at-code-writers-workshop-2017/ /blog/speaking-at-code-writers-workshop-2017/ 301
+/tutorial/Programming/Java/2013/10/27/comparison-shopping /tutorials/comparison-shopping/ 301
+/course/Scala/Java/Python/Programming/Data/Hadoop/Analytics/Testing/Architecture/Projects/Agile/2015/08/15/analytics-with-apache-spark /courses/data-engineering-with-spark/ 301
+/course/Agile/Scrum/Projects/2013/10/20/agile-software-project-management-with-scrum /courses/modern-agile/ 301
+/course/Agile/Scrum/Projects/2015/01/07/agile-software-project-management-with-scrum /courses/modern-agile/ 301
+/course/software-engineering-in-java /courses/java-for-work/ 301
+/course/software-engineering-in-java/ /courses/java-for-work/ 301
+/courses/software-engineering-with-apache-spark /courses/data-engineering-with-spark/ 301
+/courses/software-engineering-with-apache-spark/ /courses/data-engineering-with-spark/ 301
+/tutorial/starting-with-data /tutorials/starting-with-data/ 301
+/tutorial/starting-with-data/ /tutorials/starting-with-data/ 301
+/categories/* /blog/ 301
+/index.xml /rss.xml 301
+# Renamed: the old slug ended in a hyphen.
+/blog/python-is-31x-slower-new-benchmark-confirms-not-language-for-enterprise-ai- /blog/python-is-31x-slower-new-benchmark-confirms-not-language-for-enterprise-ai/ 301
+/blog/python-is-31x-slower-new-benchmark-confirms-not-language-for-enterprise-ai-/ /blog/python-is-31x-slower-new-benchmark-confirms-not-language-for-enterprise-ai/ 301
+/blog/know-your-options /blog/know-your-options-scala-java/ 301
+/blog/know-your-options/ /blog/know-your-options-scala-java/ 301
+/blog/the-art-of-software-engineering /blog/ 301
+/blog/the-art-of-software-engineering/ /blog/ 301
+# Relative links in post bodies once resolved under the post's own path.
+/blog/business-case-for-functional-programming/tags/* /blog/business-case-for-functional-programming/ 301
+/blog/python-is-31x-slower-new-benchmark-confirms-not-language-for-enterprise-ai/blog/* /blog/:splat/ 301

@@ -1,6 +1,6 @@
 import type {PagesFunction} from "@cloudflare/workers-types";
 import {Data, Effect} from "effect";
-import {applyHeaders, revalidateCacheControl, securityHeaders} from "../src/security/headers";
+import {applyHeaders, isPreviewHost, previewHostHeaders, revalidateCacheControl, securityHeaders} from "../src/security/headers";
 import {contentTypeFor, negotiate, type Variant} from "./negotiation";
 
 // Content negotiation for every page route (RFC 9110 §12.5.1), plus the security
@@ -103,10 +103,21 @@ const notFound = (url: URL, variant: Exclude<Variant, "html">): Response => {
   return new Response(body, {status: 404, headers});
 };
 
+// The Pages project domain mirrors the production site; every response from it says
+// noindex so search engines credit only www.vidyasource.com.
+const markPreviewHost = (url: URL) => (response: Response): Response => {
+  if (isPreviewHost(url.hostname)) {
+    applyHeaders(response.headers, previewHostHeaders);
+  }
+  return response;
+};
+
 export const onRequest: PagesFunction<Env> = async (context) => {
   const {request, env, next} = context;
   const url = new URL(request.url);
   const method = request.method.toUpperCase();
+  const respond = <E>(program: Effect.Effect<Response, E>): Promise<Response> =>
+    Effect.runPromise(program.pipe(Effect.map(markPreviewHost(url))));
 
   const passThrough = Effect.tryPromise({
     try: () => next(),
@@ -114,12 +125,12 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   }).pipe(Effect.map(decorate));
 
   if ((method !== "GET" && method !== "HEAD") || hasExtension(url.pathname)) {
-    return Effect.runPromise(passThrough);
+    return respond(passThrough);
   }
 
   const variant = negotiate(request.headers.get("Accept"));
   if (variant === "html") {
-    return Effect.runPromise(passThrough);
+    return respond(passThrough);
   }
 
   const program = fetchTwin(env, url, variant).pipe(
@@ -137,5 +148,5 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     Effect.catchAll(() => Effect.succeed(notFound(url, variant))),
   );
 
-  return Effect.runPromise(program);
+  return respond(program);
 };

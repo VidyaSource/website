@@ -11,7 +11,7 @@
 export type HeaderMap = Readonly<Record<string, string>>;
 
 export interface HeaderRule {
-    /** A Cloudflare `_headers` URL pattern: one greedy `*` splat allowed. */
+    /** A Cloudflare `_headers` URL pattern: a path, or an absolute URL with `:placeholder` host parts; one greedy `*` splat allowed. */
     readonly pattern: string;
     readonly headers: HeaderMap;
 }
@@ -57,6 +57,12 @@ export const securityHeaders = {
     'Content-Usage': 'train-ai=y, search=y'
 } as const satisfies HeaderMap;
 
+/** Headers for any response served from a Cloudflare Pages project or preview host. */
+export const previewHostHeaders = {'X-Robots-Tag': 'noindex'} as const satisfies HeaderMap;
+
+/** True for `website-8l3.pages.dev` and branch previews such as `abc.website-8l3.pages.dev`. */
+export const isPreviewHost = (hostname: string): boolean => hostname.endsWith('.pages.dev');
+
 /** Cache policy for negotiated and HTML responses: always revalidate at the edge. */
 export const revalidateCacheControl = 'public, max-age=0, must-revalidate';
 
@@ -68,7 +74,10 @@ export const headerRules: readonly HeaderRule[] = [
     {pattern: '/*.md', headers: {'Content-Type': 'text/markdown; charset=utf-8', 'X-Robots-Tag': 'noindex'}},
     {pattern: '/*.json', headers: {'X-Robots-Tag': 'noindex'}},
     {pattern: '/llms.txt', headers: {'X-Robots-Tag': 'noindex'}},
-    {pattern: '/llms-full.txt', headers: {'X-Robots-Tag': 'noindex'}}
+    {pattern: '/llms-full.txt', headers: {'X-Robots-Tag': 'noindex'}},
+    // The Cloudflare Pages project domain serves the same build as www.vidyasource.com.
+    // Keep it out of search indexes so it never competes with the real domain.
+    {pattern: 'https://:project.pages.dev/*', headers: previewHostHeaders}
 ];
 
 export const renderHeadersFile = (): string =>
