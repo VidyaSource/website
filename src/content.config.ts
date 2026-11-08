@@ -176,6 +176,11 @@ export const caseStudySchema = z.object({
     // Pins the related-posts list to these blog slugs, in order, instead of
     // matching on tags. Same plain-string rationale as excludedPosts.
     relatedPosts: z.array(z.string()).optional(),
+    // The consulting services this engagement proves. A reference rather than a plain
+    // string, so a renamed or removed service page fails the build instead of leaving
+    // a dead link. The case study links to each service, and each service page lists
+    // the case studies that name it. Omit on engagements no service page describes.
+    services: z.array(reference('consulting')).nonempty().optional(),
     faqs: z.array(z.object({
         question: z.string(),
         answer: z.string()

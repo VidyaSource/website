@@ -3,11 +3,18 @@ import {Image} from 'astro:assets';
 import {images} from '../../components/Images';
 import CallToAction from '../../components/CallToAction.astro';
 import RelatedPosts from './RelatedPosts.astro';
+import {type ConsultingService, serviceBySlug} from '../consulting/consultingUtils';
 
 const {
-    title, client, sector, tagline, image, tags, technologies, outcomes, faqs, excludedPosts, relatedPosts, render
+    title, client, sector, tagline, image, tags, technologies, outcomes, faqs, excludedPosts, relatedPosts, services, render
 } = Astro.props
 const {Content} = await render();
+// The schema's reference('consulting') guarantees every id resolves; flatMap only narrows the type.
+const linkedServices: readonly ConsultingService[] = (services ?? [])
+    .flatMap((ref: {id: string}) => {
+        const service = serviceBySlug.get(ref.id);
+        return service ? [service] : [];
+    });
 ---
 <article class="relative overflow-hidden bg-blue-light dark:bg-gray-dark">
     <!-- Hero image banner -->
@@ -92,6 +99,26 @@ const {Content} = await render();
                 ))}
             </div>
         </section>
+
+        <!-- The service pages this engagement proves. Each service page links back here. -->
+        {linkedServices.length > 0 && (
+            <section class="max-w-prose lg:max-w-4xl mx-auto pb-16">
+                <h2 class="text-2xl font-extrabold tracking-tight text-red dark:text-red-light mb-6 mt-0">
+                    Services Behind This Work
+                </h2>
+                <ul class="grid gap-4 sm:grid-cols-2 list-none pl-0">
+                    {linkedServices.map((s) => (
+                        <li class="my-0 not-italic">
+                            <a href={`/consulting/${s.slug}/`}
+                               class="group block h-full rounded-lg bg-white dark:bg-gray p-5 shadow-sm hover:shadow-lg transition-shadow duration-200 no-underline">
+                                <span class="block text-lg font-bold text-blue-dark dark:text-blue-light group-hover:text-red dark:group-hover:text-red-light transition-colors duration-200">{s.title}</span>
+                                <span class="mt-1 block text-base text-gray-dark dark:text-blue-light leading-snug">{s.tagline}</span>
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        )}
 
         <!-- FAQ -->
         {faqs && faqs.length > 0 && (

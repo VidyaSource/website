@@ -1,7 +1,7 @@
 ---
 
 author: neil-chaudhuri
-title: "How Sports Busts Common Myths About Software Engineering Teams"
+title: "What Sports Teach About Building Software Engineering Teams"
 description: "Learn how sports history reveals why great engineering teams need more than star talent - they need systems, culture, and leadership that elevate everyone's performance."
 image: "/img/blog/football.jpg"
 date: 2025-05-21

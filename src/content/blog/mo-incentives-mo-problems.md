@@ -1,7 +1,7 @@
 ---
 
 author: neil-chaudhuri
-title: "Mo Incentives Mo Problems"
+title: "Agile Government IT Contracts Need Better Incentives"
 description: "As government IT becomes more agile, it's time to rethink incentives in contracts."
 image: "/img/blog/biggie.jpg"
 date: 2016-01-10

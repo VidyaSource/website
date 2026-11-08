@@ -1,7 +1,7 @@
 ---
 
 author: neil-chaudhuri
-title: "Zero Tolerance: Checking a Java BigDecimal for Zero"
+title: "How to Check if a BigDecimal Is Zero in Java"
 description: "Is your Java BigDecimal zero? Compare signum, compareTo, and equals to find the check that works."
 image: "/img/blog/zero.jpg" 
 date: 2014-11-06

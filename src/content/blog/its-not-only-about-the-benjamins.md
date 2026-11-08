@@ -1,5 +1,5 @@
 ---
-title: "It's Not Only About the Benjamins"
+title: "Highest-Paying Programming Languages: It's Not Only About the Benjamins"
 date: 2017-09-27
 author: neil-chaudhuri
 description: "The highest paying languages are also among the most fun and productive. We know from experience."

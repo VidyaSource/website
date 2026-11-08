@@ -1,7 +1,7 @@
 ---
 
 author: neil-chaudhuri
-title: "Know Your Options"
+title: "Scala Option vs Java Null: Know Your Options"
 description: "Null is a real pain, but functional languages like Scala can make it a lot easier." 
 image: "/img/blog/options.jpeg" 
 date: 2014-08-04

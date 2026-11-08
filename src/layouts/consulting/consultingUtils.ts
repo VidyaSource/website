@@ -28,3 +28,6 @@ export const services = await Promise.all(list.map(async (s) => {
         }
     };
 }));
+
+/** Service pages by slug, for pages that hold a reference('consulting') and need its title. */
+export const serviceBySlug: ReadonlyMap<string, ConsultingService> = new Map(services.map(s => [s.slug, s]));

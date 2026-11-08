@@ -1,7 +1,7 @@
 ---
 
 author: neil-chaudhuri
-title: "Scala vs Go: Who Wore It Better?"
+title: "Scala vs Go (Golang): Who Wore It Better?"
 description: "Scala vs Go compared on error handling, collections, and absent values. Which one fits your project?"
 image: "/img/blog/scala-go.png"
 date: 2021-09-01

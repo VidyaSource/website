@@ -1,6 +1,6 @@
 ---
 author: neil-chaudhuri
-title: "It's Not About Unit Or Integration Tests. It's About Confidence"
+title: "Unit vs Integration Tests: Test for Confidence Instead"
 description: "Forget traditional testing categories and focus on what builds confidence. Use AI to generate test data efficiently."
 image: "/img/blog/testing-microscope.jpg"
 date: 2025-05-30

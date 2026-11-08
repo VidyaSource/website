@@ -1,7 +1,7 @@
 ---
 
 author: neil-chaudhuri
-title: "Going Retro With Style"
+title: "Agile Retrospectives for Teams Outside Engineering"
 description: "It isn't just engineers who have a lot to learn from agile retrospectives."
 image: "/img/blog/record.jpeg"
 date: 2016-11-05

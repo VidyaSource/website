@@ -1,5 +1,5 @@
 ---
-title: "Dark Mode in Next.js using Tailwind CSS and React Hooks"
+title: "How to Add Dark Mode to Next.js with Tailwind CSS and React Hooks"
 author: neil-chaudhuri
 date: 2021-08-02
 description: "Use the power of Tailwind CSS and React Hooks to build Dark Mode users can control into your Next.js site."

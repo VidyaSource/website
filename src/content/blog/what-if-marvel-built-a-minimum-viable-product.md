@@ -1,6 +1,6 @@
 ---
 author: neil-chaudhuri
-title: "What If...Marvel Built a Minimum Viable Product?"
+title: "What Is a Minimum Viable Product? Lessons from Marvel's What If...?"
 description: "Product development should begin with an MVP, and Marvel's What if?... is exactly that."
 image: "/img/blog/what-if.jpeg"
 date: 2021-11-09

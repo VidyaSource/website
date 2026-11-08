@@ -1,7 +1,7 @@
 ---
 
 author: neil-chaudhuri
-title: "When You Do Want None"
+title: "Scala: Convert Empty or Blank Strings to None"
 description: "A quick tip for Scala developers for handling empty and whitespace strings in their code."
 image: "/img/blog/mixalot.jpg"
 date: 2015-02-25

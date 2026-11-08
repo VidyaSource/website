@@ -13,6 +13,10 @@ tags:
 - Java
 - Modernization
 order: 5
+services:
+- legacy-system-modernization
+- software-architecture
+- cloud-native-devsecops
 relatedPosts:
 - zero-tolerance-java
 technologies:

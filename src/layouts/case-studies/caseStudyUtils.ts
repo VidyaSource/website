@@ -40,3 +40,7 @@ export const caseStudies = await Promise.all(list.map(async (s) => {
         }
     };
 }));
+
+/** The case studies that name a service in their `services` list, in editorial order. */
+export const caseStudiesForService = (serviceSlug: string): readonly CaseStudy[] =>
+    caseStudies.filter(s => (s.services ?? []).some(ref => ref.id === serviceSlug));

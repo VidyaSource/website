@@ -16,6 +16,10 @@ tags:
 - Cloud
 - DevOps
 order: 4
+services:
+- legacy-system-modernization
+- cloud-native-devsecops
+- government-modernization
 technologies:
 - Go
 - Go kit

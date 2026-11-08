@@ -3,11 +3,14 @@ import {Image} from 'astro:assets';
 import {images} from '../../components/Images';
 import CallToAction from '../../components/CallToAction.astro';
 import Insights from './Insights.astro';
+import {caseStudiesForService} from '../case-studies/caseStudyUtils';
 
 const {
-    title, tagline, image, tags, faqs, render
+    slug, title, tagline, image, tags, faqs, render
 } = Astro.props
 const {Content} = await render();
+// Case studies opt in through their `services` list, so proof stays next to the claim it supports.
+const proof = caseStudiesForService(slug);
 ---
 <article class="relative overflow-hidden bg-blue-light dark:bg-gray-dark">
     <!-- Hero image banner -->
@@ -47,6 +50,28 @@ const {Content} = await render();
                 <Content/>
             </div>
         </section>
+
+        <!-- Case studies that name this service. Each one links back to this page. -->
+        {proof.length > 0 && (
+            <section class="max-w-prose lg:max-w-4xl mx-auto pb-16">
+                <h2 class="text-2xl font-extrabold tracking-tight text-red dark:text-red-light mb-6 mt-0">
+                    Case Studies
+                </h2>
+                <ul class="grid gap-6 sm:grid-cols-2 list-none pl-0">
+                    {proof.map((cs) => (
+                        <li class="my-0 not-italic">
+                            <a href={`/case-studies/${cs.slug}/`}
+                               class="group flex h-full flex-col rounded-lg bg-white dark:bg-gray p-6 border-l-4 border-red dark:border-red-light shadow-sm hover:shadow-lg transition-shadow duration-200 no-underline">
+                                <span class="text-xs font-semibold tracking-widest uppercase text-blue dark:text-blue-light">{cs.client}</span>
+                                <span class="mt-2 text-lg font-bold text-blue-dark dark:text-white group-hover:text-red dark:group-hover:text-red-light transition-colors duration-200">{cs.title}</span>
+                                <span class="mt-3 text-base font-extrabold text-red dark:text-red-light">{cs.outcomes[0].metric}</span>
+                                <span class="mt-auto pt-4 text-sm font-semibold text-blue-dark dark:text-blue-light">Read the case study</span>
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        )}
 
         <!-- FAQ -->
         {faqs && faqs.length > 0 && (

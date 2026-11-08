@@ -16,6 +16,10 @@ tags:
 - Functional Programming
 - Testing
 order: 2
+services:
+- legacy-system-modernization
+- government-modernization
+- technology-culture
 relatedPosts:
 - scala-go
 - business-case-for-functional-programming

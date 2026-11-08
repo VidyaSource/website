@@ -1,7 +1,7 @@
 ---
 
 author: neil-chaudhuri
-title: "Idiom Savant"
+title: "Idiomatic Java and Ruby: Idiom Savant"
 description: "Idioms are just as important in programming languages as they are in spoken languages."
 image: "/img/blog/programming.jpg"
 date: 2014-01-21

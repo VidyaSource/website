@@ -13,6 +13,9 @@ tags:
 - Partners
 - Security
 order: 8
+services:
+- software-architecture
+- legacy-system-modernization
 relatedPosts:
 - business-case-for-functional-programming
 technologies:

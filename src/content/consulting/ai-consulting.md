@@ -1,6 +1,6 @@
 ---
 title: "AI Consulting & Agentic Engineering"
-seoTitle: "AI Consulting Services | Vidya"
+seoTitle: "AI Consulting Services for Business and Government | Vidya"
 tagline: "AI built on open standards, grounded in your business context."
 description: "Vidya builds AI systems that succeed because they're grounded in your actual data and processes, engineered for safety, reliability, and cost control."
 image: "/img/courses/enterprise-ai.webp"
@@ -26,14 +26,35 @@ faqs:
   answer: "Not automatically. Gartner reports that organizations who prioritize context can cut AI costs by up to 60%, and Vidya's deterministic, rule-based components cost a fraction of a full model call and never drift in price, so the parts of a system that don't need a language model don't pay for one."
 - question: "How fast can Vidya show results?"
   answer: "Vidya scopes a first engagement as a two-week discovery sprint that ends in a working system connected to your own data."
+- question: "Has Vidya delivered machine learning in production?"
+  answer: "Yes. Vidya rebuilt the threat-detection platform for Thomson Reuters Special Services so it scores each threat continuously as new data arrives. The platform grew into RAPID, a product line TRSS still sells, and TRSS reported sales growth above 12% year over year as the model improved."
 ---
-
 Vidya is a modernization firm that has spent three years helping clients turn AI from a pilot project into a system their teams actually rely on. Clients who bring Vidya an AI project get something working inside their own operations within weeks, built around how the business already runs.
 
-Most AI projects fail for reasons that have nothing to do with which model a company picks. MIT reported that 95% of enterprise AI deployments fail, largely from missing data strategy and unclear business goals. Vidya made the same case in [Python Is Not the Language of AI](/blog/python-is-not-language-of-ai/). Succeeding with AI is a matter of giving a system a [culture of context](/blog/create-a-culture-of-context-for-ai/). Gartner agrees, finding that prioritizing context can lift AI accuracy by up to 80% and cut costs by up to 60%. A simple test guides every AI recommendation Vidya makes. If the information an agent needs isn't realistically available to it, the task isn't ready for AI yet.
+## Why most AI projects fail
 
-Vidya builds AI safety and reliability directly into how a system runs. An autonomous agent belongs in production only when a human can plan, trace, and reverse every action it takes, with an oversight point built into each step. Every high-impact system keeps a fallback path that works without the AI. Where part of a job must produce the same correct answer every time, like a calculation or a compliance check, Vidya pairs the AI agent's language reasoning with a deterministic, rule-based step built for that part. Vidya also tracks accuracy against real outcomes on an ongoing basis, so drift gets caught early. On bias, Vidya grounds its practice in the research of Dr. Timnit Gebru and Dr. Joy Buolamwini, favoring smaller, better-documented models and testing outputs before they reach a decision that affects a real person.
+Most AI projects fail for reasons that have nothing to do with which model a company picks. MIT reported that 95% of enterprise AI deployments fail, largely from missing data strategy and unclear business goals. Vidya made the same case in [Python Is Not the Language of AI](/blog/python-is-not-language-of-ai/). Succeeding with AI is a matter of giving a system a [culture of context](/blog/create-a-culture-of-context-for-ai/). Gartner agrees, finding that prioritizing context can lift AI accuracy by up to 80% and cut costs by up to 60%.
 
-The Agentic AI Foundation, the Linux Foundation-backed group governing the open standards behind today's leading AI tools, named Vidya's founder to its inaugural cohort of 138 Ambassadors across 41 countries. A stack built around one vendor's product fails the day that vendor deprecates it or ships a worse model. Vidya builds on open, vendor-neutral standards, so upgrading later becomes a simple configuration change that protects a client's investment. The same deterministic components that keep a system reliable also keep it cheap to run. A rule-based step costs a fraction of a model call and never drifts in price.
+## How Vidya builds AI systems
 
-Vidya scopes a first AI engagement as a two-week discovery sprint that identifies one high-value business process worth automating and maps the information it needs. At the end of those two weeks, you get a working system connected to your own data.
+1. **Pick one process worth automating.** A two-week discovery sprint identifies one high-value business process and maps the information it needs.
+2. **Test whether the context exists.** If the information an agent needs isn't realistically available to it, the task isn't ready for AI yet. Vidya says so before you spend the budget.
+3. **Use a rule-based step where the answer must be exact.** Where part of a job must produce the same correct answer every time, like a calculation or a compliance check, Vidya pairs the AI agent's language reasoning with a deterministic step built for that part.
+4. **Keep a human in control.** An autonomous agent belongs in production only when a human can plan, trace, and reverse every action it takes. Every high-impact system keeps a fallback path that works without the AI.
+5. **Measure against real outcomes.** Vidya tracks accuracy against real outcomes on an ongoing basis, so drift gets caught early.
+
+## Safety, bias, and cost
+
+Vidya builds AI safety and reliability directly into how a system runs, with an oversight point built into each step. On bias, Vidya grounds its practice in the research of Dr. Timnit Gebru and Dr. Joy Buolamwini, favoring smaller, better-documented models and testing outputs before they reach a decision that affects a real person. The same deterministic components that keep a system reliable also keep it cheap to run. A rule-based step costs a fraction of a model call and never drifts in price.
+
+## Built on open standards
+
+The Agentic AI Foundation, the Linux Foundation-backed group governing the open standards behind today's leading AI tools, named Vidya's founder to its inaugural cohort of 138 Ambassadors across 41 countries. A stack built around one vendor's product fails the day that vendor deprecates it or ships a worse model. Vidya builds on open, vendor-neutral standards, so upgrading later becomes a simple configuration change that protects a client's investment.
+
+## Results
+
+Vidya rebuilt the threat-detection platform for [Thomson Reuters Special Services](/case-studies/machine-learning-threat-detection-trss/). Analysts now open a dashboard to a threat score that the platform has already computed. The platform grew into a product line TRSS still sells, and TRSS reported sales growth above 12% year over year as the model improved.
+
+## How to start
+
+Vidya scopes a first AI engagement as a two-week discovery sprint that identifies one high-value business process worth automating and maps the information it needs. At the end of those two weeks, you get a working system connected to your own data. Federal agencies can buy this work through [GSA MAS contract 47QTCA24D0069](/consulting/government-modernization/). [Talk to Vidya](/contact/) about the process you want to automate.

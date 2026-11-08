@@ -1,7 +1,7 @@
 ---
 
 author: neil-chaudhuri
-title: "Code Coverage Is Killing You"
+title: "Why Code Coverage Is a Poor Quality Metric, and What to Measure Instead"
 description: "Code coverage is intuitive but dangerous. There are quality metrics that are so much better."
 image: "/img/blog/michael-scott.jpeg"
 date: 2021-08-16

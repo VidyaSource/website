@@ -13,6 +13,9 @@ tags:
 - Architecture
 - AI
 order: 3
+services:
+- ai-consulting
+- software-architecture
 relatedPosts:
 - java-is-dysfunctional-with-big-data
 - business-case-for-functional-programming
