@@ -16,7 +16,10 @@ const path = Astro.url.pathname
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/manifest.webmanifest" />
-<meta name="theme-color" content="#5A82B4" />
+{/* Matches the inner-page header (blue-dark), which is the same in light and dark mode,
+    so one value serves both and no media-specific pair is needed. Keep it equal to the
+    manifest theme_color in astro.config.mjs. */}
+<meta name="theme-color" content="#3C628F" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <link rel="alternate" type="application/rss+xml" title="Vidya Blog" href="/rss.xml" />
 <link rel="alternate" type="text/markdown" title="Vidya for LLMs" href="/llms.txt" />

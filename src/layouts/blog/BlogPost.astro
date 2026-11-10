@@ -48,10 +48,10 @@ const {Content} = await render();
 
             <!-- Date and author -->
             <div class="flex items-center justify-center gap-4 mt-4">
-                <time class="text-base text-gray dark:text-gray-light font-medium" datetime={toDateAttribute(date)}>
+                <time class="text-base text-gray-dark dark:text-gray-light font-medium" datetime={toDateAttribute(date)}>
                     {formatPostDate(date)}
                 </time>
-                <span class="text-gray dark:text-gray-light">·</span>
+                <span class="text-gray-dark dark:text-gray-light">·</span>
                 <Avatar name={name} image={authorImage} profileUrl={profileUrl}/>
             </div>
 

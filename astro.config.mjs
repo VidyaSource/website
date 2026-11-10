@@ -37,7 +37,7 @@ export default defineConfig({
                 scope: '/',
                 display: 'standalone',
                 lang: 'en',
-                theme_color: '#5A82B4',
+                theme_color: '#3C628F', // blue-dark, the header color in both modes
                 background_color: '#ffffff',
                 icons: [
                     {src: '/favicon-192.png', sizes: '192x192', type: 'image/png'},

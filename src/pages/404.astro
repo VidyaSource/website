@@ -12,19 +12,23 @@ import "../globals.css"
          }}
     >
         <div class="max-w-7xl mx-auto px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8 lg:py-48">
-            <p class="text-sm font-semibold text-gray-dark dark:text-gray-dark text-opacity-75 uppercase tracking-wide">
+            {/* The text sits on a photograph, so it gets its own opaque surface. Contrast
+                then holds whatever part of the photo is behind it, in both modes. */}
+            <div class="inline-block max-w-2xl rounded-2xl bg-blue-light/95 dark:bg-gray-dark/95 px-8 py-10 shadow-xl">
+            <p class="text-sm font-semibold text-gray-dark dark:text-gray-light uppercase tracking-wide">
                 404 error</p>
-            <h1 class="mt-2 text-4xl font-extrabold text-red dark:text-red tracking-tight sm:text-5xl">
+            <h1 class="mt-2 text-4xl font-extrabold text-red dark:text-red-light tracking-tight sm:text-5xl">
                 Uh oh! I think you’re lost.
             </h1>
-            <p class="mt-2 text-lg font-medium text-gray-dark dark:text-gray-dark text-opacity-75">
+            <p class="mt-2 text-lg font-medium text-gray-dark dark:text-blue-light">
                 It looks like the page you’re looking for doesn't exist.
             </p>
             <div class="mt-6">
                 <a href="/"
-                   class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue dark:text-white bg-white dark:bg-red hover:bg-red-light hover:text-gray-dark dark:hover:bg-blue">
+                   class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-red hover:bg-blue-dark">
                     Go back home
                 </a>
+            </div>
             </div>
         </div>
     </div>

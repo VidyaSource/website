@@ -4,16 +4,18 @@ import {ClientRouter} from 'astro:transitions';
 import VidyaSEO from "../components/VidyaSEO.astro"
 import vidyaSchema from '../components/vidyaSchema.json'
 import Analytics from "../components/Analytics.astro";
+import ThemeInit from "../components/ThemeInit.astro";
 import TailwindElements from "../components/TailwindElements.astro";
 import MachineReadable from "../components/MachineReadable.astro";
 ---
 <html lang="en">
 <head>
+    <ThemeInit />
     <Analytics />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- VidyaSEO below owns the meta description. Do not add one here: it emits a
          second, competing description tag ahead of the real one. -->
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <MachineReadable />
     <meta name="generator" content={Astro.generator}/>
     <ClientRouter/>

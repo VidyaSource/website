@@ -17,7 +17,7 @@ const entries = Object.entries(syllabus).map(([title, session]) => {
     }
 })
 ---
-<section class="relative py-20 bg-blue-light dark:bg-blue overflow-hidden">
+<section class="relative py-20 bg-blue-light dark:bg-blue-dark overflow-hidden">
     <!-- Decorative background elements -->
     <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
         <div class="absolute top-20 -left-10 w-64 h-64 bg-green/10 dark:bg-green-light/10 rounded-full blur-3xl"></div>
@@ -48,9 +48,9 @@ const entries = Object.entries(syllabus).map(([title, session]) => {
             {entries.map(({title, sessionDuration, outcome, topics}, index) => (
                 <div class="relative bg-white dark:bg-gray-dark rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                     <!-- Card header with lesson number accent -->
-                    <div class="bg-gradient-to-r from-blue to-blue-dark dark:bg-none dark:bg-white px-6 py-4">
+                    <div class="bg-gradient-to-r from-blue-dark to-gray-dark dark:bg-none dark:bg-white px-6 py-4">
                         <div class="flex items-center gap-3">
-                            <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-white/20 text-white dark:bg-blue dark:text-white text-sm font-bold">
+                            <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-white/20 text-white dark:bg-blue-dark dark:text-white text-sm font-bold">
                                 {index + 1}
                             </span>
                             <h3 class="text-lg font-bold text-white dark:text-blue-dark leading-snug mt-0">

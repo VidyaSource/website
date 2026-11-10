@@ -8,6 +8,7 @@ import { ClientRouter } from 'astro:transitions';
 import '../globals.css'
 import VidyaSEO from "./VidyaSEO.astro";
 import Analytics from "./Analytics.astro"
+import ThemeInit from "./ThemeInit.astro"
 import TailwindElements from "./TailwindElements.astro"
 import MachineReadable from "./MachineReadable.astro"
 interface Props {
@@ -26,11 +27,12 @@ interface Props {
 <!doctype html>
 <html lang="en">
 <head>
+    <ThemeInit />
     <Analytics />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- VidyaSEO below owns the meta description. Do not add a placeholder one here:
          it emits a second, competing description tag ahead of the real one. -->
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <MachineReadable noindex={Astro.props.noindex} />
     <meta name="generator" content={Astro.generator} />
     <ClientRouter />
@@ -38,7 +40,7 @@ interface Props {
     <TailwindElements />
 </head>
 <body>
-<header class="bg-blue dark:bg-blue">
+<header class="bg-blue-dark">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div class="w-full py-6 flex items-center justify-between border-b border-red-light lg:border-none">
             <div class="flex items-center rounded-lg">
@@ -74,7 +76,7 @@ interface Props {
         </div>
     </nav>
 </header>
-<main class="bg-blue-light dark:bg-gray">
+<main class="bg-blue-light dark:bg-gray-dark">
     <slot />
 </main>
 <Footer />

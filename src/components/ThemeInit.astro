@@ -1,0 +1,16 @@
+---
+// Put this first in every page <head>.
+//
+// The meta tag is the single source of truth for the color scheme. `light dark` means
+// "follow the system", `light` or `dark` pins a scheme. CSS reads it with :has()
+// (see globals.css), so with no JavaScript the page follows the system setting.
+//
+// The script is classic, same-origin, and render-blocking on purpose. It only copies a
+// stored choice into the meta tag before first paint, so a visitor who pinned a scheme
+// never sees a flash of the other one. The CSP allows it because it is an external file.
+//
+// data-astro-transition-persist keeps this exact element across client-side navigation.
+// Without it Astro swaps in a fresh `light dark` meta and the pinned scheme flashes away.
+---
+<meta name="color-scheme" content="light dark" data-astro-transition-persist="color-scheme">
+<script is:inline src="/theme-init.js"></script>

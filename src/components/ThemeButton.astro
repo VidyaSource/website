@@ -6,7 +6,7 @@ interface Props {
 
 const {sunFillColor, moonFillColor} = Astro.props
 ---
-<button data-theme-toggle aria-label="Click to toggle between light mode and dark mode.">
+<button type="button" data-theme-toggle aria-label="Dark mode" aria-pressed="false">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-10" viewBox="0 0 20 20">
         <path fill-rule="evenodd"
               class="sun"
@@ -22,74 +22,104 @@ const {sunFillColor, moonFillColor} = Astro.props
         background: none;
     }
 
+    /* Light-mode state first: it is also the fallback where light-dark() is unsupported. */
     .moon {
-        fill: var(--moonFillColor)
+        fill: var(--moonFillColor);
     }
 
     .sun {
         fill: transparent;
     }
 
-    :global(.dark) .moon {
-        fill: transparent;
-    }
+    /* light-dark() follows the color-scheme the root computes from the meta tag and the
+       system setting (globals.css), so the icons swap with no JavaScript. */
+    @supports (color: light-dark(white, black)) {
+        .moon {
+            fill: light-dark(var(--moonFillColor), transparent);
+        }
 
-    :global(.dark) .sun {
-        fill: var(--sunFillColor);
+        .sun {
+            fill: light-dark(transparent, var(--sunFillColor));
+        }
     }
 </style>
 
-{/* Bundled, not inline: the Content-Security-Policy allows no inline scripts. It
-    already waited for astro:page-load, so bundling changes nothing about when it runs. */}
+{/* Bundled, not inline: the Content-Security-Policy allows no inline scripts. CSS alone
+    follows the system setting. This script only handles a visitor's explicit choice and
+    keeps the button state in step. The first-paint copy of a stored choice is in
+    public/theme-init.js. */}
 <script>
+    type Theme = 'light' | 'dark';
+
+    const systemQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const readStored = (): Theme | null => {
+        try {
+            const stored = localStorage.getItem('theme');
+            return stored === 'light' || stored === 'dark' ? stored : null;
+        } catch {
+            return null;
+        }
+    };
+
+    // The scheme the visitor sees now: a stored choice, else the system setting.
+    const rendered = (): Theme => readStored() ?? (systemQuery.matches ? 'dark' : 'light');
+
+    // Put the choice in the meta tag (CSS reads it) and the state on every button.
+    const sync = (choice: Theme | null = readStored()) => {
+        const meta = document.querySelector('meta[name="color-scheme"]');
+        if (meta instanceof HTMLMetaElement) {
+            meta.content = choice ?? 'light dark';
+        }
+        const dark = (choice ?? (systemQuery.matches ? 'dark' : 'light')) === 'dark';
+        document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+            button.setAttribute('aria-pressed', String(dark));
+        });
+    };
+
     document.addEventListener('astro:page-load', () => {
-        type Theme = 'light' | 'dark';
-        const theme: Theme = (() => {
-            const stored = typeof localStorage !== 'undefined' ? localStorage.getItem('theme') : null;
-            if (stored === 'light' || stored === 'dark') {
-                return stored;
-            }
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                return 'dark';
-            }
-            return 'light';
-        })();
-        if (theme === 'light') {
-            document.documentElement.classList.remove('dark');
-        } else {
-            document.documentElement.classList.add('dark');
-        }
+        sync();
 
-        window.localStorage.setItem('theme', theme);
-
-        const handleToggleClick = () => {
-            const element = document.documentElement;
-            element.classList.toggle("dark");
-            const isDark = element.classList.contains("dark");
-            localStorage.setItem("theme", isDark ? "dark" : "light");
-        }
-
-        // Use delegated event listener so dynamically-mounted buttons also work (e.g., inside mobile popover)
         const w = window as Window & { __themeToggleDelegated?: boolean };
-        if (!w.__themeToggleDelegated) {
-            document.addEventListener("click", (e) => {
-                const target = e.target;
-                if (target && target instanceof Element) {
-                    const toggle = target.closest('[data-theme-toggle]');
-                    if (toggle) {
-                        handleToggleClick();
-                    }
-                }
-            }, { passive: true });
-            w.__themeToggleDelegated = true;
+        if (w.__themeToggleDelegated) {
+            return;
         }
-    });
-</script>
+        w.__themeToggleDelegated = true;
 
-<script>
-    document.addEventListener('astro:after-swap', () => {
-        localStorage.theme === 'dark'
-            ? document.documentElement.classList.add("dark")
-            : document.documentElement.classList.remove("dark");
+        // Delegated so buttons mounted later also work (for example in the mobile popover).
+        document.addEventListener('click', (e) => {
+            const target = e.target;
+            if (target instanceof Element && target.closest('[data-theme-toggle]')) {
+                // The target is the opposite of what the visitor sees now.
+                const next: Theme = rendered() === 'dark' ? 'light' : 'dark';
+                const system: Theme = systemQuery.matches ? 'dark' : 'light';
+                // Store only a choice that differs from the system. A choice that matches it
+                // undoes the override, so the site follows the system again.
+                const choice = next === system ? null : next;
+                try {
+                    if (choice === null) {
+                        localStorage.removeItem('theme');
+                    } else {
+                        localStorage.setItem('theme', choice);
+                    }
+                } catch {
+                    // Storage is blocked: the choice lasts for this page view only.
+                }
+                sync(choice);
+            }
+        }, { passive: true });
+
+        // The system setting changed. CSS already follows it; refresh the button state.
+        systemQuery.addEventListener('change', () => sync());
+
+        // Another tab changed the choice.
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'theme' || e.key === null) {
+                sync();
+            }
+        });
     });
+
+    // After a client-side navigation the swapped-in document may carry a fresh button.
+    document.addEventListener('astro:after-swap', () => sync());
 </script>

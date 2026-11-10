@@ -9,25 +9,29 @@ const link = `/blog/${slug}/`
 const formattedDate = formatPostDate(date)
 
 ---
-<div class=`flex flex-col rounded-lg shadow-lg overflow-hidden blog-post ${[
+<div class=`flex flex-col rounded-lg shadow-lg dark:shadow-none dark:ring-1 dark:ring-white/10 overflow-hidden blog-post ${[
     ...(tags || []).map(tag => tag.toLowerCase().replace(/\s+/g, '-')),
     ...(categories || []).map(category => category.toLowerCase().replace(/\s+/g, '-'))
 ].join(' ')}` id={slug} >
-    <div class="flex-shrink-0 bg-gray-light hover:bg-red-light">
-        <a href={link}>
+    <div class="flex-shrink-0 bg-gray-light dark:bg-white/5 hover:bg-red-light dark:hover:bg-white/10">
+        {/* One frame shape for every card, so rows line up. object-cover fills it edge to edge,
+            so no band of the wrapper color shows. 19:10 is close to the banner-style images
+            (1.9 to 2.0 wide) whose text sits near the edges, so they lose almost nothing;
+            the photos (1.5 to 1.8 wide) lose a little from the top and bottom. */}
+        <a href={link} class="block aspect-[19/10] w-full overflow-hidden">
             <Image
-                    class="h-56 w-full object-cover object-top"
+                    class="h-full w-full object-cover"
                     src={images[`/src${image}`]()}
                     alt={title}
                     inferSize
             />
         </a>
     </div>
-    <div class=`flex-1 dark:bg-white p-6 flex flex-col justify-between hover:bg-red-light ${classes}`>
+    <div class=`flex-1 dark:bg-white/5 p-6 flex flex-col justify-between hover:bg-red-light dark:hover:bg-white/10 ${classes}`>
         <div class="flex-1">
             <a href={link} class="block mt-2">
-                <p class="text-xl font-semibold text-red dark:text-red">{title}</p>
-                <p class="mt-3 text-base text-gray-dark dark:text-gray-dark">{description}</p>
+                <p class="text-xl font-semibold text-red dark:text-red-light">{title}</p>
+                <p class="mt-3 text-base text-gray-dark dark:text-blue-light">{description}</p>
             </a>
         </div>
         <div class="mt-6 flex items-center">
@@ -49,10 +53,10 @@ const formattedDate = formatPostDate(date)
                 <p class="text-sm font-medium hover:underline">
 
                     <a href={profileUrl}
-                       class="hover:underline text-blue hover:text-green dark:text-blue dark:hover:text-green">{name}</a>
+                       class="hover:underline text-blue-dark hover:text-green-dark dark:text-blue-light dark:hover:text-green-light">{name}</a>
 
                 </p>
-                <div class="flex space-x-1 text-sm text-gray-dark">
+                <div class="flex space-x-1 text-sm text-gray-dark dark:text-gray-light">
                     <time datetime={toDateAttribute(date)}>{formattedDate}</time>
                 </div>
             </div>

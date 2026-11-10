@@ -3,6 +3,21 @@
 @import "@fontsource-variable/source-sans-3/wght-italic.css";
 @config "../tailwind.config.mjs";
 
+/* Tailwind's `dark:` variant. It matches when the system prefers dark and the tag does not
+   pin light, or when the tag pins dark. Selectors sit inside :where(), so they add no
+   specificity and every `dark:` utility keeps the cascade order it had with the class strategy. */
+@custom-variant dark {
+    @media (prefers-color-scheme: dark) {
+        &:where(:root:not(:has(> head > meta[name="color-scheme"][content="light"])), :root:not(:has(> head > meta[name="color-scheme"][content="light"])) *) {
+            @slot;
+        }
+    }
+
+    &:where(:root:has(> head > meta[name="color-scheme"][content="dark"]), :root:has(> head > meta[name="color-scheme"][content="dark"]) *) {
+        @slot;
+    }
+}
+
 /* Self-hosted Source Sans 3 (Adobe's open descendant of Myriad Pro) replaces the
    Adobe Typekit load. It ships with font-display: swap, so text paints
    immediately in the fallback instead of blocking on the web font — the fix for
@@ -16,6 +31,26 @@
     descent-override: 25.55%;
     line-gap-override: 0%;
     size-adjust: 106.72%;
+}
+
+/* The color-scheme meta tag decides the scheme: `light dark` follows the system, `light`
+   or `dark` pins it (see ThemeInit.astro). Everything below reads the tag in CSS, so none
+   of it needs JavaScript. */
+:root {
+    color-scheme: light dark;
+
+    &:has(> head > meta[name="color-scheme"][content="dark"]) {
+        color-scheme: dark;
+    }
+
+    &:has(> head > meta[name="color-scheme"][content="light"]) {
+        color-scheme: light;
+    }
+}
+
+/* Shiki blocks are dark in both modes. */
+pre {
+    color-scheme: dark;
 }
 
 @layer components {
@@ -92,7 +127,7 @@
     }
 
     a {
-        @apply text-blue hover:text-green-dark dark:text-green-light dark:hover:text-red-light;
+        @apply text-blue-dark hover:text-green-dark dark:text-green-light dark:hover:text-red-light;
     }
 
     h1 {
@@ -124,7 +159,7 @@
     }
 
     span.a {
-        @apply text-blue cursor-pointer;
+        @apply text-blue-dark cursor-pointer;
     }
 
     li {
@@ -166,7 +201,7 @@
     }
 
     .prose a {
-        @apply text-blue dark:text-blue-light hover:text-green-light;
+        @apply text-blue-dark dark:text-blue-light hover:text-green-dark dark:hover:text-green-light;
     }
 
     .prose .text-blue-light {
@@ -178,7 +213,7 @@
     }
 
     .contact-us {
-        @apply items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white dark:text-red dark:hover:text-blue bg-red dark:bg-red-light hover:bg-blue-dark dark:hover:bg-blue-light;
+        @apply items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white dark:text-red dark:hover:text-blue-dark bg-red dark:bg-red-light hover:bg-blue-dark dark:hover:bg-blue-light;
     }
 
     .page-logo {
@@ -187,18 +222,24 @@
         border-radius: 10px;
     }
 
-    .dark .logo {
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 5px;
+    .logo {
+        @variant dark {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 5px;
+        }
     }
 
-    .dark .prose .dark-text-red-light {
-        color: #F8ECEF;
+    .prose .dark-text-red-light {
+        @variant dark {
+            color: #F8ECEF;
+        }
     }
 
-    .dark .prose .dark-text-blue-light {
-        color: #F4F9FE;
+    .prose .dark-text-blue-light {
+        @variant dark {
+            color: #F4F9FE;
+        }
     }
 
     /* Code blocks run smaller than body copy so long lines fit without horizontal
@@ -228,8 +269,16 @@
         text-indent: -3rem;
     }
 
+    /* Inline code. Palette red on blue-light is 6.3:1; red-light on the dark surface
+       is 12:1. The old hard-coded #9c4d61 fell below 3:1 on every dark surface. */
     code {
-        color: #9c4d61;
+        @apply text-red dark:text-red-light;
+    }
+
+    /* Code blocks keep their own dark Shiki surface in both modes, so their text
+       must not take the inline-code color. */
+    pre code {
+        color: inherit;
     }
 
     code {

@@ -170,6 +170,15 @@ The dev container (`.devcontainer/devcontainer.json`) uses Node 22 and forwards 
 
 ---
 
+## Light and dark mode
+
+- The `<meta name="color-scheme">` tag is the single source of truth (`src/components/ThemeInit.astro`). `light dark` follows the system, `light` or `dark` pins a scheme. There is no `.dark` class anywhere.
+- CSS reads the tag with `:has()`. `src/globals.css` sets `color-scheme` on `:root` from it, and defines Tailwind's `dark:` variant with `@custom-variant dark` (system preference unless the tag pins light, or the tag pins dark). With JavaScript off the page follows the system setting.
+- `public/theme-init.js` is a tiny render-blocking classic script. It only copies a stored choice (`localStorage.theme`, `light` or `dark`) into the tag before first paint. `ThemeButton.astro` stores only a choice that differs from the system, removes it when the choice matches the system, and keeps `aria-pressed` in step.
+- Use `light-dark()` in component `<style>` blocks (Tailwind does not process those). Use `@variant dark { ... }` in `globals.css`. Never write `.dark` selectors.
+- The theme palette changes only the light and dark variants. `gray.dark` (`#2B2D31`) is the dark page surface. `blue.dark` (`#3C628F`) is the surface for small white text. Check any new color pair against WCAG AA (4.5:1 normal text, 3:1 large text) in both modes.
+- Card images sit in a fixed 16:9 frame (`GenericCard.astro`, `BlogPostCard.astro`) so a picture of any shape never spills over the text below it.
+
 ## AI consumption
 
 - The Vidya website supports consumption by ChatGPT, Claude, and Perplexity via llms.txt so that visitors can have AI evaluate Vidya.
